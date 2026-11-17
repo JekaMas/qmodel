@@ -1,0 +1,12 @@
+{
+  "bootstrap_pin": "passed: be0666c4f8456480a21d7e67b7b5b96d55ededb3",
+  "skill_packages": "passed",
+  "publication_policy": "passed",
+  "opsx_routes": "passed",
+  "shared_mechanics": "passed: make -C .agents/workflow check",
+  "native_openspec": "passed including completed task structure",
+  "evidence_and_discovery_structure": "passed; source-bound six-case typed audit DAG",
+  "final_revision_audit": "verification/results/runtime/workflow-ready.json; generated locally after commit, ignored to preserve clean provenance",
+  "whitespace_note": "Initial git diff --check found only exact upstream Tendermint example and downloaded shared HTML whitespace. Narrow attributes preserve these original source bytes; owned project files remain checked.",
+  "limits": "Workflow packaging/readiness is distinct from formal-model results and never closes external obligations."
+}

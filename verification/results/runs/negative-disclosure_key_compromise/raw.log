@@ -1,0 +1,787 @@
+An example execution:
+
+[State 0]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [],
+      note: false,
+      noteTrade: 0,
+      pc: 0,
+      published: 0,
+      released: Set(),
+      right: [],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 1]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 2]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 3]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 4]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 5]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 6]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 7]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 8]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 9]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 10]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 11]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 12]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 13]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 14]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 15]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 16]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 17]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 18]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 19]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 20]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 21]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 22]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 23]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 24]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 25]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 26]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 27]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 28]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 29]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 30]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 31]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 32]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[State 33]
+{
+  disclosure_key_compromise::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: false,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 1,
+      released: Set((3, 2, 4, 1), (4, 6, 4, 1)),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(),
+      up: false
+    }
+}
+
+[violation] Found an issue (33ms at 30 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

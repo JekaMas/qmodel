@@ -1,0 +1,9 @@
+
+  privacy_test
+    ok accessRejectsTest passed 1 test(s)
+    ok wrongScopeRejectsTest passed 1 test(s)
+    ok wrongOpeningRejectsTest passed 1 test(s)
+    ok auditIncompleteTest passed 1 test(s)
+    ok privatePayloadRecoveryTest passed 1 test(s)
+
+  5 passing (18ms)

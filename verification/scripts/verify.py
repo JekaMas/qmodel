@@ -1,0 +1,38 @@
+"""Audit/reuse observed greens, or explicitly rerun exact versioned input closures.
+
+The baseline and negative suites are deliberately separate. A negative suite
+requires a native property violation, never merely a nonzero process exit.
+"""
+from pathlib import Path
+import argparse,json,subprocess,sys,hashlib
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from audit_evidence import ROOT,EvidenceError,load_latest,validate
+
+def main():
+ p=argparse.ArgumentParser(description=__doc__)
+ p.add_argument('suite',choices=['baseline','negative','audit'])
+ p.add_argument('--fresh',action='store_true',help='explicitly rerun exact recorded source snapshots, bounded per receipt; may take tens of minutes')
+ a=p.parse_args()
+ manifest=json.loads((ROOT/'verification/results/manifest.json').read_text())
+ for rel,h in manifest['final_model_hashes'].items():
+  if hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()!=h:
+   raise EvidenceError('Final model inventory changed: '+rel+'; reconcile affected checks before accepting this report')
+ ids=json.loads((ROOT/'verification/configs/acceptance.json').read_text())['required']
+ selected=[]
+ for base in ids:
+  rp,r=load_latest(base)
+  if a.suite=='baseline' and r['expected']!='pass':continue
+  if a.suite=='negative' and r['expected']!='counterexample':continue
+  validate(r,rp);selected.append(base)
+ if not selected:raise EvidenceError('Empty selected suite')
+ if a.fresh:
+  for base in selected:
+   done=subprocess.run([sys.executable,str(ROOT/'verification/scripts/replay.py'),base],cwd=ROOT)
+   if done.returncode:return done.returncode
+ print(json.dumps({'suite':a.suite,'checks':len(selected),'status':'passed','mode':'exact-recorded-input rerun' if a.fresh else 'audited original backend results; valid greens reused','scope':'named finite/bounded/sampled configurations only','broader_timeouts':manifest['historical_broader_timeouts'],'unmet_scoped_checks':manifest['unmet_scoped_checks']},indent=2))
+ return 1 if manifest['unmet_scoped_checks'] else 0
+
+if __name__=='__main__':
+ try:sys.exit(main())
+ except (EvidenceError,OSError,KeyError,ValueError) as e:
+  print('Evidence audit failed: '+str(e),file=sys.stderr);sys.exit(1)

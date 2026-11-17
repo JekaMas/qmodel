@@ -1,0 +1,61 @@
+{
+  "id": "simulate-no_inclusion-boundedCompletion",
+  "started_utc": "2026-11-17T16:12:16.761854+00:00",
+  "claim": "boundedCompletion",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/models/timing.qnt",
+    "--main",
+    "no_inclusion",
+    "--backend",
+    "rust",
+    "--invariant",
+    "boundedCompletion",
+    "--max-samples",
+    "10000",
+    "--max-steps",
+    "80",
+    "--seed",
+    "29",
+    "--verbosity",
+    "1",
+    "--step",
+    "step"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/models/timing.qnt --main no_inclusion --backend rust --invariant boundedCompletion --max-samples 10000 --max-steps 80 --seed 29 --verbosity 1 --step step",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m"
+  },
+  "input_hashes": {
+    "verification/models/timing.qnt": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "openjdk version \"11.0.21\" 2023-10-17\nOpenJDK Runtime Environment Homebrew (build 11.0.21+0)\nOpenJDK 64-Bit Server VM Homebrew (build 11.0.21+0, mixed mode)"
+  },
+  "configuration": {
+    "main": "no_inclusion",
+    "step": "step",
+    "samples": 10000,
+    "steps": 80,
+    "seed": 29
+  },
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 0.831063374876976,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/simulate-no_inclusion-boundedCompletion/raw.log",
+  "minimized": false,
+  "replayed": false
+}

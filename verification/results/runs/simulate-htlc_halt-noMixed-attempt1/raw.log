@@ -1,0 +1,489 @@
+An example execution:
+
+[State 0]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: false,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 1]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: false,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 2]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 3]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 4]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 5]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 6]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 7]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: true,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 8]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: true,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 1,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 9]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: true,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 2,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 10]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: true,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 2,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 11]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 2,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 12]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 3,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 13]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 4,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 14]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 4,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 15]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 5,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 16]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: false,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 5,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 17]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: true,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 5,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 18]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: true,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 6,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 19]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: true,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 6,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 20]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: true,
+      observed: true,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: false,
+      secretPublished: true,
+      time: 6,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 21]
+{
+  htlc_halt::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: false,
+      observed: true,
+      preparedEvidence: Set(1),
+      refundA: false,
+      refundB: true,
+      secretPublished: true,
+      time: 6,
+      upA: true,
+      upB: true
+    }
+}
+
+[violation] Found an issue (67ms at 3179 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

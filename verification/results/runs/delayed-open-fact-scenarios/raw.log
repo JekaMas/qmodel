@@ -1,0 +1,6 @@
+
+  open_test
+    ok openProofDeliveredAfterAbortTest passed 1 test(s)
+    ok historicalFinalizeAndResolveTest passed 1 test(s)
+
+  2 passing (47ms)

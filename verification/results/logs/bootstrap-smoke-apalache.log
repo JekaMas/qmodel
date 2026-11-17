@@ -1,0 +1,4 @@
+Downloading Apalache distribution 0.62.4... done.
+Unrecognized VM option 'G1PeriodicGCInterval=600000'
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.

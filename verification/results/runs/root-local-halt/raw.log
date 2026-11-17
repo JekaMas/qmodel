@@ -1,0 +1,337 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-17T22-31-34_2097168599168706812
+# APALACHE version: 0.62.4 | build: 7954daf                       I@22:31:34.301
+Starting checker server on port 8822...                           I@22:31:34.303
+The Apalache server is running on port 8822. Press Ctrl-C to stop.
+????. 17, 2026 10:31:35 PM com.google.protobuf.GeneratedMessage warnPre22Gencode
+WARNING: Vulnerable protobuf generated type in use: io.grpc.reflection.v1alpha.ServerReflectionRequest
+As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
+PASS #0: SanyParser                                               I@22:31:36.434
+[TLC] Running TLC model checker...
+
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m
+TLC2 Version 2026.11.17.183137
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 13 and seed -6219739081462666731 with 2 workers on 10 cores with 2048MB heap and 64MB offheap memory [pid: 79690] (Mac OS X 14.7 aarch64, JetBrains s.r.o. 25.0.4 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/gpact_halt.tla (file:/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/gpact_halt.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/Integers.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/Sequences.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/FiniteSets.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/TLC.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/Apalache.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Apalache.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/Variants.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Variants.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/_TLCTrace.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/Naturals.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/tlc-4404252427415032001/TLCExt.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Apalache
+Semantic processing of module Variants
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module gpact_halt
+Linting of module Apalache
+Linting of module Variants
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module gpact_halt
+Starting... (2026-11-17 22:31:37)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-17 22:31:37.
+Progress(17) at 2026-11-17 22:31:37: 5?285 states generated, 764 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 764 total distinct states at (2026-11-17 22:31:37)
+Error: Temporal property q_temporalProps was violated.
+
+Error: The following behavior constitutes a counter-example:
+
+State 1: <Initial predicate>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> FALSE,
+  lockB |-> FALSE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> TRUE,
+  decision |-> 0,
+  preparedEvidence |-> {},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 2: <gpact_halt_mechanisms_lockB line 56, col 3 to line 60, col 61 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> TRUE,
+  decision |-> 0,
+  preparedEvidence |-> {},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 3: <gpact_halt_mechanisms_lockA line 46, col 3 to line 50, col 61 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> TRUE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> TRUE,
+  decision |-> 0,
+  preparedEvidence |-> {},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 4: <gpact_halt_mechanisms_halt line 148, col 3 to line 150, col 60 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> TRUE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 0,
+  preparedEvidence |-> {},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 5: <gpact_halt_mechanisms_prepEvidence(1) line 156, col 3 to line 165, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> TRUE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 0,
+  preparedEvidence |-> {1},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 6: <gpact_halt_mechanisms_prepEvidence(0) line 156, col 3 to line 165, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> TRUE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 0,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 7: <gpact_halt_mechanisms_rootCommit line 171, col 3 to line 175, col 61 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> TRUE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 0 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 8: <gpact_halt_mechanisms_signal(0) line 191, col 3 to line 202, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> TRUE,
+  lockB |-> TRUE,
+  deliveredA |-> FALSE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 9: <gpact_halt_mechanisms_apply(0) line 208, col 3 to line 262, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 0),
+  committee |-> {} ]
+
+State 10: <gpact_halt_mechanisms_signal(1) line 191, col 3 to line 202, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 0,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 11: <gpact_halt_mechanisms_tick line 66, col 3 to line 71, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 1,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 12: <gpact_halt_mechanisms_tick line 66, col 3 to line 71, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 2,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 13: <gpact_halt_mechanisms_tick line 66, col 3 to line 71, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 3,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 14: <gpact_halt_mechanisms_tick line 66, col 3 to line 71, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 4,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 15: <gpact_halt_mechanisms_tick line 66, col 3 to line 71, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 5,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 16: <gpact_halt_mechanisms_tick line 66, col 3 to line 71, col 7 of module gpact_halt>
+gpact_halt_mechanisms_m = [ time |-> 6,
+  lockA |-> FALSE,
+  lockB |-> TRUE,
+  deliveredA |-> TRUE,
+  deliveredB |-> FALSE,
+  refundA |-> FALSE,
+  refundB |-> FALSE,
+  secretPublished |-> FALSE,
+  observed |-> FALSE,
+  upA |-> TRUE,
+  upB |-> FALSE,
+  decision |-> 2,
+  preparedEvidence |-> {0, 1},
+  known |-> (0 :> 2 @@ 1 :> 2),
+  committee |-> {} ]
+
+State 17: Stuttering
+Warning: The stuttering counterexample above may be caused by the absence of a behavior specification (SPECIFICATION). Only INIT and NEXT have been provided, so TLC permits infinite stuttering. To rule out such counterexamples, use SPECIFICATION Spec, with Spec asserting a suitable fairness constraint (compare Chapter 8, page 87ff of Specifying Systems at https://lamport.azurewebsites.net/tla/book.html).
+Finished checking temporal properties in 00s at 2026-11-17 22:31:37
+5285 states generated, 764 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 17.
+Finished in 00s at (2026-11-17 22:31:37)
+Trace exploration spec path: /var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-pSp6HQ/gpact_halt_TTrace_1794940297.tla
+
+[violation] Found an issue (573ms).
+error: found a counterexample

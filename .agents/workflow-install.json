@@ -1,0 +1,247 @@
+{
+  "version": 1,
+  "revision": "be0666c4f8456480a21d7e67b7b5b96d55ededb3",
+  "source": "https://github.com/JekaMas/agent-workflow.git",
+  "files": {
+    ".agents/workflow-project.json": {
+      "sha256": "08153e7c1abcb93f6484ea3db5b60f10b78d8b8453db85c2bae6740b6613bb1a",
+      "link": null
+    },
+    ".agents/skills/workflow-maintenance/SKILL.md": {
+      "sha256": "eb714754e432af8c6049781cdc2db6c4a57fb0a5b5813308723e7a9ee73f0422",
+      "link": null
+    },
+    ".agents/skills/workflow-maintenance/agents/openai.yaml": {
+      "sha256": "91f4507b9aa6c093689c0116593e1008f431da2392886cee9c564c084d414036",
+      "link": null
+    },
+    ".claude/commands/opsx/maintain.md": {
+      "sha256": "b8677734ccf280273327b4ad4dd367ed6686407424c3fc31a4730d6b556fa4a4",
+      "link": null
+    },
+    ".agents/skills/project-check/SKILL.md": {
+      "sha256": "c75b8171f2ca006e647bdd796cdf72046e552eba91f0b22faea419e68ac83a68",
+      "link": null
+    },
+    ".agents/skills/project-check/agents/openai.yaml": {
+      "sha256": "896eed1182feac6fcec1e1fe6e483b1d2384394c3dc73feadac2232a92f46655",
+      "link": null
+    },
+    ".claude/commands/opsx/check.md": {
+      "sha256": "27df2b2d0b9f85047992e30b7cbe04fa69285b6ccc0bda10df26c714912f1343",
+      "link": null
+    },
+    ".agents/skills/openspec-explore/SKILL.md": {
+      "sha256": "57d8c13d1a48e436599bc2e07126b7c582fd055c69d91a2d0cf684e960617d5b",
+      "link": null
+    },
+    ".agents/skills/openspec-explore/agents/openai.yaml": {
+      "sha256": "b72021f0015321ba72da2d1f8f1179dc1e5e0b1c90d5907422fafca1862683ba",
+      "link": null
+    },
+    ".claude/commands/opsx/explore.md": {
+      "sha256": "e6e8c982c0e3c6ca818ed698608911a462e89a15e226cf95462848230a5a7c9b",
+      "link": null
+    },
+    ".agents/skills/openspec-new-change/SKILL.md": {
+      "sha256": "17f24c3e90d178578e73b85e7d8a43988f45e968cd694174b09f7d54687d0e5e",
+      "link": null
+    },
+    ".agents/skills/openspec-new-change/agents/openai.yaml": {
+      "sha256": "8dd05b55924afe8b0beda48c7b80c08b8a44f140059a03f5e735c65ec9c5a203",
+      "link": null
+    },
+    ".claude/commands/opsx/new.md": {
+      "sha256": "bb4c404638299a6eb2a036fb0de75151cf5b32b68682a2555dc239ac75332d09",
+      "link": null
+    },
+    ".agents/skills/openspec-continue-change/SKILL.md": {
+      "sha256": "94c4ca13b132306f680cb83e84e6c622646fc5d1bae5bf804ec4cbceb8188dec",
+      "link": null
+    },
+    ".agents/skills/openspec-continue-change/agents/openai.yaml": {
+      "sha256": "00d9f394ea87b0ddd7be231708adfc9fb506fe37917e4833fecf2bd49c4c8937",
+      "link": null
+    },
+    ".claude/commands/opsx/continue.md": {
+      "sha256": "f9895138cc7720f74ced06f152bbd68ebbe64354f95ff8891f00894f0d28feca",
+      "link": null
+    },
+    ".agents/skills/openspec-ff-change/SKILL.md": {
+      "sha256": "510e2bc3ab87f0ba0bd15afe1a24431c41fd318c82c4e8759352488a7961cc8d",
+      "link": null
+    },
+    ".agents/skills/openspec-ff-change/agents/openai.yaml": {
+      "sha256": "3402345d46791b25631fbffa5a0ceb86fd75dc5151bb3e7240821ae81a0e08fe",
+      "link": null
+    },
+    ".claude/commands/opsx/ff.md": {
+      "sha256": "3e4430c7bc638f1e16eba6da9b39cd87e92627a64e8e42672e22d185594b245b",
+      "link": null
+    },
+    ".agents/skills/openspec-propose/SKILL.md": {
+      "sha256": "75132e4e2648221781fa0fb6a319efd278e10186bacfaca8f0d5b9bbcc12bbc1",
+      "link": null
+    },
+    ".agents/skills/openspec-propose/agents/openai.yaml": {
+      "sha256": "c2cb98e9ab3b366314775d59956f8974d9a8fdc0fff0db08fb1e2b01108e4286",
+      "link": null
+    },
+    ".claude/commands/opsx/propose.md": {
+      "sha256": "15df4f3d891fa89961f590bc0a867976f180e8d257a7f9f031c5b038be8a6f98",
+      "link": null
+    },
+    ".agents/skills/openspec-update-change/SKILL.md": {
+      "sha256": "809e16ce0c790f2f01e22ef2a3d298b5b94d87ef1480e8340f3c037740f99017",
+      "link": null
+    },
+    ".agents/skills/openspec-update-change/agents/openai.yaml": {
+      "sha256": "cd62108091f359c5431ed72162998083869c9ba1a0cdafff7faa8da380b27c2f",
+      "link": null
+    },
+    ".claude/commands/opsx/update.md": {
+      "sha256": "2713f15d53cb542cc18f2029f39c44ce5ff68c39066a1783101a44223052c7f5",
+      "link": null
+    },
+    ".agents/skills/openspec-apply-change/SKILL.md": {
+      "sha256": "84b2e85f8a75329490c22e6030673400c3e20b03deb62743b17fdb70acfddb5b",
+      "link": null
+    },
+    ".agents/skills/openspec-apply-change/agents/openai.yaml": {
+      "sha256": "50ad44a7155254d4cd3d8a3e380a79d889e59381957b211e45f5c98deb1b4ca3",
+      "link": null
+    },
+    ".claude/commands/opsx/apply.md": {
+      "sha256": "e0917a89c3ea19cc836372b670588c827b3d8681b5c7ec3ad602722d5efc8a37",
+      "link": null
+    },
+    ".agents/skills/openspec-verify-change/SKILL.md": {
+      "sha256": "0e7d370684ffffed398c0c603f6e32efc4410b9db27a7bf3f9188b23275b667e",
+      "link": null
+    },
+    ".agents/skills/openspec-verify-change/agents/openai.yaml": {
+      "sha256": "10a849d8c218f93692290138fa36fd568f133ea88432573755ed7ed953c9d558",
+      "link": null
+    },
+    ".claude/commands/opsx/verify.md": {
+      "sha256": "97035a0512c817d83558d1e30924e3e8a62dcc6fe66c851f5b763ad1b00aea54",
+      "link": null
+    },
+    ".agents/skills/openspec-sync-specs/SKILL.md": {
+      "sha256": "d8427cf3eaff2b4eda98e23fa5e37490b158ca6d3daeac497e685c48f21b3cae",
+      "link": null
+    },
+    ".agents/skills/openspec-sync-specs/agents/openai.yaml": {
+      "sha256": "6f5734f0b427598d96d9ffbc8c299f79ea7bd751e358c0cda83a017abbef4885",
+      "link": null
+    },
+    ".claude/commands/opsx/sync.md": {
+      "sha256": "e83dfec442fc0f20870287e9f8d8a60e315eb80980ffe48a6d92460bc5a0f4bf",
+      "link": null
+    },
+    ".agents/skills/openspec-archive-change/SKILL.md": {
+      "sha256": "f71a215879f10680b510f934a4d4a185fcc470be29229fab1c4a70a9cf2b6ff8",
+      "link": null
+    },
+    ".agents/skills/openspec-archive-change/agents/openai.yaml": {
+      "sha256": "9d500cd34e9ad7d41fef9242b594b1a5cad8d006a52c66dff3c7b879eaf2b427",
+      "link": null
+    },
+    ".claude/commands/opsx/archive.md": {
+      "sha256": "9ac0dbd511c5253918a423e775575365e5cbc60e2ddaa721a5dd2d23713ba7f4",
+      "link": null
+    },
+    ".agents/skills/openspec-bulk-archive-change/SKILL.md": {
+      "sha256": "c12407d32320c850ecfeb9631ae1a38e4392d822248ea69f2c0eccbbeb67085a",
+      "link": null
+    },
+    ".agents/skills/openspec-bulk-archive-change/agents/openai.yaml": {
+      "sha256": "b8149598514ee3930d3117a5f706c34064184bf86fe5387cc31447137acaddf1",
+      "link": null
+    },
+    ".claude/commands/opsx/bulk-archive.md": {
+      "sha256": "a1904bc109490189809d63d56b35046e5de1952fd5b2915ec0087a5d1ea11b01",
+      "link": null
+    },
+    ".agents/skills/openspec-onboard/SKILL.md": {
+      "sha256": "5b6f02fb8a6b30e4e526d08e786ba6f3775f9491e5d9e31343dd4bc23fed3d44",
+      "link": null
+    },
+    ".agents/skills/openspec-onboard/agents/openai.yaml": {
+      "sha256": "374003041932d69301a487a762cf9d8a2c63137dbb28d2eed6c025449d08952f",
+      "link": null
+    },
+    ".claude/commands/opsx/onboard.md": {
+      "sha256": "8d8cff007b33a0d5bd735ce7c0f7b25bb95da0c320312cb3bac8a6276e9983c9",
+      "link": null
+    },
+    ".agents/skill-policy.json": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "link": null
+    },
+    ".agents/publication-policy.json": {
+      "sha256": "a3f0552a41d2db90ecc0061be2973d23e65d8d377fdbf9f98fdb411c3b2892a8",
+      "link": null
+    },
+    ".agents/skills/hypothesis-debugging/SKILL.md": {
+      "sha256": "73b1881e3b802dfd38f94c42add33a8c77e6be47bc04fb22b29734ba329c2bca",
+      "link": null
+    },
+    ".agents/skills/hypothesis-debugging/agents/openai.yaml": {
+      "sha256": "23eb230eacf145498b55e8567a2157d6f8021fec25e0811d26e9220b525a1a1a",
+      "link": null
+    },
+    ".claude/commands/hypothesis-debugging.md": {
+      "sha256": "a3207971c90a5feb2841c51bc7ef998ac0202cd62c04c43893f462aea8649898",
+      "link": null
+    },
+    ".agents/skills/conflict-resolution/SKILL.md": {
+      "sha256": "d779728e4e89009325c8403aecd56addff0e35196112268fcc3a5f01115851af",
+      "link": null
+    },
+    ".agents/skills/conflict-resolution/agents/openai.yaml": {
+      "sha256": "141c72b097f2bc367df482b5ec712430b477bac73db0a437108a44b915d87084",
+      "link": null
+    },
+    ".claude/commands/conflict-resolution.md": {
+      "sha256": "b3ca6e7e31f6fe82bf86f481db811c9f7d4e651890f6c6aeab2546d9cb8c8454",
+      "link": null
+    },
+    ".agents/skills/event-sequence-pbt/SKILL.md": {
+      "sha256": "c82454f1e1a5d6b46e69a26e96d1eb227e72c5a8cedb6457c9abf11a82a07bcc",
+      "link": null
+    },
+    ".agents/skills/event-sequence-pbt/agents/openai.yaml": {
+      "sha256": "0657e987904889567d33620b10a2f38bf8a6eae204b8b2c485f114211fe510ec",
+      "link": null
+    },
+    ".claude/commands/event-sequence-pbt.md": {
+      "sha256": "caf24f753ed82fa531a7a54ab80322d78e84acb0a21e3f4525135a20c0e7139d",
+      "link": null
+    },
+    ".agents/skills/sdd-rust/SKILL.md": {
+      "sha256": "88649235463a66000ff335df5f00a5274aa449332e334be6d370abdbd024ad2c",
+      "link": null
+    },
+    ".agents/skills/sdd-rust/agents/openai.yaml": {
+      "sha256": "b62c2fb4ebb9e0e42145ea69fa1b76500e6133be86fd5d4d1a11656636e5af33",
+      "link": null
+    },
+    ".claude/commands/sdd-rust.md": {
+      "sha256": "b5f581eca4ac2e899ca66b27d931087b6275269dac637572801357a362e886d0",
+      "link": null
+    },
+    "openspec/config.yaml": {
+      "sha256": "22c8b7e3a2f60edef5f50d2cd3269acaf09745ca7ab1d3af57248d743bc195f8",
+      "link": null
+    },
+    "docs/SDD_WORKFLOW.md": {
+      "sha256": "b9972ce8671a6fa2f2711cf0d48641c4539594b40783868eaeb3d4e725c7d13c",
+      "link": null
+    }
+  },
+  "blocks": {
+    "AGENTS.md": "8e23265effe050d5c500369104164d7e82bbc748771045907ca53d996bd07d2c",
+    "CLAUDE.md": "8e23265effe050d5c500369104164d7e82bbc748771045907ca53d996bd07d2c"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "errors": [],
+  "routes": [
+    {
+      "operation": "maintain",
+      "skill": "workflow-maintenance",
+      "skill_bytes": 983,
+      "command_bytes": 253
+    },
+    {
+      "operation": "check",
+      "skill": "project-check",
+      "skill_bytes": 2116,
+      "command_bytes": 248
+    },
+    {
+      "operation": "explore",
+      "skill": "openspec-explore",
+      "skill_bytes": 2049,
+      "command_bytes": 217
+    },
+    {
+      "operation": "new",
+      "skill": "openspec-new-change",
+      "skill_bytes": 744,
+      "command_bytes": 197
+    },
+    {
+      "operation": "continue",
+      "skill": "openspec-continue-change",
+      "skill_bytes": 1394,
+      "command_bytes": 217
+    },
+    {
+      "operation": "ff",
+      "skill": "openspec-ff-change",
+      "skill_bytes": 1413,
+      "command_bytes": 219
+    },
+    {
+      "operation": "propose",
+      "skill": "openspec-propose",
+      "skill_bytes": 1391,
+      "command_bytes": 211
+    },
+    {
+      "operation": "update",
+      "skill": "openspec-update-change",
+      "skill_bytes": 1574,
+      "command_bytes": 208
+    },
+    {
+      "operation": "apply",
+      "skill": "openspec-apply-change",
+      "skill_bytes": 6581,
+      "command_bytes": 214
+    },
+    {
+      "operation": "verify",
+      "skill": "openspec-verify-change",
+      "skill_bytes": 3238,
+      "command_bytes": 216
+    },
+    {
+      "operation": "sync",
+      "skill": "openspec-sync-specs",
+      "skill_bytes": 2634,
+      "command_bytes": 214
+    },
+    {
+      "operation": "archive",
+      "skill": "openspec-archive-change",
+      "skill_bytes": 1499,
+      "command_bytes": 212
+    },
+    {
+      "operation": "bulk-archive",
+      "skill": "openspec-bulk-archive-change",
+      "skill_bytes": 1510,
+      "command_bytes": 225
+    },
+    {
+      "operation": "onboard",
+      "skill": "openspec-onboard",
+      "skill_bytes": 786,
+      "command_bytes": 210
+    }
+  ],
+  "claim": "all rendered routes, config equality, reference availability and UTF-8 sizes; not UI dispatch or agent quality"
+}

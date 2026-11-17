@@ -1,0 +1,5 @@
+
+  shared_test
+    ok atomicExecutionTest passed 1 test(s)
+
+  1 passing (6ms)

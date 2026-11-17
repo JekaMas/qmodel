@@ -1,0 +1,10 @@
+
+  membership_test
+    ok pendingExitTest passed 1 test(s)
+    ok oldCredentialTest passed 1 test(s)
+    ok currentCredentialTest passed 1 test(s)
+    ok replayAfterPruningTest passed 1 test(s)
+    ok transportCannotAdmitTest passed 1 test(s)
+    ok duplicateInstructionTest passed 1 test(s)
+
+  6 passing (44ms)

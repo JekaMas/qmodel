@@ -1,0 +1,62 @@
+{
+  "id": "simulate-shared_execution-safe",
+  "started_utc": "2026-11-17T16:16:38.195232+00:00",
+  "claim": "safe",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/models/variants.qnt",
+    "--main",
+    "shared_execution",
+    "--backend",
+    "rust",
+    "--invariant",
+    "safe",
+    "--max-samples",
+    "10000",
+    "--max-steps",
+    "80",
+    "--seed",
+    "29",
+    "--verbosity",
+    "1",
+    "--step",
+    "step"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/models/variants.qnt --main shared_execution --backend rust --invariant safe --max-samples 10000 --max-steps 80 --seed 29 --verbosity 1 --step step",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m"
+  },
+  "input_hashes": {
+    "verification/models/variants.qnt": "427d41d247ce71ae2dc553b7ec48351425a88ba5a7d81878dc0353ba6defc11a",
+    "verification/models/dvp.qnt": "6838acc380e6473806ae0d3d5bc0cdb81406769b20fbbd350ee7b532b5af7545"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "openjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "configuration": {
+    "main": "shared_execution",
+    "step": "step",
+    "samples": 10000,
+    "steps": 80,
+    "seed": 29
+  },
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 0,
+  "wall_seconds": 29.13316037505865,
+  "outcome": "sampled_no_counterexample",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/simulate-shared_execution-safe/raw.log",
+  "minimized": false,
+  "replayed": false
+}

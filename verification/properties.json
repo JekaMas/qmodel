@@ -1,0 +1,1357 @@
+[
+  {
+    "id": "S01",
+    "requirement": "Types/domains are valid; balances are nonnegative. Separate security units from cash units.",
+    "predicate": "forall ledger,account: balance >= 0; security and cash accounting domains disjoint",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S02",
+    "requirement": "Each trade has at most one terminal decision, which is permanent. Check transition/history monotonicity, not merely that an enum has one value at a time.",
+    "predicate": "[] forall t: terminal(t) => next(decision(t)) = decision(t)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "mutant-reopen",
+      "mutant-pruned_tombstone"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S03",
+    "requirement": "Only properly authorized intent can reserve assets. Descriptor identity/terms are immutable; altered reuse is rejected.",
+    "predicate": "[] reserve(t) => sellerSigned(desc(t)) /\\ buyerSigned(desc(t)) /\\ immutableIdentity(t)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "sign",
+      "requestOpen",
+      "requestCash"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "scenario-bindings_test",
+      "scenario-policy_test"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S04",
+    "requirement": "Per-asset conservation and reservation exclusivity. Concurrent trades cannot reserve/spend the same capacity twice. Explain accounting for native holds: reserved value is unavailable, not an extra copy of holdings.",
+    "predicate": "[] forall asset: sum(owners)+escrow = initialSupply; sum(activeHolds(owner)) <= ownership(owner)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "scenario-contention_test",
+      "final-variant-live_escrow",
+      "three-domain-installation-final"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S05",
+    "requirement": "Each actual transfer/refund and downstream booking occurs at most once for its intended operation and exact recipient/quantity. Check economic effects, not just a consumed flag.",
+    "predicate": "[] forall t,leg: deliveryEffects(t,leg)<=1 /\\ refundEffects(t,leg)<=1 /\\ bookingEffects(t,leg)<=1; exactTerms",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "mutant-replay",
+      "abort-authoritative-records"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S06",
+    "requirement": "Every value-moving application has valid matching authorization/evidence; local work-state, acknowledgements or unverified messages cannot authorize settlement.",
+    "predicate": "[] apply(t,leg) => matchingLocalAuthorization /\\ authenticatedOutcome(t)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "commit",
+      "applyA",
+      "applyB",
+      "refund",
+      "captureAbortRecord",
+      "recordAbort"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "mutant-relayer_assertion",
+      "abort-authoritative-records"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S07",
+    "requirement": "A proof-eligible obligation persists under admitted asset/version semantics until its permitted terminal disposition.",
+    "predicate": "[] prepared(t,leg) => obligationPersistsUntilAuthenticatedDisposition(t,leg)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "mutant-expiry",
+      "tlc-issuer_destruction-backed"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S08",
+    "requirement": "COMMIT on A implies the specified security transfer happened atomically and the matching cash obligation is still backed and bound to the recipient, or has already been delivered. Do not define backing as a Boolean derived solely from COMMIT.",
+    "predicate": "[] decision(t)=COMMIT => securityDeliveredExactly(t) /\\ (cashBackedExactly(t) \\/ cashDeliveredExactly(t))",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "final-record-mapping",
+      "mutant-expiry",
+      "mutant-non_atomic"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S09",
+    "requirement": "No security-delivered/cash-refunded or cash-delivered/security-refunded outcome. Include absence of any supported path to the incompatible future outcome.",
+    "predicate": "[] forall t: ~(deliveredA(t) /\\ refundedB(t)) /\\ ~(deliveredB(t) /\\ refundedA(t)); closure under Next",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "mutant-stale_refund",
+      "actual-b-clock-expiry"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S10",
+    "requirement": "Proof binding rejects substitutions of trade, nonce, leg/phase, chain/genesis, decision domain, asset/contract, amount, recipient, checkpoint and program/configuration version.",
+    "predicate": "[] acceptedProof(p,t) => authenticFinalizedProvenance(p) /\\ everyPublicBindingMatches(p,t) /\\ admittedHistoricalAnchor(p)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "inject",
+      "authFact",
+      "requestOpen"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "mutant-binding",
+      "scenario-bindings_test"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S11",
+    "requirement": "Deadline guards and terminal tombstones prevent reopening or changing outcomes, including missing OPEN and delayed prepare cases.",
+    "predicate": "[] commit(t)=>heightA<D; abort(t)=>heightA>=D; terminalIdentityNeverReopens(t)",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "scenario-open_test",
+      "delayed-open-fact-scenarios",
+      "membership-lifecycle-tests"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S12",
+    "requirement": "Crash recovery and stale adapter snapshots cannot contradict authoritative ledger decisions or duplicate financial effects.",
+    "predicate": "[] restart/restore/retry => authoritativeDecisionUnchanged /\\ effectsNotDuplicated",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "final-record-recovery",
+      "scenario-recovery_test",
+      "network-loss-recovery"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S13",
+    "requirement": "Supported rotation, upgrade and member-exit operations preserve pending obligations and the ability to verify/apply their historical outcomes.",
+    "predicate": "[] rotate/upgrade/exit => pendingObligationsAndHistoricalVerificationPreserved",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "membership-retirement-final",
+      "membership-lifecycle-tests",
+      "trust-v2-retired_version"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S14",
+    "requirement": "Required eligibility is enforced at preparation. Post-prepare interventions obey an explicitly modeled policy; do not assume away mandatory controls and call the result compliant.",
+    "predicate": "[] reserve(t)=>eligible(t); [] interventionsFollowSelectedPolicy",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "openA",
+      "prepareB",
+      "revokeLeg",
+      "freeze",
+      "unfreeze"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "scenario-policy_test",
+      "preparation-freeze-policy",
+      "scenario-shared_policy_test",
+      "tlc-durable-safe",
+      "tlc-mandatory_freeze-progress",
+      "tlc-arbitrary_seizure-backing"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Preparation guards tested for independent local eligibility; supported durable/freeze/seizure policies checked separately. The S14 state predicate alone is not a historical eligibility theorem or regulatory-compliance proof.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S15",
+    "requirement": "Reports distinguish accepted, prepared, committed, each locally applied leg and reconciliation. FULLY_APPLIED requires authenticated evidence for both applications. Stale observations are labeled.",
+    "predicate": "[] FULLY_APPLIED(t) => authenticatedAppliedA(t) /\\ authenticatedAppliedB(t); staleViewsLabeled",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "observe",
+      "reconcile",
+      "captureAbortRecord",
+      "recordAbort",
+      "progressReport"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "report-evidence-scenario",
+      "abort-authoritative-records"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "S16",
+    "requirement": "A transport-key compromise does not grant custody, contract-upgrade, validator-registration or decryption authority.",
+    "predicate": "[] transportCompromised => custody/upgrade/validator/decryptionAuthorityUnchanged",
+    "classification": "safety",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD"
+    ],
+    "actions": [
+      "see action/property mapping in results manifest"
+    ],
+    "scenario": "reference plus relevant focused variants",
+    "checker": "Quint simulation, Apalache bounded, TLC finite",
+    "expected": "hold under named assumptions",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "membership-lifecycle-tests",
+      "negative-disclosure_key_compromise"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "verification/models/dvp.qnt"
+  },
+  {
+    "id": "L01",
+    "requirement": "For an initiated trade with a registered decision or an actual hold, sufficient retained authorization/evidence and the stated recovery/fairness assumptions eventually produce COMMIT or ABORT.",
+    "predicate": "F G recovery /\\ perTradeFairness => [] (initiated(t) ~> terminal(t))",
+    "classification": "conditional liveness",
+    "assumptions": [
+      "A-RECOVERY",
+      "A-FAIR",
+      "A-DATA",
+      "A-SUBMIT"
+    ],
+    "actions": [
+      "tick",
+      "abort",
+      "capture",
+      "prove",
+      "deliver",
+      "apply",
+      "reconcile"
+    ],
+    "scenario": "per-trade progress including late actual holds",
+    "checker": "TLC temporal",
+    "expected": "hold conditionally, no guaranteed COMMIT before D",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "three-domain-progress"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "L02",
+    "requirement": "COMMIT eventually leads to both local applications when required chains, proof data, workers and authorized submission paths recover and remain able to progress.",
+    "predicate": "F G recovery /\\ perTradeFairness /\\ historicalEvidenceAvailable /\\ authorizedSubmitterAvailable => [] (commit(t) ~> appliedA(t) /\\ appliedB(t))",
+    "classification": "conditional liveness",
+    "assumptions": [
+      "A-RECOVERY",
+      "A-FAIR",
+      "A-DATA",
+      "A-SUBMIT"
+    ],
+    "actions": [
+      "tick",
+      "abort",
+      "capture",
+      "prove",
+      "deliver",
+      "apply",
+      "reconcile"
+    ],
+    "scenario": "per-trade progress including late actual holds",
+    "checker": "TLC temporal",
+    "expected": "hold conditionally, no guaranteed COMMIT before D",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "private-data-progress"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "L03",
+    "requirement": "ABORT eventually resolves every actual remaining reservation, including a late preparation that did not yet know ABORT. Do not require nonexistent holds to be refunded.",
+    "predicate": "F G recovery /\\ perTradeFairness => [] (abort(t) /\\ actualHold(t,leg) ~> resolved(t,leg))",
+    "classification": "conditional liveness",
+    "assumptions": [
+      "A-RECOVERY",
+      "A-FAIR",
+      "A-DATA",
+      "A-SUBMIT"
+    ],
+    "actions": [
+      "tick",
+      "abort",
+      "capture",
+      "prove",
+      "deliver",
+      "apply",
+      "reconcile"
+    ],
+    "scenario": "per-trade progress including late actual holds",
+    "checker": "TLC temporal",
+    "expected": "hold conditionally, no guaranteed COMMIT before D",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-progress",
+      "final-record-two",
+      "late-hold-relative-bound",
+      "three-domain-progress"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "L04",
+    "requirement": "Decided/applied trades eventually have reconciled local projections and idempotent financial records when the relevant consumers recover.",
+    "predicate": "F G consumersRecover /\\ perTradeFairness => [] (decidedOrApplied(t) ~> evidenceJustifiedProjectionAndRecords(t))",
+    "classification": "conditional liveness",
+    "assumptions": [
+      "A-RECOVERY",
+      "A-FAIR",
+      "A-DATA",
+      "A-SUBMIT"
+    ],
+    "actions": [
+      "tick",
+      "abort",
+      "capture",
+      "prove",
+      "deliver",
+      "apply",
+      "reconcile"
+    ],
+    "scenario": "per-trade progress including late actual holds",
+    "checker": "TLC temporal",
+    "expected": "hold conditionally, no guaranteed COMMIT before D",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "report-evidence-scenario"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "C-Decision",
+    "requirement": "Irreversible backed counter-obligations",
+    "predicate": "[] terminalPermanent /\\ (commit=>backedOrDeliveredBoth)",
+    "classification": "safety",
+    "assumptions": [],
+    "actions": [
+      "variant-specific"
+    ],
+    "scenario": "C-Decision",
+    "checker": "TLC",
+    "expected": "hold",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "final-record-mapping",
+      "contract-b_hosted",
+      "contract-d_shared"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "C-Local",
+    "requirement": "Both effects are applied",
+    "predicate": "commit ~> appliedBoth",
+    "classification": "conditional liveness",
+    "assumptions": [],
+    "actions": [
+      "variant-specific"
+    ],
+    "scenario": "C-Local",
+    "checker": "TLC",
+    "expected": "conditional",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-progress",
+      "private-data-progress"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "C-Records",
+    "requirement": "Report is evidence justified",
+    "predicate": "[] reportComplete => authenticatedBoth",
+    "classification": "operational integration",
+    "assumptions": [],
+    "actions": [
+      "variant-specific"
+    ],
+    "scenario": "C-Records",
+    "checker": "TLC",
+    "expected": "hold",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "abort-authoritative-records"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "O-Immediate",
+    "requirement": "Both legs usable at every instant together",
+    "predicate": "[] usableA=usableB",
+    "classification": "safety",
+    "assumptions": [],
+    "actions": [
+      "variant-specific"
+    ],
+    "scenario": "O-Immediate",
+    "checker": "TLC",
+    "expected": "expected counterexample",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "overclaim-immediate"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "O-Permanent",
+    "requirement": "Progress despite permanent chain failure",
+    "predicate": "[] initiated ~> appliedBoth",
+    "classification": "conditional liveness",
+    "assumptions": [],
+    "actions": [
+      "variant-specific"
+    ],
+    "scenario": "O-Permanent",
+    "checker": "TLC",
+    "expected": "expected counterexample",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "overclaim-permanent-halt"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "P-Access",
+    "requirement": "Protected fields are released only by authorized payload construction",
+    "predicate": "[] disclosure=>authorized(observer,field,scope)",
+    "classification": "scoped information-flow",
+    "assumptions": [
+      "A-OPAQUE",
+      "A-POLICY"
+    ],
+    "actions": [
+      "request",
+      "constructPayload",
+      "log",
+      "audit",
+      "tick"
+    ],
+    "scenario": "success, retry, upgrade and audit in coupled worlds",
+    "checker": "Quint paired model + TLC",
+    "expected": "hold for selected policy; leak mutants fail",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "tlc-privacy_safe-PAccess",
+      "tlc-wrong_scope-PAccess",
+      "linked-privacy-witness_log"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "P-Binding",
+    "requirement": "Plaintext/recipient note matches exact transition",
+    "predicate": "[] disclose=>openingMatchesCommitment /\\ note.trade=effect.trade",
+    "classification": "scoped information-flow",
+    "assumptions": [
+      "A-OPAQUE",
+      "A-POLICY"
+    ],
+    "actions": [
+      "request",
+      "constructPayload",
+      "log",
+      "audit",
+      "tick"
+    ],
+    "scenario": "success, retry, upgrade and audit in coupled worlds",
+    "checker": "Quint paired model + TLC",
+    "expected": "hold for selected policy; leak mutants fail",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "tlc-privacy_safe-PBinding",
+      "tlc-disclosure_substitution-PBinding"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "P-Availability",
+    "requirement": "Claimed private usability requires exact note and keys",
+    "predicate": "[] usable=>delivered /\\ exactNote /\\ keyAvailable",
+    "classification": "scoped information-flow",
+    "assumptions": [
+      "A-OPAQUE",
+      "A-POLICY"
+    ],
+    "actions": [
+      "request",
+      "constructPayload",
+      "log",
+      "audit",
+      "tick"
+    ],
+    "scenario": "success, retry, upgrade and audit in coupled worlds",
+    "checker": "Quint paired model + TLC",
+    "expected": "hold for selected policy; leak mutants fail",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "private-data-progress",
+      "private-permanent-key-loss",
+      "negative-wrong_note"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "P-Scope",
+    "requirement": "Completeness is explicit and evidence bounded",
+    "predicate": "[] complete=>seenAllAuthorizedRange /\\ highWaterMarkAuthenticated",
+    "classification": "scoped information-flow",
+    "assumptions": [
+      "A-OPAQUE",
+      "A-POLICY"
+    ],
+    "actions": [
+      "request",
+      "constructPayload",
+      "log",
+      "audit",
+      "tick"
+    ],
+    "scenario": "success, retry, upgrade and audit in coupled worlds",
+    "checker": "Quint paired model + TLC",
+    "expected": "hold for selected policy; leak mutants fail",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "audit-audit_safe",
+      "audit-omitted_record"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "P-NI",
+    "requirement": "Paired traces preserve unrelated-position secrecy",
+    "predicate": "publicRelated(w0,w1) /\\ coupledPublicSchedule => observations(w0)=observations(w1)",
+    "classification": "scoped information-flow",
+    "assumptions": [
+      "A-OPAQUE",
+      "A-POLICY"
+    ],
+    "actions": [
+      "request",
+      "constructPayload",
+      "log",
+      "audit",
+      "tick"
+    ],
+    "scenario": "success, retry, upgrade and audit in coupled worlds",
+    "checker": "Quint paired model + TLC",
+    "expected": "hold for selected policy; leak mutants fail",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "linked-privacy-privacy_safe",
+      "linked-privacy-witness_log",
+      "tlc-unsalted-PNI"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Two hidden inputs 4/7, same authorized public trade/fundability, coupled public schedule, stable public trade link, opaque-name correspondence and six visible phases; not general nondeterministic noninterference.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "P-Timing",
+    "requirement": "Control-flow metadata respects disclosure policy",
+    "predicate": "paired observations including error/time/length equal",
+    "classification": "scoped information-flow",
+    "assumptions": [
+      "A-OPAQUE",
+      "A-POLICY"
+    ],
+    "actions": [
+      "request",
+      "constructPayload",
+      "log",
+      "audit",
+      "tick"
+    ],
+    "scenario": "success, retry, upgrade and audit in coupled worlds",
+    "checker": "Quint paired model + TLC",
+    "expected": "hold for selected policy; leak mutants fail",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "linked-privacy-timing_leak",
+      "actual-queue-time-privacy"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "T-Async",
+    "requirement": "Safety under arbitrary finite delays and outages",
+    "predicate": "see timing-assumptions.md before implementation",
+    "classification": "safety",
+    "assumptions": [
+      "regime-specific"
+    ],
+    "actions": [
+      "tick",
+      "enqueue",
+      "service",
+      "include",
+      "finalize"
+    ],
+    "scenario": "boundary, insufficient slack, skew, outage, queue contention",
+    "checker": "TLC finite timed abstraction + parameter sweeps",
+    "expected": "scoped positive and negative results",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-safety",
+      "combined-faults-17",
+      "combined-faults-43",
+      "final-combined-faults-43"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "T-Eventual",
+    "requirement": "Progress under eventual stable recovery and per-action fairness",
+    "predicate": "see timing-assumptions.md before implementation",
+    "classification": "conditional liveness",
+    "assumptions": [
+      "regime-specific"
+    ],
+    "actions": [
+      "tick",
+      "enqueue",
+      "service",
+      "include",
+      "finalize"
+    ],
+    "scenario": "boundary, insufficient slack, skew, outage, queue contention",
+    "checker": "TLC finite timed abstraction + parameter sweeps",
+    "expected": "scoped positive and negative results",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-record-recovery",
+      "post-stabilization"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "T-Bounded",
+    "requirement": "Conditional bounds after stabilization, with queue and inclusion bounds",
+    "predicate": "see timing-assumptions.md before implementation",
+    "classification": "safety",
+    "assumptions": [
+      "regime-specific"
+    ],
+    "actions": [
+      "tick",
+      "enqueue",
+      "service",
+      "include",
+      "finalize"
+    ],
+    "scenario": "boundary, insufficient slack, skew, outage, queue contention",
+    "checker": "TLC finite timed abstraction + parameter sweeps",
+    "expected": "scoped positive and negative results",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "tlc-bounded-safe",
+      "exact-deadline-margin",
+      "one-less-deadline-margin",
+      "late-hold-relative-bound"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "T-Capacity",
+    "requirement": "Reservation/admission and hostile work are capacity controlled",
+    "predicate": "see timing-assumptions.md before implementation",
+    "classification": "safety",
+    "assumptions": [
+      "regime-specific"
+    ],
+    "actions": [
+      "tick",
+      "enqueue",
+      "service",
+      "include",
+      "finalize"
+    ],
+    "scenario": "boundary, insufficient slack, skew, outage, queue contention",
+    "checker": "TLC finite timed abstraction + parameter sweeps",
+    "expected": "scoped positive and negative results",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "queue-capacity-progress",
+      "tlc-starvation-boundedCompletion",
+      "tlc-unlimited-exposure"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "R-Core",
+    "requirement": "Successful settlement, actual reservations, application lag, abort/orphan resolution and recovery are reachable.",
+    "predicate": "Explicit finite runs reach the named .expect predicates in dvp_test.",
+    "classification": "reachability/non-vacuity",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Successful settlement, actual reservations, application lag, abort/orphan resolution and recovery are reachable.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "scenario-dvp_test",
+      "scenario-recovery_test",
+      "network-loss-recovery"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "R-Policy",
+    "requirement": "Admission and independent eligibility/freeze rejection paths are exercised.",
+    "predicate": "membership_lifecycle tests and policy tests reach admitted/pending/retired states and reject frozen preparation.",
+    "classification": "reachability/non-vacuity",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Admission and independent eligibility/freeze rejection paths are exercised.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "membership-lifecycle-tests",
+      "preparation-freeze-policy"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "R-Audit",
+    "requirement": "Authorized audit and real omission detection are reachable.",
+    "predicate": "audit_safe final report is complete for received authenticated high-water; omitted_record violates scopeCompleteness.",
+    "classification": "reachability/non-vacuity",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Authorized audit and real omission detection are reachable.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "audit-audit_safe",
+      "audit-omitted_record"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-AOpen",
+    "requirement": "Authenticated OPEN retains safe delayed historical preparation and resolution.",
+    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Authenticated OPEN retains safe delayed historical preparation and resolution.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-variant-live_open",
+      "delayed-open-fact-scenarios"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-B",
+    "requirement": "B-hosted decision uses local cash and authenticated A preparation.",
+    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "B-hosted decision uses local cash and authenticated A preparation.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-variant-live_b"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-D",
+    "requirement": "Separate D authenticates both preparations and both return paths.",
+    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Separate D authenticates both preparations and both return paths.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-variant-live_d",
+      "d-outage-return-paths"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-Escrow",
+    "requirement": "Escrow moves reserved ownership into the vault with no duplicate capacity.",
+    "predicate": "safe /\\ CDecision; fair => progress; witness reaches actual vault movement and final effects.",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Escrow moves reserved ownership into the vault with no duplicate capacity.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-variant-live_escrow",
+      "witness-escrow_path_test"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-Private",
+    "requirement": "Private ledger application and actual note/key usability remain distinct.",
+    "predicate": "safe /\\ CDecision; availability assumptions => delivered ~> usable",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Private ledger application and actual note/key usability remain distinct.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-variant-private_asset",
+      "private-data-progress",
+      "private-permanent-key-loss"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-Shared",
+    "requirement": "Co-resident opposite-direction transfers apply atomically on the shared control ledger.",
+    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Co-resident opposite-direction transfers apply atomically on the shared control ledger.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "final-variant-shared_execution",
+      "witness-shared_path_test"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "V-Three",
+    "requirement": "Three independent domains share capacity without unauthenticated remote application.",
+    "predicate": "safe; recovery/fairness => per-trade decision, application/refund and COMMIT reporting",
+    "classification": "operational integration",
+    "assumptions": [
+      "A-FINAL",
+      "A-EXEC",
+      "A-CRYPTO",
+      "A-HOLD",
+      "A-BOUNDS"
+    ],
+    "actions": [
+      "exact named actions in the recorded input closure"
+    ],
+    "scenario": "Three independent domains share capacity without unauthenticated remote application.",
+    "checker": "TLC finite or explicit Quint test; see executed_checks",
+    "expected": "named scoped observation",
+    "status": "executed-with-result",
+    "executed_checks": [
+      "three-domain-installation-final",
+      "three-domain-progress",
+      "three-independent-domains-witnesses"
+    ],
+    "execution_status": "executed-with-result",
+    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "quint_owner": "see executed check input closures"
+  },
+  {
+    "id": "EX-Crypto",
+    "requirement": "Actual circuits, guest programs, public-input encoding and prover/verifier composition.",
+    "predicate": "External implementation/institutional evidence required; not a Quint theorem.",
+    "classification": "external obligation",
+    "assumptions": [],
+    "actions": [
+      "see conformance-boundary.md"
+    ],
+    "scenario": "production implementation absent",
+    "checker": "external conformance/security/legal/measurement review",
+    "expected": "not established by this project",
+    "status": "external-obligation",
+    "execution_status": "external-obligation",
+    "executed_checks": [],
+    "verified_scope": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Execution",
+    "requirement": "Actual QBFT, EVM, Solidity, reentrancy, arithmetic and token/proxy semantics.",
+    "predicate": "External implementation/institutional evidence required; not a Quint theorem.",
+    "classification": "external obligation",
+    "assumptions": [],
+    "actions": [
+      "see conformance-boundary.md"
+    ],
+    "scenario": "production implementation absent",
+    "checker": "external conformance/security/legal/measurement review",
+    "expected": "not established by this project",
+    "status": "external-obligation",
+    "execution_status": "external-obligation",
+    "executed_checks": [],
+    "verified_scope": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Security",
+    "requirement": "Hardware, custody, keys, storage, networks and durable evidence implementation.",
+    "predicate": "External implementation/institutional evidence required; not a Quint theorem.",
+    "classification": "external obligation",
+    "assumptions": [],
+    "actions": [
+      "see conformance-boundary.md"
+    ],
+    "scenario": "production implementation absent",
+    "checker": "external conformance/security/legal/measurement review",
+    "expected": "not established by this project",
+    "status": "external-obligation",
+    "execution_status": "external-obligation",
+    "executed_checks": [],
+    "verified_scope": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Privacy",
+    "requirement": "Computational confidentiality, real side channels and general scheduler noninterference.",
+    "predicate": "External implementation/institutional evidence required; not a Quint theorem.",
+    "classification": "external obligation",
+    "assumptions": [],
+    "actions": [
+      "see conformance-boundary.md"
+    ],
+    "scenario": "production implementation absent",
+    "checker": "external conformance/security/legal/measurement review",
+    "expected": "not established by this project",
+    "status": "external-obligation",
+    "execution_status": "external-obligation",
+    "executed_checks": [],
+    "verified_scope": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Performance",
+    "requirement": "Measured latency/availability, proving cost, gas, throughput and production capacity.",
+    "predicate": "External implementation/institutional evidence required; not a Quint theorem.",
+    "classification": "external obligation",
+    "assumptions": [],
+    "actions": [
+      "see conformance-boundary.md"
+    ],
+    "scenario": "production implementation absent",
+    "checker": "external conformance/security/legal/measurement review",
+    "expected": "not established by this project",
+    "status": "external-obligation",
+    "execution_status": "external-obligation",
+    "executed_checks": [],
+    "verified_scope": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Legal",
+    "requirement": "Legal finality, account/issuer rights, solvency and financial-record rules.",
+    "predicate": "External implementation/institutional evidence required; not a Quint theorem.",
+    "classification": "external obligation",
+    "assumptions": [],
+    "actions": [
+      "see conformance-boundary.md"
+    ],
+    "scenario": "production implementation absent",
+    "checker": "external conformance/security/legal/measurement review",
+    "expected": "not established by this project",
+    "status": "external-obligation",
+    "execution_status": "external-obligation",
+    "executed_checks": [],
+    "verified_scope": "Not verified; practical interface specification only."
+  }
+]

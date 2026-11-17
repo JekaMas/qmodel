@@ -1,0 +1,49 @@
+{
+  "id": "smoke-tlc-fairProgress",
+  "started_utc": "2026-11-17T16:14:36.513478+00:00",
+  "claim": "fairProgress",
+  "backend": "tlc",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/models/smoke.qnt",
+    "--backend",
+    "tlc",
+    "--temporal",
+    "fairProgress",
+    "--tlc-config",
+    "verification/configs/tlc.json",
+    "--verbosity",
+    "3"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/smoke.qnt --backend tlc --temporal fairProgress --tlc-config verification/configs/tlc.json --verbosity 3",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "PATH": "/Library/Java/JavaVirtualMachines/jdk-20.jdk/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/models/smoke.qnt": "0953910eaa0fec4203682bc71a6231c79be517909391500b2dd2e238535b1d0c",
+    "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "java version \"20.0.1\" 2023-04-18\nJava(TM) SE Runtime Environment (build 20.0.1+9-29)\nJava HotSpot(TM) 64-Bit Server VM (build 20.0.1+9-29, mixed mode, sharing)"
+  },
+  "configuration": {},
+  "timeout_seconds": 120,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 0.7500965413637459,
+  "outcome": "tool_error",
+  "expected": "pass",
+  "expectation_met": false,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/smoke-tlc-fairProgress/raw.log",
+  "minimized": false,
+  "replayed": false
+}

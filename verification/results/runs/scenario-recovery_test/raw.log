@@ -1,0 +1,14 @@
+
+  recovery_test
+    ok stage2RecoveryTest passed 1 test(s)
+    ok stage3RecoveryTest passed 1 test(s)
+    ok stage4RecoveryTest passed 1 test(s)
+    ok stage5RecoveryTest passed 1 test(s)
+    ok stage6RecoveryTest passed 1 test(s)
+    ok stage7RecoveryTest passed 1 test(s)
+    ok stage9RecoveryTest passed 1 test(s)
+    ok stage12RecoveryTest passed 1 test(s)
+    ok stage14RecoveryTest passed 1 test(s)
+    ok stage15RecoveryTest passed 1 test(s)
+
+  10 passing (120ms)

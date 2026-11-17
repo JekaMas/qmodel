@@ -1,0 +1,9 @@
+module expiry { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=1).* from "../models/dvp" }
+module binding { import dvp(N=2,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=2).* from "../models/dvp" }
+module replay { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=3).* from "../models/dvp" }
+module reopen { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=4).* from "../models/dvp" }
+module non_atomic { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=5).* from "../models/dvp" }
+module relayer_assertion { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=6).* from "../models/dvp" }
+module stale_refund { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=7).* from "../models/dvp" }
+module pruned_tombstone { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=8).* from "../models/dvp" }
+module discard_early_abort { import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=9).* from "../models/dvp" }

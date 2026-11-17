@@ -1,0 +1,9 @@
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-17T20-10-11_3943740453898433815
+# APALACHE version: 0.46.1 | build: 0d72eb1                       I@20:10:11.841
+Starting server on port 8822...                                   I@20:10:11.849
+The Apalache server is running on port 8822. Press Ctrl-C to stop.
+error: at 'source':
+  - (String: 1) Unknown key.

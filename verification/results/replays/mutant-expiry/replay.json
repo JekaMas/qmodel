@@ -1,0 +1,8 @@
+{
+  "original_receipt": "verification/results/runs/mutant-expiry-attempt2/receipt.json",
+  "replay_receipt": "replay-mutant-expiry",
+  "verdict_reproduced": true,
+  "native_states_match": true,
+  "minimized": false,
+  "method": "same recorded model closure, command, backend and seed; compare normalized ITF states where exported"
+}

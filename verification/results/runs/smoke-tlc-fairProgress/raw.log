@@ -1,0 +1,4 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m
+Error: LinkageError occurred while loading main class at.forsyte.apalache.tla.Tool
+	java.lang.UnsupportedClassVersionError: at/forsyte/apalache/tla/Tool has been compiled by a more recent version of the Java Runtime (class file version 65.0), this version of the Java Runtime only recognizes class file versions up to 64.0

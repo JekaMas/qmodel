@@ -1,0 +1,1006 @@
+An example execution:
+
+[State 0]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [],
+      note: false,
+      noteTrade: 0,
+      pc: 0,
+      published: 0,
+      released: Set(),
+      right: [],
+      seen: Set(),
+      up: true
+    }
+}
+
+[State 1]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [],
+      note: false,
+      noteTrade: 0,
+      pc: 0,
+      published: 0,
+      released: Set(),
+      right: [],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 2]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 3]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left: [{ delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 }],
+      note: false,
+      noteTrade: 0,
+      pc: 1,
+      published: 0,
+      released: Set(),
+      right: [{ delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 }],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 4]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 2,
+      published: 0,
+      released: Set(),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 5]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 2,
+      published: 0,
+      released: Set((2, 4, 4, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 6]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 2,
+      published: 0,
+      released: Set((2, 4, 4, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 7]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 3,
+      published: 0,
+      released: Set((2, 4, 4, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 8]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 4,
+      published: 0,
+      released: Set((2, 4, 4, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 9]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 0,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 4,
+      published: 0,
+      released: Set((2, 4, 4, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 10]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 0,
+      released: Set((2, 4, 4, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 11]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 0,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 12]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: false,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 0,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(2),
+      up: true
+    }
+}
+
+[State 13]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 0,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 14]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 15]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 16]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: false
+    }
+}
+
+[State 17]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: false
+    }
+}
+
+[State 18]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 19]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 20]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: false
+    }
+}
+
+[State 21]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: false
+    }
+}
+
+[State 22]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 23]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: false,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 5,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 24]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: true,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 106, phase: 5, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 6,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 206, phase: 5, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 25]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: true,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 106, phase: 5, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 6,
+      published: 1,
+      released: Set((2, 4, 4, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 206, phase: 5, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 26]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: true,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 106, phase: 5, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 6,
+      published: 1,
+      released: Set((2, 4, 4, 1), (3, 8, 2, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 206, phase: 5, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 27]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: false,
+      complete: true,
+      delivered: true,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 106, phase: 5, size: 1, value: 0 }
+        ],
+      note: false,
+      noteTrade: 0,
+      pc: 6,
+      published: 1,
+      released: Set((2, 4, 4, 1), (3, 8, 2, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 206, phase: 5, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[State 28]
+{
+  wrong_note::privacy::p:
+    {
+      badBinding: false,
+      claimedUsable: true,
+      complete: true,
+      delivered: true,
+      epoch: 1,
+      highWater: 2,
+      key: true,
+      left:
+        [
+          { delay: 1, err: 0, opaque: 101, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 102, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 103, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 104, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 105, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 106, phase: 5, size: 1, value: 0 }
+        ],
+      note: true,
+      noteTrade: 2,
+      pc: 6,
+      published: 1,
+      released: Set((2, 4, 4, 1), (3, 8, 2, 1), (6, 13, 0, 1)),
+      right:
+        [
+          { delay: 1, err: 0, opaque: 201, phase: 0, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 202, phase: 1, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 203, phase: 2, size: 2, value: 0 },
+          { delay: 1, err: 0, opaque: 204, phase: 3, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 205, phase: 4, size: 1, value: 0 },
+          { delay: 1, err: 0, opaque: 206, phase: 5, size: 1, value: 0 }
+        ],
+      seen: Set(1, 2),
+      up: true
+    }
+}
+
+[violation] Found an issue (315ms at 3625 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

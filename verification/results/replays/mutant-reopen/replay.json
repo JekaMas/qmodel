@@ -1,0 +1,8 @@
+{
+  "original_receipt": "verification/results/runs/mutant-reopen-attempt3/receipt.json",
+  "replay_receipt": "replay-mutant-reopen",
+  "verdict_reproduced": true,
+  "native_states_match": true,
+  "minimized": false,
+  "method": "same recorded model closure, command, backend and seed; compare normalized ITF states where exported"
+}

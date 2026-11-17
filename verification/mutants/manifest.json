@@ -1,0 +1,165 @@
+[
+  {
+    "id": "expiry",
+    "mutation": 1,
+    "trades": 1,
+    "property": "S08",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "prepareB(1)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "bTick",
+      "bTick",
+      "unsafeRefund(1)",
+      "commit(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "binding",
+    "mutation": 2,
+    "trades": 2,
+    "property": "S10",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "sign(2,0)",
+      "sign(2,1)",
+      "prepareB(1)",
+      "openA(2)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "commit(2)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "replay",
+    "mutation": 3,
+    "trades": 1,
+    "property": "S05",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "prepareB(1)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "commit(1)",
+      "finalize(1,3)",
+      "capture(1,3)",
+      "prove(1,3)",
+      "deliver(1,3)",
+      "learn(1,2,1)",
+      "applyB(1)",
+      "applyB(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "reopen",
+    "mutation": 4,
+    "trades": 1,
+    "property": "S02",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "tick",
+      "tick",
+      "abort(1)",
+      "refund(1,0)",
+      "openA(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "non_atomic",
+    "mutation": 5,
+    "trades": 1,
+    "property": "S08",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "prepareB(1)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "commit(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "relayer_assertion",
+    "mutation": 6,
+    "trades": 1,
+    "property": "S10",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "prepareB(1)",
+      "inject(1,2,0)",
+      "commit(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "stale_refund",
+    "mutation": 7,
+    "trades": 1,
+    "property": "S09",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "prepareB(1)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "commit(1)",
+      "crash(3)",
+      "unsafeRefund(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  {
+    "id": "pruned_tombstone",
+    "mutation": 8,
+    "trades": 1,
+    "property": "S02",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "openA(1)",
+      "prepareB(1)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "commit(1)",
+      "forgetTerminal(1)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  }
+]

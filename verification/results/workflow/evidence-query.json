@@ -1,0 +1,258 @@
+{
+  "change": "verify-cross-chain-dvp",
+  "manifest": "openspec/changes/verify-cross-chain-dvp/verification.json",
+  "manifest_sha256": "df4f0658e56b8e9b8d3cbc579491e9336812e2b3e3d68e18e67ac674355af00b",
+  "nodes": {
+    "cases": {
+      "EV.C1": {
+        "command_id": "evidence-audit",
+        "current_evidence_fingerprint": "e1bff39034eea16d4f8fa0bd1a602ca795941f1c934ec8b048b15a5ebd2719be",
+        "distinct_reason": "All selected scoped backend observations completed with exact preserved sources.",
+        "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+        "id": "EV.C1",
+        "invalidation_dependencies": [
+          "verification/models/**",
+          "verification/results/runs/**",
+          "verification/tests/test_evidence.py",
+          "verification/scripts/audit_evidence.py",
+          "verification/configs/acceptance.json"
+        ],
+        "latest_observed_status": "not_loaded",
+        "observable": "All selected scoped backend observations completed with exact preserved sources.",
+        "polarity": "positive",
+        "property_id": "EV.P1",
+        "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+        "scenario": "Safe baseline and falsification",
+        "scenario_fingerprint": "cb6aff356c4fc638bcb905c364ad12a49f81869d87a72a4d9426957925dafeb7",
+        "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+        "source_path": "verification/tests/test_evidence.py",
+        "source_sha256": "d552ddc51a9b7b92ef44dd22ec57486be6af07a55e55e39f55a8a3ebf2adf116",
+        "state": "implemented",
+        "substitution": {
+          "classification": "NO_TEST_DOUBLE"
+        },
+        "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations"
+      },
+      "EV.C2": {
+        "command_id": "evidence-audit",
+        "current_evidence_fingerprint": "420e245be08698b1e50fcc88c568e46c9229feb61563492fa12c3c6ef86cbc37",
+        "distinct_reason": "Each isolated protocol mutant has its intended actual property violation.",
+        "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+        "id": "EV.C2",
+        "invalidation_dependencies": [
+          "verification/models/**",
+          "verification/results/runs/**",
+          "verification/tests/test_evidence.py",
+          "verification/scripts/audit_evidence.py",
+          "verification/configs/acceptance.json"
+        ],
+        "latest_observed_status": "not_loaded",
+        "observable": "Each isolated protocol mutant has its intended actual property violation.",
+        "polarity": "negative",
+        "property_id": "EV.P1",
+        "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+        "scenario": "Safe baseline and falsification",
+        "scenario_fingerprint": "cb6aff356c4fc638bcb905c364ad12a49f81869d87a72a4d9426957925dafeb7",
+        "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+        "source_path": "verification/tests/test_evidence.py",
+        "source_sha256": "d552ddc51a9b7b92ef44dd22ec57486be6af07a55e55e39f55a8a3ebf2adf116",
+        "state": "implemented",
+        "substitution": {
+          "classification": "NO_TEST_DOUBLE"
+        },
+        "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples"
+      },
+      "EV.C3": {
+        "command_id": "evidence-audit",
+        "current_evidence_fingerprint": "5f3c43d04b625a7d4c20bf22f87a5170de53e6652c5c32fe385b03cd04e660b2",
+        "distinct_reason": "External obligations and actual timed-out configurations remain visible.",
+        "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+        "id": "EV.C3",
+        "invalidation_dependencies": [
+          "verification/models/**",
+          "verification/results/runs/**",
+          "verification/tests/test_evidence.py",
+          "verification/scripts/audit_evidence.py",
+          "verification/configs/acceptance.json"
+        ],
+        "latest_observed_status": "not_loaded",
+        "observable": "External obligations and actual timed-out configurations remain visible.",
+        "polarity": "positive",
+        "property_id": "EV.P1",
+        "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+        "scenario": "Incomplete or external claims",
+        "scenario_fingerprint": "74a353def455b56f90de1b56b78c3fa7ce0d4e2fd86827c9987090e3a1cbeefa",
+        "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+        "source_path": "verification/tests/test_evidence.py",
+        "source_sha256": "d552ddc51a9b7b92ef44dd22ec57486be6af07a55e55e39f55a8a3ebf2adf116",
+        "state": "implemented",
+        "substitution": {
+          "classification": "NO_TEST_DOUBLE"
+        },
+        "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible"
+      },
+      "EV.C4": {
+        "command_id": "evidence-audit",
+        "current_evidence_fingerprint": "78b8ce2269abfadf6262ea1e262dded6897939d36bd321bf9de2fcf3fa5b3e61",
+        "distinct_reason": "A tool error or zero-exit non-violation cannot masquerade as a killed mutant.",
+        "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+        "id": "EV.C4",
+        "invalidation_dependencies": [
+          "verification/models/**",
+          "verification/results/runs/**",
+          "verification/tests/test_evidence.py",
+          "verification/scripts/audit_evidence.py",
+          "verification/configs/acceptance.json"
+        ],
+        "latest_observed_status": "not_loaded",
+        "observable": "A tool error or zero-exit non-violation cannot masquerade as a killed mutant.",
+        "polarity": "negative",
+        "property_id": "EV.P1",
+        "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+        "scenario": "Incomplete or external claims",
+        "scenario_fingerprint": "74a353def455b56f90de1b56b78c3fa7ce0d4e2fd86827c9987090e3a1cbeefa",
+        "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+        "source_path": "verification/tests/test_evidence.py",
+        "source_sha256": "d552ddc51a9b7b92ef44dd22ec57486be6af07a55e55e39f55a8a3ebf2adf116",
+        "state": "implemented",
+        "substitution": {
+          "classification": "NO_TEST_DOUBLE"
+        },
+        "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant"
+      },
+      "EV.C5": {
+        "command_id": "evidence-audit",
+        "current_evidence_fingerprint": "efb8004407d11362748dad0956cdeab8f08078ceef883d04dbd6eb5502b0aab7",
+        "distinct_reason": "Changed source identity is rejected against actual recorded input snapshots.",
+        "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+        "id": "EV.C5",
+        "invalidation_dependencies": [
+          "verification/models/**",
+          "verification/results/runs/**",
+          "verification/tests/test_evidence.py",
+          "verification/scripts/audit_evidence.py",
+          "verification/configs/acceptance.json"
+        ],
+        "latest_observed_status": "not_loaded",
+        "observable": "Changed source identity is rejected against actual recorded input snapshots.",
+        "polarity": "negative",
+        "property_id": "EV.P1",
+        "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+        "scenario": "Incomplete or external claims",
+        "scenario_fingerprint": "74a353def455b56f90de1b56b78c3fa7ce0d4e2fd86827c9987090e3a1cbeefa",
+        "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+        "source_path": "verification/tests/test_evidence.py",
+        "source_sha256": "d552ddc51a9b7b92ef44dd22ec57486be6af07a55e55e39f55a8a3ebf2adf116",
+        "state": "implemented",
+        "substitution": {
+          "classification": "NO_TEST_DOUBLE"
+        },
+        "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected"
+      },
+      "EV.C6": {
+        "command_id": "evidence-audit",
+        "current_evidence_fingerprint": "4ebbc7fe9a588e9f46fc9252a52e8e013ee99b7a436263d9bf651b618af1110e",
+        "distinct_reason": "A missing expected execution cannot be counted as completed evidence.",
+        "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+        "id": "EV.C6",
+        "invalidation_dependencies": [
+          "verification/models/**",
+          "verification/results/runs/**",
+          "verification/tests/test_evidence.py",
+          "verification/scripts/audit_evidence.py",
+          "verification/configs/acceptance.json"
+        ],
+        "latest_observed_status": "not_loaded",
+        "observable": "A missing expected execution cannot be counted as completed evidence.",
+        "polarity": "negative",
+        "property_id": "EV.P1",
+        "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+        "scenario": "Incomplete or external claims",
+        "scenario_fingerprint": "74a353def455b56f90de1b56b78c3fa7ce0d4e2fd86827c9987090e3a1cbeefa",
+        "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+        "source_path": "verification/tests/test_evidence.py",
+        "source_sha256": "d552ddc51a9b7b92ef44dd22ec57486be6af07a55e55e39f55a8a3ebf2adf116",
+        "state": "implemented",
+        "substitution": {
+          "classification": "NO_TEST_DOUBLE"
+        },
+        "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion"
+      }
+    },
+    "commands": {
+      "evidence-audit": {
+        "argv": [
+          "python3",
+          "-m",
+          "unittest",
+          "-v",
+          "verification.tests.test_evidence"
+        ],
+        "authority": "local",
+        "cwd": ".",
+        "id": "evidence-audit",
+        "runner": "python-unittest",
+        "timeout_seconds": 60
+      }
+    },
+    "properties": {
+      "EV.P1": {
+        "id": "EV.P1",
+        "oracle": "Backend-native success/violation output, process exit, saved source identity and explicit external/timeout scope.",
+        "owner": "verification project evidence pipeline",
+        "requirement_id": "EV",
+        "scenarios": [
+          "Safe baseline and falsification",
+          "Incomplete or external claims"
+        ],
+        "source_globs": [
+          "verification/**"
+        ],
+        "statement": "Executed scoped protocol evidence is authentic, reproducible and reported within its actual limits."
+      }
+    },
+    "requirements": {
+      "EV": {
+        "capability": "dvp-verification",
+        "fingerprint": "410a05a9a80483d5a0edae023520d0a4ce1d4b640f9209d8ef3641b579c7b621",
+        "id": "EV",
+        "title": "Execute scoped protocol verification"
+      }
+    }
+  },
+  "requested_selectors": {
+    "all": true,
+    "cases": [],
+    "changed_paths": [],
+    "commands": [],
+    "owners": [],
+    "properties": [],
+    "requirements": [],
+    "scenarios": [],
+    "tests": []
+  },
+  "selection": {
+    "cases": [
+      "EV.C1",
+      "EV.C2",
+      "EV.C3",
+      "EV.C4",
+      "EV.C5",
+      "EV.C6"
+    ],
+    "commands": [
+      "evidence-audit"
+    ],
+    "properties": [
+      "EV.P1"
+    ],
+    "requirements": [
+      "EV"
+    ]
+  },
+  "specifications": {
+    "EV": "410a05a9a80483d5a0edae023520d0a4ce1d4b640f9209d8ef3641b579c7b621"
+  },
+  "status": "passed",
+  "substitution_gaps": []
+}

@@ -1,0 +1,10 @@
+
+  d_outage_test
+    ok decisionHaltRejectsTest passed 1 test(s)
+    ok decisionRecoveryTest passed 1 test(s)
+    ok aDelayedTest passed 1 test(s)
+    ok bDelayedTest passed 1 test(s)
+    ok outcomeCaptureWaitsForDTest passed 1 test(s)
+    ok staleProjectionTest passed 1 test(s)
+
+  6 passing (133ms)

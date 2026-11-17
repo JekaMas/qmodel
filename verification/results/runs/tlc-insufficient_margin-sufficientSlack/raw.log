@@ -1,0 +1,327 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-17T20-24-33_7501279808645316815
+# APALACHE version: 0.62.4 | build: 7954daf                       I@20:24:33.040
+Starting checker server on port 8822...                           I@20:24:33.043
+The Apalache server is running on port 8822. Press Ctrl-C to stop.
+????. 17, 2026 8:24:34 PM com.google.protobuf.GeneratedMessage warnPre22Gencode
+WARNING: Vulnerable protobuf generated type in use: io.grpc.reflection.v1alpha.ServerReflectionRequest
+As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
+PASS #0: SanyParser                                               I@20:24:35.078
+[TLC] Running TLC model checker...
+
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m
+TLC2 Version 2026.11.17.162435
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 108 and seed -6534785196055832374 with 2 workers on 10 cores with 2048MB heap and 64MB offheap memory [pid: 391] (Mac OS X 14.7 aarch64, JetBrains s.r.o. 25.0.4 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/insufficient_margin.tla (file:/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/insufficient_margin.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/Integers.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/Sequences.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/FiniteSets.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/TLC.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/Apalache.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Apalache.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/Variants.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Variants.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/_TLCTrace.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/Naturals.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/tlc-6800548399537384669/TLCExt.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Apalache
+Semantic processing of module Variants
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module insufficient_margin
+Linting of module Apalache
+Linting of module Variants
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module insufficient_margin
+Starting... (2026-11-17 20:24:35)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-17 20:24:35.
+Error: Invariant q_inv is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+insufficient_margin_timing_t = [ time |-> 0,
+  height |-> 0,
+  clockB |-> 3,
+  queue |->
+      << [id |-> 1, phase |-> 1, remaining |-> 2, wait |-> 0],
+         [id |-> 2, phase |-> 1, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 2: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 1,
+  height |-> 1,
+  clockB |-> 4,
+  queue |->
+      << [id |-> 1, phase |-> 1, remaining |-> 1, wait |-> 0],
+         [id |-> 2, phase |-> 1, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 3: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 2,
+  height |-> 2,
+  clockB |-> 5,
+  queue |->
+      << [id |-> 2, phase |-> 1, remaining |-> 2, wait |-> 0],
+         [id |-> 1, phase |-> 2, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 4: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 3,
+  height |-> 3,
+  clockB |-> 6,
+  queue |->
+      << [id |-> 2, phase |-> 1, remaining |-> 1, wait |-> 0],
+         [id |-> 1, phase |-> 2, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 5: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 4,
+  height |-> 4,
+  clockB |-> 7,
+  queue |->
+      << [id |-> 1, phase |-> 2, remaining |-> 2, wait |-> 0],
+         [id |-> 2, phase |-> 2, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 6: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 5,
+  height |-> 5,
+  clockB |-> 8,
+  queue |->
+      << [id |-> 1, phase |-> 2, remaining |-> 1, wait |-> 0],
+         [id |-> 2, phase |-> 2, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 7: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 6,
+  height |-> 6,
+  clockB |-> 9,
+  queue |->
+      << [id |-> 2, phase |-> 2, remaining |-> 2, wait |-> 0],
+         [id |-> 1, phase |-> 3, remaining |-> 1, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 8: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 7,
+  height |-> 7,
+  clockB |-> 10,
+  queue |->
+      << [id |-> 2, phase |-> 2, remaining |-> 1, wait |-> 0],
+         [id |-> 1, phase |-> 3, remaining |-> 1, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 9: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 8,
+  height |-> 8,
+  clockB |-> 11,
+  queue |->
+      << [id |-> 1, phase |-> 3, remaining |-> 1, wait |-> 0],
+         [id |-> 2, phase |-> 3, remaining |-> 1, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 10: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 9,
+  height |-> 9,
+  clockB |-> 12,
+  queue |->
+      << [id |-> 2, phase |-> 3, remaining |-> 1, wait |-> 0],
+         [id |-> 1, phase |-> 4, remaining |-> 1, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 11: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 10,
+  height |-> 10,
+  clockB |-> 13,
+  queue |->
+      << [id |-> 1, phase |-> 4, remaining |-> 1, wait |-> 0],
+         [id |-> 2, phase |-> 4, remaining |-> 1, wait |-> 0] >>,
+  decision |-> <<0, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 12: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 11,
+  height |-> 11,
+  clockB |-> 14,
+  queue |->
+      << [id |-> 2, phase |-> 4, remaining |-> 1, wait |-> 0],
+         [id |-> 1, phase |-> 5, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<3, 0>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 13: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 12,
+  height |-> 12,
+  clockB |-> 15,
+  queue |->
+      << [id |-> 1, phase |-> 5, remaining |-> 2, wait |-> 0],
+         [id |-> 2, phase |-> 5, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<3, 3>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 14: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 13,
+  height |-> 13,
+  clockB |-> 16,
+  queue |->
+      << [id |-> 1, phase |-> 5, remaining |-> 1, wait |-> 0],
+         [id |-> 2, phase |-> 5, remaining |-> 2, wait |-> 0] >>,
+  decision |-> <<3, 3>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+State 15: <insufficient_margin_timing_tick line 337, col 3 to line 340, col 73 of module insufficient_margin>
+insufficient_margin_timing_t = [ time |-> 14,
+  height |-> 14,
+  clockB |-> 17,
+  queue |->
+      << [id |-> 2, phase |-> 5, remaining |-> 2, wait |-> 0],
+         [id |-> 1, phase |-> 6, remaining |-> 1, wait |-> 0] >>,
+  decision |-> <<3, 3>>,
+  applied |-> {},
+  refunded |-> {},
+  booked |-> {},
+  accepted |-> {1, 2},
+  missed |-> FALSE,
+  refundedAfterCommit |-> FALSE,
+  stabilized |-> TRUE,
+  outage |-> 0,
+  hostileCost |-> 0 ]
+
+56 states generated, 30 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 16.
+Finished in 00s at (2026-11-17 20:24:36)
+Trace exploration spec path: /var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-KUBJiW/insufficient_margin_TTrace_1794932675.tla
+
+[violation] Found an issue (452ms).
+error: found a counterexample

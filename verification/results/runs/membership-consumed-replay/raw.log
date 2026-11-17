@@ -1,0 +1,5263 @@
+An example execution:
+
+[State 0]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes: Set()
+    }
+}
+
+[State 1]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          )
+        )
+    }
+}
+
+[State 2]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          )
+        )
+    }
+}
+
+[State 3]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          )
+        )
+    }
+}
+
+[State 4]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          )
+        )
+    }
+}
+
+[State 5]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 6]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 7]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 8]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 9]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: false,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 10]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 11]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 12]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 13]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 14]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 15]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 16]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 17]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 18]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 19]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 20]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 21]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 22]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 23]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 24]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 25]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 26]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 27]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 28]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 29]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 30]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 31]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 32]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 33]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 34]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 35]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: false,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: -1,
+      custody: false,
+      decrypt: false,
+      history: Set(),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 36]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 0,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 37]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 0,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 38]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 0,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 39]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 0,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 40]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 41]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 42]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 43]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 44]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 45]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> 1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 46]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> 1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 47]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 0),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> 1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 48]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 0, 2 -> 1),
+      consumed: Set(2),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 0, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 49]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(1, 2),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 50]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(1, 2),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 51]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(1, 2),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 1,
+            validatorEpoch: 0
+          },
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 52]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(1, 2),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 53]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(1, 2),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 54]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 55]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 56]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 57]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 1, 2 -> 1),
+      consumed: Set(),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> 1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[State 58]
+{
+  forget_consumed::membership::u:
+    {
+      accepted: Set(1, 2),
+      active: true,
+      applications: Map(1 -> 2, 2 -> 1),
+      consumed: Set(1),
+      current: 1,
+      custody: false,
+      decrypt: false,
+      history:
+        Set(
+          {
+            chain: 10,
+            decision: 70,
+            genesis: 110,
+            hold: 50,
+            institution: 1,
+            program: 2,
+            validatorEpoch: 1
+          }
+        ),
+      pending: Map(1 -> -1, 2 -> -1),
+      transport: true,
+      upgrade: false,
+      votes:
+        Set(
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            3
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            0
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            1
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 110,
+              hold: 50,
+              institution: 1,
+              program: 2,
+              validatorEpoch: 1
+            },
+            2
+          ),
+          (
+            {
+              chain: 10,
+              decision: 70,
+              genesis: 999,
+              hold: 50,
+              institution: 1,
+              program: 1,
+              validatorEpoch: 0
+            },
+            99
+          )
+        )
+    }
+}
+
+[violation] Found an issue (50ms at 360 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

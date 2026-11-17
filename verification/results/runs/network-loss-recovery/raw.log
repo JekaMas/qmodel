@@ -1,0 +1,8 @@
+
+  network_test
+    ok lostAcknowledgementRestartTest passed 1 test(s)
+    ok droppedProofRecoveryTest passed 1 test(s)
+    ok haltARecoveryTest passed 1 test(s)
+    ok delayedHistoricalProofUpgradeTest passed 1 test(s)
+
+  4 passing (88ms)

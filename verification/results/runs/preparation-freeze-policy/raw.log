@@ -1,0 +1,6 @@
+
+  policy_test
+    ok frozenSecurityAdmissionTest passed 1 test(s)
+    ok frozenCashAdmissionTest passed 1 test(s)
+
+  2 passing (31ms)

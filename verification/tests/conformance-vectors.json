@@ -1,0 +1,259 @@
+[
+  {
+    "id": "BIND-trade",
+    "input_mutation": {
+      "trade": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-nonce",
+    "input_mutation": {
+      "nonce": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-chainA",
+    "input_mutation": {
+      "chainA": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-genesisA",
+    "input_mutation": {
+      "genesisA": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-chainB",
+    "input_mutation": {
+      "chainB": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-genesisB",
+    "input_mutation": {
+      "genesisB": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-decisionDomain",
+    "input_mutation": {
+      "decisionDomain": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-assetA",
+    "input_mutation": {
+      "assetA": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-assetB",
+    "input_mutation": {
+      "assetB": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-holdA",
+    "input_mutation": {
+      "holdA": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-holdB",
+    "input_mutation": {
+      "holdB": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-decisionContract",
+    "input_mutation": {
+      "decisionContract": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-security",
+    "input_mutation": {
+      "security": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-cash",
+    "input_mutation": {
+      "cash": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-sellerA",
+    "input_mutation": {
+      "sellerA": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-buyerA",
+    "input_mutation": {
+      "buyerA": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-buyerB",
+    "input_mutation": {
+      "buyerB": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-sellerB",
+    "input_mutation": {
+      "sellerB": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-deadline",
+    "input_mutation": {
+      "deadline": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-protocol",
+    "input_mutation": {
+      "protocol": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-epoch",
+    "input_mutation": {
+      "epoch": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "BIND-commitment",
+    "input_mutation": {
+      "commitment": 999
+    },
+    "expected": "reject without any reservation/transfer/booking effect",
+    "authority": "complete signed descriptor and canonical encoding"
+  },
+  {
+    "id": "ROLLBACK",
+    "input_mutation": {
+      "localTokenTransfer": "false/revert/short amount"
+    },
+    "expected": "A decision and all local effects roll back atomically",
+    "authority": "EVM/contract implementation"
+  },
+  {
+    "id": "REPLAY",
+    "input_mutation": {
+      "sameProof": "twice"
+    },
+    "expected": "one intended recipient/quantity; subsequent application idempotent",
+    "authority": "contract hold-consumption and operation identity"
+  },
+  {
+    "id": "EARLY-ABORT",
+    "input_mutation": {
+      "ABORT": "before hold",
+      "prepare": "delayed"
+    },
+    "expected": "persist terminal knowledge; reject later preparation",
+    "authority": "local terminal consumed/tombstone store"
+  },
+  {
+    "id": "UNKNOWN-ABORT",
+    "input_mutation": {
+      "prepare": "after remote ABORT before learning"
+    },
+    "expected": "retain authenticated resolution path and release actual hold",
+    "authority": "historical outcome verification"
+  },
+  {
+    "id": "OLD-EPOCH",
+    "input_mutation": {
+      "historicalProof": "retired pending obligation"
+    },
+    "expected": "accept historical outcome while denying retired new-admission authority",
+    "authority": "authenticated predecessor anchors/version retention"
+  },
+  {
+    "id": "BOOKS",
+    "input_mutation": {
+      "adapter": "restore stale snapshot after completed transfers"
+    },
+    "expected": "rebuild evidence projections, one booking, no repeated financial transfer",
+    "authority": "durable operation IDs and authenticated application evidence"
+  },
+  {
+    "id": "NOTE",
+    "input_mutation": {
+      "recipientPayload": "wrong trade or missing key"
+    },
+    "expected": "reject substitution; do not claim recipient usability",
+    "authority": "private asset transition and disclosure binding"
+  },
+  {
+    "id": "AUDIT",
+    "input_mutation": {
+      "range": "authorized high-water mark with omitted evidence"
+    },
+    "expected": "mark incomplete or inaccessible; do not report complete",
+    "authority": "authenticated source range inventory and scoped access"
+  },
+  {
+    "id": "ABORT-RECORDS",
+    "input_mutation": {
+      "evidence": "ABORT decision only; missing authenticated local application records"
+    },
+    "expected": "decision may be reported; completed reconciliation/financial booking requires each actual or absent-leg application record",
+    "authority": "source finalized ledger evidence, complete descriptor, leg, genesis, checkpoint/program and disposition"
+  },
+  {
+    "id": "NO-OBLIGATION",
+    "input_mutation": {
+      "ABORT": "learned before any hold"
+    },
+    "expected": "persist terminal knowledge; authenticate absence without incrementing a refund counter; reject later preparation",
+    "authority": "local terminal store and authenticated application/no-obligation record"
+  }
+]

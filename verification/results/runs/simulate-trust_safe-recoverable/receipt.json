@@ -1,0 +1,61 @@
+{
+  "id": "simulate-trust_safe-recoverable",
+  "started_utc": "2026-11-17T16:12:29.167424+00:00",
+  "claim": "recoverable",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/models/trust.qnt",
+    "--main",
+    "trust_safe",
+    "--backend",
+    "rust",
+    "--invariant",
+    "recoverable",
+    "--max-samples",
+    "10000",
+    "--max-steps",
+    "80",
+    "--seed",
+    "29",
+    "--verbosity",
+    "1",
+    "--step",
+    "step"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/models/trust.qnt --main trust_safe --backend rust --invariant recoverable --max-samples 10000 --max-steps 80 --seed 29 --verbosity 1 --step step",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m"
+  },
+  "input_hashes": {
+    "verification/models/trust.qnt": "c55baa7973658c3f733b5539a016bd340a7e624f0a929eb614afd56b5447113c"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "openjdk version \"11.0.21\" 2023-10-17\nOpenJDK Runtime Environment Homebrew (build 11.0.21+0)\nOpenJDK 64-Bit Server VM Homebrew (build 11.0.21+0, mixed mode)"
+  },
+  "configuration": {
+    "main": "trust_safe",
+    "step": "step",
+    "samples": 10000,
+    "steps": 80,
+    "seed": 29
+  },
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 0.5310756252147257,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/simulate-trust_safe-recoverable/raw.log",
+  "minimized": false,
+  "replayed": false
+}

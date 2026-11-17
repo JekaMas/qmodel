@@ -1,0 +1,7 @@
+node_modules/
+.tools/
+.quint/
+__pycache__/
+*.pyc
+verification/results/runtime/
+_apalache-out/

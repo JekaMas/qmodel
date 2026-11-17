@@ -1,0 +1,304 @@
+[
+  {
+    "id": "A-FINAL",
+    "owner": "Source domain",
+    "role": "external trust",
+    "interval": "pending historical outcomes",
+    "dependent_properties": [
+      "S02",
+      "S06",
+      "S08",
+      "S10"
+    ],
+    "guarantee": "Correct finality and non-equivocation of admitted canonical history",
+    "enforcement": "Accepted source genesis/checkpoint, predecessor-authorized configuration and immutable finalized provenance are checked locally; source quorum correctness is external.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "tlc-equivocation-canonicalAcceptance",
+      "auth-execution_rejects_history"
+    ]
+  },
+  {
+    "id": "A-EXEC",
+    "owner": "Local contracts",
+    "role": "external trust",
+    "interval": "all actions",
+    "dependent_properties": [
+      "S01",
+      "S04",
+      "S05",
+      "S08"
+    ],
+    "guarantee": "Correct atomic local EVM execution and exact supported token behavior",
+    "enforcement": "Single-ledger all-or-nothing transitions and supported hold/token methods; real Solidity/EVM execution is an external conformance obligation.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "mutant-non_atomic",
+      "auth-direct_bad_execution",
+      "auth-execution_rejects_invalid"
+    ]
+  },
+  {
+    "id": "A-CRYPTO",
+    "owner": "Proof implementer",
+    "role": "crypto idealization",
+    "interval": "signature creation through verification",
+    "dependent_properties": [
+      "S03",
+      "S06",
+      "S10"
+    ],
+    "guarantee": "Ideal signatures, commitments and proof soundness with structured bindings",
+    "enforcement": "Complete descriptor signatures and structured proof public bindings are enforced by guards; actual encoding/circuits/crypto remain external.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "scenario-bindings_test",
+      "mutant-binding",
+      "mutant-relayer_assertion"
+    ]
+  },
+  {
+    "id": "A-HOLD",
+    "owner": "Issuer governance",
+    "role": "stakeholder choice",
+    "interval": "prepare through terminal application",
+    "dependent_properties": [
+      "S04",
+      "S07",
+      "S08",
+      "L02"
+    ],
+    "guarantee": "Admitted token semantics preserve pending obligations",
+    "enforcement": "Admit only documented durable hold/escrow semantics; freeze pauses required application, cancellation is coordinated before COMMIT, arbitrary seizure is excluded from the guarantee.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "tlc-issuer_destruction-backed",
+      "tlc-mandatory_freeze-progress",
+      "tlc-arbitrary_seizure-backing"
+    ]
+  },
+  {
+    "id": "A-RECOVERY",
+    "owner": "Chain/service operators",
+    "role": "admissible environment",
+    "interval": "eventual suffix",
+    "dependent_properties": [
+      "L01",
+      "L02",
+      "L03",
+      "L04"
+    ],
+    "guarantee": "Eventually required dependencies remain operational",
+    "enforcement": "Operational monitoring/redundancy may support the hypothesis but cannot guarantee recovery from a permanently failed ledger.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "final-record-recovery",
+      "overclaim-permanent-halt"
+    ]
+  },
+  {
+    "id": "A-FAIR",
+    "owner": "Scheduler/operators",
+    "role": "admissible environment",
+    "interval": "eventual suffix",
+    "dependent_properties": [
+      "L01",
+      "L02",
+      "L03",
+      "L04"
+    ],
+    "guarantee": "Weak fairness for each continuously enabled per-trade/per-phase recovery action",
+    "enforcement": "Per-trade/per-phase weak fairness, not aggregate-step fairness; real retry/queue scheduling must implement it.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "queue-capacity-progress",
+      "tlc-starvation-boundedCompletion"
+    ]
+  },
+  {
+    "id": "A-DATA",
+    "owner": "Evidence store",
+    "role": "enforceable local control",
+    "interval": "capture through application/retention",
+    "dependent_properties": [
+      "L02",
+      "S13"
+    ],
+    "guarantee": "Durable evidence or reconstructible finalized history remains available",
+    "enforcement": "Capture immutable finalized evidence durably before pruning; use retained program/checkpoint history, and do not confuse adapter restoration with witness recovery.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "scenario-recovery_test",
+      "trust-v2-witness_loss",
+      "network-loss-recovery"
+    ]
+  },
+  {
+    "id": "A-SUBMIT",
+    "owner": "Custody/submission owner",
+    "role": "enforceable local control",
+    "interval": "decision/application",
+    "dependent_properties": [
+      "L01",
+      "L02",
+      "L03"
+    ],
+    "guarantee": "At least one already authorized submission path can progress",
+    "enforcement": "Custody/transport/validator/upgrade/decryption roles are separate; provision at least one already authorized progress path.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "trust-v2-insufficient_submitters",
+      "trust-v2-committee_refusal"
+    ]
+  },
+  {
+    "id": "A-OPAQUE",
+    "owner": "Crypto abstraction",
+    "role": "crypto idealization",
+    "interval": "privacy executions",
+    "dependent_properties": [
+      "P-NI",
+      "P-Binding"
+    ],
+    "guarantee": "Fresh opaque names preserve equality/linkability; no computational privacy proof",
+    "enforcement": "Observation rules preserve stable trade links and opaque-name equality; low-entropy guessing, logs and timing are separate leak controls.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "linked-privacy-privacy_safe",
+      "linked-privacy-witness_log",
+      "tlc-unsalted-PNI"
+    ]
+  },
+  {
+    "id": "A-POLICY",
+    "owner": "Institution/compliance",
+    "role": "stakeholder choice",
+    "interval": "disclosure/audit",
+    "dependent_properties": [
+      "P-Access",
+      "P-Scope"
+    ],
+    "guarantee": "Selected observer policy and audit scope are explicitly configured",
+    "enforcement": "Actual payload constructors check role/field/surface and scoped audit metadata; institutional authorization choices remain external.",
+    "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
+    "executed_perturbations": [
+      "tlc-privacy_safe-PAccess",
+      "tlc-wrong_scope-PAccess",
+      "audit-omitted_record"
+    ]
+  },
+  {
+    "id": "A-ANCHOR",
+    "owner": "Verifier governance",
+    "role": "enforceable local control",
+    "interval": "admission through pending historical application",
+    "dependent_properties": [
+      "S10",
+      "S13"
+    ],
+    "guarantee": "Canonical chain/contract/program bindings are admitted by predecessor authority; retire only without destroying pending completion.",
+    "enforcement": "Local manifest, threshold approvals, historical verification and consumed identity retention.",
+    "executed_perturbations": [
+      "trust-v2-trust_safe",
+      "trust-v2-retired_version",
+      "membership-retirement-final",
+      "membership-consumed-replay"
+    ],
+    "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
+  },
+  {
+    "id": "A-KEY",
+    "owner": "Recipient/data custodians",
+    "role": "admissible environment",
+    "interval": "private delivery through actual use",
+    "dependent_properties": [
+      "P-Availability"
+    ],
+    "guarantee": "Exact delivered note plus key access remains recoverable.",
+    "enforcement": "Bind note to actual transition; monitor delivery/key custody. No magic reconstruction from COMMIT.",
+    "executed_perturbations": [
+      "private-data-progress",
+      "private-permanent-key-loss",
+      "negative-disclosure_key_compromise",
+      "negative-wrong_note"
+    ],
+    "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
+  },
+  {
+    "id": "A-TIME",
+    "owner": "Ledger/service/scheduler operators",
+    "role": "admissible environment",
+    "interval": "after explicit stabilization",
+    "dependent_properties": [
+      "T-Bounded"
+    ],
+    "guarantee": "Bound every queued phase, inclusion, finality, delivery and permitted outage; explicit progressing time and relation to A height.",
+    "enforcement": "Finite phase/queue monitors and round-robin scheduling; production latency must be measured independently.",
+    "executed_perturbations": [
+      "exact-deadline-margin",
+      "one-less-deadline-margin",
+      "post-stabilization",
+      "tlc-frozen_time-timeProgress",
+      "tlc-no_inclusion-boundedCompletion"
+    ],
+    "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
+  },
+  {
+    "id": "A-CAP",
+    "owner": "Admission and worker control",
+    "role": "enforceable local control",
+    "interval": "admission through recovery drainage",
+    "dependent_properties": [
+      "T-Capacity",
+      "L01",
+      "L04"
+    ],
+    "guarantee": "Finite reserved exposure and queued hostile work; recovery traffic receives per-trade service.",
+    "enforcement": "Admission cap two and hostile-work budget two in capacity model; queue jobs consume real modeled slots.",
+    "executed_perturbations": [
+      "queue-capacity-progress",
+      "tlc-unlimited-exposure",
+      "tlc-starvation-boundedCompletion"
+    ],
+    "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
+  },
+  {
+    "id": "A-BOUNDS",
+    "owner": "Model author",
+    "role": "abstraction/bound",
+    "interval": "each exact checked configuration",
+    "dependent_properties": [
+      "S01",
+      "L01",
+      "P-NI",
+      "T-Bounded"
+    ],
+    "guarantee": "Finite one/two trades, integer units, finite program epochs, bounded fact phases; specialized three-domain installation and paired worlds.",
+    "enforcement": "Exact input closures and bounds in receipts; no parameterized theorem or general composition inferred.",
+    "executed_perturbations": [
+      "final-record-two",
+      "three-domain-installation-final",
+      "linked-privacy-privacy_safe"
+    ],
+    "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
+  },
+  {
+    "id": "A-ABORTRECORD",
+    "owner": "Source-ledger adapter and evidence store",
+    "role": "crypto idealization",
+    "interval": "ABORT application/no-obligation capture through booking",
+    "dependent_properties": [
+      "S06",
+      "S15",
+      "L04",
+      "C-Records"
+    ],
+    "guarantee": "Authentic canonical finalized local read produces descriptor/leg/genesis/checkpoint/program-bound refund or no-obligation record.",
+    "enforcement": "Source-local capture; recordAbort requires both source records and authentic A outcome. This is a required interface, not arbitrary relayer/RPC trust.",
+    "executed_perturbations": [
+      "abort-authoritative-records",
+      "final-record-progress"
+    ],
+    "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
+  }
+]

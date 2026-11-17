@@ -1,0 +1,93 @@
+An example execution:
+
+[State 0]
+{
+  committee_compromised::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: false,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 1]
+{
+  committee_compromised::mechanisms::m:
+    {
+      committee: Set(),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: true,
+      lockB: false,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 2]
+{
+  committee_compromised::mechanisms::m:
+    {
+      committee: Set(0, 1, 2),
+      decision: 0,
+      deliveredA: false,
+      deliveredB: false,
+      known: Set(),
+      lockA: true,
+      lockB: false,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[State 3]
+{
+  committee_compromised::mechanisms::m:
+    {
+      committee: Set(0, 1, 2),
+      decision: 2,
+      deliveredA: true,
+      deliveredB: false,
+      known: Set(),
+      lockA: false,
+      lockB: false,
+      observed: false,
+      preparedEvidence: Set(),
+      refundA: false,
+      refundB: false,
+      secretPublished: false,
+      time: 0,
+      upA: true,
+      upB: true
+    }
+}
+
+[violation] Found an issue (31ms at 226 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

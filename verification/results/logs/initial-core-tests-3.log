@@ -1,0 +1,8 @@
+
+ Error [QNT202]: Multiple updates of variable dvp_test::dvp::s
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:40:3
+  40:   var s: State
+        ^^^^^^^^^^^^
+
+error: typechecking failed

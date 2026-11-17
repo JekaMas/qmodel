@@ -1,0 +1,9 @@
+The project-local quint-lang and quint-modeling skills are copied from
+https://github.com/quint-co/quint-llm-kit at
+cc75369f741af7d490936f82002c2d28e3b3d78d. Their Apache-2.0 license is
+retained at verification/sources/quint-llm-kit-LICENSE.
+
+The workflow submodule/bundle is pinned to
+be0666c4f8456480a21d7e67b7b5b96d55ededb3; its own source and licensing
+are retained in that submodule. It is development tooling, not a model
+of the settlement protocol.

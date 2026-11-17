@@ -1,0 +1,813 @@
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:3:18
+  3:   run signBoth = init.then(sign(1,0)).then(sign(1,1))
+                      ^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:3:28
+  3:   run signBoth = init.then(sign(1,0)).then(sign(1,1))
+                                ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:3:44
+  3:   run signBoth = init.then(sign(1,0)).then(sign(1,1))
+                                                ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:4:33
+  4:   run bothHolds = signBoth.then(openA(1)).then(prepareB(1))
+                                     ^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:4:48
+  4:   run bothHolds = signBoth.then(openA(1)).then(prepareB(1))
+                                                    ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'finalize' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:5:34
+  5:   run cashProof = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prove(1,2)).then(deliver(1,2))
+                                      ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:5:54
+  5:   run cashProof = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prove(1,2)).then(deliver(1,2))
+                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:5:73
+  5:   run cashProof = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prove(1,2)).then(deliver(1,2))
+                                                                             ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:5:90
+  5:   run cashProof = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prove(1,2)).then(deliver(1,2))
+                                                                                              ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'commit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:6:34
+  6:   run committed = cashProof.then(commit(1))
+                                      ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'finalize' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:7:32
+  7:   run outcome = committed.then(finalize(1,3)).then(capture(1,3)).then(prove(1,3)).then(deliver(1,3)).then(learn(1,2,1))
+                                    ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:7:52
+  7:   run outcome = committed.then(finalize(1,3)).then(capture(1,3)).then(prove(1,3)).then(deliver(1,3)).then(learn(1,2,1))
+                                                        ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:7:71
+  7:   run outcome = committed.then(finalize(1,3)).then(capture(1,3)).then(prove(1,3)).then(deliver(1,3)).then(learn(1,2,1))
+                                                                           ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:7:88
+  7:   run outcome = committed.then(finalize(1,3)).then(capture(1,3)).then(prove(1,3)).then(deliver(1,3)).then(learn(1,2,1))
+                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:7:107
+  7:   run outcome = committed.then(finalize(1,3)).then(capture(1,3)).then(prove(1,3)).then(deliver(1,3)).then(learn(1,2,1))
+                                                                                                               ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'applyB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:8:30
+  8:   run settled = outcome.then(applyB(1))
+                                  ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:34
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                      ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:45
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                                 ^^^^
+
+
+ Error [QNT404]: Name 'abort' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:56
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                                            ^^^^^^^^
+
+
+ Error [QNT404]: Name 'finalize' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:71
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                                                           ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:91
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                                                                               ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:110
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                                                                                                  ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:9:127
+  9:   run abortProof = signBoth.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4))
+                                                                                                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:10:36
+  10:   run successTest = settled.expect(safe and s.trades.get(1).effectsA==1 and s.trades.get(1).effectsB==1)
+                                         ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:10:45
+  10:   run successTest = settled.expect(safe and s.trades.get(1).effectsA==1 and s.trades.get(1).effectsB==1)
+                                                  ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:10:77
+  10:   run successTest = settled.expect(safe and s.trades.get(1).effectsA==1 and s.trades.get(1).effectsB==1)
+                                                                                  ^
+
+
+ Error [QNT404]: Name 'reservedA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:11:48
+  11:   run actualReservationTest = bothHolds.expect(reservedA(s)==2 and reservedB(s)==3 and s.ownerA==2 and s.ownerB==3)
+                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:11:58
+  11:   run actualReservationTest = bothHolds.expect(reservedA(s)==2 and reservedB(s)==3 and s.ownerA==2 and s.ownerB==3)
+                                                               ^
+
+
+ Error [QNT404]: Name 'reservedB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:11:68
+  11:   run actualReservationTest = bothHolds.expect(reservedA(s)==2 and reservedB(s)==3 and s.ownerA==2 and s.ownerB==3)
+                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:11:78
+  11:   run actualReservationTest = bothHolds.expect(reservedA(s)==2 and reservedB(s)==3 and s.ownerA==2 and s.ownerB==3)
+                                                                                   ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:11:88
+  11:   run actualReservationTest = bothHolds.expect(reservedA(s)==2 and reservedB(s)==3 and s.ownerA==2 and s.ownerB==3)
+                                                                                             ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:11:104
+  11:   run actualReservationTest = bothHolds.expect(reservedA(s)==2 and reservedB(s)==3 and s.ownerA==2 and s.ownerB==3)
+                                                                                                             ^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:12:34
+  12:   run bFirstTest = signBoth.then(prepareB(1)).then(openA(1)).expect(someHold and safe)
+                                       ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:12:52
+  12:   run bFirstTest = signBoth.then(prepareB(1)).then(openA(1)).expect(someHold and safe)
+                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'someHold' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:12:69
+  12:   run bFirstTest = signBoth.then(prepareB(1)).then(openA(1)).expect(someHold and safe)
+                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:12:82
+  12:   run bFirstTest = signBoth.then(prepareB(1)).then(openA(1)).expect(someHold and safe)
+                                                                                       ^^^^
+
+
+ Error [QNT404]: Name 'someLag' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:13:45
+  13:   run applicationLagTest = committed.expect(someLag and safe)
+                                                  ^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:13:57
+  13:   run applicationLagTest = committed.expect(someLag and safe)
+                                                              ^^^^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:14:39
+  14:   run missingOpenTest = signBoth.then(prepareB(1)).then(tick).then(tick).then(abort(1)).expect(s.trades.get(1).decision==3 and safe)
+                                            ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:14:57
+  14:   run missingOpenTest = signBoth.then(prepareB(1)).then(tick).then(tick).then(abort(1)).expect(s.trades.get(1).decision==3 and safe)
+                                                              ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:14:68
+  14:   run missingOpenTest = signBoth.then(prepareB(1)).then(tick).then(tick).then(abort(1)).expect(s.trades.get(1).decision==3 and safe)
+                                                                         ^^^^
+
+
+ Error [QNT404]: Name 'abort' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:14:79
+  14:   run missingOpenTest = signBoth.then(prepareB(1)).then(tick).then(tick).then(abort(1)).expect(s.trades.get(1).decision==3 and safe)
+                                                                                    ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:14:96
+  14:   run missingOpenTest = signBoth.then(prepareB(1)).then(tick).then(tick).then(abort(1)).expect(s.trades.get(1).decision==3 and safe)
+                                                                                                     ^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:14:128
+  14:   run missingOpenTest = signBoth.then(prepareB(1)).then(tick).then(tick).then(abort(1)).expect(s.trades.get(1).decision==3 and safe)
+                                                                                                                                     ^^^^
+
+
+ Error [QNT404]: Name 'learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:15:48
+  15:   run abortBeforePrepareTest = abortProof.then(learn(1,3,1)).then(prepareB(1).fail()).expect(s.trades.get(1).knownB==3 and safe)
+                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:15:67
+  15:   run abortBeforePrepareTest = abortProof.then(learn(1,3,1)).then(prepareB(1).fail()).expect(s.trades.get(1).knownB==3 and safe)
+                                                                        ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:15:94
+  15:   run abortBeforePrepareTest = abortProof.then(learn(1,3,1)).then(prepareB(1).fail()).expect(s.trades.get(1).knownB==3 and safe)
+                                                                                                   ^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:15:124
+  15:   run abortBeforePrepareTest = abortProof.then(learn(1,3,1)).then(prepareB(1).fail()).expect(s.trades.get(1).knownB==3 and safe)
+                                                                                                                                 ^^^^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:16:46
+  16:   run lateUnknownAbortTest = abortProof.then(prepareB(1)).then(learn(1,3,1)).then(refund(1,1)).expect(s.trades.get(1).refundsB==1 and safe)
+                                                   ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:16:64
+  16:   run lateUnknownAbortTest = abortProof.then(prepareB(1)).then(learn(1,3,1)).then(refund(1,1)).expect(s.trades.get(1).refundsB==1 and safe)
+                                                                     ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'refund' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:16:83
+  16:   run lateUnknownAbortTest = abortProof.then(prepareB(1)).then(learn(1,3,1)).then(refund(1,1)).expect(s.trades.get(1).refundsB==1 and safe)
+                                                                                        ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:16:103
+  16:   run lateUnknownAbortTest = abortProof.then(prepareB(1)).then(learn(1,3,1)).then(refund(1,1)).expect(s.trades.get(1).refundsB==1 and safe)
+                                                                                                            ^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:16:135
+  16:   run lateUnknownAbortTest = abortProof.then(prepareB(1)).then(learn(1,3,1)).then(refund(1,1)).expect(s.trades.get(1).refundsB==1 and safe)
+                                                                                                                                            ^^^^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:45
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                  ^^^^^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:60
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                                 ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:71
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                                            ^^^^
+
+
+ Error [QNT404]: Name 'abort' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:82
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                                                       ^^^^^^^^
+
+
+ Error [QNT404]: Name 'refund' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:97
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                                                                      ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:117
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                                                                                          ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:17:126
+  17:   run missingSecondHoldTest = signBoth.then(openA(1)).then(tick).then(tick).then(abort(1)).then(refund(1,0)).expect(safe and s.trades.get(1).refundsA==1)
+                                                                                                                                   ^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:18:38
+  18:   run lateProofTest = cashProof.then(tick).then(tick).then(abort(1)).then(commit(1).fail()).expect(safe)
+                                           ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:18:49
+  18:   run lateProofTest = cashProof.then(tick).then(tick).then(abort(1)).then(commit(1).fail()).expect(safe)
+                                                      ^^^^
+
+
+ Error [QNT404]: Name 'abort' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:18:60
+  18:   run lateProofTest = cashProof.then(tick).then(tick).then(abort(1)).then(commit(1).fail()).expect(safe)
+                                                                 ^^^^^^^^
+
+
+ Error [QNT404]: Name 'commit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:18:75
+  18:   run lateProofTest = cashProof.then(tick).then(tick).then(abort(1)).then(commit(1).fail()).expect(safe)
+                                                                                ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:18:100
+  18:   run lateProofTest = cashProof.then(tick).then(tick).then(abort(1)).then(commit(1).fail()).expect(safe)
+                                                                                                         ^^^^
+
+
+ Error [QNT404]: Name 'freeze' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:19:42
+  19:   run localRollbackTest = cashProof.then(freeze(0)).then(commit(1).fail()).expect(s.trades.get(1).decision==1 and s.ownerA==2 and s.receivedA.get(1)==0)
+                                               ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'commit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:19:58
+  19:   run localRollbackTest = cashProof.then(freeze(0)).then(commit(1).fail()).expect(s.trades.get(1).decision==1 and s.ownerA==2 and s.receivedA.get(1)==0)
+                                                               ^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:19:83
+  19:   run localRollbackTest = cashProof.then(freeze(0)).then(commit(1).fail()).expect(s.trades.get(1).decision==1 and s.ownerA==2 and s.receivedA.get(1)==0)
+                                                                                        ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:19:115
+  19:   run localRollbackTest = cashProof.then(freeze(0)).then(commit(1).fail()).expect(s.trades.get(1).decision==1 and s.ownerA==2 and s.receivedA.get(1)==0)
+                                                                                                                        ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:19:131
+  19:   run localRollbackTest = cashProof.then(freeze(0)).then(commit(1).fail()).expect(s.trades.get(1).decision==1 and s.ownerA==2 and s.receivedA.get(1)==0)
+                                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'freeze' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:47
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:63
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                    ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:74
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                               ^^^^
+
+
+ Error [QNT404]: Name 'abort' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:85
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                                          ^^^^^^^^
+
+
+ Error [QNT404]: Name 'refund' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:100
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                                                         ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'unfreeze' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:125
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                                                                                  ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'refund' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:143
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                                                                                                    ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:163
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                                                                                                                        ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:20:172
+  20:   run abortRefundFailureTest = bothHolds.then(freeze(0)).then(tick).then(tick).then(abort(1)).then(refund(1,0).fail()).then(unfreeze(0)).then(refund(1,0)).expect(safe and s.trades.get(1).decision==3)
+                                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 'applyB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:21:47
+  21:   run duplicateApplicationTest = settled.then(applyB(1).fail()).then(deliver(1,3)).then(learn(1,2,1)).then(applyB(1).fail()).expect(safe)
+                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:21:70
+  21:   run duplicateApplicationTest = settled.then(applyB(1).fail()).then(deliver(1,3)).then(learn(1,2,1)).then(applyB(1).fail()).expect(safe)
+                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:21:89
+  21:   run duplicateApplicationTest = settled.then(applyB(1).fail()).then(deliver(1,3)).then(learn(1,2,1)).then(applyB(1).fail()).expect(safe)
+                                                                                              ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'applyB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:21:108
+  21:   run duplicateApplicationTest = settled.then(applyB(1).fail()).then(deliver(1,3)).then(learn(1,2,1)).then(applyB(1).fail()).expect(safe)
+                                                                                                                 ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:21:133
+  21:   run duplicateApplicationTest = settled.then(applyB(1).fail()).then(deliver(1,3)).then(learn(1,2,1)).then(applyB(1).fail()).expect(safe)
+                                                                                                                                          ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:22:45
+  22:   run deadlineBoundaryTest = cashProof.then(tick).then(commit(1)).expect(safe and someCommit)
+                                                  ^^^^
+
+
+ Error [QNT404]: Name 'commit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:22:56
+  22:   run deadlineBoundaryTest = cashProof.then(tick).then(commit(1)).expect(safe and someCommit)
+                                                             ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:22:74
+  22:   run deadlineBoundaryTest = cashProof.then(tick).then(commit(1)).expect(safe and someCommit)
+                                                                               ^^^^
+
+
+ Error [QNT404]: Name 'someCommit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:22:83
+  22:   run deadlineBoundaryTest = cashProof.then(tick).then(commit(1)).expect(safe and someCommit)
+                                                                                        ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'rotate' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:23:46
+  23:   run retentionRotationTest = cashProof.then(rotate).then(exitMember).then(commit(1)).expect(safe)
+                                                   ^^^^^^
+
+
+ Error [QNT404]: Name 'exitMember' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:23:59
+  23:   run retentionRotationTest = cashProof.then(rotate).then(exitMember).then(commit(1)).expect(safe)
+                                                                ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'commit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:23:76
+  23:   run retentionRotationTest = cashProof.then(rotate).then(exitMember).then(commit(1)).expect(safe)
+                                                                                 ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:23:94
+  23:   run retentionRotationTest = cashProof.then(rotate).then(exitMember).then(commit(1)).expect(safe)
+                                                                                                   ^^^^
+
+
+ Error [QNT404]: Name 'finalize' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:50
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                       ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:70
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prune' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:89
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                                              ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'crash' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:106
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                                                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'recover' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:121
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                                                                              ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:138
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                                                                                               ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:157
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'fact' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:24:175
+  24:   run witnessCapturePruningTest = bothHolds.then(finalize(1,2)).then(capture(1,2)).then(prune(1,2)).then(crash(3)).then(recover(3)).then(prove(1,2)).expect(s.proofs.contains(fact(1,2)))
+                                                                                                                                                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'crash' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:25:45
+  25:   run projectionRecoveryTest = settled.then(crash(3)).then(recover(3)).expect(safe and s.trades.get(1).stale and s.trades.get(1).report==0)
+                                                  ^^^^^^^^
+
+
+ Error [QNT404]: Name 'recover' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:25:60
+  25:   run projectionRecoveryTest = settled.then(crash(3)).then(recover(3)).expect(safe and s.trades.get(1).stale and s.trades.get(1).report==0)
+                                                                 ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:25:79
+  25:   run projectionRecoveryTest = settled.then(crash(3)).then(recover(3)).expect(safe and s.trades.get(1).stale and s.trades.get(1).report==0)
+                                                                                    ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:25:88
+  25:   run projectionRecoveryTest = settled.then(crash(3)).then(recover(3)).expect(safe and s.trades.get(1).stale and s.trades.get(1).report==0)
+                                                                                             ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:25:114
+  25:   run projectionRecoveryTest = settled.then(crash(3)).then(recover(3)).expect(safe and s.trades.get(1).stale and s.trades.get(1).report==0)
+                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:26:33
+  26:   run transportSeparationTest = init.then(compromiseTransport).expect(S16)
+                                      ^^^^
+
+
+ Error [QNT404]: Name 'compromiseTransport' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:26:43
+  26:   run transportSeparationTest = init.then(compromiseTransport).expect(S16)
+                                                ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'S16' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:26:71
+  26:   run transportSeparationTest = init.then(compromiseTransport).expect(S16)
+                                                                            ^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:27:22
+  27:   run unsignedTest = init.then(sign(1,0)).then(openA(1).fail()).then(prepareB(1).fail()).expect(safe)
+                           ^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:27:32
+  27:   run unsignedTest = init.then(sign(1,0)).then(openA(1).fail()).then(prepareB(1).fail()).expect(safe)
+                                     ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:27:48
+  27:   run unsignedTest = init.then(sign(1,0)).then(openA(1).fail()).then(prepareB(1).fail()).expect(safe)
+                                                     ^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:27:70
+  27:   run unsignedTest = init.then(sign(1,0)).then(openA(1).fail()).then(prepareB(1).fail()).expect(safe)
+                                                                           ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:27:97
+  27:   run unsignedTest = init.then(sign(1,0)).then(openA(1).fail()).then(prepareB(1).fail()).expect(safe)
+                                                                                                      ^^^^
+
+
+ Error [QNT404]: Name 'spend' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:28:41
+  28:   run spentCapacityTest = signBoth.then(spend(0)).then(openA(1).fail()).expect(safe)
+                                              ^^^^^^^^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:28:56
+  28:   run spentCapacityTest = signBoth.then(spend(0)).then(openA(1).fail()).expect(safe)
+                                                             ^^^^^^^^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/dvp_test.qnt:28:80
+  28:   run spentCapacityTest = signBoth.then(spend(0)).then(openA(1).fail()).expect(safe)
+                                                                                     ^^^^
+
+error: parsing failed

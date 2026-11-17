@@ -1,0 +1,19 @@
+# Time, scheduling and resource contracts
+
+T-Async is dvp.step/adversarialStep: A height advances only by tick on the decision ledger. Message/service delay has no elapsed bound. Safety is independent of fairness. Independent B clocks never authorize refunds.
+
+T-Eventual assumes `<>[] requiredServicesUp` and weak fairness for each continuously enabled trade/phase action. This allows ABORT when preparation/proofs miss the finite A-height deadline. Fairness is not a bound.
+
+T-Bounded uses discrete reference slots, separately from A height and B local clock. After stabilization, a single nonpreemptive worker serves a bounded queue and one phase per job; proof/witness, delivery and inclusion each have explicit durations. Recovery work has priority over new hostile jobs. The selected finite model uses two trades, one hostile work item, one worker and admission cap two. Example parameters are assumptions, not measured timings. A slow-block variant advances A height every two reference slots. B clock skew never participates in outcome authorization.
+
+For an OPEN trade the sufficient commitment slack is the sum of remaining preparation, witness, queue wait, proof, delivery and decision inclusion bounds, converted to A height only with an explicit upper bound on height growth per reference slot. Strict `<D` requires one additional height unit at the boundary. After COMMIT, outcome witness/proof/queue/delivery/inclusion bounds are independent of the original deadline; expiration cannot authorize refund. ABORT refund bounds start after actual hold creation and availability of its authenticated outcome, not from a nonexistent reservation. Reconciliation bounds start after economic evidence is available and the consumer recovers.
+
+The timing model exposes finite horizon `H`, persistent deadline-miss flags, and saturation at H+1; saturation merges states only after a missed-bound flag can be set. No state constraint removes the first violation. Time-progress liveness is checked separately; infinite same-time stuttering is inadmissible for the bounded completion interpretation. Frozen time is an invalid environmental model detected by a progress control.
+
+## Executed slot calculation
+
+The timed workload is two independently fundable accepted transactions sharing one round-robin worker, rather than the insufficient-balance contention workload. Phase work per transaction is 2+2+1+1+2+1+1+1 = 11 slots. With a correlated two-slot outage, both decisions occur by slot/height 14, both applications by 22 and records by 24. Under this scheduler and one-height-per-slot assumption, the exclusive deadline therefore needs D>=15. D=15 passes; D=14 admits the second trade aborting. This is a configuration-specific minimum sufficient margin, not a global optimal latency or SLA. Missing authorization/funding, larger queues and unavailable submission paths do not inherit this commitment bound.
+
+The separate stabilization model admits arbitrarily long delay before stabilization and preserves the original signed height deadline. Only the post-stabilization measurement clock resets. A late stabilization may legitimately cause ABORT. Its global fixed-bound overclaim fails; conditional post-stabilization completion passes. The late-hold model measures its refund bound from actual creation of a late reservation and does not invent refunds for nonexistent holds.
+
+Independent B expiry uses its modeled skewed B clock; the safe protocol never uses that clock as refund authority. The small privacy/time product exposes actual queue time, while retaining a coupled publicly determined schedule. Phase durations are assumed slot bounds, not measurements of Besu finality, SNARK work, gas, p95/p99 or production cost. There is no checked refinement from the economic ledger model to this resource abstraction: composition assumes jobs correspond to legitimately admitted/backed operations and that the stated component bounds hold.

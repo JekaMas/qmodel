@@ -1,0 +1,6 @@
+
+  open_test
+    ok delayedOpenTest passed 1 test(s)
+    ok knownAbortRejectsTest passed 1 test(s)
+
+  2 passing (39ms)

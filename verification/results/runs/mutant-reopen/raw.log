@@ -1,0 +1,433 @@
+An example execution:
+
+[State 0]
+{
+  pc: 0,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set(),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 0,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 0,
+              holdB: 0,
+              intent: false,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: false,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 1]
+{
+  pc: 1,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set((1, 0)),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 0,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 0,
+              holdB: 0,
+              intent: false,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: false,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 2]
+{
+  pc: 2,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set((1, 0), (1, 1)),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 0,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 0,
+              holdB: 0,
+              intent: false,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: false,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 3]
+{
+  pc: 3,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set((1, 0), (1, 1)),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 4]
+{
+  pc: 4,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 1,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set((1, 0), (1, 1)),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 5]
+{
+  pc: 5,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 2,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set((1, 0), (1, 1)),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 6]
+{
+  pc: 6,
+  reopen::dvp::s:
+    {
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      eligible: Set(1),
+      epoch: 0,
+      finalized: Set(),
+      frozen: Set(),
+      height: 2,
+      historical: Set(1),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set((1, 0), (1, 1)),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 3,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 3,
+              knownB: 0,
+              oldTerminal: 3,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[ok] No violation found (21ms at 48 traces/second).
+Trace length statistics: max=7, min=7, average=7.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

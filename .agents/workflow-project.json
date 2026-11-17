@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "languages": [
+    "rust"
+  ],
+  "module_roots": {},
+  "instructions": [
+    "verification/README.md"
+  ],
+  "notes": "Product: Quint models and Python evidence scripts. No Rust product roots. Optional Rust adapter retained from initial upstream-reference discovery because pinned bootstrap refuses removing managed routes; it does not authorize or require Rust product checks."
+}

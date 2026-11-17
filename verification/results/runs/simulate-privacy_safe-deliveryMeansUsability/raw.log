@@ -1,0 +1,3 @@
+[violation] Found an issue (18ms at 167 traces/second).
+Use --seed=0x728 --backend=rust to reproduce.
+error: Invariant violated

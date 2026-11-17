@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "change": "verify-cross-chain-dvp",
+  "scope": {
+    "property_ids": [
+      "EV.P1"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "D1",
+      "question": "Locate source requirements, candidate protocol and actual verification/evidence owners in the new repository.",
+      "property_ids": [
+        "EV.P1"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion"
+      ],
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Explicit attachment read; exact source-path checks and rg --files in the requested workspace; direct reads of named new model/evidence files.",
+          "outcome": "Shared answer recovered from the requested public link; original PDF/workspace absent. Models and evidence pipeline authored in this repository.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 1,
+              "classification": "change_candidate",
+              "reason": "Owns reference ledger/evidence/operational transitions."
+            },
+            {
+              "path": "verification/scripts/evidence.py",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Owns executed checker receipts and source capture."
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Unfamiliar implementation ownership",
+          "outcome": "No pre-existing production implementation exists in qmodel.",
+          "reason": "New requirements-driven formal project; all owners are explicit newly authored files. No semantic code-discovery or implementation conformance is claimed.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "IDE PSI/reference ownership for production implementation",
+          "outcome": "Not an implementation/IDE investigation.",
+          "reason": "No existing implementation or indexed project is being claimed as verified; Quint CLI/backends provide the actual model evidence.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "This change owns the complete scoped executable investigation and honest evidence reporting."
+    }
+  ]
+}

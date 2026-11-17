@@ -1,0 +1,80 @@
+{
+  "id": "mutant-binding",
+  "started_utc": "2026-11-17T16:08:26.131084+00:00",
+  "claim": "S10",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/mutants/guided.qnt",
+    "--main",
+    "binding",
+    "--init",
+    "initGuided",
+    "--step",
+    "stepGuided",
+    "--backend",
+    "typescript",
+    "--invariant",
+    "S10",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "12",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "verification/results/traces/binding.itf.json"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/mutants/guided.qnt --main binding --init initGuided --step stepGuided --backend typescript --invariant S10 --max-samples 1 --max-steps 12 --seed 17 --verbosity 2 --out-itf verification/results/traces/binding.itf.json",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m"
+  },
+  "input_hashes": {
+    "verification/mutants/guided.qnt": "6426c6c129d5e5c535f16c4e6fedef9307e7ca5703b21467ae7813a37545dc98",
+    "verification/models/dvp.qnt": "83c6de6b4eb5ac5c60948ace6c7068d96f6a830c57167175cc32d7ac89f8219f"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "openjdk version \"11.0.21\" 2023-10-17\nOpenJDK Runtime Environment Homebrew (build 11.0.21+0)\nOpenJDK 64-Bit Server VM Homebrew (build 11.0.21+0, mixed mode)"
+  },
+  "configuration": {
+    "id": "binding",
+    "mutation": 2,
+    "trades": 2,
+    "property": "S10",
+    "schedule": [
+      "sign(1,0)",
+      "sign(1,1)",
+      "sign(2,0)",
+      "sign(2,1)",
+      "prepareB(1)",
+      "openA(2)",
+      "finalize(1,2)",
+      "capture(1,2)",
+      "prove(1,2)",
+      "deliver(1,2)",
+      "commit(2)"
+    ],
+    "expected": "counterexample",
+    "classification": "protocol mutant"
+  },
+  "timeout_seconds": 120,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 1.5160918338224292,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/mutant-binding/raw.log",
+  "minimized": false,
+  "replayed": false
+}

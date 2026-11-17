@@ -1,0 +1,4 @@
+interface:
+  display_name: "sdd-rust"
+  short_description: "Use the pinned shared specialist procedure."
+  default_prompt: "Use $sdd-rust for the relevant task."

@@ -1,0 +1,61 @@
+{
+  "id": "simulate-timing_leak-PNI",
+  "started_utc": "2026-11-17T16:11:42.323025+00:00",
+  "claim": "PNI",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/models/privacy.qnt",
+    "--main",
+    "timing_leak",
+    "--backend",
+    "rust",
+    "--invariant",
+    "PNI",
+    "--max-samples",
+    "10000",
+    "--max-steps",
+    "80",
+    "--seed",
+    "29",
+    "--verbosity",
+    "1",
+    "--step",
+    "pairedStep"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/models/privacy.qnt --main timing_leak --backend rust --invariant PNI --max-samples 10000 --max-steps 80 --seed 29 --verbosity 1 --step pairedStep",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m"
+  },
+  "input_hashes": {
+    "verification/models/privacy.qnt": "0127344311a8a3c81e4ac69484e3b07b257825827c2c4ef688e74cdf2ba12950"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "openjdk version \"11.0.21\" 2023-10-17\nOpenJDK Runtime Environment Homebrew (build 11.0.21+0)\nOpenJDK 64-Bit Server VM Homebrew (build 11.0.21+0, mixed mode)"
+  },
+  "configuration": {
+    "main": "timing_leak",
+    "step": "pairedStep",
+    "samples": 10000,
+    "steps": 80,
+    "seed": 29
+  },
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 0.6124131251126528,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/simulate-timing_leak-PNI/raw.log",
+  "minimized": false,
+  "replayed": false
+}

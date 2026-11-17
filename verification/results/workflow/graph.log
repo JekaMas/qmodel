@@ -1,0 +1,49 @@
+{
+  "change": "verify-cross-chain-dvp",
+  "manifest": "openspec/changes/verify-cross-chain-dvp/verification.json",
+  "manifest_sha256": "df4f0658e56b8e9b8d3cbc579491e9336812e2b3e3d68e18e67ac674355af00b",
+  "selection": {
+    "cases": [
+      "EV.C1",
+      "EV.C2",
+      "EV.C3",
+      "EV.C4",
+      "EV.C5",
+      "EV.C6"
+    ],
+    "commands": [
+      "evidence-audit"
+    ],
+    "properties": [
+      "EV.P1"
+    ],
+    "requirements": [
+      "EV"
+    ]
+  },
+  "specifications": {
+    "EV": "410a05a9a80483d5a0edae023520d0a4ce1d4b640f9209d8ef3641b579c7b621"
+  },
+  "status": "passed",
+  "substitution_gaps": []
+}
+{
+  "change": "verify-cross-chain-dvp",
+  "ledger": "openspec/changes/verify-cross-chain-dvp/discovery.json",
+  "properties": [
+    "EV.P1"
+  ],
+  "reviews": [
+    "D1"
+  ],
+  "status": "passed",
+  "tests": [
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant"
+  ]
+}
+{"change": "verify-cross-chain-dvp", "evidence_graph": "validated", "discovery": "validated", "status": "passed"}

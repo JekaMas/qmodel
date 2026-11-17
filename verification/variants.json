@@ -1,0 +1,214 @@
+[
+  {
+    "id": "A-tombstone",
+    "description": "A-hosted native durable holds; signed abort tombstones",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "finite_model_verified"
+    ],
+    "checks": [
+      "final-record-safety",
+      "final-record-progress"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "A-open",
+    "description": "A-hosted; authenticated historical OPEN required for B",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "executed_successfully"
+    ],
+    "checks": [
+      "final-variant-live_open",
+      "delayed-open-fact-scenarios"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "B-hosted",
+    "description": "B hosts decision; cash delivered locally at COMMIT",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified"
+    ],
+    "checks": [
+      "final-variant-live_b"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "D-shared",
+    "description": "Distinct shared decision ledger, separate A/B preparation and return evidence",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "executed_successfully"
+    ],
+    "checks": [
+      "final-variant-live_d",
+      "d-outage-return-paths"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "escrow",
+    "description": "Custody-transfer reservations; control versus ownership distinguished",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "executed_successfully"
+    ],
+    "checks": [
+      "final-variant-live_escrow",
+      "witness-escrow_path_test"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "private",
+    "description": "Private recipient notes/keys required for local usability",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "finite_model_verified",
+      "expected_counterexample_found"
+    ],
+    "checks": [
+      "final-variant-private_asset",
+      "private-data-progress",
+      "private-permanent-key-loss"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "multilateral",
+    "description": "Three independent institutions; two bilateral trades share capacity",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "finite_model_verified",
+      "executed_successfully"
+    ],
+    "checks": [
+      "three-domain-installation-final",
+      "three-domain-progress",
+      "three-independent-domains-witnesses"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "htlc",
+    "description": "Abstract two-party staggered HTLC; buyer holds secret",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "expected_counterexample_found",
+      "executed_successfully"
+    ],
+    "checks": [
+      "htlc-bounded-margins",
+      "htlc-permanent-halt",
+      "scenario-htlc_test"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "gpact",
+    "description": "Narrow provisional effects/root decision/signalling",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "expected_counterexample_found",
+      "expected_counterexample_found",
+      "executed_successfully"
+    ],
+    "checks": [
+      "root-local-progress",
+      "root-local-immediate",
+      "root-local-halt",
+      "root-local-witness"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "shared-execution",
+    "description": "Both economic effects one local atomic transaction",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "executed_successfully",
+      "executed_successfully"
+    ],
+    "checks": [
+      "final-variant-shared_execution",
+      "witness-shared_path_test",
+      "scenario-shared_test"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "committee",
+    "description": "Honest/compromised threshold remote-fact authentication",
+    "status": "executed-with-result",
+    "result": [
+      "sampled_no_counterexample",
+      "expected_counterexample_found",
+      "executed_successfully",
+      "expected_counterexample_found"
+    ],
+    "checks": [
+      "simulate-committee_honest-safe",
+      "simulate-committee_compromised-backed",
+      "witness-committee_test",
+      "trust-v2-committee_refusal"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "auth-direct",
+    "description": "Ideal canonical source-consensus + membership",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "expected_counterexample_found"
+    ],
+    "checks": [
+      "auth-direct",
+      "auth-direct_bad_execution"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "auth-zk",
+    "description": "Ideal ZK wrapper of canonical consensus/membership",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "expected_counterexample_found"
+    ],
+    "checks": [
+      "auth-zk_consensus",
+      "auth-zk_bad_execution"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  },
+  {
+    "id": "auth-execution",
+    "description": "Ideal execution validity plus canonical history",
+    "status": "executed-with-result",
+    "result": [
+      "finite_model_verified",
+      "finite_model_verified",
+      "finite_model_verified"
+    ],
+    "checks": [
+      "auth-execution",
+      "auth-execution_rejects_invalid",
+      "auth-execution_rejects_history"
+    ],
+    "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
+  }
+]

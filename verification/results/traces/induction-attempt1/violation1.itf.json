@@ -1,0 +1,139 @@
+{
+  "#meta": {
+    "format": "ITF",
+    "format-description": "https://apalache-mc.org/docs/adr/015adr-trace.html",
+    "description": "Created by Apalache on Tue Nov 17 20:28:23 GMT+04:00 2026",
+    "varTypes": {
+      "v_paidA": "Int",
+      "v_paidB": "Int",
+      "v_receivedA": "Int",
+      "v_receivedB": "Int",
+      "v_decision": "Int",
+      "v_ownerA": "Int",
+      "v_terminal": "Int",
+      "v_height": "Int",
+      "v_certificateB": "Bool",
+      "v_knownB": "Int",
+      "v_refundA": "Int",
+      "v_refundB": "Int",
+      "v_ownerB": "Int",
+      "v_holdA": "Int",
+      "v_holdB": "Int"
+    }
+  },
+  "vars": [
+    "v_paidA",
+    "v_paidB",
+    "v_receivedA",
+    "v_receivedB",
+    "v_decision",
+    "v_ownerA",
+    "v_terminal",
+    "v_height",
+    "v_certificateB",
+    "v_knownB",
+    "v_refundA",
+    "v_refundB",
+    "v_ownerB",
+    "v_holdA",
+    "v_holdB"
+  ],
+  "states": [
+    {
+      "#meta": {
+        "index": 0
+      },
+      "v_certificateB": true,
+      "v_decision": {
+        "#bigint": "1"
+      },
+      "v_height": {
+        "#bigint": "2"
+      },
+      "v_holdA": {
+        "#bigint": "1"
+      },
+      "v_holdB": {
+        "#bigint": "2"
+      },
+      "v_knownB": {
+        "#bigint": "0"
+      },
+      "v_ownerA": {
+        "#bigint": "2"
+      },
+      "v_ownerB": {
+        "#bigint": "0"
+      },
+      "v_paidA": {
+        "#bigint": "0"
+      },
+      "v_paidB": {
+        "#bigint": "1"
+      },
+      "v_receivedA": {
+        "#bigint": "0"
+      },
+      "v_receivedB": {
+        "#bigint": "3"
+      },
+      "v_refundA": {
+        "#bigint": "0"
+      },
+      "v_refundB": {
+        "#bigint": "0"
+      },
+      "v_terminal": {
+        "#bigint": "0"
+      }
+    },
+    {
+      "#meta": {
+        "index": 1
+      },
+      "v_certificateB": true,
+      "v_decision": {
+        "#bigint": "3"
+      },
+      "v_height": {
+        "#bigint": "2"
+      },
+      "v_holdA": {
+        "#bigint": "1"
+      },
+      "v_holdB": {
+        "#bigint": "2"
+      },
+      "v_knownB": {
+        "#bigint": "0"
+      },
+      "v_ownerA": {
+        "#bigint": "2"
+      },
+      "v_ownerB": {
+        "#bigint": "0"
+      },
+      "v_paidA": {
+        "#bigint": "0"
+      },
+      "v_paidB": {
+        "#bigint": "1"
+      },
+      "v_receivedA": {
+        "#bigint": "0"
+      },
+      "v_receivedB": {
+        "#bigint": "3"
+      },
+      "v_refundA": {
+        "#bigint": "0"
+      },
+      "v_refundB": {
+        "#bigint": "0"
+      },
+      "v_terminal": {
+        "#bigint": "3"
+      }
+    }
+  ]
+}

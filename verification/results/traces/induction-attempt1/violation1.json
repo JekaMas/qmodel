@@ -1,0 +1,751 @@
+{
+  "name": "ApalacheIR",
+  "version": "1.0",
+  "description": "https://apalache-mc.org/docs/adr/005adr-json.html",
+  "modules": [
+    {
+      "kind": "TlaModule",
+      "name": "counterexample",
+      "declarations": [
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "ConstInit",
+          "formalParams": [],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "ValEx",
+            "value": {
+              "kind": "TlaBool",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "State0",
+          "formalParams": [],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Bool",
+                    "kind": "NameEx",
+                    "name": "v_certificateB"
+                  },
+                  {
+                    "type": "Bool",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaBool",
+                      "value": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_decision"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_height"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_holdA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_holdB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_knownB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_ownerA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_ownerB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_paidA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_paidB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_receivedA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_receivedB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 3
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_refundA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_refundB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_terminal"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "State1",
+          "formalParams": [],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Bool",
+                    "kind": "NameEx",
+                    "name": "v_certificateB"
+                  },
+                  {
+                    "type": "Bool",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaBool",
+                      "value": true
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_decision"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 3
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_height"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_holdA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_holdB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_knownB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_ownerA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_ownerB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_paidA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_paidB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_receivedA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_receivedB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 3
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_refundA"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_refundB"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_terminal"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "(() => Bool)",
+          "kind": "TlaOperDecl",
+          "name": "InvariantViolation",
+          "formalParams": [],
+          "isRecursive": false,
+          "body": {
+            "type": "Bool",
+            "kind": "OperEx",
+            "oper": "AND",
+            "args": [
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "EQ",
+                "args": [
+                  {
+                    "type": "Int",
+                    "kind": "NameEx",
+                    "name": "v_decision"
+                  },
+                  {
+                    "type": "Int",
+                    "kind": "ValEx",
+                    "value": {
+                      "kind": "TlaInt",
+                      "value": 3
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Bool",
+                "kind": "OperEx",
+                "oper": "OR",
+                "args": [
+                  {
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "NOT",
+                    "args": [
+                      {
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EQ",
+                        "args": [
+                          {
+                            "type": "Int",
+                            "kind": "NameEx",
+                            "name": "v_paidA"
+                          },
+                          {
+                            "type": "Int",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaInt",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Bool",
+                    "kind": "OperEx",
+                    "oper": "NOT",
+                    "args": [
+                      {
+                        "type": "Bool",
+                        "kind": "OperEx",
+                        "oper": "EQ",
+                        "args": [
+                          {
+                            "type": "Int",
+                            "kind": "NameEx",
+                            "name": "v_paidB"
+                          },
+                          {
+                            "type": "Int",
+                            "kind": "ValEx",
+                            "value": {
+                              "kind": "TlaInt",
+                              "value": 0
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "tlc-frozen_time-timeProgress",
+  "started_utc": "2026-11-17T16:24:49.221323+00:00",
+  "claim": [
+    null,
+    "timeProgress"
+  ],
+  "backend": "tlc",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/models/timing.qnt",
+    "--main",
+    "frozen_time",
+    "--backend",
+    "tlc",
+    "--step",
+    "step",
+    "--verbosity",
+    "3",
+    "--tlc-config",
+    "verification/configs/tlc.json",
+    "--temporal",
+    "timeProgress"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/timing.qnt --main frozen_time --backend tlc --step step --verbosity 3 --tlc-config verification/configs/tlc.json --temporal timeProgress",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/models/timing.qnt": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+    "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "apalache": "0.62.4",
+    "tlc": "see raw backend banner",
+    "node": "v22.22.0",
+    "java": "openjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "configuration": {
+    "main": "frozen_time",
+    "step": "step",
+    "scope": "timing"
+  },
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 4.186008624732494,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": 4,
+  "distinct_states": 2,
+  "raw_output": "verification/results/runs/tlc-frozen_time-timeProgress/raw.log",
+  "minimized": false,
+  "replayed": false
+}

@@ -1,0 +1,16 @@
+# Eight-question coverage
+
+The original Architect Case Brief PDF and earlier design workspace were absent. These eight topics are reconstructed from the recovered shared answer and the self-contained v2 instruction; no unseen source contents are invented.
+
+| Question | Model/evidence contribution | Residual obligation |
+|---|---|---|
+| 1. On-chain/off-chain architecture | Native security/cash holds, A/B/D decision placements, local atomicity, proof/evidence workers, durable work, custody/submission and reporting separation; topology-specific checks | Actual contracts/services, account interfaces and deployment/governance ownership |
+| 2. What is proved, by whom and where | Structured historical provenance, exact descriptor/public bindings, admitted anchors/epochs; direct/ZK-consensus/execution-validity interfaces and false-history controls | Real QBFT/header/membership circuits or guest, encoding, proof soundness and verifier implementation |
+| 3. Full DvP, timeout and failures | Both preparation orders, concurrent insufficient balance, exclusive decision-height deadline, tombstones, delayed OPEN/ABORT, replay, rollback, failures/restart and authenticated application records | Actual EVM/token failures, real durable stores and integration conformance |
+| 4. Trust/governance | Source non-equivocation/execution assumptions, verifier/issuer/committee boundaries, predecessor-approved rotation, current versus historical credentials, pending-safe exit/pruning, key separation | Institutional independence, governance security, supported legal interventions and actual upgrades |
+| 5. Privacy | Observer/field/surface policy, access and binding controls, note/key usability, scoped audit completeness, paired observations, public links and metadata leak controls | Cryptographic confidentiality, broader schedulers/side channels, actual data/key custody and legal disclosure policy |
+| 6. Onboarding | Manifest-bound governance approval, account/policy checks, source anchors/contracts/programs, old-credential rejection, pending exit and replay after pruning | KYC/KYB, real account/issuer rights, certificates, operational ownership and bank integration |
+| 7. Finality, latency and cost | Distinct decision/local application/records; asynchronous/eventual/bounded regimes; queues, inclusion, outage and exact-boundary checks | Measured Besu/prover availability, proving cost, gas, p50/p95/p99, operating cost and liquidity exposure |
+| 8. Credible PoC | Executable Quint project, positive/negative smoke controls, scenarios, multi-seed simulation, Apalache/TLC, induction/mapping, mutants/native traces and practical conformance vectors | Next PoC uses two real Besu/QBFT networks, supported holds, genuine preparation/outcome proofs and real conformance/measurement; no fake verifier may stand in for ZK |
+
+The technical answer is conditional backed commitment with eventual applications. If the brief requires no interval of unilateral local usability, the reference overlay does not satisfy that stronger wording. A shared execution domain or an explicitly justified legal-entitlement interpretation is a different design/obligation; the latter is not proof of local availability.
