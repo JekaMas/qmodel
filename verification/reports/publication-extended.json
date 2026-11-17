@@ -1,0 +1,38 @@
+{
+  "observed_utc": "2026-11-17T21:17:45.991716+00:00",
+  "repository": "https://github.com/JekaMas/qmodel",
+  "owner": "JekaMas",
+  "owner_type": "User",
+  "visibility": "public",
+  "default_branch": "main",
+  "source_commit": "90cb83d576d5b82043c3b7b2e8cbe328261ab189",
+  "remote_source_head_matched": true,
+  "connector_file_readback": [
+    {
+      "path": "README.md",
+      "git_blob_sha": "07f05793e5015a0d1ecb47e89d96b33c07f5e46e",
+      "sha256": "47a91bab9011a83a1c764903e2fd5429432324909ba93d9e613ad9f0d9563bc4",
+      "identity_matched": true
+    },
+    {
+      "path": "verification/reports/final-review.json",
+      "git_blob_sha": "e59567cfab3445af5f9453889121657d66bb434e",
+      "sha256": "bec1f4647e94509d006177fb75792a8e7fc361eb2a65d1a5750ba7ffffb5235e",
+      "identity_matched": true
+    }
+  ],
+  "anonymous_readme": {
+    "url": "https://raw.githubusercontent.com/JekaMas/qmodel/90cb83d576d5b82043c3b7b2e8cbe328261ab189/README.md",
+    "sha256": "47a91bab9011a83a1c764903e2fd5429432324909ba93d9e613ad9f0d9563bc4",
+    "matched": true
+  },
+  "clean_revision_audit": {
+    "path": "verification/results/publication/extended-source-clean-dag.json",
+    "sha256": "9914e13188936ef70b2092098672a40914ac1a097f04c4c8c854566e7cd75720",
+    "status": "passed",
+    "evidence_cases": 18
+  },
+  "selected_observations": 162,
+  "unclosed_broader_obligations": [],
+  "boundary": "Metadata follow-up records this already observed source publication; no model semantics or original backend receipt changes. Prior publication.json covers the earlier fresh-clone/native replay; this round verifies the new source by commit/connector/anonymous byte identity."
+}
