@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "observed_utc": "2026-11-17T19:17:41.561544+00:00",
+  "repository_url": "https://github.com/JekaMas/qmodel",
+  "owner": "JekaMas",
+  "owner_type": "User",
+  "visibility": "public",
+  "default_branch": "main",
+  "published_source_commit": "614844eadeb54f2c12841df3211a12b79173ab05",
+  "observed_remote_head": "614844eadeb54f2c12841df3211a12b79173ab05",
+  "readback_files": [
+    {
+      "path": "README.md",
+      "github_blob_sha": "05096faca7f44085510711b8199266cf306f284b",
+      "size": 3454
+    },
+    {
+      "path": "verification/SPECIFICATION.md",
+      "github_blob_sha": "c9f91066febc6cb4460481490121caa05bedece4",
+      "size": 9901
+    },
+    {
+      "path": "verification/models/dvp.qnt",
+      "github_blob_sha": "e359ebb34ffadfaccdb0e9ad4e0ac816fbfb93f0",
+      "size": 24685
+    },
+    {
+      "path": "verification/models/privacy_pipeline.qnt",
+      "github_blob_sha": "2d1144fd53b71d48319b33bcfad3ead20dcac61d",
+      "size": 13688
+    },
+    {
+      "path": "verification/reports/independent-review.md",
+      "github_blob_sha": "0114c4d473a939163e351d66ca35634761bef553",
+      "size": 32735
+    },
+    {
+      "path": "verification/reports/review-results.json",
+      "github_blob_sha": "4fce44fc9bc1bfb40bca26c671219b9f7306d3d3",
+      "size": 9769
+    },
+    {
+      "path": "verification/results/manifest.json",
+      "github_blob_sha": "d8a808feb6fd66bcec9657c12949bc245d80772f",
+      "size": 1735062
+    }
+  ],
+  "anonymous_readme": {
+    "http_status": 200,
+    "sha256": "8ad0c4e841698240a0edb94ddaecf3e5007bdae1decc4b6640a1bec9a7817ebb"
+  },
+  "fresh_clone": {
+    "source_commit": "614844eadeb54f2c12841df3211a12b79173ab05",
+    "baseline_audit": "passed:104 scoped positive observations",
+    "negative_audit": "passed:49 scoped negative observations",
+    "workflow_bundle_restore": "passed: exact pin restored offline",
+    "npm_ci": "passed: pinned dependencies installed; no global install",
+    "forced_native_replay": {
+      "original_receipt": "verification/results/runs/mutant-expiry-attempt2/receipt.json",
+      "replay_receipt": "replay-mutant-expiry-attempt2-attempt3",
+      "original_outcome": "expected_counterexample_found",
+      "observed_outcome": "expected_counterexample_found",
+      "outcome_reproduced": true,
+      "native_states_match": true,
+      "native_comparison": "immutable associated export",
+      "forced_new_process": true,
+      "minimized": false,
+      "method": "exact saved source closure and invocation/seed, observed current pinned toolchain; no cached execution"
+    }
+  },
+  "limits": "This proves source publication/reproduction at the named commit, not production financial/crypto guarantees. A following metadata commit records this observed publication."
+}

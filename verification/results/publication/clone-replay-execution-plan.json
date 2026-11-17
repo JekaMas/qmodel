@@ -1,0 +1,49 @@
+{
+  "command": [
+    "/private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/qmodel-published-j9ds4iqw/qmodel/node_modules/.bin/quint",
+    "run",
+    "/private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/qmodel-published-j9ds4iqw/qmodel/verification/results/runs/mutant-expiry-attempt2/inputs/verification/mutants/guided.qnt",
+    "--main",
+    "expiry",
+    "--init",
+    "initGuided",
+    "--step",
+    "stepGuided",
+    "--backend",
+    "typescript",
+    "--invariant",
+    "S08",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "13",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "/private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/qmodel-published-j9ds4iqw/qmodel/verification/results/replays/mutant-expiry-attempt2/20261117T191738388444Z/native.itf.json"
+  ],
+  "claim": "S08",
+  "expected": "counterexample",
+  "backend": "simulation",
+  "configuration": {
+    "recorded_receipt": "verification/results/runs/mutant-expiry-attempt2/receipt.json",
+    "replay_input": "exact saved source closure",
+    "forced": true
+  },
+  "input_hashes": {
+    "verification/results/runs/mutant-expiry-attempt2/inputs/verification/mutants/guided.qnt": "b0ea59897d9e20cf1cdeeee97bdc7e41ea5f1a20832965e3b781a6993da07ce9",
+    "verification/results/runs/mutant-expiry-attempt2/inputs/verification/models/dvp.qnt": "7f4f0eae39226cd1c8a36fb99439b4121b904948eebf7c4331eeb55738c866d3"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "e6bd72b035b17b99a61c531a511448e834a99b20a4754bee9fa6b1ed90c1a8cf"
+  },
+  "timeout_seconds": 120
+}

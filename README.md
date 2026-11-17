@@ -1,5 +1,7 @@
 # qmodel
 
+Published repository: [JekaMas/qmodel](https://github.com/JekaMas/qmodel).
+
 Executable Quint investigation of native-asset cross-chain delivery-versus-payment. The project executes the attached v2 brief against the recovered shared solution, using the pinned Quint LLM kit language/modeling skills and local Quint, Apalache and TLC tooling.
 
 **Result:** the finite models support backed irreversible commitment with conditional eventual local application. Immediate joint local usability across independent asynchronous ledgers fails. This is a scoped evidence matrix, not a deployed-system, cryptographic, legal or arbitrary-population verification.
@@ -20,4 +22,4 @@ Fresh checking requires Node, Python 3 and Java 21+ (Java 25 was used here). Qui
 
 The standard workflow is pinned at `.agents/workflow`. If the historical upstream pin is unavailable, restore it from the bundled exact Git history using `python3 .agents/restore-workflow.py`. The pinned local source bundle was smoke-tested in a temporary clone. Copied Quint kit skills are in `.agents/skills/quint-lang` and `.agents/skills/quint-modeling`; revision and licenses are in NOTICE and the source inventory.
 
-Models, evidence, source copies and reports form the reviewed project for publication under JekaMas/qmodel. There is no production blockchain, real asset movement or funded infrastructure. The versioned source seal is a local evidence trust anchor, not third-party execution attestation. Ten early observations lack saved source closures; their exact availability and current replacement scopes are listed in verification/reports/reproduction-availability.json. Four broader model-checker attempts remain timeouts.
+Models, evidence, source copies and reports are published under JekaMas/qmodel. [Publication receipts](verification/reports/publication.json) include hosted owner/visibility/head/file readback and a fresh-clone native replay. There is no production blockchain, real asset movement or funded infrastructure. The versioned source seal is a local evidence trust anchor, not third-party execution attestation. Ten early observations lack saved source closures; their exact availability and current replacement scopes are listed in verification/reports/reproduction-availability.json. Four broader model-checker attempts remain timeouts.

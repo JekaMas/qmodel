@@ -40,7 +40,7 @@ See reports/model-repairs.md for changed semantic inputs and retained proof boun
 - [x] 13. Independently review the original request, v2 sections 1–15, actual models and evidence; disposition every finding with the same reviewer.
 - [x] 14. Repair demonstrated model/evidence gaps and execute directly affected positive/negative checks; retain valid unrelated greens and original failed evidence.
 - [x] 15. Comment model/harness boundaries, expand the specification, document exact changes and resulting guarantees, and add review/results.
-- [ ] 16. Complete the final committed-revision evidence audit, publish under JekaMas/qmodel, and verify remote owner, visibility, files and HEAD.
+- [x] 16. Complete the final committed-revision evidence audit, publish under JekaMas/qmodel, and verify remote owner, visibility, files and HEAD.
 
 Current user authorizes independent current-task review, in-scope repair and GitHub publication. One separate reviewer owns independent-review.md/json only; root owns implementation. Original source commit is 4e3b8d0b440c5b4a9c562f3509b6c78106a3d885. No remote repository existed when checked. GitHub connector and gh both identify JekaMas; repository creation requires gh because the connector lacks that capability.
 
@@ -48,3 +48,10 @@ Early findings being addressed: privacy events/access payloads lack sufficient c
 
 
 Review repair checkpoint: independent reviewer resolved IR-001–IR-004 against actual code/native results. Current selected matrix has153 observations104 positive/49 negative; original broader4timeouts remain. Added portable remapping for absolute recorded replay inputs so a clone cannot read the old live checkout. Code/spec/comments/results are complete; publication and final committed-revision audit remain pending. Early exact-replay missing closures are listed in reproduction-availability.json and are never substituted silently. No additional economic model rerun is warranted by the comment-only changes or added unselected privacy temporal definitions.
+
+
+## Published review closure
+
+Independent IR-001–IR-004 are resolved with the same reviewer. The committed reviewed source614844eadeb54f2c12841df3211a12b79173ab05 passed the complete clean-revision DAG. Public GitHub repository https://github.com/JekaMas/qmodel is owned by authenticated JekaMas (User), default branch main. Remote source HEAD, seven file blobs and anonymous README bytes were verified. A fresh GitHub clone passed104 positive/49 negative audits, restored the exact workflow bundle, installed the pinned local npm dependency and forced a native expiry-mutant replay with matching immutable states. publication.json and results/publication contain the actual readback/reproduction evidence.
+
+A following metadata commit records that observed source publication and completes this checklist; it does not change model semantics. Final current-revision audit/readback are retained locally under results/runtime/review-ready-final.json and final-publication-readback.json, avoiding a self-referential publication hash. No banking systems, real assets, production blockchain deployment or funded calls were used. The unqualified full verification limit remains unchanged: four broad timeouts, ten early missing historical closures, finite/coupled-schedule scope and external production obligations.

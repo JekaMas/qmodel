@@ -192,5 +192,5 @@
     }
   ],
   "retained_unqualified_status": "NOT DONE: broader four timeouts,10 early missing source closures and production external obligations",
-  "publication": "pending final clean commit/push/readback; separate publication.json records observed remote state"
+  "publication": "Public JekaMas/qmodel verified from reviewed source614844eadeb54f2c12841df3211a12b79173ab05; publication.json and results/publication preserve actual GitHub readback and fresh-clone proof. Later metadata commit does not change model semantics."
 }
