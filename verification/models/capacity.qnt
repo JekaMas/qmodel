@@ -1,4 +1,7 @@
 module capacity {
+ // FIFO finite admission/service model. No recovery-priority class is implied.
+ // Every queued hostile zero consumes service. New identities are the finite set
+ // {1,2,3}, each admitted once; progress is not a theorem under unbounded arrivals.
  const BAD:int // 1 unbounded admission, 2 no recovery priority
  type State={queue:List[int],held:Set[int],done:Set[int],badBudget:int,served:int,blocked:bool,wait:int,missed:bool}
  var c:State

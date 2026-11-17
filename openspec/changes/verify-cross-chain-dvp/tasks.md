@@ -34,3 +34,17 @@ The root/signalling comparison also passed finite safety/conditional progress an
 `python3 verification/scripts/verify.py baseline` and `... negative` audit/reuse observed valid results. `--fresh` deliberately reruns exact saved closures under receipt limits. The native commands, source snapshots, failures and scope are in verification/results/manifest.json and reports/executions.md. reports/literal-coverage.md reconciles all 154 original bullet/lifecycle inventory entries without counting prose as independent checks.
 
 See reports/model-repairs.md for changed semantic inputs and retained proof boundaries. The workflow adapter has no Rust product roots; it does not establish Rust or production conformance. Source-discovery/IDE integration is inapplicable to this new formal-model repository. The exact shared workflow is recoverable from the bundled Git history if its historical upstream revision is unavailable.
+
+## Independent review and GitHub publication iteration
+
+- [x] 13. Independently review the original request, v2 sections 1–15, actual models and evidence; disposition every finding with the same reviewer.
+- [x] 14. Repair demonstrated model/evidence gaps and execute directly affected positive/negative checks; retain valid unrelated greens and original failed evidence.
+- [x] 15. Comment model/harness boundaries, expand the specification, document exact changes and resulting guarantees, and add review/results.
+- [ ] 16. Complete the final committed-revision evidence audit, publish under JekaMas/qmodel, and verify remote owner, visibility, files and HEAD.
+
+Current user authorizes independent current-task review, in-scope repair and GitHub publication. One separate reviewer owns independent-review.md/json only; root owns implementation. Original source commit is 4e3b8d0b440c5b4a9c562f3509b6c78106a3d885. No remote repository existed when checked. GitHub connector and gh both identify JekaMas; repository creation requires gh because the connector lacks that capability.
+
+Early findings being addressed: privacy events/access payloads lack sufficient connection to actual modeled witness/ledger data; --fresh can reuse a cached replay; timing prose must match the actual queue/hostile-work model. Full unqualified verification remains NOT DONE and the original four timeouts stay visible.
+
+
+Review repair checkpoint: independent reviewer resolved IR-001–IR-004 against actual code/native results. Current selected matrix has153 observations104 positive/49 negative; original broader4timeouts remain. Added portable remapping for absolute recorded replay inputs so a clone cannot read the old live checkout. Code/spec/comments/results are complete; publication and final committed-revision audit remain pending. Early exact-replay missing closures are listed in reproduction-availability.json and are never substituted silently. No additional economic model rerun is warranted by the comment-only changes or added unselected privacy temporal definitions.

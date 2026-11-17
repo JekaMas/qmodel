@@ -1,0 +1,21 @@
+test_absolute_recorded_input_relocates_to_saved_closure (verification.tests.test_evidence.EvidenceAudit.test_absolute_recorded_input_relocates_to_saved_closure) ... ok
+test_changed_claim_and_target_are_rejected (verification.tests.test_evidence.EvidenceAudit.test_changed_claim_and_target_are_rejected) ... ok
+test_changed_native_log_is_rejected (verification.tests.test_evidence.EvidenceAudit.test_changed_native_log_is_rejected) ... ok
+test_changed_source_identity_is_rejected (verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected) ... ok
+test_exact_failed_receipt_is_not_replaced_by_success (verification.tests.test_evidence.EvidenceAudit.test_exact_failed_receipt_is_not_replaced_by_success) ... ok
+test_external_and_timeout_scope_is_visible (verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible) ... ok
+test_forced_replays_execute_two_processes (verification.tests.test_evidence.EvidenceAudit.test_forced_replays_execute_two_processes) ... forced-probe executed_successfully OK 0.04s
+forced-probe executed_successfully OK 0.04s
+ok
+test_mutable_shared_trace_is_not_a_comparison_baseline (verification.tests.test_evidence.EvidenceAudit.test_mutable_shared_trace_is_not_a_comparison_baseline) ... ok
+test_negative_suite_has_real_counterexamples (verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples) ... ok
+test_new_invocation_records_observed_runtime (verification.tests.test_evidence.EvidenceAudit.test_new_invocation_records_observed_runtime) ... ok
+test_omitted_negative_observation_is_not_completion (verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion) ... ok
+test_required_backend_observations (verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations) ... ok
+test_tool_error_cannot_kill_mutant (verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant) ... ok
+test_zero_selected_quint_scenarios_are_not_success (verification.tests.test_evidence.EvidenceAudit.test_zero_selected_quint_scenarios_are_not_success) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 3.505s
+
+OK

@@ -7,6 +7,10 @@ module dvp {
   const ESCROW: bool
   const PRIVATE: bool
   const MUTANT: int
+  // Party IDs in signatures, local account IDs in Descriptor and availability
+  // slots are separate namespaces even though all are represented by finite ints.
+  // Up slots: 0 A, 1 B, 2 authorized submission (also D for HOST=2),
+  // 3 adapter/prover (also common execution for HOST=3), 4 transport.
   pure val Trades = 1.to(N)
   pure val D = 2
   type Descriptor = { trade: int, nonce: int, chainA: int, genesisA: int,
@@ -19,6 +23,9 @@ module dvp {
     holdA:50, holdB:60, decisionContract:70, security:2, cash:3,
     sellerA:0, buyerA:t, buyerB:if(HOST==3) t else 0, sellerB:if(HOST==3) 0 else t, deadline:D,
     protocol:1, epoch:0, commitment:1000+t}
+  // Full Descriptor/Witness provenance is specification-private ghost data.
+  // The public wire projection is PublicEvidence below; observers do not receive
+  // a nested plaintext descriptor merely because the model can inspect one.
   type Fact = { d: Descriptor, phase: int, checkpoint: int, program: int, root: int }
   pure def fact(t: int,p: int): Fact = {d:desc(t), phase:p, checkpoint:0, program:1, root:200+p*10+t}
   type PublicEvidence={commitment:int,phase:int,checkpoint:int,program:int,opaqueRoot:int}
@@ -96,6 +103,8 @@ module dvp {
     else if (p==5) z.effectsA==1
     else z.effectsB==1
   }
+  // Finalize a previously INCLUDED immutable fact, not the current source state.
+  // This deliberately permits authentic historical OPEN/preparation after ABORT.
   action finalize(t:int,p:int): bool = all {
     s.included.contains(fact(t,p)),s.up.contains(if(HOST==3) 3 else if (p==2 or p==6) 1 else if (p==3 or p==4) HOST else 0),
     s'={...s,finalized:s.finalized.union(Set(fact(t,p)))} }
@@ -124,6 +133,9 @@ module dvp {
       else {...f,root:999}
     s'={...s,received:s.received.union(Set(bad)),rejects:s.rejects.union(Set(binding))}
   }
+  // Decision owner: local hold/freeze/height and received authenticated proofs.
+  // Remote live balances, holds and clocks are unavailable to this guard.
+  // A/B placement applies only its own leg; D records no native leg itself.
   pure def canCommit(x:State,t:int):bool = {
     val z=x.trades.get(t)
     and {x.up.contains(HOST),x.up.contains(2),z.decision==1,x.height<D,(if(HOST==0 or HOST==3) z.holdA==1 else if(HOST==1) z.holdB==1 else true),
@@ -137,6 +149,9 @@ module dvp {
     vaultA:if(ESCROW) x.vaultA-2 else x.vaultA}
   pure def debitB(x:State):State = {...x,ownerB:if(ESCROW) x.ownerB else x.ownerB-3,
     vaultB:if(ESCROW) x.vaultB-3 else x.vaultB}
+  // One EVM-style transaction: decision + the colocated native transfer(s).
+  // Disabled local transfer guards roll back the complete modeled transaction.
+  // The non-atomic mutant intentionally omits that economic transfer.
   action commit(t:int): bool = {
     val z=s.trades.get(t)
     val a=if((HOST==0 or HOST==3) and MUTANT!=5) debitA(s) else s
@@ -210,6 +225,9 @@ module dvp {
       booked:if(s.trades.get(t).booked==0) 1 else s.trades.get(t).booked})}}
   // Ideal authenticated local-ledger read/finalized application-record interface.
   // Only the source leg reads its own ledger; the consumer receives a structured record.
+  // This abstracts a canonical FINALIZED local-read interface. The adapter
+  // must implement authenticated source provenance; a bare RPC/relayer ack is
+  // insufficient. No-obligation disposition 0 is a record, never a fake refund.
   action captureAbortRecord(t:int,leg:int):bool = {
     val z=s.trades.get(t)
     val localHold=if(leg==0) z.holdA else z.holdB
@@ -273,7 +291,12 @@ module dvp {
   val S10 = Trades.forall(t=>s.trades.get(t).decision==2 implies (if(HOST==1) has(s,t,1) else if(HOST==3) true else has(s,t,2) and (HOST!=2 or has(s,t,1))))
   val S11 = Trades.forall(t=>s.trades.get(t).oldTerminal!=3 or s.trades.get(t).decision==3)
   val S12 = S02 and S05
+  // This core retains historical version 1. Membership/rotation authorization,
+  // pending-safe retirement and old-credential admission are checked separately.
   val S13 = s.historical.contains(1)
+  // S14 here is an authorization state check, not historical eligibility proof.
+  // Eligibility/freeze admission is enforced by canOpen/prepareB and direct cases;
+  // supported post-prepare policy is checked in interventions.qnt.
   val S14 = Trades.forall(t=>(s.trades.get(t).holdA==1 or s.trades.get(t).holdB==1) implies authorized(s,t))
   val S15 = Trades.forall(t=>and {s.trades.get(t).report==2 implies s.trades.get(t).appliedEvidenceA and s.trades.get(t).appliedEvidenceB, s.trades.get(t).report==3 implies has(s,t,4) and hasAbortRecord(s,t,0) and hasAbortRecord(s,t,1)})
   val S16 = not(s.custody or s.upgrade or s.validator or s.decrypt)
@@ -283,6 +306,10 @@ module dvp {
   val CDecision = Trades.forall(t=> {val z=s.trades.get(t); z.decision==2 implies
     (z.holdA==1 or z.effectsA==1) and (z.holdB==1 or z.effectsB==1)})
   type Report={authorizedIntent:bool,preparedAAtSnapshot:bool,preparedBAtSnapshot:bool,committedAuthenticated:bool,appliedAAuthenticated:bool,appliedBAuthenticated:bool,fullyApplied:bool,reconciled:bool,staleOrIncomplete:bool,recipientCashUsable:bool}
+  // Specification diagnostic over the combined world: recipientCashUsable and
+  // participant knownA/B are oracle/local diagnostic fields, not a reporter API.
+  // Only fullyApplied/reconciled have the modeled received-record gates. A real
+  // external report must authenticate every source-dependent field it presents.
   pure def progressReport(x:State,t:int):Report = {
     val z=x.trades.get(t)
     {authorizedIntent:authorized(x,t),preparedAAtSnapshot:has(x,t,1),

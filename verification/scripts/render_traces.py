@@ -23,6 +23,6 @@ for m in json.loads((V/'mutants/manifest.json').read_text()):
   phase=' / '.join(ev(k) for k in ['finalized','captured','proofs','network','received'])
   action='init' if i==0 else m['schedule'][i-1]
   out.append(f"| {i}: `{action}` | {s['height']} / {state.get('bClock','n/a')} | {ts} | {know} | {s['ownerA']}/{s['ownerB']} | {phase} |")
- out += ['','Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-'+n+'`. The guided trace is a small explicit witness; no globally shortest-path claim is made.']
+ out += ['','Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-'+n+' --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.']
 (V/'reports/counterexamples.md').write_text('\n'.join(out)+'\n')
 print('Rendered eight original native traces and exact replay references')

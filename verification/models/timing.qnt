@@ -2,6 +2,9 @@ module timing {
   const SLACK:int
   const SLOW:int
   const FAULT:int // 1 independent refund, 2 missing inclusion bound, 3 starvation, 4 frozen time
+  // Two funded TRADE jobs, one round-robin worker; no hostile queue entries or
+  // recovery priority here. capacity.qnt separately checks finite hostile FIFO
+  // service. The 14/22/24 bound cannot be carried to their unchecked composition.
   pure val H=30
   pure val Trades=Set(1,2)
   type Job={id:int,phase:int,remaining:int,wait:int}
@@ -13,6 +16,9 @@ module timing {
     queue:List({id:1,phase:1,remaining:2,wait:0},{id:2,phase:1,remaining:2,wait:0}),
     decision:Trades.mapBy(_=>0),applied:Set(),refunded:Set(),booked:Set(),accepted:Trades,
     missed:false,refundedAfterCommit:false,stabilized:true,outage:0,hostileCost:0}
+  // One explicit public slot advances work and decision height independently
+  // of B's skewed clock. Phase completion consumes its actual remaining service.
+  // Saturation preserves the missed-bound flag; it is not a production clock.
   pure def advance(x:State):State={
     val now=if(x.time<=H) x.time+1 else x.time
     val h=if(now%SLOW==0 and x.height<=H) x.height+1 else x.height

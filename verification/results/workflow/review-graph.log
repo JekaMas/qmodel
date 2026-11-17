@@ -1,0 +1,63 @@
+{
+  "change": "verify-cross-chain-dvp",
+  "manifest": "openspec/changes/verify-cross-chain-dvp/verification.json",
+  "manifest_sha256": "d1b580a1a30234a1dd72a42d8bfedcc7124febd01f8be5781baa693c5d9b961a",
+  "selection": {
+    "cases": [
+      "EV.C1",
+      "EV.C10",
+      "EV.C11",
+      "EV.C12",
+      "EV.C13",
+      "EV.C2",
+      "EV.C3",
+      "EV.C4",
+      "EV.C5",
+      "EV.C6",
+      "EV.C7",
+      "EV.C8",
+      "EV.C9"
+    ],
+    "commands": [
+      "evidence-audit"
+    ],
+    "properties": [
+      "EV.P1"
+    ],
+    "requirements": [
+      "EV"
+    ]
+  },
+  "specifications": {
+    "EV": "01f1768a34cd1dca72bff08060d0f54aae15e4cf3bfbfbdd9e57494acb2b958f"
+  },
+  "status": "passed",
+  "substitution_gaps": []
+}
+{
+  "change": "verify-cross-chain-dvp",
+  "ledger": "openspec/changes/verify-cross-chain-dvp/discovery.json",
+  "properties": [
+    "EV.P1"
+  ],
+  "reviews": [
+    "D1"
+  ],
+  "status": "passed",
+  "tests": [
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_claim_and_target_are_rejected",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_native_log_is_rejected",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_exact_failed_receipt_is_not_replaced_by_success",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_forced_replays_execute_two_processes",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_mutable_shared_trace_is_not_a_comparison_baseline",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_new_invocation_records_observed_runtime",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant",
+    "unittest::verification.tests.test_evidence.EvidenceAudit.test_zero_selected_quint_scenarios_are_not_success"
+  ]
+}
+{"change": "verify-cross-chain-dvp", "evidence_graph": "validated", "discovery": "validated", "status": "passed"}

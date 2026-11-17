@@ -24,7 +24,7 @@ Native [ITF](../results/traces/expiry.itf.json), [replay](../results/replays/mut
 | 11: `unsafeRefund(1)` | 0 / 2 | t1: 1; 1/3; 0/0; 1 | t1: 0/0 | 2/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 | 12: `commit(1)` | 0 / 2 | t1: 2; 2/3; 1/0; 1 | t1: 2/0 | 0/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-expiry`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-expiry --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## binding: S10
 
@@ -45,7 +45,7 @@ Native [ITF](../results/traces/binding.itf.json), [replay](../results/replays/mu
 | 10: `deliver(1,2)` | 0 / n/a | t1: 0; 0/1; 0/0; 0; t2: 1; 1/0; 0/0; 0 | t1: 0/0; t2: 0/0 | 2/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 | 11: `commit(2)` | 0 / n/a | t1: 0; 0/1; 0/0; 0; t2: 2; 2/0; 1/0; 0 | t1: 0/0; t2: 2/0 | 0/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-binding`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-binding --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## replay: S05
 
@@ -71,7 +71,7 @@ Native [ITF](../results/traces/replay.itf.json), [replay](../results/replays/mut
 | 15: `applyB(1)` | 0 / n/a | t1: 2; 2/2; 1/1; 0 | t1: 2/2 | 0/0 | 1:2,1:3 / 1:2,1:3 / 1:2,1:3 / 1:2,1:3 / 1:2,1:3 |
 | 16: `applyB(1)` | 0 / n/a | t1: 2; 2/2; 1/2; 0 | t1: 2/2 | 0/-3 | 1:2,1:3 / 1:2,1:3 / 1:2,1:3 / 1:2,1:3 / 1:2,1:3 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-replay`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-replay --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## reopen: S02
 
@@ -89,7 +89,7 @@ Native [ITF](../results/traces/reopen.itf.json), [replay](../results/replays/mut
 | 7: `refund(1,0)` | 2 / n/a | t1: 3; 3/0; 0/0; 0 | t1: 3/0 | 2/3 | - / - / - / - / - |
 | 8: `openA(1)` | 2 / n/a | t1: 1; 1/0; 0/0; 0 | t1: 3/0 | 2/3 | - / - / - / - / - |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-reopen`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-reopen --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## non_atomic: S08
 
@@ -108,7 +108,7 @@ Native [ITF](../results/traces/non_atomic.itf.json), [replay](../results/replays
 | 8: `deliver(1,2)` | 0 / n/a | t1: 1; 1/1; 0/0; 0 | t1: 0/0 | 2/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 | 9: `commit(1)` | 0 / n/a | t1: 2; 1/1; 0/0; 0 | t1: 2/0 | 2/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-non_atomic`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-non_atomic --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## relayer_assertion: S10
 
@@ -124,7 +124,7 @@ Native [ITF](../results/traces/relayer_assertion.itf.json), [replay](../results/
 | 5: `inject(1,2,0)` | 0 / n/a | t1: 1; 1/1; 0/0; 0 | t1: 0/0 | 2/3 | - / - / - / - / 2:2 |
 | 6: `commit(1)` | 0 / n/a | t1: 2; 2/1; 1/0; 0 | t1: 2/0 | 0/3 | - / - / - / - / 2:2 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-relayer_assertion`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-relayer_assertion --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## stale_refund: S09
 
@@ -145,7 +145,7 @@ Native [ITF](../results/traces/stale_refund.itf.json), [replay](../results/repla
 | 10: `crash(3)` | 0 / n/a | t1: 2; 2/1; 1/0; 0 | t1: 2/0 | 0/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 | 11: `unsafeRefund(1)` | 0 / n/a | t1: 2; 2/3; 1/0; 1 | t1: 2/0 | 0/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-stale_refund`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-stale_refund --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
 
 ## pruned_tombstone: S02
 
@@ -165,4 +165,4 @@ Native [ITF](../results/traces/pruned_tombstone.itf.json), [replay](../results/r
 | 9: `commit(1)` | 0 / n/a | t1: 2; 2/1; 1/0; 0 | t1: 2/0 | 0/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 | 10: `forgetTerminal(1)` | 0 / n/a | t1: 0; 0/1; 1/0; 0 | t1: 2/0 | 0/3 | 1:2 / 1:2 / 1:2 / 1:2 / 1:2 |
 
-Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-pruned_tombstone`. The guided trace is a small explicit witness; no globally shortest-path claim is made.
+Violation is the final native state. Reproduce with `python3 verification/scripts/replay.py mutant-pruned_tombstone --latest-success`. The guided trace is a small explicit witness; no globally shortest-path claim is made.

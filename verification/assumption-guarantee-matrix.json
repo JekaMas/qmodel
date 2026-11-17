@@ -160,13 +160,13 @@
       "P-NI",
       "P-Binding"
     ],
-    "guarantee": "Fresh opaque names preserve equality/linkability; no computational privacy proof",
+    "guarantee": "Ideal content-bound opaque roots preserve equality/retry links under an explicit two-world correspondence; no computational privacy proof.",
     "enforcement": "Observation rules preserve stable trade links and opaque-name equality; low-entropy guessing, logs and timing are separate leak controls.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "linked-privacy-privacy_safe",
-      "linked-privacy-witness_log",
-      "tlc-unsalted-PNI"
+      "review-pipeline-PNI",
+      "review-pipeline_log",
+      "review-pipeline_unsalted"
     ]
   },
   {
@@ -179,7 +179,7 @@
       "P-Scope"
     ],
     "guarantee": "Selected observer policy and audit scope are explicitly configured",
-    "enforcement": "Actual payload constructors check role/field/surface and scoped audit metadata; institutional authorization choices remain external.",
+    "enforcement": "Authenticated roles/scopes construct the complete returned Payload; private Issue provenance is internal. Selected observer sees its full responses; other authorized private channels have explicit declassification. Policy and channel implementation remain external.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
       "tlc-privacy_safe-PAccess",
@@ -253,7 +253,7 @@
       "L01",
       "L04"
     ],
-    "guarantee": "Finite reserved exposure and queued hostile work; recovery traffic receives per-trade service.",
+    "guarantee": "Finite reserved exposure, finite new identities and hostile FIFO budget; every pending accepted job eventually serviced under recovered fair service. No priority or composed deadline theorem.",
     "enforcement": "Admission cap two and hostile-work budget two in capacity model; queue jobs consume real modeled slots.",
     "executed_perturbations": [
       "queue-capacity-progress",

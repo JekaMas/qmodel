@@ -1,0 +1,7 @@
+
+  capacity_queue_test
+    ok hostileServiceCostTest passed 1 test(s)
+    ok overloadRejectsTest passed 1 test(s)
+    ok recoveredFifoTest passed 1 test(s)
+
+  3 passing (35ms)

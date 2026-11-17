@@ -1,0 +1,14 @@
+{
+  "suite": "baseline",
+  "checks": 104,
+  "status": "passed",
+  "mode": "audited original backend results; valid greens reused",
+  "scope": "named finite/bounded/sampled configurations only",
+  "broader_timeouts": [
+    "tlc-eventual-recovery",
+    "tlc-live_two",
+    "apalache-core-12",
+    "apalache-core-20"
+  ],
+  "unmet_scoped_checks": []
+}

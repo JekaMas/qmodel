@@ -23,7 +23,7 @@ def main():
   rp,r=load_latest(base)
   if a.suite=='baseline' and r['expected']!='pass':continue
   if a.suite=='negative' and r['expected']!='counterexample':continue
-  validate(r,rp);selected.append(base)
+  validate(r,rp);selected.append(r["id"])
  if not selected:raise EvidenceError('Empty selected suite')
  if a.fresh:
   for base in selected:

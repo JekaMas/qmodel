@@ -35,6 +35,11 @@ primary += ['final-variant-'+x for x in ['live_open','live_b','live_d','live_esc
 primary += ['mutant-'+x for x in ['expiry','binding','replay','reopen','non_atomic','relayer_assertion','stale_refund','pruned_tombstone']]
 primary += ['d-outage-return-paths']
 primary += ['root-local-progress','root-local-immediate','root-local-halt','root-local-witness']
+primary += ['review-type-privacy_pipeline','review-type-integrated','review-type-privacy_pipeline_test','review-type-private-progress',
+ 'review-pipeline-safe','review-pipeline-PAccess','review-pipeline-PBinding','review-pipeline-PNI',
+ 'review-pipeline_log','review-pipeline_timing','review-pipeline_unsalted','review-pipeline_scope','review-pipeline_substitution','review-pipeline_note','review-pipeline_compromise',
+ 'review-pipeline-witnesses','review-privacy-time-integrated-safe','review-privacy-time-integrated-noUsability','review-privacy-time-integrated_leak-safe',
+ 'review-typed-private-availability','review-typed-private-unconditionalAvailability','review-fifo-workload']
 primary += sorted(r['id'] for r in receipts if r['id'].startswith('type-final-'))
 # Stable IDs and scoped claims: one conjunction check is one execution, not sixteen fabricated runs.
 prop_evidence={
@@ -60,12 +65,12 @@ prop_evidence={
  'C-Decision':['final-record-safety','final-record-mapping','contract-b_hosted','contract-d_shared'],
  'C-Local':['final-record-progress','private-data-progress'],'C-Records':['final-record-safety','abort-authoritative-records'],
  'O-Immediate':['overclaim-immediate'],'O-Permanent':['overclaim-permanent-halt'],
- 'P-Access':['tlc-privacy_safe-PAccess','tlc-wrong_scope-PAccess','linked-privacy-witness_log'],
- 'P-Binding':['tlc-privacy_safe-PBinding','tlc-disclosure_substitution-PBinding'],
- 'P-Availability':['private-data-progress','private-permanent-key-loss','negative-wrong_note'],
+ 'P-Access':['review-pipeline-PAccess','review-pipeline_scope','review-pipeline_compromise'],
+ 'P-Binding':['review-pipeline-PBinding','review-pipeline_substitution'],
+ 'P-Availability':['review-pipeline-safe','review-typed-private-availability','review-typed-private-unconditionalAvailability','review-pipeline_note','review-pipeline-witnesses'],
  'P-Scope':['audit-audit_safe','audit-omitted_record'],
- 'P-NI':['linked-privacy-privacy_safe','linked-privacy-witness_log','tlc-unsalted-PNI'],
- 'P-Timing':['linked-privacy-timing_leak','actual-queue-time-privacy'],
+ 'P-NI':['review-pipeline-PNI','review-pipeline_log','review-pipeline_unsalted'],
+ 'P-Timing':['review-pipeline_timing','review-privacy-time-integrated-safe','review-privacy-time-integrated_leak-safe'],
  'T-Async':['final-record-safety','combined-faults-17','combined-faults-43','final-combined-faults-43'],
  'T-Eventual':['final-record-recovery','post-stabilization'],
  'T-Bounded':['tlc-bounded-safe','exact-deadline-margin','one-less-deadline-margin','late-hold-relative-bound'],
@@ -78,7 +83,7 @@ extra_properties=[
  ('V-B','B-hosted decision uses local cash and authenticated A preparation.','operational integration','safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04',['final-variant-live_b']),
  ('V-D','Separate D authenticates both preparations and both return paths.','operational integration','safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04',['final-variant-live_d','d-outage-return-paths']),
  ('V-Escrow','Escrow moves reserved ownership into the vault with no duplicate capacity.','operational integration','safe /\\ CDecision; fair => progress; witness reaches actual vault movement and final effects.',['final-variant-live_escrow','witness-escrow_path_test']),
- ('V-Private','Private ledger application and actual note/key usability remain distinct.','operational integration','safe /\\ CDecision; availability assumptions => delivered ~> usable',['final-variant-private_asset','private-data-progress','private-permanent-key-loss']),
+ ('V-Private','Private ledger application and actual note/key usability remain distinct.','operational integration','safe /\\ CDecision; availability assumptions => delivered ~> usable',['final-variant-private_asset','review-pipeline-safe','review-typed-private-availability','review-typed-private-unconditionalAvailability']),
  ('V-Shared','Co-resident opposite-direction transfers apply atomically on the shared control ledger.','operational integration','safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.',['final-variant-shared_execution','witness-shared_path_test']),
  ('V-Three','Three independent domains share capacity without unauthenticated remote application.','operational integration','safe; recovery/fairness => per-trade decision, application/refund and COMMIT reporting',['three-domain-installation-final','three-domain-progress','three-independent-domains-witnesses'])]
 for pid,req,kind,pred,ids in extra_properties:prop_evidence[pid]=ids
@@ -93,7 +98,7 @@ for p in props:
  p['actions']={'S03':['sign','requestOpen','requestCash'],'S06':['commit','applyA','applyB','refund','captureAbortRecord','recordAbort'],'S10':['inject','authFact','requestOpen'],'S14':['openA','prepareB','revokeLeg','freeze','unfreeze'],'S15':['observe','reconcile','captureAbortRecord','recordAbort','progressReport']}.get(p['id'],p['actions'])
  p['quint_owner']='verification/models/dvp.qnt' if p['id'].startswith('S') else 'see executed check input closures'
  if p['id']=='S14':p['verified_scope']='Preparation guards tested for independent local eligibility; supported durable/freeze/seizure policies checked separately. The S14 state predicate alone is not a historical eligibility theorem or regulatory-compliance proof.'
- if p['id']=='P-NI':p['verified_scope']='Two hidden inputs 4/7, same authorized public trade/fundability, coupled public schedule, stable public trade link, opaque-name correspondence and six visible phases; not general nondeterministic noninterference.'
+ if p['id']=='P-NI':p['verified_scope']='Two actual source positions 4/7, equal authorized trade/funding; one fixed 12-operation public lifecycle plus at most one arbitrary coupled API request. Complete selected-observer response histories, private-channel/declassification policy and content-aware opaque-name correspondence. Not general scheduler/termination/cryptographic noninterference.'
  if p['id']=='L04':p['verified_scope']='Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem.'
 external=[('EX-Crypto','Actual circuits, guest programs, public-input encoding and prover/verifier composition.'),('EX-Execution','Actual QBFT, EVM, Solidity, reentrancy, arithmetic and token/proxy semantics.'),('EX-Security','Hardware, custody, keys, storage, networks and durable evidence implementation.'),('EX-Privacy','Computational confidentiality, real side channels and general scheduler noninterference.'),('EX-Performance','Measured latency/availability, proving cost, gas, throughput and production capacity.'),('EX-Legal','Legal finality, account/issuer rights, solvency and financial-record rules.')]
 for pid,req in external:
@@ -110,7 +115,7 @@ phase_map={
  'PH-09':['final-record-safety','combined-faults-17'],'PH-10':['network-loss-recovery','combined-faults-43'],
  'PH-11':['final-record-safety','overclaim-immediate'],'PH-12':['scenario-dvp_test','mutant-non_atomic'],
  'PH-13':['final-record-safety','delayed-open-fact-scenarios'],'PH-14':['final-record-progress','late-hold-relative-bound'],
- 'PH-15':['private-data-progress','private-permanent-key-loss'],'PH-16':['report-evidence-scenario','abort-authoritative-records','audit-audit_safe'],
+ 'PH-15':['review-pipeline-witnesses','review-typed-private-availability','review-typed-private-unconditionalAvailability'],'PH-16':['report-evidence-scenario','abort-authoritative-records','audit-audit_safe'],
  'PH-17':['membership-lifecycle-tests','final-record-recovery','network-loss-recovery']}
 coverage=json.loads((V/'coverage-contract.json').read_text())
 for item in coverage:
@@ -126,7 +131,7 @@ write(V/'coverage-contract.md','# Coverage contract and lifecycle\n\nImplementat
 variant_checks={
  'A-tombstone':['final-record-safety','final-record-progress'],'A-open':['final-variant-live_open','delayed-open-fact-scenarios'],
  'B-hosted':['final-variant-live_b'],'D-shared':['final-variant-live_d','d-outage-return-paths'],'escrow':['final-variant-live_escrow','witness-escrow_path_test'],
- 'private':['final-variant-private_asset','private-data-progress','private-permanent-key-loss'],
+ 'private':['final-variant-private_asset','review-pipeline-safe','review-typed-private-availability','review-typed-private-unconditionalAvailability','review-pipeline_note'],
  'multilateral':['three-domain-installation-final','three-domain-progress','three-independent-domains-witnesses'],
  'htlc':['htlc-bounded-margins','htlc-permanent-halt','scenario-htlc_test'],
  'gpact':['root-local-progress','root-local-immediate','root-local-halt','root-local-witness'],'shared-execution':['final-variant-shared_execution','witness-shared_path_test','scenario-shared_test'],
@@ -143,7 +148,7 @@ write(V/'variants.md','# Executed variant matrix\n\nThe variants are our abstrac
 for r in receipts:
  cmd=r['command'];model=next((x for x in cmd if x.endswith('.qnt')),'unavailable')
  r['variant']=r.get('configuration',{}).get('main') or (cmd[cmd.index('--main')+1] if '--main' in cmd else 'tooling')
- r['observer']='relayer/public coupled observations or explicit scoped API roles' if any(x in model for x in ['privacy','integrated','audit']) else 'not_applicable'
+ r['observer']='selected public/relayer observer or explicit authenticated API roles with scoped private channels' if any(x in model for x in ['privacy','integrated','audit']) else 'not_applicable'
  r['time_regime']='T-Bounded' if any(x in model for x in ['timing','stabilization','late_resolution','integrated']) else 'T-Eventual' if '--temporal' in cmd else 'T-Async'
  r['fault_model']=r.get('configuration',{}).get('scope') or r['id']
  r['assumption_version']='verification/assumption-guarantee-matrix.json; exact model-input closure retained'
@@ -152,6 +157,12 @@ for r in receipts:
  if '--backend' in cmd and cmd[cmd.index('--backend')+1]=='rust':r['tool_versions']['evaluator']='v0.7.1'
  else:r['tool_versions']['evaluator']='typescript under Quint 0.33.1 or not_applicable'
  r['mapping_version']='mapping.qnt economic safety projection' if 'mapping' in model else 'none; relationships informal unless explicitly checked'
+ if model.endswith('/privacy.qnt') or (model.endswith('/integrated.qnt') and not r['id'].startswith('review-')):
+  r['claim_boundary']='Historical monitor result; independent review IR-001 found this insufficient for mandatory protected-data/payload semantics. Current privacy_pipeline and review-privacy-time results replace that claim.'
+ if model.endswith('/privacy_pipeline.qnt'):
+  snap=O/'runs'/r['id']/'inputs'/model
+  if snap.is_file() and 'type Disclosure={' in snap.read_text():r['claim_boundary']='IR-001 first repair still exposed nested private provenance and omitted complete response history. These real native results prove only the old weaker projection; final Payload/Issue and full-response checks replace the claim.'
+ r['tool_identity_boundary']='Observed invocation and snapshotted tooling' if r.get('execution_plan_sha256') else 'Historical helper metadata; native backend banners and original toolchain records remain available. Not retroactively relabeled as a new runtime measurement.'
  r['native_trace']='backend-native counterexample retained in raw output' if 'counterexample' in r['outcome'] else 'not_applicable'
 # A single final content inventory. The original per-execution hashes are unchanged.
 models={str(p.relative_to(R)):sha(p) for p in sorted((V/'models').glob('*.qnt'))}
@@ -189,7 +200,7 @@ Full-reference Apalache depths 12/20 and the broad unrestricted-job two-trade/re
 | Two trades + contention + malicious input + outages + witness retention | Deterministic cases and multiple 10,000-trace combined samples; finite requested-job temporal configuration | Arbitrary populations, unlimited hostile traffic and every fault combination |
 | Loss/duplicate acknowledgement + adapter restart | Actual message loss/resend and phase-specific restart witnesses | Unbounded adversarial loss under liveness; eventual reliable offer/delivery is required |
 | Upgrade + delayed historical proof; exit with pending obligations | Core witnesses, predecessor-approved rotation and membership retention/replay controls | Real certificates, token proxy migration and all upgrade/data-loss combinations |
-| Privacy + actual queue time | Small paired observation/timed-pipeline product | General scheduler noninterference, secret-dependent real prover work and termination leaks |
+| Privacy + actual queue time | State-derived paired payload/timed-pipeline product | General scheduler noninterference, secret-dependent real prover work and termination leaks |
 | Three institutional domains + shared cash capacity | Independent domain heights/availability, authenticated outcomes, safety and conditional progress | General n-leg exchange; composed three-domain ABORT-bookkeeping and full relational privacy |
 | Private payload loss after ledger delivery | Exact note/key usability guards, loss controls and conditional progress | Actual encryption, note recovery implementation and irreversible key recovery |
 

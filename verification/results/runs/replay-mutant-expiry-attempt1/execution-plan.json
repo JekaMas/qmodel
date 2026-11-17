@@ -1,0 +1,49 @@
+{
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/runs/mutant-expiry-attempt1/inputs/verification/mutants/guided.qnt",
+    "--main",
+    "expiry",
+    "--init",
+    "initGuided",
+    "--step",
+    "stepGuided",
+    "--backend",
+    "typescript",
+    "--invariant",
+    "S08",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "11",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/replays/mutant-expiry-attempt1/20261117T185957949493Z/native.itf.json"
+  ],
+  "claim": "S08",
+  "expected": "counterexample",
+  "backend": "simulation",
+  "configuration": {
+    "recorded_receipt": "verification/results/runs/mutant-expiry-attempt1/receipt.json",
+    "replay_input": "exact saved source closure",
+    "forced": true
+  },
+  "input_hashes": {
+    "verification/results/runs/mutant-expiry-attempt1/inputs/verification/mutants/guided.qnt": "c893f9bc6e5ba4f25c7b8b9e52608e4bea2d3f794c73a5c09325450221fa0fee",
+    "verification/results/runs/mutant-expiry-attempt1/inputs/verification/models/dvp.qnt": "1dcf2ad6ea88259a51e47ec1fa16921b10adc2f0df964ccfcde032ad619b75b9"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "e6bd72b035b17b99a61c531a511448e834a99b20a4754bee9fa6b1ed90c1a8cf"
+  },
+  "timeout_seconds": 120
+}

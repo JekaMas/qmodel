@@ -1,0 +1,310 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT405]: Module privacy_pipeline_test imports an unknown module privacy_pipeline
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:2:2
+  2:  import privacy_pipeline(LEAK=0).* from "../models/privacy_pipeline"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'privacy_pipeline' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:2:2
+  2:  import privacy_pipeline(LEAK=0).* from "../models/privacy_pipeline"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'LEAK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:2:26
+  2:  import privacy_pipeline(LEAK=0).* from "../models/privacy_pipeline"
+                              ^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:3:17
+  3:  run proofReady=init.then(5.reps(_=>advance))
+                     ^^^^
+
+
+ Error [QNT404]: Name 'advance' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:3:37
+  3:  run proofReady=init.then(5.reps(_=>advance))
+                                         ^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:40
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                            ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:77
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                                                                 ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:115
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:134
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:157
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:176
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                                                                                                                                                                    ^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:4:196
+  4:  run boundWorldsTest=proofReady.expect(p.left.proof.witness.position==4 and p.right.proof.witness.position==7 and p.left.proof.root!=p.right.proof.root and p.left.held==3 and p.right.held==3 and safe)
+                                                                                                                                                                                                        ^^^^
+
+
+ Error [QNT404]: Name 'request' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:5:46
+  5:  run unauthorizedPayloadTest=proofReady.then(request(3,3,1,1)).expect(p.releasesL.forall(d=>d.error==403 and d.value== -1) and PAccess)
+                                                  ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:5:71
+  5:  run unauthorizedPayloadTest=proofReady.then(request(3,3,1,1)).expect(p.releasesL.forall(d=>d.error==403 and d.value== -1) and PAccess)
+                                                                           ^
+
+
+ Error [QNT404]: Name 'PAccess' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:5:128
+  5:  run unauthorizedPayloadTest=proofReady.then(request(3,3,1,1)).expect(p.releasesL.forall(d=>d.error==403 and d.value== -1) and PAccess)
+                                                                                                                                    ^^^^^^^
+
+
+ Error [QNT404]: Name 'request' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:6:44
+  6:  run wrongScopePayloadTest=proofReady.then(request(7,3,5,2)).expect(p.releasesL.forall(d=>d.error==403 and d.value== -1) and PAccess)
+                                                ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:6:69
+  6:  run wrongScopePayloadTest=proofReady.then(request(7,3,5,2)).expect(p.releasesL.forall(d=>d.error==403 and d.value== -1) and PAccess)
+                                                                         ^
+
+
+ Error [QNT404]: Name 'PAccess' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:6:126
+  6:  run wrongScopePayloadTest=proofReady.then(request(7,3,5,2)).expect(p.releasesL.forall(d=>d.error==403 and d.value== -1) and PAccess)
+                                                                                                                                  ^^^^^^^
+
+
+ Error [QNT404]: Name 'request' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:7:44
+  7:  run authorizedWitnessTest=proofReady.then(request(4,6,3,1)).expect(p.releasesL.forall(d=>d.error==0 and d.value==4) and p.releasesR.forall(d=>d.error==0 and d.value==7) and PBinding)
+                                                ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:7:69
+  7:  run authorizedWitnessTest=proofReady.then(request(4,6,3,1)).expect(p.releasesL.forall(d=>d.error==0 and d.value==4) and p.releasesR.forall(d=>d.error==0 and d.value==7) and PBinding)
+                                                                         ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:7:122
+  7:  run authorizedWitnessTest=proofReady.then(request(4,6,3,1)).expect(p.releasesL.forall(d=>d.error==0 and d.value==4) and p.releasesR.forall(d=>d.error==0 and d.value==7) and PBinding)
+                                                                                                                              ^
+
+
+ Error [QNT404]: Name 'PBinding' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:7:175
+  7:  run authorizedWitnessTest=proofReady.then(request(4,6,3,1)).expect(p.releasesL.forall(d=>d.error==0 and d.value==4) and p.releasesR.forall(d=>d.error==0 and d.value==7) and PBinding)
+                                                                                                                                                                                   ^^^^^^^^
+
+
+ Error [QNT404]: Name 'request' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:8:42
+  8:  run noteUnavailableTest=proofReady.then(request(0,7,0,1)).expect(p.releasesL.forall(d=>d.error==404 and d.value== -1))
+                                              ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:8:67
+  8:  run noteUnavailableTest=proofReady.then(request(0,7,0,1)).expect(p.releasesL.forall(d=>d.error==404 and d.value== -1))
+                                                                       ^
+
+
+ Error [QNT404]: Name 'advance' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:9:36
+  9:  run retryLinkTest=proofReady.then(advance).expect(p.obsL.nth(4).root==p.obsL.nth(5).root and p.obsR.nth(4).root==p.obsR.nth(5).root and PNI)
+                                        ^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:9:52
+  9:  run retryLinkTest=proofReady.then(advance).expect(p.obsL.nth(4).root==p.obsL.nth(5).root and p.obsR.nth(4).root==p.obsR.nth(5).root and PNI)
+                                                        ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:9:72
+  9:  run retryLinkTest=proofReady.then(advance).expect(p.obsL.nth(4).root==p.obsL.nth(5).root and p.obsR.nth(4).root==p.obsR.nth(5).root and PNI)
+                                                                            ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:9:95
+  9:  run retryLinkTest=proofReady.then(advance).expect(p.obsL.nth(4).root==p.obsL.nth(5).root and p.obsR.nth(4).root==p.obsR.nth(5).root and PNI)
+                                                                                                   ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:9:115
+  9:  run retryLinkTest=proofReady.then(advance).expect(p.obsL.nth(4).root==p.obsL.nth(5).root and p.obsR.nth(4).root==p.obsR.nth(5).root and PNI)
+                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'PNI' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:9:138
+  9:  run retryLinkTest=proofReady.then(advance).expect(p.obsL.nth(4).root==p.obsL.nth(5).root and p.obsR.nth(4).root==p.obsR.nth(5).root and PNI)
+                                                                                                                                              ^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:27
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                ^^^^
+
+
+ Error [QNT404]: Name 'advance' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:48
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                     ^^^^^^^
+
+
+ Error [QNT404]: Name 'completed' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:65
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                                      ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:79
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                                                    ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:99
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                                                                        ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:120
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                                                                                             ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:187
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:10:254
+  10:  run recoveryAndAuditTest=init.then(12.reps(_=>advance)).expect(completed and p.left.epoch==1 and p.right.epoch==1 and p.releasesL.exists(d=>d.role==7 and d.field==3 and d.value==4) and p.releasesR.exists(d=>d.role==7 and d.field==3 and d.value==7) and safe)
+                                                                                                                                                                                                                                                                   ^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:11:18
+  11:  run keyLossTest=init.then(12.reps(_=>advance)).then(loseKey).expect(not(p.left.usable) and not(p.right.usable) and PAvailability)
+                       ^^^^
+
+
+ Error [QNT404]: Name 'advance' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:11:39
+  11:  run keyLossTest=init.then(12.reps(_=>advance)).then(loseKey).expect(not(p.left.usable) and not(p.right.usable) and PAvailability)
+                                            ^^^^^^^
+
+
+ Error [QNT404]: Name 'loseKey' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:11:54
+  11:  run keyLossTest=init.then(12.reps(_=>advance)).then(loseKey).expect(not(p.left.usable) and not(p.right.usable) and PAvailability)
+                                                           ^^^^^^^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:11:74
+  11:  run keyLossTest=init.then(12.reps(_=>advance)).then(loseKey).expect(not(p.left.usable) and not(p.right.usable) and PAvailability)
+                                                                               ^
+
+
+ Error [QNT404]: Name 'p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:11:97
+  11:  run keyLossTest=init.then(12.reps(_=>advance)).then(loseKey).expect(not(p.left.usable) and not(p.right.usable) and PAvailability)
+                                                                                                      ^
+
+
+ Error [QNT404]: Name 'PAvailability' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/privacy_pipeline_test.qnt:11:117
+  11:  run keyLossTest=init.then(12.reps(_=>advance)).then(loseKey).expect(not(p.left.usable) and not(p.right.usable) and PAvailability)
+                                                                                                                          ^^^^^^^^^^^^^
+
+error: parsing failed

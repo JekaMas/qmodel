@@ -1,0 +1,394 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT405]: Module privacy_time imports an unknown module privacy_pipeline
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:7:3
+  7:   import privacy_pipeline(LEAK=LEAK) as pp from "./privacy_pipeline"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'privacy_pipeline' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:7:3
+  7:   import privacy_pipeline(LEAK=LEAK) as pp from "./privacy_pipeline"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:8:3
+  8:   import timing(SLACK=20,SLOW=1,FAULT=0) as tt from "./timing"
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::LEAK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:7:27
+  7:   import privacy_pipeline(LEAK=LEAK) as pp from "./privacy_pipeline"
+                               ^^^^
+
+
+ Error [QNT404]: Name 'tt::SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:8:17
+  8:   import timing(SLACK=20,SLOW=1,FAULT=0) as tt from "./timing"
+                     ^^^^^
+
+
+ Error [QNT404]: Name 'tt::SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:8:26
+  8:   import timing(SLACK=20,SLOW=1,FAULT=0) as tt from "./timing"
+                              ^^^^
+
+
+ Error [QNT404]: Name 'tt::FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:8:33
+  8:   import timing(SLACK=20,SLOW=1,FAULT=0) as tt from "./timing"
+                                     ^^^^^
+
+
+ Error [QNT404]: Name 'pp::init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:9:20
+  9:   action init=all {pp::init,tt::init}
+                        ^^^^^^^^
+
+
+ Error [QNT404]: Name 'tt::init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:9:29
+  9:   action init=all {pp::init,tt::init}
+                                 ^^^^^^^^
+
+
+ Error [QNT404]: Name 'tt::tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:10:23
+  10:   action advance=all {tt::tick,
+                            ^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:11:8
+  11:     if(pp::p.pc<12 and (pp::p.pc<9 or tt::t.applied.contains(1)))
+             ^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:11:25
+  11:     if(pp::p.pc<12 and (pp::p.pc<9 or tt::t.applied.contains(1)))
+                              ^^^^^
+
+
+ Error [QNT404]: Name 'tt::t' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:11:39
+  11:     if(pp::p.pc<12 and (pp::p.pc<9 or tt::t.applied.contains(1)))
+                                            ^^^^^
+
+
+ Error [QNT404]: Name 'pp::advanceWith' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:12:7
+  12:       pp::advanceWith(tt::t.time,tt::t.queue.length()) else pp::p'=pp::p}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'tt::t' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:12:23
+  12:       pp::advanceWith(tt::t.time,tt::t.queue.length()) else pp::p'=pp::p}
+                            ^^^^^
+
+
+ Error [QNT404]: Name 'tt::t' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:12:34
+  12:       pp::advanceWith(tt::t.time,tt::t.queue.length()) else pp::p'=pp::p}
+                                       ^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:12:61
+  12:       pp::advanceWith(tt::t.time,tt::t.queue.length()) else pp::p'=pp::p}
+                                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:12:68
+  12:       pp::advanceWith(tt::t.time,tt::t.queue.length()) else pp::p'=pp::p}
+                                                                         ^^^^^
+
+
+ Error [QNT404]: Name 'tt::correlatedOutage' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:13:22
+  13:   action outage=all {tt::correlatedOutage,pp::p'=pp::p}
+                           ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:13:43
+  13:   action outage=all {tt::correlatedOutage,pp::p'=pp::p}
+                                                ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:13:50
+  13:   action outage=all {tt::correlatedOutage,pp::p'=pp::p}
+                                                       ^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:14:40
+  14:   action step=any {advance,outage,all {pp::p'=pp::p,tt::t'=tt::t}}
+                                             ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::p' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:14:47
+  14:   action step=any {advance,outage,all {pp::p'=pp::p,tt::t'=tt::t}}
+                                                    ^^^^^
+
+
+ Error [QNT404]: Name 'tt::t' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:14:53
+  14:   action step=any {advance,outage,all {pp::p'=pp::p,tt::t'=tt::t}}
+                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'tt::t' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:14:60
+  14:   action step=any {advance,outage,all {pp::p'=pp::p,tt::t'=tt::t}}
+                                                                 ^^^^^
+
+
+ Error [QNT404]: Name 'pp::safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:15:12
+  15:   val safe=pp::safe and tt::safe
+                 ^^^^^^^^
+
+
+ Error [QNT404]: Name 'tt::safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:15:25
+  15:   val safe=pp::safe and tt::safe
+                              ^^^^^^^^
+
+
+ Error [QNT404]: Name 'pp::completed' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/integrated.qnt:16:23
+  16:   val noUsability=not(pp::completed)
+                            ^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:61:21
+  61: module frozen_time {import timing(SLACK=20,SLOW=1,FAULT=4).*}
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:61:35
+  61: module frozen_time {import timing(SLACK=20,SLOW=1,FAULT=4).*}
+                                        ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:61:44
+  61: module frozen_time {import timing(SLACK=20,SLOW=1,FAULT=4).*}
+                                                 ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:61:51
+  61: module frozen_time {import timing(SLACK=20,SLOW=1,FAULT=4).*}
+                                                        ^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:60:20
+  60: module starvation {import timing(SLACK=20,SLOW=1,FAULT=3).*}
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:60:34
+  60: module starvation {import timing(SLACK=20,SLOW=1,FAULT=3).*}
+                                       ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:60:43
+  60: module starvation {import timing(SLACK=20,SLOW=1,FAULT=3).*}
+                                                ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:60:50
+  60: module starvation {import timing(SLACK=20,SLOW=1,FAULT=3).*}
+                                                       ^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:59:22
+  59: module no_inclusion {import timing(SLACK=20,SLOW=1,FAULT=2).*}
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:59:36
+  59: module no_inclusion {import timing(SLACK=20,SLOW=1,FAULT=2).*}
+                                         ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:59:45
+  59: module no_inclusion {import timing(SLACK=20,SLOW=1,FAULT=2).*}
+                                                  ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:59:52
+  59: module no_inclusion {import timing(SLACK=20,SLOW=1,FAULT=2).*}
+                                                         ^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:58:21
+  58: module local_timer {import timing(SLACK=20,SLOW=1,FAULT=1).*}
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:58:35
+  58: module local_timer {import timing(SLACK=20,SLOW=1,FAULT=1).*}
+                                        ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:58:44
+  58: module local_timer {import timing(SLACK=20,SLOW=1,FAULT=1).*}
+                                                 ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:58:51
+  58: module local_timer {import timing(SLACK=20,SLOW=1,FAULT=1).*}
+                                                        ^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:57:21
+  57: module slow_blocks {import timing(SLACK=20,SLOW=2,FAULT=0).*}
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:57:35
+  57: module slow_blocks {import timing(SLACK=20,SLOW=2,FAULT=0).*}
+                                        ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:57:44
+  57: module slow_blocks {import timing(SLACK=20,SLOW=2,FAULT=0).*}
+                                                 ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:57:51
+  57: module slow_blocks {import timing(SLACK=20,SLOW=2,FAULT=0).*}
+                                                        ^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:56:29
+  56: module insufficient_margin {import timing(SLACK=3,SLOW=1,FAULT=0).*}
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:56:43
+  56: module insufficient_margin {import timing(SLACK=3,SLOW=1,FAULT=0).*}
+                                                ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:56:51
+  56: module insufficient_margin {import timing(SLACK=3,SLOW=1,FAULT=0).*}
+                                                        ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:56:58
+  56: module insufficient_margin {import timing(SLACK=3,SLOW=1,FAULT=0).*}
+                                                               ^^^^^
+
+
+ Error [QNT405]: Module 'timing' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:55:17
+  55: module bounded {import timing(SLACK=20,SLOW=1,FAULT=0).*}
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SLACK' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:55:31
+  55: module bounded {import timing(SLACK=20,SLOW=1,FAULT=0).*}
+                                    ^^^^^
+
+
+ Error [QNT404]: Name 'SLOW' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:55:40
+  55: module bounded {import timing(SLACK=20,SLOW=1,FAULT=0).*}
+                                             ^^^^
+
+
+ Error [QNT404]: Name 'FAULT' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/timing.qnt:55:47
+  55: module bounded {import timing(SLACK=20,SLOW=1,FAULT=0).*}
+                                                    ^^^^^
+
+error: parsing failed

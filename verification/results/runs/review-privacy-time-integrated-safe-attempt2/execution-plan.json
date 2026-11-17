@@ -1,0 +1,37 @@
+{
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/models/integrated.qnt",
+    "--main",
+    "integrated",
+    "--backend",
+    "tlc",
+    "--invariant",
+    "safe",
+    "--tlc-config",
+    "verification/configs/tlc.json",
+    "--verbosity",
+    "3"
+  ],
+  "claim": "safe",
+  "expected": "pass",
+  "backend": "tlc",
+  "configuration": {},
+  "input_hashes": {
+    "verification/models/integrated.qnt": "e64c068bccca069032a548f3a5fabbbb7209a778b6dedd2e568eb841b78727a2",
+    "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+    "verification/models/timing.qnt": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+    "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "893ff86eebac5a5c57e8f7245c4f73900b0c30f4db36b28d6af964d068c0619d"
+  },
+  "timeout_seconds": 120
+}

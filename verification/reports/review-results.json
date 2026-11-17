@@ -1,0 +1,196 @@
+{
+  "source_review_baseline": "4e3b8d0b440c5b4a9c562f3509b6c78106a3d885",
+  "review": "independent-review.md/json; same reviewer retained across repairs",
+  "review_findings": [
+    {
+      "id": "IR-001",
+      "severity": "high",
+      "classification": "unsupported claim and missing mandatory model semantics",
+      "status": "resolved",
+      "requirement": "task-v2 section 11 lines 293-304; section 4 lines 103-107; section 15 line 372",
+      "owner": "verification/models/privacy.qnt and privacy-time product",
+      "witness": "Baseline event generation does not derive from separate protected ledger/witness/proof/report states; access stores only authorization tuples.",
+      "minimal_repair": "Implement derived two-world pipeline payloads, real bindings and full event comparison with observed public schedule; exercise data-path negative controls.",
+      "invalidated_claims": [
+        "mandatory P-Access/P-Binding/P-NI/P-Timing scope",
+        "privacy-time data-path composition"
+      ],
+      "unaffected": [
+        "economic safety",
+        "economic liveness",
+        "induction",
+        "economic safety mapping"
+      ]
+    },
+    {
+      "id": "IR-002",
+      "severity": "medium",
+      "classification": "demonstrated harness defect",
+      "status": "resolved",
+      "requirement": "task-v2 section 6 lines 165-175; section 7 line 186; section 8 lines 227-236",
+      "owner": "verification/scripts/verify.py, replay.py, evidence.py",
+      "witness": "--fresh invokes replay, whose execute path may reuse a matching successful replay receipt; exact failed attempt selection filters to successful family members.",
+      "minimal_repair": "Force new subprocess execution for explicit fresh calls; distinguish exact receipt and latest-success selection; support original failed/timeout attempts.",
+      "invalidated_claims": [
+        "fresh execution when cached replay was reused",
+        "universal exact-attempt reproduction"
+      ],
+      "unaffected": [
+        "original native backend results"
+      ]
+    },
+    {
+      "id": "IR-003",
+      "severity": "high",
+      "classification": "demonstrated evidence acceptance defect",
+      "status": "resolved",
+      "requirement": "task-v2 section 7 lines 186-200; section 8 line 227; section 14 line 355",
+      "owner": "verification/scripts/audit_evidence.py and acceptance contract",
+      "witness": "Copied mutant-expiry receipt with both claim and --invariant command changed to THIS_PROPERTY_WAS_NEVER_EXECUTED was accepted by validate without changing any file.",
+      "minimal_repair": "Bind raw/source/proof-contract identity to the selected acceptance contract and native target/result; add corruption, wrong-target, zero-selected and tool-error discriminators.",
+      "invalidated_claims": [
+        "strong evidence audit guarantee",
+        "completion gates relying solely on unbound metadata"
+      ],
+      "unaffected": [
+        "actual native log observations for their original selected targets"
+      ]
+    },
+    {
+      "id": "IR-004",
+      "severity": "medium",
+      "classification": "unsupported modeled-resource claim",
+      "status": "resolved",
+      "requirement": "task-v2 section 12 lines 323-331; section 13 lines 337-339",
+      "owner": "verification/timing-assumptions.md, models/timing.qnt, models/capacity.qnt",
+      "witness": "Timing prose says one hostile work item and recovery priority; timed queue contains only two trade jobs, while separate capacity model uses FIFO and no recovery class.",
+      "minimal_repair": "Separate exact two-trade timing result from FIFO hostile-budget result; implement explicit recovery scheduling only if retaining that priority claim and check affected configurations.",
+      "invalidated_claims": [
+        "combined timed hostile-work and recovery-priority scope"
+      ],
+      "unaffected": [
+        "original two-trade 14/22/24 slot result",
+        "exact deadline margins",
+        "separate capacity safety/progress"
+      ]
+    }
+  ],
+  "selected_observations": 153,
+  "selected_unmet": [],
+  "audit_tests": 14,
+  "audit_raw": "verification/results/workflow/review-audit-unittests.log",
+  "native_repair_observations": [
+    {
+      "id": "review-pipeline-safe-attempt3",
+      "claim": "safe",
+      "outcome": "finite_model_verified",
+      "distinct_states": 13,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-pipeline-safe-attempt3/raw.log",
+      "input_hashes": {
+        "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-pipeline-PAccess-attempt3",
+      "claim": "PAccess",
+      "outcome": "finite_model_verified",
+      "distinct_states": 55309,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-pipeline-PAccess-attempt3/raw.log",
+      "input_hashes": {
+        "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-pipeline-PBinding-attempt3",
+      "claim": "PBinding",
+      "outcome": "finite_model_verified",
+      "distinct_states": 55309,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-pipeline-PBinding-attempt3/raw.log",
+      "input_hashes": {
+        "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-pipeline-PNI",
+      "claim": "PNI",
+      "outcome": "finite_model_verified",
+      "distinct_states": 55309,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-pipeline-PNI/raw.log",
+      "input_hashes": {
+        "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-pipeline-witnesses-attempt2",
+      "claim": "eight exact state/payload/retry/recovery/audit/key-loss witnesses",
+      "outcome": "executed_successfully",
+      "distinct_states": "unavailable",
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-pipeline-witnesses-attempt2/raw.log",
+      "input_hashes": {
+        "verification/tests/privacy_pipeline_test.qnt": "b82197860c7abcb5f24b0622eaf9f63c4457642d51ac2e3a25c1406aac1a54a0",
+        "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5"
+      }
+    },
+    {
+      "id": "review-privacy-time-integrated-safe-attempt2",
+      "claim": "safe",
+      "outcome": "finite_model_verified",
+      "distinct_states": 64,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-privacy-time-integrated-safe-attempt2/raw.log",
+      "input_hashes": {
+        "verification/models/integrated.qnt": "e64c068bccca069032a548f3a5fabbbb7209a778b6dedd2e568eb841b78727a2",
+        "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+        "verification/models/timing.qnt": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-typed-private-availability",
+      "claim": "availability",
+      "outcome": "finite_model_verified",
+      "distinct_states": 26,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-typed-private-availability/raw.log",
+      "input_hashes": {
+        "verification/models/privacy_pipeline.qnt": "c832b2e19081687d9e87444eedd4558a76db38ed33fb8f41fc31b2a87db56327",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-typed-private-unconditionalAvailability",
+      "claim": "unconditionalAvailability",
+      "outcome": "expected_counterexample_found",
+      "distinct_states": 26,
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-typed-private-unconditionalAvailability/raw.log",
+      "input_hashes": {
+        "verification/models/privacy_pipeline.qnt": "c832b2e19081687d9e87444eedd4558a76db38ed33fb8f41fc31b2a87db56327",
+        "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+      }
+    },
+    {
+      "id": "review-fifo-workload",
+      "claim": "three FIFO hostile-service/overload/recovery witnesses; no priority or composed deadline claim",
+      "outcome": "executed_successfully",
+      "distinct_states": "unavailable",
+      "expectation_met": true,
+      "raw_output": "verification/results/runs/review-fifo-workload/raw.log",
+      "input_hashes": {
+        "verification/tests/capacity_queue_test.qnt": "1af46f4a4ecca33be59ff6fcb43af9b6ff82c3baea76e43d5091ab1b30fb4117",
+        "verification/models/capacity.qnt": "08de59bfa4c0d041f23998666ddd85dfe74f1e4687d43d07a9e23e208994f264"
+      }
+    }
+  ],
+  "retained_unqualified_status": "NOT DONE: broader four timeouts,10 early missing source closures and production external obligations",
+  "publication": "pending final clean commit/push/readback; separate publication.json records observed remote state"
+}

@@ -313,6 +313,7 @@
     "status": "executed-with-result",
     "implementation_status": "implemented",
     "verification_status": [
+      "executed_successfully",
       "finite_model_verified",
       "expected_counterexample_found"
     ],
@@ -325,8 +326,9 @@
       "restart"
     ],
     "checks": [
-      "private-data-progress",
-      "private-permanent-key-loss"
+      "review-pipeline-witnesses",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability"
     ]
   },
   {
@@ -382,7 +384,7 @@
     "section": "1. Context, sources, and scope",
     "requirement": "- Architect Case Brief*.pdf.",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "missing_original_source",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -398,7 +400,7 @@
     "section": "1. Context, sources, and scope",
     "requirement": "- consensys-design-workspace-v3/docs/draft-review-and-revised-answers.md.",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "missing_original_source",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -414,7 +416,7 @@
     "section": "1. Context, sources, and scope",
     "requirement": "- consensys-design-workspace-v3/research/requirements.json or requirements.md.",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "missing_original_source",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -430,7 +432,7 @@
     "section": "1. Context, sources, and scope",
     "requirement": "- consensys-design-workspace-v3/verification/integration-acceptance.md.",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "missing_original_source",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -446,7 +448,7 @@
     "section": "1. Context, sources, and scope",
     "requirement": "- The question and service/integration registers in that workspace.",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "missing_original_source",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -2104,7 +2106,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://quint.sh/docs/quint",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2130,7 +2132,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://quint.sh/docs/model-checkers",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2156,7 +2158,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://quint.sh/docs/checking-properties",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2182,7 +2184,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://quint.sh/docs/lang",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2208,7 +2210,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://quint.sh/docs/builtin",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2234,7 +2236,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://github.com/quint-co/quint",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2260,7 +2262,7 @@
     "section": "6. Toolchain: verify actual capabilities and run the work",
     "requirement": "- https://apalache-mc.org/docs/",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [
@@ -2756,8 +2758,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -2794,8 +2797,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -2832,8 +2836,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -2870,8 +2875,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -2908,8 +2914,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -2946,8 +2953,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -2984,8 +2992,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -3022,8 +3031,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -3060,8 +3070,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -3098,8 +3109,9 @@
       "final-variant-live_escrow",
       "witness-escrow_path_test",
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
       "final-variant-shared_execution",
       "witness-shared_path_test"
     ],
@@ -3123,9 +3135,9 @@
       "models/audit_scope.qnt"
     ],
     "checks": [
-      "tlc-privacy_safe-PAccess",
-      "tlc-wrong_scope-PAccess",
-      "linked-privacy-witness_log"
+      "review-pipeline-PAccess",
+      "review-pipeline_scope",
+      "review-pipeline_compromise"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -3147,8 +3159,8 @@
       "models/audit_scope.qnt"
     ],
     "checks": [
-      "tlc-privacy_safe-PBinding",
-      "tlc-disclosure_substitution-PBinding"
+      "review-pipeline-PBinding",
+      "review-pipeline_substitution"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -3170,9 +3182,11 @@
       "models/audit_scope.qnt"
     ],
     "checks": [
-      "private-data-progress",
-      "private-permanent-key-loss",
-      "negative-wrong_note"
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
+      "review-pipeline_note",
+      "review-pipeline-witnesses"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -3217,9 +3231,9 @@
       "models/audit_scope.qnt"
     ],
     "checks": [
-      "linked-privacy-privacy_safe",
-      "linked-privacy-witness_log",
-      "tlc-unsalted-PNI"
+      "review-pipeline-PNI",
+      "review-pipeline_log",
+      "review-pipeline_unsalted"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -3241,8 +3255,9 @@
       "models/audit_scope.qnt"
     ],
     "checks": [
-      "linked-privacy-timing_leak",
-      "actual-queue-time-privacy"
+      "review-pipeline_timing",
+      "review-privacy-time-integrated-safe",
+      "review-privacy-time-integrated_leak-safe"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -3922,7 +3937,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Quint property checking: https://quint.sh/docs/checking-properties",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -3944,7 +3959,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Quint model-checker scope: https://quint.sh/docs/model-checkers",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -3966,7 +3981,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Quint temporal/fairness operators: https://quint.sh/docs/builtin",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -3988,7 +4003,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Quint model-based testing: https://quint.sh/docs/model-based-testing",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -4010,7 +4025,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Apalache temporal-property checking: https://apalache-mc.org/docs/tutorials/temporal-properties.html",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -4032,7 +4047,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Clarkson et al., Temporal Logics for Hyperproperties: https://arxiv.org/abs/1401.4492",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -4054,7 +4069,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- Lamport, Real Time is Really Simple: https://www.microsoft.com/en-us/research/publication/real-time-is-really-simple/",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],
@@ -4076,7 +4091,7 @@
     "section": "15. Completion rules for this v2 scope",
     "requirement": "- SP1 statement-versus-program/cryptographic assumptions: https://docs.succinct.xyz/docs/sp1/security/security-model",
     "status": "excluded-with-reason",
-    "implementation_status": "not_applicable",
+    "implementation_status": "implemented",
     "verification_status": "bibliographic_reference_not_a_model_property",
     "evidence_boundary": "See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.",
     "property_ids": [],

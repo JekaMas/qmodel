@@ -717,9 +717,9 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "tlc-privacy_safe-PAccess",
-      "tlc-wrong_scope-PAccess",
-      "linked-privacy-witness_log"
+      "review-pipeline-PAccess",
+      "review-pipeline_scope",
+      "review-pipeline_compromise"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -746,8 +746,8 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "tlc-privacy_safe-PBinding",
-      "tlc-disclosure_substitution-PBinding"
+      "review-pipeline-PBinding",
+      "review-pipeline_substitution"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -774,9 +774,11 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "private-data-progress",
-      "private-permanent-key-loss",
-      "negative-wrong_note"
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
+      "review-pipeline_note",
+      "review-pipeline-witnesses"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -831,12 +833,12 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "linked-privacy-privacy_safe",
-      "linked-privacy-witness_log",
-      "tlc-unsalted-PNI"
+      "review-pipeline-PNI",
+      "review-pipeline_log",
+      "review-pipeline_unsalted"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Two hidden inputs 4/7, same authorized public trade/fundability, coupled public schedule, stable public trade link, opaque-name correspondence and six visible phases; not general nondeterministic noninterference.",
+    "verified_scope": "Two actual source positions 4/7, equal authorized trade/funding; one fixed 12-operation public lifecycle plus at most one arbitrary coupled API request. Complete selected-observer response histories, private-channel/declassification policy and content-aware opaque-name correspondence. Not general scheduler/termination/cryptographic noninterference.",
     "quint_owner": "see executed check input closures"
   },
   {
@@ -860,8 +862,9 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "linked-privacy-timing_leak",
-      "actual-queue-time-privacy"
+      "review-pipeline_timing",
+      "review-privacy-time-integrated-safe",
+      "review-privacy-time-integrated_leak-safe"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1190,8 +1193,9 @@
     "status": "executed-with-result",
     "executed_checks": [
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss"
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",

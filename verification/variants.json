@@ -74,12 +74,16 @@
     "result": [
       "finite_model_verified",
       "finite_model_verified",
+      "finite_model_verified",
+      "expected_counterexample_found",
       "expected_counterexample_found"
     ],
     "checks": [
       "final-variant-private_asset",
-      "private-data-progress",
-      "private-permanent-key-loss"
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
+      "review-pipeline_note"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },

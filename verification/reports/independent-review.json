@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "4e3b8d0b440c5b4a9c562f3509b6c78106a3d885",
+  "review_mode": "independent source and evidence review",
+  "implementation_verdict": "DONE within named scoped model investigation and repaired project findings",
+  "reason": "All four independent review findings are resolved by source inspection, native result readback and discriminating audit/replay controls; broader timeouts, early historical closure gaps and production external obligations remain explicit.",
+  "findings": [
+    {
+      "id": "IR-001",
+      "severity": "high",
+      "classification": "unsupported claim and missing mandatory model semantics",
+      "status": "resolved",
+      "requirement": "task-v2 section 11 lines 293-304; section 4 lines 103-107; section 15 line 372",
+      "owner": "verification/models/privacy.qnt and privacy-time product",
+      "witness": "Baseline event generation does not derive from separate protected ledger/witness/proof/report states; access stores only authorization tuples.",
+      "minimal_repair": "Implement derived two-world pipeline payloads, real bindings and full event comparison with observed public schedule; exercise data-path negative controls.",
+      "invalidated_claims": [
+        "mandatory P-Access/P-Binding/P-NI/P-Timing scope",
+        "privacy-time data-path composition"
+      ],
+      "unaffected": [
+        "economic safety",
+        "economic liveness",
+        "induction",
+        "economic safety mapping"
+      ]
+    },
+    {
+      "id": "IR-002",
+      "severity": "medium",
+      "classification": "demonstrated harness defect",
+      "status": "resolved",
+      "requirement": "task-v2 section 6 lines 165-175; section 7 line 186; section 8 lines 227-236",
+      "owner": "verification/scripts/verify.py, replay.py, evidence.py",
+      "witness": "--fresh invokes replay, whose execute path may reuse a matching successful replay receipt; exact failed attempt selection filters to successful family members.",
+      "minimal_repair": "Force new subprocess execution for explicit fresh calls; distinguish exact receipt and latest-success selection; support original failed/timeout attempts.",
+      "invalidated_claims": [
+        "fresh execution when cached replay was reused",
+        "universal exact-attempt reproduction"
+      ],
+      "unaffected": [
+        "original native backend results"
+      ]
+    },
+    {
+      "id": "IR-003",
+      "severity": "high",
+      "classification": "demonstrated evidence acceptance defect",
+      "status": "resolved",
+      "requirement": "task-v2 section 7 lines 186-200; section 8 line 227; section 14 line 355",
+      "owner": "verification/scripts/audit_evidence.py and acceptance contract",
+      "witness": "Copied mutant-expiry receipt with both claim and --invariant command changed to THIS_PROPERTY_WAS_NEVER_EXECUTED was accepted by validate without changing any file.",
+      "minimal_repair": "Bind raw/source/proof-contract identity to the selected acceptance contract and native target/result; add corruption, wrong-target, zero-selected and tool-error discriminators.",
+      "invalidated_claims": [
+        "strong evidence audit guarantee",
+        "completion gates relying solely on unbound metadata"
+      ],
+      "unaffected": [
+        "actual native log observations for their original selected targets"
+      ]
+    },
+    {
+      "id": "IR-004",
+      "severity": "medium",
+      "classification": "unsupported modeled-resource claim",
+      "status": "resolved",
+      "requirement": "task-v2 section 12 lines 323-331; section 13 lines 337-339",
+      "owner": "verification/timing-assumptions.md, models/timing.qnt, models/capacity.qnt",
+      "witness": "Timing prose says one hostile work item and recovery priority; timed queue contains only two trade jobs, while separate capacity model uses FIFO and no recovery class.",
+      "minimal_repair": "Separate exact two-trade timing result from FIFO hostile-budget result; implement explicit recovery scheduling only if retaining that priority claim and check affected configurations.",
+      "invalidated_claims": [
+        "combined timed hostile-work and recovery-priority scope"
+      ],
+      "unaffected": [
+        "original two-trade 14/22/24 slot result",
+        "exact deadline margins",
+        "separate capacity safety/progress"
+      ]
+    }
+  ],
+  "section_verdicts": {
+    "1": "pass",
+    "2": "pass",
+    "3": "pass with scoped predicate and guard limits",
+    "4": "pass with explicit abstraction and safety-only mapping limits",
+    "5": "pass for named finite and sampled cases",
+    "6": "pass for named executions; four broader timeouts remain",
+    "7": "pass for selected evidence; partial early historical exact reproduction",
+    "8": "pass for local deliverables; publication pending",
+    "9": "pass for named lifecycle and installation scope",
+    "10": "pass for abstract representatives",
+    "11": "pass for fixed public 12-operation schedule and optional one shared request",
+    "12": "pass for separate finite regimes; no combined hostile priority deadline",
+    "13": "pass for scoped assumption and trust models",
+    "14": "pass for model and conformance specification; production external",
+    "15": "pass for scoped investigation and review; parent publication pending"
+  },
+  "lightweight_review_observations": {
+    "baseline_audits": 92,
+    "negative_audits": 39,
+    "original_evidence_unit_tests_passed": 6,
+    "tampered_claim_and_command_accepted": true,
+    "heavyweight_suites_rerun": false,
+    "current_evidence_audit_tests_passed": 14,
+    "original_wrong_claim_discriminator_now_rejected": true,
+    "current_baseline_audits_read_back": 104,
+    "current_negative_audits_read_back": 49,
+    "selected_observations": 153,
+    "unmet_selected_scoped_checks": []
+  },
+  "broader_unclosed_checks": [
+    "apalache-core-12",
+    "apalache-core-20",
+    "tlc-live_two",
+    "tlc-eventual-recovery"
+  ],
+  "external_scope": [
+    "production Solidity/adapters/proof guests",
+    "actual circuit soundness and prover-verifier composition",
+    "actual QBFT/EVM/token behavior",
+    "hardware/key/storage/network security",
+    "cryptographic privacy and real side channels",
+    "availability/cost/performance measurements",
+    "legal/account/issuer rights and financial records"
+  ],
+  "publication_status": "pending parent-owned authorized GitHub publication and readback",
+  "independent_recheck": "Final same-reviewer recheck completed; IR-001 through IR-004 resolved. Publication and future clean-revision state not certified.",
+  "recheck_history": [
+    {
+      "finding": "IR-001",
+      "stage": "first pipeline repair",
+      "status": "open",
+      "native_observations": {
+        "review-pipeline-safe-attempt2": 13,
+        "review-pipeline-PAccess-attempt2": 55309,
+        "review-pipeline-PBinding-attempt2": 55309,
+        "review-pipeline-witnesses-attempt1": "8 passing",
+        "negative_controls": "seven genuine violations"
+      },
+      "remaining_witness": "release(proofReady.left,3,8,0,1,5) includes private source.position=4; rejected requests also retain source witness",
+      "minimal_repair": "Separate ghost provenance from actual payload and include selected observer release projection in relational trace."
+    },
+    {
+      "stage": "second privacy and harness/resource repair",
+      "status": {
+        "IR-001": "resolved",
+        "IR-002": "open",
+        "IR-003": "source repair verified; final unit receipt pending",
+        "IR-004": "resolved"
+      },
+      "privacy_native_observations": {
+        "review-pipeline-safe-attempt3": 13,
+        "review-pipeline-PAccess-attempt3": 55309,
+        "review-pipeline-PBinding-attempt3": 55309,
+        "review-pipeline-PNI": 55309,
+        "review-pipeline-witnesses-attempt2": "8 passing",
+        "review-privacy-time-integrated-safe-attempt2": 64,
+        "seven_attempt2_controls": "genuine intended violations"
+      },
+      "evidence_discriminator": "changed claim and --invariant now rejected by sealed proof contract",
+      "fifo_witnesses": "3 passing; current capacity change comments only",
+      "remaining_replay_witness": "attempt1 expiry source has no bClock but shared original export contains attempt2 bClock; early original receipts lack local source snapshots"
+    },
+    {
+      "stage": "final same-reviewer recheck",
+      "status": "all four findings resolved",
+      "audit_tests": "13 passing including actual two-process force test, wrong target/log/source rejection, zero selection, exact failure and mutable-trace controls",
+      "immutable_replay": "expiry attempt2 export and association verified against baseline Git objects; new forced replay matched; attempt1 reproduced verdict with native comparison explicitly unavailable",
+      "failed_replay": "original privacy parser tool_error reproduced and never counted as killed mutant",
+      "private_availability": "typed-note retained-key/fair-advance temporal property completed 26 states; unconditional key-loss claim has pc12/key-false/usable-false native temporal counterexample",
+      "retained_privacy_scope": "Only new unselected dataStep/availability definitions; existing paired/access definitions and predicates unchanged",
+      "historical_availability_inventory": "10 missing closure IDs independently recomputed and matched exactly",
+      "publication": "pending parent-owned remote and clean-commit closure"
+    },
+    {
+      "stage": "final IR-002 portability follow-up",
+      "status": "resolved",
+      "source_review": "captured_argument maps recorded absolute paths via historical QUINT_HOME root into hashed local snapshots and rejects outside or uncaptured paths; no live checkout fallback",
+      "discriminator": "actual retained source closure resolves after synthetic original-root relocation; outside-root input rejected",
+      "audit_tests": "14 passing",
+      "model_changes": "none; no model-checker rerun needed"
+    }
+  ],
+  "baseline_section_verdicts": {
+    "1": "pass",
+    "2": "pass",
+    "3": "partial",
+    "4": "partial",
+    "5": "pass",
+    "6": "partial",
+    "7": "fail",
+    "8": "partial",
+    "9": "pass",
+    "10": "pass",
+    "11": "fail",
+    "12": "partial",
+    "13": "pass",
+    "14": "partial",
+    "15": "fail"
+  },
+  "review_verdict": "DONE",
+  "unqualified_verification_verdict": "NOT DONE",
+  "overall_user_request_status": "Final clean-commit audit and GitHub publication/readback remain pending parent-owned work.",
+  "historical_missing_source_closures": [
+    "core-baseline-17",
+    "mutant-binding",
+    "mutant-expiry",
+    "mutant-non_atomic",
+    "mutant-pruned_tombstone",
+    "mutant-relayer_assertion",
+    "mutant-reopen",
+    "mutant-reopen-attempt1",
+    "mutant-replay",
+    "mutant-stale_refund"
+  ],
+  "methodological_limits": [
+    "fixed finite public schedule and at most one API request for relational privacy",
+    "ideal opaque names and explicit private channels",
+    "no arbitrary-scheduler or termination noninterference",
+    "one-trade economic safety mapping only; no liveness preservation or general composition",
+    "finite and bounded instantiated domains; no arbitrary-population theorem",
+    "native traces not minimized",
+    "local versioned evidence trust anchor; no independent signed execution attestation"
+  ]
+}

@@ -2,6 +2,8 @@ module liveness {
   import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=0).* from "./dvp"
   // Core configuration: all actors remain up, durable evidence; no losses in step.
   // Eventual-recovery model is the suffix after stabilization, not a real-time bound.
+  // Fairness is per trade and recovery phase, not weak fairness of aggregate
+  // step. It never promises a pre-deadline COMMIT; fair progress may end in ABORT.
   temporal fairTrade(t:int):bool = and {
     abort(t).weakFair(Set(s)), applyA(t).weakFair(Set(s)),applyB(t).weakFair(Set(s)),
     refund(t,0).weakFair(Set(s)),refund(t,1).weakFair(Set(s)),

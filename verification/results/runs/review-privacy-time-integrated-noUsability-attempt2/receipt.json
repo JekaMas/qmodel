@@ -1,0 +1,60 @@
+{
+  "id": "review-privacy-time-integrated-noUsability-attempt2",
+  "started_utc": "2026-11-17T18:55:37.868794+00:00",
+  "claim": "noUsability",
+  "backend": "tlc",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/models/integrated.qnt",
+    "--main",
+    "integrated",
+    "--backend",
+    "tlc",
+    "--invariant",
+    "noUsability",
+    "--tlc-config",
+    "verification/configs/tlc.json",
+    "--verbosity",
+    "3"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/integrated.qnt --main integrated --backend tlc --invariant noUsability --tlc-config verification/configs/tlc.json --verbosity 3",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/models/integrated.qnt": "e64c068bccca069032a548f3a5fabbbb7209a778b6dedd2e568eb841b78727a2",
+    "verification/models/privacy_pipeline.qnt": "b487c8fb0475225b5b3acabfdef574944de3a90e96743d0a49db012383b87aa5",
+    "verification/models/timing.qnt": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+    "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "0.62.4 | build: 7954daf                       I@22:55:42.960",
+    "tlc": "2026.11.17.185547"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "893ff86eebac5a5c57e8f7245c4f73900b0c30f4db36b28d6af964d068c0619d"
+  },
+  "execution_plan_sha256": "7196704d2c867e1effb46416487ec5d2743be81c38d0580807e253377d61968c",
+  "raw_sha256": "d0c1fbc82a64e84bd76538f13191675db0a8ae64aa87a898d67c20e183d020b9",
+  "configuration": {},
+  "timeout_seconds": 120,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 10.39289554208517,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": 92,
+  "distinct_states": 48,
+  "raw_output": "verification/results/runs/review-privacy-time-integrated-noUsability-attempt2/raw.log",
+  "minimized": false,
+  "replayed": false
+}

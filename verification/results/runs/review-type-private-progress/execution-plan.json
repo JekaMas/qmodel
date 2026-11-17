@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "typecheck",
+    "verification/models/privacy_pipeline.qnt"
+  ],
+  "claim": "typed private availability temporal extension type/effect correctness",
+  "expected": "pass",
+  "backend": "cli",
+  "configuration": {},
+  "input_hashes": {
+    "verification/models/privacy_pipeline.qnt": "c832b2e19081687d9e87444eedd4558a76db38ed33fb8f41fc31b2a87db56327"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "e6bd72b035b17b99a61c531a511448e834a99b20a4754bee9fa6b1ed90c1a8cf"
+  },
+  "timeout_seconds": 120
+}

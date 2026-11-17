@@ -16,3 +16,12 @@ The project SHALL implement and execute all mandatory suites from verification/s
 
 - **WHEN** a mandatory check cannot complete or a claim exceeds the model boundary
 - **THEN** its limitation and reproduction/unblock command remain visible and full-scope status is NOT DONE
+
+#### Scenario: Bound observations and explicit replay
+
+- **WHEN** receipt claims, selected targets, raw output or source identity change
+- **THEN** the evidence audit rejects them against the versioned observation contract
+- **AND** zero-selected scenarios do not establish a passing result
+- **WHEN** fresh execution or an exact historical attempt is explicitly requested
+- **THEN** a new subprocess executes the selected saved closure without cached replay or implicit later-success substitution
+- **AND** native comparison uses only an immutable associated export; missing early evidence remains explicitly unavailable

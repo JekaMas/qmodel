@@ -1,0 +1,9 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/privacy_pipeline.qnt:111:32
+  111:   action advanceAt(elapsed:int)=advanceWith(elapsed,0)
+                                      ^
+
+error: parsing failed

@@ -1,0 +1,30 @@
+[
+  {
+    "path": "verification/models/dvp.qnt",
+    "before_sha256": "7282d282e258fca641eb8a8b15a8b5fec7d83dbad7cee9408dc98735b0a782e0",
+    "after_sha256": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+    "semantic_delta": "none: removing full-line comments gives identical remaining text",
+    "retention": "Existing behavior greens retained; no source hash in an original receipt is rewritten."
+  },
+  {
+    "path": "verification/models/timing.qnt",
+    "before_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+    "after_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+    "semantic_delta": "none: removing full-line comments gives identical remaining text",
+    "retention": "Existing behavior greens retained; no source hash in an original receipt is rewritten."
+  },
+  {
+    "path": "verification/models/capacity.qnt",
+    "before_sha256": "08de59bfa4c0d041f23998666ddd85dfe74f1e4687d43d07a9e23e208994f264",
+    "after_sha256": "d7f52a3b2d4bbf55aca37781b4dfefe03f802d128513acd2a9bc1560de78658c",
+    "semantic_delta": "none: removing full-line comments gives identical remaining text",
+    "retention": "Existing behavior greens retained; no source hash in an original receipt is rewritten."
+  },
+  {
+    "path": "verification/models/liveness.qnt",
+    "before_sha256": "adffcd2ce26c08a8c83af10dca0a7f3e6c30840d819a7d80143bedcad7dc1d45",
+    "after_sha256": "ac756f5007f4710e21811812aac2e837e790894565fae7bbbbd88fdfb1eb3d35",
+    "semantic_delta": "none: removing full-line comments gives identical remaining text",
+    "retention": "Existing behavior greens retained; no source hash in an original receipt is rewritten."
+  }
+]

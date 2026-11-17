@@ -1,0 +1,161 @@
+{
+  "changeName": "verify-cross-chain-dvp",
+  "changeDir": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp",
+  "schemaName": "spec-driven",
+  "contextFiles": {
+    "proposal": [
+      "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/proposal.md"
+    ],
+    "specs": [
+      "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/specs/dvp-verification/spec.md"
+    ],
+    "design": [
+      "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/design.md"
+    ],
+    "tasks": [
+      "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md"
+    ]
+  },
+  "progress": {
+    "total": 16,
+    "complete": 12,
+    "remaining": 4
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "description": "1. Read attached v2 and shared solution; preserve source identity and limitations.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 3
+    },
+    {
+      "id": "2",
+      "description": "2. Create property, assumption, coverage and variant contracts before modeling.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 4
+    },
+    {
+      "id": "3",
+      "description": "3. Validate toolchain: true/false safety and fair/unfair temporal smoke models.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 5
+    },
+    {
+      "id": "4",
+      "description": "4. Implement core, deterministic witnesses, simulation, Apalache and TLC checks.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 6
+    },
+    {
+      "id": "5",
+      "description": "5. Kill at least eight isolated protocol mutants; preserve and replay traces.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 7
+    },
+    {
+      "id": "6",
+      "description": "6. Execute required topology, reservation and compact mechanism variants.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 8
+    },
+    {
+      "id": "7",
+      "description": "7. Execute operational recovery, membership, intervention and trust perturbations.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 9
+    },
+    {
+      "id": "8",
+      "description": "8. Execute observer access, disclosure, relational privacy and leak controls.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 10
+    },
+    {
+      "id": "9",
+      "description": "9. Execute asynchronous/eventual/bounded timing, queue/capacity and negative controls.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 11
+    },
+    {
+      "id": "10",
+      "description": "10. Execute small integrated/privacy-time and multilateral configurations; audit mappings.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 12
+    },
+    {
+      "id": "11",
+      "description": "11. Reconcile literal coverage, conformance obligations, findings and final reports.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 13
+    },
+    {
+      "id": "12",
+      "description": "12. Complete relevant workflow/spec checks and publish local reproducible evidence.",
+      "done": true,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 14
+    },
+    {
+      "id": "13",
+      "description": "13. Independently review the original request, v2 sections 1–15, actual models and evidence; disposition every finding with the same reviewer.",
+      "done": false,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 40
+    },
+    {
+      "id": "14",
+      "description": "14. Repair demonstrated model/evidence gaps and execute directly affected positive/negative checks; retain valid unrelated greens and original failed evidence.",
+      "done": false,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 41
+    },
+    {
+      "id": "15",
+      "description": "15. Comment model/harness boundaries, expand the specification, document exact changes and resulting guarantees, and add review/results.",
+      "done": false,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 42
+    },
+    {
+      "id": "16",
+      "description": "16. Complete the final committed-revision evidence audit, publish under JekaMas/qmodel, and verify remote owner, visibility, files and HEAD.",
+      "done": false,
+      "sourcePath": "/Users/jekamas/projects/0xatelerix/qmodel/openspec/changes/verify-cross-chain-dvp/tasks.md",
+      "line": 43
+    }
+  ],
+  "taskTrackingConfigured": true,
+  "state": "ready",
+  "instruction": "Read context files, work through pending tasks, mark complete as you go.\nPause if you hit blockers or need clarification.",
+  "context": "Follow applicable project instructions and .agents/workflow-project.json. Shared procedures come from the pinned .agents/workflow; project commands and authority remain local.\n",
+  "operationGuidance": [
+    "Follow .agents/workflow/docs/project-flow.md. Continue through useful authorized implementation, inspection, repair and affected revalidation without asking whether to continue.",
+    "Replan within the same intent as evidence changes. Update specs/design/tasks coherently; a materially different intent or independently deliverable scope needs a separate change proposal, not silent scope growth.",
+    "First complete independent authorized work before asking for a missing material decision or permission. Record exact blockers and unblock actions; do not turn a checkpoint or debugging result into task completion.",
+    "Recheck the affected specification and validation contract before semantic implementation; revise artifacts within scope when evidence changes.",
+    "Qualify decisive feedback and retain material failure/replay evidence using .agents/workflow/skills/verification-design/SKILL.md. Verify the whole requested outcome before no-change completion; a partial fix or passing retry is insufficient.",
+    "Review actual code and evidence using .agents/workflow/skills/verification-design/SKILL.md. Repair material in-scope findings and revalidate affected results; a review stage is not a handoff or task completion. Do not claim independent review for self-review.",
+    "Reconcile required properties and selected test sets with actual executed cases/families, skips, configurations and gaps using .agents/workflow/skills/verification-design/SKILL.md. Manifest validity is not execution or oracle evidence.",
+    "Query and run the verification.json closure for every affected requirement, property, owner or source path in the increment. Confirm each expected exact test identity executed and passed; preserve failures and gaps.",
+    "After each edit run only the smallest directly invalidated cases, then expand to dependent or sibling cases when required. Reuse green evidence until a declared invalidation dependency changes, and run the complete iteration case set once at the stable iteration boundary.",
+    "Validate discovery.json for the affected property/test selection before accepting explore/check scope decisions. Unavailable semantic or IDE search is recorded with its exact reason, never silently substituted.",
+    "Execute relevant existing commands through .agents/workflow/docs/project-flow.md; users need not invoke Make separately. Select the documented workflow, specification and readiness checks plus required behavioral evidence. Missing checks are not passes.",
+    "Use relevant domain skills and risk-based local checks. Read-only audit stopping applies only to audit scope; it does not limit an authorized implementation workflow.",
+    "DONE includes verified no-change completion and requires the requested outcome, matching artifacts, a passing complete verification.json run --all --require-clean on the final relevant code, diff/behavior inspection and resolved material findings. Report limitations and separate local completion from external approval/deployment."
+  ],
+  "root": {
+    "path": "/Users/jekamas/projects/0xatelerix/qmodel",
+    "source": "nearest"
+  }
+}

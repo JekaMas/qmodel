@@ -1,0 +1,2944 @@
+{
+  "scope": "Source/native export availability, not a claim that every historical runtime can be recreated. Native raw logs remain preserved. Exact selection never falls back; documented family examples explicitly use --latest-success.",
+  "missing_closure_ids": [
+    "core-baseline-17",
+    "mutant-binding",
+    "mutant-expiry",
+    "mutant-non_atomic",
+    "mutant-pruned_tombstone",
+    "mutant-relayer_assertion",
+    "mutant-reopen",
+    "mutant-reopen-attempt1",
+    "mutant-replay",
+    "mutant-stale_refund"
+  ],
+  "observations": [
+    {
+      "id": "abort-authoritative-records",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "actual-b-clock-expiry",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "actual-queue-time-privacy",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "apalache-algebraic-12",
+      "outcome": "bounded_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "apalache-algebraic-20",
+      "outcome": "bounded_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "apalache-algebraic-8",
+      "outcome": "bounded_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "apalache-core-12",
+      "outcome": "timeout",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "apalache-core-20",
+      "outcome": "timeout",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "apalache-core-4",
+      "outcome": "bounded_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "audit-audit_safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "audit-omitted_record",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-direct",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-direct_bad_execution",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-execution",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-execution_rejects_history",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-execution_rejects_invalid",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-zk_bad_execution",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "auth-zk_consensus",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "checked-mapping",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "combined-faults-17",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "combined-faults-43",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "contract-b_hosted",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "contract-d_shared",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "contract-shared_execution",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-baseline-17",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-baseline-17-attempt1",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-baseline-29",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-baseline-43",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-contention-17",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-contention-29",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-contention-29-attempt1",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-contention-43",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "core-scenarios",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "d-outage-return-paths",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "delayed-open-fact-scenarios",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "exact-deadline-margin",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-algebraic-induction",
+      "outcome": "inductive_obligations_verified_with_stated_scope",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-all-typechecks",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-combined-faults-43",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-core-temporal",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-core-tlc",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-domains-safety",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-record-mapping",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-record-progress",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-record-recovery",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-record-safety",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-record-two",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-variant-live_b",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-variant-live_d",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-variant-live_escrow",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-variant-live_open",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-variant-private_asset",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "final-variant-shared_execution",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "htlc-bounded-margins",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "htlc-permanent-halt",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "inductive-core",
+      "outcome": "counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "inductive-core-attempt1",
+      "outcome": "inductive_obligations_verified_with_stated_scope",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "late-hold-relative-bound",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "linked-privacy-privacy_safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "linked-privacy-timing_leak",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "linked-privacy-witness_log",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "membership-consumed-replay",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "membership-first-failure",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/membership-first-failure/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "membership-lifecycle-tests",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "membership-retirement",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "membership-retirement-final",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "membership-unsafe-retirement",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-binding",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-binding-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-binding-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-binding/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-expiry",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt",
+        "verification/results/traces/expiry.itf.json"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-expiry-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-expiry-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-expiry/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-non_atomic",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-non_atomic-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-non_atomic-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-non_atomic-attempt3",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-non_atomic/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-pruned_tombstone",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-pruned_tombstone-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-pruned_tombstone-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-pruned_tombstone/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-relayer_assertion",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-relayer_assertion-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-relayer_assertion-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-relayer_assertion/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-reopen",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-reopen-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt",
+        "verification/results/traces/reopen.itf.json"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-reopen-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-reopen-attempt3",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-reopen/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-replay",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-replay-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-replay-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-replay/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-stale_refund",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": false,
+      "missing_snapshot_paths": [
+        "verification/mutants/guided.qnt",
+        "verification/models/dvp.qnt"
+      ],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-stale_refund-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "mutant-stale_refund-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/replays/mutant-stale_refund/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "negative-disclosure_key_compromise",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "negative-wrong_note",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "network-loss-recovery",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "one-less-deadline-margin",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "overclaim-immediate",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "overclaim-permanent-halt",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "post-stabilization",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "preparation-freeze-policy",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "privacy-time-linked",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "private-data-progress",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "private-permanent-key-loss",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "queue-capacity-progress",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "recovery-relevant-jobs",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-membership-first-failure",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-binding",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-expiry",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-expiry-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/runs/replay-mutant-expiry-attempt1/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-expiry-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-expiry-attempt2-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-expiry-attempt2-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": "verification/results/runs/replay-mutant-expiry-attempt2-attempt2/native.itf.json",
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-non_atomic",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-pruned_tombstone",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-relayer_assertion",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-reopen",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-replay",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-mutant-stale_refund",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "replay-review-pipeline-safe-attempt1",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "report-evidence-scenario",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-fifo-workload",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PAccess",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PAccess-attempt1",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PAccess-attempt2",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PAccess-attempt3",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PBinding",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PBinding-attempt1",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PBinding-attempt2",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PBinding-attempt3",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-PNI",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-safe-attempt1",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-safe-attempt2",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-safe-attempt3",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-witnesses",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-witnesses-attempt1",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline-witnesses-attempt2",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_compromise",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_compromise-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_compromise-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_log",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_log-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_log-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_note",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_note-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_note-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_scope",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_scope-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_scope-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_substitution",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_substitution-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_substitution-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_timing",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_timing-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_timing-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_unsalted",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_unsalted-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-pipeline_unsalted-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated-noUsability",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated-noUsability-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated-noUsability-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated-safe",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated-safe-attempt1",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated-safe-attempt2",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated_leak-safe",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated_leak-safe-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-privacy-time-integrated_leak-safe-attempt2",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-integrated",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-integrated-attempt1",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-privacy_pipeline",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-privacy_pipeline-attempt1",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-privacy_pipeline_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-privacy_pipeline_test-attempt1",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-type-private-progress",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-typed-private-availability",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-typed-private-unconditionalAvailability",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "review-zero-selection",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "root-local-halt",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "root-local-immediate",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "root-local-progress",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "root-local-witness",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-audit_safe",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-capacity_safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-late_resolution",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-mapping",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-mapping_mutant",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-membership",
+      "outcome": "counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-membership-repaired",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "sample-omitted_record",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-b_path_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-bindings_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-contention_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-d_path_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-dvp_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-gpact_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-htlc_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-multilateral_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-open_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-policy_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-privacy_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-recovery_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-shared_policy_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "scenario-shared_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-a_open-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-b_hosted-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-bounded-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-bounded-sufficientSlack",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-committee_compromised-backed",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-committee_compromised-backed-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-committee_honest-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-d_shared-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-equivocation-canonicalAcceptance",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-escrow-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-gpact-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-htlc-noMixed",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-htlc-noMixed-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-htlc_halt-noMixed",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-htlc_halt-noMixed-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-insufficient_margin-sufficientSlack",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-issuer_destruction-backed",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-local_timer-asyncSafety",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-multilateral-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-no_inclusion-boundedCompletion",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-privacy_safe-deliveryMeansUsability",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-privacy_safe-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-private_asset-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-retired_version-historical",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-shared-sharedAtomic",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-shared_execution-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-slow_blocks-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-starvation-boundedCompletion",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-timing_leak-PNI",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-trust_safe-recoverable",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-trust_safe-safe",
+      "outcome": "sampled_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-unsalted-PNI",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-verifier_takeover-canonicalAcceptance",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-witness_log-PNI",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-witness_loss-recoverable",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "simulate-wrong_scope-PAccess",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-apalache-TypeOK",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-apalache-TypeOK-attempt1",
+      "outcome": "bounded_no_counterexample",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-apalache-falseInvariant",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-apalache-falseInvariant-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-tlc-fairProgress",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-tlc-fairProgress-attempt1",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-tlc-progress",
+      "outcome": "tool_error",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "smoke-tlc-progress-attempt1",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "three-domain-installation-final",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "three-domain-progress",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "three-independent-domains-witnesses",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-a_open-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-arbitrary_seizure-backing",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-b_hosted-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-bounded-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-bounded-sufficientSlack",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-capacity_safe-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-coordinated-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-core",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-d_shared-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-disclosure_substitution-PBinding",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-durable-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-equivocation-canonicalAcceptance",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-escrow-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-eventual-recovery",
+      "outcome": "timeout",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-frozen_time-timeProgress",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-insufficient_margin-sufficientSlack",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-integrated-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-issuer_destruction-backed",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-live_b",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-live_d",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-live_escrow",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-live_open",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-live_two",
+      "outcome": "timeout",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-liveness",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-local_timer-asyncSafety",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-mandatory_freeze-progress",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-multilateral-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-no_inclusion-boundedCompletion",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-privacy_safe-PAccess",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-privacy_safe-PBinding",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-privacy_safe-PNI",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-privacy_safe-PScope",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-private_asset-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-repaired-b_hosted",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-repaired-d_shared",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-repaired-shared_execution",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-retired_version-historical",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-shared_execution-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-slow_blocks-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-starvation-boundedCompletion",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-timing_leak-PTiming",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-trust_safe-safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-unlimited-exposure",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-unsalted-PNI",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-verifier_takeover-canonicalAcceptance",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-witness_log-PNI",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "tlc-wrong_scope-PAccess",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "trust-v2-committee_refusal",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "trust-v2-insufficient_submitters",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "trust-v2-retired_version",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "trust-v2-trust_safe",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "trust-v2-witness_loss",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "two-trade-relevant-jobs",
+      "outcome": "finite_model_verified",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-audit_scope",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-authentication",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-bindings_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-capacity",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-compact_recovery",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-compact_two",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-d_outage_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-dvp",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-dvp_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-failure_controls",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-guided",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-induction",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-integrated",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-interventions",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-late_resolution",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-liveness",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-liveness_variants",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-mapping",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-mechanisms",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-mechanisms-local",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-mechanisms_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-membership",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-membership_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-multilateral",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-network_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-operational_faults",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-privacy",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-private_progress",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-protocol",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-recovery",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-recovery_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-smoke",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-stabilization",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-timing",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-timing_boundary",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-trust",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-variants",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "type-final-variants_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-bindings_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-capacity",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-dvp",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-dvp_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-guided",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-interventions",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-liveness",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-mechanisms",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-multilateral",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-privacy",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-protocol",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-smoke",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-timing",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-trust",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-variants",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "typecheck-variants_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "unbounded-prefix-no-fixed-bound",
+      "outcome": "expected_counterexample_found",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "witness-committee_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "witness-escrow_path_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    },
+    {
+      "id": "witness-shared_path_test",
+      "outcome": "executed_successfully",
+      "saved_input_closure_complete": true,
+      "missing_snapshot_paths": [],
+      "immutable_native_export": null,
+      "exact_execution_prerequisites": "pinned current tooling/platform and recorded resource bound; --include-failed for non-success. Missing closure is not replaced silently."
+    }
+  ]
+}
