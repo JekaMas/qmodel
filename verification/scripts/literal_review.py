@@ -15,7 +15,7 @@ sections={
  '08':([],['README.md','reports/findings.md','reports/interview-summary.md']),
  '09':(['C-Decision','C-Local','C-Records','V-Three'],['reports/protocol-review.md','models/multilateral.qnt']),
  '10':(['V-AOpen','V-B','V-D','V-Escrow','V-Private','V-Shared'],['variants.json','models/variants.qnt','models/mechanisms.qnt','models/authentication.qnt']),
- '11':(['P-Access','P-Binding','P-Availability','P-Scope','P-NI','P-Timing'],['privacy-policy.md','models/privacy.qnt','models/private_progress.qnt','models/audit_scope.qnt']),
+ '11':(['P-Access','P-Binding','P-Availability','P-Scope','P-NI','P-Timing'],['privacy-policy.md','models/privacy_pipeline.qnt','models/integrated.qnt','models/audit_scope.qnt']),
  '12':(['T-Async','T-Eventual','T-Bounded','T-Capacity'],['timing-assumptions.md','models/timing.qnt','models/stabilization.qnt','models/late_resolution.qnt','models/capacity.qnt']),
  '13':(['S13','S14','S16'],['assumption-guarantee-matrix.json','models/trust.qnt','models/interventions.qnt','models/membership.qnt']),
  '15':([],['coverage-contract.json','variants.json','privacy-policy.md','timing-assumptions.md','assumption-guarantee-matrix.json','reports/conformance-boundary.md','reports/coverage.md'])}

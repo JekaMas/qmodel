@@ -1,0 +1,35 @@
+// Guard/recovery witnesses supplement the finite graphs. Roles are explicit:
+// 3 proof/adapter, 4 transport, 2 already-authorized terminal submitter, 0/1 ledgers.
+// Initial counterparty consent is separate from that terminal submission channel.
+module phase_failure_test {
+ import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=0).* from "../models/dvp"
+ run signed=init.then(sign(1,0)).then(sign(1,1))
+ run held=signed.then(openA(1)).then(prepareB(1))
+ run bFinal=held.then(finalize(1,2))
+ run bCaptured=bFinal.then(capture(1,2))
+ run bProved=bCaptured.then(prove(1,2))
+ run readyCommit=bProved.then(deliver(1,2))
+ run committed=readyCommit.then(commit(1))
+ run outcomeReady=committed.then(finalize(1,3)).then(capture(1,3)).then(prove(1,3))
+ run outcomeKnown=outcomeReady.then(deliver(1,3)).then(learn(1,2,1))
+ run abortKnown=held.then(tick).then(tick).then(abort(1)).then(finalize(1,4)).then(capture(1,4)).then(prove(1,4)).then(deliver(1,4)).then(learn(1,3,1))
+ run captureDownTest=bFinal.then(crash(3)).expect(safe and s.trades.get(1).holdB==1).then(capture(1,2).fail())
+ run proveDownTest=bCaptured.then(crash(3)).expect(safe and s.captured.contains(fact(1,2))).then(prove(1,2).fail())
+ run captureRecoveryTest=bFinal.then(crash(3)).then(recover(3)).then(capture(1,2)).then(prove(1,2)).then(deliver(1,2)).then(commit(1)).expect(safe and someCommit)
+ run storedWitnessBankDownTest=bCaptured.then(crash(1)).then(crash(3)).then(recover(3)).then(prove(1,2)).then(deliver(1,2)).then(commit(1)).expect(safe and s.trades.get(1).effectsA==1 and s.trades.get(1).holdB==1 and s.ownerB==3)
+ run preparationTransportDownTest=bProved.then(crash(4)).expect(safe).then(deliver(1,2).fail())
+ run preparationTransportRecoveryTest=bProved.then(crash(4)).then(recover(4)).then(resend(1,2)).then(deliver(1,2)).then(commit(1)).expect(safe and someCommit)
+ run outcomeCaptureDownTest=committed.then(finalize(1,3)).then(crash(3)).expect(safe and s.trades.get(1).holdB==1).then(capture(1,3).fail())
+ run outcomeTransportDownTest=outcomeReady.then(crash(4)).expect(safe).then(deliver(1,3).fail())
+ run outcomeTransportRecoveryTest=outcomeReady.then(crash(4)).then(recover(4)).then(resend(1,3)).then(deliver(1,3)).then(learn(1,2,1)).then(applyB(1)).expect(safe and someSettlement)
+ run decisionSubmitterDownTest=readyCommit.then(crash(2)).expect(safe and s.trades.get(1).decision==1).then(commit(1).fail())
+ run decisionSubmitterRecoveryTest=readyCommit.then(crash(2)).then(recover(2)).then(commit(1)).expect(safe and someCommit)
+ run applicationSubmitterDownTest=outcomeKnown.then(crash(2)).expect(safe and s.trades.get(1).effectsB==0).then(applyB(1).fail())
+ run applicationSubmitterRecoveryTest=outcomeKnown.then(crash(2)).then(recover(2)).then(applyB(1)).expect(safe and someSettlement)
+ run refundSubmitterDownTest=abortKnown.then(crash(2)).expect(safe and s.trades.get(1).decision==3).then(refund(1,1).fail())
+ run refundSubmitterRecoveryTest=abortKnown.then(crash(2)).then(recover(2)).then(refund(1,1)).then(refund(1,0)).expect(safe and s.trades.get(1).holdA==3 and s.trades.get(1).holdB==3)
+ run sourceFinalityDownTest=held.then(crash(1)).expect(safe).then(finalize(1,2).fail())
+ run decisionLedgerDownTest=readyCommit.then(crash(0)).expect(safe).then(commit(1).fail())
+ run applicationLedgerDownTest=outcomeKnown.then(crash(1)).expect(safe).then(applyB(1).fail())
+ run applicationLedgerRecoveryTest=outcomeKnown.then(crash(1)).then(recover(1)).then(applyB(1)).expect(safe and someSettlement)
+}

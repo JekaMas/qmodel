@@ -1,0 +1,267 @@
+2701:
+2026-11-17 23:46:25
+Full thread dump OpenJDK 64-Bit Server VM (25.0.4+1-b508.27 mixed mode, sharing):
+
+Threads class SMR info:
+_java_thread_list=0x000000012afbb010, length=16, elements={
+0x000000014200da00, 0x0000000132011600, 0x0000000132014000, 0x0000000132014800,
+0x0000000132015000, 0x0000000132015800, 0x0000000132016000, 0x0000000143053e00,
+0x0000000143054800, 0x0000000132011e00, 0x00000001430fba00, 0x0000000131a10c00,
+0x000000013081c000, 0x000000012b07e000, 0x000000012bbf4a00, 0x0000000140f67e00
+}
+
+"main" #3 [8963] prio=5 os_prio=31 cpu=655.99ms elapsed=1034.57s tid=0x000000014200da00 nid=8963 in Object.wait()  [0x000000016b769000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.4/Native Method)
+	- waiting on <0x0000000600400000> (a zio.internal.OneShot)
+	at java.lang.Object.wait(java.base@25.0.4/Object.java:389)
+	at java.lang.Object.wait(java.base@25.0.4/Object.java:351)
+	at zio.internal.OneShot.get(OneShot.scala:81)
+	- locked <0x0000000600400000> (a zio.internal.OneShot)
+	at zio.Runtime.unsafeRunSync(Runtime.scala:86)
+	at zio.Runtime.unsafeRunSync$(Runtime.scala:81)
+	at at.forsyte.apalache.shai.v1.RpcServer.unsafeRunSync(RpcServer.scala:20)
+	at zio.Runtime.unsafeRun(Runtime.scala:59)
+	at zio.Runtime.unsafeRun$(Runtime.scala:58)
+	at at.forsyte.apalache.shai.v1.RpcServer.unsafeRun(RpcServer.scala:20)
+	at zio.App.main(App.scala:59)
+	at zio.App.main$(App.scala:55)
+	at at.forsyte.apalache.shai.v1.RpcServer.main(RpcServer.scala:20)
+	at at.forsyte.apalache.tla.tooling.opt.ServerCmd.$anonfun$run$1(ServerCmd.scala:48)
+	at at.forsyte.apalache.tla.tooling.opt.ServerCmd$$Lambda/0x00003fe002166388.apply(Unknown Source)
+	at at.forsyte.apalache.tla.tooling.opt.ApalacheCommand.runWithOptions(ApalacheCommand.scala:190)
+	at at.forsyte.apalache.tla.tooling.opt.ServerCmd.run(ServerCmd.scala:42)
+	at at.forsyte.apalache.tla.Tool$.runCommand(Tool.scala:169)
+	at at.forsyte.apalache.tla.Tool$.runInScope(Tool.scala:148)
+	at at.forsyte.apalache.tla.Tool$.$anonfun$run$1(Tool.scala:102)
+	at at.forsyte.apalache.tla.Tool$$$Lambda/0x00003fe002045090.apply$mcI$sp(Unknown Source)
+	at scala.runtime.java8.JFunction0$mcI$sp.apply(JFunction0$mcI$sp.scala:17)
+	at at.forsyte.apalache.io.OutputManager$.$anonfun$withState$1(OutputManager.scala:280)
+	at at.forsyte.apalache.io.OutputManager$$$Lambda/0x00003fe0020504f0.run(Unknown Source)
+	at jdk.internal.vm.ScopedValueContainer.runWithoutScope(java.base@25.0.4/ScopedValueContainer.java:112)
+	at jdk.internal.vm.ScopedValueContainer.run(java.base@25.0.4/ScopedValueContainer.java:98)
+	at java.lang.ScopedValue$Carrier.runWith(java.base@25.0.4/ScopedValue.java:482)
+	at java.lang.ScopedValue$Carrier.run(java.base@25.0.4/ScopedValue.java:466)
+	at at.forsyte.apalache.io.OutputManager$.at$forsyte$apalache$io$OutputManager$$withState(OutputManager.scala:280)
+	at at.forsyte.apalache.io.OutputManager$Scope.run(OutputManager.scala:253)
+	at at.forsyte.apalache.io.OutputManager$.withScope(OutputManager.scala:259)
+	at at.forsyte.apalache.tla.Tool$.run(Tool.scala:102)
+	at at.forsyte.apalache.tla.Tool$.main(Tool.scala:38)
+	at at.forsyte.apalache.tla.Tool.main(Tool.scala)
+
+"Common-Cleaner" #14 [24835] daemon prio=8 os_prio=31 cpu=2.83ms elapsed=1034.56s tid=0x0000000132011600 nid=24835 in Object.wait()  [0x000000016cee2000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.4/Native Method)
+	- waiting on <0x0000000600400888> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.Object.wait(java.base@25.0.4/Object.java:389)
+	at java.lang.ref.ReferenceQueue.remove0(java.base@25.0.4/ReferenceQueue.java:123)
+	at java.lang.ref.ReferenceQueue.remove(java.base@25.0.4/ReferenceQueue.java:201)
+	- locked <0x0000000600400888> (a java.lang.ref.ReferenceQueue$Lock)
+	at jdk.internal.ref.CleanerImpl.run(java.base@25.0.4/CleanerImpl.java:146)
+	at java.lang.Thread.runWith(java.base@25.0.4/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.4/Thread.java:1474)
+	at jdk.internal.misc.InnocuousThread.run(java.base@25.0.4/InnocuousThread.java:148)
+
+"Reference Handler" #15 [25091] daemon prio=10 os_prio=31 cpu=46.63ms elapsed=1034.56s tid=0x0000000132014000 nid=25091 waiting on condition  [0x000000016d6ee000]
+   java.lang.Thread.State: RUNNABLE
+	at java.lang.ref.Reference.waitForReferencePendingList(java.base@25.0.4/Native Method)
+	at java.lang.ref.Reference.processPendingReferences(java.base@25.0.4/Reference.java:246)
+	at java.lang.ref.Reference$ReferenceHandler.run(java.base@25.0.4/Reference.java:208)
+
+"Finalizer" #16 [28931] daemon prio=8 os_prio=31 cpu=0.04ms elapsed=1034.56s tid=0x0000000132014800 nid=28931 in Object.wait()  [0x000000016defa000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait0(java.base@25.0.4/Native Method)
+	- waiting on <0x0000000600400cf8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.Object.wait(java.base@25.0.4/Object.java:389)
+	at java.lang.Object.wait(java.base@25.0.4/Object.java:351)
+	at java.lang.ref.ReferenceQueue.remove0(java.base@25.0.4/ReferenceQueue.java:137)
+	at java.lang.ref.ReferenceQueue.remove(java.base@25.0.4/ReferenceQueue.java:215)
+	- locked <0x0000000600400cf8> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.Finalizer$FinalizerThread.run(java.base@25.0.4/Finalizer.java:165)
+
+"Signal Dispatcher" #17 [25347] daemon prio=9 os_prio=31 cpu=0.37ms elapsed=1034.56s tid=0x0000000132015000 nid=25347 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #18 [28419] daemon prio=9 os_prio=31 cpu=14.39ms elapsed=1034.56s tid=0x0000000132015800 nid=28419 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Deflation Thread" #19 [27907] daemon prio=9 os_prio=31 cpu=41.82ms elapsed=1034.56s tid=0x0000000132016000 nid=27907 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #20 [25859] daemon prio=9 os_prio=31 cpu=5192.27ms elapsed=1034.56s tid=0x0000000143053e00 nid=25859 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"C1 CompilerThread0" #23 [27139] daemon prio=9 os_prio=31 cpu=2257.10ms elapsed=1034.56s tid=0x0000000143054800 nid=27139 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+   No compile task
+
+"Notification Thread" #24 [26883] daemon prio=9 os_prio=31 cpu=0.03ms elapsed=1034.55s tid=0x0000000132011e00 nid=26883 runnable  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"grpc-nio-boss-ELG-1-1" #37 [40195] daemon prio=5 os_prio=31 cpu=38.00ms elapsed=1033.16s tid=0x00000001430fba00 nid=40195 runnable  [0x00000001729de000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@25.0.4/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@25.0.4/KQueueSelectorImpl.java:121)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@25.0.4/SelectorImpl.java:130)
+	- locked <0x00000006009ed1d0> (a io.netty.channel.nio.SelectedSelectionKeySet)
+	- locked <0x00000006009ed178> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@25.0.4/SelectorImpl.java:147)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:879)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:526)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.runWith(java.base@25.0.4/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.4/Thread.java:1474)
+
+"grpc-nio-worker-ELG-3-1" #38 [26375] daemon prio=5 os_prio=31 cpu=90.78ms elapsed=1032.13s tid=0x0000000131a10c00 nid=26375 runnable  [0x00000001731ea000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@25.0.4/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@25.0.4/KQueueSelectorImpl.java:121)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@25.0.4/SelectorImpl.java:130)
+	- locked <0x00000006009932f0> (a io.netty.channel.nio.SelectedSelectionKeySet)
+	- locked <0x0000000600993298> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@25.0.4/SelectorImpl.java:142)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:883)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:526)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.runWith(java.base@25.0.4/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.4/Thread.java:1474)
+
+"grpc-nio-worker-ELG-3-2" #39 [43271] daemon prio=5 os_prio=31 cpu=14.52ms elapsed=1032.08s tid=0x000000013081c000 nid=43271 runnable  [0x00000001739f6000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@25.0.4/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@25.0.4/KQueueSelectorImpl.java:121)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@25.0.4/SelectorImpl.java:130)
+	- locked <0x0000000600993538> (a io.netty.channel.nio.SelectedSelectionKeySet)
+	- locked <0x00000006009934e0> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@25.0.4/SelectorImpl.java:147)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:68)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:879)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:526)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.runWith(java.base@25.0.4/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.4/Thread.java:1474)
+
+"grpc-nio-worker-ELG-3-3" #41 [36099] daemon prio=5 os_prio=31 cpu=93.58ms elapsed=1030.96s tid=0x000000012b07e000 nid=36099 runnable  [0x0000000174a0e000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.ch.KQueue.poll(java.base@25.0.4/Native Method)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(java.base@25.0.4/KQueueSelectorImpl.java:121)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(java.base@25.0.4/SelectorImpl.java:130)
+	- locked <0x0000000600993690> (a io.netty.channel.nio.SelectedSelectionKeySet)
+	- locked <0x0000000600993638> (a sun.nio.ch.KQueueSelectorImpl)
+	at sun.nio.ch.SelectorImpl.select(java.base@25.0.4/SelectorImpl.java:142)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:883)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:526)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.runWith(java.base@25.0.4/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.4/Thread.java:1474)
+
+"zio-default-async-5" #45 [37891] daemon prio=5 os_prio=31 cpu=1000134.97ms elapsed=1030.56s tid=0x000000012bbf4a00 nid=37891 runnable  [0x0000000176a3c000]
+   java.lang.Thread.State: RUNNABLE
+	at com.microsoft.z3.Native.INTERNALsolverCheck(Native Method)
+	at com.microsoft.z3.Native.solverCheck(Native.java:5734)
+	at com.microsoft.z3.Solver.check(Solver.java:240)
+	at com.microsoft.z3.Solver.check(Solver.java:260)
+	at at.forsyte.apalache.tla.bmcmt.smt.Z3SolverContext.sat(Z3SolverContext.scala:557)
+	at at.forsyte.apalache.tla.bmcmt.smt.Z3SolverContext.satOrTimeout(Z3SolverContext.scala:571)
+	at at.forsyte.apalache.tla.bmcmt.smt.RecordingSolverContext.satOrTimeout(RecordingSolverContext.scala:200)
+	at at.forsyte.apalache.tla.bmcmt.trex.TransitionExecutorImpl.sat(TransitionExecutorImpl.scala:349)
+	at at.forsyte.apalache.tla.bmcmt.trex.FilteredTransitionExecutor.sat(FilteredTransitionExecutor.scala:181)
+	at at.forsyte.apalache.tla.bmcmt.trex.ConstrainedTransitionExecutor.sat(ConstrainedTransitionExecutor.scala:127)
+	at at.forsyte.apalache.tla.bmcmt.SeqModelChecker.$anonfun$checkInvariants$2(SeqModelChecker.scala:371)
+	at at.forsyte.apalache.tla.bmcmt.SeqModelChecker.$anonfun$checkInvariants$2$adapted(SeqModelChecker.scala:355)
+	at at.forsyte.apalache.tla.bmcmt.SeqModelChecker$$Lambda/0x00003fe0027112d8.apply(Unknown Source)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:630)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:628)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:936)
+	at scala.collection.IterableOps$WithFilter.foreach(Iterable.scala:906)
+	at at.forsyte.apalache.tla.bmcmt.SeqModelChecker.checkInvariants(SeqModelChecker.scala:355)
+	at at.forsyte.apalache.tla.bmcmt.SeqModelChecker.makeStep(SeqModelChecker.scala:171)
+	at at.forsyte.apalache.tla.bmcmt.SeqModelChecker.run(SeqModelChecker.scala:67)
+	at at.forsyte.apalache.tla.bmcmt.passes.BoundedCheckerPassImpl.runIncrementalChecker(BoundedCheckerPassImpl.scala:177)
+	at at.forsyte.apalache.tla.bmcmt.passes.BoundedCheckerPassImpl.execute(BoundedCheckerPassImpl.scala:129)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor.exec(PassChainExecutor.scala:70)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor.$anonfun$runPassOnModule$3(PassChainExecutor.scala:59)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$$Lambda/0x00003fe00247d758.apply(Unknown Source)
+	at scala.util.Either.flatMap(Either.scala:360)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor.$anonfun$runPassOnModule$1(PassChainExecutor.scala:57)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor$$Lambda/0x00003fe002478bc8.apply(Unknown Source)
+	at scala.collection.LinearSeqOps.foldLeft(LinearSeq.scala:183)
+	at scala.collection.LinearSeqOps.foldLeft$(LinearSeq.scala:179)
+	at scala.collection.immutable.List.foldLeft(List.scala:79)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor.runOnPasses(PassChainExecutor.scala:50)
+	at at.forsyte.apalache.infra.passes.PassChainExecutor.run(PassChainExecutor.scala:41)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService.$anonfun$executeCmd$5(CmdExecutorService.scala:110)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService$$Lambda/0x00003fe0023fbe98.apply(Unknown Source)
+	at scala.util.Either.flatMap(Either.scala:360)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService.$anonfun$executeCmd$1(CmdExecutorService.scala:96)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService$$Lambda/0x00003fe0023f7700.apply(Unknown Source)
+	at at.forsyte.apalache.io.OutputManager$.$anonfun$withState$1(OutputManager.scala:280)
+	at at.forsyte.apalache.io.OutputManager$$$Lambda/0x00003fe0020504f0.run(Unknown Source)
+	at jdk.internal.vm.ScopedValueContainer.runWithoutScope(java.base@25.0.4/ScopedValueContainer.java:112)
+	at jdk.internal.vm.ScopedValueContainer.run(java.base@25.0.4/ScopedValueContainer.java:98)
+	at java.lang.ScopedValue$Carrier.runWith(java.base@25.0.4/ScopedValue.java:482)
+	at java.lang.ScopedValue$Carrier.run(java.base@25.0.4/ScopedValue.java:466)
+	at at.forsyte.apalache.io.OutputManager$.at$forsyte$apalache$io$OutputManager$$withState(OutputManager.scala:280)
+	at at.forsyte.apalache.io.OutputManager$Scope.run(OutputManager.scala:253)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService.executeCmd(CmdExecutorService.scala:96)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService.$anonfun$run$2(CmdExecutorService.scala:49)
+	at at.forsyte.apalache.shai.v1.CmdExecutorService$$Lambda/0x00003fe0023f72f0.apply(Unknown Source)
+	at zio.internal.FiberContext.evaluateNow(FiberContext.scala:355)
+	at zio.internal.FiberContext.$anonfun$evaluateLater$1(FiberContext.scala:785)
+	at zio.internal.FiberContext$$Lambda/0x00003fe00236ca10.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@25.0.4/ThreadPoolExecutor.java:1090)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@25.0.4/ThreadPoolExecutor.java:614)
+	at java.lang.Thread.runWith(java.base@25.0.4/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25.0.4/Thread.java:1474)
+
+"Attach Listener" #47 [35851] daemon prio=9 os_prio=31 cpu=0.62ms elapsed=0.11s tid=0x0000000140f67e00 nid=35851 waiting on condition  [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"G1 Conc#1" os_prio=31 cpu=802.25ms elapsed=1033.24s tid=0x000000013004ce00 nid=40707 runnable  
+
+"GC Thread#8" os_prio=31 cpu=372.30ms elapsed=1033.86s tid=0x00000001420f3400 nid=40963 runnable  
+
+"GC Thread#7" os_prio=31 cpu=300.39ms elapsed=1033.86s tid=0x00000001420f2e00 nid=35075 runnable  
+
+"GC Thread#6" os_prio=31 cpu=364.73ms elapsed=1033.86s tid=0x00000001420f2800 nid=41475 runnable  
+
+"GC Thread#5" os_prio=31 cpu=382.00ms elapsed=1033.86s tid=0x00000001430f1600 nid=41731 runnable  
+
+"GC Thread#4" os_prio=31 cpu=318.14ms elapsed=1033.86s tid=0x0000000143100e00 nid=41987 runnable  
+
+"GC Thread#3" os_prio=31 cpu=398.22ms elapsed=1033.86s tid=0x0000000143100800 nid=42243 runnable  
+
+"GC Thread#2" os_prio=31 cpu=360.16ms elapsed=1033.86s tid=0x00000001308d1200 nid=33795 runnable  
+
+"GC Thread#1" os_prio=31 cpu=355.04ms elapsed=1033.86s tid=0x00000001420e5600 nid=33539 runnable  
+
+"VM Thread" os_prio=31 cpu=83.15ms elapsed=1034.56s tid=0x0000000132010000 nid=20227 runnable  
+
+"VM Periodic Task Thread" os_prio=31 cpu=5.87ms elapsed=1034.57s tid=0x000000010570d670 nid=17159 waiting on condition  
+
+"G1 Service" os_prio=31 cpu=43.63ms elapsed=1034.57s tid=0x0000000132008800 nid=21251 runnable  
+
+"G1 Refine#0" os_prio=31 cpu=0.04ms elapsed=1034.57s tid=0x0000000143050400 nid=16899 runnable  
+
+"G1 Conc#0" os_prio=31 cpu=806.07ms elapsed=1034.57s tid=0x0000000132008200 nid=16387 runnable  
+
+"G1 Main Marker" os_prio=31 cpu=7.65ms elapsed=1034.57s tid=0x000000014204be00 nid=13315 runnable  
+
+"GC Thread#0" os_prio=31 cpu=333.89ms elapsed=1034.57s tid=0x0000000142033000 nid=13059 runnable  
+
+JNI global refs: 18, weak refs: 0
+
+JNI global refs memory usage: 835, weak refs: 201
+

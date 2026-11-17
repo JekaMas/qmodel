@@ -152,7 +152,16 @@
     "type-final-timing_boundary",
     "type-final-trust",
     "type-final-variants",
-    "type-final-variants_test"
+    "type-final-variants_test",
+    "extended-apalache-core-12",
+    "extended-tlc-full-reference",
+    "extended-tlc-two",
+    "extended-tlc-recovery",
+    "final-phase-type",
+    "final-phase-failure-witnesses",
+    "final-report-view-stages",
+    "final-resource-profile-native-type",
+    "replay-final-resource-profile-native-type"
   ],
   "historical_timeouts_are_not_passes": true,
   "full_configuration_claim": false

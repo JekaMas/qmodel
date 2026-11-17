@@ -1,0 +1,51 @@
+[
+  {
+    "at_utc": "2026-11-17T19:36:10.639650+00:00",
+    "event": "paused_full_two_trade_checker",
+    "pid": 1618,
+    "process_group": 1618,
+    "reason": "Original task-v2 section6 requires heavy checkers sequentially. Initial concurrent start was an execution deviation; paused in-memory graph is preserved. Resume only after Apalache12/20 driver completes.",
+    "bounds": "Original3600-second per-invocation wall cap remains; pause time is not hidden or subtracted.",
+    "resume_required": true
+  },
+  {
+    "at_utc": "2026-11-17T19:52:48.941334+00:00",
+    "event": "paused_direct_smt20_for_identity_equivalent_encoding_probe",
+    "pid": 2637,
+    "process_group": 2637,
+    "reason": "Thread dump confirms native Z3 query cost. Full identity certificate checks61 same primitive action relations and all phases. At most one active heavyweight checker; both paused states preserved.",
+    "resume_required": true
+  },
+  {
+    "at_utc": "2026-11-17T19:58:29.877480+00:00",
+    "event": "interrupted_smt20_encoding_experiments",
+    "process_groups": [
+      2637,
+      21375
+    ],
+    "reason": "Direct depth20 and finite-choice variant bottleneck in Z3. Preserve non-success output. Check identical current full reference exhaustively in TLC, all seven proof phases and all original State fields; this is not compact/economic substitution.",
+    "resume_required": false
+  },
+  {
+    "at_utc": "2026-11-17T19:59:03.885063+00:00",
+    "event": "resumed_full_two_trade_checker",
+    "process_group": 1618,
+    "reason": "Identical full reference exhaustively verified:12502 states, complete graph depth38, safe and CDecision. SMT20 remains interrupted; safety-through20 obligation is superseded by this full-state check. Only full two-trade checker is active; recovery queued sequentially.",
+    "resume_required": false
+  },
+  {
+    "at_utc": "2026-11-17T20:11:34.898264+00:00",
+    "event": "interrupted_partial_two_trade_for_larger_faster_full_restart",
+    "process_group": 1618,
+    "reason": "Retained full native prefix exceeded288k states with no violation, but pause consumed23minutes of original3600s wall cap. Restart same full graph with8workers and7200s to avoid knowingly exhausting that wall cap. Not a pass; no graph/property reduction.",
+    "resume_required": false
+  },
+  {
+    "at_utc": "2026-11-17T21:11:49.852562+00:00",
+    "event": "all_extended_native_jobs_completed",
+    "active_or_paused_checker_groups": [],
+    "two_trade_receipt": "extended-tlc-two-attempt1",
+    "recovery_receipt": "extended-tlc-recovery",
+    "resume_required": false
+  }
+]

@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "review_mode": "root final source/evidence review; prior independent IR-001 through IR-004 review remains separately attributed",
+  "baseline_commit": "e4e06a49732aa2a14358504ff70c21e1521d1950",
+  "source_sha256": {
+    "verification/sources/task-v2.md": "9382f0e84af28b07a1f39bd28312d6f9ca7d3419cf8fcb6e9c530f1b2570c379",
+    "verification/sources/shared-solution.original-ru.md": "10b9a62dab9cbb3533bfdc2c720a37a3c73f69bd320f7521b44b9ff790d7589f"
+  },
+  "broader_obligations": [
+    {
+      "original_timeout": "apalache-core-12",
+      "resolution_check": "extended-apalache-core-12",
+      "resolution_receipt": "extended-apalache-core-12",
+      "distinct_states": "unavailable",
+      "wall_seconds": 182.87523712497205,
+      "status": "resolved-by-observed-proof",
+      "basis": "same full reference, larger budget, invariant-after batching"
+    },
+    {
+      "original_timeout": "apalache-core-20",
+      "resolution_check": "extended-tlc-full-reference",
+      "resolution_receipt": "extended-tlc-full-reference",
+      "distinct_states": 12502,
+      "wall_seconds": 16.311850999947637,
+      "status": "resolved-by-observed-proof",
+      "basis": "exhaustive identical full State/init/step safety covers every depth; original SMT20 remains a non-success"
+    },
+    {
+      "original_timeout": "tlc-live_two",
+      "resolution_check": "extended-tlc-two",
+      "resolution_receipt": "extended-tlc-two-attempt1",
+      "distinct_states": 684268,
+      "wall_seconds": 3331.6347422502004,
+      "status": "resolved-by-observed-proof",
+      "basis": "same full-proof-job two-trade graph, all actors up, phases0-6 and original per-action temporal fairness"
+    },
+    {
+      "original_timeout": "tlc-eventual-recovery",
+      "resolution_check": "extended-tlc-recovery",
+      "resolution_receipt": "extended-tlc-recovery",
+      "distinct_states": 125632,
+      "wall_seconds": 223.46349162468687,
+      "status": "resolved-by-observed-proof",
+      "basis": "same full-proof-job one-trade B/prover-outage and B-freeze recovery graph; original recoveryProgress hypothesis"
+    }
+  ],
+  "unclosed_broader_obligations": [],
+  "properties": [
+    {
+      "id": "S01",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S02",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "mutant-reopen",
+        "mutant-pruned_tombstone"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S03",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "scenario-bindings_test",
+        "scenario-policy_test"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S04",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "scenario-contention_test",
+        "final-variant-live_escrow",
+        "three-domain-installation-final"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S05",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "mutant-replay",
+        "abort-authoritative-records"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S06",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "mutant-relayer_assertion",
+        "abort-authoritative-records",
+        "final-phase-failure-witnesses"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S07",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "mutant-expiry",
+        "tlc-issuer_destruction-backed"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S08",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "final-record-mapping",
+        "mutant-expiry",
+        "mutant-non_atomic"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S09",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "mutant-stale_refund",
+        "actual-b-clock-expiry"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S10",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "mutant-binding",
+        "scenario-bindings_test"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S11",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "scenario-open_test",
+        "delayed-open-fact-scenarios",
+        "membership-lifecycle-tests"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "S12",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "final-record-recovery",
+        "scenario-recovery_test",
+        "network-loss-recovery",
+        "final-phase-failure-witnesses"
+      ],
+      "verified_scope": "Full-job N=1 B/prover-crash and B-freeze recovery graph, plus19 direct phase-guard/recovery scenarios and actual message-loss/restart witnesses. No arbitrary independent operational fault product."
+    },
+    {
+      "id": "S13",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "membership-retirement-final",
+        "membership-lifecycle-tests",
+        "trust-v2-retired_version"
+      ],
+      "verified_scope": "Core S13 retains program1 only. The focused membership model checks approved/current credentials, pending/current-safe retirement and consumed identities. No checked full financial/membership liveness composition or arbitrary-upgrade theorem."
+    },
+    {
+      "id": "S14",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "scenario-policy_test",
+        "preparation-freeze-policy",
+        "scenario-shared_policy_test",
+        "tlc-durable-safe",
+        "tlc-mandatory_freeze-progress",
+        "tlc-arbitrary_seizure-backing"
+      ],
+      "verified_scope": "Preparation guards tested for independent local eligibility; supported durable/freeze/seizure policies checked separately. The S14 state predicate alone is not a historical eligibility theorem or regulatory-compliance proof."
+    },
+    {
+      "id": "S15",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "report-evidence-scenario",
+        "abort-authoritative-records",
+        "final-report-view-stages"
+      ],
+      "verified_scope": "Source-world diagnostics distinguish authorized, source accepted, registered, prepared, committed, applied and reconciled. Six acceptance cases and authentic application/ABORT-record gates execute. External APIs must authenticate every source-dependent field; no implemented reporter conformance is claimed."
+    },
+    {
+      "id": "S16",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "membership-lifecycle-tests",
+        "negative-disclosure_key_compromise"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "L01",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-progress",
+        "final-record-two",
+        "final-record-recovery",
+        "three-domain-progress"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "L02",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-progress",
+        "final-record-two",
+        "final-record-recovery",
+        "private-data-progress",
+        "final-phase-failure-witnesses"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "L03",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-progress",
+        "final-record-two",
+        "late-hold-relative-bound",
+        "three-domain-progress",
+        "final-phase-failure-witnesses"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "L04",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-progress",
+        "final-record-two",
+        "final-record-recovery",
+        "report-evidence-scenario"
+      ],
+      "verified_scope": "Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem."
+    },
+    {
+      "id": "C-Decision",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-full-reference",
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-safety",
+        "final-record-mapping",
+        "contract-b_hosted",
+        "contract-d_shared"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "C-Local",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-progress",
+        "private-data-progress"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "C-Records",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-record-safety",
+        "abort-authoritative-records"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "O-Immediate",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "overclaim-immediate"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "O-Permanent",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "overclaim-permanent-halt"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "P-Access",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "review-pipeline-PAccess",
+        "review-pipeline_scope",
+        "review-pipeline_compromise"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "P-Binding",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "review-pipeline-PBinding",
+        "review-pipeline_substitution"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "P-Availability",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "review-pipeline-safe",
+        "review-typed-private-availability",
+        "review-typed-private-unconditionalAvailability",
+        "review-pipeline_note",
+        "review-pipeline-witnesses"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "P-Scope",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "audit-audit_safe",
+        "audit-omitted_record"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "P-NI",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "review-pipeline-PNI",
+        "review-pipeline_log",
+        "review-pipeline_unsalted"
+      ],
+      "verified_scope": "Two actual source positions 4/7, equal authorized trade/funding; one fixed 12-operation public lifecycle plus at most one arbitrary coupled API request. Complete selected-observer response histories, private-channel/declassification policy and content-aware opaque-name correspondence. Not general scheduler/termination/cryptographic noninterference."
+    },
+    {
+      "id": "P-Timing",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "review-pipeline_timing",
+        "review-privacy-time-integrated-safe",
+        "review-privacy-time-integrated_leak-safe"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "T-Async",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-record-safety",
+        "combined-faults-17",
+        "combined-faults-43",
+        "final-combined-faults-43"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "T-Eventual",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "extended-tlc-two",
+        "extended-tlc-recovery",
+        "final-record-recovery",
+        "post-stabilization"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "T-Bounded",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "tlc-bounded-safe",
+        "exact-deadline-margin",
+        "one-less-deadline-margin",
+        "late-hold-relative-bound"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "T-Capacity",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "queue-capacity-progress",
+        "tlc-starvation-boundedCompletion",
+        "tlc-unlimited-exposure"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "R-Core",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "scenario-dvp_test",
+        "scenario-recovery_test",
+        "network-loss-recovery",
+        "final-phase-failure-witnesses"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "R-Policy",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "membership-lifecycle-tests",
+        "preparation-freeze-policy"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "R-Audit",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "audit-audit_safe",
+        "audit-omitted_record"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-AOpen",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-variant-live_open",
+        "delayed-open-fact-scenarios"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-B",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-variant-live_b"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-D",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-variant-live_d",
+        "d-outage-return-paths"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-Escrow",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-variant-live_escrow",
+        "witness-escrow_path_test"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-Private",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-variant-private_asset",
+        "review-pipeline-safe",
+        "review-typed-private-availability",
+        "review-typed-private-unconditionalAvailability"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-Shared",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "final-variant-shared_execution",
+        "witness-shared_path_test"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "V-Three",
+      "execution_status": "executed-with-result",
+      "executed_checks": [
+        "three-domain-installation-final",
+        "three-domain-progress",
+        "three-independent-domains-witnesses"
+      ],
+      "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+    },
+    {
+      "id": "EX-Crypto",
+      "execution_status": "external-obligation",
+      "executed_checks": [],
+      "verified_scope": "Not verified; practical interface specification only."
+    },
+    {
+      "id": "EX-Execution",
+      "execution_status": "external-obligation",
+      "executed_checks": [],
+      "verified_scope": "Not verified; practical interface specification only."
+    },
+    {
+      "id": "EX-Security",
+      "execution_status": "external-obligation",
+      "executed_checks": [],
+      "verified_scope": "Not verified; practical interface specification only."
+    },
+    {
+      "id": "EX-Privacy",
+      "execution_status": "external-obligation",
+      "executed_checks": [],
+      "verified_scope": "Not verified; practical interface specification only."
+    },
+    {
+      "id": "EX-Performance",
+      "execution_status": "external-obligation",
+      "executed_checks": [],
+      "verified_scope": "Not verified; practical interface specification only."
+    },
+    {
+      "id": "EX-Legal",
+      "execution_status": "external-obligation",
+      "executed_checks": [],
+      "verified_scope": "Not verified; practical interface specification only."
+    }
+  ],
+  "new_scenarios": {
+    "phase_failure_test": 19,
+    "report_view_test": 6
+  },
+  "production_or_unqualified_verification": false,
+  "external_obligations": [
+    "circuits/prover/verifier implementation",
+    "actual QBFT/EVM/token execution",
+    "key/hardware/storage/network security",
+    "cryptographic privacy and real side channels",
+    "availability/cost measurement",
+    "legal/account/issuer rights and financial records"
+  ],
+  "scheduling_deviation": "Initial concurrent heavy start; recorded pause/resume and SMT interruption; subsequent heavy checks sequential. Pauses count against original wall limits."
+}

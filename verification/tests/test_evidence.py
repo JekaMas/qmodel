@@ -63,6 +63,13 @@ class EvidenceAudit(unittest.TestCase):
   p,r=replay.select_receipt('mutant-expiry-attempt2')
   baseline=replay.comparison_trace(r,contracts[r['id']])
   self.assertIsNotNone(baseline);self.assertNotEqual(baseline,ROOT/r['command'][r['command'].index('--out-itf')+1])
+  # Reporting must preserve actual per-attempt export paths, not replace them
+  # with a generic prose description while retaining their checksums.
+  for observation in json.loads((ROOT/'verification/results/manifest.json').read_text())['executions']:
+   if observation.get('native_trace_sha256'):
+    native=ROOT/observation['native_trace']
+    self.assertTrue(native.is_file())
+    self.assertEqual(hashlib.sha256(native.read_bytes()).hexdigest(),observation['native_trace_sha256'])
  def test_zero_selected_quint_scenarios_are_not_success(self):
   p,r=load_latest('review-zero-selection')
   self.assertFalse(r['expectation_met']);self.assertEqual(r['outcome'],'tool_error')
@@ -73,4 +80,58 @@ class EvidenceAudit(unittest.TestCase):
   self.assertEqual(r['tool_versions']['quint'],json.loads((ROOT/'package.json').read_text())['devDependencies']['@informalsystems/quint'])
   self.assertIn('execution_plan_sha256',r);self.assertIn('raw_sha256',r);self.assertTrue(r['tooling_hashes'])
   validate(r,p)
+ def test_full_model_resolutions_do_not_use_compact_substitutes(self):
+  m=json.loads((ROOT/'verification/results/manifest.json').read_text())
+  self.assertEqual(m['unclosed_broader_obligations'],[])
+  resolutions={x['original_timeout']:x for x in m['original_broader_obligations']}
+  self.assertEqual(len(resolutions),4)
+  for x in resolutions.values():
+   self.assertEqual(x['status'],'resolved-by-observed-proof')
+   p,r=load_latest(x['resolution_check']);validate(r,p)
+  p,r=load_latest('extended-tlc-full-reference')
+  self.assertEqual(r['command'][2],'verification/models/dvp.qnt')
+  self.assertEqual(r['command'][r['command'].index('--step')+1],'step')
+  self.assertIn('safe',r['command']);self.assertIn('CDecision',r['command'])
+  self.assertIn('complete state graph search is 38',(ROOT/r['raw_output']).read_text())
+  for name,main,step,temporal in [('two','live_two','step','progress'),('recovery','recovery','recoveryStep','recoveryProgress')]:
+   p,r=load_latest('extended-tlc-'+name)
+   self.assertEqual(r['command'][r['command'].index('--main')+1],main)
+   self.assertEqual(r['command'][r['command'].index('--step')+1],step)
+   self.assertEqual(r['command'][r['command'].index('--temporal')+1],temporal)
+   self.assertFalse(any('compact_' in v for v in r['command']))
+   source=p.parent/'inputs/verification/models/dvp.qnt'
+   self.assertIn('nondet p=0.to(6).oneOf()',source.read_text())
+ def test_fresh_extended_profile_preserves_jvm_resources(self):
+  _,original=load_latest('final-resource-profile-native-type')
+  p,fresh=load_latest('replay-final-resource-profile-native-type');validate(fresh,p)
+  self.assertTrue(fresh['configuration']['forced'])
+  self.assertNotEqual(fresh['started_utc'],original['started_utc'])
+  for key in ['JAVA_TOOL_OPTIONS','JVM_ARGS']:
+   self.assertEqual(original['environment'][key],'-Xmx8g -Xss8m')
+   self.assertEqual(fresh['environment'][key],original['environment'][key])
+  self.assertEqual(fresh['resource_limit'],original['resource_limit'])
+  plan=json.loads((p.parent/'execution-plan.json').read_text())
+  self.assertEqual(plan['environment'],fresh['environment'])
+  # Independent process observation catches a helper that records8GiB but starts
+  # its child with the old2GiB environment. No heavyweight check is repeated.
+  with tempfile.TemporaryDirectory(dir=ROOT/'verification/results/runtime') as td:
+   with patch.object(runner,'RESULTS',Path(td)):
+    probe=runner.execute('actual-resource-child',[sys.executable,'-c',"import os,json; print(json.dumps({k:os.environ[k] for k in ['JAVA_TOOL_OPTIONS','JVM_ARGS']}))"],claim='actual inherited JVM flags, observed by child',execution_env={k:original['environment'][k] for k in ['JAVA_TOOL_OPTIONS','JVM_ARGS']},resource_limit=original['resource_limit'])
+   observed=json.loads((Path(td)/'runs/actual-resource-child/raw.log').read_text())
+   self.assertEqual(observed,{'JAVA_TOOL_OPTIONS':'-Xmx8g -Xss8m','JVM_ARGS':'-Xmx8g -Xss8m'})
+   self.assertTrue(probe['expectation_met'])
+ def test_phase_fault_and_acceptance_witness_counts(self):
+  for name,count in [('final-phase-failure-witnesses',19),('final-report-view-stages',6)]:
+   p,r=load_latest(name);validate(r,p)
+   self.assertIn(str(count)+' passing',(ROOT/r['raw_output']).read_text())
+ def test_privacy_assumptions_cite_current_payload_pipeline(self):
+  matrix={x['id']:x for x in json.loads((ROOT/'verification/assumption-guarantee-matrix.json').read_text())}
+  for key in ['A-OPAQUE','A-POLICY','A-KEY']:
+   controls=matrix[key]['executed_perturbations']
+   self.assertFalse(any('linked-privacy' in x or 'privacy_safe' in x for x in controls))
+   self.assertTrue(any(x.startswith('review-pipeline') or x.startswith('review-typed-private') for x in controls))
+   for name in controls:
+    p,r=load_latest(name);validate(r,p)
+    if name.startswith('review-'):
+     self.assertIn('verification/models/privacy_pipeline.qnt',r['input_hashes'])
 if __name__=='__main__':unittest.main()

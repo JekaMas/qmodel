@@ -19,7 +19,11 @@
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_native_log_is_rejected",
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_zero_selected_quint_scenarios_are_not_success",
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_mutable_shared_trace_is_not_a_comparison_baseline",
-      "unittest::verification.tests.test_evidence.EvidenceAudit.test_absolute_recorded_input_relocates_to_saved_closure"
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_absolute_recorded_input_relocates_to_saved_closure",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_full_model_resolutions_do_not_use_compact_substitutes",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_fresh_extended_profile_preserves_jvm_resources",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_phase_fault_and_acceptance_witness_counts",
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline"
     ]
   },
   "reviews": [
@@ -43,7 +47,11 @@
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_native_log_is_rejected",
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_zero_selected_quint_scenarios_are_not_success",
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_mutable_shared_trace_is_not_a_comparison_baseline",
-        "unittest::verification.tests.test_evidence.EvidenceAudit.test_absolute_recorded_input_relocates_to_saved_closure"
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_absolute_recorded_input_relocates_to_saved_closure",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_full_model_resolutions_do_not_use_compact_substitutes",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_fresh_extended_profile_preserves_jvm_resources",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_phase_fault_and_acceptance_witness_counts",
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline"
       ],
       "searches": [
         {

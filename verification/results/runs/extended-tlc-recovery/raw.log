@@ -1,0 +1,75 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+Picked up JAVA_TOOL_OPTIONS: -Xmx8g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-18T01-07-17_16759190504309765210
+# APALACHE version: 0.62.4 | build: 7954daf                       I@01:07:17.928
+Starting checker server on port 8842...                           I@01:07:17.930
+The Apalache server is running on port 8842. Press Ctrl-C to stop.
+????. 18, 2026 1:07:20 AM com.google.protobuf.GeneratedMessage warnPre22Gencode
+WARNING: Vulnerable protobuf generated type in use: io.grpc.reflection.v1alpha.ServerReflectionRequest
+As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
+PASS #0: SanyParser                                               I@01:07:21.635
+[TLC] Running TLC model checker...
+
+Picked up JAVA_TOOL_OPTIONS: -Xmx8g -Xss8m
+TLC2 Version 2026.11.17.210723
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 117 and seed 8856586787453301188 with 8 workers on 10 cores with 8192MB heap and 64MB offheap memory [pid: 55450] (Mac OS X 14.7 aarch64, JetBrains s.r.o. 25.0.4 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/recovery.tla (file:/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/recovery.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/Integers.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/Sequences.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/FiniteSets.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/TLC.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/Apalache.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Apalache.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/Variants.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Variants.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/_TLCTrace.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/Naturals.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-myFKLj/tlc-4783412840195023681/TLCExt.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Apalache
+Semantic processing of module Variants
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module recovery
+Linting of module Apalache
+Linting of module Variants
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module recovery
+Starting... (2026-11-18 01:07:24)
+Implied-temporal checking--satisfiability problem has 4 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-18 01:07:24.
+Checking 4 branches of temporal properties for the current state space with 19888 total distinct states at (2026-11-18 01:07:27)
+Finished checking temporal properties in 00s at 2026-11-18 01:07:27
+Progress(14) at 2026-11-18 01:07:27: 50?411 states generated (50?411 s/min), 4?972 distinct states found (4?972 ds/min), 1?659 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 270100 total distinct states at (2026-11-18 01:08:27)
+Finished checking temporal properties in 03s at 2026-11-18 01:08:30
+Progress(25) at 2026-11-18 01:08:30: 1?334?122 states generated (1?283?711 s/min), 67?528 distinct states found (62?556 ds/min), 7?864 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 396680 total distinct states at (2026-11-18 01:09:30)
+Finished checking temporal properties in 03s at 2026-11-18 01:09:34
+Progress(29) at 2026-11-18 01:09:34: 2?284?525 states generated (950?403 s/min), 99?181 distinct states found (31?653 ds/min), 7?243 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 495092 total distinct states at (2026-11-18 01:10:34)
+Finished checking temporal properties in 04s at 2026-11-18 01:10:39
+Progress(35) at 2026-11-18 01:10:39: 3?293?577 states generated (1?009?052 s/min), 123?784 distinct states found (24?603 ds/min), 1?638 states left on queue.
+Progress(41) at 2026-11-18 01:10:49: 3?420?629 states generated, 125?632 distinct states found, 0 states left on queue.
+Checking 4 branches of temporal properties for the complete state space with 502528 total distinct states at (2026-11-18 01:10:49)
+Finished checking temporal properties in 05s at 2026-11-18 01:10:54
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 2.2E-8
+  based on the actual fingerprints:  val = 2.3E-9
+3420629 states generated, 125632 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 41.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 7 and the 95th percentile is 4).
+Finished in 03min 31s at (2026-11-18 01:10:55)
+
+[ok] No violation found (211470ms).

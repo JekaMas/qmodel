@@ -1,0 +1,52 @@
+
+  report_view_test
+    1) unsignedTest failed after 1 test(s)
+    2) signedButUnacceptedTest failed after 1 test(s)
+    3) cashAcceptedBeforeDecisionTest failed after 1 test(s)
+    4) registeredOpenTest failed after 1 test(s)
+    5) tombstoneAcceptedTest failed after 1 test(s)
+    6) rejectedInstructionNotAcceptedTest failed after 1 test(s)
+
+  6 failed
+
+  1) unsignedTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:14:26
+        14:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=unsignedTest to repeat.
+  2) signedButUnacceptedTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:14:26
+        14:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=signedButUnacceptedTest to repeat.
+  3) cashAcceptedBeforeDecisionTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:14:26
+        14:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=cashAcceptedBeforeDecisionTest to repeat.
+  4) registeredOpenTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:14:26
+        14:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=registeredOpenTest to repeat.
+  5) tombstoneAcceptedTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:14:26
+        14:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=tombstoneAcceptedTest to repeat.
+  6) rejectedInstructionNotAcceptedTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:14:26
+        14:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=rejectedInstructionNotAcceptedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/tests/report_view_test.qnt
+error: Tests failed

@@ -3,3 +3,6 @@
 verification/sources/shared-chat.html -whitespace
 # Backend-native evidence is byte-preserved, including its blank lines.
 verification/results/runs/**/raw.log -whitespace
+
+# Preserve the exact native JVM thread dump, including emitted whitespace.
+verification/results/diagnostics/extended-apalache-20-threads.txt -whitespace

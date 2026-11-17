@@ -25,3 +25,12 @@ The project SHALL implement and execute all mandatory suites from verification/s
 - **WHEN** fresh execution or an exact historical attempt is explicitly requested
 - **THEN** a new subprocess executes the selected saved closure without cached replay or implicit later-success substitution
 - **AND** native comparison uses only an immutable associated export; missing early evidence remains explicitly unavailable
+
+#### Scenario: Extended full-model closure
+
+- **WHEN** an original bounded checker attempt times out and larger resources or a different exact backend are used
+- **THEN** the original non-success receipt remains unchanged and the new observation identifies the same state, initializer, transition relation and properties
+- **AND** an exhaustive check of the identical reference may discharge a bounded safety obligation without relabeling the original backend attempt as a pass
+- **AND** unrestricted two-trade and recovery progress require their own full-job temporal results; a compact-job or economic-only result cannot substitute
+- **WHEN** an extended-profile observation is explicitly replayed
+- **THEN** the new process uses the recorded JVM resource flags and limit, in addition to the exact saved model/configuration closure

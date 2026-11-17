@@ -36,7 +36,7 @@ def seal():
   entry={'receipt_sha256':canonical(r),'raw_sha256':sha(raw),'raw_output':r['raw_output'],
    'proof_contract':{k:r[k] for k in ['claim','backend','command','expected','configuration','input_hashes','tool_versions','timeout_seconds','resource_limit']},
    'native_targets':{flag:r['command'][i+1] for i,flag in enumerate(r['command'][:-1]) if flag in ['--main','--init','--step','--invariant','--invariants','--temporal','--inductive-invariant','--match','--max-steps','--max-samples','--seed','--backend']},
-   'origin':BASE if old.returncode==0 else 'current independent-review iteration execution'}
+   'origin':BASE if old.returncode==0 else data['observations'].get(r['id'],{}).get('origin','current extended-verification and root final-review execution')}
   if rel in exports:entry['native_export']=exports[rel]
   if r['id'] in data['observations']:
    previous=data['observations'][r['id']]

@@ -34,6 +34,8 @@ def validate(r,p):
    if planned[key]!=r[key]:raise EvidenceError('Observed invocation differs from pre-execution plan: '+key)
   for key,val in planned['tool_versions'].items():
    if r['tool_versions'].get(key)!=val:raise EvidenceError('Observed runtime identity differs from plan')
+  for key in ['environment','resource_limit']:
+   if key in planned and planned[key]!=r[key]:raise EvidenceError('Observed resource profile differs from plan')
   for rel,h in r['tooling_hashes'].items():
    tool=p.parent/'tooling'/rel
    if not tool.is_file() or hashlib.sha256(tool.read_bytes()).hexdigest()!=h:raise EvidenceError('Tooling source identity changed')

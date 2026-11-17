@@ -18790,6 +18790,974 @@
         "--temporal": "unconditionalAvailability"
       },
       "origin": "current independent-review iteration execution"
+    },
+    "extended-apalache-core-12": {
+      "receipt_sha256": "281a6ad990005b75357b7121d3a9ea9d8306a4d8eaf79e92d4469de73750c7e3",
+      "raw_sha256": "4e1a3bb006b242ecacadde1ccf14b910520b0105c95d597696e21651c7c037a5",
+      "raw_output": "verification/results/runs/extended-apalache-core-12/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "all prefixes through 12"
+        ],
+        "backend": "apalache",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/dvp.qnt",
+          "--main",
+          "baseline",
+          "--backend",
+          "apalache",
+          "--server-endpoint",
+          "localhost:8841",
+          "--max-steps",
+          "12",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--apalache-config",
+          "verification/configs/extended-apalache.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "Current full one-trade native reference, all source/proof/operational transitions, original S01-S16 plus CDecision; after-mode batches all invariant queries without filtering.",
+          "resource_profile": "extended-8g-3600",
+          "original_limit_seconds": 180,
+          "no_behavior_reduction": true
+        },
+        "input_hashes": {
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-apalache.json": "a5d3897366857940e67003b68e8e5bb763eac2da048ac8b2469159e947d8245f"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:26:06.252",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 3600,
+        "resource_limit": "8 GiB JVM heap, 8 MiB stack; max two isolated heavy jobs on 64 GiB/10-core host; TLC four workers; 3600 seconds"
+      },
+      "native_targets": {
+        "--main": "baseline",
+        "--backend": "apalache",
+        "--max-steps": "12",
+        "--invariants": "safe"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "extended-apalache-core-20": {
+      "receipt_sha256": "e5646d079f99998c8ccd1aa64b5f003297bce719dc17d497f1bfd6a1d00f3b58",
+      "raw_sha256": "17a182d353121118b523cb452e09ae4da9287601173af1b8934bf8a506873c75",
+      "raw_output": "verification/results/runs/extended-apalache-core-20/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "all prefixes through 20"
+        ],
+        "backend": "apalache",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/dvp.qnt",
+          "--main",
+          "baseline",
+          "--backend",
+          "apalache",
+          "--server-endpoint",
+          "localhost:8841",
+          "--max-steps",
+          "20",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--apalache-config",
+          "verification/configs/extended-apalache.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "Current full one-trade native reference, all source/proof/operational transitions, original S01-S16 plus CDecision; after-mode batches all invariant queries without filtering.",
+          "resource_profile": "extended-8g-3600",
+          "original_limit_seconds": 180,
+          "no_behavior_reduction": true
+        },
+        "input_hashes": {
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-apalache.json": "a5d3897366857940e67003b68e8e5bb763eac2da048ac8b2469159e947d8245f"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:29:11.486",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 3600,
+        "resource_limit": "8 GiB JVM heap, 8 MiB stack; max two isolated heavy jobs on 64 GiB/10-core host; TLC four workers; 3600 seconds"
+      },
+      "native_targets": {
+        "--main": "baseline",
+        "--backend": "apalache",
+        "--max-steps": "20",
+        "--invariants": "safe"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "extended-apalache-grounded-20": {
+      "receipt_sha256": "81c8af220aa7a8c820e0f82955f432466c5234384b55c6983be29f1b514b58a1",
+      "raw_sha256": "b7dfbd6f458ad991b47365e0b19ed3134738d9f77c3d75e244449afbf5fcf062",
+      "raw_output": "verification/results/runs/extended-apalache-grounded-20/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "all prefixes through20; identity expansion of full baseline"
+        ],
+        "backend": "apalache",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/full_grounded.qnt",
+          "--main",
+          "full_grounded",
+          "--backend",
+          "apalache",
+          "--server-endpoint",
+          "localhost:8843",
+          "--init",
+          "init",
+          "--step",
+          "groundedStep",
+          "--max-steps",
+          "20",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--apalache-config",
+          "verification/configs/extended-apalache.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "full reference; same61 shared primitive relations, same state/init/guards/effects/properties",
+          "identity_certificate": "verification/reports/full-grounding-certificate.json",
+          "certificate_sha256": "1ae18472a2e8e4c8088d378586f55779a49957cce84a5098249a55359fde145f",
+          "original_limit_seconds": 180
+        },
+        "input_hashes": {
+          "verification/models/full_grounded.qnt": "f49a50085f106745169eee49b3c6e01458e7435140cebfa53d1eaa964f7b39e3",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-apalache.json": "a5d3897366857940e67003b68e8e5bb763eac2da048ac8b2469159e947d8245f"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:55:02.837",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 3600,
+        "resource_limit": "8 GiB JVM heap, 8 MiB stack; one active heavy checker;3600 seconds"
+      },
+      "native_targets": {
+        "--main": "full_grounded",
+        "--backend": "apalache",
+        "--init": "init",
+        "--step": "groundedStep",
+        "--max-steps": "20",
+        "--invariants": "safe"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "extended-tlc-full-reference": {
+      "receipt_sha256": "639091ac2fa4d1ecfdd6b6aeacae27756a77fe52582560d1282690a832e64eb2",
+      "raw_sha256": "9cdff86e23a690acd9d2ae6fff450a3bb60b1b540862ad8bafa4cef09472fc69",
+      "raw_output": "verification/results/runs/extended-tlc-full-reference/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "all reachable states/prefixes of full current reference, hence includes depths12/20"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/dvp.qnt",
+          "--main",
+          "baseline",
+          "--backend",
+          "tlc",
+          "--server-endpoint",
+          "localhost:8843",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "Identical current full reference State/init/step; no phase/job/state reduction; exhaustive safety supersedes depth20 bound",
+          "supersedes_obligation": "full-reference S01-S16/CDecision through20",
+          "no_behavior_reduction": true
+        },
+        "input_hashes": {
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:58:35.635",
+          "tlc": "2026.11.17.195841"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap, 8 MiB stack; four TLC workers; one active heavy checker;1800 seconds"
+      },
+      "native_targets": {
+        "--main": "baseline",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariants": "safe"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-full-grounding-identity": {
+      "receipt_sha256": "4230d62225b812d0153ff1a5cf9fc9ccdd65a664736d25444c833de9a92f50a7",
+      "raw_sha256": "2849d4b90b9b3ddf4a0fb4656541859a3cb3140cbc85029a325122cdd4f0075a",
+      "raw_output": "verification/results/runs/final-full-grounding-identity/raw.log",
+      "proof_contract": {
+        "claim": "Identity of full reference and finite-choice expansion: same state/init/properties; all61 shared primitive relations including all proof phases; omission and changed-host controls rejected",
+        "backend": "cli",
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "verification/scripts/check_grounding.py",
+          "--out",
+          "verification/reports/full-grounding-certificate.json",
+          "verification/models/dvp.qnt",
+          "verification/models/full_grounded.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "checker_source_sha256": "268bfcef3a397fab93b1d1d37179c796d5f017838303514dfbb8d5cdeab9b289",
+          "proof": "finite existential/disjunction normalization over parsed Quint AST; identity state mapping"
+        },
+        "input_hashes": {
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/models/full_grounded.qnt": "f49a50085f106745169eee49b3c6e01458e7435140cebfa53d1eaa964f7b39e3"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-phase-failure-witnesses": {
+      "receipt_sha256": "7a3dde73aaf124722c43df7dc82765de058912ca8276c7fc7d217fd141d61f51",
+      "raw_sha256": "b9fbb8c0183dba909ac0e12113bc3d9288429ce46cfae397699156dd173cbdc1",
+      "raw_output": "verification/results/runs/final-phase-failure-witnesses/raw.log",
+      "proof_contract": {
+        "claim": "19 actual blocked-guard/recovery witnesses for source finality, prover/adapter, transport, terminal submitter, decision/application ledgers and retained witness with B down",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/phase_failure_test.qnt",
+          "--main",
+          "phase_failure_test",
+          "--match",
+          ".*Test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/phase_failure_test.qnt": "13e396c449f7cc384b97079eac6cf828d22af0ab75432eb0a98a97c81d2c921b",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "phase_failure_test",
+        "--match": ".*Test",
+        "--backend": "typescript",
+        "--seed": "17"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-phase-type": {
+      "receipt_sha256": "2154c637f161caf051a8866673d5dd15628e1b800ee8d7f027c81333cd8a6823",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_output": "verification/results/runs/final-phase-type/raw.log",
+      "proof_contract": {
+        "claim": "phase failure/recovery witnesses type/effect correctness",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/phase_failure_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/phase_failure_test.qnt": "13e396c449f7cc384b97079eac6cf828d22af0ab75432eb0a98a97c81d2c921b",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-stages": {
+      "receipt_sha256": "76a807fb98881ca3ca05dcf5af7a43966986bb1f56155b23d4e86eb2b2406cd0",
+      "raw_sha256": "2300f2f11c81664213d791c72f6b196cb7f4b94b253313ca1bb6f76ba5961531",
+      "raw_output": "verification/results/runs/final-report-view-stages/raw.log",
+      "proof_contract": {
+        "claim": "six distinct authorization/source acceptance/decision registration diagnostics; rejected work is not accepted; tombstones are accepted source records",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/report_view_test.qnt",
+          "--main",
+          "report_view_test",
+          "--match",
+          ".*Test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f54ce47b907eed9dc2e5ebd101f7564cb6637576afa8448a26b6bb95e66e7720",
+          "verification/models/report_view.qnt": "6cb1a06326ee529b5c6401d406570112dca19dad099533c820d133a2380511a1",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "report_view_test",
+        "--match": ".*Test",
+        "--backend": "typescript",
+        "--seed": "17"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-stages-attempt1": {
+      "receipt_sha256": "8975dea862d1ed1a1000ea736c42e082ac381dc8ab8e35f09e4ba3688f29fcb7",
+      "raw_sha256": "4a901c2f1d1ddd22da6ae8516fa5f55c09d5d9eed8b41fd65822a03f871e09d8",
+      "raw_output": "verification/results/runs/final-report-view-stages-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Fixed one-trade reference diagnostic: authorization, accepted source instruction, registered decision, applied, reconciled, usable are distinct",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/report_view_test.qnt",
+          "--main",
+          "report_view_test",
+          "--match",
+          ".*Test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f415ab288acd4e84ba23a0b67123634e2868bb62afe2c9a357c916029a00be40",
+          "verification/models/report_view.qnt": "b461145c2335eb7dcd9197f04212a1e4de097521ee4557356ba4b108db8a46db",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "report_view_test",
+        "--match": ".*Test",
+        "--backend": "typescript",
+        "--seed": "17"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-stages-attempt2": {
+      "receipt_sha256": "9808f43a2f5dcbb50374052a7d0d4a5b396070a7ec5da01209709cfa42ab1194",
+      "raw_sha256": "2300f2f11c81664213d791c72f6b196cb7f4b94b253313ca1bb6f76ba5961531",
+      "raw_output": "verification/results/runs/final-report-view-stages-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "Fixed one-trade reference diagnostic: authorization, accepted source instruction, registered decision, applied, reconciled, usable are distinct",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/report_view_test.qnt",
+          "--main",
+          "report_view_test",
+          "--match",
+          ".*Test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f415ab288acd4e84ba23a0b67123634e2868bb62afe2c9a357c916029a00be40",
+          "verification/models/report_view.qnt": "6309e239ef053bb4b64ce68eeec2a08d5bffebd1dc79ff2570a66947dfbb965a",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "report_view_test",
+        "--match": ".*Test",
+        "--backend": "typescript",
+        "--seed": "17"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-stages-attempt3": {
+      "receipt_sha256": "4f87c40a1f32b379e3323672f63b7a5c3e692f8103501694c46420d5ebed44e2",
+      "raw_sha256": "d0c9762744995bdad1044c36db7d32517da319a8d58a4fd4810f3ff84e75ca42",
+      "raw_output": "verification/results/runs/final-report-view-stages-attempt3/raw.log",
+      "proof_contract": {
+        "claim": "Six authorization/source-acceptance/decision-registration diagnostic witnesses",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/report_view_test.qnt",
+          "--main",
+          "report_view_test",
+          "--match",
+          ".*Test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "a8b1c4b749807743c2c25ca1d43edf193d3c04a13488b39c400a7d4bdbfde42d",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/models/report_view.qnt": "b461145c2335eb7dcd9197f04212a1e4de097521ee4557356ba4b108db8a46db"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "report_view_test",
+        "--match": ".*Test",
+        "--backend": "typescript",
+        "--seed": "17"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-type": {
+      "receipt_sha256": "966a5cefff5fd0fe1de7c4c9b66b74a5c31d6c39d5d6533cc67da7e10e7529cd",
+      "raw_sha256": "9777836f7e0c271aaacdd36a863bd3f16a774329f828ccc9d52ac594852ef816",
+      "raw_output": "verification/results/runs/final-report-view-type/raw.log",
+      "proof_contract": {
+        "claim": "report view typed diagnostic projection",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f54ce47b907eed9dc2e5ebd101f7564cb6637576afa8448a26b6bb95e66e7720",
+          "verification/models/report_view.qnt": "e82e03c18bb15a31d3d39414f3c3af4d802f11ebdac0fdc164877f5987a8d64f",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-type-attempt1": {
+      "receipt_sha256": "09ab89962e8c75ce63cf829b984ae6dff9d6ea5b8619539bbaa3f7adb271970b",
+      "raw_sha256": "cde43ff113c29804bca52bbaa9b0cff224080b4ccf39372cc99f1b219cd05b2e",
+      "raw_output": "verification/results/runs/final-report-view-type-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "report view typed diagnostic projection",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f54ce47b907eed9dc2e5ebd101f7564cb6637576afa8448a26b6bb95e66e7720",
+          "verification/models/report_view.qnt": "5771c66c6982a484e67b8451afe90af2ca0a774c02b3d95c260860b514d138ce",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-type-attempt2": {
+      "receipt_sha256": "01c7f4f9c4b55d2b04a0138bd2f3e4dc12e0fe01e29c90d5563cfc9c96334a69",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_output": "verification/results/runs/final-report-view-type-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "report view typed diagnostic projection",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f54ce47b907eed9dc2e5ebd101f7564cb6637576afa8448a26b6bb95e66e7720",
+          "verification/models/report_view.qnt": "6cb1a06326ee529b5c6401d406570112dca19dad099533c820d133a2380511a1",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-type-attempt3": {
+      "receipt_sha256": "02c4efd67d5cc0f5b18362d606f4ceaaeead72741eda5f4e4233260a1972d8a8",
+      "raw_sha256": "4a901c2f1d1ddd22da6ae8516fa5f55c09d5d9eed8b41fd65822a03f871e09d8",
+      "raw_output": "verification/results/runs/final-report-view-type-attempt3/raw.log",
+      "proof_contract": {
+        "claim": "Fixed one-trade reference diagnostic: authorization, accepted source instruction, registered decision, applied, reconciled, usable are distinct",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f415ab288acd4e84ba23a0b67123634e2868bb62afe2c9a357c916029a00be40",
+          "verification/models/report_view.qnt": "b461145c2335eb7dcd9197f04212a1e4de097521ee4557356ba4b108db8a46db",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-report-view-type-attempt4": {
+      "receipt_sha256": "96bdb5c96e6fe8968ab5a6b878d6678890a0e3df8861307ba47aaeb78784d97f",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_output": "verification/results/runs/final-report-view-type-attempt4/raw.log",
+      "proof_contract": {
+        "claim": "Fixed one-trade reference diagnostic: authorization, accepted source instruction, registered decision, applied, reconciled, usable are distinct",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "f415ab288acd4e84ba23a0b67123634e2868bb62afe2c9a357c916029a00be40",
+          "verification/models/report_view.qnt": "6309e239ef053bb4b64ce68eeec2a08d5bffebd1dc79ff2570a66947dfbb965a",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "final-resource-profile-native-type": {
+      "receipt_sha256": "b3abdd3e7547839d6501cd8d5f6008b181f1684a5f0b86d1eefc3d3a75878fb3",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_output": "verification/results/runs/final-resource-profile-native-type/raw.log",
+      "proof_contract": {
+        "claim": "Current report diagnostic typechecks; 8GiB profile recorded for cheap exact fresh-resource replay",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/report_view_test.qnt": "a8b1c4b749807743c2c25ca1d43edf193d3c04a13488b39c400a7d4bdbfde42d",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/models/report_view.qnt": "b461145c2335eb7dcd9197f04212a1e4de097521ee4557356ba4b108db8a46db"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "8 GiB JVM heap,8 MiB stack; one active heavy checker"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "extended-tlc-recovery": {
+      "receipt_sha256": "3c6d6e51314c650eb4542ba62332529a69222629e95e3b6bdf71d3607f2e291d",
+      "raw_sha256": "e9d906f57e546e9bd591eaf8d0a5ad8beb25eb140370f03353de18245b3c6380",
+      "raw_output": "verification/results/runs/extended-tlc-recovery/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "recoveryProgress"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/recovery.qnt",
+          "--main",
+          "recovery",
+          "--backend",
+          "tlc",
+          "--server-endpoint",
+          "localhost:8842",
+          "--init",
+          "init",
+          "--step",
+          "recoveryStep",
+          "--tlc-config",
+          "verification/configs/extended-tlc8.json",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--temporal",
+          "recoveryProgress",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "Current unrestricted full configuration, including unsolicited OPEN/A-preparation proof jobs phases0-6, authentic ABORT records and original per-trade/per-action fairness.",
+          "original_limit_seconds": 180,
+          "no_behavior_reduction": true
+        },
+        "input_hashes": {
+          "verification/models/recovery.qnt": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-tlc8.json": "f1aa87257cfe4743e36740c2c1a563a4887d61c2f7b4478fcf0614162d8304ee"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@01:07:17.928",
+          "tlc": "2026.11.17.210723"
+        },
+        "timeout_seconds": 7200,
+        "resource_limit": "8 GiB JVM heap,8 MiB stack; TLC four(reference)/eight(broader) workers; one active heavy checker;7200 seconds"
+      },
+      "native_targets": {
+        "--main": "recovery",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "recoveryStep",
+        "--invariants": "safe",
+        "--temporal": "recoveryProgress"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "extended-tlc-two": {
+      "receipt_sha256": "8f8e169b6ef8e4e6755c03d02de03ddc2b78f1c2b7efcfe25c67a86c3d0864dc",
+      "raw_sha256": "acc3cc7f696f49b276cf8c629396d61d804ff0345220856224eb0ac5ed6f42e9",
+      "raw_output": "verification/results/runs/extended-tlc-two/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "progress"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/liveness_variants.qnt",
+          "--main",
+          "live_two",
+          "--backend",
+          "tlc",
+          "--server-endpoint",
+          "localhost:8842",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--temporal",
+          "progress",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "Current full configuration including unsolicited OPEN/A-preparation proof jobs (phases0-6), authentic ABORT records and original per-trade/per-action fairness; no compact-job restriction.",
+          "resource_profile": "extended-8g-3600",
+          "original_limit_seconds": 180,
+          "no_behavior_reduction": true
+        },
+        "input_hashes": {
+          "verification/models/liveness_variants.qnt": "dcd88ecc212184d25338e9ba8328074bf3d98f9245cf2ac0445c32558d0f6737",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:26:11.019",
+          "tlc": "2026.11.17.192619"
+        },
+        "timeout_seconds": 3600,
+        "resource_limit": "8 GiB JVM heap, 8 MiB stack; max two isolated heavy jobs on 64 GiB/10-core host; TLC four workers; 3600 seconds"
+      },
+      "native_targets": {
+        "--main": "live_two",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariants": "safe",
+        "--temporal": "progress"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "extended-tlc-two-attempt1": {
+      "receipt_sha256": "f7e291a84ac17264632cb5d25d90124ab875c640db54142376cf642d282535d8",
+      "raw_sha256": "9bd5cf284c382e789ddc0561cd022593dfd2f1921df999d8dba41e500dff28c9",
+      "raw_output": "verification/results/runs/extended-tlc-two-attempt1/raw.log",
+      "proof_contract": {
+        "claim": [
+          "safe",
+          "CDecision",
+          "progress"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/liveness_variants.qnt",
+          "--main",
+          "live_two",
+          "--backend",
+          "tlc",
+          "--server-endpoint",
+          "localhost:8842",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc8.json",
+          "--invariants",
+          "safe",
+          "CDecision",
+          "--temporal",
+          "progress",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "scope": "Current unrestricted full configuration, including unsolicited OPEN/A-preparation proof jobs phases0-6, authentic ABORT records and original per-trade/per-action fairness.",
+          "original_limit_seconds": 180,
+          "no_behavior_reduction": true
+        },
+        "input_hashes": {
+          "verification/models/liveness_variants.qnt": "dcd88ecc212184d25338e9ba8328074bf3d98f9245cf2ac0445c32558d0f6737",
+          "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/configs/extended-tlc8.json": "f1aa87257cfe4743e36740c2c1a563a4887d61c2f7b4478fcf0614162d8304ee"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@00:11:50.032",
+          "tlc": "2026.11.17.201158"
+        },
+        "timeout_seconds": 7200,
+        "resource_limit": "8 GiB JVM heap,8 MiB stack; TLC four(reference)/eight(broader) workers; one active heavy checker;7200 seconds"
+      },
+      "native_targets": {
+        "--main": "live_two",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariants": "safe",
+        "--temporal": "progress"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "replay-final-resource-profile-native-type": {
+      "receipt_sha256": "09f2975ca4a00acaf190fc007621972f347acc8aa8957f185bf22c56482b0b8b",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_output": "verification/results/runs/replay-final-resource-profile-native-type/raw.log",
+      "proof_contract": {
+        "claim": "Current report diagnostic typechecks; 8GiB profile recorded for cheap exact fresh-resource replay",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "typecheck",
+          "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/runs/final-resource-profile-native-type/inputs/verification/tests/report_view_test.qnt"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "recorded_receipt": "verification/results/runs/final-resource-profile-native-type/receipt.json",
+          "replay_input": "exact saved source closure",
+          "forced": true
+        },
+        "input_hashes": {
+          "verification/results/runs/final-resource-profile-native-type/inputs/verification/tests/report_view_test.qnt": "a8b1c4b749807743c2c25ca1d43edf193d3c04a13488b39c400a7d4bdbfde42d",
+          "verification/results/runs/final-resource-profile-native-type/inputs/verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+          "verification/results/runs/final-resource-profile-native-type/inputs/verification/models/report_view.qnt": "b461145c2335eb7dcd9197f04212a1e4de097521ee4557356ba4b108db8a46db"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "8 GiB JVM heap,8 MiB stack; one active heavy checker"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
     }
   }
 }

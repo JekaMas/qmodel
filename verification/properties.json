@@ -18,6 +18,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety"
     ],
     "execution_status": "executed-with-result",
@@ -43,6 +46,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-reopen",
       "mutant-pruned_tombstone"
@@ -72,6 +78,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test"
@@ -99,6 +108,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-contention_test",
       "final-variant-live_escrow",
@@ -127,6 +139,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-replay",
       "abort-authoritative-records"
@@ -159,9 +174,13 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-relayer_assertion",
-      "abort-authoritative-records"
+      "abort-authoritative-records",
+      "final-phase-failure-witnesses"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -186,6 +205,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-expiry",
       "tlc-issuer_destruction-backed"
@@ -213,6 +235,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-mapping",
       "mutant-expiry",
@@ -241,6 +266,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-stale_refund",
       "actual-b-clock-expiry"
@@ -270,6 +298,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test"
@@ -297,6 +328,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
@@ -325,13 +359,17 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-recovery",
       "scenario-recovery_test",
-      "network-loss-recovery"
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Full-job N=1 B/prover-crash and B-freeze recovery graph, plus19 direct phase-guard/recovery scenarios and actual message-loss/restart witnesses. No arbitrary independent operational fault product.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -353,13 +391,16 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Core S13 retains program1 only. The focused membership model checks approved/current credentials, pending/current-safe retirement and consumed identities. No checked full financial/membership liveness composition or arbitrary-upgrade theorem.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -385,6 +426,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-policy_test",
       "preparation-freeze-policy",
@@ -420,12 +464,16 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "report-evidence-scenario",
-      "abort-authoritative-records"
+      "abort-authoritative-records",
+      "final-report-view-stages"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Source-world diagnostics distinguish authorized, source accepted, registered, prepared, committed, applied and reconciled. Six acceptance cases and authentic application/ABORT-record gates execute. External APIs must authenticate every source-dependent field; no implemented reporter conformance is claimed.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -447,6 +495,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-lifecycle-tests",
       "negative-disclosure_key_compromise"
@@ -480,6 +531,8 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "final-record-recovery",
@@ -514,10 +567,13 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "final-record-recovery",
-      "private-data-progress"
+      "private-data-progress",
+      "final-phase-failure-witnesses"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -548,10 +604,13 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "late-hold-relative-bound",
-      "three-domain-progress"
+      "three-domain-progress",
+      "final-phase-failure-witnesses"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -582,6 +641,8 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "final-record-recovery",
@@ -605,6 +666,9 @@
     "expected": "hold",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-mapping",
       "contract-b_hosted",
@@ -628,6 +692,8 @@
     "expected": "conditional",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "private-data-progress"
     ],
@@ -919,6 +985,8 @@
     "expected": "scoped positive and negative results",
     "status": "executed-with-result",
     "executed_checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization"
     ],
@@ -1005,7 +1073,8 @@
     "executed_checks": [
       "scenario-dvp_test",
       "scenario-recovery_test",
-      "network-loss-recovery"
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",

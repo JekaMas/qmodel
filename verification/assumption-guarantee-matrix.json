@@ -92,7 +92,9 @@
     "enforcement": "Operational monitoring/redundancy may support the hypothesis but cannot guarantee recovery from a permanently failed ledger.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "final-record-recovery",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-phase-failure-witnesses",
       "overclaim-permanent-halt"
     ]
   },
@@ -148,7 +150,8 @@
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
       "trust-v2-insufficient_submitters",
-      "trust-v2-committee_refusal"
+      "trust-v2-committee_refusal",
+      "final-phase-failure-witnesses"
     ]
   },
   {
@@ -166,7 +169,8 @@
     "executed_perturbations": [
       "review-pipeline-PNI",
       "review-pipeline_log",
-      "review-pipeline_unsalted"
+      "review-pipeline_unsalted",
+      "review-pipeline_timing"
     ]
   },
   {
@@ -182,8 +186,9 @@
     "enforcement": "Authenticated roles/scopes construct the complete returned Payload; private Issue provenance is internal. Selected observer sees its full responses; other authorized private channels have explicit declassification. Policy and channel implementation remain external.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "tlc-privacy_safe-PAccess",
-      "tlc-wrong_scope-PAccess",
+      "review-pipeline-PAccess",
+      "review-pipeline_scope",
+      "review-pipeline_compromise",
       "audit-omitted_record"
     ]
   },
@@ -217,10 +222,10 @@
     "guarantee": "Exact delivered note plus key access remains recoverable.",
     "enforcement": "Bind note to actual transition; monitor delivery/key custody. No magic reconstruction from COMMIT.",
     "executed_perturbations": [
-      "private-data-progress",
-      "private-permanent-key-loss",
-      "negative-disclosure_key_compromise",
-      "negative-wrong_note"
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
+      "review-pipeline_note",
+      "review-pipeline_compromise"
     ],
     "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
   },
@@ -276,9 +281,11 @@
     "guarantee": "Finite one/two trades, integer units, finite program epochs, bounded fact phases; specialized three-domain installation and paired worlds.",
     "enforcement": "Exact input closures and bounds in receipts; no parameterized theorem or general composition inferred.",
     "executed_perturbations": [
-      "final-record-two",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "three-domain-installation-final",
-      "linked-privacy-privacy_safe"
+      "review-pipeline-PNI"
     ],
     "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
   },
@@ -297,7 +304,8 @@
     "enforcement": "Source-local capture; recordAbort requires both source records and authentic A outcome. This is a required interface, not arbitrary relayer/RPC trust.",
     "executed_perturbations": [
       "abort-authoritative-records",
-      "final-record-progress"
+      "extended-tlc-two",
+      "extended-tlc-recovery"
     ],
     "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
   }

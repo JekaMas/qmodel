@@ -1,4 +1,4 @@
-"""Execution evidence. Every child is bounded and stays in its parent's process group."""
+"""Each native invocation has its own process group and an explicit wall cap."""
 from pathlib import Path
 import subprocess,os,sys,json,time,hashlib,signal,resource,datetime,re,shlex,functools
 ROOT=Path(__file__).resolve().parents[2]; V=ROOT/'verification'; RESULTS=V/'results'
@@ -31,13 +31,16 @@ def inputs(cmd):
   if arg.endswith(('.qnt','.json')) and (ROOT/arg).is_file():visit(ROOT/arg)
  return found
 
-def execute(id,cmd,*,claim,expected='pass',backend='cli',seconds=120,config=None,record=True,force=False):
+def execute(id,cmd,*,claim,expected='pass',backend='cli',seconds=120,config=None,record=True,force=False,execution_env=None,resource_limit=None):
+ child_env={**ENV,**(execution_env or {})}
+ limits=resource_limit or '2 GiB JVM heap, 8 MiB stack; one heavy checker at a time'
+ if execution_env and set(execution_env)-{'JAVA_TOOL_OPTIONS','JVM_ARGS'}:raise ValueError('Only JVM resource flags may be overridden')
  d=RESULTS/'runs'/id
  if d.exists():
   # Reuse evidence only if exact semantic input and command remain unchanged.
   old=json.loads((d/'receipt.json').read_text()) if (d/'receipt.json').exists() else None
   hashes=inputs(cmd)
-  if not force and old and old['command']==cmd and old['input_hashes']==hashes and old['expectation_met'] and old['claim']==claim and old['expected']==expected and old['backend']==backend and old['configuration']==(config or {}) and old['timeout_seconds']==seconds:
+  if not force and old and old['command']==cmd and old['input_hashes']==hashes and old['expectation_met'] and old['claim']==claim and old['expected']==expected and old['backend']==backend and old['configuration']==(config or {}) and old['timeout_seconds']==seconds and old['resource_limit']==limits and all(old['environment'].get(k)==v for k,v in (execution_env or {}).items()):
    print('REUSE',id,old['outcome'],flush=True);return old
   n=1
   while (RESULTS/'runs'/f'{id}-attempt{n}').exists():n+=1
@@ -51,10 +54,11 @@ def execute(id,cmd,*,claim,expected='pass',backend='cli',seconds=120,config=None
  for rel in tooling:
   saved=d/'tooling'/rel;saved.parent.mkdir(parents=True,exist_ok=True);saved.write_bytes((ROOT/rel).read_bytes())
  plan={'command':cmd,'claim':claim,'expected':expected,'backend':backend,'configuration':config or {},'input_hashes':hashes,'tool_versions':versions,'tooling_hashes':tooling,'timeout_seconds':seconds}
+ plan.update(environment={k:child_env[k] for k in ['QUINT_HOME','JAVA_TOOL_OPTIONS','JVM_ARGS','PATH']},resource_limit=limits)
  (d/'execution-plan.json').write_text(json.dumps(plan,indent=2)+'\n')
  started=time.monotonic();started_wall=time.time();timestamp=datetime.datetime.now(datetime.timezone.utc).isoformat()
  with (d/'raw.log').open('w') as f:
-  proc=subprocess.Popen(cmd,cwd=ROOT,env=ENV,stdout=f,stderr=subprocess.STDOUT,start_new_session=True)
+  proc=subprocess.Popen(cmd,cwd=ROOT,env=child_env,stdout=f,stderr=subprocess.STDOUT,start_new_session=True)
   timedout=False
   try:code=proc.wait(timeout=seconds)
   except subprocess.TimeoutExpired:
@@ -79,9 +83,9 @@ def execute(id,cmd,*,claim,expected='pass',backend='cli',seconds=120,config=None
  versions={**versions,'apalache':(re.search(r'APALACHE version: ([^\n]+)',raw).group(1).strip() if re.search(r'APALACHE version: ([^\n]+)',raw) else 'not observed in this invocation'),
   'tlc':(re.search(r'TLC2 Version ([^\n]+)',raw).group(1).strip() if re.search(r'TLC2 Version ([^\n]+)',raw) else 'not invoked')}
  receipt=dict(id=d.name,started_utc=timestamp,claim=claim,backend=backend,command=cmd,
-  shell_command=shlex.join(cmd),environment={k:ENV[k] for k in ['QUINT_HOME','JAVA_TOOL_OPTIONS','JVM_ARGS','PATH']},
+  shell_command=shlex.join(cmd),environment={k:child_env[k] for k in ['QUINT_HOME','JAVA_TOOL_OPTIONS','JVM_ARGS','PATH']},
   input_hashes=hashes,tool_versions=versions,tooling_hashes=tooling,execution_plan_sha256=digest(d/'execution-plan.json'),raw_sha256=digest(d/'raw.log'),
-  configuration=config or {},timeout_seconds=seconds,resource_limit='2 GiB JVM heap, 8 MiB stack; one heavy checker at a time',
+  configuration=config or {},timeout_seconds=seconds,resource_limit=limits,
   exit_code=code,wall_seconds=duration,outcome=outcome,expected=expected,expectation_met=ok,
   states_generated=int(counts[1].replace(',','')) if counts else 'unavailable',distinct_states=int(counts[2].replace(',','')) if counts else 'unavailable',raw_output=str((d/'raw.log').relative_to(ROOT)),minimized=False,replayed=False)
  if '--out-itf' in cmd:

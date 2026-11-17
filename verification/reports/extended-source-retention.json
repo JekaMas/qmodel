@@ -1,0 +1,8 @@
+{
+  "path": "verification/tests/report_view_test.qnt",
+  "checked_sha256": "a8b1c4b749807743c2c25ca1d43edf193d3c04a13488b39c400a7d4bdbfde42d",
+  "current_sha256": "5aad8c0d7713ab2a50e055b180b878a89e715ccedc1ecefc3472991405866abd",
+  "semantic_delta": "none: only full-line comments changed",
+  "native_source_hashes_rewritten": false,
+  "evidence_helper_delta": "Initial module docstring corrected to describe the actual child process group; no subsequent financial model or checker invocation changed."
+}

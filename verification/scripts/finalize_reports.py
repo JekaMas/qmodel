@@ -41,6 +41,8 @@ primary += ['review-type-privacy_pipeline','review-type-integrated','review-type
  'review-pipeline-witnesses','review-privacy-time-integrated-safe','review-privacy-time-integrated-noUsability','review-privacy-time-integrated_leak-safe',
  'review-typed-private-availability','review-typed-private-unconditionalAvailability','review-fifo-workload']
 primary += sorted(r['id'] for r in receipts if r['id'].startswith('type-final-'))
+primary += ['extended-apalache-core-12','extended-tlc-full-reference','extended-tlc-two','extended-tlc-recovery',
+ 'final-phase-type','final-phase-failure-witnesses','final-report-view-stages','final-resource-profile-native-type','replay-final-resource-profile-native-type']
 # Stable IDs and scoped claims: one conjunction check is one execution, not sixteen fabricated runs.
 prop_evidence={
  'S01':['final-record-safety'],'S02':['final-record-safety','mutant-reopen','mutant-pruned_tombstone'],
@@ -75,8 +77,16 @@ prop_evidence={
  'T-Eventual':['final-record-recovery','post-stabilization'],
  'T-Bounded':['tlc-bounded-safe','exact-deadline-margin','one-less-deadline-margin','late-hold-relative-bound'],
  'T-Capacity':['queue-capacity-progress','tlc-starvation-boundedCompletion','tlc-unlimited-exposure']}
+# Full-state/full-job results supplement the retained scoped observations.
+for pid in ['S'+str(n).zfill(2) for n in range(1,17)]+['C-Decision']:
+ prop_evidence[pid]=['extended-tlc-full-reference','extended-tlc-two','extended-tlc-recovery']+prop_evidence[pid]
+for pid in ['L01','L02','L03','L04','C-Local','T-Eventual']:
+ prop_evidence[pid]=['extended-tlc-two','extended-tlc-recovery']+prop_evidence[pid]
+for pid in ['S06','S12','L02','L03','R-Core']:
+ prop_evidence.setdefault(pid,[]).append('final-phase-failure-witnesses')
+prop_evidence['S15'].append('final-report-view-stages')
 extra_properties=[
- ('R-Core','Successful settlement, actual reservations, application lag, abort/orphan resolution and recovery are reachable.','reachability/non-vacuity','Explicit finite runs reach the named .expect predicates in dvp_test.',['scenario-dvp_test','scenario-recovery_test','network-loss-recovery']),
+ ('R-Core','Successful settlement, actual reservations, application lag, abort/orphan resolution and recovery are reachable.','reachability/non-vacuity','Explicit finite runs reach the named .expect predicates in dvp_test.',['scenario-dvp_test','scenario-recovery_test','network-loss-recovery','final-phase-failure-witnesses']),
  ('R-Policy','Admission and independent eligibility/freeze rejection paths are exercised.','reachability/non-vacuity','membership_lifecycle tests and policy tests reach admitted/pending/retired states and reject frozen preparation.',['membership-lifecycle-tests','preparation-freeze-policy']),
  ('R-Audit','Authorized audit and real omission detection are reachable.','reachability/non-vacuity','audit_safe final report is complete for received authenticated high-water; omitted_record violates scopeCompleteness.',['audit-audit_safe','audit-omitted_record']),
  ('V-AOpen','Authenticated OPEN retains safe delayed historical preparation and resolution.','operational integration','safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04',['final-variant-live_open','delayed-open-fact-scenarios']),
@@ -97,6 +107,9 @@ for p in props:
  p['verified_scope']='Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.'
  p['actions']={'S03':['sign','requestOpen','requestCash'],'S06':['commit','applyA','applyB','refund','captureAbortRecord','recordAbort'],'S10':['inject','authFact','requestOpen'],'S14':['openA','prepareB','revokeLeg','freeze','unfreeze'],'S15':['observe','reconcile','captureAbortRecord','recordAbort','progressReport']}.get(p['id'],p['actions'])
  p['quint_owner']='verification/models/dvp.qnt' if p['id'].startswith('S') else 'see executed check input closures'
+ if p['id']=='S13':p['verified_scope']='Core S13 retains program1 only. The focused membership model checks approved/current credentials, pending/current-safe retirement and consumed identities. No checked full financial/membership liveness composition or arbitrary-upgrade theorem.'
+ if p['id']=='S15':p['verified_scope']='Source-world diagnostics distinguish authorized, source accepted, registered, prepared, committed, applied and reconciled. Six acceptance cases and authentic application/ABORT-record gates execute. External APIs must authenticate every source-dependent field; no implemented reporter conformance is claimed.'
+ if p['id']=='S12':p['verified_scope']='Full-job N=1 B/prover-crash and B-freeze recovery graph, plus19 direct phase-guard/recovery scenarios and actual message-loss/restart witnesses. No arbitrary independent operational fault product.'
  if p['id']=='S14':p['verified_scope']='Preparation guards tested for independent local eligibility; supported durable/freeze/seizure policies checked separately. The S14 state predicate alone is not a historical eligibility theorem or regulatory-compliance proof.'
  if p['id']=='P-NI':p['verified_scope']='Two actual source positions 4/7, equal authorized trade/funding; one fixed 12-operation public lifecycle plus at most one arbitrary coupled API request. Complete selected-observer response histories, private-channel/declassification policy and content-aware opaque-name correspondence. Not general scheduler/termination/cryptographic noninterference.'
  if p['id']=='L04':p['verified_scope']='Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem.'
@@ -111,12 +124,12 @@ phase_map={
  'PH-01':['membership-retirement-final','membership-lifecycle-tests'],'PH-02':['scenario-bindings_test','scenario-dvp_test'],
  'PH-03':['scenario-policy_test','membership-lifecycle-tests'],'PH-04':['scenario-dvp_test','scenario-contention_test'],
  'PH-05':['scenario-contention_test','queue-capacity-progress'],'PH-06':['scenario-dvp_test','witness-escrow_path_test'],
- 'PH-07':['final-record-safety','scenario-recovery_test'],'PH-08':['network-loss-recovery','scenario-recovery_test'],
+ 'PH-07':['extended-tlc-full-reference','scenario-recovery_test','final-phase-failure-witnesses'],'PH-08':['network-loss-recovery','scenario-recovery_test'],
  'PH-09':['final-record-safety','combined-faults-17'],'PH-10':['network-loss-recovery','combined-faults-43'],
  'PH-11':['final-record-safety','overclaim-immediate'],'PH-12':['scenario-dvp_test','mutant-non_atomic'],
  'PH-13':['final-record-safety','delayed-open-fact-scenarios'],'PH-14':['final-record-progress','late-hold-relative-bound'],
- 'PH-15':['review-pipeline-witnesses','review-typed-private-availability','review-typed-private-unconditionalAvailability'],'PH-16':['report-evidence-scenario','abort-authoritative-records','audit-audit_safe'],
- 'PH-17':['membership-lifecycle-tests','final-record-recovery','network-loss-recovery']}
+ 'PH-15':['review-pipeline-witnesses','review-typed-private-availability','review-typed-private-unconditionalAvailability'],'PH-16':['final-report-view-stages','report-evidence-scenario','abort-authoritative-records','audit-audit_safe'],
+ 'PH-17':['membership-lifecycle-tests','extended-tlc-recovery','network-loss-recovery']}
 coverage=json.loads((V/'coverage-contract.json').read_text())
 for item in coverage:
  item['implementation_status']='implemented'
@@ -147,11 +160,14 @@ write(V/'variants.md','# Executed variant matrix\n\nThe variants are our abstrac
 # Every execution keeps its raw result. Augment, never overwrite actual recorded hashes/outcomes.
 for r in receipts:
  cmd=r['command'];model=next((x for x in cmd if x.endswith('.qnt')),'unavailable')
+ if r['id'] in ['extended-apalache-core-20','extended-apalache-grounded-20','extended-tlc-two']:r['non_success_cause']='Explicit operator interruption during resource/solver diagnosis; see scheduling-events.json. Native non-success classification and original cap remain unchanged.'
  r['variant']=r.get('configuration',{}).get('main') or (cmd[cmd.index('--main')+1] if '--main' in cmd else 'tooling')
  r['observer']='selected public/relayer observer or explicit authenticated API roles with scoped private channels' if any(x in model for x in ['privacy','integrated','audit']) else 'not_applicable'
  r['time_regime']='T-Bounded' if any(x in model for x in ['timing','stabilization','late_resolution','integrated']) else 'T-Eventual' if '--temporal' in cmd else 'T-Async'
  r['fault_model']=r.get('configuration',{}).get('scope') or r['id']
  r['assumption_version']='verification/assumption-guarantee-matrix.json; exact model-input closure retained'
+ if r['id'].startswith('extended-tlc-two'):r['fault_model']='Full proof-job graph, N=2; all actors up, no injected/lost messages; contention and all phases0-6.'
+ if r['id'].startswith('extended-tlc-recovery'):r['fault_model']='Full proof-job graph, N=1; B/prover crash/recover, B freeze/unfreeze; eventual stable all-up/unfrozen environment and per-action fairness.'
  r['fairness']='exact --temporal formula in recorded input closure; per-trade/per-action WF and stated recovery' if '--temporal' in cmd else 'none needed for safety; deterministic/sampled schedule as commanded'
  r['bounds']='Exact instantiated constants in recorded model closure; core N=1/2, security=2, cash=3, D=2, epochs 0/1; specialized bounds in configuration/docs.'
  if '--backend' in cmd and cmd[cmd.index('--backend')+1]=='rust':r['tool_versions']['evaluator']='v0.7.1'
@@ -163,18 +179,26 @@ for r in receipts:
   snap=O/'runs'/r['id']/'inputs'/model
   if snap.is_file() and 'type Disclosure={' in snap.read_text():r['claim_boundary']='IR-001 first repair still exposed nested private provenance and omitted complete response history. These real native results prove only the old weaker projection; final Payload/Issue and full-response checks replace the claim.'
  r['tool_identity_boundary']='Observed invocation and snapshotted tooling' if r.get('execution_plan_sha256') else 'Historical helper metadata; native backend banners and original toolchain records remain available. Not retroactively relabeled as a new runtime measurement.'
- r['native_trace']='backend-native counterexample retained in raw output' if 'counterexample' in r['outcome'] else 'not_applicable'
+ r['native_trace_note']='backend-native counterexample retained in raw output; a per-execution export path is preserved when available' if 'counterexample' in r['outcome'] else 'not_applicable'
 # A single final content inventory. The original per-execution hashes are unchanged.
 models={str(p.relative_to(R)):sha(p) for p in sorted((V/'models').glob('*.qnt'))}
 counts=collections.Counter(r['outcome'] for r in receipts)
+# Historical attempts are immutable; a resolution is a separate actual observation.
+resolutions={
+ 'apalache-core-12':('extended-apalache-core-12','same full reference, larger budget, invariant-after batching'),
+ 'apalache-core-20':('extended-tlc-full-reference','exhaustive identical full State/init/step safety covers every depth; original SMT20 remains a non-success'),
+ 'tlc-live_two':('extended-tlc-two','same full-proof-job two-trade graph, all actors up, phases0-6 and original per-action temporal fairness'),
+ 'tlc-eventual-recovery':('extended-tlc-recovery','same full-proof-job one-trade B/prover-outage and B-freeze recovery graph; original recoveryProgress hypothesis')}
+resolution_rows=[{'original_timeout':old,'resolution_check':new,'resolution_receipt':get(new)['id'] if get(new) else None,'distinct_states':get(new)['distinct_states'] if get(new) else 'unavailable','wall_seconds':get(new)['wall_seconds'] if get(new) else None,'status':'resolved-by-observed-proof' if good(new) else 'NOT DONE','basis':basis} for old,(new,basis) in resolutions.items()]
 manifest={'schema_version':2,'generated_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
  'implementation_status':'DONE','verification_verdict':'scoped evidence matrix; no unqualified all-configurations or deployed-system verification',
  'required_scoped_checks':primary,'unmet_scoped_checks':[i for i in primary if not good(i)],
  'historical_broader_timeouts':[r['id'] for r in receipts if r['outcome']=='timeout'],
+ 'original_broader_obligations':resolution_rows,'unclosed_broader_obligations':[x['original_timeout'] for x in resolution_rows if x['status']!='resolved-by-observed-proof'],
  'counterexample_classification':{'A':'isolated protocol mutants','B':'violated environment/trust assumptions','C':'overstrong contracts'},
  'executions':receipts,'outcome_counts':dict(counts),'final_model_hashes':models,
  'external_obligations':['circuits/prover/verifier implementation','actual QBFT/EVM/token execution','key/hardware/storage/network security','cryptographic privacy and real side channels','availability/cost measurement','legal/account/issuer rights and financial records'],
- 'source_inventory':'verification/sources/source-inventory.json','scope_warning':'Original PDF/workspace sources were absent; self-contained v2 and recovered shared answer are the authority. Larger timed-out runs are not passes.'}
+ 'source_inventory':'verification/sources/source-inventory.json','scope_warning':'Original PDF/workspace sources were absent; self-contained v2 and recovered shared answer are the authority. Original timed-out/interrupted attempts are not passes; current full-model resolutions are separate observations.'}
 dump(O/'manifest.json',manifest)
 dump(V/'configs/acceptance.json',{'required':primary,'historical_timeouts_are_not_passes':True,'full_configuration_claim':False})
 # Concise result index with direct reproduction commands.
@@ -191,14 +215,15 @@ The project supplies an executable layered investigation and a scoped evidence m
 
 '''+f"The selected matrix currently has {len(primary)} named checks; unmet or unavailable observations: {', '.join(manifest['unmet_scoped_checks']) or 'none'}. Exact scope and observations are in [the manifest](../results/manifest.json), [property traceability](traceability.md), [variants](../variants.md), and [execution commands](executions.md). Counts are unique executions, not a multiplied claim count.\n\n"+'''## Residual limits and failed attempts
 
-Full-reference Apalache depths 12/20 and the broad unrestricted-job two-trade/recovery temporal runs reached their recorded 180-second limits. Their exact model versions, partial logs and commands remain in the manifest. They are not reclassified as passes. The economic projection has separate Apalache 8/12/20 and inductive results, with a checked finite reference safety mapping. The separately named reference-requested-job two-trade and recovery configurations keep original S/L properties and omit unsolicited A OPEN/local-preparation proof jobs. No liveness-refinement theorem from the broader graphs is claimed.
+Original full-reference Apalache12/20 and unrestricted-job two-trade/recovery180-second receipts remain timeouts. The extended profile uses8GiB and larger per-invocation budgets. Direct full Apalache12 passed in182.9seconds. Longer direct20 and exact finite-choice SMT probes were explicitly interrupted at native Z3 query cost and remain non-successes. The identical current full reference was then checked exhaustively by TLC:12,502states, complete graph depth38, S01–S16 and CDecision. This proves all reachable safety prefixes, including20; it is neither an algebraic projection nor a compact-job substitute. The full unrestricted two-trade and recovery temporal checks have separate current native results below. Their hypotheses retain all proof phases0–6 and per-trade/per-action fairness.
 
 ## Risk-based interactions
 
 | Interaction | Executed scope | Unchecked remainder |
 |---|---|---|
-| Two trades + contention + malicious input + outages + witness retention | Deterministic cases and multiple 10,000-trace combined samples; finite requested-job temporal configuration | Arbitrary populations, unlimited hostile traffic and every fault combination |
+| Two trades + contention + malicious input + outages + witness retention | Deterministic cases and multiple 10,000-trace combined samples; full-proof-job healthy contention and focused B/prover/B-freeze recovery temporal graphs | Arbitrary populations, unlimited hostile traffic and every fault combination |
 | Loss/duplicate acknowledgement + adapter restart | Actual message loss/resend and phase-specific restart witnesses | Unbounded adversarial loss under liveness; eventual reliable offer/delivery is required |
+| Financial state + full membership governance | Separate economic/control checks, historical-proof witnesses and rotation/exit samples | No checked joint financial/membership liveness composition or arbitrary token/circuit upgrade theorem |
 | Upgrade + delayed historical proof; exit with pending obligations | Core witnesses, predecessor-approved rotation and membership retention/replay controls | Real certificates, token proxy migration and all upgrade/data-loss combinations |
 | Privacy + actual queue time | State-derived paired payload/timed-pipeline product | General scheduler noninterference, secret-dependent real prover work and termination leaks |
 | Three institutional domains + shared cash capacity | Independent domain heights/availability, authenticated outcomes, safety and conditional progress | General n-leg exchange; composed three-domain ABORT-bookkeeping and full relational privacy |
@@ -207,3 +232,10 @@ Full-reference Apalache depths 12/20 and the broad unrestricted-job two-trade/re
 There is no checked model-to-code conformance result: no production Solidity/adapters/proof guest were present in the new repository. Upstream kit examples are not treated as the candidate implementation. See [conformance boundary](conformance-boundary.md).
 ''')
 print(json.dumps({'executions':len(receipts),'outcomes':dict(counts),'unmet_scoped':manifest['unmet_scoped_checks']}))
+
+review={'schema_version':1,'review_mode':'root final source/evidence review; prior independent IR-001 through IR-004 review remains separately attributed','baseline_commit':'e4e06a49732aa2a14358504ff70c21e1521d1950','source_sha256':{p:sha(R/p) for p in ['verification/sources/task-v2.md','verification/sources/shared-solution.original-ru.md']},'broader_obligations':resolution_rows,'unclosed_broader_obligations':manifest['unclosed_broader_obligations'],'properties':[{'id':p['id'],'execution_status':p['execution_status'],'executed_checks':p['executed_checks'],'verified_scope':p['verified_scope']} for p in props],'new_scenarios':{'phase_failure_test':19,'report_view_test':6},'production_or_unqualified_verification':False,'external_obligations':manifest['external_obligations'],'scheduling_deviation':'Initial concurrent heavy start; recorded pause/resume and SMT interruption; subsequent heavy checks sequential. Pauses count against original wall limits.'}
+dump(P/'final-review.json',review)
+table='\n\n| Original timeout | New observation | Resolution | Proof basis |\n|---|---|---|---|\n'+'\n'.join(f"| {x['original_timeout']} | {link(x['resolution_check'])} | {x['status']} | {x['basis']} |" for x in resolution_rows)+'\n'
+with (P/'coverage.md').open('a') as f:f.write(table)
+review_doc=(P/'final-review.md').read_text().split('<!-- observed-resolution -->')[0]
+write(P/'final-review.md',review_doc+'<!-- observed-resolution -->'+table)

@@ -6,7 +6,7 @@
       "id": "EV",
       "capability": "dvp-verification",
       "title": "Execute scoped protocol verification",
-      "fingerprint": "01f1768a34cd1dca72bff08060d0f54aae15e4cf3bfbfbdd9e57494acb2b958f"
+      "fingerprint": "69079bef74677521c8cb3c6c72b922b06d2d6e8e84acc9b61cbd9aa36ec7d3af"
     }
   ],
   "properties": [
@@ -16,7 +16,8 @@
       "scenarios": [
         "Safe baseline and falsification",
         "Incomplete or external claims",
-        "Bound observations and explicit replay"
+        "Bound observations and explicit replay",
+        "Extended full-model closure"
       ],
       "statement": "Executed scoped protocol evidence is authentic, reproducible and reported within its actual limits.",
       "owner": "verification project evidence pipeline",
@@ -45,13 +46,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "All selected scoped backend observations completed with exact preserved sources.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -75,13 +77,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_negative_suite_has_real_counterexamples",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "Each isolated protocol mutant has its intended actual property violation.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -105,13 +108,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_external_and_timeout_scope_is_visible",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "External obligations and actual timed-out configurations remain visible.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -135,13 +139,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_tool_error_cannot_kill_mutant",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "A tool error or zero-exit non-violation cannot masquerade as a killed mutant.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -165,13 +170,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_source_identity_is_rejected",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "Changed source identity is rejected against actual recorded input snapshots.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -195,13 +201,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_omitted_negative_observation_is_not_completion",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "A missing expected execution cannot be counted as completed evidence.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -225,13 +232,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_forced_replays_execute_two_processes",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "Two explicit forced invocations actually start two separate child processes.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -255,13 +263,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_exact_failed_receipt_is_not_replaced_by_success",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "Exact original timeout selection remains that timeout and requires explicit failure reproduction.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -285,13 +294,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_new_invocation_records_observed_runtime",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "A new invocation observes the pinned runtime and snapshots its plan/tooling.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -315,13 +325,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_claim_and_target_are_rejected",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "The independent reviewer changed both claim and invariant target; the audit rejects that substitution.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -345,13 +356,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_changed_native_log_is_rejected",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "An unrelated or corrupted native output cannot certify the sealed check.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -375,13 +387,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_zero_selected_quint_scenarios_are_not_success",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "A zero-exit Quint command with no selected passing scenario is not successful evidence.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -405,13 +418,14 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_mutable_shared_trace_is_not_a_comparison_baseline",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "An overwritten shared trace never substitutes for a per-attempt immutable native export.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -435,14 +449,139 @@
         "verification/configs/acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/scripts/evidence.py",
-        "verification/scripts/replay.py"
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
       ],
       "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_absolute_recorded_input_relocates_to_saved_closure",
       "command_id": "evidence-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_evidence.py",
-      "source_sha256": "9666ed23f0860e166439644f90c631d6ea019f4b748b4d05447ea329ccc6154b",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
       "distinct_reason": "Absolute historical inputs relocate to their saved closure and cannot consult a live unrelated checkout.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "EV.C15",
+      "property_id": "EV.P1",
+      "polarity": "positive",
+      "scenario": "Extended full-model closure",
+      "scenario_fingerprint": "41683fda5f37bc037e054b30b920feecb6d6ae96209469de737babd98de7f19e",
+      "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+      "observable": "Each original broader obligation is resolved by its actual full-state or unrestricted-job native proof; no compact or economic substitute.",
+      "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+      "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/results/runs/**",
+        "verification/tests/test_evidence.py",
+        "verification/scripts/audit_evidence.py",
+        "verification/configs/acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py",
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
+      ],
+      "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_full_model_resolutions_do_not_use_compact_substitutes",
+      "command_id": "evidence-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_evidence.py",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
+      "distinct_reason": "Each original broader obligation is resolved by its actual full-state or unrestricted-job native proof; no compact or economic substitute.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "EV.C16",
+      "property_id": "EV.P1",
+      "polarity": "positive",
+      "scenario": "Extended full-model closure",
+      "scenario_fingerprint": "41683fda5f37bc037e054b30b920feecb6d6ae96209469de737babd98de7f19e",
+      "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+      "observable": "A new exact native typecheck replay retains recorded8GiB flags and resource limit in the pre-execution plan.",
+      "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+      "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/results/runs/**",
+        "verification/tests/test_evidence.py",
+        "verification/scripts/audit_evidence.py",
+        "verification/configs/acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py",
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
+      ],
+      "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_fresh_extended_profile_preserves_jvm_resources",
+      "command_id": "evidence-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_evidence.py",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
+      "distinct_reason": "A new exact native typecheck replay retains recorded8GiB flags and resource limit in the pre-execution plan.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "EV.C17",
+      "property_id": "EV.P1",
+      "polarity": "negative",
+      "scenario": "Extended full-model closure",
+      "scenario_fingerprint": "41683fda5f37bc037e054b30b920feecb6d6ae96209469de737babd98de7f19e",
+      "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+      "observable": "Actual19 fault/rejection/recovery and6 acceptance/report cases execute, with no zero-selection substitution.",
+      "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+      "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/results/runs/**",
+        "verification/tests/test_evidence.py",
+        "verification/scripts/audit_evidence.py",
+        "verification/configs/acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py",
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
+      ],
+      "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_phase_fault_and_acceptance_witness_counts",
+      "command_id": "evidence-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_evidence.py",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
+      "distinct_reason": "Actual19 fault/rejection/recovery and6 acceptance/report cases execute, with no zero-selection substitution.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "EV.C18",
+      "property_id": "EV.P1",
+      "polarity": "negative",
+      "scenario": "Extended full-model closure",
+      "scenario_fingerprint": "41683fda5f37bc037e054b30b920feecb6d6ae96209469de737babd98de7f19e",
+      "setup": "Load the selected actual Quint/Apalache/TLC receipts, raw outputs and source closures from this project.",
+      "observable": "Current privacy assumptions cite the actual repaired payload-pipeline source observations; retired event monitors cannot replace them.",
+      "red_expectation": "A missing, corrupted, tool-error or falsely scoped backend observation is accepted as evidence.",
+      "green_expectation": "Only real backend results with their original source identities satisfy this audit; gaps remain explicit.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/results/runs/**",
+        "verification/tests/test_evidence.py",
+        "verification/scripts/audit_evidence.py",
+        "verification/configs/acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py",
+        "verification/scripts/replay.py",
+        "verification/assumption-guarantee-matrix.json"
+      ],
+      "test_id": "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline",
+      "command_id": "evidence-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_evidence.py",
+      "source_sha256": "e3149d77b0bcf49cfdb2947a3b3c114512303be4f1f2ea75d7eb8bd14161725c",
+      "distinct_reason": "Current privacy assumptions cite the actual repaired payload-pipeline source observations; retired event monitors cannot replace them.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       }

@@ -1,5 +1,7 @@
 # Independent-review repair results
 
+Historical snapshot of the preceding independent-review/publication iteration. Its153 observations and14 audit cases describe that source revision. See [final review](final-review.md) and [current coverage](coverage.md) for extended full-model closure and the current selection.
+
 All four independently reported findings were repaired and rechecked by the same reviewer. The original baseline findings and unsuccessful first payload repair remain visible in independent-review.md/json. No new principal economic safety defect was found. The result remains a scoped investigation, not unqualified full-system verification.
 
 | Check | Actual outcome | Distinct states | Native evidence |

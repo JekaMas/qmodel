@@ -78,7 +78,10 @@ def main():
  stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
  out=RESULTS/'replays'/r['id']/stamp;out.mkdir(parents=True)
  if '--out-itf' in cmd:cmd[cmd.index('--out-itf')+1]=str(out/'native.itf.json')
- obs=execute('replay-'+r['id'],cmd,claim=r['claim'],expected=r['expected'],backend=r['backend'],seconds=args.seconds or r['timeout_seconds'],config={'recorded_receipt':str(receipt_path.relative_to(ROOT)),'replay_input':'exact saved source closure','forced':True},force=True)
+ # Keep the historical resource wording while making a requested new cap explicit.
+ # timeout_seconds controls the actual child; old prose is never silently rewritten.
+ limits=r['resource_limit']+(f'; explicit replay timeout override={args.seconds}s supersedes recorded timeout wording' if args.seconds else '')
+ obs=execute('replay-'+r['id'],cmd,claim=r['claim'],expected=r['expected'],backend=r['backend'],seconds=args.seconds or r['timeout_seconds'],config={'recorded_receipt':str(receipt_path.relative_to(ROOT)),'replay_input':'exact saved source closure','forced':True},force=True,execution_env={k:r['environment'][k] for k in ['JAVA_TOOL_OPTIONS','JVM_ARGS'] if k in r['environment']},resource_limit=limits)
  matched=canonical(json.loads((out/'native.itf.json').read_text())['states'])==original if original is not None and (out/'native.itf.json').is_file() else None
  reproduced=obs['outcome']==r['outcome']
  result={'original_receipt':str(receipt_path.relative_to(ROOT)),'replay_receipt':obs['id'],'original_outcome':r['outcome'],'observed_outcome':obs['outcome'],'outcome_reproduced':reproduced,'native_states_match':matched,'native_comparison':'immutable associated export' if original is not None else 'unavailable: no per-execution native export associated with original receipt','forced_new_process':True,'minimized':False,'method':'exact saved source closure and invocation/seed, observed current pinned toolchain; no cached execution'}

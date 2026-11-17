@@ -1,0 +1,190 @@
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:3:13
+  3:  run agreed=init.then(sign(1,0)).then(sign(1,1))
+                 ^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:3:23
+  3:  run agreed=init.then(sign(1,0)).then(sign(1,1))
+                           ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:3:39
+  3:  run agreed=init.then(sign(1,0)).then(sign(1,1))
+                                           ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'init' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:4:19
+  4:  run unsignedTest=init.expect(not(finalReport(s,1).authorizedIntent) and not(finalReport(s,1).acceptedOnSource))
+                       ^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:4:47
+  4:  run unsignedTest=init.expect(not(finalReport(s,1).authorizedIntent) and not(finalReport(s,1).acceptedOnSource))
+                                                   ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:4:90
+  4:  run unsignedTest=init.expect(not(finalReport(s,1).authorizedIntent) and not(finalReport(s,1).acceptedOnSource))
+                                                                                              ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:5:56
+  5:  run signedButUnacceptedTest=agreed.expect(finalReport(s,1).authorizedIntent and not(finalReport(s,1).acceptedOnSource) and not(finalReport(s,1).decisionRegistered))
+                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:5:98
+  5:  run signedButUnacceptedTest=agreed.expect(finalReport(s,1).authorizedIntent and not(finalReport(s,1).acceptedOnSource) and not(finalReport(s,1).decisionRegistered))
+                                                                                                      ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:5:141
+  5:  run signedButUnacceptedTest=agreed.expect(finalReport(s,1).authorizedIntent and not(finalReport(s,1).acceptedOnSource) and not(finalReport(s,1).decisionRegistered))
+                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:6:49
+  6:  run cashAcceptedBeforeDecisionTest=agreed.then(prepareB(1)).expect(finalReport(s,1).acceptedOnSource and not(finalReport(s,1).decisionRegistered) and not(finalReport(s,1).fullyApplied))
+                                                     ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:6:81
+  6:  run cashAcceptedBeforeDecisionTest=agreed.then(prepareB(1)).expect(finalReport(s,1).acceptedOnSource and not(finalReport(s,1).decisionRegistered) and not(finalReport(s,1).fullyApplied))
+                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:6:123
+  6:  run cashAcceptedBeforeDecisionTest=agreed.then(prepareB(1)).expect(finalReport(s,1).acceptedOnSource and not(finalReport(s,1).decisionRegistered) and not(finalReport(s,1).fullyApplied))
+                                                                                                                               ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:6:168
+  6:  run cashAcceptedBeforeDecisionTest=agreed.then(prepareB(1)).expect(finalReport(s,1).acceptedOnSource and not(finalReport(s,1).decisionRegistered) and not(finalReport(s,1).fullyApplied))
+                                                                                                                                                                            ^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:7:37
+  7:  run registeredOpenTest=agreed.then(openA(1)).expect(finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).committedAuthenticated))
+                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:7:66
+  7:  run registeredOpenTest=agreed.then(openA(1)).expect(finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).committedAuthenticated))
+                                                                      ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:7:104
+  7:  run registeredOpenTest=agreed.then(openA(1)).expect(finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).committedAuthenticated))
+                                                                                                            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:7:148
+  7:  run registeredOpenTest=agreed.then(openA(1)).expect(finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).committedAuthenticated))
+                                                                                                                                                        ^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:40
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                            ^^^^
+
+
+ Error [QNT404]: Name 'tick' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:51
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                                       ^^^^
+
+
+ Error [QNT404]: Name 'abort' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:62
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                                                  ^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:83
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                                                                       ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:123
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                                                                                                               ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:161
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:8:205
+  8:  run tombstoneAcceptedTest=agreed.then(tick).then(tick).then(abort(1)).expect(not(s.trades.get(1).intent) and finalReport(s,1).acceptedOnSource and finalReport(s,1).decisionRegistered and not(finalReport(s,1).fullyApplied))
+                                                                                                                                                                                                                 ^
+
+
+ Error [QNT404]: Name 'freeze' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:9:53
+  9:  run rejectedInstructionNotAcceptedTest=agreed.then(freeze(0)).expect(not(finalReport(s,1).acceptedOnSource)).then(openA(1).fail())
+                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:9:87
+  9:  run rejectedInstructionNotAcceptedTest=agreed.then(freeze(0)).expect(not(finalReport(s,1).acceptedOnSource)).then(openA(1).fail())
+                                                                                           ^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/report_view_test.qnt:9:116
+  9:  run rejectedInstructionNotAcceptedTest=agreed.then(freeze(0)).expect(not(finalReport(s,1).acceptedOnSource)).then(openA(1).fail())
+                                                                                                                        ^^^^^^^^
+
+error: parsing failed

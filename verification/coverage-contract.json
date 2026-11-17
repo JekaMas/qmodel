@@ -138,6 +138,7 @@
     "implementation_status": "implemented",
     "verification_status": [
       "finite_model_verified",
+      "executed_successfully",
       "executed_successfully"
     ],
     "faults": [
@@ -149,8 +150,9 @@
       "restart"
     ],
     "checks": [
-      "final-record-safety",
-      "scenario-recovery_test"
+      "extended-tlc-full-reference",
+      "scenario-recovery_test",
+      "final-phase-failure-witnesses"
     ]
   },
   {
@@ -339,6 +341,7 @@
     "verification_status": [
       "executed_successfully",
       "executed_successfully",
+      "executed_successfully",
       "finite_model_verified"
     ],
     "faults": [
@@ -350,6 +353,7 @@
       "restart"
     ],
     "checks": [
+      "final-report-view-stages",
       "report-evidence-scenario",
       "abort-authoritative-records",
       "audit-audit_safe"
@@ -375,7 +379,7 @@
     ],
     "checks": [
       "membership-lifecycle-tests",
-      "final-record-recovery",
+      "extended-tlc-recovery",
       "network-loss-recovery"
     ]
   },
@@ -479,18 +483,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -514,18 +523,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -549,18 +563,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -584,18 +603,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -619,18 +643,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -654,18 +683,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -689,18 +723,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -724,18 +763,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -759,18 +803,23 @@
       "models/dvp.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test",
       "mutant-relayer_assertion",
       "abort-authoritative-records",
+      "final-phase-failure-witnesses",
       "final-record-mapping",
       "mutant-expiry",
       "mutant-non_atomic",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
       "membership-lifecycle-tests",
-      "report-evidence-scenario"
+      "report-evidence-scenario",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -791,6 +840,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
@@ -812,6 +864,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-reopen",
       "mutant-pruned_tombstone"
@@ -835,6 +890,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-bindings_test",
       "scenario-policy_test"
@@ -858,6 +916,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-contention_test",
       "final-variant-live_escrow",
@@ -882,6 +943,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-replay",
       "abort-authoritative-records"
@@ -905,9 +969,13 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-relayer_assertion",
-      "abort-authoritative-records"
+      "abort-authoritative-records",
+      "final-phase-failure-witnesses"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -928,6 +996,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-expiry",
       "tlc-issuer_destruction-backed"
@@ -951,6 +1022,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-mapping",
       "mutant-expiry",
@@ -975,6 +1049,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-stale_refund",
       "actual-b-clock-expiry"
@@ -998,6 +1075,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test"
@@ -1021,6 +1101,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-open_test",
       "delayed-open-fact-scenarios",
@@ -1045,10 +1128,14 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-recovery",
       "scenario-recovery_test",
-      "network-loss-recovery"
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -1069,6 +1156,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-retirement-final",
       "membership-lifecycle-tests",
@@ -1093,6 +1183,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "scenario-policy_test",
       "preparation-freeze-policy",
@@ -1120,9 +1213,13 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "report-evidence-scenario",
-      "abort-authoritative-records"
+      "abort-authoritative-records",
+      "final-report-view-stages"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -1143,6 +1240,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-lifecycle-tests",
       "negative-disclosure_key_compromise"
@@ -1166,6 +1266,8 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "final-record-recovery",
@@ -1190,10 +1292,13 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "final-record-recovery",
-      "private-data-progress"
+      "private-data-progress",
+      "final-phase-failure-witnesses"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -1214,10 +1319,13 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "late-hold-relative-bound",
-      "three-domain-progress"
+      "three-domain-progress",
+      "final-phase-failure-witnesses"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
   },
@@ -1238,6 +1346,8 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "final-record-two",
       "final-record-recovery",
@@ -1265,6 +1375,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -1295,6 +1408,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -1325,6 +1441,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -1355,6 +1474,9 @@
       "reports/traceability.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -1385,12 +1507,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1418,12 +1544,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1451,12 +1581,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1484,12 +1618,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1517,12 +1655,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1550,12 +1692,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1583,12 +1729,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1616,12 +1766,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1649,12 +1803,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1682,12 +1840,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1715,12 +1877,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1748,12 +1914,16 @@
       "reports/conformance-boundary.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
       "final-record-recovery",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-retirement-final",
       "membership-lifecycle-tests",
       "trust-v2-retired_version",
@@ -1785,8 +1955,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -1819,8 +1993,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -1853,8 +2031,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -1887,8 +2069,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -1921,8 +2107,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -1955,8 +2145,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -1989,8 +2183,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -2023,8 +2221,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -2057,8 +2259,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -2091,8 +2297,12 @@
       "scenario-dvp_test",
       "scenario-recovery_test",
       "network-loss-recovery",
+      "final-phase-failure-witnesses",
       "membership-lifecycle-tests",
       "preparation-freeze-policy",
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "mutant-binding",
       "scenario-bindings_test",
@@ -2118,6 +2328,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2144,6 +2357,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2170,6 +2386,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2196,6 +2415,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2222,6 +2444,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2248,6 +2473,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2274,6 +2502,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2300,6 +2531,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2325,6 +2559,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2350,6 +2587,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2375,6 +2615,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2400,6 +2643,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2425,6 +2671,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2450,6 +2699,9 @@
       "reports/executions.md"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-progress",
       "final-record-two",
@@ -2678,6 +2930,9 @@
       "models/multilateral.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "final-record-mapping",
       "contract-b_hosted",
@@ -2701,6 +2956,8 @@
       "models/multilateral.qnt"
     ],
     "checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-progress",
       "private-data-progress"
     ],
@@ -3130,8 +3387,8 @@
     ],
     "review_artifacts": [
       "privacy-policy.md",
-      "models/privacy.qnt",
-      "models/private_progress.qnt",
+      "models/privacy_pipeline.qnt",
+      "models/integrated.qnt",
       "models/audit_scope.qnt"
     ],
     "checks": [
@@ -3154,8 +3411,8 @@
     ],
     "review_artifacts": [
       "privacy-policy.md",
-      "models/privacy.qnt",
-      "models/private_progress.qnt",
+      "models/privacy_pipeline.qnt",
+      "models/integrated.qnt",
       "models/audit_scope.qnt"
     ],
     "checks": [
@@ -3177,8 +3434,8 @@
     ],
     "review_artifacts": [
       "privacy-policy.md",
-      "models/privacy.qnt",
-      "models/private_progress.qnt",
+      "models/privacy_pipeline.qnt",
+      "models/integrated.qnt",
       "models/audit_scope.qnt"
     ],
     "checks": [
@@ -3203,8 +3460,8 @@
     ],
     "review_artifacts": [
       "privacy-policy.md",
-      "models/privacy.qnt",
-      "models/private_progress.qnt",
+      "models/privacy_pipeline.qnt",
+      "models/integrated.qnt",
       "models/audit_scope.qnt"
     ],
     "checks": [
@@ -3226,8 +3483,8 @@
     ],
     "review_artifacts": [
       "privacy-policy.md",
-      "models/privacy.qnt",
-      "models/private_progress.qnt",
+      "models/privacy_pipeline.qnt",
+      "models/integrated.qnt",
       "models/audit_scope.qnt"
     ],
     "checks": [
@@ -3250,8 +3507,8 @@
     ],
     "review_artifacts": [
       "privacy-policy.md",
-      "models/privacy.qnt",
-      "models/private_progress.qnt",
+      "models/privacy_pipeline.qnt",
+      "models/integrated.qnt",
       "models/audit_scope.qnt"
     ],
     "checks": [
@@ -3306,6 +3563,8 @@
       "models/capacity.qnt"
     ],
     "checks": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization"
     ],
@@ -3363,6 +3622,8 @@
       "combined-faults-17",
       "combined-faults-43",
       "final-combined-faults-43",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization",
       "tlc-bounded-safe",
@@ -3401,6 +3662,8 @@
       "combined-faults-17",
       "combined-faults-43",
       "final-combined-faults-43",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization",
       "tlc-bounded-safe",
@@ -3439,6 +3702,8 @@
       "combined-faults-17",
       "combined-faults-43",
       "final-combined-faults-43",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization",
       "tlc-bounded-safe",
@@ -3477,6 +3742,8 @@
       "combined-faults-17",
       "combined-faults-43",
       "final-combined-faults-43",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization",
       "tlc-bounded-safe",
@@ -3515,6 +3782,8 @@
       "combined-faults-17",
       "combined-faults-43",
       "final-combined-faults-43",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization",
       "tlc-bounded-safe",
@@ -3553,6 +3822,8 @@
       "combined-faults-17",
       "combined-faults-43",
       "final-combined-faults-43",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-recovery",
       "post-stabilization",
       "tlc-bounded-safe",
@@ -3585,6 +3856,9 @@
       "models/membership.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-retirement-final",
       "membership-lifecycle-tests",
@@ -3619,6 +3893,9 @@
       "models/membership.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-retirement-final",
       "membership-lifecycle-tests",
@@ -3653,6 +3930,9 @@
       "models/membership.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-retirement-final",
       "membership-lifecycle-tests",
@@ -3687,6 +3967,9 @@
       "models/membership.qnt"
     ],
     "checks": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
       "final-record-safety",
       "membership-retirement-final",
       "membership-lifecycle-tests",
