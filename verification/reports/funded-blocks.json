@@ -1,0 +1,72 @@
+{
+  "positive": [
+    "funded-blocks-full-attempt3",
+    "funded-blocks-short-a-attempt1",
+    "funded-blocks-short-b-attempt1",
+    "funded-blocks-directed-attempt4"
+  ],
+  "negative": [
+    "funded-blocks-early-seal-attempt1",
+    "funded-blocks-double-charge",
+    "funded-blocks-overbook-a-attempt1",
+    "funded-blocks-overbook-b-attempt1"
+  ],
+  "profiles": {
+    "full": {
+      "receipt": "funded-blocks-full-attempt3",
+      "outcome": "finite_model_verified",
+      "distinct_states": 189,
+      "temporal": "includedProgress"
+    },
+    "short-a": {
+      "receipt": "funded-blocks-short-a-attempt1",
+      "outcome": "finite_model_verified",
+      "distinct_states": 149,
+      "temporal": "includedProgress"
+    },
+    "short-b": {
+      "receipt": "funded-blocks-short-b-attempt1",
+      "outcome": "finite_model_verified",
+      "distinct_states": 149,
+      "temporal": "includedProgress"
+    },
+    "early-seal": {
+      "receipt": "funded-blocks-early-seal-attempt1",
+      "outcome": "expected_counterexample_found",
+      "distinct_states": 18,
+      "temporal": null
+    },
+    "double-charge": {
+      "receipt": "funded-blocks-double-charge",
+      "outcome": "expected_counterexample_found",
+      "distinct_states": 122,
+      "temporal": null
+    },
+    "overbook-a": {
+      "receipt": "funded-blocks-overbook-a-attempt1",
+      "outcome": "expected_counterexample_found",
+      "distinct_states": 36,
+      "temporal": null
+    },
+    "overbook-b": {
+      "receipt": "funded-blocks-overbook-b-attempt1",
+      "outcome": "expected_counterexample_found",
+      "distinct_states": 73,
+      "temporal": null
+    },
+    "directed": {
+      "receipt": "funded-blocks-directed-attempt4",
+      "tests": [
+        "FullyFundedTradesAllBookTest",
+        "NoHeightBumpBetweenCommitsTest",
+        "EarlySourcePublicationIsDisabledTest",
+        "IndependentHeightsTest",
+        "DuplicateRequestCannotTakeTwoSlotsTest",
+        "CannotCommitOnDeadlineTest",
+        "OlderReservationConsumesOnlyItsOwnCapacityTest",
+        "ShortfallAfterOrdinarySpendIsLocalTest",
+        "OlderSealedEvidenceCanProgressDuringAnotherBlockTest"
+      ]
+    }
+  }
+}

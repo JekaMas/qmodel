@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "receipts": {
+    "full": "funded-blocks-full-attempt3",
+    "short-a": "funded-blocks-short-a-attempt1",
+    "short-b": "funded-blocks-short-b-attempt1",
+    "early-seal": "funded-blocks-early-seal-attempt1",
+    "double-charge": "funded-blocks-double-charge",
+    "overbook-a": "funded-blocks-overbook-a-attempt1",
+    "overbook-b": "funded-blocks-overbook-b-attempt1",
+    "directed": "funded-blocks-directed-attempt4"
+  }
+}

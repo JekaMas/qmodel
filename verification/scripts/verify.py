@@ -7,6 +7,7 @@ from pathlib import Path
 import argparse,json,subprocess,sys,hashlib
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from audit_evidence import ROOT,EvidenceError,load_latest,validate
+from block_audit import audit_blocks
 from guarantee_audit import audit_guarantees
 from repeated_audit import coverage as audit_repeated
 from three_audit import audit_three
@@ -57,6 +58,9 @@ def main():
   if a.suite in ['baseline','audit']:selected.extend(products['positive'])
   if a.suite in ['negative','audit']:selected.extend(products['negative'])
   if a.suite=='audit':selected.extend(products['witnesses'])
+  blocks=audit_blocks()
+  if a.suite in ['baseline','audit']:selected.extend(blocks['positive'])
+  if a.suite in ['negative','audit']:selected.extend(blocks['negative'])
  if a.fresh:
   for base in selected:
    done=subprocess.run([sys.executable,str(ROOT/'verification/scripts/replay.py'),base],cwd=ROOT)

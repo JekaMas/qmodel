@@ -16,6 +16,10 @@ The [stage matrix](../../openspec/changes/check-three-trade-faults/fault-matrix.
 | Byzantine envelope | TLC enumerated 60,480 states for four validators, threshold three and one selected validator allowed to equivocate. Honest votes for a given signed context exclude conflicting roots; a genuine foreign certificate fails the context check. Two equivocators and omission of the context check produce separate native counterexamples. [Envelope](../results/runs/byzantine-envelope-attempt1/receipt.json) · [Two equivocators](../results/runs/byzantine-threshold-exceeded-attempt1/receipt.json) · [Foreign context](../results/runs/byzantine-foreign-context-attempt1/receipt.json) |
 | Local linearization | A sequential booking object independently checks real SQLite invocation and response events, including three overlapping calls and a lost reply followed by read/retry. A conflicting same-slot write cannot replace the committed value. A history with success before the value is readable and one with two conflicting successes fail the checker. The adapter still takes pre-authenticated inputs. [Observed histories](../results/runs/three-booking-linearization/raw.log) |
 
+## Same-block guarantee
+
+The earlier admission/decision graph's temporal target allows either COMMIT or ABORT when inclusion is unconstrained. The [funded-block profiles](funded-blocks.md) separately check all local orders when included requests fit the spendable balance, including completing all three COMMITs at the last legal A height. Genuine partial funding has its own A-only and B-only profiles.
+
 ## Interpretation
 
 The three-trade specialization uses per-trade deadlines, capacity accounting and a one-to-one symbolic root over the selected trade and phase domains. Its substitution chooses a different existing trade and also has a separate nonexistent ID case. Recognized outcome/leg domains, spending while down and route effects are guarded. The graph does not grant custody or visibility of other live ledger state to the actual actor primitives. Schedulers select the next modeled action. Each local action uses its own guard.

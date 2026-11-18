@@ -1,0 +1,659 @@
+
+ Error [QNT101]: Conflicting definitions found for name 'init' in module 'funded_blocks'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/dvp.qnt:99:10
+  99:   action init = s' = {trades:Trades.mapBy(_=>emptyTrade),signed:Set(),height:0,
+               ^^^^
+
+
+ Error [QNT101]: Conflicting definitions found for name 'init' in module 'funded_blocks'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:5:10
+  5:   action init=all {start,pc'=0}
+              ^^^^
+
+
+ Error [QNT101]: Conflicting definitions found for name 'step' in module 'funded_blocks'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/dvp.qnt:318:10
+  318:   action step = any {nondet t=Trades.oneOf();tradeStep(t),tick,idle}
+                ^^^^
+
+
+ Error [QNT101]: Conflicting definitions found for name 'step' in module 'funded_blocks'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:97:10
+  97:   action step=any {work,all {pc==donePC,pc'=pc,framed(ledger::idle)}}
+               ^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:8:24
+  8:     openBlock(leg,kind,ledger::Trades),sealBlock(leg),
+                            ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:9:14
+  9:     nondet t=ledger::Trades.oneOf(); executeTx(leg,t)
+                  ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:19:23
+  19:     all {pc==0,framed(ledger::sign(1,0)),pc'=1},
+                            ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:20:23
+  20:     all {pc==1,framed(ledger::sign(1,1)),pc'=2},
+                            ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:21:23
+  21:     all {pc==2,framed(ledger::sign(2,0)),pc'=3},
+                            ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:22:23
+  22:     all {pc==3,framed(ledger::sign(2,1)),pc'=4},
+                            ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:23:23
+  23:     all {pc==4,framed(ledger::sign(3,0)),pc'=5},
+                            ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:24:23
+  24:     all {pc==5,framed(ledger::sign(3,1)),pc'=6},
+                            ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::idle' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:26:70
+  26:     all {pc==6, Set(0,1).forall(leg=>processed(leg,Reserve)), framed(ledger::idle),pc'=8},
+                                                                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:28:23
+  28:     all {pc==9,framed(ledger::capture(1,2)),pc'=10},
+                            ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:29:24
+  29:     all {pc==10,framed(ledger::prove(1,2)),pc'=11},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:30:24
+  30:     all {pc==11,framed(ledger::deliver(1,2)),pc'=12},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:32:24
+  32:     all {pc==13,framed(ledger::capture(2,2)),pc'=14},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:33:24
+  33:     all {pc==14,framed(ledger::prove(2,2)),pc'=15},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:34:24
+  34:     all {pc==15,framed(ledger::deliver(2,2)),pc'=16},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:36:24
+  36:     all {pc==17,framed(ledger::capture(3,2)),pc'=18},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:37:24
+  37:     all {pc==18,framed(ledger::prove(3,2)),pc'=19},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:38:24
+  38:     all {pc==19,framed(ledger::deliver(3,2)),pc'=20},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::idle' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:41:68
+  41:     all {pc==21, Set(0).forall(leg=>processed(leg,Settle)), framed(ledger::idle),pc'=23},
+                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:43:24
+  43:     all {pc==24,framed(ledger::capture(1,3)),pc'=25},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:44:24
+  44:     all {pc==25,framed(ledger::prove(1,3)),pc'=26},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:45:24
+  45:     all {pc==26,framed(ledger::deliver(1,3)),pc'=27},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:46:24
+  46:     all {pc==27,framed(ledger::learn(1,2,1)),pc'=28},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:48:24
+  48:     all {pc==29,framed(ledger::capture(2,3)),pc'=30},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:49:24
+  49:     all {pc==30,framed(ledger::prove(2,3)),pc'=31},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:50:24
+  50:     all {pc==31,framed(ledger::deliver(2,3)),pc'=32},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:51:24
+  51:     all {pc==32,framed(ledger::learn(2,2,1)),pc'=33},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:53:24
+  53:     all {pc==34,framed(ledger::capture(3,3)),pc'=35},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:54:24
+  54:     all {pc==35,framed(ledger::prove(3,3)),pc'=36},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:55:24
+  55:     all {pc==36,framed(ledger::deliver(3,3)),pc'=37},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::learn' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:56:24
+  56:     all {pc==37,framed(ledger::learn(3,2,1)),pc'=38},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::idle' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:59:68
+  59:     all {pc==39, Set(1).forall(leg=>processed(leg,Settle)), framed(ledger::idle),pc'=41},
+                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:61:24
+  61:     all {pc==42,framed(ledger::capture(1,5)),pc'=43},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:62:24
+  62:     all {pc==43,framed(ledger::prove(1,5)),pc'=44},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:63:24
+  63:     all {pc==44,framed(ledger::deliver(1,5)),pc'=45},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::observe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:64:24
+  64:     all {pc==45,framed(ledger::observe(1,0)),pc'=46},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:66:24
+  66:     all {pc==47,framed(ledger::capture(1,6)),pc'=48},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:67:24
+  67:     all {pc==48,framed(ledger::prove(1,6)),pc'=49},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:68:24
+  68:     all {pc==49,framed(ledger::deliver(1,6)),pc'=50},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::observe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:69:24
+  69:     all {pc==50,framed(ledger::observe(1,1)),pc'=51},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::reconcile' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:70:24
+  70:     all {pc==51,framed(ledger::reconcile(1)),pc'=52},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:72:24
+  72:     all {pc==53,framed(ledger::capture(2,5)),pc'=54},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:73:24
+  73:     all {pc==54,framed(ledger::prove(2,5)),pc'=55},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:74:24
+  74:     all {pc==55,framed(ledger::deliver(2,5)),pc'=56},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::observe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:75:24
+  75:     all {pc==56,framed(ledger::observe(2,0)),pc'=57},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:77:24
+  77:     all {pc==58,framed(ledger::capture(2,6)),pc'=59},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:78:24
+  78:     all {pc==59,framed(ledger::prove(2,6)),pc'=60},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:79:24
+  79:     all {pc==60,framed(ledger::deliver(2,6)),pc'=61},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::observe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:80:24
+  80:     all {pc==61,framed(ledger::observe(2,1)),pc'=62},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::reconcile' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:81:24
+  81:     all {pc==62,framed(ledger::reconcile(2)),pc'=63},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:83:24
+  83:     all {pc==64,framed(ledger::capture(3,5)),pc'=65},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:84:24
+  84:     all {pc==65,framed(ledger::prove(3,5)),pc'=66},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:85:24
+  85:     all {pc==66,framed(ledger::deliver(3,5)),pc'=67},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::observe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:86:24
+  86:     all {pc==67,framed(ledger::observe(3,0)),pc'=68},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::capture' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:88:24
+  88:     all {pc==69,framed(ledger::capture(3,6)),pc'=70},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::prove' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:89:24
+  89:     all {pc==70,framed(ledger::prove(3,6)),pc'=71},
+                             ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:90:24
+  90:     all {pc==71,framed(ledger::deliver(3,6)),pc'=72},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::observe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:91:24
+  91:     all {pc==72,framed(ledger::observe(3,1)),pc'=73},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::reconcile' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:92:24
+  92:     all {pc==73,framed(ledger::reconcile(3)),pc'=74},
+                             ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::idle' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:97:55
+  97:   action step=any {work,all {pc==donePC,pc'=pc,framed(ledger::idle)}}
+                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::safe' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:98:21
+  98:   val economicSound=ledger::safe and ledger::CDecision and
+                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::CDecision' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:98:38
+  98:   val economicSound=ledger::safe and ledger::CDecision and
+                                           ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:99:5
+  99:     ledger::Trades.forall(t=>tradeGuarantees(ledger::s,ledger::desc(t)))
+          ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:99:46
+  99:     ledger::Trades.forall(t=>tradeGuarantees(ledger::s,ledger::desc(t)))
+                                                   ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::desc' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:99:56
+  99:     ledger::Trades.forall(t=>tradeGuarantees(ledger::s,ledger::desc(t)))
+                                                             ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:100:19
+  100:   val fullyBooked=ledger::Trades.forall(t=>{
+                         ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:101:13
+  101:     val row=ledger::s.trades.get(t)
+                   ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:103:29
+  103:       evidenceBackedBooking(ledger::s,ledger::desc(t))}
+                                   ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::desc' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:103:39
+  103:       evidenceBackedBooking(ledger::s,ledger::desc(t))}
+                                             ^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:105:83
+  105:   val sound=economicSound and blockSound and (pc==donePC implies (fullyBooked and ledger::s.ownerA==0 and ledger::s.ownerB==0))
+                                                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:105:107
+  105:   val sound=economicSound and blockSound and (pc==donePC implies (fullyBooked and ledger::s.ownerA==0 and ledger::s.ownerB==0))
+                                                                                                                 ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:109:64
+  109:   run twoOpened=signedTrades.then(atSamePC(openBlock(0,Reserve,ledger::Trades)))
+                                                                      ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:110:40
+  110:     .then(atSamePC(openBlock(1,Reserve,ledger::Trades)))
+                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:117:71
+  117:   run commitOpened=readyAtLastHeight.then(atSamePC(openBlock(0,Settle,ledger::Trades)))
+                                                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:120:76
+  120:     .then(2.reps(_=>step)).expect(pc==donePC and sound and fullyBooked and ledger::s.financialRecords.size()==3)
+                                                                                  ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:122:71
+  122:     .expect(sound and lane(0).height==D-1 and height(0)==D-1 and free(ledger::s,0)==0)
+                                                                             ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:125:13
+  125:     .expect(ledger::s.included.contains(ledger::fact(2,2)))
+                   ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::fact' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:125:41
+  125:     .expect(ledger::s.included.contains(ledger::fact(2,2)))
+                                               ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:133:30
+  133:     .expect(height(0)==D and ledger::Trades.forall(t=>ledger::has(ledger::s,t,2)))
+                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::has' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:133:55
+  133:     .expect(height(0)==D and ledger::Trades.forall(t=>ledger::has(ledger::s,t,2)))
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:133:67
+  133:     .expect(height(0)==D and ledger::Trades.forall(t=>ledger::has(ledger::s,t,2)))
+                                                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:134:39
+  134:     .then(atSamePC(openBlock(0,Settle,ledger::Trades)).fail())
+                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::reservedA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:141:17
+  141:             and ledger::reservedA(ledger::s)==6 and ledger::s.trades.get(1).holdA==1)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:141:35
+  141:             and ledger::reservedA(ledger::s)==6 and ledger::s.trades.get(1).holdA==1)
+                                         ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:141:53
+  141:             and ledger::reservedA(ledger::s)==6 and ledger::s.trades.get(1).holdA==1)
+                                                           ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::spend' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:143:27
+  143:     .then(atSamePC(framed(ledger::spend(1)))).then(atSamePC(openBlock(1,Reserve,ledger::Trades)))
+                                 ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::Trades' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:143:81
+  143:     .then(atSamePC(framed(ledger::spend(1)))).then(atSamePC(openBlock(1,Reserve,ledger::Trades)))
+                                                                                       ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:147:17
+  147:             and ledger::s.trades.get(1).holdB==0 and not(ledger::s.included.contains(ledger::fact(1,2))))
+                       ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::s' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:147:58
+  147:             and ledger::s.trades.get(1).holdB==0 and not(ledger::s.included.contains(ledger::fact(1,2))))
+                                                                ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ledger::fact' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:147:86
+  147:             and ledger::s.trades.get(1).holdB==0 and not(ledger::s.included.contains(ledger::fact(1,2))))
+                                                                                            ^^^^^^^^^^^^^^^^^
+
+error: parsing failed

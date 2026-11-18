@@ -45061,6 +45061,1235 @@
         "--match": ".*Test"
       },
       "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-directed": {
+      "receipt_sha256": "71f1002543083a01a83ba8361064023fa306d480cc20b8aa7f65465e00a5c60c",
+      "raw_sha256": "3c9238fb948cb84f5fd77105c269b5299f6c6879fc53124f19f5da1bc174bf68",
+      "raw_output": "verification/results/runs/funded-blocks-directed/raw.log",
+      "proof_contract": {
+        "claim": "Local block-height, cutoff, replay, publication and existing-hold witnesses",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "rust",
+          "--seed",
+          "71",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": true
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt": "5f7b366f4fb68c12fd8be98b6bd3884bc39c88d6091dc200e0c5f52c99ac68ad",
+          "verification/results/runtime/funded-blocks/directed/dvp_blocks.qnt": "586d3d79ba96a303eaad638a59c6d8948fe29d21becc98cf2331985dba9b7120",
+          "verification/results/runtime/funded-blocks/directed/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/directed/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/directed/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 90,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "rust",
+        "--seed": "71",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-directed-attempt1": {
+      "receipt_sha256": "b20d8945ed4fb3bc2f205f5e4a5039e79173cbb5a990745692708ab9c04176b6",
+      "raw_sha256": "8ce42834ca45a2712c494a2645312ad6ae09d7d2fbf970e618b13f1089a876bb",
+      "raw_output": "verification/results/runs/funded-blocks-directed-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Local block-height, cutoff, replay, publication and existing-hold witnesses",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "rust",
+          "--seed",
+          "71",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": true
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt": "9b2590c12d742197de89c4bc32467139c9eba9c50b76fbbfa5f1b10bbb770811",
+          "verification/results/runtime/funded-blocks/directed/dvp_blocks.qnt": "586d3d79ba96a303eaad638a59c6d8948fe29d21becc98cf2331985dba9b7120",
+          "verification/results/runtime/funded-blocks/directed/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/directed/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/directed/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 90,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "rust",
+        "--seed": "71",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-directed-attempt2": {
+      "receipt_sha256": "4d4bbdfd05c871723f82751b9d71b879bba5b95010ee4cf97e2df5ee0ac7587c",
+      "raw_sha256": "8ce42834ca45a2712c494a2645312ad6ae09d7d2fbf970e618b13f1089a876bb",
+      "raw_output": "verification/results/runs/funded-blocks-directed-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "Local block-height, cutoff, replay, publication and existing-hold witnesses",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "rust",
+          "--seed",
+          "71",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": true
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt": "9b2590c12d742197de89c4bc32467139c9eba9c50b76fbbfa5f1b10bbb770811",
+          "verification/results/runtime/funded-blocks/directed/dvp_blocks.qnt": "586d3d79ba96a303eaad638a59c6d8948fe29d21becc98cf2331985dba9b7120",
+          "verification/results/runtime/funded-blocks/directed/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/directed/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/directed/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 90,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "rust",
+        "--seed": "71",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-directed-attempt3": {
+      "receipt_sha256": "7a8cfc2cae6c9aa6faebc26ad6825baa2fdf7950c30a1987752fd82fc8ea2491",
+      "raw_sha256": "ad11979ddf944953a267781c0b014c35879683722c011b6b78a01394507b27f4",
+      "raw_output": "verification/results/runs/funded-blocks-directed-attempt3/raw.log",
+      "proof_contract": {
+        "claim": "Local block-height, cutoff, replay, publication and existing-hold witnesses",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "rust",
+          "--seed",
+          "71",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": true
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt": "84ed7ff9c1d212e0e76e11786c0882dcf5ab4086bd3908b69f8c7ebacd2c9430",
+          "verification/results/runtime/funded-blocks/directed/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/directed/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/directed/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/directed/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 90,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "rust",
+        "--seed": "71",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-directed-attempt4": {
+      "receipt_sha256": "1e337e3aef17c999c742a4fe1c433b33bbc879956d961ac0b8c8a7ade4dfcfaf",
+      "raw_sha256": "76663d796d3a8f5ec2285d359a96134042c8f775818f073b8f65d62a8fe87f3e",
+      "raw_output": "verification/results/runs/funded-blocks-directed-attempt4/raw.log",
+      "proof_contract": {
+        "claim": "Local block-height, cutoff, replay, publication and existing-hold witnesses",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "rust",
+          "--seed",
+          "71",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": true
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/directed/funded_blocks.qnt": "1efceac5b392f6ea6e7d931dbeae3a6b36679f61df08618c9cbc569829a876dd",
+          "verification/results/runtime/funded-blocks/directed/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/directed/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/directed/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/directed/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 90,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "rust",
+        "--seed": "71",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-double-charge": {
+      "receipt_sha256": "83d5ee2ddd9f91e31ebf3a6d86b06793325a23a795f1fa42981593e4feb46c2a",
+      "raw_sha256": "cb3f6602ac2a0a98e5d6bf920b7d5f3ad65526dfad8cf52d850126aa4d700938",
+      "raw_output": "verification/results/runs/funded-blocks-double-charge/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/double-charge/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 2,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/double-charge/funded_blocks.qnt": "647a4c17f1f531106a655cbe79bac9bcd2e233832036187517b69f1ec3118a9f",
+          "verification/results/runtime/funded-blocks/double-charge/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/double-charge/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/double-charge/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/double-charge/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:35:47.958",
+          "tlc": "2026.11.18.163554"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-early-seal": {
+      "receipt_sha256": "590c8e0e587cc68da0c5f6eab772964ad88bdb1e1b2a1e5db044fb3fa003549d",
+      "raw_sha256": "abbd5826ee153d6f53944b1b491089ebcecfc3c680667dfaecce923e189a86fd",
+      "raw_output": "verification/results/runs/funded-blocks-early-seal/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/early-seal/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 1,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/early-seal/funded_blocks.qnt": "5a57155873f8c1397bf45da62e1b89155077983442e1a6174eae113acc8fe024",
+          "verification/results/runtime/funded-blocks/early-seal/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/early-seal/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/early-seal/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/early-seal/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:35:48.360",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-early-seal-attempt1": {
+      "receipt_sha256": "4117b1960014a4904889dfacb02d997f8c71c7c4cdeb3988252b4c5d863f463a",
+      "raw_sha256": "3982ee3198278aafa41e1da59fd9041d3d7f5567830acf0e03c00497f6dd3a70",
+      "raw_output": "verification/results/runs/funded-blocks-early-seal-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/early-seal/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 1,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/early-seal/funded_blocks.qnt": "5a57155873f8c1397bf45da62e1b89155077983442e1a6174eae113acc8fe024",
+          "verification/results/runtime/funded-blocks/early-seal/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/early-seal/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/early-seal/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/early-seal/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:37:35.603",
+          "tlc": "2026.11.18.163742"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-full": {
+      "receipt_sha256": "9676fcaad6c5a20fda912297f306e961410d8aef8cbf787401d77e01eaab2435",
+      "raw_sha256": "4bc6d9d338d648c406274891e0982cda373032b754db2d101ff7cf718c074aef",
+      "raw_output": "verification/results/runs/funded-blocks-full/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt": "e473464600b060e4060546f2cf3021f5fd671ad46fc07cef9b910a4dd375d75d",
+          "verification/results/runtime/funded-blocks/full/dvp_blocks.qnt": "586d3d79ba96a303eaad638a59c6d8948fe29d21becc98cf2331985dba9b7120",
+          "verification/results/runtime/funded-blocks/full/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/full/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/full/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-full-attempt1": {
+      "receipt_sha256": "ab5f8e382f710f5fd95b785b2ff33c473117d4947f414cf7473c38e8d63637f3",
+      "raw_sha256": "4bc6d9d338d648c406274891e0982cda373032b754db2d101ff7cf718c074aef",
+      "raw_output": "verification/results/runs/funded-blocks-full-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt": "e473464600b060e4060546f2cf3021f5fd671ad46fc07cef9b910a4dd375d75d",
+          "verification/results/runtime/funded-blocks/full/dvp_blocks.qnt": "586d3d79ba96a303eaad638a59c6d8948fe29d21becc98cf2331985dba9b7120",
+          "verification/results/runtime/funded-blocks/full/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/full/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/full/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-full-attempt2": {
+      "receipt_sha256": "80f6912f363d186a983dfcd72fcd68363d8b6494b11574373b94166f3e7f489c",
+      "raw_sha256": "0d8b1d57953c6b05d346f216967f88e755496af850c1b8910a986e193a1f5e7b",
+      "raw_output": "verification/results/runs/funded-blocks-full-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt": "dd09860e191e0661a38d7dcc0642dc1249a2b47930440d84bf372596ae270e44",
+          "verification/results/runtime/funded-blocks/full/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/full/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/full/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/full/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:35:05.421",
+          "tlc": "2026.11.18.163512"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-full-attempt3": {
+      "receipt_sha256": "0f5974c19d875c41362ec60e695edc5922b8ccfd4296c58e21e7e074fbc0d8af",
+      "raw_sha256": "75fca21f1592cf0c89c9468817470f4ff3de2cdb6f49a313ee322d667bdcfd21",
+      "raw_output": "verification/results/runs/funded-blocks-full-attempt3/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--temporal",
+          "includedProgress"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/full/funded_blocks.qnt": "68987b40cf0896f44bcd1386888129cdc09a84319369c63fb78dbef653d153a3",
+          "verification/results/runtime/funded-blocks/full/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/full/dvp.qnt": "b1d5ed5b781dcb1cbb5c45dafbe5ea98f473ae2adde858f0b79ced5991085922",
+          "verification/results/runtime/funded-blocks/full/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/full/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:36:46.380",
+          "tlc": "2026.11.18.163652"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound",
+        "--temporal": "includedProgress"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-overbook-a": {
+      "receipt_sha256": "beeb02f2ce853a59dd84fb964bf27550930af2cbffdcc5e3469528be4ab6418c",
+      "raw_sha256": "05223a8831b6bc87de3491dc4d7e52cb714b52cea70fde395e4a44ccb824daa1",
+      "raw_output": "verification/results/runs/funded-blocks-overbook-a/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/overbook-a/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 2,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "a",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/overbook-a/funded_blocks.qnt": "8abf986b9be3b9bf6360db1c54f6ba1da694dead819756778209700a60a5c96f",
+          "verification/results/runtime/funded-blocks/overbook-a/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/overbook-a/dvp.qnt": "6a5c28c666e8839b59a9b6c0861f1f237d3ee33bd0912e5ed633f7e33e164043",
+          "verification/results/runtime/funded-blocks/overbook-a/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/overbook-a/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:35:59.259",
+          "tlc": "2026.11.18.163605"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-overbook-a-attempt1": {
+      "receipt_sha256": "35e3ea8a208f4540d48e96624f5558cf0e11de36ee4503f3cb151aa62d25240c",
+      "raw_sha256": "209054b1873889ae8618d16a410cf1cb42593f6273450b8c13a652478e1cf555",
+      "raw_output": "verification/results/runs/funded-blocks-overbook-a-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/overbook-a/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 2,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "a",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/overbook-a/funded_blocks.qnt": "b2203d868e96e3979572d01a9331c906ff84ddd0456782bb4bfe0a416a6ae5a1",
+          "verification/results/runtime/funded-blocks/overbook-a/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/overbook-a/dvp.qnt": "6a5c28c666e8839b59a9b6c0861f1f237d3ee33bd0912e5ed633f7e33e164043",
+          "verification/results/runtime/funded-blocks/overbook-a/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/overbook-a/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:37:51.549",
+          "tlc": "2026.11.18.163757"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-overbook-b": {
+      "receipt_sha256": "2c3755c1768450ec53487313a3f3d03e3b801a9dac2f223ed0224938743fbe19",
+      "raw_sha256": "e93566d0db653863ce75e563b7abcd3670eea5ab48ed0f5315b063af1ac2fc82",
+      "raw_output": "verification/results/runs/funded-blocks-overbook-b/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/overbook-b/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 2,
+          "fault": 0,
+          "stale": "b",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/overbook-b/funded_blocks.qnt": "245794dc7e133c09d82b4ec2c9a123ec30cca3f38f9dc3b8cb27976cd2ec6df8",
+          "verification/results/runtime/funded-blocks/overbook-b/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/overbook-b/dvp.qnt": "8402b05f59dbf46544043b3efd0a9e294b5bb54e1bbdfc20da41cf8328a9d213",
+          "verification/results/runtime/funded-blocks/overbook-b/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/overbook-b/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-overbook-b-attempt1": {
+      "receipt_sha256": "202bd4b34ffe80f5076a877672ede47a968c22625db6fef661fc2974c7d3b728",
+      "raw_sha256": "77e209aa2a5178ec594fed588c9a417954595fdae9267df9c875d403c9df021e",
+      "raw_output": "verification/results/runs/funded-blocks-overbook-b-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/overbook-b/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "counterexample",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 2,
+          "fault": 0,
+          "stale": "b",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/overbook-b/funded_blocks.qnt": "38d97ddecd87f8c001fa52f87e37a269f1abbd7395ff6270ed9a8f6eb32916c9",
+          "verification/results/runtime/funded-blocks/overbook-b/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/overbook-b/dvp.qnt": "8402b05f59dbf46544043b3efd0a9e294b5bb54e1bbdfc20da41cf8328a9d213",
+          "verification/results/runtime/funded-blocks/overbook-b/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/overbook-b/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:38:07.490",
+          "tlc": "2026.11.18.163813"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-short-a": {
+      "receipt_sha256": "cb64b0edb0e639c5c22e9848170b355174a1e34bdbf940b68d923044d554700a",
+      "raw_sha256": "5a0add98022e6002633a2d8f52e2b6279a38cd7281c399c34c33a64f0793f2bb",
+      "raw_output": "verification/results/runs/funded-blocks-short-a/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/short-a/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 2,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/short-a/funded_blocks.qnt": "8abf986b9be3b9bf6360db1c54f6ba1da694dead819756778209700a60a5c96f",
+          "verification/results/runtime/funded-blocks/short-a/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/short-a/dvp.qnt": "9328790f7b67ce2204d3ef0ae107c5e670ebcb0a5e421ca4140996f07e2399f0",
+          "verification/results/runtime/funded-blocks/short-a/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/short-a/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:35:30.117",
+          "tlc": "2026.11.18.163537"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-short-a-attempt1": {
+      "receipt_sha256": "fb67d803122509b915b8e007a677ceb271ddd2d168920738706101e7c69b005b",
+      "raw_sha256": "a740150df860012c4814547ed3cdf068bf58ccea57f9bac0665904aa406381b7",
+      "raw_output": "verification/results/runs/funded-blocks-short-a-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/short-a/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--temporal",
+          "includedProgress"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 2,
+          "pairs_b": 3,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/short-a/funded_blocks.qnt": "279330386c90811b958e54919eff1c3e4495256d346d41e4a1bafa606be980f6",
+          "verification/results/runtime/funded-blocks/short-a/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/short-a/dvp.qnt": "9328790f7b67ce2204d3ef0ae107c5e670ebcb0a5e421ca4140996f07e2399f0",
+          "verification/results/runtime/funded-blocks/short-a/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/short-a/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:37:03.040",
+          "tlc": "2026.11.18.163709"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound",
+        "--temporal": "includedProgress"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-short-b": {
+      "receipt_sha256": "40002fc03960c42aa430a6d9b1a3a89cf8169b4a40e5aa8c60f6ff35ab5d123d",
+      "raw_sha256": "563f5d617e428466d2c43dc394d3be09afd21a0f78ac2bbd0d8a0bbcaff49b3c",
+      "raw_output": "verification/results/runs/funded-blocks-short-b/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/short-b/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 2,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/short-b/funded_blocks.qnt": "245794dc7e133c09d82b4ec2c9a123ec30cca3f38f9dc3b8cb27976cd2ec6df8",
+          "verification/results/runtime/funded-blocks/short-b/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/short-b/dvp.qnt": "2a652959da986a7acdb37485b3b5232d5c8040cc81f71f18f9e98c900103f6e8",
+          "verification/results/runtime/funded-blocks/short-b/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/short-b/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "2026.11.18.163538"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "funded-blocks-short-b-attempt1": {
+      "receipt_sha256": "537bc9823fd3d1c439b38e8193e09573e678a4faa99e8c2a25eab4ed55df7474",
+      "raw_sha256": "0fbd75bc3f3bae0856c374759ca5994e08b1686f2c5315311c20575944af9b83",
+      "raw_output": "verification/results/runs/funded-blocks-short-b-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Included local block requests execute in any order against live spendable funds",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/funded-blocks/short-b/funded_blocks.qnt",
+          "--main",
+          "funded_blocks",
+          "--backend",
+          "tlc",
+          "--init",
+          "blockInit",
+          "--step",
+          "blockStep",
+          "--invariant",
+          "sound",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--temporal",
+          "includedProgress"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 3,
+          "deadline": 2,
+          "pairs_a": 3,
+          "pairs_b": 2,
+          "fault": 0,
+          "stale": "",
+          "directed": false
+        },
+        "input_hashes": {
+          "verification/results/runtime/funded-blocks/short-b/funded_blocks.qnt": "09b099cfc9a99cf9fe2fd349a7ce61c1b57948598270968897f51e1d74b93c68",
+          "verification/results/runtime/funded-blocks/short-b/dvp_blocks.qnt": "baeeb2e122deb037894490c7e78c7e641023510090cf7cfcc0583a89e8c03387",
+          "verification/results/runtime/funded-blocks/short-b/dvp.qnt": "2a652959da986a7acdb37485b3b5232d5c8040cc81f71f18f9e98c900103f6e8",
+          "verification/results/runtime/funded-blocks/short-b/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/funded-blocks/short-b/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@20:37:19.339",
+          "tlc": "2026.11.18.163725"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "funded_blocks",
+        "--backend": "tlc",
+        "--init": "blockInit",
+        "--step": "blockStep",
+        "--invariant": "sound",
+        "--temporal": "includedProgress"
+      },
+      "origin": "current extended-verification and root final-review execution"
     }
   }
 }

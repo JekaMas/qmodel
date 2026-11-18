@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "change": "settle-funded-blocks",
+  "scope": {
+    "property_ids": [
+      "FB.P1",
+      "FB.P2",
+      "FB.P3"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_funded_reservations",
+      "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_early_seal",
+      "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_local_shortage",
+      "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_stale_balance",
+      "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_commit_and_apply",
+      "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_charge_and_deadline"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "D1",
+      "property_ids": [
+        "FB.P1",
+        "FB.P2",
+        "FB.P3"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_funded_reservations",
+        "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_early_seal",
+        "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_local_shortage",
+        "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_stale_balance",
+        "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_commit_and_apply",
+        "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_charge_and_deadline"
+      ],
+      "question": "Distinguish funded included transactions at one height from unconstrained scheduling.",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the exact N3 decision graph and the named native hold, COMMIT and application guards.",
+          "outcome": "Identified additive shared capacity and distinct local heights. The older decision theorem did not require timely inclusion.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 108,
+              "classification": "reusable_unchanged",
+              "reason": "Actual securities hold owner"
+            },
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 116,
+              "classification": "reusable_unchanged",
+              "reason": "Actual cash hold owner"
+            },
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 199,
+              "classification": "reusable_unchanged",
+              "reason": "Atomic decision and delivery owner"
+            },
+            {
+              "path": "verification/tests/workloads/three.qnt",
+              "line": 28,
+              "classification": "test_proof",
+              "reason": "Original deadline and terminal progress scope"
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Find an unknown source owner.",
+          "outcome": "The quoted report supplied the exact proof scope and ledger actions.",
+          "reason": "Known names and direct source reads resolve the relevant guards.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "Find compiled production references.",
+          "outcome": "The owners and proof obligations are executable Quint protocol actions.",
+          "reason": "The task is scoped to the logical protocol.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "The current change adds local block ordering and retains the original terminal-decision check."
+    }
+  ]
+}

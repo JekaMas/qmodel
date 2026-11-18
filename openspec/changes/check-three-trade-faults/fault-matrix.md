@@ -35,6 +35,8 @@ The [v2 brief](../../../verification/sources/task-v2.md) and [recovered solution
 - **Transport, restart, resource faults.** IBC distinguishes packet sequence, timeout, receipt and ack. FoundationDB documents deterministic campaigns with reproduced seeds, multiple failure levels and severe load. The Builders' Library distinguishes retrying the same intent from replacing it under the same ID. The settlement source permits B release upon authenticated A ABORT. [ICS-004](https://github.com/cosmos/ibc/blob/main/spec/core/ics-004-channel-and-packet-semantics/README.md) · [FoundationDB testing](https://github.com/apple/foundationdb/blob/main/documentation/sphinx/source/testing.rst) · [Idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/)
 - **Quint evidence.** Retain source-bound directed traces and independent event coverage by stage, then separate exact state enumeration from seeded exploration. [Quint checkers](https://quint.sh/docs/model-checkers) · [Malachite Quint coverage](https://github.com/circlefin/malachite/blob/a453b32155f4ba9f959724279b52f601bae92e09/specs/consensus/quint/coverage.md)
 
+The [funded-block change](../settle-funded-blocks/tasks.md) adds the same-height case. Otherwise eligible requests that fit the block's full demand all succeed, independent of local order. Oversubscription and genuine deadline expiry have separate checks.
+
 ## Open proof products and completion conditions
 
 This table records the original handoff. The [logical-protocol disposition](../../../verification/reports/proof-products.md) covers the seven products under the subsequently clarified contract-and-action scope and records the remaining proof boundaries.

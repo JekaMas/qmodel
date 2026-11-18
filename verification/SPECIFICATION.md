@@ -64,6 +64,12 @@ Three funded or competing identities use exact descriptor deadlines and consume 
 
 Local hold, decision/application, release and booking each have an authoritative write boundary. The concrete SQLite history checks consider concurrent invocation and response plus a lost reply. A Byzantine authority lemma checks fixed-context certificates separately from transfer or bookkeeping, and thus keeps its honest-vote and authentic-membership premises explicit. See the [scoped results](reports/three-trade-faults.md).
 
+## Parallel funded blocks
+
+Each included reservation executes using the local state produced by earlier transactions in that block. The funds test is the balance minus active reservations. If available funds at the start cover the total included reservations and their other local predicates hold, every order admits every included request. If a ledger is short, only the reservation that would exceed the remaining balance is rejected. The other ledger has its own height, block and funds.
+
+The block's height is fixed between opening and sealing. Every included request has a disposition before seal. Proof issuance for newly written facts follows source seal. Previously sealed facts can still progress. A commit consumes the funded securities hold. B consumes the funded cash hold after authenticating COMMIT. Neither applies a second free-balance test. The A deadline is still exclusive. [Executed block profiles](reports/funded-blocks.md)
+
 ## Repeated settlement
 
 The funded test profile specializes the same reference transitions to five funded pairs, seven immutable trade identities and per-trade deadlines. It explicitly guards ordinary spending by local ledger availability. Reservations share the two balances. A completed COMMIT consumes the relevant capacities. ABORT releases those capacities once while retaining the terminal decision. The workload leaves prior decisions, effect receipts and financial rows observable across later exchanges and restarts.

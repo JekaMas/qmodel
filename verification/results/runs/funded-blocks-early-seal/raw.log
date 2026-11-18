@@ -1,0 +1,10 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-18T20-35-48_11604615065859376771
+# APALACHE version: 0.62.4 | build: 7954daf                       I@20:35:48.360
+Starting checker server on port 8822...                           I@20:35:48.363
+The Apalache server is running on port 8822. Press Ctrl-C to stop.
+Error while starting Apalache server: Failed to bind to address 0.0.0.0/0.0.0.0:8822: Address already in use E@20:35:48.919

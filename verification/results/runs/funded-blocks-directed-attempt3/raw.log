@@ -1,0 +1,20 @@
+
+ Error [QNT000]: Couldn't unify int and oper
+Trying to unify int and () => _t4490
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:146:17
+  146:             and activeSecurity()==6 and sourceState.trades.get(1).holdA==1)
+                       ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Can't unify different types of effects
+Trying to unify Read['funded_blocks::dvp_blocks::dvp_blocks::ledger::s'] and () => _e3093
+Trying to infer effect for operator application in activeSecurity()
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/funded-blocks/directed/funded_blocks.qnt:146:17
+  146:             and activeSecurity()==6 and sourceState.trades.get(1).holdA==1)
+                       ^^^^^^^^^^^^^^^^
+
+error: typechecking failed

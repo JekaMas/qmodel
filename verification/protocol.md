@@ -28,6 +28,8 @@ The outcome and record assertions preserve the actual transitions. They link loc
 
 The [repeated workload](reports/repeated-settlement-review.md) assigns each signed descriptor its own height deadline, keeps previously consumed identities and observes capacity reuse after a funded ABORT. The quantitative coverage of terminal orders and outages complements the original finite graph and its liveness premises.
 
+An independent block on each ledger contains multiple included transactions at one local height. Each transaction changes only its own trade and the actual shared balance or reservations. Later transactions read the prior result. Holds already reserve the amount required by a commit or application, so a fully reserved account remains eligible to settle those trades. [Block order and funding checks](reports/funded-blocks.md)
+
 The [three-trade fault model](reports/three-trade-faults.md) isolates authenticated source, local transition linearization, and potential progress after independent outages. An authenticated outcome survives delayed or repeated delivery. A correct durable record may outlive a failed client reply. A/B application still has two separate local effect points.
 
 The service model preserves admitted obligations across restart and isolates them from deduplicated hostile requests. A terminal result cannot issue from a local wall clock, displaced command or unconfirmed A head. The clock model represents independent block quotas, offset and drift. The authority model separates predecessor-approved membership from verification of retained old results. It makes the risk of accumulating older signing keys explicit.

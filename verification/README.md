@@ -39,6 +39,10 @@ The actual SQLite restore/replay and concurrent inserts operate on local databas
 
 The [N3 acceptance record](reports/three-trade-faults.md) identifies native decision and recovery profiles, exact timed and attack cases, the Byzantine certificate envelope and actual SQLite linearization checks. Use the standard full acceptance audit or the source-bound scripts named in the individual receipts. The [stage-by-stage plan](../openspec/changes/check-three-trade-faults/fault-matrix.md) lists the original open model products and external obligations. The [composed protocol verification](reports/proof-products.md) records the dispositions, exact scopes and new controls. Run the full audit to include those receipts or run `python3 -B verification/scripts/products_audit.py` to audit only the seven products.
 
+## Parallel funded blocks
+
+The [block-specific model and verification record](reports/funded-blocks.md) checks fixed-height inclusion, any transaction order, live spendable balances, and consuming existing holds without a second funding check. The original arbitrary-inclusion graph gives conditional progress to a terminal result. Both scopes are included in the full audit.
+
 ## Repeated exchanges and event coverage
 
 The [workload and model review](reports/repeated-settlement-review.md) exercises seven identities, five funded pairs, independent deadlines and both sequential and overlapping exchanges. The [event and fault ledger](reports/repeated-settlement-coverage.json) identifies witnesses for all 45 reference action declarations. Directed enumeration of terminal orders and fault subsets has its own scope. The adversarial sample uses the full operational dispatcher with loss and pruning.
