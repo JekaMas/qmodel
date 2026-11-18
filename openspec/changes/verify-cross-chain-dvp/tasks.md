@@ -152,3 +152,8 @@ Focused reconciliation complete: all four finding repairs are applied. Four exac
 
 
 Focused delivery closure: sourcef9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f passed the six selected evidence cases on a clean committed tree in0.488seconds. The public receipt is results/publication/qa-source-clean-dag.json. Four exact-source reproductions passed with four matching native sequences. qa-validation.json records the implemented findings,51-property/177-file author review and deferred full verification. Task27 remains deferred under the explicit latest instruction. This metadata commit records the completed focused source check and delivery. GitHub publication follows as the final step, with actual hosted HEAD/blob readback stored locally under results/runtime/qa-publication-readback.json.
+
+
+## Question 8 documentation reconciliation
+
+The follow-up records the Stage A property mapping, placement-specific decisions, Stage C falsification cases, and implementation checks for the two-network PoC. Recovery comments reflect the actual outage relation and fairness hypothesis. The comment-delta record links the live source to the original saved bytes. This increment validates the affected specification, evidence graph, receipt references and executable source identity. The deferred full-validation entries remain open.

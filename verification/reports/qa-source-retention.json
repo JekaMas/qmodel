@@ -188,7 +188,14 @@
       "family": "extended-tlc-recovery",
       "selected": "qa-full-recovery",
       "disposition": "revalidated",
-      "source_exceptions": []
+      "source_exceptions": [
+        {
+          "path": "verification/models/recovery.qnt",
+          "original_sha256": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
+          "current_sha256": "1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166",
+          "basis": "Reviewed recovery comment edit. All lines outside full-line comments match the saved source."
+        }
+      ]
     },
     {
       "family": "extended-tlc-two",
@@ -1290,7 +1297,14 @@
       "family": "type-final-recovery",
       "selected": "qa-full-recovery",
       "disposition": "revalidated",
-      "source_exceptions": []
+      "source_exceptions": [
+        {
+          "path": "verification/models/recovery.qnt",
+          "original_sha256": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
+          "current_sha256": "1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166",
+          "basis": "Reviewed recovery comment edit. All lines outside full-line comments match the saved source."
+        }
+      ]
     },
     {
       "family": "type-final-recovery_test",
@@ -1421,7 +1435,14 @@
     {
       "family": "qa-full-recovery",
       "selected": "qa-full-recovery",
-      "source_exceptions": []
+      "source_exceptions": [
+        {
+          "path": "verification/models/recovery.qnt",
+          "original_sha256": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
+          "current_sha256": "1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166",
+          "basis": "Reviewed recovery comment edit. All lines outside full-line comments match the saved source."
+        }
+      ]
     },
     {
       "family": "qa-apalache12",
@@ -2236,6 +2257,15 @@
       "review": "Explicit S05/economicOutputs wrapper re-export; current simulation/economic-output graph rerun. No concrete protocol transition changed.",
       "audited_current_observations": [
         "qa-economic-mapping-attempt1"
+      ]
+    },
+    {
+      "path": "verification/models/recovery.qnt",
+      "freeze_sha256": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
+      "current_sha256": "1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166",
+      "review": "Comment-only edit. All executable lines match the frozen source captured in the completed recovery receipt.",
+      "audited_current_observations": [
+        "qa-full-recovery"
       ]
     },
     {

@@ -6,6 +6,8 @@
 
 The project SHALL implement and execute all mandatory suites from verification/sources/task-v2.md and retain exact coverage and evidence rather than asserting unconditional correctness.
 
+For Question 8, `verification/SPECIFICATION.md` maps Stage A properties to assertions and guards. `verification/reports/interview-summary.md` links their model results, the Stage C failure cases and the remaining implementation tests.
+
 #### Scenario: Safe baseline and falsification
 
 - **WHEN** the documented baseline and negative-control commands execute

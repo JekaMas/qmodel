@@ -1,14 +1,19 @@
 """Audit semantic source retention without rewriting original observation hashes.
 
-Exceptions compare the exact selected entry module or remove one demonstrably
-unused monitor addition. They never accept a changed producer/imported model.
+Exceptions retain the selected module, an unused monitor addition, or a reviewed
+comment edit. They never accept changed executable producer behavior.
 """
 import json,hashlib,re,subprocess
 from functools import lru_cache
 from pathlib import Path
 from audit_evidence import ROOT,load_latest,validate
 
+RECOVERY_SOURCE='verification/models/recovery.qnt'
+
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def executable_lines(text):
+ return [line for line in text.splitlines(keepends=True) if not line.lstrip().startswith('//')]
+
 def module(text,name):
  start=text.index('module '+name+' {');end=text.find('\nmodule ',start+1)
  return text[start:end if end!=-1 else len(text)]
@@ -22,7 +27,9 @@ def relation(p,r,baseline=False):
   saved=p.parent/'inputs'/rel
   before=saved.read_text();after=actual.read_text() if actual.is_file() else ''
   main=r['command'][r['command'].index('--main')+1] if '--main' in r['command'] else ''
-  if rel=='verification/tests/economic_outputs_test.qnt' and main!='economic_shared_test':
+  if rel==RECOVERY_SOURCE and executable_lines(before)==executable_lines(after):
+   rule='Reviewed recovery comment edit. All lines outside full-line comments match the saved source.'
+  elif rel=='verification/tests/economic_outputs_test.qnt' and main!='economic_shared_test':
    assert module(before,main)==module(after,main),(r['id'],rel)
    rule='Selected economic entry module byte-identical; only unselected shared module changed'
   elif rel=='verification/mutants/observer_soundness.qnt' and r['id'] in ['qa-role-confusion','qa-role-confusion-weak-observer']:
@@ -75,6 +82,10 @@ def audit():
  reviewed={
   'verification/models/mapping.qnt':'Explicit S05/economicOutputs wrapper re-export; current simulation/economic-output graph rerun. No concrete protocol transition changed.',
   'verification/models/effect_consistency.qnt':'Proof-only complete State/Trade initializer, equivalent point/field domains and physical/local-atomicity induction candidate. Completed per-profile obligations and universal row lemmas replace earlier representation attempts. OPEN preservation/implication is explicitly deferred; actual imported protocol State/Next is unchanged.'}
+ recovery_receipt,_=observed('qa-full-recovery')
+ saved_recovery=recovery_receipt.parent/'inputs'/RECOVERY_SOURCE
+ if sha(saved_recovery)==plan['model_sha256'][RECOVERY_SOURCE] and executable_lines(saved_recovery.read_text())==executable_lines((ROOT/RECOVERY_SOURCE).read_text()):
+  reviewed[RECOVERY_SOURCE]='Comment-only edit. All executable lines match the frozen source captured in the completed recovery receipt.'
  deltas=[]
  for rel,h in plan['model_sha256'].items():
   now=sha(ROOT/rel)

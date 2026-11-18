@@ -44,6 +44,7 @@ FINDINGS={
   'owners':['models/economic_effects.qnt','models/dvp.qnt','models/multilateral.qnt','models/effect_consistency.qnt','tests/economic_outputs_test.qnt'],
   'evidence':['qa-economic-native','qa-economic-escrow','qa-economic-b','qa-economic-d','qa-economic-shared','qa-economic-multilateral','qa-economic-booking','qa-false-release','qa-effect-induction-false-release','qa-non-atomic-cash','qa-partial-shared']}}
 NOTES={
+ 'models/recovery.qnt':'The one-trade recovery graph explores B/prover outages and B freeze. Recovery requires eventual stable all-up and unfrozen operation and per-action fairness. Reviewed comment edits are linked to the original saved source.',
  'models/dvp.qnt':'Reviewed all added receipt/booking producers and frames, independent exact-output and ABORT assertions, program0source/transport and strict admission gate. Healthy/full temporal, admission, faults and directed cases revalidated. No actual cryptography/implementation claim.',
  'models/privacy_pipeline.qnt':'Reviewed query/source/proof snapshot separation, complete16-field/value/status/header/note oracle and each20corruptions. Legacy returned-role observer weakness is explicitly supplemented by observer_view, not silently promoted.',
  'models/multilateral.qnt':'Reviewed both independent security domains, shared cash capacity and actual delivery/release receipts. Current safe/progress rerun. No N3 ABORT-bookkeeping or full relational-privacy composition.',
@@ -69,7 +70,7 @@ NOTES={
  'scripts/repair_tests.py':'Positive/negative/operational suites use explicit selected entries and real counterexample expectations; source/input differences invalidate exact reuse.',
  'scripts/generate_qa_controls.py':'Deterministic per-field fault catalog and literal expected-value cases; does not implement the source oracle.',
  'scripts/qa_coverage.py':'Every affected baseline family has explicit current replacement. Full/compact/recovery scopes remain distinct. Five weak-oracle passing controls excluded from safe-baseline count.',
- 'scripts/qa_retention.py':'Checks every current closure and baseline family; only exact selected-module/unused-symbol exceptions admitted. Original hashes unchanged.',
+ 'scripts/qa_retention.py':'Checks every current closure and baseline family; exact selected-module, unused-symbol, and reviewed recovery comment exceptions admitted. Original hashes unchanged.',
  'scripts/generate_effect_domains.py':'Generated arbitrary full-record initializers use independent nondeterministic choices, including all integer values. domainClosed is a proved invariant, not a Next filter. Explicit0/1/0calls avoid unsupported function-set expansion in the special induction CLI.',
  'mutants/induction_soundness.qnt':'Same faulty release/control Next with arbitrary full invariant-state initializer. Explicit one-step preservation must fail; this rejects ignoring the selected custom step.',
  'scripts/qa_replay.py':'Explicit fresh-process exact-snapshot reproduction of46negative sequences and one positive; native states compared to immutable exports. This is a reproduction-contract check, not a new expensive graph run.',
@@ -174,7 +175,14 @@ def main():
  lines += ['', '## Deferred full validation', '', 'Full validation is **NOT DONE** under the user-directed minimum-testing scope. Completed observations are retained. The following checks and the remaining full47-replay batch are deferred.', '']
  lines += ['- `'+name+'` — '+reason for name,reason in deferred.items()]
  (P/'qa-repairs.md').write_text('\n'.join(lines)+'\n')
- (P/'qa-properties.md').write_text('# Property-by-property re-review\n\nAll51registered properties retain their exact external/finite/sampled boundaries. This table is a review ledger; reused citations are not additional executions.\n\n| ID | Disposition | Re-review / proof boundary | Current evidence |\n|---|---|---|---|\n'+'\n'.join(f"| {x['id']} | {x['disposition']} | {x['review']} | {', '.join(x['exact_receipts']) or 'external obligation'} |" for x in properties)+'\n')
+ property_rows=[]
+ for prop in properties:
+  evidence=list(prop['exact_receipts'])
+  if prop['deferred_checks']:
+   evidence.append('Deferred: '+', '.join(prop['deferred_checks']))
+  observations=', '.join(evidence) or 'external obligation'
+  property_rows.append(f"| {prop['id']} | {prop['disposition']} | {prop['review']} | {observations} |")
+ (P/'qa-properties.md').write_text('# Property-by-property re-review\n\nAll 51 registered properties retain their exact external/finite/sampled boundaries. The table lists reviewed evidence and names the deferred checks.\n\n| ID | Disposition | Re-review / proof boundary | Current evidence |\n|---|---|---|---|\n'+'\n'.join(property_rows)+'\n')
  (P/'qa-files.md').write_text('# File-by-file re-review\n\nCurrent models, scenario/evidence tests, fault controls, Python scripts, semantic JSON/configuration, specifications and entrypoint documents are listed individually. Unchanged sources retain the prior manual semantic review only by exact byte identity. Captured duplicate/history files remain evidence, not a claim of new manual review of every archived copy.\n\n| File | Method | Re-review / boundary |\n|---|---|---|\n'+'\n'.join(f"| [{x['path']}](../../{x['path']}) | {x['method']} | {x['review']} |" for x in rows)+'\n')
  # Complete path classification includes captured copies and archived failures.
  # Fresh semantic review is confined to the live source ledger above. QA report

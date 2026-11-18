@@ -20,11 +20,23 @@ A signature on one descriptor cannot authorize another. Admission requires both 
 
 A historical authentic proof remains authentic after its source changes. Safe stale evidence therefore relies on persistent obligations and immutable outcomes, not a live-source recheck. B retains ABORT knowledge even with no hold. A later prepare after known ABORT is rejected; one arriving before B learns ABORT has an authentic eventual resolution path.
 
+The reference decision follows `NONE → OPEN → COMMIT | ABORT`. A signed tombstone also allows `NONE → ABORT` at the deadline. B follows `AVAILABLE → PREPARED → DELIVERED | REFUNDED`. A terminal outcome can reach B before `PREPARED`, so B stores terminal knowledge independently of hold state. After learning `ABORT`, B rejects new preparation. If B prepared before learning it, the authenticated result authorizes release of the actual hold.
+
 ## Three distinct guarantees
 
 `C-Decision` means one irreversible outcome with authorized, actually backed obligations. In the A-hosted reference COMMIT also delivers security locally. `C-Local` means both native economic applications have occurred, with private note/key usability considered separately. `C-Records` means reported/booked completion has the required authentic source evidence.
 
 The asynchronous reference permits an interval where A security is locally usable while B cash remains reserved. It fails instantaneous joint local usability. Conditional L01–L04 require retained authority/data, eventual operational recovery and per-trade/per-action weak fairness. They do not guarantee COMMIT before the finite deadline; ABORT is a legitimate eventual result. Permanent ledger failure, mandatory permanent freeze or irreversible private data/key loss can defeat the corresponding progress/usability claim.
+
+| Stage A property | Executable conditions exercised by TLC |
+|---|---|
+| At most one terminal decision | `S02` retains the first terminal decision. `S11` forbids reopening an ABORT tombstone. |
+| Delivery requires COMMIT and refund requires ABORT | `S06` checks effects against the decision or locally authenticated outcome. `learn` requires received evidence of that terminal outcome. `applyA`/`applyB` and `refund` consume only active holds. |
+| A hold is consumed at most once | `S05` bounds delivery and refund counts and checks exact effects. `S09` rules out opposing-leg delivery/refund conflicts. The active-to-terminal hold transitions and immutable outcome exclude both repeated and contradictory consumption. |
+| COMMIT requires two matching admissible obligations | In the reference, `canCommit` checks A's active local hold and admitted evidence of B's preparation for the same signed descriptor. `S08`, `S10` and `CDecision` check the delivery, binding and backing of the resulting state. A valid proof under an unadmitted program cannot authorize COMMIT. |
+| An accepted outcome is eventually applied under recovery | `L01–L04` and `recoveryProgress` check terminal decision, both COMMIT deliveries, release of active ABORT holds and reporting/bookkeeping. The recovery graph admits B/prover outages and B freezes. The hypothesis requires an eventually stable all-up, unfrozen suffix and per-action weak fairness. |
+
+The [Question 8 evidence review](reports/interview-summary.md#question-8-evidence-review) links the finite graph receipts, directed fault cases and PoC boundaries. The one/two-trade normal graphs and the recovery graph have their own transition relations. Message loss/resend and A outage have directed cases. The combined operational samples belong to the deferred validation selection for the repaired model.
 
 S01–S16 name the original requirements. The actual `safe` conjunction, direct guard scenarios and focused models have precise different scopes. S14's core state predicate checks authorization, while admission eligibility/freeze is guarded and exercised directly; it is not an independent historical eligibility/compliance theorem. S13 in the core retains version 1; predecessor approval, retirement and credentials are additionally checked in the membership/control model. `progressReport` is a combined-world diagnostic: live recipient usability and participant-local knowledge are not implementable external reporter observations. Real external reporting must authenticate every source-dependent field.
 
@@ -45,6 +57,8 @@ Opaque names are tied to actual distinct witness content and compared through a 
 ## Resource, governance and composition scope
 
 The two-trade timed model has one round-robin worker and a two-slot correlated outage. Its assumed phase costs yield decisions by 14, applications by 22 and records by 24; exclusive D=15 passes and D=14 has a counterexample. These are model slots. That workload has no hostile queue entry or recovery-priority class. The separate capacity model consumes a two-item hostile FIFO budget, caps reservations and checks fair recovered service. No combined hostile-work deadline or priority guarantee is inferred.
+
+Elapsed slots, A height and B's local clock are separate model fields. The skew control uses a fixed offset for B. The safe settlement path takes outcome authority from A's authenticated decision. The deadline results apply to the stated workload and exclude a general clock-drift bound.
 
 Admitted canonical histories, local atomic execution, ideal cryptography, supported asset powers and retained data remain explicit assumptions. Consensus authentication and execution validity are different interfaces; even valid execution must select the canonical native history. Historical credentials remain usable for accepted obligations without authorizing new admissions. Pruning must preserve pending and still-current verification paths and consumed identities.
 

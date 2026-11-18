@@ -1,21 +1,21 @@
 [
   {
     "path": "README.md",
-    "sha256": "9508c6ccd6f941c99d5b50b76bc5bfb7b4d9a9c7e353a1d69a32e0339f9d6fae",
+    "sha256": "8d6144bcf23d8d4069a7733383f169b947ac715feea672336cf9ccc3bceef90a",
     "method": "root repair/source review and affected evidence audit",
     "review": "Repository entrypoint links current finding/property/file/source validation results; older publication receipts remain historical and are not relabeled as current readback.",
     "current_observations": []
   },
   {
     "path": "openspec/changes/verify-cross-chain-dvp/design.md",
-    "sha256": "a7b74fba150cfc3c85ecb03f255dce2d4c71769ac89c75fced614ac227281bbe",
+    "sha256": "2e6f4688cd3b1b25d57f3e7ec649d7ec97f4f1756650c65275bfb257f88d30bd",
     "method": "root repair/source review and affected evidence audit",
     "review": "Reviewed repair design choices and explicit trust/proof boundaries against the implemented source and current observations.",
     "current_observations": []
   },
   {
     "path": "openspec/changes/verify-cross-chain-dvp/specs/dvp-verification/spec.md",
-    "sha256": "a4ffde870dba82e6e17a6741ee9b639fa0223ab591547efd90a2774a6f8a786f",
+    "sha256": "341160e0e8166f21b31de7541c4e443b1641b4bae947a9c8d1a614740fd344a2",
     "method": "root repair/source review and affected evidence audit",
     "review": "Four finding scenarios specify independent provenance/principal, real consumer admission, actual ABORT resolution and exact outputs/local atomicity. Explicit induction requires complete initialization and the identical actual Next; structure/discovery/spec validation is recorded.",
     "current_observations": []
@@ -36,14 +36,14 @@
   },
   {
     "path": "verification/README.md",
-    "sha256": "0342d28609f3b2bad0991c9940c61ba6934ced795ddad24a5c7971b663d97ea6",
+    "sha256": "ac4c8b5114a1934379609c699df2991e6c28596dafaa712c5a139e3a449338e1",
     "method": "root repair/source review and affected evidence audit",
     "review": "Current architecture, conditional guarantees, actual full-graph results and finding closure are qualified by explicit model scopes and external conformance boundaries.",
     "current_observations": []
   },
   {
     "path": "verification/SPECIFICATION.md",
-    "sha256": "eb857996e80b01712e8410f4b065382cbce07e45c04313e5a86f38e1741168bc",
+    "sha256": "3946ed8de4e74b42529eb58b5fb662c661efe496fd39987737d8625a7684c16a",
     "method": "root repair/source review and affected evidence audit",
     "review": "Original requirements remain authoritative. Reviewed complete disclosure/principal binding, actual-source program admission, ABORT resolution and exact economic/source effects against the implemented predicates and controls.",
     "current_observations": []
@@ -1298,9 +1298,9 @@
   },
   {
     "path": "verification/models/recovery.qnt",
-    "sha256": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
-    "method": "prior semantic review retained by byte identity",
-    "review": "Full-job N1 B/prover outages and B freeze, eventual stable all-up/unfrozen and per-action fair suffix; other fault patterns excluded.",
+    "sha256": "1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166",
+    "method": "root repair/source review and affected evidence audit",
+    "review": "The one-trade recovery graph explores B/prover outages and B freeze. Recovery requires eventual stable all-up and unfrozen operation and per-action fairness. Reviewed comment edits are linked to the original saved source.",
     "current_observations": [
       "qa-full-recovery"
     ]
@@ -1556,7 +1556,7 @@
   },
   {
     "path": "verification/results/manifest.json",
-    "sha256": "b0fd8063e4ff5c12d584c5613b4a2f6515f48d4798c980215661799b9250f5df",
+    "sha256": "da926d7bdb16726ea30b6b4445747461acb5df142a19b50ae1c3eb4b2af4e38e",
     "method": "root repair/source review and affected evidence audit",
     "review": "Generated current property/acceptance selection and native source/tool/result inventories. Every selected observation is audited; original non-successes and six external obligations remain visible.",
     "current_observations": []
@@ -1785,16 +1785,16 @@
   },
   {
     "path": "verification/scripts/qa_report.py",
-    "sha256": "bfabc7ea56a848782c29636eb297f5b52c80c5668a43a0d6d30b8d9c29abc071",
+    "sha256": "6ced3114f4ee21018286702ff165b28dda4516bfaf6a8676a4a54a72b75bfb2e",
     "method": "root repair/source review and affected evidence audit",
     "review": "Evidence-conditioned report and per-property/per-file disposition; root review attribution, no invented independent review.",
     "current_observations": []
   },
   {
     "path": "verification/scripts/qa_retention.py",
-    "sha256": "8468f6bdd90e0679e3d8ae1303957fa3ff7cd8ce8d3d1d5f810cf2917f531c74",
+    "sha256": "59be8825719b3a0eddeb911bbae5bc1f2fd012c85ae7e40d97adaf518d6b9c99",
     "method": "root repair/source review and affected evidence audit",
-    "review": "Checks every current closure and baseline family; only exact selected-module/unused-symbol exceptions admitted. Original hashes unchanged.",
+    "review": "Checks every current closure and baseline family; exact selected-module, unused-symbol, and reviewed recovery comment exceptions admitted. Original hashes unchanged.",
     "current_observations": []
   },
   {

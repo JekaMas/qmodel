@@ -26,5 +26,12 @@
     "after_sha256": "ac756f5007f4710e21811812aac2e837e790894565fae7bbbbd88fdfb1eb3d35",
     "semantic_delta": "none: removing full-line comments gives identical remaining text",
     "retention": "Existing behavior greens retained; no source hash in an original receipt is rewritten."
+  },
+  {
+    "path": "verification/models/recovery.qnt",
+    "before_sha256": "996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c",
+    "after_sha256": "1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166",
+    "semantic_delta": "none: removing full-line comments gives identical remaining text",
+    "retention": "qa-full-recovery retains its source snapshot and native result. The live model inventory records the new byte identity."
   }
 ]

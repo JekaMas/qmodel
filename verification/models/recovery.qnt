@@ -1,7 +1,8 @@
 module recovery {
   import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=0).* from "./dvp"
-  // Core configuration: all actors remain up, durable evidence; no losses in step.
-  // Eventual-recovery model is the suffix after stabilization, not a real-time bound.
+  // This one-trade profile includes outages before stabilization. Captured
+  // evidence and financial state survive actor restarts in this abstraction.
+  // Weak fairness applies to each trade and action that stays enabled.
   temporal fairTrade(t:int):bool = and {
     abort(t).weakFair(Set(s)), applyA(t).weakFair(Set(s)),applyB(t).weakFair(Set(s)),
     refund(t,0).weakFair(Set(s)),refund(t,1).weakFair(Set(s)),
@@ -19,7 +20,11 @@ module recovery {
   temporal progress = L01 and L02 and L03 and L04
   temporal permanentFailure = Trades.forall(t=>(s.trades.get(t).decision==2).leadsTo(s.trades.get(t).effectsB==1))
 
+  // TLC explores B and prover outages and B freeze/unfreeze. Message loss,
+  // A outage, and restored adapter projections have separate directed cases.
   action recoveryStep=any {step,crash(1),recover(1),crash(3),recover(3),freeze(1),unfreeze(1)}
+  // This hypothesis requires an eventually stable all-up, unfrozen suffix.
+  // Liveness permits ABORT at the deadline and gives no elapsed-time bound.
   temporal environmentRecovery=eventually(always(s.up==Set(0,1,2,3,4) and s.frozen==Set()))
   temporal recoveryProgress=(environmentRecovery and fair).implies(Trades.forall(t=>and {
     s.trades.get(t).intent.leadsTo(s.trades.get(t).decision>=2),

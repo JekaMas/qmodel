@@ -85,20 +85,20 @@ path,sha256,review_classification
 AGENTS.md,2917df7214c834ddc81fd1c77e71440006c77000278b08e427845f2b567146d7,project requirement/workflow/document/metadata: retained or updated within task scope
 CLAUDE.md,2917df7214c834ddc81fd1c77e71440006c77000278b08e427845f2b567146d7,project requirement/workflow/document/metadata: retained or updated within task scope
 NOTICE,ae827511b1beb2aa20eb443845ac1403d3165d5a34d0bea712c08b98c440f16d,project requirement/workflow/document/metadata: retained or updated within task scope
-README.md,9508c6ccd6f941c99d5b50b76bc5bfb7b4d9a9c7e353a1d69a32e0339f9d6fae,live source: see qa-files.json
+README.md,8d6144bcf23d8d4069a7733383f169b947ac715feea672336cf9ccc3bceef90a,live source: see qa-files.json
 docs/SDD_WORKFLOW.md,b9972ce8671a6fa2f2711cf0d48641c4539594b40783868eaeb3d4e725c7d13c,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/.openspec.yaml,b75d296d3b54880b00a14fd17257d690f593cd5d3db17201d597c19528a9f905,project requirement/workflow/document/metadata: retained or updated within task scope
-openspec/changes/verify-cross-chain-dvp/design.md,a7b74fba150cfc3c85ecb03f255dce2d4c71769ac89c75fced614ac227281bbe,live source: see qa-files.json
+openspec/changes/verify-cross-chain-dvp/design.md,2e6f4688cd3b1b25d57f3e7ec649d7ec97f4f1756650c65275bfb257f88d30bd,live source: see qa-files.json
 openspec/changes/verify-cross-chain-dvp/discovery.json,8a975e066127cfee8c183f31ca87aeb026d227e4d056fb4a7977f48c1f2e402b,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/proposal.md,4a1116dea5a6541c4e20a99ac54bd6b76b09f324d2fc94e28723189752017896,project requirement/workflow/document/metadata: retained or updated within task scope
-openspec/changes/verify-cross-chain-dvp/specs/dvp-verification/spec.md,a4ffde870dba82e6e17a6741ee9b639fa0223ab591547efd90a2774a6f8a786f,live source: see qa-files.json
-openspec/changes/verify-cross-chain-dvp/tasks.md,c87c4be8cc24eb9c7f68be47a45d4624b4642f75efac0a4b6b084fc62baad3d1,project requirement/workflow/document/metadata: retained or updated within task scope
-openspec/changes/verify-cross-chain-dvp/verification.json,ee5eafe45ae2390d4fc7ef59d51b057e8e7856119f796d70d1e0e14ebd6508ae,project requirement/workflow/document/metadata: retained or updated within task scope
+openspec/changes/verify-cross-chain-dvp/specs/dvp-verification/spec.md,341160e0e8166f21b31de7541c4e443b1641b4bae947a9c8d1a614740fd344a2,live source: see qa-files.json
+openspec/changes/verify-cross-chain-dvp/tasks.md,6fcd5cedee5c438b709a7691ec823a4b7041a4d2311a6e7c68c6b71d9cbc4cde,project requirement/workflow/document/metadata: retained or updated within task scope
+openspec/changes/verify-cross-chain-dvp/verification.json,3cbf4a04486da165ea9e201e467820ae1c56362810f6694c49524ccd0db32740,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/config.yaml,22c8b7e3a2f60edef5f50d2cd3269acaf09745ca7ab1d3af57248d743bc195f8,project requirement/workflow/document/metadata: retained or updated within task scope
 package-lock.json,5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260,live source: see qa-files.json
 package.json,f00e1fef5b9f46027d5851fefe7566584543fd5f2a018d11284be1e38d6c6b60,live source: see qa-files.json
-verification/README.md,0342d28609f3b2bad0991c9940c61ba6934ced795ddad24a5c7971b663d97ea6,live source: see qa-files.json
-verification/SPECIFICATION.md,eb857996e80b01712e8410f4b065382cbce07e45c04313e5a86f38e1741168bc,live source: see qa-files.json
+verification/README.md,ac4c8b5114a1934379609c699df2991e6c28596dafaa712c5a139e3a449338e1,live source: see qa-files.json
+verification/SPECIFICATION.md,3946ed8de4e74b42529eb58b5fb662c661efe496fd39987737d8625a7684c16a,live source: see qa-files.json
 verification/__init__.py,e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/assumption-guarantee-matrix.json,efe73dda3ddabb984ba49308cf7991e1b26d066dc7b1d898fe5d87764e85a915,live source: see qa-files.json
 verification/assumption-guarantee-matrix.md,4d072c4b1ac5b4e24f87244ce20ee199649a78e738eebd2e0933fbe4236863ad,project requirement/workflow/document/metadata: retained or updated within task scope
@@ -200,7 +200,7 @@ verification/models/operational_faults.qnt,07c4732425f1c6bfe9c04e10696b5994df14a
 verification/models/privacy.qnt,d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518,live source: see qa-files.json
 verification/models/privacy_pipeline.qnt,1428edbd6f11f002a497904fb6f1b85d5513be2e2fa3d7f7663614883c6cf308,live source: see qa-files.json
 verification/models/private_progress.qnt,8829e4f7f28c9d3bdfd5af7e693ba06cea99e4de6e9026477417c9c4e40c27c3,live source: see qa-files.json
-verification/models/recovery.qnt,996ae5a013cec2f77ae44a1ad7a5a8d51128413aca568589d62bf3a3deb8003c,live source: see qa-files.json
+verification/models/recovery.qnt,1d7dc5d045e7b85d26b4aa3d8fd1e6a19ac0eb3b8a2ca8b800ec29dd5311a166,live source: see qa-files.json
 verification/models/report_view.qnt,b461145c2335eb7dcd9197f04212a1e4de097521ee4557356ba4b108db8a46db,live source: see qa-files.json
 verification/models/smoke.qnt,0953910eaa0fec4203682bc71a6231c79be517909391500b2dd2e238535b1d0c,live source: see qa-files.json
 verification/models/stabilization.qnt,206d56907bed7109923de659ce7a5d68b2d8443e945a23a1347239cab7fa5f21,live source: see qa-files.json
@@ -226,20 +226,20 @@ verification/mutants/shared_commit_soundness.qnt,599e70d2b8118a8d78191789bb49627
 verification/privacy-policy.md,15b59ea68bcc93c4d96948c1a8770bbcb394c0928070c752b0782c0f8971ff04,live source: see qa-files.json
 verification/properties.json,88f76955b492a74a332b488a6c9a03b08d4d7268810fa439ba190c4dad05df42,live source: see qa-files.json
 verification/properties.md,c8ca03deb74b71ef3bbb36e5c4c082e9a938cf97b9c5599edd685d39030e8c29,project requirement/workflow/document/metadata: retained or updated within task scope
-verification/protocol.md,306498ab466ff2f3998f17f67dfe3bc8d8955939fbf058a78c2a7f2098feaf2d,project requirement/workflow/document/metadata: retained or updated within task scope
-verification/reports/comment-only-deltas.json,002cffa1ed9ab2d70e1579651798c835bb0fff9436dba061b9c896665ce2b36a,project requirement/workflow/document/metadata: retained or updated within task scope
+verification/protocol.md,8428a4611300a90bc5a543793e2555a61c3f97f5aca1fb266670b46bb8689655,project requirement/workflow/document/metadata: retained or updated within task scope
+verification/reports/comment-only-deltas.json,f5b96ebe0dfdcb0061310b54dd46db926890734e6ea30284e44d683febb84dac,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/conformance-boundary.md,37b39550d343ff9e46fcc8c3297c1111602386eee1e05cacc3702d0f81b72a39,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/counterexamples.md,018e037a294e900d848f7bfa2d99026dd2ce7046acab1a4646539bf8f48b0755,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/coverage.md,ac194d8301b525cf51ca2c99f02f4bccf9182848d72d6f00bd6362432fbf74a0,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/executions.md,56ecb5b1c81a391d90cc88de012aac2172252d15c39a72fa7eb76e4e05df652f,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/extended-source-retention.json,d1bba4bc21348b41316ad6bed5298ca2b5d770384e9c3e857269b09b06bc5614,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/final-review.json,c9996b9cc2705c3d4ade5a39c18b64d3617a18cae90defb2599bd6ce3da80c50,project requirement/workflow/document/metadata: retained or updated within task scope
-verification/reports/final-review.md,aef81cc127ed53e29fd5d699210bfee522a0385fdc460cf0c7a869ce53e666f2,project requirement/workflow/document/metadata: retained or updated within task scope
+verification/reports/final-review.md,06f7a0b278ee3fb2fbb5b0a3eb08da3e40f6bbdf2054ed0d3208a179cdd09543,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/findings.md,7f72606cf0c2c48c72b36b70ef035aa9fe7b1a62a22d6a1ee2daf555d650c570,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/full-grounding-certificate.json,8b3bfbb5c38675e5b4486681d5e07fba6256484a1d308c3a9d067445cabee790,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/independent-review.json,70dc9833504b228e8ee3b8b55f175d2708d8288840ce36d77afb942e268ae000,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/independent-review.md,66fe99a64ac13a40fb086c7a17d6ce7efd11125bc0c9bbabcc086c5f38b319b1,project requirement/workflow/document/metadata: retained or updated within task scope
-verification/reports/interview-summary.md,addfa84bc41e95cb120782fdd84db39144b06191b6da581a7052cab1b04e1118,project requirement/workflow/document/metadata: retained or updated within task scope
+verification/reports/interview-summary.md,029f63f852307628a40bf6c0cc968bad165fe870e4a6bd921f119ac8a57622e3,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/literal-coverage.md,bf35b667a58e108de74e3a685729a597a98d262f7b2416e003eaae786dc35a2f,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/model-repairs.md,209db968a25c41c5abec9086459aae4175bcb923bf53a84c1ccfdc98fd56f47f,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/protocol-review.md,e83b6d438342a4b3d048eaffe0c8a05109acb96c0fd6e7002b196d1a07261e1a,project requirement/workflow/document/metadata: retained or updated within task scope
@@ -273,7 +273,7 @@ verification/reports/reproduction-availability.json,8a469be39a009ec523750af2f0ee
 verification/reports/retained-privacy-scopes.json,d3603d5af92b3e3db5fd4856f3bed91bd8f3934bc2c431606c5cde27758a5bcd,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/review-results.json,d9fe8dde81cc80b483e89c53d7ebad825a89c00f6275b4699136c1d6b806ce67,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/review-results.md,93a0002ebb7c829bf790943d14bad823cc8c1063448c7be0696ae2ffb171cac0,project requirement/workflow/document/metadata: retained or updated within task scope
-verification/reports/solution-and-changes.md,7215284272297db1c0f30f90202a24676d59acb9db5041b3caa795f1959008d6,project requirement/workflow/document/metadata: retained or updated within task scope
+verification/reports/solution-and-changes.md,1d8c731293d52396b6aaab0dad01291e02b30e90ae506d3526c393b7dd7cf8a0,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/traceability.md,2222e23753a0c4288429ea0bb8e9cf32d12a7754f3704e7d7bb381c7ad34c721,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/results/diagnostics/extended-apalache-20-threads.txt,e42261564f326cf3ac6eb8d96a50033bd8c34b95e89de3679326db01fc8cd126,native observation/snapshot/replay: immutable source and result audit
 verification/results/logs/authenticated-report-test.log,94cdb57bd990a910d5ce954fff29834c0d95d470c3328ee6a6646e7a7cfbdac9,native observation/snapshot/replay: immutable source and result audit
@@ -285,7 +285,7 @@ verification/results/logs/initial-core-tests-4.log,623a4427b31909f1893199743c44c
 verification/results/logs/initial-core-tests.log,1ba94bc7aa1f5a57d682adaafc7b6c5529650d1018836436cf703291a9741335,native observation/snapshot/replay: immutable source and result audit
 verification/results/logs/initial-expiry.log,7c691927a7f18ec69c70b402e9e821f8b38467173fc3ca4f29f6552a8a03624d,native observation/snapshot/replay: immutable source and result audit
 verification/results/logs/rust-bootstrap.log,10ca08dfcf58ee7cdceb41e3931d69cfe1782d178f905ed453fc9ff65c1fc6e7,native observation/snapshot/replay: immutable source and result audit
-verification/results/manifest.json,b0fd8063e4ff5c12d584c5613b4a2f6515f48d4798c980215661799b9250f5df,live source: see qa-files.json
+verification/results/manifest.json,da926d7bdb16726ea30b6b4445747461acb5df142a19b50ae1c3eb4b2af4e38e,live source: see qa-files.json
 verification/results/publication/clone-baseline.json,2ae069999c0de3e28a27c931aa7fe37f960090901e12b5d0b70745f8a6bfd99d,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/clone-native-replay.log,f0e10c27131a02fe008cf62750dc5ba91b4bbe92b8e6fcf25aa073be6ce14484,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/clone-negative.json,840c9ebc381dbe4fb909a238d736018e0f6bbc1c503c54501057d2edd6aedbc0,native observation/snapshot/replay: immutable source and result audit
@@ -4675,8 +4675,8 @@ verification/scripts/native_induction.py,9fe37881d59eb5886c235389f170f791275ea5e
 verification/scripts/normalize_record_domains.py,96e28a1c12c0302b3e34ac0012d6428446e46769bb9e1e77d027f5eff8b79416,live source: see qa-files.json
 verification/scripts/qa_coverage.py,511fc5bfb4346d06b041c5e96c31bcb9730b2d59da00db296e91f9369ec1075a,live source: see qa-files.json
 verification/scripts/qa_replay.py,2c0e399d691c4c1a084896968a419617b9ba383e74b71e8e214bbf5d32c7f391,live source: see qa-files.json
-verification/scripts/qa_report.py,bfabc7ea56a848782c29636eb297f5b52c80c5668a43a0d6d30b8d9c29abc071,live source: see qa-files.json
-verification/scripts/qa_retention.py,8468f6bdd90e0679e3d8ae1303957fa3ff7cd8ce8d3d1d5f810cf2917f531c74,live source: see qa-files.json
+verification/scripts/qa_report.py,6ced3114f4ee21018286702ff165b28dda4516bfaf6a8676a4a54a72b75bfb2e,live source: see qa-files.json
+verification/scripts/qa_retention.py,59be8825719b3a0eddeb911bbae5bc1f2fd012c85ae7e40d97adaf518d6b9c99,live source: see qa-files.json
 verification/scripts/render_traces.py,e1f655f0a898da87352e95bfa1fe95c3bae92cab9ab83ae2a502b6dd94af7a98,live source: see qa-files.json
 verification/scripts/repair_checks.py,bd397fcf03d160645b32c5b9c1ea191177c9b0f9886004e175eebbc9c71e94cd,live source: see qa-files.json
 verification/scripts/repair_tests.py,4f1adbd1a22303beaefd3e56dffb94e803c50ec0d0fb7878613561c68ee487c2,live source: see qa-files.json

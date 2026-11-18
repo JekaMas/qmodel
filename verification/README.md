@@ -2,6 +2,8 @@
 
 The canonical task is ../openspec/changes/verify-cross-chain-dvp/tasks.md. The verification authority is sources/task-v2.md; the versioned source answer is sources/shared-solution.original-ru.md. This project investigates the candidate rather than presuming it correct.
 
+For the five Stage A properties and all seven Stage C challenges, see the [Question 8 evidence review](reports/interview-summary.md#question-8-evidence-review). The [architecture matrix](protocol.md#placement-and-responsibility) identifies who can authorize each local transfer in A, B, D and shared execution. The [executable specification](SPECIFICATION.md#three-distinct-guarantees) defines the settlement assertions and recovery assumptions.
+
 The [current repair and re-review](reports/qa-repairs.md) records the QA-01–QA-04 repairs and the user-requested focused proof selection. Full validation is NOT DONE, with seven full checks,43additional reproductions and the complete33-case evidence audit deferred. The historical [comparative review](reviews/protocol-adequacy-2026-11-18/README.md) retains the original finding/discriminator evidence. Read the current 51-property/file ledgers and source-retention audit alongside the native matrix. Unqualified deployed-system or arbitrary-configuration verification is not claimed.
 
 Install the pinned local dependency with `npm ci`. Java 21+ is required by Apalache 0.62.4. The runner uses an existing GoLand Java 25 runtime on this machine; set `QMODEL_JAVA_BIN=/path/to/jdk/bin` on another machine. Quint's cache is project-local `.quint/`; its pinned Apalache download is approximately 200 MB and the Rust evaluator is v0.7.1. No global tool installation or configuration is required.
