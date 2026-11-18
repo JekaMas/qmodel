@@ -1,0 +1,15 @@
+
+ Error [QNT000]: Expected [placement_products::dvp::s] and [placement_products::dvp::s,prior] to be the same
+Trying to unify entities ['placement_products::dvp::s'] and ['placement_products::dvp::s', 'prior']
+Trying to unify Read[_v15323] & Update['placement_products::dvp::s'] and Read[_v15320, 'placement_products::dvp::s'] & Update['placement_products::dvp::s', 'prior']
+Trying to unify (Read[_v15321] & Update[_v15322], Read[_v15323] & Update[_v15322]) => Read[_v15324] & Update[_v15322] and (Update['placement_products::dvp::s'], Read[_v15320, 'placement_products::dvp::s'] & Update['placement_products::dvp::s', 'prior']) => _e3370
+Trying to infer effect for operator application in then(init, replayEvents(List(Tup(18, 0, 0, 0), Tup(18, 1, 0, 0))))
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-b/placement.qnt:76:33
+  76:   run IndependentSpendDeltaTest=init
+                                      ^^^^
+  77:     .then(replayEvents(List((18,0,0,0),(18,1,0,0)))).expect(s.spentA==1 and s.spentB==1)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

@@ -1,0 +1,8 @@
+
+  clock_products
+    ok IncludedReplacementWaitsForCanonicalDepthTest passed 1 test(s)
+    ok LaggingHeadCannotIssueEvenWithTimeAndBFastTest passed 1 test(s)
+    ok ReplacementMakesOldSubmissionIneligibleTest passed 1 test(s)
+    ok FastBClockDoesNotAuthorizeRefundTest passed 1 test(s)
+
+  4 passing (258ms)

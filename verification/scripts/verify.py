@@ -10,6 +10,7 @@ from audit_evidence import ROOT,EvidenceError,load_latest,validate
 from guarantee_audit import audit_guarantees
 from repeated_audit import coverage as audit_repeated
 from three_audit import audit_three
+from products_audit import audit_products
 
 def main():
  p=argparse.ArgumentParser(description=__doc__)
@@ -52,11 +53,15 @@ def main():
   if a.suite in ['baseline','audit']:selected.extend(three['positive'])
   if a.suite in ['negative','audit']:selected.extend(three['negative'])
   if a.suite=='audit':selected.extend(three['witnesses'])
+  products=audit_products()
+  if a.suite in ['baseline','audit']:selected.extend(products['positive'])
+  if a.suite in ['negative','audit']:selected.extend(products['negative'])
+  if a.suite=='audit':selected.extend(products['witnesses'])
  if a.fresh:
   for base in selected:
    done=subprocess.run([sys.executable,str(ROOT/'verification/scripts/replay.py'),base],cwd=ROOT)
    if done.returncode:return done.returncode
- print(json.dumps({'suite':a.suite,'focused':a.focused,'deferred_full_checks':acceptance.get('deferred',{}),'checks':len(selected),'status':'passed','mode':'exact-recorded-input rerun' if a.fresh else 'audited original backend results; valid greens reused','scope':'named finite/bounded/sampled configurations only','broader_timeouts':manifest['historical_broader_timeouts'],'unmet_scoped_checks':manifest['unmet_scoped_checks']},indent=2))
+ print(json.dumps({'suite':a.suite,'focused':a.focused,'deferred_full_checks':acceptance.get('deferred',{}),'checks':len(selected),'status':'passed','mode':'exact-recorded-input rerun' if a.fresh else 'audited original backend results; valid greens reused','scope':'named finite, bounded, sampled and parameterized induction scopes','broader_timeouts':manifest['historical_broader_timeouts'],'unmet_scoped_checks':manifest['unmet_scoped_checks']},indent=2))
  return 1 if manifest['unmet_scoped_checks'] and not a.focused else 0
 
 if __name__=='__main__':

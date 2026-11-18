@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'append' is redefined in module 'privacy_products'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-privacy-directed/privacy.qnt:29:12
+  29:   pure def append(x:Paired,t:int,kind:int,role:int):Paired =
+                 ^^^^^^
+
+error: parsing failed

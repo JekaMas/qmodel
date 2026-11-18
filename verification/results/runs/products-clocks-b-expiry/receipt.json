@@ -1,0 +1,79 @@
+{
+  "id": "products-clocks-b-expiry",
+  "started_utc": "2026-11-18T16:05:58.224349+00:00",
+  "claim": "noInvalidEarlyRefund",
+  "backend": "tlc",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/results/runtime/products/products-clocks-b-expiry/clocks.qnt",
+    "--main",
+    "clock_products",
+    "--backend",
+    "tlc",
+    "--init",
+    "rateInit",
+    "--step",
+    "rateStep",
+    "--invariant",
+    "noInvalidEarlyRefund",
+    "--tlc-config",
+    "verification/configs/extended-tlc.json",
+    "--verbosity",
+    "3"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/results/runtime/products/products-clocks-b-expiry/clocks.qnt --main clock_products --backend tlc --init rateInit --step rateStep --invariant noInvalidEarlyRefund --tlc-config verification/configs/extended-tlc.json --verbosity 3",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx8g -Xss8m",
+    "JVM_ARGS": "-Xmx8g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/results/runtime/products/products-clocks-b-expiry/clocks.qnt": "e42998ea7cb0b758d5160f3950d07d511a523b6d811130b6e9721412c1cd3c5a",
+    "verification/results/runtime/products/products-clocks-b-expiry/dvp.qnt": "f7ae08bf185b3a3eab6bf9639ce7166e7f77a932aa5e00e601a597869e83b491",
+    "verification/results/runtime/products/products-clocks-b-expiry/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+    "verification/results/runtime/products/products-clocks-b-expiry/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b",
+    "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "0.62.4 | build: 7954daf                       I@20:06:06.734",
+    "tlc": "2026.11.18.160612"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "execution_plan_sha256": "ed5669b848f4ef66da00833aa8e678256fa0bdd2f0685344612b475e9acf6385",
+  "raw_sha256": "a90ade20036f63e591b65fd91ede2dd2add2eccbe0dbbd1f4b4cc506f0587e81",
+  "configuration": {
+    "mode": 3,
+    "elapsed": 3,
+    "rates": [
+      0,
+      1,
+      2
+    ],
+    "drift": [
+      -1,
+      0,
+      1
+    ],
+    "depth": 1
+  },
+  "timeout_seconds": 600,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 15.203565000090748,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": 5731,
+  "distinct_states": 819,
+  "raw_output": "verification/results/runs/products-clocks-b-expiry/raw.log",
+  "minimized": false,
+  "replayed": false
+}

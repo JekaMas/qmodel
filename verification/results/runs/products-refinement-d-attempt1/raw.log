@@ -1,0 +1,64 @@
+
+ Error [QNT000]: token recognition error at: '\'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:77:1
+  77: \n  run IndependentSpendDeltaTest=init
+      ^
+
+
+ Error [QNT000]: extraneous input 'n' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:77:2
+  77: \n  run IndependentSpendDeltaTest=init
+       ^
+
+
+ Error [QNT000]: token recognition error at: '\'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:78:89
+  78:     .then(replayEvents(List((18,0,0,0),(18,1,0,0)))).expect(s.spentA==1 and s.spentB==1)\n}\  pure def classOf(e:(int,int,int,int)):int =
+                                                                                              ^
+
+
+ Error [QNT000]: extraneous input 'n' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:78:90
+  78:     .then(replayEvents(List((18,0,0,0),(18,1,0,0)))).expect(s.spentA==1 and s.spentB==1)\n}\  pure def classOf(e:(int,int,int,int)):int =
+                                                                                               ^
+
+
+ Error [QNT000]: token recognition error at: '\'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:78:92
+  78:     .then(replayEvents(List((18,0,0,0),(18,1,0,0)))).expect(s.spentA==1 and s.spentB==1)\n}\  pure def classOf(e:(int,int,int,int)):int =
+                                                                                                 ^
+
+
+ Error [QNT000]: extraneous input 'pure' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:78:95
+  78:     .then(replayEvents(List((18,0,0,0),(18,1,0,0)))).expect(s.spentA==1 and s.spentB==1)\n}\  pure def classOf(e:(int,int,int,int)):int =
+                                                                                                    ^^^^
+
+
+ Error [QNT404]: Name 'observeStep' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:54:5
+  54:     observeStep(events.nth(i)).expect(sequenceSafe and legitimate(prior,s,events.nth(i)) and
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'legitimate' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:54:56
+  54:     observeStep(events.nth(i)).expect(sequenceSafe and legitimate(prior,s,events.nth(i)) and
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prior' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:54:67
+  54:     observeStep(events.nth(i)).expect(sequenceSafe and legitimate(prior,s,events.nth(i)) and
+                                                                        ^^^^^
+
+error: parsing failed

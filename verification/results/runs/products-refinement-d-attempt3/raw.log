@@ -1,0 +1,13 @@
+
+ Error [QNT000]: Expected [placement_products::dvp::s,prior] and [placement_products::dvp::s] to be the same
+Trying to unify entities ['placement_products::dvp::s', 'prior'] and ['placement_products::dvp::s']
+Trying to unify Read[_v16187] & Update['placement_products::dvp::s', 'prior'] and Read['placement_products::dvp::s'] & Update['placement_products::dvp::s']
+Trying to unify (Read[_v16185] & Update[_v16186], Read[_v16187] & Update[_v16186]) => Read[_v16188] & Update[_v16186] and (Read[_v16181] & Update['placement_products::dvp::s', 'prior'], Read['placement_products::dvp::s'] & Update['placement_products::dvp::s']) => _e3478
+Trying to infer effect for operator application in then(firstOutcome, learn(1, 2, 0))
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-refinement-d/placement.qnt:68:20
+  68:   run firstApplied=firstOutcome.then(learn(1,2,0)).then(replayEvents(List((38,1,0,0)))).expect(sequenceSafe)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

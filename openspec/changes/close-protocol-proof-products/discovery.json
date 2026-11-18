@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "change": "close-protocol-proof-products",
+  "scope": {
+    "property_ids": [
+      "DC.P1",
+      "DC.P2",
+      "DC.P3",
+      "DC.P4",
+      "DO.P5",
+      "DO.P6",
+      "DO.P7"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_causal_work",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_hostile_controls",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_independent_clocks",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_clock_controls",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_epoch_authority",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_epoch_controls",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_placement_effects",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_placement_controls",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_contract_histories",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_contract_controls",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_paired_privacy",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_privacy_controls",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_parameterized_preservation",
+      "unittest::verification.tests.test_proof_products.ProofProducts.test_population_controls"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "D1",
+      "property_ids": [
+        "DC.P1",
+        "DC.P2",
+        "DC.P3",
+        "DC.P4",
+        "DO.P5",
+        "DO.P6",
+        "DO.P7"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_causal_work",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_hostile_controls",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_independent_clocks",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_clock_controls",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_epoch_authority",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_epoch_controls",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_placement_effects",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_placement_controls",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_contract_histories",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_contract_controls",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_paired_privacy",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_privacy_controls",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_parameterized_preservation",
+        "unittest::verification.tests.test_proof_products.ProofProducts.test_population_controls"
+      ],
+      "question": "Resolve every original open product to real model actors and evidence boundaries.",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the seven named open products and their currently selected transition and observer owners.",
+          "outcome": "Identified known source links, profile choices and separate authority abstractions.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 1,
+              "classification": "reusable_unchanged",
+              "reason": "Actual reservation, decision, transfer and source proof actions"
+            },
+            {
+              "path": "verification/models/privacy_pipeline.qnt",
+              "line": 1,
+              "classification": "reusable_unchanged",
+              "reason": "Actual two-world transition and response construction"
+            },
+            {
+              "path": "verification/scripts/three_checks.py",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Source-bound timing, capacity and identity precedent"
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Find unknown implementation owners",
+          "outcome": "All open model owners were supplied by the previous concrete plan.",
+          "reason": "The user narrowed work to logical protocol actions and named model ownership.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "Locate compiled production API references",
+          "outcome": "The operation stays at the executable protocol level.",
+          "reason": "Quint and protocol-native evidence own this result.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "Every originally open product has a success witness and independent discriminator."
+    }
+  ]
+}

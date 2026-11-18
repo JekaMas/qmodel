@@ -1,0 +1,5 @@
+
+  contract_products
+    ok MissingCommitEffectBreaksSourceComparisonTest passed 1 test(s)
+
+  1 passing (88ms)

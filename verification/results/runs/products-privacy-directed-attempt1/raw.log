@@ -1,0 +1,6 @@
+
+  products_privacy_test
+    ok BatchOutageBackupAndRoleChangeTest passed 1 test(s)
+    ok NonEntitledBatchScopeTest passed 1 test(s)
+
+  2 passing (128ms)

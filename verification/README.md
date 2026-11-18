@@ -37,7 +37,7 @@ The actual SQLite restore/replay and concurrent inserts operate on local databas
 
 ## Three-trade timing, Byzantine scope and local histories
 
-The [N3 acceptance record](reports/three-trade-faults.md) identifies native decision and recovery profiles, exact timed and attack cases, the Byzantine certificate envelope and actual SQLite linearization checks. Use the standard full acceptance audit or the source-bound scripts named in the individual receipts. The [stage-by-stage plan](../openspec/changes/check-three-trade-faults/fault-matrix.md) lists the remaining model products and external obligations.
+The [N3 acceptance record](reports/three-trade-faults.md) identifies native decision and recovery profiles, exact timed and attack cases, the Byzantine certificate envelope and actual SQLite linearization checks. Use the standard full acceptance audit or the source-bound scripts named in the individual receipts. The [stage-by-stage plan](../openspec/changes/check-three-trade-faults/fault-matrix.md) lists the original open model products and external obligations. The [composed protocol verification](reports/proof-products.md) records the dispositions, exact scopes and new controls. Run the full audit to include those receipts or run `python3 -B verification/scripts/products_audit.py` to audit only the seven products.
 
 ## Repeated exchanges and event coverage
 

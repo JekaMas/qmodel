@@ -30,4 +30,8 @@ The [repeated workload](reports/repeated-settlement-review.md) assigns each sign
 
 The [three-trade fault model](reports/three-trade-faults.md) isolates authenticated source, local transition linearization, and potential progress after independent outages. An authenticated outcome survives delayed or repeated delivery. A correct durable record may outlive a failed client reply. A/B application still has two separate local effect points.
 
+The service model preserves admitted obligations across restart and isolates them from deduplicated hostile requests. A terminal result cannot issue from a local wall clock, displaced command or unconfirmed A head. The clock model represents independent block quotas, offset and drift. The authority model separates predecessor-approved membership from verification of retained old results. It makes the risk of accumulating older signing keys explicit.
+
+The logical contract model records attempts, successful local writes, canonical confirmation and adapter responses as different events. A failed application leaves no durable operation ID. Lost responses can be retried against retained effects; recovered projections have to obtain any missing confirmation. These boundaries enable an independent sequential history check alongside the source ledger effect assertions. [Composed contracts and results](reports/proof-products.md)
+
 See the [executable specification](SPECIFICATION.md#three-distinct-guarantees) for Stage A and the [evidence review](reports/interview-summary.md#question-8-evidence-review) for Stage C and the two-network PoC boundary.

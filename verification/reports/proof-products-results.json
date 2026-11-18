@@ -1,0 +1,399 @@
+{
+  "positive": [
+    "products-jobs-safe-attempt1",
+    "products-jobs-directed-attempt1",
+    "products-clocks-safe",
+    "products-clocks-directed-attempt1",
+    "products-authority-rounds",
+    "products-authority-epochs",
+    "products-authority-migration",
+    "products-placement-b-directed",
+    "products-placement-b-sample",
+    "products-placement-d-directed",
+    "products-placement-d-sample",
+    "products-placement-shared-directed",
+    "products-placement-shared-sample",
+    "products-contract-history-attempt2",
+    "products-privacy-directed-attempt1",
+    "products-privacy-sample-71",
+    "products-privacy-sample-72",
+    "products-privacy-sample-73",
+    "products-privacy-exact",
+    "products-refinement-a-attempt3",
+    "products-refinement-b-attempt4",
+    "products-refinement-d-attempt4",
+    "products-refinement-shared-attempt3",
+    "products-refinement-expanded-attempt3",
+    "products-population-proof"
+  ],
+  "negative": [
+    "products-jobs-queue-attempt1",
+    "products-jobs-missing-attempt1",
+    "products-jobs-drop-attempt1",
+    "products-clocks-old-attempt",
+    "products-clocks-early-witness",
+    "products-clocks-b-expiry",
+    "products-authority-reset",
+    "products-authority-mobile"
+  ],
+  "witnesses": [
+    "products-authority-epoch-controls",
+    "products-placement-b-mutant",
+    "products-placement-d-mutant",
+    "products-placement-shared-mutant",
+    "products-contract-early",
+    "products-contract-half",
+    "products-contract-cache",
+    "products-contract-duplicate",
+    "products-privacy-controls-attempt1",
+    "products-population-controls"
+  ],
+  "products": {
+    "causal_work": [
+      {
+        "receipt": "products-jobs-safe-attempt1",
+        "distinct_states": 209418,
+        "predicate": "jobSafety",
+        "temporal": "jobProgress"
+      },
+      {
+        "receipt": "products-jobs-queue-attempt1",
+        "distinct_states": 625151,
+        "predicate": "serviceBound",
+        "temporal": null
+      },
+      {
+        "receipt": "products-jobs-missing-attempt1",
+        "distinct_states": 5403,
+        "predicate": "serviceBound",
+        "temporal": null
+      },
+      {
+        "receipt": "products-jobs-drop-attempt1",
+        "distinct_states": 20,
+        "predicate": "readySurvives",
+        "temporal": null
+      },
+      {
+        "receipt": "products-jobs-directed-attempt1",
+        "tests": [
+          "SaturatedOutageAndRetryTest",
+          "PendingJobsStayBackedWithoutServiceTest"
+        ]
+      }
+    ],
+    "independent_clocks": [
+      {
+        "receipt": "products-clocks-safe",
+        "distinct_states": 107978,
+        "predicate": "clockSafety",
+        "temporal": null
+      },
+      {
+        "receipt": "products-clocks-old-attempt",
+        "distinct_states": 182,
+        "predicate": "replacementBound",
+        "temporal": null
+      },
+      {
+        "receipt": "products-clocks-early-witness",
+        "distinct_states": 299,
+        "predicate": "canonicalConfirmation",
+        "temporal": null
+      },
+      {
+        "receipt": "products-clocks-b-expiry",
+        "distinct_states": 819,
+        "predicate": "noInvalidEarlyRefund",
+        "temporal": null
+      },
+      {
+        "receipt": "products-clocks-directed-attempt1",
+        "tests": [
+          "IncludedReplacementWaitsForCanonicalDepthTest",
+          "LaggingHeadCannotIssueEvenWithTimeAndBFastTest",
+          "ReplacementMakesOldSubmissionIneligibleTest",
+          "FastBClockDoesNotAuthorizeRefundTest"
+        ]
+      }
+    ],
+    "epoch_authority": [
+      {
+        "receipt": "products-authority-rounds",
+        "distinct_states": 9258,
+        "predicate": "authoritySafe",
+        "temporal": null
+      },
+      {
+        "receipt": "products-authority-reset",
+        "distinct_states": 13254,
+        "predicate": "sameHeightAgreement",
+        "temporal": null
+      },
+      {
+        "receipt": "products-authority-mobile",
+        "distinct_states": 46075,
+        "predicate": "sameHeightAgreement",
+        "temporal": null
+      },
+      {
+        "receipt": "products-authority-epochs",
+        "tests": [
+          "OldHistoryAndNewEpochShareCheckpointTest",
+          "IncompatiblePredecessorTest",
+          "IncompatibleRestoreTest",
+          "RetiredSignaturesCannotAuthorizeNewWorkTest",
+          "ExecutionResultIsNotAFreeCertificateFieldTest",
+          "DistinctContextNeedsPredecessorTest"
+        ]
+      },
+      {
+        "receipt": "products-authority-epoch-controls",
+        "tests": [
+          "UncertifiedConfigurationBreaksLineageTest",
+          "StaleVerifierAcceptsRetiredAuthorityTest",
+          "SignedRootWithoutExecutedBodyIsDetectedTest",
+          "BadRestoreBreaksRecoveredCheckpointTest"
+        ]
+      },
+      {
+        "receipt": "products-authority-migration",
+        "distinct_states": 5157,
+        "predicate": "safe",
+        "temporal": null
+      }
+    ],
+    "placement_effects": [
+      {
+        "receipt": "products-placement-b-directed",
+        "tests": [
+          "AbsentRemoteReleaseCannotBeGuessedTest",
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest"
+        ]
+      },
+      {
+        "receipt": "products-placement-b-mutant",
+        "tests": [
+          "OmittedLocalCashIsVisibleTest"
+        ]
+      },
+      {
+        "receipt": "products-placement-b-sample",
+        "seed": 71,
+        "samples": 600,
+        "steps": 120
+      },
+      {
+        "receipt": "products-placement-d-directed",
+        "tests": [
+          "AbsentRemoteReleaseCannotBeGuessedTest",
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest"
+        ]
+      },
+      {
+        "receipt": "products-placement-d-mutant",
+        "tests": [
+          "AbortProofCannotAuthorizeCashMutantTest"
+        ]
+      },
+      {
+        "receipt": "products-placement-d-sample",
+        "seed": 71,
+        "samples": 600,
+        "steps": 120
+      },
+      {
+        "receipt": "products-placement-shared-directed",
+        "tests": [
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest"
+        ]
+      },
+      {
+        "receipt": "products-placement-shared-mutant",
+        "tests": [
+          "OmittedLocalCashIsVisibleTest"
+        ]
+      },
+      {
+        "receipt": "products-placement-shared-sample",
+        "seed": 71,
+        "samples": 600,
+        "steps": 120
+      }
+    ],
+    "contract_histories": [
+      {
+        "receipt": "products-contract-history-attempt2",
+        "tests": [
+          "CommitAndRetryHaveAValidIndependentHistoryTest",
+          "FrozenCommitCannotLinearizeTest",
+          "FrozenCommitCannotConfirmTest",
+          "FrozenCommitCannotRespondTest",
+          "UnfreezeRetryHasOneCanonicalEffectTest",
+          "UnconfirmedApplicationCannotRespondTest",
+          "OlderBackupCannotAnswerAsCurrentTest",
+          "RetriedInvocationCannotExecuteTheSameEffectAgainTest",
+          "AbortAndRefundAreSeparateLinearizationPointsTest"
+        ]
+      },
+      {
+        "receipt": "products-contract-early",
+        "tests": [
+          "PrematureResponseViolatesLegalHistoryTest"
+        ]
+      },
+      {
+        "receipt": "products-contract-half",
+        "tests": [
+          "MissingCommitEffectBreaksSourceComparisonTest"
+        ]
+      },
+      {
+        "receipt": "products-contract-cache",
+        "tests": [
+          "ForgedRestoredCacheCannotCreateAuthorityTest"
+        ]
+      },
+      {
+        "receipt": "products-contract-duplicate",
+        "tests": [
+          "DuplicateActualCashEffectBreaksHistoryTest"
+        ]
+      }
+    ],
+    "paired_privacy": [
+      {
+        "receipt": "products-privacy-directed-attempt1",
+        "tests": [
+          "BatchOutageBackupAndRoleChangeTest",
+          "NonEntitledBatchScopeTest"
+        ]
+      },
+      {
+        "receipt": "products-privacy-controls-attempt1",
+        "tests": [
+          "BackupSizeLeakTest",
+          "RoutingLeakTest",
+          "TimingLeakTest",
+          "CachedRevokedScopeLeakTest",
+          "LostKeyFalseUsabilityTest"
+        ]
+      },
+      {
+        "receipt": "products-privacy-sample-71",
+        "seed": 71,
+        "samples": 700,
+        "steps": 60
+      },
+      {
+        "receipt": "products-privacy-sample-72",
+        "seed": 72,
+        "samples": 700,
+        "steps": 60
+      },
+      {
+        "receipt": "products-privacy-sample-73",
+        "seed": 73,
+        "samples": 700,
+        "steps": 60
+      },
+      {
+        "receipt": "products-privacy-exact",
+        "distinct_states": 15984,
+        "predicate": "safe",
+        "temporal": null
+      }
+    ],
+    "parameterized_preservation": [
+      {
+        "receipt": "products-refinement-a-attempt3",
+        "tests": [
+          "AbsentRemoteReleaseCannotBeGuessedTest",
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest",
+          "IndependentSpendDeltaTest"
+        ]
+      },
+      {
+        "receipt": "products-refinement-b-attempt4",
+        "tests": [
+          "AbsentRemoteReleaseCannotBeGuessedTest",
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest",
+          "IndependentSpendDeltaTest"
+        ]
+      },
+      {
+        "receipt": "products-refinement-d-attempt4",
+        "tests": [
+          "AbsentRemoteReleaseCannotBeGuessedTest",
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest",
+          "IndependentSpendDeltaTest"
+        ]
+      },
+      {
+        "receipt": "products-refinement-shared-attempt3",
+        "tests": [
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest",
+          "IndependentSpendDeltaTest"
+        ]
+      },
+      {
+        "receipt": "products-refinement-expanded-attempt3",
+        "tests": [
+          "AbsentRemoteReleaseCannotBeGuessedTest",
+          "OneLegEvidenceCannotBookTest",
+          "FundedMixedRecoveryTest",
+          "DecisionOwnerUnavailableTest",
+          "ExpandedPopulationIdentityTest",
+          "IndependentSpendDeltaTest"
+        ]
+      },
+      {
+        "receipt": "products-population-proof",
+        "obligations": {
+          "arbitrary-initialization": "unsat",
+          "hold-security": "unsat",
+          "hold-cash": "unsat",
+          "register-remote": "unsat",
+          "authorize-prepared-security": "unsat",
+          "authorize-prepared-cash": "unsat",
+          "commit": "unsat",
+          "abort": "unsat",
+          "learn-a": "unsat",
+          "learn-b": "unsat",
+          "apply-a": "unsat",
+          "apply-b": "unsat",
+          "release-a": "unsat",
+          "release-b": "unsat",
+          "ordinary-spend-a": "unsat",
+          "ordinary-spend-b": "unsat",
+          "book-commit": "unsat",
+          "book-abort": "unsat",
+          "arbitrary-trade-phase-injectivity": "unsat"
+        }
+      },
+      {
+        "receipt": "products-population-controls",
+        "obligations": {
+          "missing-available-capacity": "sat",
+          "duplicate-consumption": "sat",
+          "missing-remote-preparation-authority": "sat",
+          "legacy-symbolic-root-alias": "sat"
+        }
+      }
+    ]
+  }
+}

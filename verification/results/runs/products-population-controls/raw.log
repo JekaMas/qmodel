@@ -1,0 +1,357 @@
+Z3 version 4.12.4 - 64 bit
+missing-available-capacity: sat
+sat
+(
+  (define-fun deliveredB () Int
+    0)
+  (define-fun rows () (Array Int R)
+    (store (store ((as const (Array Int R))
+                (mkrow 7 591 591 591 591 591 591 591 591 591 591 591))
+              592
+              (mkrow 0 0 0 0 0 0 0 0 0 0 0 0))
+       591
+       (mkrow 3 0 0 0 0 0 0 3 0 0 0 0)))
+  (define-fun amountB () Int
+    1)
+  (define-fun newSpentA () Int
+    (+ spentA 0))
+  (define-fun localA () Bool
+    (or (= place 0) (= place 3)))
+  (define-fun spentA () Int
+    0)
+  (define-fun trade () Int
+    592)
+  (define-fun place () Int
+    0)
+  (define-fun reservedA () Int
+    0)
+  (define-fun reservedB () Int
+    0)
+  (define-fun spentB () Int
+    0)
+  (define-fun amountA () Int
+    1)
+  (define-fun population () Int
+    592)
+  (define-fun observer () Int
+    591)
+  (define-fun newReservedB () Int
+    (let ((a!1 (ite (= (holdB (select rows trade)) 1) amountB 0))
+      (a!2 (mkrow (ite (or (= place 0) (= place 3))
+                       1
+                       (decision (select rows trade)))
+                  1
+                  (holdB (select rows trade))
+                  (paidA (select rows trade))
+                  (paidB (select rows trade))
+                  (refundA (select rows trade))
+                  (refundB (select rows trade))
+                  (knownA (select rows trade))
+                  (knownB (select rows trade))
+                  (proofA (select rows trade))
+                  (proofB (select rows trade))
+                  (booking (select rows trade)))))
+  (+ (- reservedB a!1) (ite (= (holdB a!2) 1) amountB 0))))
+  (define-fun newDeliveredA () Int
+    (+ deliveredA 0))
+  (define-fun ownA () Int
+    0)
+  (define-fun newOwnB () Int
+    (- (- ownB 0) 0))
+  (define-fun localB () Bool
+    (or (= place 1) (= place 3)))
+  (define-fun ownB () Int
+    0)
+  (define-fun after () R
+    (mkrow (ite (or (= place 0) (= place 3)) 1 (decision (select rows trade)))
+       1
+       (holdB (select rows trade))
+       (paidA (select rows trade))
+       (paidB (select rows trade))
+       (refundA (select rows trade))
+       (refundB (select rows trade))
+       (knownA (select rows trade))
+       (knownB (select rows trade))
+       (proofA (select rows trade))
+       (proofB (select rows trade))
+       (booking (select rows trade))))
+  (define-fun newDeliveredB () Int
+    (+ deliveredB 0))
+  (define-fun deliveredA () Int
+    0)
+  (define-fun before () R
+    (select rows trade))
+  (define-fun newReservedA () Int
+    (let ((a!1 (ite (= (holdA (select rows trade)) 1) amountA 0))
+      (a!2 (mkrow (ite (or (= place 0) (= place 3))
+                       1
+                       (decision (select rows trade)))
+                  1
+                  (holdB (select rows trade))
+                  (paidA (select rows trade))
+                  (paidB (select rows trade))
+                  (refundA (select rows trade))
+                  (refundB (select rows trade))
+                  (knownA (select rows trade))
+                  (knownB (select rows trade))
+                  (proofA (select rows trade))
+                  (proofB (select rows trade))
+                  (booking (select rows trade)))))
+  (+ (- reservedA a!1) (ite (= (holdA a!2) 1) amountA 0))))
+  (define-fun newSpentB () Int
+    (+ spentB 0))
+  (define-fun newOwnA () Int
+    (- (- ownA 0) 0))
+)
+
+duplicate-consumption: sat
+sat
+(
+  (define-fun deliveredB () Int
+    0)
+  (define-fun rows () (Array Int R)
+    (store (store ((as const (Array Int R))
+                (mkrow 7
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924
+                       14924))
+              14924
+              (mkrow 2 1 2 0 1 0 0 2 2 1 1 0))
+       14923
+       (mkrow 3 1 0 0 0 0 0 3 0 0 0 0)))
+  (define-fun amountB () Int
+    1)
+  (define-fun newSpentA () Int
+    (+ spentA 0))
+  (define-fun localA () Bool
+    (or (= place 0) (= place 3)))
+  (define-fun spentA () Int
+    0)
+  (define-fun trade () Int
+    14924)
+  (define-fun place () Int
+    2)
+  (define-fun reservedA () Int
+    22775)
+  (define-fun reservedB () Int
+    0)
+  (define-fun spentB () Int
+    0)
+  (define-fun amountA () Int
+    22775)
+  (define-fun population () Int
+    14924)
+  (define-fun observer () Int
+    14923)
+  (define-fun newReservedB () Int
+    (let ((a!1 (ite (= (holdB (select rows trade)) 1) amountB 0))
+      (a!2 (mkrow (decision (select rows trade))
+                  (holdA (select rows trade))
+                  2
+                  (paidA (select rows trade))
+                  (+ (paidB (select rows trade)) 1)
+                  (refundA (select rows trade))
+                  (refundB (select rows trade))
+                  (knownA (select rows trade))
+                  (knownB (select rows trade))
+                  (proofA (select rows trade))
+                  (proofB (select rows trade))
+                  (booking (select rows trade)))))
+  (+ (- reservedB a!1) (ite (= (holdB a!2) 1) amountB 0))))
+  (define-fun newDeliveredA () Int
+    (+ deliveredA 0))
+  (define-fun newOwnB () Int
+    (- (- ownB amountB) 0))
+  (define-fun localB () Bool
+    (or (= place 1) (= place 3)))
+  (define-fun ownA () Int
+    22775)
+  (define-fun ownB () Int
+    0)
+  (define-fun after () R
+    (mkrow (decision (select rows trade))
+       (holdA (select rows trade))
+       2
+       (paidA (select rows trade))
+       (+ (paidB (select rows trade)) 1)
+       (refundA (select rows trade))
+       (refundB (select rows trade))
+       (knownA (select rows trade))
+       (knownB (select rows trade))
+       (proofA (select rows trade))
+       (proofB (select rows trade))
+       (booking (select rows trade))))
+  (define-fun newDeliveredB () Int
+    (+ deliveredB amountB))
+  (define-fun deliveredA () Int
+    0)
+  (define-fun before () R
+    (select rows trade))
+  (define-fun newReservedA () Int
+    (let ((a!1 (ite (= (holdA (select rows trade)) 1) amountA 0))
+      (a!2 (mkrow (decision (select rows trade))
+                  (holdA (select rows trade))
+                  2
+                  (paidA (select rows trade))
+                  (+ (paidB (select rows trade)) 1)
+                  (refundA (select rows trade))
+                  (refundB (select rows trade))
+                  (knownA (select rows trade))
+                  (knownB (select rows trade))
+                  (proofA (select rows trade))
+                  (proofB (select rows trade))
+                  (booking (select rows trade)))))
+  (+ (- reservedA a!1) (ite (= (holdA a!2) 1) amountA 0))))
+  (define-fun newSpentB () Int
+    (+ spentB 0))
+  (define-fun newOwnA () Int
+    (- (- ownA 0) 0))
+)
+
+missing-remote-preparation-authority: sat
+sat
+(
+  (define-fun deliveredA () Int
+    0)
+  (define-fun rows () (Array Int R)
+    (store ((as const (Array Int R)) (mkrow 7 2 2 2 2 2 2 2 2 2 2 2))
+       1
+       (mkrow 1 1 0 0 0 0 0 0 0 0 0 0)))
+  (define-fun amountB () Int
+    1)
+  (define-fun newSpentA () Int
+    (+ spentA 0))
+  (define-fun localA () Bool
+    (or (= place 0) (= place 3)))
+  (define-fun deliveredB () Int
+    0)
+  (define-fun trade () Int
+    1)
+  (define-fun reservedA () Int
+    1)
+  (define-fun reservedB () Int
+    0)
+  (define-fun spentA () Int
+    0)
+  (define-fun amountA () Int
+    1)
+  (define-fun population () Int
+    1)
+  (define-fun observer () Int
+    1)
+  (define-fun newReservedB () Int
+    (let ((a!1 (ite (= (holdB (select rows trade)) 1) amountB 0))
+      (a!2 (mkrow 2
+                  (ite (or (= place 0) (= place 3))
+                       2
+                       (holdA (select rows trade)))
+                  (ite (or (= place 1) (= place 3))
+                       2
+                       (holdB (select rows trade)))
+                  (ite (or (= place 0) (= place 3))
+                       1
+                       (paidA (select rows trade)))
+                  (ite (or (= place 1) (= place 3))
+                       1
+                       (paidB (select rows trade)))
+                  (refundA (select rows trade))
+                  (refundB (select rows trade))
+                  (ite (or (= place 0) (= place 3))
+                       2
+                       (knownA (select rows trade)))
+                  (ite (or (= place 1) (= place 3))
+                       2
+                       (knownB (select rows trade)))
+                  (proofA (select rows trade))
+                  (proofB (select rows trade))
+                  (booking (select rows trade)))))
+  (+ (- reservedB a!1) (ite (= (holdB a!2) 1) amountB 0))))
+  (define-fun spentB () Int
+    0)
+  (define-fun newDeliveredA () Int
+    (+ deliveredA (ite (or (= place 0) (= place 3)) amountA 0)))
+  (define-fun newOwnB () Int
+    (let ((a!1 (- ownB (ite (or (= place 1) (= place 3)) amountB 0))))
+  (- a!1 0)))
+  (define-fun localB () Bool
+    (or (= place 1) (= place 3)))
+  (define-fun ownA () Int
+    1)
+  (define-fun after () R
+    (mkrow 2
+       (ite (or (= place 0) (= place 3)) 2 (holdA (select rows trade)))
+       (ite (or (= place 1) (= place 3)) 2 (holdB (select rows trade)))
+       (ite (or (= place 0) (= place 3)) 1 (paidA (select rows trade)))
+       (ite (or (= place 1) (= place 3)) 1 (paidB (select rows trade)))
+       (refundA (select rows trade))
+       (refundB (select rows trade))
+       (ite (or (= place 0) (= place 3)) 2 (knownA (select rows trade)))
+       (ite (or (= place 1) (= place 3)) 2 (knownB (select rows trade)))
+       (proofA (select rows trade))
+       (proofB (select rows trade))
+       (booking (select rows trade))))
+  (define-fun newDeliveredB () Int
+    (+ deliveredB (ite (or (= place 1) (= place 3)) amountB 0)))
+  (define-fun ownB () Int
+    0)
+  (define-fun before () R
+    (select rows trade))
+  (define-fun newReservedA () Int
+    (let ((a!1 (ite (= (holdA (select rows trade)) 1) amountA 0))
+      (a!2 (mkrow 2
+                  (ite (or (= place 0) (= place 3))
+                       2
+                       (holdA (select rows trade)))
+                  (ite (or (= place 1) (= place 3))
+                       2
+                       (holdB (select rows trade)))
+                  (ite (or (= place 0) (= place 3))
+                       1
+                       (paidA (select rows trade)))
+                  (ite (or (= place 1) (= place 3))
+                       1
+                       (paidB (select rows trade)))
+                  (refundA (select rows trade))
+                  (refundB (select rows trade))
+                  (ite (or (= place 0) (= place 3))
+                       2
+                       (knownA (select rows trade)))
+                  (ite (or (= place 1) (= place 3))
+                       2
+                       (knownB (select rows trade)))
+                  (proofA (select rows trade))
+                  (proofB (select rows trade))
+                  (booking (select rows trade)))))
+  (+ (- reservedA a!1) (ite (= (holdA a!2) 1) amountA 0))))
+  (define-fun newSpentB () Int
+    (+ spentB 0))
+  (define-fun newOwnA () Int
+    (let ((a!1 (- ownA (ite (or (= place 0) (= place 3)) amountA 0))))
+  (- a!1 0)))
+  (define-fun place () Int
+    0)
+)
+
+legacy-symbolic-root-alias: sat
+sat
+(
+  (define-fun n () Int
+    11)
+  (define-fun r () Int
+    1)
+  (define-fun p () Int
+    0)
+  (define-fun u () Int
+    1)
+  (define-fun t () Int
+    11)
+)
+

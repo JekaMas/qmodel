@@ -1,0 +1,8 @@
+
+  placement_products
+    ok OneLegEvidenceCannotBookTest passed 1 test(s)
+    ok FundedMixedRecoveryTest passed 1 test(s)
+    ok DecisionOwnerUnavailableTest passed 1 test(s)
+    ok IndependentSpendDeltaTest passed 1 test(s)
+
+  4 passing (442ms)

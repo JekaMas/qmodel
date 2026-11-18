@@ -37,6 +37,8 @@ The [v2 brief](../../../verification/sources/task-v2.md) and [recovered solution
 
 ## Open proof products and completion conditions
 
+This table records the original handoff. The [logical-protocol disposition](../../../verification/reports/proof-products.md) covers the seven products under the subsequently clarified contract-and-action scope and records the remaining proof boundaries.
+
 | Product | Model or implementation increment | Independent discriminator |
 |---|---|---|
 | Sustained end-to-end hostile work | Compose causal capture/prove/inclusion/retry queues with the N3 hold state, retain ready obligations across restart and measure bounded service after stabilization. Include hostile request IDs, duplicate arrivals and preemption. | Shared slot exhaustion, admission/priority inversion and missing recovery service must give a missed bound. Verify safety separately at larger or permanent workloads. |

@@ -1,0 +1,20 @@
+Z3 version 4.12.4 - 64 bit
+arbitrary-initialization: unsat
+hold-security: unsat
+hold-cash: unsat
+register-remote: unsat
+authorize-prepared-security: unsat
+authorize-prepared-cash: unsat
+commit: unsat
+abort: unsat
+learn-a: unsat
+learn-b: unsat
+apply-a: unsat
+apply-b: unsat
+release-a: unsat
+release-b: unsat
+ordinary-spend-a: unsat
+ordinary-spend-b: unsat
+book-commit: unsat
+book-abort: unsat
+arbitrary-trade-phase-injectivity: unsat

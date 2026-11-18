@@ -1,0 +1,98 @@
+  // Op = (trade, method). Ticket distinguishes invocations of the same
+  // durable operation. Event 0 invokes, 1 linearizes, 2 certifies, 3 responds.
+  type Op=(int,int)
+  type Ticket=(Op,int)
+  type Notice=(Op,int,int)
+  type Journal={calls:Set[Ticket],durable:Set[Op],finalizedOps:Set[Op],
+    cache:Set[Op],backup:Set[Op],fresh:bool,events:List[Notice]}
+  var j:Journal
+
+  action historyInit=all {init,j'={calls:Set(),durable:Set(),finalizedOps:Set(),
+    cache:Set(),backup:Set(),fresh:true,events:List()}}
+
+  action invokeOp(t:int,method:int,ticket:int):bool = {
+    val op=(t,method)
+    all {
+      not(j.calls.contains((op,ticket))),s'=s,
+      j'={...j,calls:j.calls.union(Set((op,ticket))),events:j.events.append((op,ticket,0))}
+    }
+  }
+  action actual(op:Op):bool =
+    if(op._2==0) openA(op._1)
+    else if(op._2==1) prepareB(op._1)
+    else if(op._2==2) commit(op._1)
+    else if(op._2==3) applyB(op._1)
+    else if(op._2==4) abort(op._1)
+    else if(op._2==5 or op._2==6) refund(op._1,op._2-5)
+    else reconcile(op._1)
+
+  action effect(t:int,method:int):bool = {
+    val op=(t,method)
+    all {
+      j.calls.exists(c=>c._1==op), not(j.durable.contains(op)) or (mode==4 and method==3),
+      if(mode==2 and method==2) s'=s else actual(op),
+      j'={...j,durable:j.durable.union(Set(op)),events:j.events.append((op,0,1))}
+    }
+  }
+
+  pure val phases=Map(0->0,1->2,2->3,3->6,4->4)
+  action canonicalEvent(t:int,method:int):bool =
+    if(method<=4) finalize(t,phases.get(method))
+    else if(method<=6) captureAbortRecord(t,method-5)
+    else all {evidenceBackedBooking(s,desc(t)),s'=s}
+
+  action confirmOp(t:int,method:int):bool = {
+    val op=(t,method)
+    all {j.durable.contains(op),not(j.finalizedOps.contains(op)),canonicalEvent(t,method),
+      j'={...j,finalizedOps:j.finalizedOps.union(Set(op)),events:j.events.append((op,0,2))}}
+  }
+
+  action reload(t:int,method:int):bool = all {
+    s.up.contains(3),j.finalizedOps.contains((t,method)),s'=s,
+    j'={...j,cache:j.cache.union(Set((t,method)))}
+  }
+
+  action response(t:int,method:int,ticket:int):bool = {
+    val op=(t,method)
+    all {
+      j.calls.contains((op,ticket)),s.up.contains(3),j.cache.contains(op) or mode==1,
+      s'=s,j'={...j,events:j.events.append((op,ticket,3))}
+    }
+  }
+
+  action keepBackup=all {s'=s,j'={...j,backup:j.cache}}
+  action stopAdapter=all {crash(3),j'={...j,fresh:false,cache:Set()}}
+  action recoverAdapter=all {
+    recover(3),j'={...j,fresh:false,cache:if(mode==3) j.backup.union(Set((1,3))) else j.backup}
+  }
+  action caughtUp=all {
+    s.up.contains(3),s'=s,j'={...j,cache:j.finalizedOps,fresh:true}
+  }
+
+  // This serial-history automaton uses the immutable observed events rather
+  // than any cached result flag reserved by the writer.
+  pure def legal(notices:List[Notice]):bool = notices.foldl(
+    {requests:Set(),performed:Set(),visible:Set(),valid:true},
+    (x,e)=> if(e._3==0) {...x,requests:x.requests.union(Set((e._1,e._2)))}
+      else if(e._3==1) {...x,
+        valid:x.valid and x.requests.exists(r=>r._1==e._1) and not(x.performed.contains(e._1)),
+        performed:x.performed.union(Set(e._1))}
+      else if(e._3==2) {...x,valid:x.valid and x.performed.contains(e._1),
+        visible:x.visible.union(Set(e._1))}
+      else {...x,valid:x.valid and x.requests.contains((e._1,e._2)) and x.visible.contains(e._1)}
+  ).valid
+
+  def effectObserved(op:Op):bool = {
+    val row=s.trades.get(op._1)
+    if(op._2==0) row.preparedA
+    else if(op._2==1) row.preparedB
+    else if(op._2==2) row.decision==2 and row.effectsA==1 and s.receivedA.get(op._1)==2
+    else if(op._2==3) row.decision==2 and row.effectsB==1 and s.receivedB.get(op._1)==3
+    else if(op._2==4) row.decision==3
+    else if(op._2==5) row.refundsA==1
+    else if(op._2==6) row.refundsB==1
+    else s.financialRecords.contains({d:desc(op._1),outcome:2})
+  }
+  val actualEffects = j.durable.forall(op=>effectObserved(op))
+  val historySafe = sequenceSafe and actualEffects and legal(j.events) and
+    j.cache.subseteq(j.finalizedOps) and (j.fresh implies j.cache.subseteq(j.finalizedOps))

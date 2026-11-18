@@ -1,0 +1,20 @@
+
+ Error [QNT000]: Couldn't unify int and oper
+Trying to unify int and () => _t3697
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-clocks-directed/clocks.qnt:85:94
+  85:     .forall(f=>rates.accepted>0 and s.height>=rates.atHeight+1 and f.d==desc(2) and f.phase==terminalPhase())
+                                                                                                   ^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Can't unify different types of effects
+Trying to unify Read['clock_products::dvp::s'] and () => _e2543
+Trying to infer effect for operator application in terminalPhase()
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/products/products-clocks-directed/clocks.qnt:85:94
+  85:     .forall(f=>rates.accepted>0 and s.height>=rates.atHeight+1 and f.d==desc(2) and f.phase==terminalPhase())
+                                                                                                   ^^^^^^^^^^^^^^^
+
+error: typechecking failed

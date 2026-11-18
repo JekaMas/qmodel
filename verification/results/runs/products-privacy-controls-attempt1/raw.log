@@ -1,0 +1,9 @@
+
+  products_privacy_mutant_test
+    ok BackupSizeLeakTest passed 1 test(s)
+    ok RoutingLeakTest passed 1 test(s)
+    ok TimingLeakTest passed 1 test(s)
+    ok CachedRevokedScopeLeakTest passed 1 test(s)
+    ok LostKeyFalseUsabilityTest passed 1 test(s)
+
+  5 passing (196ms)
