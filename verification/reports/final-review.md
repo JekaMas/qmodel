@@ -10,6 +10,8 @@ The [guarantee assurance follow-up](../reviews/guarantee-assurance/README.md) co
 
 The [repeated-settlement review](repeated-settlement-review.md) adds actual success on successive and overlapping trades, literal shared-balance checks, and an action-by-action fault coverage ledger. The historical two-trade graph exercises contention for one funded pair. The new workload tests five successful exchanges in one model history.
 
+The [three-trade fault and race follow-up](three-trade-faults.md) checks capacity and concurrent decisions from admission, a named mixed recovery suffix, timed and adversarial schedules, a fixed Byzantine certificate envelope, and actual invocation/response histories for booking. Its [stage matrix](../../openspec/changes/check-three-trade-faults/fault-matrix.md) maps each scope to the checked or pending boundary.
+
 ## Result architecture and literal atomicity
 
 The reference retains independently operated native security A and cash B ledgers. A orders a permanent decision; B does not outsource custody to a relayer. Both principals sign the immutable descriptor. Local admitted policy/funding creates durable reservations. Finalized B preparation is captured and proved; A authenticates it, checks its local hold and exclusive deadline, and atomically records COMMIT plus security delivery. Finalized A outcome evidence then authorizes B's local cash delivery or ABORT release. Reconciliation consumes authenticated application/no-obligation records. Durable tombstones and persistent terminal knowledge resolve missing OPEN, known ABORT before preparation, and delayed authentic historical preparation.

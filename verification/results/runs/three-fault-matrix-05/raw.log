@@ -1,0 +1,6 @@
+
+  timed_three_test
+    ok ObserveBeforeApplicationTest passed 1 test(s)
+    ok FreezeCannotUndoCommitTest passed 1 test(s)
+
+  2 passing (190ms)

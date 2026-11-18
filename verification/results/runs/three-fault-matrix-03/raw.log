@@ -1,0 +1,16 @@
+
+  timed_three_test
+    ok Actor4Window14Test passed 1 test(s)
+    ok Actor0FlapTest passed 1 test(s)
+    ok Actor1FlapTest passed 1 test(s)
+    ok Actor2FlapTest passed 1 test(s)
+    ok Actor3FlapTest passed 1 test(s)
+    ok Actor4FlapTest passed 1 test(s)
+    ok Phase0PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase0PartitionHealsAtBoundTest passed 1 test(s)
+    ok Phase1PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase1PartitionHealsAtBoundTest passed 1 test(s)
+    ok Phase2PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase2PartitionHealsAtBoundTest passed 1 test(s)
+
+  12 passing (1030ms)

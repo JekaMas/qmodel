@@ -58,6 +58,12 @@ The relational quantifier is finite and exact: one fixed public 12-operation seq
 
 Opaque names are tied to actual distinct witness content and compared through a documented correspondence, including response commitment fields. Retries retain the same name. This assumes ideal hiding and private channels; it does not prove entropy, computational indistinguishability, ZK, arbitrary scheduler noninterference or termination security. Actual data-path log/timing/unsalted/scope/substitution/note/key controls execute separately. The small timed product uses these actual constructed outputs and public queue time/depth, with its own bounded schedule.
 
+## Three-trade fault and race profiles
+
+Three funded or competing identities use exact descriptor deadlines and consume common native capacity. The timed profile distinguishes elapsed time from A/B height, records an availability window per actor, and independently withholds honest messages by route. Finite hostile output cannot replace canonical source provenance. The exact post-decision progress profile uses already reached mixed terminal outcomes, retained evidence, eventually stable availability and fairness of each trade's selected work.
+
+Local hold, decision/application, release and booking each have an authoritative write boundary. The concrete SQLite history checks consider concurrent invocation and response plus a lost reply. A Byzantine authority lemma checks fixed-context certificates separately from transfer or bookkeeping, and thus keeps its honest-vote and authentic-membership premises explicit. See the [scoped results](reports/three-trade-faults.md).
+
 ## Repeated settlement
 
 The funded test profile specializes the same reference transitions to five funded pairs, seven immutable trade identities and per-trade deadlines. It explicitly guards ordinary spending by local ledger availability. Reservations share the two balances. A completed COMMIT consumes the relevant capacities. ABORT releases those capacities once while retaining the terminal decision. The workload leaves prior decisions, effect receipts and financial rows observable across later exchanges and restarts.

@@ -9,6 +9,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from audit_evidence import ROOT,EvidenceError,load_latest,validate
 from guarantee_audit import audit_guarantees
 from repeated_audit import coverage as audit_repeated
+from three_audit import audit_three
 
 def main():
  p=argparse.ArgumentParser(description=__doc__)
@@ -47,6 +48,10 @@ def main():
    selected.extend(repeated['directed_receipts'] + repeated['sample_receipts'])
    if a.suite=='audit':
     selected.append(repeated['legacy_discriminator'])
+  three=audit_three()
+  if a.suite in ['baseline','audit']:selected.extend(three['positive'])
+  if a.suite in ['negative','audit']:selected.extend(three['negative'])
+  if a.suite=='audit':selected.extend(three['witnesses'])
  if a.fresh:
   for base in selected:
    done=subprocess.run([sys.executable,str(ROOT/'verification/scripts/replay.py'),base],cwd=ROOT)

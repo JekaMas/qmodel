@@ -1,0 +1,13 @@
+
+ Error [QNT000]: Expected [timed_three_test::dvp::s,clock] and [timed_three_test::dvp::s] to be the same
+Trying to unify entities ['timed_three_test::dvp::s', 'clock'] and ['timed_three_test::dvp::s']
+Trying to unify Read[_v12713] & Update['timed_three_test::dvp::s', 'clock'] and Read['timed_three_test::dvp::s'] & Update['timed_three_test::dvp::s']
+Trying to unify (Read[_v12711] & Update[_v12712], Read[_v12713] & Update[_v12712]) => Read[_v12714] & Update[_v12712] and (Read[_v12684] & Update['timed_three_test::dvp::s', 'clock'], Read['timed_three_test::dvp::s'] & Update['timed_three_test::dvp::s']) => _e2846
+Trying to infer effect for operator application in then(expect(contender, and(eq(field(s, "ownerA"), 4), eq(reservedA(s), 4))), fail(openA(3)))
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/three/timed-2/timed_three_test.qnt:138:44
+  138:   run ThirdSecurityReservationDeniedTest = contender.expect(s.ownerA==4 and reservedA(s)==4).then(openA(3).fail())
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

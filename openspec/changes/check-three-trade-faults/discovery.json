@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "change": "check-three-trade-faults",
+  "scope": {
+    "property_ids": [
+      "T3.P1",
+      "T3.P2",
+      "T3.P3",
+      "TL.P4",
+      "TL.P5"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_native_three_trade_enumeration_and_full_funding_witness",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_contended_reserves_and_foreign_proofs_rejected",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_combined_faults_and_evidenced_recovery",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_duration_timeout_replay_and_route_negative_matrix",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_saturated_application_lane_meets_service_bound",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_unprotected_lane_misses_service_bound",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_actual_concurrent_linearization_histories",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_early_response_conflict_and_local_order_controls",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_native_byzantine_quorum_envelope",
+      "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_overthreshold_equivocation_and_context_failure"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "T3.D1",
+      "property_ids": [
+        "T3.P1",
+        "T3.P2",
+        "T3.P3",
+        "TL.P4",
+        "TL.P5"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_native_three_trade_enumeration_and_full_funding_witness",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_contended_reserves_and_foreign_proofs_rejected",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_combined_faults_and_evidenced_recovery",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_duration_timeout_replay_and_route_negative_matrix",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_saturated_application_lane_meets_service_bound",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_unprotected_lane_misses_service_bound",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_actual_concurrent_linearization_histories",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_early_response_conflict_and_local_order_controls",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_native_byzantine_quorum_envelope",
+        "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_overthreshold_equivocation_and_context_failure"
+      ],
+      "question": "Which actual actors, stage semantics, verification sources and history owners cover the N3 fault product?",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the original brief, known core and evidence owners, named variants and cited upstream specifications.",
+          "outcome": "Mapped program scope, sequential authority, phase timing and durable independent history to exact check owners.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 1,
+              "classification": "reusable_unchanged",
+              "reason": "Owns actual protocol operations."
+            },
+            {
+              "path": "verification/tests/workloads/timed_three.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Owns actual timing and fault composition."
+            },
+            {
+              "path": "verification/models/certificate_envelope.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Owns checked Byzantine certificate scope."
+            },
+            {
+              "path": "verification/tests/test_booking_linearization.py",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Evaluates actual SQLite call histories."
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Discover unfamiliar product symbols",
+          "outcome": "All edited and observed owners are named model and adapter paths.",
+          "reason": "The verification extends published model symbols and the known API boundary.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "Production PSI evidence",
+          "outcome": "No IDE evidence requested or claimed.",
+          "reason": "Native verification and real local SQLite histories provide the applicable evidence.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "The exact requirement, named native suite and local history map define this change."
+    }
+  ]
+}

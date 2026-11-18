@@ -1,0 +1,73 @@
+{
+  "id": "three-fault-matrix-01",
+  "started_utc": "2026-11-18T15:09:05.390448+00:00",
+  "claim": "Timed fault matrix and stage-local decision races",
+  "backend": "cli",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "test",
+    "verification/results/runtime/three/three-fault-matrix-01/timed_three_test.qnt",
+    "--main",
+    "timed_three_test",
+    "--backend",
+    "rust",
+    "--seed",
+    "61",
+    "--match",
+    ".*Test"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint test verification/results/runtime/three/three-fault-matrix-01/timed_three_test.qnt --main timed_three_test --backend rust --seed 61 --match '.*Test'",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/results/runtime/three/three-fault-matrix-01/timed_three_test.qnt": "4f048ff88e4326240657c0b339c8d46def1b9cb18c2aac69cb0d5c48e4d3667e",
+    "verification/results/runtime/three/three-fault-matrix-01/dvp.qnt": "122c37d8363f8f9f58e41ded85183371b58be2d3dc38928704b1b7d434ad54c1",
+    "verification/results/runtime/three/three-fault-matrix-01/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+    "verification/results/runtime/three/three-fault-matrix-01/guarantee_oracles.qnt": "52707f0321f50fe7c1ce2344732197005b295703c94ef289a8c9c28dc8c15d3b"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "execution_plan_sha256": "0889c7380a039c4927fc545fcc13bcee3b749315ec2f72e3009c6edb2c82c757",
+  "raw_sha256": "17ca89d72e14d86387e0dbb24cef0059b74be8133949be38630e59bfcf259e5d",
+  "configuration": {
+    "tests": [
+      "Actor0Window1Test",
+      "Actor0Window2Test",
+      "Actor0Window3Test",
+      "Actor0Window5Test",
+      "Actor0Window14Test",
+      "Actor1Window1Test",
+      "Actor1Window2Test",
+      "Actor1Window3Test",
+      "Actor1Window5Test",
+      "Actor1Window14Test",
+      "Actor2Window1Test",
+      "Actor2Window2Test"
+    ]
+  },
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 0,
+  "wall_seconds": 3.6720243748277426,
+  "outcome": "executed_successfully",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/three-fault-matrix-01/raw.log",
+  "minimized": false,
+  "replayed": false
+}

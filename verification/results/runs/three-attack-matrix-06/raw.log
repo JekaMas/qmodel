@@ -1,0 +1,9 @@
+
+  timed_three_test
+    ok Candidate8AtPhase6Test passed 1 test(s)
+    ok Candidate9AtPhase6Test passed 1 test(s)
+    ok Candidate10AtPhase6Test passed 1 test(s)
+    ok Candidate11AtPhase6Test passed 1 test(s)
+    ok EqualCandidateWithRealProvenanceRemainsAnIdempotentReplayTest passed 1 test(s)
+
+  5 passing (482ms)

@@ -1,0 +1,332 @@
+{
+  "positive": [
+    "three-decisions-2",
+    "three-decisions-3",
+    "three-timed-directed-2-attempt1",
+    "three-timed-directed-3",
+    "three-fault-matrix-01",
+    "three-fault-matrix-02",
+    "three-fault-matrix-03",
+    "three-fault-matrix-04",
+    "three-fault-matrix-05",
+    "three-attack-matrix-01",
+    "three-attack-matrix-02",
+    "three-attack-matrix-03",
+    "three-attack-matrix-04",
+    "three-attack-matrix-05",
+    "three-attack-matrix-06",
+    "three-timed-sample-61",
+    "three-timed-sample-62",
+    "three-timed-sample-63",
+    "three-exclusive-deadline",
+    "three-recovery-progress",
+    "byzantine-envelope-attempt1",
+    "three-booking-linearization",
+    "three-queue-protected-attempt1"
+  ],
+  "negative": [
+    "byzantine-threshold-exceeded-attempt1",
+    "byzantine-foreign-context-attempt1",
+    "three-queue-unprotected-attempt1"
+  ],
+  "witnesses": [
+    "three-recovery-directed-witness",
+    "three-queue-reachable-attempt1"
+  ],
+  "protected_queue_states": 71,
+  "retained_stage_controls": {
+    "membership_and_scope": [
+      {
+        "receipt": "membership-retirement-final",
+        "outcome": "finite_model_verified"
+      },
+      {
+        "receipt": "membership-unsafe-retirement",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "membership-consumed-replay",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "trust-v2-retired_version",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "auth-execution_rejects_history",
+        "outcome": "finite_model_verified"
+      },
+      {
+        "receipt": "auth-zk_bad_execution",
+        "outcome": "expected_counterexample_found"
+      }
+    ],
+    "ledger_and_deadline": [
+      {
+        "receipt": "qa-legacy-reopen",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-legacy-stale_refund",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-legacy-replay",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-legacy-non_atomic",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-immediate",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-permanent-halt",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "tlc-arbitrary_seizure-backing",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "one-less-deadline-margin",
+        "outcome": "expected_counterexample_found"
+      }
+    ],
+    "outage_capacity_and_loss": [
+      {
+        "receipt": "trust-v2-witness_loss",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "trust-v2-committee_refusal",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "trust-v2-insufficient_submitters",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "tlc-no_inclusion-boundedCompletion",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "tlc-starvation-boundedCompletion",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "tlc-unlimited-exposure",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "late-hold-relative-bound",
+        "outcome": "finite_model_verified"
+      },
+      {
+        "receipt": "qa-scenarios-phase_failure_test",
+        "outcome": "executed_successfully"
+      }
+    ],
+    "book_and_privacy": [
+      {
+        "receipt": "guarantees-sqlite-attempt1",
+        "outcome": "executed_successfully"
+      },
+      {
+        "receipt": "guarantees-control-missing-application-attempt1",
+        "outcome": "executed_successfully"
+      },
+      {
+        "receipt": "qa-private-unconditionalAvailability",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "private-permanent-key-loss",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "audit-omitted_record",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-pipeline_log",
+        "outcome": "expected_counterexample_found"
+      },
+      {
+        "receipt": "qa-pipeline_timing",
+        "outcome": "expected_counterexample_found"
+      }
+    ]
+  },
+  "decision_states": {
+    "2": 18849,
+    "3": 33216
+  },
+  "mixed_recovery_states": 856074,
+  "certificate_states": 60480,
+  "timed_directed": {
+    "ThirdSecurityReservationDeniedTest": "three-timed-directed-2-attempt1",
+    "ThirdCashReservationDeniedTest": "three-timed-directed-2-attempt1",
+    "ThreeConcurrentHoldsTest": "three-timed-directed-3",
+    "TooEarlyRestartTest": "three-timed-directed-3",
+    "PartitionWithholdsValidPreparationTest": "three-timed-directed-3",
+    "PartitionWithholdsAbortTest": "three-timed-directed-3",
+    "DeadlineAndProofRaceTest": "three-timed-directed-3",
+    "RealForeignProofRejectedTest": "three-timed-directed-3",
+    "UnknownOutcomeCannotOverwriteKnowledgeTest": "three-timed-directed-3",
+    "OverlapCrashPartitionMaliceAndRecoveryTest": "three-timed-directed-3",
+    "IndependentClockAndPermanentAStopTest": "three-timed-directed-3",
+    "ByteExactPhaseRootsTest": "three-timed-directed-3"
+  },
+  "timed_fault_matrix": {
+    "Actor0Window1Test": "three-fault-matrix-01",
+    "Actor0Window2Test": "three-fault-matrix-01",
+    "Actor0Window3Test": "three-fault-matrix-01",
+    "Actor0Window5Test": "three-fault-matrix-01",
+    "Actor0Window14Test": "three-fault-matrix-01",
+    "Actor1Window1Test": "three-fault-matrix-01",
+    "Actor1Window2Test": "three-fault-matrix-01",
+    "Actor1Window3Test": "three-fault-matrix-01",
+    "Actor1Window5Test": "three-fault-matrix-01",
+    "Actor1Window14Test": "three-fault-matrix-01",
+    "Actor2Window1Test": "three-fault-matrix-01",
+    "Actor2Window2Test": "three-fault-matrix-01",
+    "Actor2Window3Test": "three-fault-matrix-02",
+    "Actor2Window5Test": "three-fault-matrix-02",
+    "Actor2Window14Test": "three-fault-matrix-02",
+    "Actor3Window1Test": "three-fault-matrix-02",
+    "Actor3Window2Test": "three-fault-matrix-02",
+    "Actor3Window3Test": "three-fault-matrix-02",
+    "Actor3Window5Test": "three-fault-matrix-02",
+    "Actor3Window14Test": "three-fault-matrix-02",
+    "Actor4Window1Test": "three-fault-matrix-02",
+    "Actor4Window2Test": "three-fault-matrix-02",
+    "Actor4Window3Test": "three-fault-matrix-02",
+    "Actor4Window5Test": "three-fault-matrix-02",
+    "Actor4Window14Test": "three-fault-matrix-03",
+    "Actor0FlapTest": "three-fault-matrix-03",
+    "Actor1FlapTest": "three-fault-matrix-03",
+    "Actor2FlapTest": "three-fault-matrix-03",
+    "Actor3FlapTest": "three-fault-matrix-03",
+    "Actor4FlapTest": "three-fault-matrix-03",
+    "Phase0PartitionBlocksDeliveryTest": "three-fault-matrix-03",
+    "Phase0PartitionHealsAtBoundTest": "three-fault-matrix-03",
+    "Phase1PartitionBlocksDeliveryTest": "three-fault-matrix-03",
+    "Phase1PartitionHealsAtBoundTest": "three-fault-matrix-03",
+    "Phase2PartitionBlocksDeliveryTest": "three-fault-matrix-03",
+    "Phase2PartitionHealsAtBoundTest": "three-fault-matrix-03",
+    "Phase3PartitionBlocksDeliveryTest": "three-fault-matrix-04",
+    "Phase3PartitionHealsAtBoundTest": "three-fault-matrix-04",
+    "Phase4PartitionBlocksDeliveryTest": "three-fault-matrix-04",
+    "Phase4PartitionHealsAtBoundTest": "three-fault-matrix-04",
+    "Phase5PartitionBlocksDeliveryTest": "three-fault-matrix-04",
+    "Phase5PartitionHealsAtBoundTest": "three-fault-matrix-04",
+    "Phase6PartitionBlocksDeliveryTest": "three-fault-matrix-04",
+    "Phase6PartitionHealsAtBoundTest": "three-fault-matrix-04",
+    "RevokeBeforeReserveTest": "three-fault-matrix-04",
+    "ReserveBeforeRevokeTest": "three-fault-matrix-04",
+    "SubmitterStopBeforeCommitTest": "three-fault-matrix-04",
+    "CommitBeforeSubmitterStopTest": "three-fault-matrix-04",
+    "ObserveBeforeApplicationTest": "three-fault-matrix-05",
+    "FreezeCannotUndoCommitTest": "three-fault-matrix-05"
+  },
+  "attack_matrix": {
+    "Candidate0AtPhase0Test": "three-attack-matrix-01",
+    "Candidate1AtPhase0Test": "three-attack-matrix-01",
+    "Candidate2AtPhase0Test": "three-attack-matrix-01",
+    "Candidate3AtPhase0Test": "three-attack-matrix-01",
+    "Candidate4AtPhase0Test": "three-attack-matrix-01",
+    "Candidate5AtPhase0Test": "three-attack-matrix-01",
+    "Candidate6AtPhase0Test": "three-attack-matrix-01",
+    "Candidate7AtPhase0Test": "three-attack-matrix-01",
+    "Candidate8AtPhase0Test": "three-attack-matrix-01",
+    "Candidate9AtPhase0Test": "three-attack-matrix-01",
+    "Candidate10AtPhase0Test": "three-attack-matrix-01",
+    "Candidate11AtPhase0Test": "three-attack-matrix-01",
+    "Candidate0AtPhase1Test": "three-attack-matrix-01",
+    "Candidate1AtPhase1Test": "three-attack-matrix-01",
+    "Candidate2AtPhase1Test": "three-attack-matrix-01",
+    "Candidate3AtPhase1Test": "three-attack-matrix-01",
+    "Candidate4AtPhase1Test": "three-attack-matrix-02",
+    "Candidate5AtPhase1Test": "three-attack-matrix-02",
+    "Candidate6AtPhase1Test": "three-attack-matrix-02",
+    "Candidate7AtPhase1Test": "three-attack-matrix-02",
+    "Candidate8AtPhase1Test": "three-attack-matrix-02",
+    "Candidate9AtPhase1Test": "three-attack-matrix-02",
+    "Candidate10AtPhase1Test": "three-attack-matrix-02",
+    "Candidate11AtPhase1Test": "three-attack-matrix-02",
+    "Candidate0AtPhase2Test": "three-attack-matrix-02",
+    "Candidate1AtPhase2Test": "three-attack-matrix-02",
+    "Candidate2AtPhase2Test": "three-attack-matrix-02",
+    "Candidate3AtPhase2Test": "three-attack-matrix-02",
+    "Candidate4AtPhase2Test": "three-attack-matrix-02",
+    "Candidate5AtPhase2Test": "three-attack-matrix-02",
+    "Candidate6AtPhase2Test": "three-attack-matrix-02",
+    "Candidate7AtPhase2Test": "three-attack-matrix-02",
+    "Candidate8AtPhase2Test": "three-attack-matrix-03",
+    "Candidate9AtPhase2Test": "three-attack-matrix-03",
+    "Candidate10AtPhase2Test": "three-attack-matrix-03",
+    "Candidate11AtPhase2Test": "three-attack-matrix-03",
+    "Candidate0AtPhase3Test": "three-attack-matrix-03",
+    "Candidate1AtPhase3Test": "three-attack-matrix-03",
+    "Candidate2AtPhase3Test": "three-attack-matrix-03",
+    "Candidate3AtPhase3Test": "three-attack-matrix-03",
+    "Candidate4AtPhase3Test": "three-attack-matrix-03",
+    "Candidate5AtPhase3Test": "three-attack-matrix-03",
+    "Candidate6AtPhase3Test": "three-attack-matrix-03",
+    "Candidate7AtPhase3Test": "three-attack-matrix-03",
+    "Candidate8AtPhase3Test": "three-attack-matrix-03",
+    "Candidate9AtPhase3Test": "three-attack-matrix-03",
+    "Candidate10AtPhase3Test": "three-attack-matrix-03",
+    "Candidate11AtPhase3Test": "three-attack-matrix-03",
+    "Candidate0AtPhase4Test": "three-attack-matrix-04",
+    "Candidate1AtPhase4Test": "three-attack-matrix-04",
+    "Candidate2AtPhase4Test": "three-attack-matrix-04",
+    "Candidate3AtPhase4Test": "three-attack-matrix-04",
+    "Candidate4AtPhase4Test": "three-attack-matrix-04",
+    "Candidate5AtPhase4Test": "three-attack-matrix-04",
+    "Candidate6AtPhase4Test": "three-attack-matrix-04",
+    "Candidate7AtPhase4Test": "three-attack-matrix-04",
+    "Candidate8AtPhase4Test": "three-attack-matrix-04",
+    "Candidate9AtPhase4Test": "three-attack-matrix-04",
+    "Candidate10AtPhase4Test": "three-attack-matrix-04",
+    "Candidate11AtPhase4Test": "three-attack-matrix-04",
+    "Candidate0AtPhase5Test": "three-attack-matrix-04",
+    "Candidate1AtPhase5Test": "three-attack-matrix-04",
+    "Candidate2AtPhase5Test": "three-attack-matrix-04",
+    "Candidate3AtPhase5Test": "three-attack-matrix-04",
+    "Candidate4AtPhase5Test": "three-attack-matrix-05",
+    "Candidate5AtPhase5Test": "three-attack-matrix-05",
+    "Candidate6AtPhase5Test": "three-attack-matrix-05",
+    "Candidate7AtPhase5Test": "three-attack-matrix-05",
+    "Candidate8AtPhase5Test": "three-attack-matrix-05",
+    "Candidate9AtPhase5Test": "three-attack-matrix-05",
+    "Candidate10AtPhase5Test": "three-attack-matrix-05",
+    "Candidate11AtPhase5Test": "three-attack-matrix-05",
+    "Candidate0AtPhase6Test": "three-attack-matrix-05",
+    "Candidate1AtPhase6Test": "three-attack-matrix-05",
+    "Candidate2AtPhase6Test": "three-attack-matrix-05",
+    "Candidate3AtPhase6Test": "three-attack-matrix-05",
+    "Candidate4AtPhase6Test": "three-attack-matrix-05",
+    "Candidate5AtPhase6Test": "three-attack-matrix-05",
+    "Candidate6AtPhase6Test": "three-attack-matrix-05",
+    "Candidate7AtPhase6Test": "three-attack-matrix-05",
+    "Candidate8AtPhase6Test": "three-attack-matrix-06",
+    "Candidate9AtPhase6Test": "three-attack-matrix-06",
+    "Candidate10AtPhase6Test": "three-attack-matrix-06",
+    "Candidate11AtPhase6Test": "three-attack-matrix-06",
+    "EqualCandidateWithRealProvenanceRemainsAnIdempotentReplayTest": "three-attack-matrix-06"
+  },
+  "exclusive_deadline": {
+    "AbortBeforeDeadlineIsDisabledTest": "three-exclusive-deadline",
+    "CommitBeforeDeadlineAppliesLocalEffectTest": "three-exclusive-deadline",
+    "CommitAtDeadlineFailsWhileOpenTest": "three-exclusive-deadline",
+    "AbortAtDeadlineHasNoDeliveryTest": "three-exclusive-deadline",
+    "CommitAfterDeadlineFailsWhileOpenTest": "three-exclusive-deadline"
+  },
+  "sampled_traces": 1800,
+  "max_sample_steps": 120,
+  "sqlite_history_tests": 3
+}

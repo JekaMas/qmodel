@@ -1,0 +1,16 @@
+
+  timed_three_test
+    ok Actor2Window3Test passed 1 test(s)
+    ok Actor2Window5Test passed 1 test(s)
+    ok Actor2Window14Test passed 1 test(s)
+    ok Actor3Window1Test passed 1 test(s)
+    ok Actor3Window2Test passed 1 test(s)
+    ok Actor3Window3Test passed 1 test(s)
+    ok Actor3Window5Test passed 1 test(s)
+    ok Actor3Window14Test passed 1 test(s)
+    ok Actor4Window1Test passed 1 test(s)
+    ok Actor4Window2Test passed 1 test(s)
+    ok Actor4Window3Test passed 1 test(s)
+    ok Actor4Window5Test passed 1 test(s)
+
+  12 passing (1012ms)

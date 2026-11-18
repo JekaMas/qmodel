@@ -1,0 +1,20 @@
+
+  timed_three_test
+    ok Candidate0AtPhase0Test passed 1 test(s)
+    ok Candidate1AtPhase0Test passed 1 test(s)
+    ok Candidate2AtPhase0Test passed 1 test(s)
+    ok Candidate3AtPhase0Test passed 1 test(s)
+    ok Candidate4AtPhase0Test passed 1 test(s)
+    ok Candidate5AtPhase0Test passed 1 test(s)
+    ok Candidate6AtPhase0Test passed 1 test(s)
+    ok Candidate7AtPhase0Test passed 1 test(s)
+    ok Candidate8AtPhase0Test passed 1 test(s)
+    ok Candidate9AtPhase0Test passed 1 test(s)
+    ok Candidate10AtPhase0Test passed 1 test(s)
+    ok Candidate11AtPhase0Test passed 1 test(s)
+    ok Candidate0AtPhase1Test passed 1 test(s)
+    ok Candidate1AtPhase1Test passed 1 test(s)
+    ok Candidate2AtPhase1Test passed 1 test(s)
+    ok Candidate3AtPhase1Test passed 1 test(s)
+
+  16 passing (1509ms)

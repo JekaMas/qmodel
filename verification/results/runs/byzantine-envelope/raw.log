@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'keys' is redefined in module 'certificate_envelope'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/certificate_envelope.qnt:16:48
+  16:     nondet faulty=Validators.powerset().filter(keys=>keys.size()==F).oneOf()
+                                                     ^^^^
+
+error: parsing failed

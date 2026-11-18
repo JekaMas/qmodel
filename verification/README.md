@@ -35,6 +35,10 @@ Run `python3 -B verification/scripts/guarantee_audit.py` to audit this exact evi
 
 The actual SQLite restore/replay and concurrent inserts operate on local databases. The fixtures stand in for authenticated upstream finalized evidence. The [conformance cases](reports/guarantee-conformance.md) describe verification of those inputs and both actual ledgers and banking integration on the PoC.
 
+## Three-trade timing, Byzantine scope and local histories
+
+The [N3 acceptance record](reports/three-trade-faults.md) identifies native decision and recovery profiles, exact timed and attack cases, the Byzantine certificate envelope and actual SQLite linearization checks. Use the standard full acceptance audit or the source-bound scripts named in the individual receipts. The [stage-by-stage plan](../openspec/changes/check-three-trade-faults/fault-matrix.md) lists the remaining model products and external obligations.
+
 ## Repeated exchanges and event coverage
 
 The [workload and model review](reports/repeated-settlement-review.md) exercises seven identities, five funded pairs, independent deadlines and both sequential and overlapping exchanges. The [event and fault ledger](reports/repeated-settlement-coverage.json) identifies witnesses for all 45 reference action declarations. Directed enumeration of terminal orders and fault subsets has its own scope. The adversarial sample uses the full operational dispatcher with loss and pruning.

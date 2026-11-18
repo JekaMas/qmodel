@@ -1,0 +1,85 @@
+{
+  "decisions": {
+    "2": "three-decisions-2",
+    "3": "three-decisions-3"
+  },
+  "timed": {
+    "2": "three-timed-directed-2-attempt1",
+    "3": "three-timed-directed-3"
+  },
+  "timed_samples": {
+    "61": "three-timed-sample-61",
+    "62": "three-timed-sample-62",
+    "63": "three-timed-sample-63"
+  },
+  "fault_batches": {
+    "three-fault-matrix-01": "three-fault-matrix-01",
+    "three-fault-matrix-02": "three-fault-matrix-02",
+    "three-fault-matrix-03": "three-fault-matrix-03",
+    "three-fault-matrix-04": "three-fault-matrix-04",
+    "three-fault-matrix-05": "three-fault-matrix-05"
+  },
+  "attack_batches": {
+    "three-attack-matrix-01": "three-attack-matrix-01",
+    "three-attack-matrix-02": "three-attack-matrix-02",
+    "three-attack-matrix-03": "three-attack-matrix-03",
+    "three-attack-matrix-04": "three-attack-matrix-04",
+    "three-attack-matrix-05": "three-attack-matrix-05",
+    "three-attack-matrix-06": "three-attack-matrix-06"
+  },
+  "mixed_recovery": {
+    "progress": "three-recovery-progress",
+    "reachability": "three-recovery-directed-witness"
+  },
+  "byzantine": {
+    "byzantine-envelope": "byzantine-envelope-attempt1",
+    "byzantine-threshold-exceeded": "byzantine-threshold-exceeded-attempt1",
+    "byzantine-foreign-context": "byzantine-foreign-context-attempt1"
+  },
+  "linearization": "three-booking-linearization",
+  "queue": {
+    "three-queue-protected": "three-queue-protected-attempt1",
+    "three-queue-reachable": "three-queue-reachable-attempt1",
+    "three-queue-unprotected": "three-queue-unprotected-attempt1"
+  },
+  "retained_stage_controls": {
+    "membership_and_scope": [
+      "membership-retirement-final",
+      "membership-unsafe-retirement",
+      "membership-consumed-replay",
+      "trust-v2-retired_version",
+      "auth-execution_rejects_history",
+      "auth-zk_bad_execution"
+    ],
+    "ledger_and_deadline": [
+      "qa-legacy-reopen",
+      "qa-legacy-stale_refund",
+      "qa-legacy-replay",
+      "qa-legacy-non_atomic",
+      "qa-immediate",
+      "qa-permanent-halt",
+      "tlc-arbitrary_seizure-backing",
+      "one-less-deadline-margin"
+    ],
+    "outage_capacity_and_loss": [
+      "trust-v2-witness_loss",
+      "trust-v2-committee_refusal",
+      "trust-v2-insufficient_submitters",
+      "tlc-no_inclusion-boundedCompletion",
+      "tlc-starvation-boundedCompletion",
+      "tlc-unlimited-exposure",
+      "late-hold-relative-bound",
+      "qa-scenarios-phase_failure_test"
+    ],
+    "book_and_privacy": [
+      "guarantees-sqlite-attempt1",
+      "guarantees-control-missing-application-attempt1",
+      "qa-private-unconditionalAvailability",
+      "private-permanent-key-loss",
+      "audit-omitted_record",
+      "qa-pipeline_log",
+      "qa-pipeline_timing"
+    ]
+  },
+  "deadline": "three-exclusive-deadline"
+}

@@ -1,0 +1,6 @@
+
+  timed_three_test
+    ok ThirdSecurityReservationDeniedTest passed 1 test(s)
+    ok ThirdCashReservationDeniedTest passed 1 test(s)
+
+  2 passing (152ms)
