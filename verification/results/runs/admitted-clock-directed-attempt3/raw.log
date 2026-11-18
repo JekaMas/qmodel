@@ -1,0 +1,12 @@
+
+  clock_products
+    ok IncludedReplacementWaitsForCanonicalDepthTest passed 1 test(s)
+    ok LaggingHeadCannotIssueEvenWithTimeAndBFastTest passed 1 test(s)
+    ok NewRequestAfterStallWaitsForABlockTest passed 1 test(s)
+    ok SubmissionAfterABlockMustWaitForAnotherTest passed 1 test(s)
+    ok ReplacementMakesOldSubmissionIneligibleTest passed 1 test(s)
+    ok TentativeBalanceCannotAuthorizeSettledUseTest passed 1 test(s)
+    ok AuthoritativeSpendabilityWaitsForConfirmationTest passed 1 test(s)
+    ok FastBClockDoesNotAuthorizeRefundTest passed 1 test(s)
+
+  8 passing (1311ms)

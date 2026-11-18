@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok Phase3Binding0Test passed 1 test(s)
+    ok Phase3Binding1Test passed 1 test(s)
+    ok Phase3Binding2Test passed 1 test(s)
+    ok Phase3Binding3Test passed 1 test(s)
+    ok Phase3Binding4Test passed 1 test(s)
+    ok Phase3Binding5Test passed 1 test(s)
+    ok Phase3Binding6Test passed 1 test(s)
+    ok Phase3Binding7Test passed 1 test(s)
+    ok Phase3Binding8Test passed 1 test(s)
+    ok Phase3Binding9Test passed 1 test(s)
+    ok Phase3Binding10Test passed 1 test(s)
+    ok Phase4Binding0Test passed 1 test(s)
+    ok Phase4Binding1Test passed 1 test(s)
+    ok Phase4Binding2Test passed 1 test(s)
+    ok Phase4Binding3Test passed 1 test(s)
+    ok Phase4Binding4Test passed 1 test(s)
+
+  16 passing (6995ms)

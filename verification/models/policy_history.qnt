@@ -14,7 +14,10 @@ module policy_history {
   })
 
   pure def permitted(x:State):Set[(int,int)] = x.eligible.filter(pair => and {
-    x.admitted,x.up.contains(pair._2),not(x.frozen.contains(pair._2)),
+    ((x.admitted and desc(pair._1).epoch==x.epoch) or x.received.exists(f=>
+      f.d==desc(pair._1) and f.phase==(if(pair._2==0) 2 else 1) and
+      x.finalized.contains(f) and x.proofs.contains(f) and x.historical.contains(f.program) and
+      f==fact(pair._1,f.phase))),x.up.contains(pair._2),not(x.frozen.contains(pair._2)),
     x.signed.contains((desc(pair._1),0)),x.signed.contains((desc(pair._1),1))
   })
 
@@ -27,7 +30,7 @@ module policy_history {
   // and governance/eligibility interventions before and after preparation.
   action settlement = any {
     sign(1,0),sign(1,1),openA(1),prepareB(1),tick,abort(1),commit(1),idle,
-    finalize(1,2),capture(1,2),prove(1,2),deliver(1,2),
+    nondet phase=Set(1,2).oneOf(); any {finalize(1,phase),capture(1,phase),prove(1,phase),deliver(1,phase)},
     rotate,exitMember,
     nondet leg=Set(0,1).oneOf(); any {revokeLeg(1,leg),freeze(leg),unfreeze(leg)}
   }

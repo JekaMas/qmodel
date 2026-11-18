@@ -34,7 +34,8 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -55,7 +56,8 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -76,7 +78,8 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -97,7 +100,8 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -135,13 +139,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_authentic_outcomes_across_placements",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "Placed and remote effects match the decision on nine exhaustively checked graphs.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -166,13 +171,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_both_wrong_phase_and_omitted_local_delivery_are_observable",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "The held-only cash payout after ABORT and the omitted local transfer violate the new assertion.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -197,13 +203,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_eventual_endpoint_uses_original_graph_and_fairness",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "The previous progress formula entails an evidenced booking using its same checked graphs and fairness.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -228,13 +235,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_premature_row_and_reset_cache_are_distinguished",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "A missing application proof and a premature row surviving cache loss each violate the independent assertion.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -259,13 +267,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_prior_state_history_checks_reachable_admission_and_decision",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "The observation covers every reachable state of the A-hosted named preparation and decision spine.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -290,13 +299,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unchecked_eligibility_and_terminal_reopen_violate_history",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "The eligibility-omission and tombstone-reopen producers each have a native counterexample.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -321,13 +331,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_executed_pending_trade_retry_and_recovery",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "Old authorized settlement survives rotation, exit, freeze, proof retry, and cache loss.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -352,13 +363,14 @@
         "verification/scripts/guarantee_*.py",
         "verification/scripts/policy_checks.py",
         "verification/reviews/guarantee-assurance/**",
-        "verification/tests/guarantee_combined_test.qnt"
+        "verification/tests/guarantee_combined_test.qnt",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unadmitted_and_duplicate_actions_are_rejected",
       "command_id": "guarantee-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_guarantee_evidence.py",
-      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "source_sha256": "ce41012e6fa23ab8819a130d6474d6dc8af399e064f92f7280e3360e26079d42",
       "distinct_reason": "The same prefixes deny unsupported proof programs, new old-epoch signing, unresolved freezes and duplicate payment.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"

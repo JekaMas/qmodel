@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok SubmitDownActor2Test passed 1 test(s)
+    ok SubmitRecoveredActor2Test passed 1 test(s)
+    ok ProveDownActor3Test passed 1 test(s)
+    ok ProveRecoveredActor3Test passed 1 test(s)
+    ok DeliverDownActor4Test passed 1 test(s)
+    ok DeliverRecoveredActor4Test passed 1 test(s)
+    ok Commit4Apply4Commit5Apply5Commit6Apply6Test passed 1 test(s)
+    ok Commit4Apply4Commit5Commit6Apply5Apply6Test passed 1 test(s)
+    ok Commit4Apply4Commit5Commit6Apply6Apply5Test passed 1 test(s)
+    ok Commit4Apply4Commit6Commit5Apply5Apply6Test passed 1 test(s)
+    ok Commit4Apply4Commit6Commit5Apply6Apply5Test passed 1 test(s)
+    ok Commit4Apply4Commit6Apply6Commit5Apply5Test passed 1 test(s)
+    ok Commit4Commit5Apply4Apply5Commit6Apply6Test passed 1 test(s)
+    ok Commit4Commit5Apply4Commit6Apply5Apply6Test passed 1 test(s)
+    ok Commit4Commit5Apply4Commit6Apply6Apply5Test passed 1 test(s)
+    ok Commit4Commit5Apply5Apply4Commit6Apply6Test passed 1 test(s)
+
+  16 passing (11752ms)

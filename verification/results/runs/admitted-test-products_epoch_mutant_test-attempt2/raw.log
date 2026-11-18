@@ -1,0 +1,8 @@
+
+  products_epoch_mutant_test
+    ok UncertifiedConfigurationBreaksLineageTest passed 1 test(s)
+    ok StaleVerifierAcceptsRetiredAuthorityTest passed 1 test(s)
+    ok SignedRootWithoutExecutedBodyIsDetectedTest passed 1 test(s)
+    ok BadRestoreBreaksRecoveredCheckpointTest passed 1 test(s)
+
+  4 passing (127ms)

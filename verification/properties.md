@@ -1,5 +1,8 @@
 # Requirements before implementation
 
+The [finalized-admission selection](configs/admission-acceptance.json) and the `current_review_scopes` entries in [the machine-readable register](properties.json) identify the current executions by scope name. Other receipt references identify their original releases. The first finalized reserve, canonical block inclusion, reporting cursor, bank gate and equivalence limits are specified in the [current review disposition](reports/finalized-admission.md).
+
+
 The attached v2 instruction is the verification authority. The shared answer is the versioned candidate, not a proven protocol. Intended requirements and stronger overclaims remain separate.
 
 ## S01
@@ -15,6 +18,8 @@ Each trade has at most one terminal decision, which is permanent. Check transiti
 Predicate: `[] forall t: terminal(t) => next(decision(t)) = decision(t)`. Class: safety. Checker: Quint simulation, Apalache bounded, TLC finite. Expected: hold under named assumptions. Assumptions: A-FINAL, A-EXEC, A-CRYPTO, A-HOLD. Scenario: reference plus relevant focused variants.
 
 ## S03
+
+Initial authorization binds both signatures to the descriptor and requires a live epoch. A new historic reserve requires exact opposite-leg canonical evidence.
 
 Only properly authorized intent can reserve assets. Descriptor identity/terms are immutable; altered reuse is rejected.
 
@@ -76,17 +81,23 @@ Predicate: `[] restart/restore/retry => authoritativeDecisionUnchanged /\ effect
 
 ## S13
 
+The first finalized A or B reservation establishes the obligation across the governance cut. Signatures, registration and provisional reservations do not establish it. Historical authorizations can resolve an existing obligation, with eligibility and freeze checks still active.
+
 Supported rotation, upgrade and member-exit operations preserve pending obligations and the ability to verify/apply their historical outcomes.
 
 Predicate: `[] rotate/upgrade/exit => pendingObligationsAndHistoricalVerificationPreserved`. Class: safety. Checker: Quint simulation, Apalache bounded, TLC finite. Expected: hold under named assumptions. Assumptions: A-FINAL, A-EXEC, A-CRYPTO, A-HOLD. Scenario: reference plus relevant focused variants.
 
 ## S14
 
+A newly active reservation must be permissible in the preceding state, including the credential epoch or an authenticated continuation.
+
 Required eligibility is enforced at preparation. Post-prepare interventions obey an explicitly modeled policy; do not assume away mandatory controls and call the result compliant.
 
 Predicate: `[] reserve(t)=>eligible(t); [] interventionsFollowSelectedPolicy`. Class: safety. Checker: Quint simulation, Apalache bounded, TLC finite. Expected: hold under named assumptions. Assumptions: A-FINAL, A-EXEC, A-CRYPTO, A-HOLD. Scenario: reference plus relevant focused variants.
 
 ## S15
+
+Expose signed, included, finalized admission, registered, applied, as-of and reconciled statuses separately. Current data covers the verified prefix.
 
 Reports distinguish accepted, prepared, committed, each locally applied leg and reconciliation. FULLY_APPLIED requires authenticated evidence for both applications. Stale observations are labeled.
 

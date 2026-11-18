@@ -34,8 +34,12 @@ module mechanisms {
   action shared=all {MODE==2,m.lockA,m.lockB,m'={...m,deliveredA:true,deliveredB:true,lockA:false,lockB:false,decision:2}}
   action attest=all {MODE==3,m.lockB or FAULT==2,m'={...m,committee:Set(0,1,2)}}
   action acceptCommittee=all {MODE==3,m.committee.size()>=3,m.lockA,m'={...m,deliveredA:true,lockA:false,decision:2}}
+  action settleCommitteeB=all {MODE==3,m.decision==2,m.committee.size()>=3,m.upB,m.lockB,
+    m'={...m,deliveredB:true,lockB:false}}
+  temporal committeeProgress=settleCommitteeB.weakFair(Set(m)).implies(
+    (m.decision==2 and m.lockB).leadsTo(m.deliveredA and m.deliveredB))
   action step=any {lockA,lockB,tick,claimA,observe,claimB,refundA,refundB,halt,
-    prepEvidence(0),prepEvidence(1),rootCommit,rootAbort,signal(0),signal(1),apply(0),apply(1),shared,attest,acceptCommittee,m'=m}
+    prepEvidence(0),prepEvidence(1),rootCommit,rootAbort,signal(0),signal(1),apply(0),apply(1),shared,attest,acceptCommittee,settleCommitteeB,m'=m}
   action boundedTick=all {m.time<6,
     (not(m.secretPublished) or m.observed or m.time<4),
     (not(m.observed) or m.deliveredB or m.time<5),m'={...m,time:m.time+1}}

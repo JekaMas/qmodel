@@ -1,0 +1,61 @@
+{
+  "id": "admitted-test-admission_review_test-attempt2",
+  "started_utc": "2026-11-18T18:02:45.275431+00:00",
+  "claim": "All named admission_review_test scenarios",
+  "backend": "cli",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "test",
+    "verification/tests/admission_review_test.qnt",
+    "--main",
+    "admission_review_test",
+    "--backend",
+    "rust",
+    "--seed",
+    "17",
+    "--match",
+    ".*Test",
+    "--max-samples",
+    "1"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint test verification/tests/admission_review_test.qnt --main admission_review_test --backend rust --seed 17 --match '.*Test' --max-samples 1",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/tests/admission_review_test.qnt": "46ff42bc0567eb2c4be7578eea5bf065fc939a665fdec1ca3630d7b9de757732",
+    "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+    "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+    "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+    "verification/models/audit_scope.qnt": "325eb36c8d3276b4e13a1cc4c65b3d4ff1c6daaee8f195d008e2ca1f82581935"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "execution_plan_sha256": "4fe0b959bb90336fab91d105e95eb9b3c55cadae4766968c63a1cc0fdec8db0c",
+  "raw_sha256": "bf4570e418a53e78af554a0483a9c29ecce0b53d2943cd7fbc4e949e8eb68c5d",
+  "configuration": {},
+  "timeout_seconds": 180,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 0,
+  "wall_seconds": 7.555800041183829,
+  "outcome": "executed_successfully",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/admitted-test-admission_review_test-attempt2/raw.log",
+  "minimized": false,
+  "replayed": false
+}

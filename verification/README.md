@@ -1,5 +1,12 @@
 # Executed cross-chain DvP investigation
 
+## Verify the finalized-admission revision
+
+Run `python3 -B verification/scripts/verify.py audit` in the checkout. It validates the [current selection](configs/admission-acceptance.json) against live source closures, commands, named directed cases, native logs and sealed receipts. It also audits the earlier 367 selections under their original Git tree `116bef8`. Use a checkout containing that tree. The old configuration includes historical graph-equality and legacy-guard checks. The [current report](reports/finalized-admission.md) identifies the scopes re-executed on the new kernel.
+
+Use `python3 -B verification/scripts/admission_checks.py directed bilateral-orders` or `finite epoch-cut` for individual scopes. The clock, migration and other small TLC commands use localhost:18852 for the local Apalache translation service. Quint's default service handles the larger reference jobs. The stored commands, seeds and exact closures are in each receipt. Native children use the project-pinned Quint installation (see below). Historical reports and independent release audits below describe their respective revisions.
+
+
 The canonical task is ../openspec/changes/verify-cross-chain-dvp/tasks.md. The verification authority is sources/task-v2.md; the versioned source answer is sources/shared-solution.original-ru.md. This project investigates the candidate rather than presuming it correct.
 
 For the five Stage A properties and all seven Stage C challenges, see the [Question 8 evidence review](reports/interview-summary.md#question-8-evidence-review). The [architecture matrix](protocol.md#placement-and-responsibility) identifies who can authorize each local transfer in A, B, D and shared execution. The [executable specification](SPECIFICATION.md#three-distinct-guarantees) defines the settlement assertions and recovery assumptions.

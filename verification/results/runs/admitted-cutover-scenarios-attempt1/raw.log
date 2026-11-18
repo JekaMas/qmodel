@@ -1,0 +1,7 @@
+
+  cutover_scenarios
+    ok AcknowledgedBarriersAllowDelayedHistoricProofTest passed 1 test(s)
+    ok UnknownSecondBarrierCannotActivateTest passed 1 test(s)
+    ok EmptyCutRequiresFreshInstructionTest passed 1 test(s)
+
+  3 passing (85ms)

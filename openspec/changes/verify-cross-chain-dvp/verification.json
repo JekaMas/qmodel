@@ -42,7 +42,8 @@
       "source_globs": [
         "verification/models/**",
         "verification/tests/**",
-        "verification/mutants/**"
+        "verification/mutants/**",
+        "verification/scripts/release_evidence.py"
       ]
     }
   ],
@@ -623,13 +624,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states",
       "command_id": "repair-focused",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Twenty exact-value/status cases reach the current payload constructor.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -653,13 +655,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_every_payload_corruption_is_detected",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "All16scalar, two header and two source-note corruptions produce actual unchanged-oracle native violations.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -683,13 +686,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_consumer_contexts_reach_real_acceptance_gate",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "All31consumer-context cases, six actual-source B/D placement cases and the current financial/admission graph execute with provenance already present.",
       "substitution": {
         "classification": "EXTERNAL_BOUNDARY",
@@ -719,13 +723,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed",
       "command_id": "repair-focused",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Valid source-derived program0 commits only in the missing-admission mutants at A, B and both D remote preparation consumers; strict S10 detects each.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -749,13 +754,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct",
       "command_id": "repair-focused",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Eight source guard/release/absence/late-hold/idempotent-record cases execute without fake refunds.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -779,13 +785,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation",
       "command_id": "repair-focused",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Native premature-absence trace books while both holds remain active; semantic S15 detects it.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -809,13 +816,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_every_economic_placement_has_exact_outputs",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Literal account/asset/quantity expectations execute for all placements, escrow, multilateral and booking.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -839,13 +847,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails",
       "command_id": "repair-focused",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Wrong account/asset preserves amount and total supply but violates independent S05.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -869,13 +878,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected",
       "command_id": "repair-focused",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Wrong recorded recipient/quantity is observable even with one correctly funded economic transfer.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -899,13 +909,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_effect_soundness_is_inductive_over_the_full_machine",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "Actual hold/effect consistency initiation/preservation/implication uses the full imported adversarialStep in eight finite profiles.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -929,13 +940,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_plausible_release_record_cannot_replace_actual_release",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "A plausible release receipt without releasing the actual hold fails the independent source-state assertion.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -959,13 +971,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_colocated_commit_cannot_skip_local_transfers",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "B and shared commit faults can preserve generic backing but fail independently proved placement-specific local atomicity.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -989,13 +1002,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_authenticated_observer_uses_query_context",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "A constructor using the wrong principal cannot hide unauthorized disclosure behind a private role tag; the actual query principal determines access and visibility.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -1019,13 +1033,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_native_payload_error_fields_are_not_tool_errors",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "A native violation containing indented error:0 fields is recognized without changing that original output.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -1049,13 +1064,14 @@
         "verification/configs/qa-coverage.json",
         "verification/configs/qa-repair-plan.json",
         "verification/configs/proof-contracts.json",
-        "verification/scripts/evidence.py"
+        "verification/scripts/evidence.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_qnt_error_remains_a_non_success",
       "command_id": "repair-audit",
       "state": "implemented",
       "source_path": "verification/tests/test_qa_repairs.py",
-      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "source_sha256": "c3e5b18917d285166807da78fcdbc6c95e4b5b84ffa6bf58966a0a39805da857",
       "distinct_reason": "An actual QNT502 error remains a tool error rather than a killed mutant.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"

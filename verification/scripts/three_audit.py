@@ -156,5 +156,6 @@ def audit_three():
     }
 
 
-if __name__=="__main__":
-    print(json.dumps(audit_three(),indent=2))
+if __name__ == "__main__":
+    from release_evidence import family_report
+    print(json.dumps(family_report(__file__, ('three-', 'timed-', 'mixed-', 'bilateral-')), indent=2))

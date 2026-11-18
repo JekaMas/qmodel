@@ -4,13 +4,14 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from guarantee_audit import ROOT, audit_guarantees, exact
+from guarantee_audit import ROOT, exact
+from release_evidence import release_report
 
 
 class GuaranteeEvidence(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.assurance = audit_guarantees()
+        cls.assurance = release_report("guarantee_audit.py")
 
     def test_authentic_outcomes_across_placements(self):
         graphs = self.assurance["graphs"]

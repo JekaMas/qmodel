@@ -68,8 +68,8 @@ def canonical_line(value):
     return re.sub(r"\s+", "", value)
 
 
-def graph(profile, run):
-    legacy_id, temporal = REFERENCE[profile]
+def graph(profile, run, comparison=None):
+    legacy_id, temporal = REFERENCE[profile] if comparison is None else comparison
     old_dir, old = exact(legacy_id)
     new_dir, new = exact(run)
     old_code, new_code = source_module(old_dir, old), source_module(new_dir, new)
@@ -185,4 +185,5 @@ def audit_guarantees():
 
 
 if __name__ == "__main__":
-    print(json.dumps(audit_guarantees(), indent=2))
+    from release_evidence import family_report
+    print(json.dumps(family_report(__file__, ('vgr-', 'live-', 'policy', 'epoch-cut', 'obsolete-admission', 'cutover', 'guarantees-sample')), indent=2))

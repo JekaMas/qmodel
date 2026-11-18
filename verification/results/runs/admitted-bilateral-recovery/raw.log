@@ -1,0 +1,6 @@
+
+  funded_blocks
+    ok LateApplicationAfterShortFundedOutageTest passed 1 test(s)
+    ok LatePreparationAfterShortFundedOutageTest passed 1 test(s)
+
+  2 passing (581ms)

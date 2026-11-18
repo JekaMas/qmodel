@@ -53,4 +53,5 @@ def audit_blocks():
 
 
 if __name__ == "__main__":
-    print(json.dumps(audit_blocks(), indent=2))
+    from release_evidence import family_report
+    print(json.dumps(family_report(__file__, ('block-', 'bilateral-')), indent=2))

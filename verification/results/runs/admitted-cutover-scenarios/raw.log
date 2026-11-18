@@ -1,0 +1,31 @@
+
+ Error [QNT000]: Couldn't unify rec and set
+Trying to unify { sealed: Set[int], observedCuts: Set[int], active: bool, finalized: Set[int], received: (int -> Set[int]), renewed: Set[int] } and Set[int]
+Trying to unify (_t180, _t180) => Set[_t180] and (State, Set[int]) => _t181
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/admission_cutover.qnt:41:62
+  41:   temporal governedProgress=(legs.forall(l=>seal(l).weakFair(Set(x,beforeActivation)) and
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Couldn't unify rec and set
+Trying to unify { sealed: Set[int], observedCuts: Set[int], active: bool, finalized: Set[int], received: (int -> Set[int]), renewed: Set[int] } and Set[int]
+Trying to unify (_t185, _t185) => Set[_t185] and (State, Set[int]) => _t186
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/admission_cutover.qnt:42:28
+  42:     deliverCut(l).weakFair(Set(x,beforeActivation))) and activate.weakFair(Set(x,beforeActivation)))
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Couldn't unify rec and set
+Trying to unify { sealed: Set[int], observedCuts: Set[int], active: bool, finalized: Set[int], received: (int -> Set[int]), renewed: Set[int] } and Set[int]
+Trying to unify (_t192, _t192) => Set[_t192] and (State, Set[int]) => _t193
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/admission_cutover.qnt:42:76
+  42:     deliverCut(l).weakFair(Set(x,beforeActivation))) and activate.weakFair(Set(x,beforeActivation)))
+                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

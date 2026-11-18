@@ -1,0 +1,13 @@
+
+  funded_blocks
+    ok FullyFundedTradesAllBookTest passed 1 test(s)
+    ok NoHeightBumpBetweenCommitsTest passed 1 test(s)
+    ok EarlySourcePublicationIsDisabledTest passed 1 test(s)
+    ok IndependentHeightsTest passed 1 test(s)
+    ok DuplicateRequestCannotTakeTwoSlotsTest passed 1 test(s)
+    ok CannotCommitOnDeadlineTest passed 1 test(s)
+    ok OlderReservationConsumesOnlyItsOwnCapacityTest passed 1 test(s)
+    ok ShortfallAfterOrdinarySpendIsLocalTest passed 1 test(s)
+    ok OlderSealedEvidenceCanProgressDuringAnotherBlockTest passed 1 test(s)
+
+  9 passing (1013ms)

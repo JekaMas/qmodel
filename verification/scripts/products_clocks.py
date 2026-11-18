@@ -11,6 +11,7 @@ CASES={
     "products-clocks-safe": (0,"clockSafety","pass"),
     "products-clocks-old-attempt": (1,"replacementBound","counterexample"),
     "products-clocks-early-witness": (2,"canonicalConfirmation","counterexample"),
+    "products-clocks-no-block": (4,"inclusionBacked","counterexample"),
     "products-clocks-b-expiry": (3,"noInvalidEarlyRefund","counterexample"),
 }
 
@@ -43,10 +44,24 @@ def closure(mode,test=False):
       .expect(clockSafety and has(s,2,3) and rates.atHeight==1 and s.height==2)
   run LaggingHeadCannotIssueEvenWithTimeAndBFastTest =
     ready.then(interval(0,2,1)).then(mineB).then(mineB)
-      .then(interval(0,2,1)).then(mineB).then(mineB).then(includeCommit(1))
-      .expect(clockSafety and s.height==0 and rates.wall==2 and rates.bHeight==4).then(confirm.fail())
+      .then(interval(0,2,1)).then(mineB).then(mineB)
+      .expect(clockSafety and s.height==0 and rates.wall==2 and rates.bHeight==4 and s.trades.get(2).effectsA==0)
+      .then(includeCommit(1).fail())
+  run NewRequestAfterStallWaitsForABlockTest =
+    rateInit.then(readyPC.reps(_=>bootstrap)).then(interval(0,2,0)).then(mineB).then(mineB)
+      .then(interval(0,2,0)).then(mineB).then(mineB).then(submit).then(includeCommit(1).fail())
+  run SubmissionAfterABlockMustWaitForAnotherTest =
+    rateInit.then(readyPC.reps(_=>bootstrap)).then(interval(1,0,0)).then(mineA)
+      .then(submit).then(includeCommit(1).fail())
   run ReplacementMakesOldSubmissionIneligibleTest =
-    ready.then(replaceAttempt).expect(rates.submitted and rates.accepted==0 and has(s,2,2)).then(includeCommit(1).fail())
+    ready.then(interval(1,0,0)).then(mineA).then(replaceAttempt)
+      .expect(rates.blockToken==1 and rates.token==2 and has(s,2,2)).then(includeCommit(1).fail())
+  run includedSecurity=
+    ready.then(interval(1,0,0)).then(mineA).then(includeCommit(1))
+      .expect(pendingSecurity and not(finalSecurityAvailable) and s.receivedA.get(2)==2)
+  run TentativeBalanceCannotAuthorizeSettledUseTest=includedSecurity.then(useFinalSecurity.fail())
+  run AuthoritativeSpendabilityWaitsForConfirmationTest=includedSecurity.then(interval(1,0,0)).then(mineA).then(confirm).then(useFinalSecurity)
+      .expect(finalSecurityAvailable and s.receivedA.get(2)==2)
   run FastBClockDoesNotAuthorizeRefundTest =
     ready.then(interval(0,2,1)).then(mineB).then(mineB).then(interval(0,2,1))
       .expect(clockSafety and s.height==0 and 2*rates.wall+rates.offset>=desc(2).deadline)

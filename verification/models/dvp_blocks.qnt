@@ -24,6 +24,11 @@ module dvp_blocks {
   action waitBlock=all {ledger::idle,blocks'=blocks}
   action authorize(t:int,party:int):bool=all {ledger::sign(t,party),blocks'=blocks}
   action ordinarySpend(leg:int):bool=all {not(lane(leg).open),ledger::spend(leg),blocks'=blocks}
+  action expire(t:int):bool=all {ledger::abort(t),blocks'=blocks}
+  action takeAbort(t:int):bool=all {ledger::learn(t,3,1),blocks'=blocks}
+  action releaseHold(t:int,leg:int):bool=all {ledger::refund(t,leg),blocks'=blocks}
+  action readDisposition(t:int,leg:int):bool=all {ledger::captureAbortRecord(t,leg),blocks'=blocks}
+  action bookAbort(t:int):bool=all {ledger::recordAbort(t),blocks'=blocks}
   action takeOutcome(t:int):bool=all {ledger::learn(t,2,1),blocks'=blocks}
   action observeEffect(t:int,leg:int):bool=all {ledger::observe(t,leg),blocks'=blocks}
   action bookTrade(t:int):bool=all {ledger::reconcile(t),blocks'=blocks}
@@ -52,7 +57,7 @@ module dvp_blocks {
   // Funds are deliberately checked per transaction, against live local state.
   pure def reserveReady(x:ledger::State,leg:int,t:int):bool =
     if(leg==0) ledger::canOpen({...x,ownerA:ledger::reservedA(x)+amount(0,t)},t)
-    else ledger::authorized(x,t) and x.admitted and x.eligible.contains((t,1)) and
+    else ledger::authorized(x,t) and ledger::reserveAuthority(x,t,1) and x.eligible.contains((t,1)) and
       x.up.contains(1) and not(x.frozen.contains(1)) and x.trades.get(t).holdB==0 and x.trades.get(t).knownB==0
 
   pure def settleReady(x:ledger::State,leg:int,t:int):bool =

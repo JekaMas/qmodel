@@ -13,6 +13,9 @@ module dvp {
   // Up slots: 0 A, 1 B, 2 authorized submission (also D for HOST=2),
   // 3 adapter/prover (also common execution for HOST=3), 4 transport.
   pure val Trades = 1.to(N)
+  // The finite fixture has seven genesis-epoch instructions and one new
+  // instruction. The epoch is a signed descriptor field, independent of nonce.
+  pure val RenewedTrades = Set(8)
   pure val D = 2
   type Descriptor = { trade: int, nonce: int, chainA: int, genesisA: int,
     chainB: int, genesisB: int, decisionDomain: int, assetA: int, assetB: int,
@@ -23,7 +26,7 @@ module dvp {
     chainB:if(HOST==3) 10 else 20, genesisB:if(HOST==3) 110 else 120, decisionDomain:HOST, assetA:30, assetB:40,
     holdA:50, holdB:60, decisionContract:70, security:2, cash:3,
     sellerA:0, buyerA:t, buyerB:if(HOST==3) t else 0, sellerB:if(HOST==3) 0 else t, deadline:D,
-    protocol:1, epoch:0, commitment:1000+t}
+    protocol:1, epoch:if(RenewedTrades.contains(t)) 1 else 0, commitment:1000+t}
   // Full Descriptor/Witness provenance is specification-private ghost data.
   // The public wire projection is PublicEvidence below; observers do not receive
   // a nested plaintext descriptor merely because the model can inspect one.
@@ -86,7 +89,17 @@ module dvp {
     {d:if(MUTANT==18) {...d,sellerB:if(d.sellerB==0) 1 else 0}
        else if(MUTANT==19) {...d,cash:4} else d,outcome:outcome}
   }
-  pure def canOpen(x:State,t:int):bool = and { authorized(x,t), x.admitted,
+  // A delivered phase 1/2 exists only after canonical source finalization.
+  // The first final preparation must occur under its live epoch. Consequently
+  // a later preparation can only extend an already-final chain of authority.
+  pure def liveTerms(x:State,t:int):bool = x.admitted and desc(t).epoch==x.epoch
+  pure def reserveAuthority(x:State,t:int,leg:int):bool =
+    liveTerms(x,t) or has(x,t,if(leg==0) 2 else 1)
+  pure def decisionAuthority(x:State,t:int):bool = liveTerms(x,t) or
+    has(x,t,1) or has(x,t,2) or
+    ((HOST==0 or HOST==3) and x.finalized.contains(fact(t,1))) or
+    ((HOST==1 or HOST==3) and x.finalized.contains(fact(t,2)))
+  pure def canOpen(x:State,t:int):bool = and { authorized(x,t), reserveAuthority(x,t,0),
     x.eligible.contains((t,0)),not(x.frozen.contains(0)), x.up.contains(0),(HOST!=3 or x.up.contains(3)),
     (if(HOST==0 or HOST==3) (x.height<D or MUTANT==4) else true),
     (if(HOST==0 or HOST==3) x.trades.get(t).decision==0 or (MUTANT==4 and x.trades.get(t).decision==3) else x.trades.get(t).knownA==0),
@@ -95,7 +108,7 @@ module dvp {
   pure def reserveA(x:State,t:int):State = { ...x,
     trades:x.trades.set(t,{...x.trades.get(t),decision:if(HOST==0 or HOST==3) 1 else x.trades.get(t).decision,holdA:1,intent:true,preparedA:true}),
     ownerA:if (ESCROW) x.ownerA-2 else x.ownerA,
-    vaultA:if (ESCROW) x.vaultA+2 else x.vaultA, included:x.included.union(Set(fact(t,0),fact(t,1))) }
+    vaultA:if (ESCROW) x.vaultA+2 else x.vaultA, included:x.included.union(if(HOST==0 or HOST==3) Set(fact(t,0),fact(t,1)) else Set(fact(t,1))) }
   action init = s' = {trades:Trades.mapBy(_=>emptyTrade),signed:Set(),height:0,
     ownerA:2,ownerB:3,vaultA:0,vaultB:0,spentA:0,spentB:0,
     receivedA:Trades.mapBy(_=>0),receivedB:Trades.mapBy(_=>0),economicReceipts:Set(),financialRecords:Set(),
@@ -103,18 +116,18 @@ module dvp {
     up:Set(0,1,2,3,4),epoch:0,admitted:true,historical:Set(1),eligible:tuples(Trades,Set(0,1)),
     frozen:Set(),note:Set(),rejects:Set(),transportCompromised:false,
     custody:false,upgrade:false,validator:false,decrypt:false}
-  action sign(t:int,party:int): bool = all {Trades.contains(t),Set(0,1).contains(party),s.admitted,s.epoch==0, s'={...s,signed:s.signed.union(Set((desc(t),party)))}}
+  action sign(t:int,party:int): bool = all {Trades.contains(t),Set(0,1).contains(party),s.admitted,s.epoch==desc(t).epoch, s'={...s,signed:s.signed.union(Set((desc(t),party)))}}
   // Local A only: signatures/descriptor, local balance, A height.
   action openA(t:int): bool = all {canOpen(s,t),s'=reserveA(s,t)}
   // Decision-ledger registration is its own local transaction for B/D topologies.
   action registerDecision(t:int):bool = all {HOST==1 or HOST==2,s.up.contains(HOST),
-    authorized(s,t),s.admitted,s.height<D,s.trades.get(t).decision==0,
-    s'={...s,trades:s.trades.set(t,{...s.trades.get(t),decision:1,intent:true})}}
+    authorized(s,t),decisionAuthority(s,t),s.height<D,s.trades.get(t).decision==0,
+    s'={...s,trades:s.trades.set(t,{...s.trades.get(t),decision:1,intent:true}),included:s.included.union(Set(fact(t,0)))}}
   action requestOpen(t:int,d:Descriptor):bool = all {d==desc(t),openA(t)}
   action requestCash(t:int,d:Descriptor):bool = all {d==desc(t),prepareB(t)}
   // Local B only: no read of A decision. Historical OPEN is optional received evidence.
   action prepareB(t:int): bool = all {
-    authorized(s,t),s.admitted,s.eligible.contains((t,1)),not(s.frozen.contains(1)),s.up.contains(1),(HOST!=3 or s.up.contains(3)),
+    authorized(s,t),reserveAuthority(s,t,1),s.eligible.contains((t,1)),not(s.frozen.contains(1)),s.up.contains(1),(HOST!=3 or s.up.contains(3)),
     s.trades.get(t).knownB==0, s.trades.get(t).holdB==0,
     not(OPEN_REQUIRED) or has(s,t,0),
     (if (ESCROW) s.ownerB>=3 else s.ownerB-reservedB(s)>=3),
@@ -136,7 +149,9 @@ module dvp {
   // Finalize a previously INCLUDED immutable fact, not the current source state.
   // This deliberately permits authentic historical OPEN/preparation after ABORT.
   action finalize(t:int,p:int): bool = all {
-    s.included.contains(fact(t,p)),s.up.contains(if(HOST==3) 3 else if (p==2 or p==6) 1 else if (p==3 or p==4) HOST else 0),
+    s.included.contains(fact(t,p)),
+    (p!=1 and p!=2) or s.finalized.contains(fact(t,p)) or reserveAuthority(s,t,p-1),
+    s.up.contains(if(HOST==3) 3 else if (p==2 or p==6) 1 else if (p==0 or p==3 or p==4) HOST else 0),
     s'={...s,finalized:s.finalized.union(Set(fact(t,p)))} }
   action capture(t:int,p:int): bool = all {s.up.contains(3),s.finalized.contains(fact(t,p)),
     not(s.pruned.contains(fact(t,p))),s'={...s,captured:s.captured.union(Set(fact(t,p)))}}
@@ -182,7 +197,7 @@ module dvp {
   // A/B placement applies only its own leg; D records no native leg itself.
   pure def canCommit(x:State,t:int):bool = {
     val z=x.trades.get(t)
-    and {x.up.contains(HOST),x.up.contains(2),z.decision==1,x.height<D,(if(HOST==0 or HOST==3) z.holdA==1 else if(HOST==1) z.holdB==1 else true),
+    and {decisionAuthority(x,t),x.up.contains(HOST),x.up.contains(2),z.decision==1,x.height<D,(if(HOST==0 or HOST==3) z.holdA==1 else if(HOST==1) z.holdB==1 else true),
       (if(HOST==3) not(x.frozen.contains(0)) and not(x.frozen.contains(1)) else if(HOST==0) not(x.frozen.contains(0)) else if(HOST==1) not(x.frozen.contains(1)) else true),
       (if (MUTANT==2) x.received.exists(f=>f.phase==2 and x.proofs.contains(f))
        else if (MUTANT==6) x.received.exists(f=>f.phase==2)
@@ -221,7 +236,7 @@ module dvp {
       knownA:if(HOST==0 or HOST==3) 3 else s.trades.get(t).knownA,
       knownB:if(HOST==1 or HOST==3) 3 else s.trades.get(t).knownB})}}
   action learn(t:int,outcome:int,leg:int): bool = all {
-    s.up.contains(leg),(HOST!=3 or s.up.contains(3)), has(s,t,if(outcome==2) 3 else 4),
+    Set(0,1).contains(leg),Set(2,3).contains(outcome),s.up.contains(leg),(HOST!=3 or s.up.contains(3)),has(s,t,if(outcome==2) 3 else 4),
     s'={...s,trades:s.trades.set(t,{...s.trades.get(t),
       knownA:if(leg==0) outcome else s.trades.get(t).knownA,
       knownB:if(leg==1 and (MUTANT!=9 or s.trades.get(t).holdB!=0)) outcome else s.trades.get(t).knownB})}}
@@ -255,7 +270,7 @@ module dvp {
     s'={...s,trades:s.trades.set(t,{...s.trades.get(t),holdB:3,refundsB:s.trades.get(t).refundsB+1})}}
   action forgetTerminal(t:int): bool = all {MUTANT==8,s.trades.get(t).decision>=2,
     s'={...s,trades:s.trades.set(t,{...s.trades.get(t),decision:0,holdA:0})}}
-  action spend(leg:int): bool = all {
+  action spend(leg:int): bool = all {Set(0,1).contains(leg),s.up.contains(leg),
     (if(leg==0) s.ownerA-(if(ESCROW) 0 else reservedA(s))>=1 else s.ownerB-(if(ESCROW) 0 else reservedB(s))>=1),
     s'={...s,ownerA:s.ownerA-(if(leg==0) 1 else 0),ownerB:s.ownerB-(if(leg==1) 1 else 0),
       spentA:s.spentA+(if(leg==0) 1 else 0),spentB:s.spentB+(if(leg==1) 1 else 0)}}

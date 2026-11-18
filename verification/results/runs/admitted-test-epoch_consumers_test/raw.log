@@ -1,0 +1,127 @@
+
+ Error [QNT404]: Name 'idle' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:8:45
+  8:   action quorum(op:bool):bool=all {economic(idle),op}
+                                                 ^^^^
+
+
+ Error [QNT404]: Name 'rotate' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:10:5
+  10:     rotate,validators::install(0),durable'=durable,visible'=visible.set(otherBank,durable.get(otherBank))
+          ^^^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:17:49
+  17:   run priorCommit=oldConfig.then(asset(economic(sign(1,0)))).then(asset(economic(sign(1,1))))
+                                                      ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'sign' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:17:82
+  17:   run priorCommit=oldConfig.then(asset(economic(sign(1,0)))).then(asset(economic(sign(1,1))))
+                                                                                       ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'openA' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:18:26
+  18:     .then(asset(economic(openA(1)))).then(asset(economic(prepareB(1)))).then(asset(source(2)))
+                               ^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepareB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:18:58
+  18:     .then(asset(economic(openA(1)))).then(asset(economic(prepareB(1)))).then(asset(source(2)))
+                                                               ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'deliver' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:19:60
+  19:     .then(asset(receive(otherBank,2))).then(asset(economic(deliver(1,2)))).then(asset(economic(commit(1))))
+                                                                 ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'commit' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:19:96
+  19:     .then(asset(receive(otherBank,2))).then(asset(economic(deliver(1,2)))).then(asset(economic(commit(1))))
+                                                                                                     ^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:22:13
+  22:     .expect(s.epoch==1 and validators::a.epoch==1 and validators::authoritySafe and
+                  ^
+
+
+ Error [QNT404]: Name 'fact' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:23:35
+  23:       visible.get(otherBank)==Set(fact(1,2)) and visible.get(bank)==Set(fact(1,5)))
+                                        ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fact' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:23:73
+  23:       visible.get(otherBank)==Set(fact(1,2)) and visible.get(bank)==Set(fact(1,5)))
+                                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'applyB' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:25:49
+  25:     .then(asset(learnCash)).then(asset(economic(applyB(1)))).then(asset(source(6)))
+                                                      ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'reconcile' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:30:82
+  30:     .then(asset(observeBank(0))).then(asset(observeBank(1))).then(asset(economic(reconcile(1))))
+                                                                                       ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'evidenceBackedBooking' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:31:56
+  31:     .expect(seesBoth(bank) and seesBoth(otherBank) and evidenceBackedBooking(s,desc(1)) and
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:31:78
+  31:     .expect(seesBoth(bank) and seesBoth(otherBank) and evidenceBackedBooking(s,desc(1)) and
+                                                                                   ^
+
+
+ Error [QNT404]: Name 'desc' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:31:80
+  31:     .expect(seesBoth(bank) and seesBoth(otherBank) and evidenceBackedBooking(s,desc(1)) and
+                                                                                     ^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:32:7
+  32:       s.trades.get(1).effectsB==1 and s.financialRecords.size()==1)
+            ^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/epoch_consumers_test.qnt:32:39
+  32:       s.trades.get(1).effectsB==1 and s.financialRecords.size()==1)
+                                            ^
+
+error: parsing failed

@@ -13,5 +13,5 @@ module shared_test {
 }
 module committee_test {
  import mechanisms(MODE=3,FAULT=0).* from "../models/mechanisms"
- run honestThresholdWitnessTest=init.then(lockA).then(lockB).then(attest).then(acceptCommittee).expect(safe and m.deliveredA and m.lockB and m.committee==Set(0,1,2))
+ run honestThresholdWitnessTest=init.then(lockA).then(lockB).then(attest).then(acceptCommittee).expect(safe and m.deliveredA and m.lockB and m.committee==Set(0,1,2)).then(settleCommitteeB).expect(safe and not(noSuccess) and not(m.lockB)).then(settleCommitteeB.fail())
 }

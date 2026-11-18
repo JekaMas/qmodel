@@ -1,0 +1,10 @@
+
+  repeated_test
+    ok Phase6FinalizeOutageTest passed 1 test(s)
+    ok Phase6CaptureOutageTest passed 1 test(s)
+    ok Phase6ProveOutageTest passed 1 test(s)
+    ok Phase6DeliverOutageTest passed 1 test(s)
+    ok Phase6ResendOutageTest passed 1 test(s)
+    ok Phase6ProofPipelineRecoveryTest passed 1 test(s)
+
+  6 passing (2629ms)

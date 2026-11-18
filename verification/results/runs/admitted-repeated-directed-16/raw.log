@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok Phase0ResendOutageTest passed 1 test(s)
+    ok Phase0ProofPipelineRecoveryTest passed 1 test(s)
+    ok Phase1FinalizeOutageTest passed 1 test(s)
+    ok Phase1CaptureOutageTest passed 1 test(s)
+    ok Phase1ProveOutageTest passed 1 test(s)
+    ok Phase1DeliverOutageTest passed 1 test(s)
+    ok Phase1ResendOutageTest passed 1 test(s)
+    ok Phase1ProofPipelineRecoveryTest passed 1 test(s)
+    ok Phase2FinalizeOutageTest passed 1 test(s)
+    ok Phase2CaptureOutageTest passed 1 test(s)
+    ok Phase2ProveOutageTest passed 1 test(s)
+    ok Phase2DeliverOutageTest passed 1 test(s)
+    ok Phase2ResendOutageTest passed 1 test(s)
+    ok Phase2ProofPipelineRecoveryTest passed 1 test(s)
+    ok Phase3FinalizeOutageTest passed 1 test(s)
+    ok Phase3CaptureOutageTest passed 1 test(s)
+
+  16 passing (5343ms)

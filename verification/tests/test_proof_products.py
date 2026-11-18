@@ -6,13 +6,13 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "verification/scripts"))
-from products_audit import audit_products
+from release_evidence import release_report
 
 
 class ProofProducts(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        observed = audit_products()
+        observed = release_report("products_audit.py")
         report = ROOT / "verification/reports/proof-products-results.json"
         if observed != json.loads(report.read_text()):
             raise AssertionError("Published result differs from the exact native evidence")

@@ -36,7 +36,8 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -59,7 +60,8 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -82,7 +84,8 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ]
     }
   ],
@@ -108,13 +111,14 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_repeated_exchange_and_all_causal_parallel_orders",
       "command_id": "repeated-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_repeated_evidence.py",
-      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "source_sha256": "99c13323daeae4937afaa253de93870b10fdf660529eea26359b7a98c20a746d",
       "distinct_reason": "COMMIT/ABORT/COMMIT are reached and all 90 legal parallel terminal orders settle five exact trades in total.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -141,13 +145,14 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_competing_reservations_and_spends_cannot_exceed_funding",
       "command_id": "repeated-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_repeated_evidence.py",
-      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "source_sha256": "99c13323daeae4937afaa253de93870b10fdf660529eea26359b7a98c20a746d",
       "distinct_reason": "A competing trade and ordinary spending fail with no free assets on either leg. The tombstone has no fake refund.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -174,13 +179,14 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_retained_evidence_can_rebuild_rows",
       "command_id": "repeated-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_repeated_evidence.py",
-      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "source_sha256": "99c13323daeae4937afaa253de93870b10fdf660529eea26359b7a98c20a746d",
       "distinct_reason": "A lost outcome is recovered by resend and old financial projections replay from actual evidence.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -207,13 +213,14 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_cross_trade_and_malformed_evidence_cannot_apply",
       "command_id": "repeated-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_repeated_evidence.py",
-      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "source_sha256": "99c13323daeae4937afaa253de93870b10fdf660529eea26359b7a98c20a746d",
       "distinct_reason": "A valid old proof and bounded malformed candidates cannot authorize a different trade or manufacture an effect.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -240,13 +247,14 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_all_reference_events_routed_and_recovery_subsets_execute",
       "command_id": "repeated-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_repeated_evidence.py",
-      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "source_sha256": "99c13323daeae4937afaa253de93870b10fdf660529eea26359b7a98c20a746d",
       "distinct_reason": "Each core event has an exact witness category. All 31 named outage subsets have observed recovery.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -273,13 +281,14 @@
         "verification/configs/repeated-acceptance.json",
         "verification/configs/proof-contracts.json",
         "verification/results/runs/repeated-*/**",
-        "verification/results/runs/qa-*/**"
+        "verification/results/runs/qa-*/**",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_offline_spending_discriminator_and_repaired_profile",
       "command_id": "repeated-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_repeated_evidence.py",
-      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "source_sha256": "99c13323daeae4937afaa253de93870b10fdf660529eea26359b7a98c20a746d",
       "distinct_reason": "The historical weakness is reachable and the active profile denies offline spending on either source ledger.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"

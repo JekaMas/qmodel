@@ -1,0 +1,6 @@
+
+  economic_escrow_test
+    ok trade1ExactEconomicTest passed 1 test(s)
+    ok trade2ExactEconomicTest passed 1 test(s)
+
+  2 passing (276ms)

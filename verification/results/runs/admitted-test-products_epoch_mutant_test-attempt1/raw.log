@@ -1,0 +1,21 @@
+
+  products_epoch_mutant_test
+    ok UncertifiedConfigurationBreaksLineageTest passed 1 test(s)
+    1) StaleVerifierAcceptsRetiredAuthorityTest failed after 1 test(s)
+    ok SignedRootWithoutExecutedBodyIsDetectedTest passed 1 test(s)
+    ok BadRestoreBreaksRecoveredCheckpointTest passed 1 test(s)
+
+  3 passing (193ms)
+  1 failed
+
+  1) StaleVerifierAcceptsRetiredAuthorityTest:
+       Error [QNT508]: Expect condition does not hold true
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/workloads/products/authority.qnt:122:7
+        122:       stale::accept(0,1,0,2).expect(not(stale::newCertificatesCurrent(before,stale::a)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x11 --match=StaleVerifierAcceptsRetiredAuthorityTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/tests/workloads/products/authority.qnt
+error: Tests failed

@@ -1,0 +1,6 @@
+
+  registration_d_test
+    ok ReservationIsNotRegistrationTest passed 1 test(s)
+    ok DecisionDomainOwnsOpenTest passed 1 test(s)
+
+  2 passing (212ms)

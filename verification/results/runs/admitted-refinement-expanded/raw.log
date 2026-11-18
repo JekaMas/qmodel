@@ -1,0 +1,28 @@
+
+  placement_products
+    ok AbsentRemoteReleaseCannotBeGuessedTest passed 1 test(s)
+    ok OneLegEvidenceCannotBookTest passed 1 test(s)
+    1) FundedMixedRecoveryTest failed after 1 test(s)
+    ok DecisionOwnerUnavailableTest passed 1 test(s)
+    ok ExpandedPopulationIdentityTest passed 1 test(s)
+    ok IndependentSpendDeltaTest passed 1 test(s)
+
+  5 passing (923ms)
+  1 failed
+
+  1) FundedMixedRecoveryTest:
+       Error [QNT508]: Cannot continue to "expect"
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/admitted/refinement-expanded/placement.qnt:54:5
+        54:     observeStep(events.nth(i)).expect(sequenceSafe and legitimate(prior,s,events.nth(i)) and
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        55:       decisions.forall(d=>s.trades.get(d._1).decision==d._2) and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        56:       outputs.subseteq(s.economicReceipts) and rows.subseteq(s.financialRecords))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          at replayEvents(List((4,1,5,0),(5,1,5,0),(6,1,5,0),(11,1,5,0),(21,1,0,0),(4,1,6,0),(5,1,6,0),(6,1,6,0),(11,1,6,0),(21,1,1,0),(22,1,0,0),(4,2,4,0),(5,2,4,0),(6,2,4,0),(11,2,4,0),(15,2,3,0),(15,2,3,1),(17,2,0,0),(17,2,1,0),(23,2,0,0),(23,2,1,0),(24,2,0,0),(4,3,2,0),(5,3,2,0),(6,3,2,0),(11,3,2,0),(13,3,0,0),(4,3,3,0),(5,3,3,0),(6,3,3,0),(11,3,3,0))) (/Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/admitted/refinement-expanded/placement.qnt:73:11)
+    Use --seed=0x11 --match=FundedMixedRecoveryTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/results/runtime/admitted/refinement-expanded/placement.qnt
+error: Tests failed

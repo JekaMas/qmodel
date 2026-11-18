@@ -25,7 +25,7 @@ def source_closure(pairs, timed=False):
         ("pure val D = 2", f"pure val D = {max(deadlines)}", 1),
         ("deadline:D,", f"deadline:List({','.join(map(str, deadlines))}).nth(t-1),", 1),
         ("x.height<D", "x.height<desc(t).deadline", 2),
-        ("s.admitted,s.height<D,s.trades", "s.admitted,s.height<desc(t).deadline,s.trades", 1),
+        ("decisionAuthority(s,t),s.height<D,s.trades", "decisionAuthority(s,t),s.height<desc(t).deadline,s.trades", 1),
         ("authorized(s,t),s.height>=D,", "authorized(s,t),s.height>=desc(t).deadline,", 1),
         ("ownerA:2,ownerB:3,vaultA:0", f"ownerA:{2*pairs},ownerB:{3*pairs},vaultA:0", 1),
         ("receivedA.get(t))==2,", f"receivedA.get(t))=={2*pairs},", 1),
@@ -33,9 +33,6 @@ def source_closure(pairs, timed=False):
         ("root:200+p*10+t", "root:200+7*t+p", 1),
         ("trade:3-t", "trade:if(t==N) 1 else t+1", 1),
         ("else {...f,root:999}", "else if(binding==10) {...f,root:999}\n      else {...f,d:{...f.d,trade:N+1}}", 1),
-        ("action spend(leg:int): bool = all {", "action spend(leg:int): bool = all {Set(0,1).contains(leg),s.up.contains(leg),", 1),
-        ("s.up.contains(leg),(HOST!=3 or s.up.contains(3)), has(s,t,if(outcome==2) 3 else 4),",
-         "Set(0,1).contains(leg),Set(2,3).contains(outcome),s.up.contains(leg),(HOST!=3 or s.up.contains(3)),has(s,t,if(outcome==2) 3 else 4),", 1),
     )
     return {
         "dvp.qnt": specialize("dvp.qnt", patches),

@@ -1,0 +1,10 @@
+
+  report_view_test
+    ok unsignedTest passed 1 test(s)
+    ok signedButUnacceptedTest passed 1 test(s)
+    ok cashAcceptedBeforeDecisionTest passed 1 test(s)
+    ok registeredOpenTest passed 1 test(s)
+    ok tombstoneAcceptedTest passed 1 test(s)
+    ok rejectedInstructionNotAcceptedTest passed 1 test(s)
+
+  6 passing (342ms)

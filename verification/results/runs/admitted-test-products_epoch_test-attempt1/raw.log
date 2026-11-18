@@ -1,0 +1,11 @@
+
+  products_epoch_test
+    ok OldHistoryAndNewEpochShareCheckpointTest passed 1 test(s)
+    ok UnseenOldRoundIsHistoricalOnlyTest passed 1 test(s)
+    ok IncompatiblePredecessorTest passed 1 test(s)
+    ok IncompatibleRestoreTest passed 1 test(s)
+    ok RetiredSignaturesCannotAuthorizeNewWorkTest passed 1 test(s)
+    ok ExecutionResultIsNotAFreeCertificateFieldTest passed 1 test(s)
+    ok DistinctContextNeedsPredecessorTest passed 1 test(s)
+
+  7 passing (221ms)

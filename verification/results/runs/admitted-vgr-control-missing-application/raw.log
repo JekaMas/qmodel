@@ -1,0 +1,6 @@
+
+  probe
+    ok MissingApplicationEvidenceTest passed 1 test(s)
+    ok PrematureDurableRowAfterResetTest passed 1 test(s)
+
+  2 passing (237ms)

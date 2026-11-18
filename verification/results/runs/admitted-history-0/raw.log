@@ -1,0 +1,15 @@
+
+  contract_products
+    ok CommitAndRetryHaveAValidIndependentHistoryTest passed 1 test(s)
+    ok NewFinalizedWriteInvalidatesCurrentViewTest passed 1 test(s)
+    ok SameInvocationReturnsOnceTest passed 1 test(s)
+    ok FrozenCommitCannotLinearizeTest passed 1 test(s)
+    ok FrozenCommitCannotConfirmTest passed 1 test(s)
+    ok FrozenCommitCannotRespondTest passed 1 test(s)
+    ok UnfreezeRetryHasOneCanonicalEffectTest passed 1 test(s)
+    ok UnconfirmedApplicationCannotRespondTest passed 1 test(s)
+    ok OlderBackupCannotAnswerAsCurrentTest passed 1 test(s)
+    ok RetriedInvocationCannotExecuteTheSameEffectAgainTest passed 1 test(s)
+    ok AbortAndRefundAreSeparateLinearizationPointsTest passed 1 test(s)
+
+  11 passing (1106ms)

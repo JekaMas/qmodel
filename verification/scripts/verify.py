@@ -1,74 +1,54 @@
-"""Audit/reuse observed greens, or explicitly rerun exact versioned input closures.
+"""Audit the current protocol and the previous release's exact retained graph claims."""
+import argparse
+import json
+import sys
 
-The baseline and negative suites are deliberately separate. A negative suite
-requires a native property violation, never merely a nonzero process exit.
-"""
-from pathlib import Path
-import argparse,json,subprocess,sys,hashlib
-sys.path.insert(0,str(Path(__file__).resolve().parent))
-from audit_evidence import ROOT,EvidenceError,load_latest,validate
-from block_audit import audit_blocks
-from guarantee_audit import audit_guarantees
-from repeated_audit import coverage as audit_repeated
-from three_audit import audit_three
-from products_audit import audit_products
+from admission_checks import audit, cases, native_result, run
+from audit_evidence import EvidenceError
+from release_evidence import RELEASE, check_retained_owners, release_report
+
 
 def main():
- p=argparse.ArgumentParser(description=__doc__)
- p.add_argument('suite',choices=['baseline','negative','audit'])
- p.add_argument('--fresh',action='store_true',help='explicitly rerun exact recorded source snapshots, bounded per receipt; may take tens of minutes')
- p.add_argument('--focused',action='store_true',help='audit the explicitly selected focused scope while retaining deferred full checks')
- a=p.parse_args()
- manifest=json.loads((ROOT/'verification/results/manifest.json').read_text())
- for rel,h in manifest['final_model_hashes'].items():
-  if hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()!=h:
-   raise EvidenceError('Final model inventory changed: '+rel+'; reconcile affected checks before accepting this report')
- acceptance=json.loads((ROOT/'verification/configs/acceptance.json').read_text())
- ids=acceptance['required_focused'] if a.focused else acceptance['required']
- selected=[]
- for base in ids:
-  rp,r=load_latest(base)
-  if a.suite=='baseline' and r['expected']!='pass':continue
-  # A weak-oracle discriminator intentionally accepts a faulty model to expose
-  # its blind spot. Audit it, but never count it as safe-baseline verification.
-  if a.suite=='baseline' and base in acceptance.get('oracle_discriminators',[]):continue
-  if a.suite=='negative' and r['expected']!='counterexample':continue
-  validate(r,rp);selected.append(r["id"])
- if not selected:raise EvidenceError('Empty selected suite')
- if not a.focused:
-  assurance=audit_guarantees()
-  if a.suite in ['baseline','audit']:
-   selected.extend(v['receipt'] for v in assurance['graphs'].values())
-   selected.extend(assurance['directed'].values())
-   selected.extend([assurance['sampled'],assurance['history']['baseline']])
-  if a.suite in ['negative','audit']:
-   selected.extend(v for k,v in assurance['history'].items() if k!='baseline')
-  if a.suite=='audit':
-   selected.extend(assurance['controls'].values())
-  if a.suite in ['baseline','audit']:
-   repeated=audit_repeated()
-   selected.extend(repeated['directed_receipts'] + repeated['sample_receipts'])
-   if a.suite=='audit':
-    selected.append(repeated['legacy_discriminator'])
-  three=audit_three()
-  if a.suite in ['baseline','audit']:selected.extend(three['positive'])
-  if a.suite in ['negative','audit']:selected.extend(three['negative'])
-  if a.suite=='audit':selected.extend(three['witnesses'])
-  products=audit_products()
-  if a.suite in ['baseline','audit']:selected.extend(products['positive'])
-  if a.suite in ['negative','audit']:selected.extend(products['negative'])
-  if a.suite=='audit':selected.extend(products['witnesses'])
-  blocks=audit_blocks()
-  if a.suite in ['baseline','audit']:selected.extend(blocks['positive'])
-  if a.suite in ['negative','audit']:selected.extend(blocks['negative'])
- if a.fresh:
-  for base in selected:
-   done=subprocess.run([sys.executable,str(ROOT/'verification/scripts/replay.py'),base],cwd=ROOT)
-   if done.returncode:return done.returncode
- print(json.dumps({'suite':a.suite,'focused':a.focused,'deferred_full_checks':acceptance.get('deferred',{}),'checks':len(selected),'status':'passed','mode':'exact-recorded-input rerun' if a.fresh else 'audited original backend results; valid greens reused','scope':'named finite, bounded, sampled and parameterized induction scopes','broader_timeouts':manifest['historical_broader_timeouts'],'unmet_scoped_checks':manifest['unmet_scoped_checks']},indent=2))
- return 1 if manifest['unmet_scoped_checks'] and not a.focused else 0
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("suite",choices=("baseline","negative","audit"))
+    parser.add_argument("--fresh",action="store_true",help="Run the selected native executions again")
+    parser.add_argument("--focused",action="store_true",help="Select the historical focused suite and current review checks")
+    args=parser.parse_args()
+    historical_args=[args.suite]
+    if args.focused:
+        historical_args.append("--focused")
+    if args.fresh:
+        historical_args.append("--fresh")
+    owners=check_retained_owners()
+    retained=release_report("verify.py",*historical_args)
+    def control(c):
+        return (c.expected=="counterexample" or c.name.startswith("vgr-control-")
+                or c.name.endswith("-mutant") or c.name=="test-products_epoch_mutant_test"
+                or c.name in {"history-1","history-2","history-3","history-4","history-5"})
 
-if __name__=='__main__':
- try:sys.exit(main())
- except (EvidenceError,OSError,KeyError,ValueError) as e:
-  print('Evidence audit failed: '+str(e),file=sys.stderr);sys.exit(1)
+    selected=[c for c in cases() if args.suite=="audit" or (args.suite=="negative")==control(c)]
+    live=audit(selected)
+    if args.fresh:
+        for c in selected:
+            current=run(c,force=True)
+            if not current["expectation_met"]:
+                raise EvidenceError("Fresh execution failed: "+c.name)
+            native_result(c,current)
+    print(json.dumps({"status":"passed","suite":args.suite,"retained_release":RELEASE,
+                      "reviewed_owners":owners,"retained_checks":retained["checks"],"current_checks":len(selected),
+                      "current_directed_cases":sum(live[c.name]["tests"] for c in selected),
+                      "current_finite_graphs":sum(c.backend=="tlc" and c.expected=="pass" for c in selected),
+                      "current_native_counterexamples":sum(c.expected=="counterexample" for c in selected),
+                      "current_sampled_traces":sum(int(c.command[c.command.index("--max-samples")+1])
+                                                  for c in selected if c.backend=="simulation"),
+                      "current_scope":"Source-bound checks listed in configs/admission-acceptance.json",
+                      "retained_scope":retained["scope"]},indent=2))
+    return 0
+
+
+if __name__=="__main__":
+    try:
+        sys.exit(main())
+    except (EvidenceError,OSError,KeyError,ValueError,RuntimeError) as error:
+        print("Verification failed:",error,file=sys.stderr)
+        sys.exit(1)

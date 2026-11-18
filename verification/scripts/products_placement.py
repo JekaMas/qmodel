@@ -63,7 +63,10 @@ def closure(host,mode):
     source+=f"  run holds={holds}.expect(sequenceSafe and {both_held})\n  run ready={ready}\n"
     source+=f"  run disposition={timed}\n"
     # Retain work across outage with actual source job replay.
-    lag=chain("disposition",["crash(3)","crash(4)","rotate","exitMember","recover(3)","recover(4)",
+    # The third trade must acquire historical authority before the epoch cut.
+    # Capture/proving/delivery remain delayed until after rotation and exit.
+    retained_phases = proof_a or [1]
+    lag=chain("disposition",[*[f"finalize(3,{p})" for p in retained_phases],"crash(3)","crash(4)","rotate","exitMember","recover(3)","recover(4)",
                              *proof(1,3)[:-1],"lose(1,3)","resend(1,3)","deliver(1,3)","deliver(1,3)"])
     source+=f"  run firstOutcome={lag}\n"
     source+="  run AbsentRemoteReleaseCannotBeGuessedTest="+chain("disposition",proof(2,4))+f".then(refund(2,{1 if host==0 else 0}).fail())\n" if host!=3 else ""

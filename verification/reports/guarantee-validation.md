@@ -2,6 +2,8 @@
 
 **DONE for the scoped model and SQLite assurance change.** VGR-01 and VGR-02 are closed in the active model acceptance suite. The checked kernel retains A-hosted decision, independent native asset ledgers, and backed irreversible commitment with conditional eventual application. The old producer actions, including the two already-correct guards, are unchanged. The [original review and witnesses](../reviews/guarantee-assurance/README.md) retain their original scope. [OpenSpec task and progress](../../openspec/changes/strengthen-dvp-guarantees/tasks.md)
 
+This report preserves the original VGR release evidence and its source identities. The [current admission revision](finalized-admission.md) checks those guarantees on the changed economic kernel and updates the first-reservation, clock, authority and reporting contracts.
+
 ## Findings and checks
 
 | Obligation | Change | Observed result |

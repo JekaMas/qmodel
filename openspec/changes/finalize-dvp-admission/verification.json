@@ -1,0 +1,587 @@
+{
+  "schema_version": 2,
+  "change": "finalize-dvp-admission",
+  "requirements": [
+    {
+      "id": "FA",
+      "capability": "dvp-admission",
+      "title": "Admit and finish native settlement under current or retained authority",
+      "fingerprint": "a37d5b230712e5a9a3ed414a56dec5d25aeeadbe43c765069713250a28291ca2"
+    }
+  ],
+  "properties": [
+    {
+      "id": "FA.P1",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Admission across rotation"
+      ],
+      "statement": "eventual execution of a previously finalized reservation or a newly signed instruction",
+      "owner": "verification/models/dvp.qnt",
+      "oracle": "pre-cut finalized set and independent prior-state reservation observer",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp.qnt",
+        "verification/models/admission_history.qnt",
+        "verification/models/admission_cutover.qnt",
+        "verification/models/policy_history.qnt",
+        "verification/tests/admission_review_test.qnt",
+        "verification/scripts/policy_checks.py"
+      ]
+    },
+    {
+      "id": "FA.P2",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Authoritative inclusion"
+      ],
+      "statement": "block generation, inclusion of a submitted generation and confirmation depth",
+      "owner": "verification/tests/workloads/products/clocks_suffix.qnt",
+      "oracle": "A height and captured request generation at inclusion",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/tests/workloads/products/clocks_suffix.qnt",
+        "verification/scripts/products_clocks.py",
+        "verification/models/dvp.qnt"
+      ]
+    },
+    {
+      "id": "FA.P3",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Current bank status"
+      ],
+      "statement": "latest verified prefix, historical reads and durable idempotent responses",
+      "owner": "verification/models/audit_scope.qnt",
+      "oracle": "verified manifests, complete canonical operations and independent consumer receipts",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/audit_scope.qnt",
+        "verification/tests/workloads/products/contract_suffix.qnt",
+        "verification/scripts/products_contract.py",
+        "verification/tests/consumer_inbox_test.qnt"
+      ]
+    },
+    {
+      "id": "FA.P4",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Validator handoff"
+      ],
+      "statement": "newly accepted certificate authority across membership installation",
+      "owner": "verification/tests/workloads/products/authority.qnt",
+      "oracle": "delta of accepted certificate IDs and immediately preceding epoch",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/tests/workloads/products/authority.qnt",
+        "verification/tests/workloads/products/authority_migration.qnt"
+      ]
+    },
+    {
+      "id": "FA.P5",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Comparable completion"
+      ],
+      "statement": "native cash and security effects under honest committee authorization",
+      "owner": "verification/models/mechanisms.qnt",
+      "oracle": "actual delivery flags, consumed reserve and fair remote application",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/mechanisms.qnt",
+        "verification/tests/mechanisms_test.qnt"
+      ]
+    },
+    {
+      "id": "FA.P6",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Bilateral funding shortfall"
+      ],
+      "statement": "terminal effects and exact financial rows for every pair of local orders",
+      "owner": "verification/models/dvp_blocks.qnt",
+      "oracle": "intersection of independent funded prefixes and exact free balances",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp_blocks.qnt",
+        "verification/scripts/partial_settlement.py",
+        "verification/scripts/block_checks.py",
+        "verification/models/guarantee_oracles.qnt"
+      ]
+    },
+    {
+      "id": "FA.P7",
+      "requirement_id": "FA",
+      "scenarios": [
+        "Bank finality decision"
+      ],
+      "statement": "bank acceptance criterion and observable ledger consequences during B outage",
+      "owner": "verification/models/dvp.qnt",
+      "oracle": "final A COMMIT, held B funds, restored native payment and explicit external decision",
+      "source_globs": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp.qnt",
+        "verification/tests/bank_finality_test.qnt",
+        "verification/configs/bank-finality.json",
+        "verification/reports/guarantee-conformance.md",
+        "verification/protocol.md"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "FA.C1",
+      "property_id": "FA.P1",
+      "polarity": "positive",
+      "scenario": "Admission across rotation",
+      "scenario_fingerprint": "a12f12170aec040e642d5b2b33808ed7361c02eba980fafa0f81a42634f4ef79",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "retained or renewed instruction",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp.qnt",
+        "verification/models/admission_history.qnt",
+        "verification/models/admission_cutover.qnt",
+        "verification/models/policy_history.qnt",
+        "verification/tests/admission_review_test.qnt",
+        "verification/scripts/policy_checks.py"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_retained_or_renewed_instruction",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "eventual execution of a previously finalized reservation or a newly signed instruction positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C2",
+      "property_id": "FA.P1",
+      "polarity": "negative",
+      "scenario": "Admission across rotation",
+      "scenario_fingerprint": "a12f12170aec040e642d5b2b33808ed7361c02eba980fafa0f81a42634f4ef79",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "provisional holds and stale signatures",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp.qnt",
+        "verification/models/admission_history.qnt",
+        "verification/models/admission_cutover.qnt",
+        "verification/models/policy_history.qnt",
+        "verification/tests/admission_review_test.qnt",
+        "verification/scripts/policy_checks.py"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_provisional_holds_and_stale_signatures",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "eventual execution of a previously finalized reservation or a newly signed instruction negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C3",
+      "property_id": "FA.P2",
+      "polarity": "positive",
+      "scenario": "Authoritative inclusion",
+      "scenario_fingerprint": "4db53ebcf07be132136672f5e3e8014dc58f7694fa5d7e088fc10b57144f7b19",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "confirmed inclusion",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/tests/workloads/products/clocks_suffix.qnt",
+        "verification/scripts/products_clocks.py",
+        "verification/models/dvp.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_confirmed_inclusion",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "block generation, inclusion of a submitted generation and confirmation depth positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C4",
+      "property_id": "FA.P2",
+      "polarity": "negative",
+      "scenario": "Authoritative inclusion",
+      "scenario_fingerprint": "4db53ebcf07be132136672f5e3e8014dc58f7694fa5d7e088fc10b57144f7b19",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "halted chain and replacement",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/tests/workloads/products/clocks_suffix.qnt",
+        "verification/scripts/products_clocks.py",
+        "verification/models/dvp.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_halted_chain_and_replacement",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "block generation, inclusion of a submitted generation and confirmation depth negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C5",
+      "property_id": "FA.P3",
+      "polarity": "positive",
+      "scenario": "Current bank status",
+      "scenario_fingerprint": "ec31bacb91e340dfc1c6d3833b69dd7bf271b465e62441020e561af28313d999",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "complete verified cursor",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/audit_scope.qnt",
+        "verification/tests/workloads/products/contract_suffix.qnt",
+        "verification/scripts/products_contract.py",
+        "verification/tests/consumer_inbox_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_complete_verified_cursor",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "latest verified prefix, historical reads and durable idempotent responses positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C6",
+      "property_id": "FA.P3",
+      "polarity": "negative",
+      "scenario": "Current bank status",
+      "scenario_fingerprint": "ec31bacb91e340dfc1c6d3833b69dd7bf271b465e62441020e561af28313d999",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "obsolete and incomplete responses",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/audit_scope.qnt",
+        "verification/tests/workloads/products/contract_suffix.qnt",
+        "verification/scripts/products_contract.py",
+        "verification/tests/consumer_inbox_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_obsolete_and_incomplete_responses",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "latest verified prefix, historical reads and durable idempotent responses negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C7",
+      "property_id": "FA.P4",
+      "polarity": "positive",
+      "scenario": "Validator handoff",
+      "scenario_fingerprint": "b4a3528235a1eb8be969d3cabc06712420298eb8f6a7e3e1b2b65acbea22414e",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "historical and current authority",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/tests/workloads/products/authority.qnt",
+        "verification/tests/workloads/products/authority_migration.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_historical_and_current_authority",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "newly accepted certificate authority across membership installation positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C8",
+      "property_id": "FA.P4",
+      "polarity": "negative",
+      "scenario": "Validator handoff",
+      "scenario_fingerprint": "b4a3528235a1eb8be969d3cabc06712420298eb8f6a7e3e1b2b65acbea22414e",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "unseen retired certificate",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/tests/workloads/products/authority.qnt",
+        "verification/tests/workloads/products/authority_migration.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_unseen_retired_certificate",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "newly accepted certificate authority across membership installation negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C9",
+      "property_id": "FA.P5",
+      "polarity": "positive",
+      "scenario": "Comparable completion",
+      "scenario_fingerprint": "3be79afcf23be084f632a79b62bef2b43ca5f8c351e5acac127c81b68d30c227",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "honest committee remote delivery",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/mechanisms.qnt",
+        "verification/tests/mechanisms_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_honest_committee_remote_delivery",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "native cash and security effects under honest committee authorization positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C10",
+      "property_id": "FA.P5",
+      "polarity": "negative",
+      "scenario": "Comparable completion",
+      "scenario_fingerprint": "3be79afcf23be084f632a79b62bef2b43ca5f8c351e5acac127c81b68d30c227",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "unbacked committee decision",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/mechanisms.qnt",
+        "verification/tests/mechanisms_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_unbacked_committee_decision",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "native cash and security effects under honest committee authorization negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C11",
+      "property_id": "FA.P6",
+      "polarity": "positive",
+      "scenario": "Bilateral funding shortfall",
+      "scenario_fingerprint": "8d1db722daaa14aa04e8d24e0665c6d6cc2a95a1f12719ebe35758bbfdf36f44",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "all order pairs and bookings",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp_blocks.qnt",
+        "verification/scripts/partial_settlement.py",
+        "verification/scripts/block_checks.py",
+        "verification/models/guarantee_oracles.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_all_order_pairs_and_bookings",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "terminal effects and exact financial rows for every pair of local orders positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C12",
+      "property_id": "FA.P6",
+      "polarity": "negative",
+      "scenario": "Bilateral funding shortfall",
+      "scenario_fingerprint": "8d1db722daaa14aa04e8d24e0665c6d6cc2a95a1f12719ebe35758bbfdf36f44",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "oversubscription and duplicate debit",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp_blocks.qnt",
+        "verification/scripts/partial_settlement.py",
+        "verification/scripts/block_checks.py",
+        "verification/models/guarantee_oracles.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_oversubscription_and_duplicate_debit",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "terminal effects and exact financial rows for every pair of local orders negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C13",
+      "property_id": "FA.P7",
+      "polarity": "positive",
+      "scenario": "Bank finality decision",
+      "scenario_fingerprint": "07dbc5c581957df4316ff1ecd0ef4afd69498bd68b3666f43242741f919ff54a",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "restored cash and production gate",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp.qnt",
+        "verification/tests/bank_finality_test.qnt",
+        "verification/configs/bank-finality.json",
+        "verification/reports/guarantee-conformance.md",
+        "verification/protocol.md"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_restored_cash_and_production_gate",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "bank acceptance criterion and observable ledger consequences during B outage positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "FA.C14",
+      "property_id": "FA.P7",
+      "polarity": "negative",
+      "scenario": "Bank finality decision",
+      "scenario_fingerprint": "07dbc5c581957df4316ff1ecd0ef4afd69498bd68b3666f43242741f919ff54a",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "halted cash and common execution",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_finalized_admission.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/dvp.qnt",
+        "verification/tests/bank_finality_test.qnt",
+        "verification/configs/bank-finality.json",
+        "verification/reports/guarantee-conformance.md",
+        "verification/protocol.md"
+      ],
+      "test_id": "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_halted_cash_and_common_execution",
+      "source_path": "verification/tests/test_finalized_admission.py",
+      "command_id": "admission",
+      "state": "implemented",
+      "source_sha256": "ba74762a83375f8ccb5da1e974c020390164d7ba49cbaab699df96d8d26cfcf6",
+      "distinct_reason": "bank acceptance criterion and observable ledger consequences during B outage negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": "admission",
+      "runner": "python-unittest",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "verification.tests.test_finalized_admission"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 120,
+      "authority": "local"
+    }
+  ]
+}

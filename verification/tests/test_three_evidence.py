@@ -4,13 +4,14 @@ import sys
 import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
-from three_audit import audit_three, exact, log
+from three_audit import exact, log
+from release_evidence import release_report
 
 
 class ThreeTradeEvidence(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.evidence = audit_three()
+        cls.evidence = release_report("three_audit.py")
 
     def test_native_three_trade_enumeration_and_full_funding_witness(self):
         self.assertEqual(self.evidence["decision_states"],{"2":18849,"3":33216})

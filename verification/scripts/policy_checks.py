@@ -13,10 +13,10 @@ def control_sources(case):
     observer = (ROOT / POLICY).read_text()
     reference = (MODELS / "dvp.qnt").read_text()
     if case == "missing-eligibility":
-        guard = "s.admitted,s.eligible.contains((t,1)),not(s.frozen.contains(1))"
+        guard = "reserveAuthority(s,t,1),s.eligible.contains((t,1)),not(s.frozen.contains(1))"
         if reference.count(guard) != 1:
             raise ValueError("The B preparation policy no longer matches the control anchor")
-        reference = reference.replace(guard, "s.admitted,not(s.frozen.contains(1))", 1)
+        reference = reference.replace(guard, "reserveAuthority(s,t,1),not(s.frozen.contains(1))", 1)
     elif case == "reopen":
         observer = observer.replace("MUTANT=0", "MUTANT=4", 1)
     else:

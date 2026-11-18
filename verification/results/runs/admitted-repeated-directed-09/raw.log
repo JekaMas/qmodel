@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok Outage0RecoveryTest passed 1 test(s)
+    ok Outage1RecoveryTest passed 1 test(s)
+    ok Outage2RecoveryTest passed 1 test(s)
+    ok Outage3RecoveryTest passed 1 test(s)
+    ok Outage4RecoveryTest passed 1 test(s)
+    ok Outage01RecoveryTest passed 1 test(s)
+    ok Outage02RecoveryTest passed 1 test(s)
+    ok Outage03RecoveryTest passed 1 test(s)
+    ok Outage04RecoveryTest passed 1 test(s)
+    ok Outage12RecoveryTest passed 1 test(s)
+    ok Outage13RecoveryTest passed 1 test(s)
+    ok Outage14RecoveryTest passed 1 test(s)
+    ok Outage23RecoveryTest passed 1 test(s)
+    ok Outage24RecoveryTest passed 1 test(s)
+    ok Outage34RecoveryTest passed 1 test(s)
+    ok Outage012RecoveryTest passed 1 test(s)
+
+  16 passing (8785ms)

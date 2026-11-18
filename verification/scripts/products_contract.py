@@ -48,6 +48,10 @@ def closure(mode):
     .expect(historySafe and not(j.fresh) and not(j.cache.contains((1,3))) and j.finalizedOps.contains((1,3)))
     .then(invokeOp(1,3,2)).then(caughtUp).then(response(1,3,2)).then(response(1,7,1))
     .expect(historySafe and s.receivedA.get(1)==2 and s.receivedB.get(1)==3 and j.events.select(e=>e._1==(1,3) and e._3==1).length()==1)
+  run NewFinalizedWriteInvalidatesCurrentViewTest=signed.then(invokeOp(1,0,1)).then(effect(1,0)).then(confirmOp(1,0))
+    .expect(historySafe and not(j.fresh) and not(j.cache.contains((1,0))))
+    .then(caughtUp).expect(historySafe and j.fresh and j.cache.contains((1,0)))
+  run SameInvocationReturnsOnceTest=reserved.then(response(1,0,1).fail())
   run frozenAttempt = prepared.then(invokeOp(1,2,1)).then(executeFramed((EVENT_FREEZE,0,0,0)))
     .expect(historySafe and s.trades.get(1).decision==1 and s.trades.get(1).holdA==1
             and s.receivedA.get(1)==0 and not(j.durable.contains((1,2))))
@@ -81,6 +85,15 @@ def closure(mode):
         source+="  run ForgedRestoredCacheCannotCreateAuthorityTest=outcomeReady.then(invokeOp(1,3,1)).then(stopAdapter).then(recoverAdapter).then(response(1,3,1)).expect(not(legal(j.events)) and not(historySafe))\n"
     if mode==4:
         source+="  run DuplicateActualCashEffectBreaksHistoryTest=applied.then(invokeOp(1,3,2)).then(effect(1,3)).expect(s.receivedB.get(1)==6 and not(legal(j.events)))\n"
+    if mode==5:
+        marker="fresh:false,finalizedOps:j.finalizedOps.union(Set(op))"
+        if source.count(marker)!=1:
+            raise ValueError("Expected confirmation to invalidate cache freshness")
+        source=source.replace(marker,"fresh:j.fresh,finalizedOps:j.finalizedOps.union(Set(op))")
+        source+="""
+  run OldFreshFlagDisagreesWithConfirmedPrefixTest=signed.then(invokeOp(1,0,1)).then(effect(1,0)).then(confirmOp(1,0))
+    .expect(j.fresh and j.finalizedOps.contains((1,0)) and not(j.cache.contains((1,0))) and not(historySafe))
+"""
     source=source.replace("EVENT_UNFREEZE",str(EVENTS["unfreeze"])).replace("EVENT_FREEZE",str(EVENTS["freeze"]))
     sources["history.qnt"]=(source+"}\n").encode()
     return sources

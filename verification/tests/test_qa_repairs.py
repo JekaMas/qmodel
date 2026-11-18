@@ -8,6 +8,10 @@ from pathlib import Path
 from verification.scripts.audit_evidence import ROOT,load_latest,validate
 sys.path.insert(0,str(ROOT/'verification/scripts'))
 import evidence
+from release_evidence import release_tree
+
+# These records prove the version stored in the reviewed QA release.
+ROOT = release_tree()
 
 def decode(x):
  if isinstance(x,list):return [decode(v) for v in x]

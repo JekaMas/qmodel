@@ -42,7 +42,8 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -71,7 +72,8 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -100,7 +102,8 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -129,7 +132,8 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -158,7 +162,8 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ]
     }
   ],
@@ -190,13 +195,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_native_three_trade_enumeration_and_full_funding_witness",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Both native admission-to-decision graphs complete, with an actual simultaneous funded witness.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -229,13 +235,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_contended_reserves_and_foreign_proofs_rejected",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "The third unfunded reservation and a genuine foreign preparation are denied.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -268,13 +275,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_combined_faults_and_evidenced_recovery",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Combined N3 timed recovery and exact evidenced completion after reached mixed terminal outcomes.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -307,13 +315,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_duration_timeout_replay_and_route_negative_matrix",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Real route denial and healing at seven phases, expiry, duration gates, forgery and authenticated replay.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -346,13 +355,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_saturated_application_lane_meets_service_bound",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Both real cash applications occur on eligible service ticks in the saturated profile.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -385,13 +395,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_unprotected_lane_misses_service_bound",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Shared service permits junk to consume protected work and violates the bounded predicate.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -424,13 +435,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_actual_concurrent_linearization_histories",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Three overlapping real requests and a lost acknowledgement admit exact sequential histories.",
       "substitution": {
         "classification": "EXTERNAL_BOUNDARY",
@@ -468,13 +480,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_early_response_conflict_and_local_order_controls",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Early success, conflicting replacement and selected preceding local guard races are detected.",
       "substitution": {
         "classification": "EXTERNAL_BOUNDARY",
@@ -512,13 +525,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_native_byzantine_quorum_envelope",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "TLC checks all reached states under four validators and a threshold of three.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
@@ -551,13 +565,14 @@
         "verification/configs/proof-contracts.json",
         "verification/adapters/booking.py",
         "verification/tests/test_assurance_booking.py",
-        "verification/tests/test_booking_linearization.py"
+        "verification/tests/test_booking_linearization.py",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_three_evidence.ThreeTradeEvidence.test_overthreshold_equivocation_and_context_failure",
       "command_id": "three-evidence",
       "state": "implemented",
       "source_path": "verification/tests/test_three_evidence.py",
-      "source_sha256": "7947f3740fabe96b7864a60cad1cb6486676684c97929557ac5e878dacb8a231",
+      "source_sha256": "fe26ff36fde85c3829a032dbe39967296d4acbf9ebd3cf4c95e7dbc3c2f4c720",
       "distinct_reason": "Two equivocators or a missing admission scope give actual native counterexamples.",
       "substitution": {
         "classification": "NO_TEST_DOUBLE"

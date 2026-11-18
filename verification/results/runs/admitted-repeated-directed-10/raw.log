@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok Outage013RecoveryTest passed 1 test(s)
+    ok Outage014RecoveryTest passed 1 test(s)
+    ok Outage023RecoveryTest passed 1 test(s)
+    ok Outage024RecoveryTest passed 1 test(s)
+    ok Outage034RecoveryTest passed 1 test(s)
+    ok Outage123RecoveryTest passed 1 test(s)
+    ok Outage124RecoveryTest passed 1 test(s)
+    ok Outage134RecoveryTest passed 1 test(s)
+    ok Outage234RecoveryTest passed 1 test(s)
+    ok Outage0123RecoveryTest passed 1 test(s)
+    ok Outage0124RecoveryTest passed 1 test(s)
+    ok Outage0134RecoveryTest passed 1 test(s)
+    ok Outage0234RecoveryTest passed 1 test(s)
+    ok Outage1234RecoveryTest passed 1 test(s)
+    ok Outage01234RecoveryTest passed 1 test(s)
+    ok Phase0Binding0Test passed 1 test(s)
+
+  16 passing (8523ms)

@@ -1,0 +1,16 @@
+
+  admission_review_test
+    ok StaleCashFirstTest passed 1 test(s)
+    ok StaleSecurityFirstTest passed 1 test(s)
+    ok ProvisionalAloneCannotGrantAuthorityTest passed 1 test(s)
+    ok ProvisionalCannotStartRemoteHoldTest passed 1 test(s)
+    ok BothProvisionalCannotMintAuthorityTest passed 1 test(s)
+    ok LocalFinalityIsNotRemoteDeliveryTest passed 1 test(s)
+    ok HistoricAFirstSettlesTest passed 1 test(s)
+    ok HistoricBFirstSettlesTest passed 1 test(s)
+    ok HistoricExitKeepsPriorObligationTest passed 1 test(s)
+    ok ProvisionalOnlyCleansUpTest passed 1 test(s)
+    ok RenewedTermsSettleTest passed 1 test(s)
+    ok OfflineSpendRefusedTest passed 1 test(s)
+
+  12 passing (2589ms)

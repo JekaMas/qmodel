@@ -61,7 +61,11 @@
         "guarantees-history-reopen-attempt1"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "current_review_scopes": [
+      "policy",
+      "policy-control-reopen"
+    ]
   },
   {
     "id": "S03",
@@ -92,7 +96,13 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "reviewed_contract": "Initial authorization binds both signatures to the descriptor and requires a live epoch. A new historic reserve requires exact opposite-leg canonical evidence.",
+    "current_review_scopes": [
+      "epoch-cut",
+      "obsolete-admission",
+      "test-admission_review_test"
+    ]
   },
   {
     "id": "S04",
@@ -122,7 +132,14 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "block-full",
+      "block-overbook-a",
+      "block-overbook-b",
+      "bilateral-orders",
+      "bilateral-recovery"
+    ]
   },
   {
     "id": "S05",
@@ -195,7 +212,12 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. All eight named profiles have completed full-State/adversarialStep induction for hold/effect consistency. False-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "block-double-charge",
+      "history-4",
+      "bilateral-orders"
+    ]
   },
   {
     "id": "S06",
@@ -245,7 +267,12 @@
         "guarantees-control-wrong-phase"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "current_review_scopes": [
+      "vgr-reference",
+      "vgr-control-wrong-phase",
+      "test-consumer_inbox_test"
+    ]
   },
   {
     "id": "S07",
@@ -274,7 +301,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "test-bank_finality_test",
+      "test-guarantee_combined_test"
+    ]
   },
   {
     "id": "S08",
@@ -304,7 +335,12 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Atomic local security delivery plus funded durable cash backing, exact output receipts and separate actual source-state effect consistency. Current full N1/N2 safety and named placements; no parameterized or deployed-system theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "vgr-control-omitted-local",
+      "vgr-reference",
+      "test-bank_finality_test"
+    ]
   },
   {
     "id": "S09",
@@ -373,7 +409,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Actual source-derived program0 proofs exercise separate crypto-validity/application admission at the real consumer, including rotation/exit. Full healthy financial/admission graph,31consumer-context cases and six actual-source B/D canonical/unadmitted cases with three missing-admission controls. Foreign-context certificate fixtures assume validity at their input boundary, not native-history reachability or cryptographic construction.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "test-bindings_test",
+      "test-proof_consumer_test"
+    ]
   },
   {
     "id": "S11",
@@ -441,7 +481,13 @@
         "guarantees-sqlite-attempt1"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "current_review_scopes": [
+      "test-consumer_inbox_test",
+      "history-0",
+      "history-3",
+      "live-recovery"
+    ]
   },
   {
     "id": "S13",
@@ -482,7 +528,18 @@
         "guarantees-adversarial"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "reviewed_contract": "The first finalized A or B reservation establishes the obligation across the governance cut. Signatures, registration and provisional reservations do not establish it. Historical authorizations can resolve an existing obligation, with eligibility and freeze checks still active.",
+    "current_review_scopes": [
+      "epoch-cut",
+      "obsolete-admission",
+      "migration",
+      "retired-authority",
+      "test-admission_review_test",
+      "cutover",
+      "cutover-early",
+      "cutover-scenarios"
+    ]
   },
   {
     "id": "S14",
@@ -526,7 +583,13 @@
         "guarantees-history-missing-eligibility-attempt1"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "reviewed_contract": "A newly active reservation must be permissible in the preceding state, including the credential epoch or an authenticated continuation.",
+    "current_review_scopes": [
+      "policy",
+      "policy-control-missing-eligibility",
+      "epoch-cut"
+    ]
   },
   {
     "id": "S15",
@@ -572,7 +635,16 @@
         "guarantees-control-missing-application-attempt1"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "reviewed_contract": "Expose signed, included, finalized admission, registered, applied, as-of and reconciled statuses separately. Current data covers the verified prefix.",
+    "current_review_scopes": [
+      "history-0",
+      "report-cursor",
+      "rewound-cursor",
+      "test-report_view_test",
+      "vgr-control-missing-application",
+      "history-5"
+    ]
   },
   {
     "id": "S16",
@@ -637,7 +709,16 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "live-reference",
+      "live-two",
+      "live-recovery",
+      "live-b",
+      "live-d",
+      "live-open",
+      "live-escrow"
+    ]
   },
   {
     "id": "L02",
@@ -674,7 +755,16 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "live-reference",
+      "live-two",
+      "live-recovery",
+      "live-b",
+      "live-d",
+      "live-open",
+      "live-escrow"
+    ]
   },
   {
     "id": "L03",
@@ -711,7 +801,16 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "live-reference",
+      "live-two",
+      "live-recovery",
+      "live-b",
+      "live-d",
+      "live-open",
+      "live-escrow"
+    ]
   },
   {
     "id": "L04",
@@ -762,7 +861,16 @@
         "guarantees-open"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "current_review_scopes": [
+      "live-reference",
+      "live-two",
+      "live-recovery",
+      "live-b",
+      "live-d",
+      "live-open",
+      "live-escrow"
+    ]
   },
   {
     "id": "C-Decision",
@@ -787,7 +895,12 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "test-bank_finality_test",
+      "clocks-safe",
+      "vgr-reference"
+    ]
   },
   {
     "id": "C-Local",
@@ -821,7 +934,13 @@
         "guarantees-control-omitted-local"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "current_review_scopes": [
+      "live-reference",
+      "live-recovery",
+      "committee",
+      "test-bank_finality_test"
+    ]
   },
   {
     "id": "C-Records",
@@ -858,7 +977,13 @@
         "guarantees-sqlite-attempt1"
       ],
       "report": "reports/guarantee-validation.md"
-    }
+    },
+    "current_review_scopes": [
+      "vgr-reference",
+      "vgr-two",
+      "test-consumer_inbox_test",
+      "bilateral-orders"
+    ]
   },
   {
     "id": "O-Immediate",
@@ -878,7 +1003,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "test-bank_finality_test",
+      "test-shared_test"
+    ]
   },
   {
     "id": "O-Permanent",
@@ -898,7 +1027,10 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "test-bank_finality_test"
+    ]
   },
   {
     "id": "P-Access",
@@ -1186,7 +1318,12 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "clocks-safe",
+      "clocks-no-block",
+      "clock-directed"
+    ]
   },
   {
     "id": "T-Capacity",
@@ -1243,7 +1380,13 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "test-admission_review_test",
+      "bilateral-orders",
+      "mixed-recovery",
+      "bilateral-recovery"
+    ]
   },
   {
     "id": "R-Policy",
@@ -1270,7 +1413,13 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "epoch-cut",
+      "policy",
+      "migration",
+      "retired-authority"
+    ]
   },
   {
     "id": "R-Audit",
@@ -1297,7 +1446,15 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "reviewed_contract": "The latest verified cursor stays monotone when older genuine manifests arrive. A current adapter cache includes every confirmed operation in its verified prefix.",
+    "current_review_scopes": [
+      "report-cursor",
+      "rewound-cursor",
+      "history-0",
+      "test-consumer_inbox_test",
+      "history-5"
+    ]
   },
   {
     "id": "V-AOpen",
@@ -1324,7 +1481,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "live-open",
+      "vgr-open"
+    ]
   },
   {
     "id": "V-B",
@@ -1356,7 +1517,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "vgr-b",
+      "live-b"
+    ]
   },
   {
     "id": "V-D",
@@ -1383,7 +1548,12 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "test-registration_d_test",
+      "vgr-d",
+      "live-d"
+    ]
   },
   {
     "id": "V-Escrow",
@@ -1410,7 +1580,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "vgr-escrow",
+      "live-escrow"
+    ]
   },
   {
     "id": "V-Private",
@@ -1460,7 +1634,10 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "vgr-private"
+    ]
   },
   {
     "id": "V-Shared",
@@ -1493,7 +1670,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "current_review_scopes": [
+      "vgr-shared",
+      "test-shared_test"
+    ]
   },
   {
     "id": "V-Three",
@@ -1622,6 +1803,7 @@
     "status": "external-obligation",
     "execution_status": "external-obligation",
     "executed_checks": [],
-    "verified_scope": "Not verified; practical interface specification only."
+    "verified_scope": "Not verified; practical interface specification only.",
+    "reviewed_contract": "Both banks must confirm the seller’s enforceable entitlement to the specific B reservation at final A COMMIT, including enforcement during prolonged unavailability and insolvency. A-hosted is a PoC pending that decision."
   }
 ]

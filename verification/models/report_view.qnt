@@ -4,14 +4,15 @@
 module report_view {
  // One-trade A-hosted native reference. This view adds no state or transitions.
  import dvp(N=1,HOST=0,OPEN_REQUIRED=false,ESCROW=false,PRIVATE=false,MUTANT=0).* from "./dvp"
- type ReportV2={authorizedIntent:bool,acceptedOnSource:bool,decisionRegistered:bool,
+ type ReportV2={authorizedIntent:bool,acceptedOnSource:bool,instructionIncluded:bool,decisionRegistered:bool,
   preparedAAtSnapshot:bool,preparedBAtSnapshot:bool,committedAuthenticated:bool,
   appliedAAuthenticated:bool,appliedBAuthenticated:bool,fullyApplied:bool,
   reconciled:bool,staleOrIncomplete:bool,recipientCashUsable:bool}
  pure def finalReport(x:State,t:int):ReportV2={
   val z=x.trades.get(t)
   val base=progressReport(x,t)
-  {authorizedIntent:base.authorizedIntent,acceptedOnSource:z.intent or z.decision>0,
+  {authorizedIntent:base.authorizedIntent,acceptedOnSource:x.finalized.exists(f=>f.d==desc(t) and Set(1,2).contains(f.phase)),
+   instructionIncluded:z.intent or z.decision>0,
    decisionRegistered:z.decision>0,preparedAAtSnapshot:base.preparedAAtSnapshot,
    preparedBAtSnapshot:base.preparedBAtSnapshot,committedAuthenticated:base.committedAuthenticated,
    appliedAAuthenticated:base.appliedAAuthenticated,appliedBAuthenticated:base.appliedBAuthenticated,

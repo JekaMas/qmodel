@@ -1,0 +1,14 @@
+
+  timed_three_test
+    ok ThreeConcurrentHoldsTest passed 1 test(s)
+    ok TooEarlyRestartTest passed 1 test(s)
+    ok PartitionWithholdsValidPreparationTest passed 1 test(s)
+    ok PartitionWithholdsAbortTest passed 1 test(s)
+    ok DeadlineAndProofRaceTest passed 1 test(s)
+    ok RealForeignProofRejectedTest passed 1 test(s)
+    ok UnknownOutcomeCannotOverwriteKnowledgeTest passed 1 test(s)
+    ok OverlapCrashPartitionMaliceAndRecoveryTest passed 1 test(s)
+    ok IndependentClockAndPermanentAStopTest passed 1 test(s)
+    ok ByteExactPhaseRootsTest passed 1 test(s)
+
+  10 passing (1603ms)

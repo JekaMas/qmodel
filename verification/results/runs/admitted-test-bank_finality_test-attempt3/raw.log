@@ -1,0 +1,9 @@
+
+  bank_finality_test
+    ok FinalCommitWithHaltedCashLedgerTest passed 1 test(s)
+    ok ReservedCashCannotBeSpentDuringHaltTest passed 1 test(s)
+    ok CommittedHoldCannotBeRefundedTest passed 1 test(s)
+    ok HaltedCashCannotBeBookedTest passed 1 test(s)
+    ok RestoredLedgerPaysReservedAmountOnceTest passed 1 test(s)
+
+  5 passing (1616ms)

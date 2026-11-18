@@ -21,12 +21,11 @@ SUBSTITUTIONS = (
     ("pure val D = 2", "pure val D = 8", 1),
     ("deadline:D,", "deadline:List(1,3,5,6,6,7,8).nth(t-1),", 1),
     ("x.height<D", "x.height<desc(t).deadline", 2),
-    ("s.admitted,s.height<D,s.trades", "s.admitted,s.height<desc(t).deadline,s.trades", 1),
+    ("decisionAuthority(s,t),s.height<D,s.trades", "decisionAuthority(s,t),s.height<desc(t).deadline,s.trades", 1),
     ("authorized(s,t),s.height>=D,", "authorized(s,t),s.height>=desc(t).deadline,", 1),
     ("ownerA:2,ownerB:3,vaultA:0", "ownerA:10,ownerB:15,vaultA:0", 1),
     ("receivedA.get(t))==2,", "receivedA.get(t))==10,", 1),
     ("receivedB.get(t))==3,", "receivedB.get(t))==15,", 1),
-    ("action spend(leg:int): bool = all {", "action spend(leg:int): bool = all {s.up.contains(leg),", 1),
 )
 
 
@@ -117,14 +116,24 @@ def chain(prefix, actions):
 
 
 def binding_cases():
-    # Each candidate comes through inject. Test actual lack of acceptance for
-    # the requested phase and keep the existing authenticated past intact.
-    return {
+    cases = {
         f"Phase{phase}Binding{binding}Test":
             chain("parallelHeld", [f"inject(5,{phase},{binding})"]) +
             f".expect(not(has(s,5,{phase})) and s.rejects==Set({binding}) and pending(5))"
         for phase in range(7) for binding in range(11)
     }
+    # Setting phase 6 to 6 leaves the canonical statement unchanged. Contrast
+    # the unsigned candidate with a replay after genuine finalization/proof.
+    replay = chain("parallelHeld", [*proof(5,2),"commit(5)",*apply_cash(5),*proof(5,6)])
+    replay = chain(replay, ["inject(5,6,6)","deliver(5,6)"])
+    cases["Phase6Binding6Test"] += (
+        ".then(applyB(5).fail())"
+    )
+    cases["ProvenPhaseSixReplayKeepsSingleCashEffectTest"] = replay + (
+        ".expect(has(s,5,6) and s.trades.get(5).effectsB==1 and s.receivedB.get(5)==3)"
+        ".then(applyB(5).fail())"
+    )
+    return cases
 
 
 def schedule_cases():
@@ -355,11 +364,13 @@ LEGACY_SPEND = b"""module spend_review {
 
 
 def legacy_spend():
+    from release_evidence import release_tree
+    reviewed_models = release_tree() / "verification/models"
     directory = RUNTIME.parent / "legacy-spend"
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "spend_review.qnt").write_bytes(LEGACY_SPEND)
     for filename in (CORE, "economic_effects.qnt"):
-        (directory / filename).write_bytes((MODELS / filename).read_bytes())
+        (directory / filename).write_bytes((reviewed_models / filename).read_bytes())
     rel = str((directory / "spend_review.qnt").relative_to(ROOT))
     return execute("repeated-review-legacy-spend", [QUINT, "test", rel, "--main", "spend_review",
                    "--backend", "typescript", "--seed", "41", "--match", "^LegacyOfflineSpendTest$"],

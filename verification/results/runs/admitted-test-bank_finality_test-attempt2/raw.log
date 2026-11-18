@@ -1,0 +1,8 @@
+
+ Error [QNT202]: Multiple updates of variable bank_finality_test::dvp::s
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:58:3
+  58:   var s: State
+        ^^^^^^^^^^^^
+
+error: typechecking failed

@@ -1,0 +1,66 @@
+{
+  "id": "admitted-live-two",
+  "started_utc": "2026-11-18T17:38:32.072676+00:00",
+  "claim": "safe",
+  "backend": "tlc",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/models/liveness_variants.qnt",
+    "--main",
+    "live_two",
+    "--backend",
+    "tlc",
+    "--init",
+    "init",
+    "--step",
+    "step",
+    "--invariant",
+    "safe",
+    "--tlc-config",
+    "verification/configs/extended-tlc8.json",
+    "--verbosity",
+    "3",
+    "--temporal",
+    "progress"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/liveness_variants.qnt --main live_two --backend tlc --init init --step step --invariant safe --tlc-config verification/configs/extended-tlc8.json --verbosity 3 --temporal progress",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx8g -Xss8m",
+    "JVM_ARGS": "-Xmx8g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/models/liveness_variants.qnt": "dcd88ecc212184d25338e9ba8328074bf3d98f9245cf2ac0445c32558d0f6737",
+    "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+    "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+    "verification/configs/extended-tlc8.json": "f1aa87257cfe4743e36740c2c1a563a4887d61c2f7b4478fcf0614162d8304ee"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "0.62.4 | build: 7954daf                       I@21:38:48.756",
+    "tlc": "2026.11.18.173859"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "execution_plan_sha256": "3281b669b2d338613f52c389761fa52554ca80543fbdcda95fddb524c7ce7b31",
+  "raw_sha256": "ab7e563c075a01ac26ec5bd6415a45f08257fcf18b1bb7964317d748ee8b6d01",
+  "configuration": {},
+  "timeout_seconds": 14400,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 0,
+  "wall_seconds": 4146.018428416923,
+  "outcome": "finite_model_verified",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": 28670151,
+  "distinct_states": 684268,
+  "raw_output": "verification/results/runs/admitted-live-two/raw.log",
+  "minimized": false,
+  "replayed": false
+}

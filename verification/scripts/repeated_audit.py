@@ -153,4 +153,5 @@ def coverage():
 
 
 if __name__ == "__main__":
-    print(json.dumps(coverage(), indent=2))
+    from release_evidence import family_report
+    print(json.dumps(family_report(__file__, ('repeated-', 'test-admission_review_test')), indent=2))

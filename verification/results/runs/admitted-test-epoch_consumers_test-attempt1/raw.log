@@ -1,0 +1,38 @@
+
+  epoch_consumers_test
+    1) ReporterOnlyCannotReleaseCashTest failed after 1 test(s)
+    2) CashDeliveryDoesNotInformBankTest failed after 1 test(s)
+    3) BankRestoreAndRedeliveryBookOnceTest failed after 1 test(s)
+    4) DifferentCursorsConvergeAfterCertifiedHandoffTest failed after 1 test(s)
+
+  4 failed
+
+  1) ReporterOnlyCannotReleaseCashTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:15:26
+        15:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=ReporterOnlyCannotReleaseCashTest to repeat.
+  2) CashDeliveryDoesNotInformBankTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:15:26
+        15:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=CashDeliveryDoesNotInformBankTest to repeat.
+  3) BankRestoreAndRedeliveryBookOnceTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:15:26
+        15:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=BankRestoreAndRedeliveryBookOnceTest to repeat.
+  4) DifferentCursorsConvergeAfterCertifiedHandoffTest:
+       Error [QNT500]: Uninitialized const N. Use: import <moduleName>(N=<value>).*
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:15:26
+        15:   pure val Trades = 1.to(N)
+                                     ^
+    Use --seed=0x11 --match=DifferentCursorsConvergeAfterCertifiedHandoffTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/tests/epoch_consumers_test.qnt
+error: Tests failed

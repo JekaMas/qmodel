@@ -1,0 +1,161 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+[TLC] Running TLC model checker...
+
+Picked up JAVA_TOOL_OPTIONS: -Xmx8g -Xss8m
+TLC2 Version 2026.11.18.174214
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 121 and seed 2658014516993275871 with 2 workers on 10 cores with 2048MB heap and 64MB offheap memory [pid: 44620] (Mac OS X 14.7 aarch64, JetBrains s.r.o. 25.0.4 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/audit_safe.tla (file:/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/audit_safe.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/Integers.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/Sequences.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/FiniteSets.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/TLC.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/Apalache.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Apalache.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/Variants.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Variants.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/_TLCTrace.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/Naturals.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/tlc-399740550412157088/TLCExt.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Apalache
+Semantic processing of module Variants
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module audit_safe
+Linting of module Apalache
+Linting of module Variants
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module audit_safe
+Starting... (2026-11-18 21:42:14)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-18 21:42:14.
+Error: Invariant q_inv is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+audit_safe_audit_scope_h = [ sourceHead |-> 2,
+  sourceHeaders |-> {},
+  received |-> {},
+  knownHead |-> 0,
+  verified |-> {},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 2: <:= line 53, col 3 to line 61, col 5 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 2,
+  sourceHeaders |->
+      {[genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1]},
+  received |-> {},
+  knownHead |-> 0,
+  verified |-> {},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 3: <audit_safe_audit_scope_deliver(2) line 67, col 3 to line 75, col 7 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 2,
+  sourceHeaders |->
+      {[genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1]},
+  received |->
+      {[genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1]},
+  knownHead |-> 0,
+  verified |-> {},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 4: <audit_safe_audit_scope_appendRecord line 45, col 3 to line 47, col 64 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 3,
+  sourceHeaders |->
+      {[genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1]},
+  received |->
+      {[genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1]},
+  knownHead |-> 0,
+  verified |-> {},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 5: <:= line 53, col 3 to line 61, col 5 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 3,
+  sourceHeaders |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  received |->
+      {[genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1]},
+  knownHead |-> 0,
+  verified |-> {},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 6: <audit_safe_audit_scope_deliver(3) line 67, col 3 to line 75, col 7 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 3,
+  sourceHeaders |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  received |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  knownHead |-> 0,
+  verified |-> {},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 7: <audit_safe_audit_scope_verify(3) line 81, col 3 to line 92, col 7 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 3,
+  sourceHeaders |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  received |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  knownHead |-> 3,
+  verified |-> {3},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+State 8: <audit_safe_audit_scope_verify(2) line 81, col 3 to line 92, col 7 of module audit_safe>
+audit_safe_audit_scope_h = [ sourceHead |-> 3,
+  sourceHeaders |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  received |->
+      { [genesis |-> 110, checkpoint |-> 0, highWater |-> 2, program |-> 1],
+        [genesis |-> 110, checkpoint |-> 0, highWater |-> 3, program |-> 1] },
+  knownHead |-> 2,
+  verified |-> {2, 3},
+  seen |-> {},
+  reportHead |-> 0,
+  complete |-> FALSE,
+  asOfLabeled |-> TRUE,
+  currentClaim |-> FALSE ]
+
+488 states generated, 85 distinct states found, 23 states left on queue.
+The depth of the complete state graph search is 9.
+Finished in 00s at (2026-11-18 21:42:14)
+Trace exploration spec path: /var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-ZkZjlh/audit_safe_TTrace_1795023733.tla
+
+[violation] Found an issue (924ms).
+error: found a counterexample

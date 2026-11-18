@@ -8,13 +8,13 @@ module authority_core {
   pure val Roots=Set(0,1)
   type Lineage = {round:int,epoch:int,currentFault:int,exposed:Set[int],
     locks:int->int,votes:Set[(int,int,int,int)],executed:Set[(int,int,int)],
-    accepted:Set[(int,int,int,int)], approvals:Set[(int,int)],
+    accepted:Set[(int,int,int,int)], acceptedUnder:Set[(int,int)], approvals:Set[(int,int)],
     checkpoint:int,restored:int,historical:Set[int]}
   var a:Lineage
 
   action init = a'={round:0,epoch:0,currentFault:0,exposed:Set(0),
     locks:Old.union(New).mapBy(_=> -1),votes:Set(),executed:Set(),
-    accepted:Set(),approvals:Set(),checkpoint: -1,restored: -1,historical:Set()}
+    accepted:Set(),acceptedUnder:Set(),approvals:Set(),checkpoint: -1,restored: -1,historical:Set()}
   pure def participants(epoch:int):Set[int] = if(epoch==0) Old else New
   pure def economicBody(root:int):int = if(root==0) 2 else 3
 
@@ -42,7 +42,7 @@ module authority_core {
     signedVotes(a,epoch,round,root).size()>=3,
     a.executed.contains((epoch,root,effect)) or MODE==5,
     a.epoch==0 or root==a.checkpoint or MODE==3,
-    a'={...a,accepted:a.accepted.union(Set((epoch,round,root,effect)))}
+    a'={...a,accepted:a.accepted.union(Set((epoch,round,root,effect))),acceptedUnder:a.acceptedUnder.union(Set((epoch,a.epoch)))}
   }
 
   def certifiedOld(root:int):bool =
@@ -68,7 +68,11 @@ module authority_core {
   val predecessorBound = a.epoch==0 or certifiedOld(a.checkpoint)
   val executionBound = a.accepted.forall(c=>a.executed.contains((c._1,c._3,c._4)))
   val recoveredCheckpoint = a.restored== -1 or a.restored==a.checkpoint
-  val authoritySafe = sameHeightAgreement and predecessorBound and executionBound and recoveredCheckpoint
+  // An external observer compares the actual rows added across an edge.
+  pure def newCertificatesCurrent(previousEpoch:int,previousSet:Set[(int,int,int,int)],currentSet:Set[(int,int,int,int)]):bool =
+    currentSet.exclude(previousSet).forall(c=>c._1==previousEpoch)
+  val currentAcceptance = a.acceptedUnder.forall(pair=>pair._1==pair._2)
+  val authoritySafe = currentAcceptance and sameHeightAgreement and predecessorBound and executionBound and recoveredCheckpoint
   action roundStep = any {
     a'=a,changeRound,
     nondet root=Roots.oneOf(); any {
@@ -90,6 +94,10 @@ module products_epoch_test {
   run OldHistoryAndNewEpochShareCheckpointTest=newReady.then(restore(0)).then(verifyHistorical(0))
     .then(executed(0)).then(finalVote(4,0)).then(finalVote(5,0)).then(finalVote(6,0)).then(accept(1,0,0,2))
     .expect(authoritySafe and a.historical==Set(0) and a.accepted.size()==2)
+  run UnseenOldRoundIsHistoricalOnlyTest=oldReady.then(changeRound)
+    .then(finalVote(0,0)).then(finalVote(1,0)).then(finalVote(2,0))
+    .then(approve(0,0)).then(approve(1,0)).then(approve(2,0)).then(install(0))
+    .then(verifyHistorical(0)).expect(authoritySafe and not(a.accepted.contains((0,1,0,2)))).then(accept(0,1,0,2).fail())
   run IncompatiblePredecessorTest=oldReady.then(approve(0,0)).then(approve(1,0)).then(approve(2,0)).then(install(1).fail())
   run IncompatibleRestoreTest=newReady.then(restore(1).fail())
   run RetiredSignaturesCannotAuthorizeNewWorkTest=newReady.then(accept(0,0,0,2).fail())
@@ -108,9 +116,10 @@ module products_epoch_mutant_test {
     .expect(not(missing::predecessorBound))
   run StaleVerifierAcceptsRetiredAuthorityTest=stale::init.then(stale::executed(0))
     .then(stale::finalVote(0,0)).then(stale::finalVote(1,0)).then(stale::finalVote(2,0))
-    .then(stale::accept(0,0,0,2)).then(stale::approve(0,0)).then(stale::approve(1,0))
-    .then(stale::approve(2,0)).then(stale::install(0)).then(stale::accept(0,0,0,2))
-    .expect(stale::a.epoch==1 and stale::a.accepted.contains((0,0,0,2)))
+    .then(stale::accept(0,0,0,2)).then(stale::changeRound).then(stale::finalVote(0,0)).then(stale::finalVote(1,0)).then(stale::finalVote(2,0)).then(stale::approve(0,0)).then(stale::approve(1,0))
+    .then(stale::approve(2,0)).then(stale::install(0)).expect(stale::a.epoch==1 and stale::a.accepted==Set((0,0,0,2)))
+    .then(stale::accept(0,1,0,2)).expect(not(stale::newCertificatesCurrent(1,Set((0,0,0,2)),stale::a.accepted)))
+    .expect(stale::a.epoch==1 and stale::a.accepted.contains((0,1,0,2)) and not(stale::currentAcceptance))
   run SignedRootWithoutExecutedBodyIsDetectedTest=body::init.then(body::executed(0))
     .then(body::finalVote(0,0)).then(body::finalVote(1,0)).then(body::finalVote(2,0)).then(body::accept(0,0,0,3))
     .expect(not(body::executionBound))

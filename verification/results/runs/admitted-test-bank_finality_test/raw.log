@@ -1,0 +1,27 @@
+
+  bank_finality_test
+    1) FinalCommitWithHaltedCashLedgerTest failed after 1 test(s)
+    2) RestoredLedgerPaysReservedAmountOnceTest failed after 1 test(s)
+
+  2 failed
+
+  1) FinalCommitWithHaltedCashLedgerTest:
+       Error [QNT502]: Variable s not set
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:253:10
+        253:     all {s.up.contains(1),(HOST!=3 or s.up.contains(3)),s.up.contains(2),not(s.frozen.contains(1)),z.knownB==2,
+                      ^
+          at applyB(1) (/Users/jekamas/projects/0xatelerix/qmodel/verification/tests/bank_finality_test.qnt:16:80)
+    Use --seed=0x11 --match=FinalCommitWithHaltedCashLedgerTest to repeat.
+  2) RestoredLedgerPaysReservedAmountOnceTest:
+       Error [QNT502]: Variable s not set
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/dvp.qnt:152:5
+        152:     s.included.contains(fact(t,p)),
+                 ^
+          at finalize(1,p) (/Users/jekamas/projects/0xatelerix/qmodel/verification/tests/bank_finality_test.qnt:7:27)
+          at publish(5) (/Users/jekamas/projects/0xatelerix/qmodel/verification/tests/bank_finality_test.qnt:19:50)
+    Use --seed=0x11 --match=RestoredLedgerPaysReservedAmountOnceTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/tests/bank_finality_test.qnt
+error: Tests failed

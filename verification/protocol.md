@@ -12,6 +12,14 @@ The model separates ledgers and messages. Each actor action reads only its local
 
 C-Decision is irreversible backed commitment; C-Local concerns actual local economic application/usability; C-Records concerns evidence-supported reporting. The asynchronous candidate permits unilateral local usability after COMMIT and before remote application.
 
+## Admission and production decision
+
+A-hosted native holds are the approved two-ledger PoC. The first finalized A or B reservation under the admitted epoch creates the obligation that can survive rotation. Both signatures, a queued instruction, registration on D, an OPEN alone and an unfinalized hold confer no such right. Across a cut, the other leg verifies the exact finalized reservation before creating a new hold. It enforces its own eligibility, balance and freeze checks. Local registration belongs to the decision ledger. With D placement a D block finalizes D's OPEN.
+
+In deployment the governance change needs an authenticated cutoff for **each** source and an activation protocol that prevents a source from opening old work beyond its cut. Delayed delivery of an authentic pre-cut reservation can authorize continuation. Duplicate or late submissions with only old signatures cannot. The [cutover model](models/admission_cutover.qnt) uses a local seal on each ledger. A activates the configuration after receiving both authentic seals. During a lost or delayed cut acknowledgement, new-epoch admission waits. An unsealed source can still create a first old reservation before activation. Another source may extend a historical reservation after its own seal only with the opposite finalized proof. Weakly fair sealing, delivery and activation suffice for eventual cutover. Provisional holds that never reached acceptance may expire through the decision ledger's authenticated ABORT path. A renewed instruction carries a distinct signed descriptor. A bank reissuing the same business order must reconcile the original decision slot and prevent duplicate settlement across replacement instructions.
+
+At final A COMMIT the security is delivered and B’s matching cash remains encumbered. During a week-long B halt, the seller’s ability to use cash depends on a separate legal and operational claim. Both banks must identify the debtor, the amount/beneficiary, irrevocability, insolvency treatment, enforcement during the halt and reconciliation preventing a second payout when B recovers. If credit on B is the only final payment, require common atomic execution or a demonstrated equivalent mechanism before adopting this design for strict DvP. Moving the decision to D still leaves independent native application. [Decision record and proof limits](reports/finalized-admission.md)
+
 ## Placement and responsibility
 
 | Placement | Decision authority and local effect | Evidence entering the decision and returning to the legs |

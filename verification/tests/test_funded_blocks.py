@@ -6,13 +6,13 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "verification/scripts"))
-from block_audit import audit_blocks
+from release_evidence import release_report
 
 
 class FundedBlocks(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        report = audit_blocks()
+        report = release_report("block_audit.py")
         if report != json.loads((ROOT / "verification/reports/funded-blocks.json").read_text()):
             raise AssertionError("Block report differs from selected native evidence")
         cls.profiles = report["profiles"]

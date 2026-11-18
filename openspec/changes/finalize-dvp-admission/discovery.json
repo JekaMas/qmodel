@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "change": "finalize-dvp-admission",
+  "scope": {
+    "property_ids": [
+      "FA.P1",
+      "FA.P2",
+      "FA.P3",
+      "FA.P4",
+      "FA.P5",
+      "FA.P6",
+      "FA.P7"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_retained_or_renewed_instruction",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_provisional_holds_and_stale_signatures",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_confirmed_inclusion",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_halted_chain_and_replacement",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_complete_verified_cursor",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_obsolete_and_incomplete_responses",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_historical_and_current_authority",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_unseen_retired_certificate",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_honest_committee_remote_delivery",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_unbacked_committee_decision",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_all_order_pairs_and_bookings",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_oversubscription_and_duplicate_debit",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_restored_cash_and_production_gate",
+      "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_halted_cash_and_common_execution"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "D1",
+      "property_ids": [
+        "FA.P1",
+        "FA.P2",
+        "FA.P3",
+        "FA.P4",
+        "FA.P5",
+        "FA.P6",
+        "FA.P7"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_retained_or_renewed_instruction",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_provisional_holds_and_stale_signatures",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_confirmed_inclusion",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_halted_chain_and_replacement",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_complete_verified_cursor",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_obsolete_and_incomplete_responses",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_historical_and_current_authority",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_unseen_retired_certificate",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_honest_committee_remote_delivery",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_unbacked_committee_decision",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_all_order_pairs_and_bookings",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_oversubscription_and_duplicate_debit",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_restored_cash_and_production_gate",
+        "unittest::verification.tests.test_finalized_admission.FinalizedAdmission.test_halted_cash_and_common_execution"
+      ],
+      "question": "Which operations, authorities and real observations distinguish the findings?",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the owners identified by the reviewed counterexamples and follow their actual actors and verifier selections.",
+          "outcome": "Matched the six protocol changes and the external financial-finality decision to their exact owners.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "The native reservation, credential rollover, proof finalization and COMMIT guards."
+            },
+            {
+              "path": "verification/tests/workloads/products/authority_migration.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "The actual validator handoff and previous-state certificate observer."
+            },
+            {
+              "path": "verification/models/dvp_blocks.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Per-ledger inclusion, rejection, application and booking."
+            },
+            {
+              "path": "verification/models/audit_scope.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "The reporter authenticates manifests before selecting its cursor."
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Find unknown protocol ownership.",
+          "outcome": "The review supplied concrete files and counterexamples.",
+          "reason": "The relevant owners and prior OpenSpec acceptance paths were already named.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "Locate compiled implementation entry points.",
+          "outcome": "The model uses Quint native and Python evidence entry points.",
+          "reason": "There is no deployed bank contract in this change.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "Every review issue maps to an observable native test or an explicitly external decision with model-side checks."
+    }
+  ]
+}

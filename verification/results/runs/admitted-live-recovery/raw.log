@@ -1,0 +1,75 @@
+[TLC] Compiling to TLA+ (via Apalache)...
+[TLC] Running TLC model checker...
+
+Picked up JAVA_TOOL_OPTIONS: -Xmx8g -Xss8m
+TLC2 Version 2026.11.18.173953
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 79 and seed -7664177908150001714 with 8 workers on 10 cores with 8192MB heap and 64MB offheap memory [pid: 43926] (Mac OS X 14.7 aarch64, JetBrains s.r.o. 25.0.4 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/recovery.tla (file:/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/recovery.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/Integers.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/Sequences.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/FiniteSets.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/TLC.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/Apalache.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Apalache.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/Variants.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Variants.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/_TLCTrace.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/Naturals.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /private/var/folders/5q/gkjywh617zn6lrvf1_f51kv40000gn/T/quint-tlc-SOAlCh/tlc-3976770785386571105/TLCExt.tla (jar:file:/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/lib/apalache.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Apalache
+Semantic processing of module Variants
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module recovery
+Linting of module Apalache
+Linting of module Variants
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module recovery
+Starting... (2026-11-18 21:39:53)
+Implied-temporal checking--satisfiability problem has 4 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-11-18 21:39:53.
+Checking 4 branches of temporal properties for the current state space with 13744 total distinct states at (2026-11-18 21:39:56)
+Finished checking temporal properties in 00s at 2026-11-18 21:39:57
+Progress(13) at 2026-11-18 21:39:57: 37?827 states generated (37?827 s/min), 3?436 distinct states found (3?436 ds/min), 1?227 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 162988 total distinct states at (2026-11-18 21:40:57)
+Finished checking temporal properties in 01s at 2026-11-18 21:40:58
+Progress(21) at 2026-11-18 21:40:58: 851?852 states generated (814?025 s/min), 40?747 distinct states found (37?311 ds/min), 7?320 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 260700 total distinct states at (2026-11-18 21:41:58)
+Finished checking temporal properties in 03s at 2026-11-18 21:42:01
+Progress(24) at 2026-11-18 21:42:01: 1?625?189 states generated (773?337 s/min), 65?175 distinct states found (24?428 ds/min), 7?919 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 314972 total distinct states at (2026-11-18 21:43:01)
+Finished checking temporal properties in 04s at 2026-11-18 21:43:05
+Progress(26) at 2026-11-18 21:43:05: 2?115?938 states generated (490?749 s/min), 78?744 distinct states found (13?569 ds/min), 7?906 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 350576 total distinct states at (2026-11-18 21:44:05)
+Finished checking temporal properties in 03s at 2026-11-18 21:44:09
+Progress(27) at 2026-11-18 21:44:09: 2?460?619 states generated (344?681 s/min), 87?644 distinct states found (8?900 ds/min), 7?798 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 387932 total distinct states at (2026-11-18 21:45:09)
+Finished checking temporal properties in 04s at 2026-11-18 21:45:14
+Progress(28) at 2026-11-18 21:45:14: 2?852?103 states generated (391?484 s/min), 96?983 distinct states found (9?339 ds/min), 7?386 states left on queue.
+Progress(30) at 2026-11-18 21:46:14: 3?244?605 states generated (392?502 s/min), 105?641 distinct states found (8?658 ds/min), 6?564 states left on queue.
+Checking 4 branches of temporal properties for the current state space with 452316 total distinct states at (2026-11-18 21:47:14)
+Finished checking temporal properties in 07s at 2026-11-18 21:47:22
+Progress(31) at 2026-11-18 21:47:22: 3?616?397 states generated (371?792 s/min), 113?083 distinct states found (7?442 ds/min), 5?415 states left on queue.
+Progress(32) at 2026-11-18 21:48:22: 3?923?624 states generated (307?227 s/min), 118?452 distinct states found (5?369 ds/min), 3?823 states left on queue.
+Progress(35) at 2026-11-18 21:49:22: 4?281?181 states generated (357?557 s/min), 123?965 distinct states found (5?513 ds/min), 1?547 states left on queue.
+Progress(41) at 2026-11-18 21:49:47: 4?434?505 states generated, 125?632 distinct states found, 0 states left on queue.
+Checking 4 branches of temporal properties for the complete state space with 502528 total distinct states at (2026-11-18 21:49:47)
+Finished checking temporal properties in 06s at 2026-11-18 21:49:53
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 2.9E-8
+  based on the actual fingerprints:  val = 2.0E-9
+4434505 states generated, 125632 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 41.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 7 and the 95th percentile is 4).
+Finished in 10min 00s at (2026-11-18 21:49:54)
+
+[ok] No violation found (600961ms).

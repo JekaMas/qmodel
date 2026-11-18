@@ -169,4 +169,5 @@ def audit_products():
 
 
 if __name__ == "__main__":
-    print(json.dumps(audit_products(), indent=2))
+    from release_evidence import family_report
+    print(json.dumps(family_report(__file__, ('history-', 'jobs-', 'clocks-', 'clock-directed', 'placement-', 'refinement-', 'authority-', 'migration', 'retired-authority', 'committee', 'test-products_epoch', 'report-cursor', 'rewound-cursor', 'test-consumer_inbox_test')), indent=2))

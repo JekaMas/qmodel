@@ -44,7 +44,7 @@
   action confirmOp(t:int,method:int):bool = {
     val op=(t,method)
     all {j.durable.contains(op),not(j.finalizedOps.contains(op)),canonicalEvent(t,method),
-      j'={...j,finalizedOps:j.finalizedOps.union(Set(op)),events:j.events.append((op,0,2))}}
+      j'={...j,fresh:false,finalizedOps:j.finalizedOps.union(Set(op)),events:j.events.append((op,0,2))}}
   }
 
   action reload(t:int,method:int):bool = all {
@@ -55,7 +55,7 @@
   action response(t:int,method:int,ticket:int):bool = {
     val op=(t,method)
     all {
-      j.calls.contains((op,ticket)),s.up.contains(3),j.cache.contains(op) or mode==1,
+      j.calls.contains((op,ticket)),not(j.events.indices().exists(i=>j.events.nth(i)==(op,ticket,3))),s.up.contains(3),j.cache.contains(op) or mode==1,
       s'=s,j'={...j,events:j.events.append((op,ticket,3))}
     }
   }
@@ -72,14 +72,15 @@
   // This serial-history automaton uses the immutable observed events rather
   // than any cached result flag reserved by the writer.
   pure def legal(notices:List[Notice]):bool = notices.foldl(
-    {requests:Set(),performed:Set(),visible:Set(),valid:true},
+    {requests:Set(),performed:Set(),visible:Set(),returned:Set(),valid:true},
     (x,e)=> if(e._3==0) {...x,requests:x.requests.union(Set((e._1,e._2)))}
       else if(e._3==1) {...x,
         valid:x.valid and x.requests.exists(r=>r._1==e._1) and not(x.performed.contains(e._1)),
         performed:x.performed.union(Set(e._1))}
       else if(e._3==2) {...x,valid:x.valid and x.performed.contains(e._1),
         visible:x.visible.union(Set(e._1))}
-      else {...x,valid:x.valid and x.requests.contains((e._1,e._2)) and x.visible.contains(e._1)}
+      else {...x,returned:x.returned.union(Set((e._1,e._2))),
+        valid:x.valid and x.requests.contains((e._1,e._2)) and not(x.returned.contains((e._1,e._2))) and x.visible.contains(e._1)}
   ).valid
 
   def effectObserved(op:Op):bool = {
@@ -95,4 +96,4 @@
   }
   val actualEffects = j.durable.forall(op=>effectObserved(op))
   val historySafe = sequenceSafe and actualEffects and legal(j.events) and
-    j.cache.subseteq(j.finalizedOps) and (j.fresh implies j.cache.subseteq(j.finalizedOps))
+    j.cache.subseteq(j.finalizedOps) and (j.fresh implies j.cache==j.finalizedOps)

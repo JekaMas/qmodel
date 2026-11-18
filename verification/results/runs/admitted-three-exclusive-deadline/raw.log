@@ -1,0 +1,9 @@
+
+  timed_three_test
+    ok AbortBeforeDeadlineIsDisabledTest passed 1 test(s)
+    ok CommitBeforeDeadlineAppliesLocalEffectTest passed 1 test(s)
+    ok CommitAtDeadlineFailsWhileOpenTest passed 1 test(s)
+    ok AbortAtDeadlineHasNoDeliveryTest passed 1 test(s)
+    ok CommitAfterDeadlineFailsWhileOpenTest passed 1 test(s)
+
+  5 passing (644ms)

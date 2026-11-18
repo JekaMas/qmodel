@@ -1,0 +1,6 @@
+
+  htlc_test
+    ok timedSwapTest passed 1 test(s)
+    ok lateSecretHaltTest passed 1 test(s)
+
+  2 passing (35ms)

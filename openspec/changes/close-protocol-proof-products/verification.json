@@ -47,7 +47,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -81,7 +82,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -115,7 +117,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -149,7 +152,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -183,7 +187,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -217,7 +222,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -251,7 +257,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ]
     }
   ],
@@ -288,7 +295,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_causal_work",
       "source_path": "verification/tests/test_proof_products.py",
@@ -298,7 +306,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C2",
@@ -332,7 +340,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_hostile_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -342,7 +351,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C3",
@@ -376,7 +385,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_independent_clocks",
       "source_path": "verification/tests/test_proof_products.py",
@@ -386,7 +396,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C4",
@@ -420,7 +430,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_clock_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -430,7 +441,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C5",
@@ -464,7 +475,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_epoch_authority",
       "source_path": "verification/tests/test_proof_products.py",
@@ -474,7 +486,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C6",
@@ -508,7 +520,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_epoch_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -518,7 +531,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C7",
@@ -552,7 +565,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_placement_effects",
       "source_path": "verification/tests/test_proof_products.py",
@@ -562,7 +576,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DC.C8",
@@ -596,7 +610,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_placement_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -606,7 +621,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DO.C9",
@@ -640,7 +655,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_contract_histories",
       "source_path": "verification/tests/test_proof_products.py",
@@ -650,7 +666,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DO.C10",
@@ -684,7 +700,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_contract_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -694,7 +711,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DO.C11",
@@ -728,7 +745,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_paired_privacy",
       "source_path": "verification/tests/test_proof_products.py",
@@ -738,7 +756,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DO.C12",
@@ -772,7 +790,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_privacy_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -782,7 +801,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DO.C13",
@@ -816,7 +835,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_parameterized_preservation",
       "source_path": "verification/tests/test_proof_products.py",
@@ -826,7 +846,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     },
     {
       "id": "DO.C14",
@@ -860,7 +880,8 @@
         "verification/tests/workloads/three*/**",
         "verification/tests/workloads/three*.qnt",
         "verification/configs/tlc.json",
-        "verification/configs/extended-tlc.json"
+        "verification/configs/extended-tlc.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_proof_products.ProofProducts.test_population_controls",
       "source_path": "verification/tests/test_proof_products.py",
@@ -870,7 +891,7 @@
       "substitution": {
         "classification": "NO_TEST_DOUBLE"
       },
-      "source_sha256": "3a8cc79811a332c9af4ae8276eaca483249088312a3a204d0ae2af6cc6e0b9b3"
+      "source_sha256": "ec8f1525fa56cc0ce9fe727af98ea9929d409fc9c8baed88ff1c3421fa6aaaa7"
     }
   ],
   "commands": [

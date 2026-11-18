@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok AFrozenCannotCommitTest passed 1 test(s)
+    ok BFrozenCannotApplyTest passed 1 test(s)
+    ok UnfreezeAndExitDoesNotRevokePendingTest passed 1 test(s)
+    ok LateAbortStillReleasesInParallelTest passed 1 test(s)
+    ok ContenderTombstoneHasNoRefundsTest passed 1 test(s)
+    ok CashCannotSpendWhileBOfflineTest passed 1 test(s)
+    ok SecuritiesCannotSpendWhileAOfflineTest passed 1 test(s)
+    ok IndependentSpendingRecoversTest passed 1 test(s)
+    ok RevokedLegCannotPrepareTest passed 1 test(s)
+    ok RevokeBothCannotOpenTest passed 1 test(s)
+    ok ReplayAlteredCashRequestTest passed 1 test(s)
+    ok ExactRequestWrappersTest passed 1 test(s)
+    ok FinalizeDownActor0Test passed 1 test(s)
+    ok FinalizeRecoveredActor0Test passed 1 test(s)
+    ok FinalizeDownActor1Test passed 1 test(s)
+    ok FinalizeRecoveredActor1Test passed 1 test(s)
+
+  16 passing (5529ms)

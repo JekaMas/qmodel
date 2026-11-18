@@ -1,0 +1,16 @@
+
+  timed_three_test
+    ok Phase3PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase3PartitionHealsAtBoundTest passed 1 test(s)
+    ok Phase4PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase4PartitionHealsAtBoundTest passed 1 test(s)
+    ok Phase5PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase5PartitionHealsAtBoundTest passed 1 test(s)
+    ok Phase6PartitionBlocksDeliveryTest passed 1 test(s)
+    ok Phase6PartitionHealsAtBoundTest passed 1 test(s)
+    ok RevokeBeforeReserveTest passed 1 test(s)
+    ok ReserveBeforeRevokeTest passed 1 test(s)
+    ok SubmitterStopBeforeCommitTest passed 1 test(s)
+    ok CommitBeforeSubmitterStopTest passed 1 test(s)
+
+  12 passing (1709ms)

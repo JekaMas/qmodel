@@ -4,13 +4,14 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from repeated_audit import coverage, exact, log
+from repeated_audit import exact, log
+from release_evidence import release_report
 
 
 class RepeatedEvidence(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.report = coverage()
+        cls.report = release_report("repeated_audit.py")
         cls.directed_logs = "\n".join(log(exact(run)[1]) for run in cls.report["directed_receipts"])
 
     def passed(self, *tests):

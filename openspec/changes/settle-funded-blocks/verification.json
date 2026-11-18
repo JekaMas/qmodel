@@ -38,7 +38,8 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -69,7 +70,8 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ]
     },
     {
@@ -100,7 +102,8 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ]
     }
   ],
@@ -134,11 +137,12 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_funded_reservations",
       "source_path": "verification/tests/test_funded_blocks.py",
-      "source_sha256": "3654a67c203823ae3afd73b71785d6f1bfe6680e45f583f8463a1191a31504bb",
+      "source_sha256": "9c2d03c5c807507018d7feda0bb720a706c3031650480b6a1863dc802c333261",
       "command_id": "funded-blocks",
       "state": "implemented",
       "distinct_reason": "All signed funded holds in every selected order and independent heights.",
@@ -175,11 +179,12 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_early_seal",
       "source_path": "verification/tests/test_funded_blocks.py",
-      "source_sha256": "3654a67c203823ae3afd73b71785d6f1bfe6680e45f583f8463a1191a31504bb",
+      "source_sha256": "9c2d03c5c807507018d7feda0bb720a706c3031650480b6a1863dc802c333261",
       "command_id": "funded-blocks",
       "state": "implemented",
       "distinct_reason": "Ending the block after one result leaves pending included requests.",
@@ -216,11 +221,12 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_local_shortage",
       "source_path": "verification/tests/test_funded_blocks.py",
-      "source_sha256": "3654a67c203823ae3afd73b71785d6f1bfe6680e45f583f8463a1191a31504bb",
+      "source_sha256": "9c2d03c5c807507018d7feda0bb720a706c3031650480b6a1863dc802c333261",
       "command_id": "funded-blocks",
       "state": "implemented",
       "distinct_reason": "Only the last reservation exceeding live capacity fails on the short leg.",
@@ -257,11 +263,12 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_stale_balance",
       "source_path": "verification/tests/test_funded_blocks.py",
-      "source_sha256": "3654a67c203823ae3afd73b71785d6f1bfe6680e45f583f8463a1191a31504bb",
+      "source_sha256": "9c2d03c5c807507018d7feda0bb720a706c3031650480b6a1863dc802c333261",
       "command_id": "funded-blocks",
       "state": "implemented",
       "distinct_reason": "Ignoring previous reservations on either ledger creates actual overbooking.",
@@ -298,11 +305,12 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_commit_and_apply",
       "source_path": "verification/tests/test_funded_blocks.py",
-      "source_sha256": "3654a67c203823ae3afd73b71785d6f1bfe6680e45f583f8463a1191a31504bb",
+      "source_sha256": "9c2d03c5c807507018d7feda0bb720a706c3031650480b6a1863dc802c333261",
       "command_id": "funded-blocks",
       "state": "implemented",
       "distinct_reason": "All three trades commit, pay and book from sealed authenticated evidence.",
@@ -339,11 +347,12 @@
         "verification/configs/proof-contracts.json",
         "verification/tests/workloads/funded_blocks_tests.qnt",
         "verification/results/runs/funded-blocks-*/**",
-        "verification/reports/funded-blocks.json"
+        "verification/reports/funded-blocks.json",
+        "verification/scripts/release_evidence.py"
       ],
       "test_id": "unittest::verification.tests.test_funded_blocks.FundedBlocks.test_charge_and_deadline",
       "source_path": "verification/tests/test_funded_blocks.py",
-      "source_sha256": "3654a67c203823ae3afd73b71785d6f1bfe6680e45f583f8463a1191a31504bb",
+      "source_sha256": "9c2d03c5c807507018d7feda0bb720a706c3031650480b6a1863dc802c333261",
       "command_id": "funded-blocks",
       "state": "implemented",
       "distinct_reason": "Charging free balance again violates the contract and the deadline remains exclusive.",

@@ -1,0 +1,22 @@
+
+  consumer_inbox_test
+    ok ReporterOnlyCannotReleaseCashTest passed 1 test(s)
+    ok CashDeliveryDoesNotInformBankTest passed 1 test(s)
+    ok BankRestoreAndRedeliveryBookOnceTest passed 1 test(s)
+    1) DifferentCursorsConvergeAfterCertifiedHandoffTest failed after 1 test(s)
+
+  3 passing (560ms)
+  1 failed
+
+  1) DifferentCursorsConvergeAfterCertifiedHandoffTest:
+       Error [QNT502]: Variable a not set
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/tests/consumer_inbox_test.qnt:40:53
+        40:   action asset(op:bool):bool=all {op,validators::a'=validators::a}
+                                                                ^^^^^^^^^^^^^
+          at asset(source(2)) (/Users/jekamas/projects/0xatelerix/qmodel/verification/tests/consumer_inbox_test.qnt:51:78)
+    Use --seed=0x11 --match=DifferentCursorsConvergeAfterCertifiedHandoffTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/tests/consumer_inbox_test.qnt
+error: Tests failed

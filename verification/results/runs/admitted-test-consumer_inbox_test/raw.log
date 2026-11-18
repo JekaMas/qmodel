@@ -1,0 +1,7 @@
+
+  consumer_inbox_test
+    ok ReporterOnlyCannotReleaseCashTest passed 1 test(s)
+    ok CashDeliveryDoesNotInformBankTest passed 1 test(s)
+    ok BankRestoreAndRedeliveryBookOnceTest passed 1 test(s)
+
+  3 passing (358ms)

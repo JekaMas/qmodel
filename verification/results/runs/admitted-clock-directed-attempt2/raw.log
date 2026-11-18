@@ -1,0 +1,22 @@
+
+ Error [QNT202]: Multiple updates of variable clock_products::dvp::s
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/admitted/clock-directed/dvp.qnt:58:3
+  58:   var s: State
+        ^^^^^^^^^^^^
+
+
+ Error [QNT202]: Multiple updates of variable pc
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/admitted/clock-directed/clocks.qnt:5:3
+  5:   var pc:int
+       ^^^^^^^^^^
+
+
+ Error [QNT202]: Multiple updates of variable rates
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/admitted/clock-directed/clocks.qnt:21:3
+  21:   var rates:Rates
+        ^^^^^^^^^^^^^^^
+
+error: typechecking failed

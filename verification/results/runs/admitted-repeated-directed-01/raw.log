@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok SequentialCommitAbortCommitTest passed 1 test(s)
+    ok ParallelReservationsTest passed 1 test(s)
+    ok ContendedATest passed 1 test(s)
+    ok ContendedBTest passed 1 test(s)
+    ok ReservedSecuritiesCannotBeSpentTest passed 1 test(s)
+    ok ReservedCashCannotBeSpentTest passed 1 test(s)
+    ok OldPreparationCannotCommitNewTradeTest passed 1 test(s)
+    ok OldOutcomeCannotApplyNewTradeTest passed 1 test(s)
+    ok OlderDeadlineReachedWhileLaterTradeCanCommitTest passed 1 test(s)
+    ok DuplicateCashCannotApplyAgainTest passed 1 test(s)
+    ok LostOutcomeCannotBeLearnedTest passed 1 test(s)
+    ok RecoveryAfterDropPruneAndRestartTest passed 1 test(s)
+    ok OldApplicationCannotBookAnotherTradeTest passed 1 test(s)
+    ok PruneBeforeWitnessTest passed 1 test(s)
+    ok UnadmittedProofCannotDecideTest passed 1 test(s)
+    ok UnadmittedProofCannotApplyTest passed 1 test(s)
+
+  16 passing (5767ms)
