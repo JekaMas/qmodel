@@ -1,0 +1,48 @@
+{
+  "status": "DONE",
+  "scope": "QA-01 through QA-04 implementation, focused verification and author re-review requested by the user",
+  "tested_source_commit": "f9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f",
+  "focused_clean_revision": {
+    "status": "passed",
+    "cases": [
+      "EV.C19",
+      "EV.C22",
+      "EV.C23",
+      "EV.C24",
+      "EV.C26",
+      "EV.C27"
+    ],
+    "receipt": "verification/results/publication/qa-source-clean-dag.json",
+    "sha256": "13352c33dff456157488266e9bbd79eeb8331debb0803813efa80b0feb607cef"
+  },
+  "focused_reproductions": {
+    "count": 4,
+    "native_sequences_matched": 4,
+    "report": "verification/reports/qa-replay-validation.json"
+  },
+  "retained_observation_audit": {
+    "positive": 144,
+    "expected_negative": 85,
+    "weak_discriminators_excluded_from_baseline": 5
+  },
+  "review": {
+    "properties": 51,
+    "source_files": 177,
+    "attribution": "Repairing author source/evidence review. Earlier independent review remains separately attributed."
+  },
+  "full_validation_status": "NOT DONE",
+  "deferred_checks": {
+    "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
+  },
+  "deferred_additional_reproductions": 43,
+  "complete_evidence_DAG_cases_deferred": 33,
+  "repository": "https://github.com/JekaMas/qmodel",
+  "publication_readback": "Observed after push and retained locally in verification/results/runtime/qa-publication-readback.json",
+  "utc": "2026-11-18T12:31:07.157111+00:00"
+}

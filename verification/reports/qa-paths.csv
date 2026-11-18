@@ -92,7 +92,7 @@ openspec/changes/verify-cross-chain-dvp/design.md,a7b74fba150cfc3c85ecb03f255dce
 openspec/changes/verify-cross-chain-dvp/discovery.json,8a975e066127cfee8c183f31ca87aeb026d227e4d056fb4a7977f48c1f2e402b,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/proposal.md,4a1116dea5a6541c4e20a99ac54bd6b76b09f324d2fc94e28723189752017896,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/specs/dvp-verification/spec.md,a4ffde870dba82e6e17a6741ee9b639fa0223ab591547efd90a2774a6f8a786f,live source: see qa-files.json
-openspec/changes/verify-cross-chain-dvp/tasks.md,904867a44fbfa195343b93760ccbeec659b656eaa46d3818c552254a3479ab15,project requirement/workflow/document/metadata: retained or updated within task scope
+openspec/changes/verify-cross-chain-dvp/tasks.md,c87c4be8cc24eb9c7f68be47a45d4624b4642f75efac0a4b6b084fc62baad3d1,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/verification.json,ee5eafe45ae2390d4fc7ef59d51b057e8e7856119f796d70d1e0e14ebd6508ae,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/config.yaml,22c8b7e3a2f60edef5f50d2cd3269acaf09745ca7ab1d3af57248d743bc195f8,project requirement/workflow/document/metadata: retained or updated within task scope
 package-lock.json,5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260,live source: see qa-files.json
@@ -268,6 +268,7 @@ verification/reports/qa-replay-validation.json,metadata; no self hash,project re
 verification/reports/qa-runner-interruption.json,metadata; no self hash,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/qa-source-retention.json,metadata; no self hash,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/qa-testing-deferred.json,metadata; no self hash,project requirement/workflow/document/metadata: retained or updated within task scope
+verification/reports/qa-validation.json,metadata; no self hash,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/reproduction-availability.json,8a469be39a009ec523750af2f0ee5127b1296e21375990c5e275aa0d84b5c3b7,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/retained-privacy-scopes.json,d3603d5af92b3e3db5fd4856f3bed91bd8f3934bc2c431606c5cde27758a5bcd,project requirement/workflow/document/metadata: retained or updated within task scope
 verification/reports/review-results.json,d9fe8dde81cc80b483e89c53d7ebad825a89c00f6275b4699136c1d6b806ce67,project requirement/workflow/document/metadata: retained or updated within task scope
@@ -295,6 +296,7 @@ verification/results/publication/clone-replay-raw.log,d8f2747c500b656e456008905b
 verification/results/publication/clone-replay-receipt.json,a818bf2cc75ca927893f65b732c3858cbf0435fd920c42e3877fe21c8afeee25,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/clone-workflow-restore.log,9536779769b1519b0039e63a6bb940f068e113123b203e0f64a83f7399c0aa81,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/extended-source-clean-dag.json,9914e13188936ef70b2092098672a40914ac1a097f04c4c8c854566e7cd75720,native observation/snapshot/replay: immutable source and result audit
+verification/results/publication/qa-source-clean-dag.json,13352c33dff456157488266e9bbd79eeb8331debb0803813efa80b0feb607cef,native observation/snapshot/replay: immutable source and result audit
 verification/results/replays/final-resource-profile-native-type/20261117T200625260148Z/replay.json,b51feb1777f1fbcde45e2eae7dbd2a60b5e130c7199178a98750f687672b7d98,native observation/snapshot/replay: immutable source and result audit
 verification/results/replays/membership-first-failure/native.itf.json,a56e31919f4d59b0a24ccc598ee78cc99435992c966fac1d7f7441b6c59535ea,native observation/snapshot/replay: immutable source and result audit
 verification/results/replays/membership-first-failure/replay.json,d73838b25c0f407ab2ee4248a0cb11e3eb802ea4a66313447ce7272a21d80c8d,native observation/snapshot/replay: immutable source and result audit

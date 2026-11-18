@@ -1,0 +1,237 @@
+{
+  "cases": {
+    "EV.C19": {
+      "evidence_fingerprint": "8f541178be66c0227768031d8a4ab15cd3631ca7d2907b082b35dc8e6f6407db",
+      "green_expectation": "Only current exact-source observations with independent semantic comparisons satisfy the named obligation.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/mutants/**",
+        "verification/tests/**",
+        "verification/results/runs/**",
+        "verification/configs/qa-coverage.json",
+        "verification/configs/qa-repair-plan.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py"
+      ],
+      "observable": "Twenty exact-value/status cases reach the current payload constructor.",
+      "polarity": "positive",
+      "property_id": "EV.P2",
+      "red_expectation": "The demonstrated wrong output/input or misleading native status is accepted as satisfying the guarantee.",
+      "scenario": "Complete disclosure value binding",
+      "scenario_fingerprint": "cff7eb58394911aefc1e25e924e92b69cc7a9035b5fbeeed3034182ca8cf6a31",
+      "setup": "Audit current native repair receipts and inspect actual saved counterexample states.",
+      "source_path": "verification/tests/test_qa_repairs.py",
+      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "status": "passed",
+      "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states"
+    },
+    "EV.C22": {
+      "evidence_fingerprint": "483ca1492393de03781e6b472bb1accd9bb10e9d3a500e0ebdc9baf6369aa21c",
+      "green_expectation": "Only current exact-source observations with independent semantic comparisons satisfy the named obligation.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/mutants/**",
+        "verification/tests/**",
+        "verification/results/runs/**",
+        "verification/configs/qa-coverage.json",
+        "verification/configs/qa-repair-plan.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py"
+      ],
+      "observable": "Valid source-derived program0 commits only in the missing-admission mutants at A, B and both D remote preparation consumers; strict S10 detects each.",
+      "polarity": "negative",
+      "property_id": "EV.P2",
+      "red_expectation": "The demonstrated wrong output/input or misleading native status is accepted as satisfying the guarantee.",
+      "scenario": "Authentic proof admission at the consumer",
+      "scenario_fingerprint": "ba949036db7b13b1514e3eea6efe7e2d99bdbe6028aa53ace7502a65a0cf1a9b",
+      "setup": "Audit current native repair receipts and inspect actual saved counterexample states.",
+      "source_path": "verification/tests/test_qa_repairs.py",
+      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "status": "passed",
+      "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed"
+    },
+    "EV.C23": {
+      "evidence_fingerprint": "6d54310aee96fb0a6e02ce17667eef9fd96101b51713a145e49863c65e896047",
+      "green_expectation": "Only current exact-source observations with independent semantic comparisons satisfy the named obligation.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/mutants/**",
+        "verification/tests/**",
+        "verification/results/runs/**",
+        "verification/configs/qa-coverage.json",
+        "verification/configs/qa-repair-plan.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py"
+      ],
+      "observable": "Eight source guard/release/absence/late-hold/idempotent-record cases execute without fake refunds.",
+      "polarity": "positive",
+      "property_id": "EV.P2",
+      "red_expectation": "The demonstrated wrong output/input or misleading native status is accepted as satisfying the guarantee.",
+      "scenario": "Semantically resolved ABORT records",
+      "scenario_fingerprint": "bc00823b653a07b988ae8bd83c2e9a34cd324530c3be7919e8d203e9afefa696",
+      "setup": "Audit current native repair receipts and inspect actual saved counterexample states.",
+      "source_path": "verification/tests/test_qa_repairs.py",
+      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "status": "passed",
+      "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct"
+    },
+    "EV.C24": {
+      "evidence_fingerprint": "1c112027069a3daf832d1b54d24f355d137614aad949018dc7e1dedebea67270",
+      "green_expectation": "Only current exact-source observations with independent semantic comparisons satisfy the named obligation.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/mutants/**",
+        "verification/tests/**",
+        "verification/results/runs/**",
+        "verification/configs/qa-coverage.json",
+        "verification/configs/qa-repair-plan.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py"
+      ],
+      "observable": "Native premature-absence trace books while both holds remain active; semantic S15 detects it.",
+      "polarity": "negative",
+      "property_id": "EV.P2",
+      "red_expectation": "The demonstrated wrong output/input or misleading native status is accepted as satisfying the guarantee.",
+      "scenario": "Semantically resolved ABORT records",
+      "scenario_fingerprint": "bc00823b653a07b988ae8bd83c2e9a34cd324530c3be7919e8d203e9afefa696",
+      "setup": "Audit current native repair receipts and inspect actual saved counterexample states.",
+      "source_path": "verification/tests/test_qa_repairs.py",
+      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "status": "passed",
+      "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation"
+    },
+    "EV.C26": {
+      "evidence_fingerprint": "29002c0e3eb036268eb223ded5bfacd667665725ece645a5bc9f690ecbef3acd",
+      "green_expectation": "Only current exact-source observations with independent semantic comparisons satisfy the named obligation.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/mutants/**",
+        "verification/tests/**",
+        "verification/results/runs/**",
+        "verification/configs/qa-coverage.json",
+        "verification/configs/qa-repair-plan.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py"
+      ],
+      "observable": "Wrong account/asset preserves amount and total supply but violates independent S05.",
+      "polarity": "negative",
+      "property_id": "EV.P2",
+      "red_expectation": "The demonstrated wrong output/input or misleading native status is accepted as satisfying the guarantee.",
+      "scenario": "Exact economic output identity",
+      "scenario_fingerprint": "61a6c3f771a36ff12e246e446cb2ada994e274f7f256311f5405ae1c7db997b4",
+      "setup": "Audit current native repair receipts and inspect actual saved counterexample states.",
+      "source_path": "verification/tests/test_qa_repairs.py",
+      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "status": "passed",
+      "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails"
+    },
+    "EV.C27": {
+      "evidence_fingerprint": "d5262a23403b8c9517178e6db0245f58f0d66d1c184ad10a6bc32395b7d27ba1",
+      "green_expectation": "Only current exact-source observations with independent semantic comparisons satisfy the named obligation.",
+      "invalidation_dependencies": [
+        "verification/models/**",
+        "verification/mutants/**",
+        "verification/tests/**",
+        "verification/results/runs/**",
+        "verification/configs/qa-coverage.json",
+        "verification/configs/qa-repair-plan.json",
+        "verification/configs/proof-contracts.json",
+        "verification/scripts/evidence.py"
+      ],
+      "observable": "Wrong recorded recipient/quantity is observable even with one correctly funded economic transfer.",
+      "polarity": "negative",
+      "property_id": "EV.P2",
+      "red_expectation": "The demonstrated wrong output/input or misleading native status is accepted as satisfying the guarantee.",
+      "scenario": "Exact economic output identity",
+      "scenario_fingerprint": "61a6c3f771a36ff12e246e446cb2ada994e274f7f256311f5405ae1c7db997b4",
+      "setup": "Audit current native repair receipts and inspect actual saved counterexample states.",
+      "source_path": "verification/tests/test_qa_repairs.py",
+      "source_sha256": "01c1b017c4201a7907682dd20f774f234bb5125abfb36239e7b9a56565f0acd9",
+      "status": "passed",
+      "test_id": "unittest::verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected"
+    }
+  },
+  "change": "verify-cross-chain-dvp",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states",
+        "verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed",
+        "verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct",
+        "verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation",
+        "verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails",
+        "verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected"
+      ],
+      "cwd": "/Users/jekamas/projects/0xatelerix/qmodel",
+      "duration_seconds": 0.4878362501040101,
+      "exit_code": 0,
+      "id": "repair-focused",
+      "observed_tests": {
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct": "pass",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states": "pass",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected": "pass",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed": "pass",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation": "pass",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails": "pass"
+      },
+      "status": "exited",
+      "stderr": "test_all_payload_values_and_error_states (verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states) ... ok\ntest_missing_program_admission_is_killed (verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed) ... ok\ntest_actual_and_absent_abort_legs_are_distinct (verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct) ... ok\ntest_premature_absence_cannot_certify_reconciliation (verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation) ... ok\ntest_wrong_valid_account_or_asset_preserves_supply_but_fails (verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails) ... ok\ntest_booking_recipient_and_quantity_substitution_is_detected (verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.386s\n\nOK\n",
+      "stderr_artifact": "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/qa-focused-clean-dag.json.repair-focused.stderr.log",
+      "stderr_truncated": false,
+      "stdout": "",
+      "stdout_artifact": "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/qa-focused-clean-dag.json.repair-focused.stdout.log",
+      "stdout_truncated": false
+    }
+  ],
+  "finished_at": "2026-11-18T12:29:45.170863+00:00",
+  "git": {
+    "dirty": false,
+    "head": "f9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f",
+    "status": "known"
+  },
+  "manifest": "openspec/changes/verify-cross-chain-dvp/verification.json",
+  "manifest_sha256": "ee5eafe45ae2390d4fc7ef59d51b057e8e7856119f796d70d1e0e14ebd6508ae",
+  "requested_selectors": {
+    "all": false,
+    "cases": [],
+    "changed_paths": [],
+    "commands": [
+      "repair-focused"
+    ],
+    "owners": [],
+    "properties": [],
+    "requirements": [],
+    "scenarios": [],
+    "tests": []
+  },
+  "schema_version": 2,
+  "selection": {
+    "cases": [
+      "EV.C19",
+      "EV.C22",
+      "EV.C23",
+      "EV.C24",
+      "EV.C26",
+      "EV.C27"
+    ],
+    "commands": [
+      "repair-focused"
+    ],
+    "properties": [
+      "EV.P2"
+    ],
+    "requirements": [
+      "EV"
+    ]
+  },
+  "specifications": {
+    "EV": "74ad58a2910ee2384a41ce3d904bfad67d04730bee59c63d7383012136a5363d"
+  },
+  "started_at": "2026-11-18T12:29:42.456309+00:00",
+  "status": "passed",
+  "substitution_gaps": []
+}
