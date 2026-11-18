@@ -4,15 +4,15 @@ The canonical task is ../openspec/changes/verify-cross-chain-dvp/tasks.md. The v
 
 For the five Stage A properties and all seven Stage C challenges, see the [Question 8 evidence review](reports/interview-summary.md#question-8-evidence-review). The [architecture matrix](protocol.md#placement-and-responsibility) identifies who can authorize each local transfer in A, B, D and shared execution. The [executable specification](SPECIFICATION.md#three-distinct-guarantees) defines the settlement assertions and recovery assumptions.
 
-The [current repair and re-review](reports/qa-repairs.md) records the QA-01–QA-04 repairs and the user-requested focused proof selection. Full validation is NOT DONE, with seven full checks,43additional reproductions and the complete33-case evidence audit deferred. The historical [comparative review](reviews/protocol-adequacy-2026-11-18/README.md) retains the original finding/discriminator evidence. Read the current 51-property/file ledgers and source-retention audit alongside the native matrix. Unqualified deployed-system or arbitrary-configuration verification is not claimed.
+The [current repair and re-review](reports/qa-repairs.md) records the QA-01–QA-04 repairs and full selected model evidence. All eight induction profiles and the two architecture controls have completed. The three fault samples are bounded simulations. The [historical comparative review](reviews/protocol-adequacy-2026-11-18/README.md) retains the original findings and controls. The [validation record](reports/qa-validation.json) identifies the completed suites and the distinct PoC boundary.
 
 Install the pinned local dependency with `npm ci`. Java 21+ is required by Apalache 0.62.4. The runner uses an existing GoLand Java 25 runtime on this machine; set `QMODEL_JAVA_BIN=/path/to/jdk/bin` on another machine. Quint's cache is project-local `.quint/`; its pinned Apalache download is approximately 200 MB and the Rust evaluator is v0.7.1. No global tool installation or configuration is required.
 
 Run from the repository root:
 
 ```sh
-python3 verification/scripts/verify.py baseline --focused
-python3 verification/scripts/verify.py negative --focused
+python3 verification/scripts/verify.py baseline
+python3 verification/scripts/verify.py negative
 ```
 
 These commands independently audit and reuse the original backend results and exact source snapshots in this repository. They check the final model content inventory and fail on a missing result, corrupted source, tool error, incomplete TLC graph or absent expected counterexample. They do not assert that the historical full-reference timeouts passed. Add `--fresh` only when deliberately requesting new execution against each exact saved input version; selected checks execute sequentially with receipt limits, and the command exits nonzero for an unexpected result. `verify.py audit` checks both result classes. Initial installation is `npm ci`.
@@ -60,10 +60,8 @@ Actual economic receipts and complete financial rows are institution-private mod
 The effect/local-atomicity induction uses24GiB and14400s per obligation on the same existing host. Each of eight exact full-State profiles has actual-init depth0, complete arbitrary invariant-state/actual-adversarialStep depth1 and implication depth0 checks. The one-step query checks every successor invariant VC; its omitted State0query is tautological because that initializer already enforces precisely the induction predicate. Two universal row constructor/decoder lemmas and a complete34-field independent-choice audit establish initializer coverage. No protocol Next action or state is filtered. Native compilation, the exact record-domain identity, commands and source closures are preserved. The custom false-release Next must fail through this same route; its immutable native trace is linked from the repair report. These obligations prove the separate actual-source monitor, not whole-protocol or arbitrary-population induction.
 
 
-## User-directed focused validation
+## Full validation after the focused run
 
-The2026-11-18 instruction requests minimum testing now and full testing later. Four exact-source counterexamples are reproduced with `python3 verification/scripts/qa_replay.py --focused`. The selected six-case evidence command is `python3 .agents/workflow/scripts/requirement_tests.py --root . --change verify-cross-chain-dvp run --commands repair-focused --output verification/results/runtime/qa-focused-clean-dag.json --require-clean`.
+The earlier focused run covered four exact replays and six evidence cases. The resumed native checks ran `native_induction.py open`, `repair_checks.py architecture` and `repair_tests.py operational`. The command `python3 verification/scripts/qa_replay.py --remaining` reused the four sealed exact replays and executed the remaining 43. The full 47-replay selection and 46 matching negative traces are listed in the [replay report](reports/qa-replay-validation.json).
 
-The full plan remains available in configs/qa-coverage.json. Deferred work comprises OPEN induction preservation/implication, two current architecture controls, three operational samples,43remaining exact reproductions and the complete33-case evidence DAG. The earlier completed financial, topology, privacy and seven-profile induction results remain usable within their saved source scopes.
-
-A later authorized full-validation run can complete `native_induction.py open`, `repair_checks.py architecture`, `repair_tests.py operational` and `qa_replay.py`, then regenerate the full selection with `qa_coverage.py`, seal the new observations and regenerate reports. The full evidence DAG requires its complete source-bound observations. Current focused audit commands use `verify.py baseline --focused` and `verify.py negative --focused`.
+The complete acceptance and evidence selections can be audited with `python3 verification/scripts/verify.py audit` and `python3 .agents/workflow/scripts/requirement_tests.py --root . --change verify-cross-chain-dvp run --all --output verification/results/runtime/qa-full-clean-dag.json --require-clean`. The [validation record](reports/qa-validation.json) identifies the observed result for the committed source. Real implementation tests for the two-network PoC are tracked in the [conformance boundary](reports/conformance-boundary.md).

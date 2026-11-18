@@ -4,7 +4,7 @@ Current closure: [QA repair and re-review](qa-repairs.md) resolves QA-01–QA-04
 
 Review authority: the exact attached [task v2](../sources/task-v2.md), the recovered [shared answer](../sources/shared-solution.original-ru.md), the user's extended-timeout/final-review request, current executable sources and native evidence. The original PDF and prior design workspace remain absent. This round is a root source/evidence review; the earlier separate reviewer's IR-001–IR-004 dispositions remain in [independent-review](independent-review.md). No new independent review is claimed.
 
-The [Question 8 review](interview-summary.md#question-8-evidence-review) traces the five Stage A properties and seven Stage C challenges to the current saved observations. It distinguishes the normal and recovery TLC graphs, directed failure cases, and external PoC work. The documents and recovery comments were reconciled against those receipts. [Focused validation](qa-validation.json) remains the record for completed and deferred full-suite work.
+The [Question 8 review](interview-summary.md#question-8-evidence-review) traces the five Stage A properties and seven Stage C challenges to the current saved observations. It distinguishes the normal and recovery TLC graphs, directed failure cases, and external PoC work. The documents and recovery comments were reconciled against those receipts. The [validation record](qa-validation.json) records the resumed full selection alongside the earlier focused run.
 
 ## Result architecture and literal atomicity
 

@@ -180,11 +180,11 @@
   {
     "id": "PH-09",
     "requirement": "proof creation",
-    "status": "blocked",
+    "status": "executed-with-result",
     "implementation_status": "implemented",
     "verification_status": [
       "finite_model_verified",
-      "not_run"
+      "sampled_no_counterexample"
     ],
     "faults": [
       "failure",
@@ -202,11 +202,11 @@
   {
     "id": "PH-10",
     "requirement": "evidence delivery",
-    "status": "blocked",
+    "status": "executed-with-result",
     "implementation_status": "implemented",
     "verification_status": [
       "executed_successfully",
-      "not_run"
+      "sampled_no_counterexample"
     ],
     "faults": [
       "failure",
@@ -224,11 +224,11 @@
   {
     "id": "PH-11",
     "requirement": "decision",
-    "status": "blocked",
+    "status": "executed-with-result",
     "implementation_status": "implemented",
     "verification_status": [
       "finite_model_verified",
-      "not_run"
+      "expected_counterexample_found"
     ],
     "faults": [
       "failure",
@@ -4133,6 +4133,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43"
     ],
     "review_disposition": "Mapped to scoped properties, guards, scenarios and artifacts; not independently counted as an execution."
@@ -4213,6 +4214,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43",
       "qa-full-two",
       "qa-full-recovery",
@@ -4252,6 +4254,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43",
       "qa-full-two",
       "qa-full-recovery",
@@ -4291,6 +4294,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43",
       "qa-full-two",
       "qa-full-recovery",
@@ -4330,6 +4334,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43",
       "qa-full-two",
       "qa-full-recovery",
@@ -4369,6 +4374,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43",
       "qa-full-two",
       "qa-full-recovery",
@@ -4408,6 +4414,7 @@
     "checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43",
       "qa-full-two",
       "qa-full-recovery",

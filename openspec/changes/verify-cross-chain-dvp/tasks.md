@@ -1,8 +1,14 @@
 # Tasks
 
-## Current focused repair plan
+## Remaining model validation
 
-The latest user instruction requests all four findings addressed with minimum focused testing now, full testing later, and regular progress reports. Delivery covers the repairs, focused regression evidence, specification/review updates, commit and push. Full validation remains NOT DONE.
+- [x] 29. Execute the remaining seven native checks. Complete preservation and implication for authenticated OPEN, the two architecture counterexamples, and the operational samples with seeds 17, 29 and 43. Retain completed native results and prior non-success attempts.
+- [x] 30. Execute the remaining 43 exact-source replays. Audit and reuse the four sealed replays from the focused run.
+- [ ] 31. Reconcile the full acceptance selection and run all 33 evidence cases. Record the exact outcome, retaining the separate PoC obligations.
+
+## Earlier focused repair plan
+
+The earlier focused request covered the four repairs, selected regressions, review updates and publication. It deferred the broader validation work listed above.
 
 | Finding | Applied repair | Focused evidence |
 |---|---|---|

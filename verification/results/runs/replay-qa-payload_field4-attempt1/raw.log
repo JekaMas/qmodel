@@ -1,0 +1,2356 @@
+An example execution:
+
+[State 0]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL: Set(),
+      issuesR: Set(),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: false,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 0,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: false,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL: [],
+      obsR: [],
+      pc: 0,
+      releasesL: Set(),
+      releasesR: Set(),
+      requested: false,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: false,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 0,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: false,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[State 1]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL: Set(),
+      issuesR: Set(),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: false,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 0,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          }
+        ],
+      obsR:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          }
+        ],
+      pc: 1,
+      releasesL: Set(),
+      releasesR: Set(),
+      requested: false,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: false,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 0,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[State 2]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL: Set(),
+      issuesR: Set(),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: false,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 3,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          }
+        ],
+      obsR:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          }
+        ],
+      pc: 2,
+      releasesL: Set(),
+      releasesR: Set(),
+      requested: false,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: false,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 3,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[State 3]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL: Set(),
+      issuesR: Set(),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 3,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          }
+        ],
+      obsR:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          }
+        ],
+      pc: 3,
+      releasesL: Set(),
+      releasesR: Set(),
+      requested: false,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 0,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: false,
+          hasNote: false,
+          hasProof: false,
+          held: 3,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[State 4]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL: Set(),
+      issuesR: Set(),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: true,
+          hasNote: false,
+          hasProof: false,
+          held: 3,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 3,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 1,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 3,
+            trade: 0,
+            value: 0
+          }
+        ],
+      obsR:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 3,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 1,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 3,
+            trade: 0,
+            value: 0
+          }
+        ],
+      pc: 4,
+      releasesL: Set(),
+      releasesR: Set(),
+      requested: false,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: true,
+          hasNote: false,
+          hasProof: false,
+          held: 3,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 0,
+              asset: 0,
+              program: 0,
+              root: 0,
+              trade: 0,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 0,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[State 5]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL: Set(),
+      issuesR: Set(),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: true,
+          hasNote: false,
+          hasProof: true,
+          held: 3,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 3,
+              asset: 40,
+              program: 1,
+              root: 1043,
+              trade: 1,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 3,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 3,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 1,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 3,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 4,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 1,
+            queue: 0,
+            root: 1043,
+            routing: 20,
+            scope: 0,
+            size: 2,
+            time: 4,
+            trade: 1,
+            value: 0
+          }
+        ],
+      obsR:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 3,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 1,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 3,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 4,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 1,
+            queue: 0,
+            root: 2073,
+            routing: 20,
+            scope: 0,
+            size: 2,
+            time: 4,
+            trade: 1,
+            value: 0
+          }
+        ],
+      pc: 5,
+      releasesL: Set(),
+      releasesR: Set(),
+      requested: false,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: true,
+          hasNote: false,
+          hasProof: true,
+          held: 3,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 3,
+              asset: 40,
+              program: 1,
+              root: 2073,
+              trade: 1,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 3,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[State 6]
+{
+  payload_field4::privacy_pipeline::p:
+    {
+      issuesL:
+        Set(
+          {
+            decision: 0,
+            hasNote: false,
+            hasProof: true,
+            note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+            proofProgram: 1,
+            proofRoot: 1043,
+            query: { at: 5, field: 4, role: 7, scope: 1, surface: 0 },
+            response:
+              {
+                asset: 0,
+                error: 0,
+                field: 4,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 1,
+                role: 7,
+                root: 1043,
+                scope: 1,
+                surface: 0,
+                trade: 1,
+                value: 99
+              },
+            source:
+              {
+                amount: 3,
+                asset: 40,
+                epoch: 0,
+                genesis: 120,
+                held: 3,
+                owner: 3,
+                position: 4,
+                recipient: 1,
+                sender: 0,
+                trade: 1
+              },
+            up: true
+          }
+        ),
+      issuesR:
+        Set(
+          {
+            decision: 0,
+            hasNote: false,
+            hasProof: true,
+            note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+            proofProgram: 1,
+            proofRoot: 2073,
+            query: { at: 5, field: 4, role: 7, scope: 1, surface: 0 },
+            response:
+              {
+                asset: 0,
+                error: 0,
+                field: 4,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 1,
+                role: 7,
+                root: 2073,
+                scope: 1,
+                surface: 0,
+                trade: 1,
+                value: 99
+              },
+            source:
+              {
+                amount: 3,
+                asset: 40,
+                epoch: 0,
+                genesis: 120,
+                held: 3,
+                owner: 3,
+                position: 7,
+                recipient: 1,
+                sender: 0,
+                trade: 1
+              },
+            up: true
+          }
+        ),
+      left:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: true,
+          hasNote: false,
+          hasProof: true,
+          held: 3,
+          id: 1,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 4,
+          proof:
+            {
+              amount: 3,
+              asset: 40,
+              program: 1,
+              root: 1043,
+              trade: 1,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 3,
+                  owner: 3,
+                  position: 4,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 4,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        },
+      obsL:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 3,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 1,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 3,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 4,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 1,
+            queue: 0,
+            root: 1043,
+            routing: 20,
+            scope: 0,
+            size: 2,
+            time: 4,
+            trade: 1,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 104,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 1,
+            queue: 0,
+            root: 1043,
+            routing: 20,
+            scope: 1,
+            size: 2,
+            time: 5,
+            trade: 1,
+            value: 0
+          }
+        ],
+      obsR:
+        [
+          {
+            error: 0,
+            op: 0,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 0,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 1,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 1,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 2,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 0,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 2,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 3,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 0,
+            queue: 1,
+            root: 0,
+            routing: 20,
+            scope: 0,
+            size: 1,
+            time: 3,
+            trade: 0,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 4,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 1,
+            queue: 0,
+            root: 2073,
+            routing: 20,
+            scope: 0,
+            size: 2,
+            time: 4,
+            trade: 1,
+            value: 0
+          },
+          {
+            error: 0,
+            op: 104,
+            outcome: 0,
+            payload:
+              {
+                asset: 0,
+                error: 0,
+                field: 0,
+                note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+                program: 0,
+                role: 0,
+                root: 0,
+                scope: 0,
+                surface: 0,
+                trade: 0,
+                value: 0
+              },
+            program: 1,
+            queue: 0,
+            root: 2073,
+            routing: 20,
+            scope: 1,
+            size: 2,
+            time: 5,
+            trade: 1,
+            value: 0
+          }
+        ],
+      pc: 5,
+      releasesL:
+        Set(
+          {
+            asset: 0,
+            error: 0,
+            field: 4,
+            note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+            program: 1,
+            role: 7,
+            root: 1043,
+            scope: 1,
+            surface: 0,
+            trade: 1,
+            value: 99
+          }
+        ),
+      releasesR:
+        Set(
+          {
+            asset: 0,
+            error: 0,
+            field: 4,
+            note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+            program: 1,
+            role: 7,
+            root: 2073,
+            scope: 1,
+            surface: 0,
+            trade: 1,
+            value: 99
+          }
+        ),
+      requested: true,
+      right:
+        {
+          captured:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          decision: 0,
+          epoch: 0,
+          finalized: true,
+          hasCapture: true,
+          hasNote: false,
+          hasProof: true,
+          held: 3,
+          id: 2,
+          key: true,
+          note: { amount: 0, asset: 0, recipient: 0, trade: 0 },
+          owner: 3,
+          paid: 0,
+          position: 7,
+          proof:
+            {
+              amount: 3,
+              asset: 40,
+              program: 1,
+              root: 2073,
+              trade: 1,
+              witness:
+                {
+                  amount: 3,
+                  asset: 40,
+                  epoch: 0,
+                  genesis: 120,
+                  held: 3,
+                  owner: 3,
+                  position: 7,
+                  recipient: 1,
+                  sender: 0,
+                  trade: 1
+                }
+            },
+          reportComplete: false,
+          signed: true,
+          snapshot:
+            {
+              amount: 3,
+              asset: 40,
+              epoch: 0,
+              genesis: 120,
+              held: 3,
+              owner: 3,
+              position: 7,
+              recipient: 1,
+              sender: 0,
+              trade: 1
+            },
+          up: true,
+          usable: false
+        }
+    }
+}
+
+[violation] Found an issue (18ms at 56 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

@@ -1,7 +1,3 @@
-# Focused validation and deferred full checks
-
-The user requested minimum focused testing now. Full validation is NOT DONE. The exact deferred checks are recorded in qa-repairs.md and manifest.deferred_scoped_checks. Completed native observations retain their recorded scope.
-
 # Coverage verdict
 
 The project supplies an executable layered investigation and a scoped evidence matrix. It does not supply an unqualified proof of every configuration, the deployed banking system, legal DvP or cryptographic privacy.
@@ -12,7 +8,7 @@ The project supplies an executable layered investigation and a scoped evidence m
 - **C-Local:** both actual local applications eventually occur only under the stated recovery, data, asset-policy and submission assumptions. Immediate joint local usability fails. A private delivered commitment additionally needs the exact note/key.
 - **C-Records:** FULLY_APPLIED requires authenticated A/B application evidence. ABORT reconciliation requires authenticated actual/no-obligation application records from each source leg, not a direct remote-state read or relayer acknowledgement.
 
-The selected matrix currently has 241 named checks; unmet or unavailable observations: qa-immediate, qa-permanent-halt, qa-combined-faults-17, qa-combined-faults-43, qa-effect-preserve-open, qa-effect-imply-open, qa-combined-faults-29. Exact scope and observations are in [the manifest](../results/manifest.json), [property traceability](traceability.md), [variants](../variants.md), and [execution commands](executions.md). Counts are unique executions, not a multiplied claim count.
+The selected matrix currently has 241 named checks; unmet or unavailable observations: none. Exact scope and observations are in [the manifest](../results/manifest.json), [property traceability](traceability.md), [variants](../variants.md), and [execution commands](executions.md). Counts are unique executions, not a multiplied claim count.
 
 ## Historical resolutions and current repair proofs
 

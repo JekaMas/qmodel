@@ -1,6 +1,6 @@
 # Findings resolved and protocol re-review
 
-All four comparative-review findings are addressed in the modeled protocol and its focused tests. The user requested minimum testing now and deferred the full suite. The deferred checks are listed below. The51-property and current-source ledgers have been reviewed again against the preserved task-v2 and shared solution. This is root repair/source/evidence review; the prior independent review remains separately attributed. No new independent-agent sign-off is claimed.
+All four comparative-review findings are addressed in the modeled protocol and its focused tests. The full selected model checks and exact-source replay selection completed. The 51-property and current-source ledgers have been reviewed again against the preserved task-v2 and shared solution. This is root repair/source/evidence review; the prior independent review remains separately attributed. No new independent-agent sign-off is claimed.
 
 | Finding | Repair and observed falsification |
 |---|---|
@@ -26,7 +26,7 @@ These observations use the enriched current financial/payload state. Previous fu
 
 ## Actual-State effect induction
 
-The universal row constructor/decoder lemmas justify equivalent point-set and field predicates. Seven profiles completed actual-init0, complete arbitrary invariant-state/actual-adversarialStep1, and implication0 over the full imported State. Authenticated OPEN has completed initiation. Its preservation and implication are deferred by the user. Separate exact compiler artifacts identify the actual and arbitrary initializers. The arbitrary initializer independently chooses every State/Trade scalar or set from its declared domain and guards only the row/physical induction predicate; it does not enumerate a subset of reachable histories. These are genuine inductive obligations. The lemmas do not replace any full financial, temporal or privacy graph.
+The universal row constructor/decoder lemmas justify equivalent point-set and field predicates. 8 profiles completed initiation, preservation and implication over the full imported State. Separate exact compiler artifacts identify the actual and arbitrary initializers. The arbitrary initializer independently chooses every State/Trade scalar or set from its declared domain and guards only the row/physical induction predicate; it does not enumerate a subset of reachable histories. These are genuine inductive obligations. The lemmas do not replace any full financial, temporal or privacy graph.
 
 | Profile | Initiation / preservation / implication receipts | Seconds | Status |
 |---|---|---|---|
@@ -37,15 +37,15 @@ The universal row constructor/decoder lemmas justify equivalent point-set and fi
 | escrow | [qa-effect-init-escrow](../results/runs/qa-effect-init-escrow/receipt.json), [qa-effect-preserve-escrow-attempt1](../results/runs/qa-effect-preserve-escrow-attempt1/receipt.json), [qa-effect-imply-escrow](../results/runs/qa-effect-imply-escrow/receipt.json) | 616.91 | passed |
 | shared | [qa-effect-init-shared](../results/runs/qa-effect-init-shared/receipt.json), [qa-effect-preserve-shared](../results/runs/qa-effect-preserve-shared/receipt.json), [qa-effect-imply-shared](../results/runs/qa-effect-imply-shared/receipt.json) | 616.35 | passed |
 | private | [qa-effect-init-private](../results/runs/qa-effect-init-private/receipt.json), [qa-effect-preserve-private](../results/runs/qa-effect-preserve-private/receipt.json), [qa-effect-imply-private](../results/runs/qa-effect-imply-private/receipt.json) | 623.60 | passed |
-| open | [qa-effect-init-open](../results/runs/qa-effect-init-open/receipt.json) | 13.06 | deferred |
+| open | [qa-effect-init-open](../results/runs/qa-effect-init-open/receipt.json), [qa-effect-preserve-open-attempt1](../results/runs/qa-effect-preserve-open-attempt1/receipt.json), [qa-effect-imply-open](../results/runs/qa-effect-imply-open/receipt.json) | 662.38 | passed |
 
-Selected evidence: **144 positive baseline observations, 85 expected negatives, 5 intentionally weak passing discriminators**. The five discriminators are audited but excluded from safe-baseline acceptance. The 175 original property/acceptance families are classified with 87 current replacements, 81 retained scopes and 7 current revalidations deferred by the user. 155 current native subjects are source-identity audited.
+Selected evidence: **149 positive baseline observations, 87 expected negatives, 5 intentionally weak passing discriminators**. The five discriminators are audited but excluded from safe-baseline acceptance. The 175 original property/acceptance families are classified with 94 current replacements, 81 retained scopes and 0 current revalidations deferred by the user. 162 current native subjects are source-identity audited.
 
 ## Resulting architecture and guarantees
 
 A and B retain native asset ownership and exclusive local reservations. The reference A-hosted COMMIT verifies the B preparation and atomically delivers security; authenticated historical outcome then permits B cash delivery. ABORT remains durable while releases retry. Local absence becomes terminal only after local ABORT knowledge. Full source records, actual resolution semantics and complete institution-private financial terms govern reconciliation. B-hosted, D-hosted, escrow, private, shared execution and three-domain placements keep their own source/return-path rules.
 
-Actual outputs now expose the exact chain/genesis/asset/account/quantity. Separate source-state induction prevents a plausible output row from standing in for an unreleased hold or omitted colocated transfer. Seven completed actual-State/adversarialStep profiles prove the monitor. The authenticated-OPEN induction remains pending. Elsewhere, the custom false-release step is rejected through the same explicit one-step proof route. Loss/prune/resend only frame the monitored trade fields. This is an actual-state effect theorem, not whole-protocol induction.
+Actual outputs now expose the exact chain/genesis/asset/account/quantity. Separate source-state induction prevents a plausible output row from standing in for an unreleased hold or omitted colocated transfer. 8 profiles completed initiation, preservation and implication over the full imported State. The custom false-release step is rejected through the same explicit one-step proof route. Loss/prune/resend only frame the monitored trade fields. This is an actual-state effect theorem, not whole-protocol induction.
 
 Privacy returns independently bound source/proof/note values. The authenticated query principal determines entitlement and who saw the body. The old response-tag-based observer alone is insufficient: explicit role-confusion controls make its access and observer predicates pass while the independent trusted-query monitor fails. The current claim includes both full public metadata history and that complete-body view.
 
@@ -67,14 +67,6 @@ The re-review found and addressed additional adequacy details: exact note amount
 
 The app update removed an escrow run's supervisor and interrupted receipt collection. Its plan, input closure and raw output are preserved, with the OS exit status recorded as unavailable. The replacement obligation has a separate accepted receipt. [Interruption record](qa-runner-interruption.json).
 
-## Deferred full validation
+## Replay validation
 
-Full validation is **NOT DONE** under the user-directed minimum-testing scope. Completed observations are retained. The following checks and the remaining full47-replay batch are deferred.
-
-- `qa-effect-preserve-open` — User requested minimum focused testing now and full testing later on2026-11-18.
-- `qa-effect-imply-open` — User requested minimum focused testing now and full testing later on2026-11-18.
-- `qa-immediate` — User requested minimum focused testing now and full testing later on2026-11-18.
-- `qa-permanent-halt` — User requested minimum focused testing now and full testing later on2026-11-18.
-- `qa-combined-faults-17` — User requested minimum focused testing now and full testing later on2026-11-18.
-- `qa-combined-faults-29` — User requested minimum focused testing now and full testing later on2026-11-18.
-- `qa-combined-faults-43` — User requested minimum focused testing now and full testing later on2026-11-18.
+The exact-source replay set contains 47 executions with 46 matching negative traces. The [replay record](qa-replay-validation.json) identifies each execution.

@@ -81,7 +81,7 @@ def audit():
   rel='verification/models/'+name+'.qnt';assert sha(ROOT/rel)==plan['model_sha256'][rel],rel
  reviewed={
   'verification/models/mapping.qnt':'Explicit S05/economicOutputs wrapper re-export; current simulation/economic-output graph rerun. No concrete protocol transition changed.',
-  'verification/models/effect_consistency.qnt':'Proof-only complete State/Trade initializer, equivalent point/field domains and physical/local-atomicity induction candidate. Completed per-profile obligations and universal row lemmas replace earlier representation attempts. OPEN preservation/implication is explicitly deferred; actual imported protocol State/Next is unchanged.'}
+  'verification/models/effect_consistency.qnt':'Proof-only complete State/Trade initializer, equivalent point/field domains and physical/local-atomicity induction candidate. Per-profile receipts and universal row lemmas document the checked obligations. The imported protocol State/Next is unchanged.'}
  recovery_receipt,_=observed('qa-full-recovery')
  saved_recovery=recovery_receipt.parent/'inputs'/RECOVERY_SOURCE
  if sha(saved_recovery)==plan['model_sha256'][RECOVERY_SOURCE] and executable_lines(saved_recovery.read_text())==executable_lines((ROOT/RECOVERY_SOURCE).read_text()):

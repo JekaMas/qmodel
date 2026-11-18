@@ -95,7 +95,7 @@
     },
     {
       "id": "S05",
-      "execution_status": "deferred-by-user",
+      "execution_status": "executed-with-result",
       "executed_checks": [
         "qa-core-finite",
         "qa-full-two",
@@ -147,7 +147,7 @@
         "qa-trade-domain-reverse",
         "qa-effect-false-imply"
       ],
-      "verified_scope": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. Seven completed same-full-State/adversarialStep profiles prove actual hold/effect consistency. Authenticated-OPEN preservation/implication is deferred by the user; false-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance."
+      "verified_scope": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. All eight named profiles have completed full-State/adversarialStep induction for hold/effect consistency. False-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance."
     },
     {
       "id": "S06",
@@ -402,7 +402,7 @@
     },
     {
       "id": "O-Immediate",
-      "execution_status": "deferred-by-user",
+      "execution_status": "executed-with-result",
       "executed_checks": [
         "qa-immediate"
       ],
@@ -410,7 +410,7 @@
     },
     {
       "id": "O-Permanent",
-      "execution_status": "deferred-by-user",
+      "execution_status": "executed-with-result",
       "executed_checks": [
         "qa-permanent-halt"
       ],
@@ -505,10 +505,11 @@
     },
     {
       "id": "T-Async",
-      "execution_status": "deferred-by-user",
+      "execution_status": "executed-with-result",
       "executed_checks": [
         "qa-core-finite",
         "qa-combined-faults-17",
+        "qa-combined-faults-29",
         "qa-combined-faults-43"
       ],
       "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."

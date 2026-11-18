@@ -133,7 +133,7 @@
     "scenario": "reference plus relevant focused variants",
     "checker": "Quint simulation, Apalache bounded, TLC finite",
     "expected": "hold under named assumptions",
-    "status": "deferred-by-user",
+    "status": "executed-with-result",
     "executed_checks": [
       "qa-core-finite",
       "qa-full-two",
@@ -185,8 +185,8 @@
       "qa-trade-domain-reverse",
       "qa-effect-false-imply"
     ],
-    "execution_status": "deferred-by-user",
-    "verified_scope": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. Seven completed same-full-State/adversarialStep profiles prove actual hold/effect consistency. Authenticated-OPEN preservation/implication is deferred by the user; false-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.",
+    "execution_status": "executed-with-result",
+    "verified_scope": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. All eight named profiles have completed full-State/adversarialStep induction for hold/effect consistency. False-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -782,11 +782,11 @@
     "scenario": "O-Immediate",
     "checker": "TLC",
     "expected": "expected counterexample",
-    "status": "deferred-by-user",
+    "status": "executed-with-result",
     "executed_checks": [
       "qa-immediate"
     ],
-    "execution_status": "deferred-by-user",
+    "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "quint_owner": "see executed check input closures"
   },
@@ -802,11 +802,11 @@
     "scenario": "O-Permanent",
     "checker": "TLC",
     "expected": "expected counterexample",
-    "status": "deferred-by-user",
+    "status": "executed-with-result",
     "executed_checks": [
       "qa-permanent-halt"
     ],
-    "execution_status": "deferred-by-user",
+    "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "quint_owner": "see executed check input closures"
   },
@@ -1029,13 +1029,14 @@
     "scenario": "boundary, insufficient slack, skew, outage, queue contention",
     "checker": "TLC finite timed abstraction + parameter sweeps",
     "expected": "scoped positive and negative results",
-    "status": "deferred-by-user",
+    "status": "executed-with-result",
     "executed_checks": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43"
     ],
-    "execution_status": "deferred-by-user",
+    "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "quint_owner": "see executed check input closures"
   },
@@ -1238,7 +1239,7 @@
   {
     "id": "V-B",
     "requirement": "B-hosted decision uses local cash and authenticated A preparation.",
-    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04; separately inductive localCommitAtomicity for the colocated asset(s).",
+    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04; separately inductive localCommitAtomicity for the colocated asset(s).; separately inductive localCommitAtomicity for the colocated asset(s).",
     "classification": "operational integration",
     "assumptions": [
       "A-FINAL",
@@ -1374,7 +1375,7 @@
   {
     "id": "V-Shared",
     "requirement": "Co-resident opposite-direction transfers apply atomically on the shared control ledger.",
-    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.; separately inductive localCommitAtomicity for the colocated asset(s).",
+    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.; separately inductive localCommitAtomicity for the colocated asset(s).; separately inductive localCommitAtomicity for the colocated asset(s).",
     "classification": "operational integration",
     "assumptions": [
       "A-FINAL",

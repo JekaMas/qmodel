@@ -1,0 +1,72 @@
+{
+  "id": "replay-qa-role-confusion",
+  "started_utc": "2026-11-18T12:50:01.203188+00:00",
+  "claim": "TrustedNI",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/runs/qa-role-confusion/inputs/verification/mutants/observer_soundness.qnt",
+    "--main",
+    "role_confusion",
+    "--step",
+    "stepControl",
+    "--invariant",
+    "TrustedNI",
+    "--backend",
+    "typescript",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "7",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "/Users/jekamas/projects/0xatelerix/qmodel/verification/results/replays/qa-role-confusion/20261118T125000919411Z/native.itf.json"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runs/qa-role-confusion/inputs/verification/mutants/observer_soundness.qnt --main role_confusion --step stepControl --invariant TrustedNI --backend typescript --max-samples 1 --max-steps 7 --seed 17 --verbosity 2 --out-itf /Users/jekamas/projects/0xatelerix/qmodel/verification/results/replays/qa-role-confusion/20261118T125000919411Z/native.itf.json",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/results/runs/qa-role-confusion/inputs/verification/mutants/observer_soundness.qnt": "57fa7510b2ec36aa881cd7fceacf97d6d8cbafc969f21706248ecf721a470b9b",
+    "verification/results/runs/qa-role-confusion/inputs/verification/mutants/generated/role_confusion.qnt": "9f633beb6897f07e6db840e7017b651a0978e1cc65c7e4dc923b4e320f00de4c"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "execution_plan_sha256": "1bdd2ff73055c19cb01f0ffb116c8f60071d0599a17dc8964441404d9a2e94c6",
+  "raw_sha256": "4304640c4c243de63b9445ed05834c59e2a8d7fe44d7e7bdc00003277efef8ae",
+  "configuration": {
+    "recorded_receipt": "verification/results/runs/qa-role-confusion/receipt.json",
+    "replay_input": "exact saved source closure",
+    "forced": true
+  },
+  "timeout_seconds": 60,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 1.3675677916035056,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/replay-qa-role-confusion/raw.log",
+  "minimized": false,
+  "replayed": false,
+  "native_trace": "verification/results/runs/replay-qa-role-confusion/native.itf.json",
+  "native_trace_sha256": "f6c462b7d29989fee8e6f487fc364a8fe1f5234a52b80333dd8ba963a6ee3826"
+}

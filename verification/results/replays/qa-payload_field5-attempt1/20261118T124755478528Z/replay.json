@@ -1,0 +1,12 @@
+{
+  "original_receipt": "verification/results/runs/qa-payload_field5-attempt1/receipt.json",
+  "replay_receipt": "replay-qa-payload_field5-attempt1",
+  "original_outcome": "expected_counterexample_found",
+  "observed_outcome": "expected_counterexample_found",
+  "outcome_reproduced": true,
+  "native_states_match": true,
+  "native_comparison": "immutable associated export",
+  "forced_new_process": true,
+  "minimized": false,
+  "method": "exact saved source closure and invocation/seed, observed current pinned toolchain; no cached execution"
+}

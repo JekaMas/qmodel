@@ -12,9 +12,9 @@ Implementation and verified-property status remain distinct. The full literal v2
 | reservation of each leg | [qa-scenarios-dvp_test](../results/runs/qa-scenarios-dvp_test/receipt.json), [qa-scenarios-escrow_path_test](../results/runs/qa-scenarios-escrow_path_test/receipt.json) | executed-with-result |
 | transaction inclusion and finalization | [qa-core-finite](../results/runs/qa-core-finite-attempt1/receipt.json), [qa-scenarios-recovery_test](../results/runs/qa-scenarios-recovery_test/receipt.json), [qa-scenarios-phase_failure_test](../results/runs/qa-scenarios-phase_failure_test/receipt.json) | executed-with-result |
 | witness capture | [qa-scenarios-network_test](../results/runs/qa-scenarios-network_test/receipt.json), [qa-scenarios-recovery_test](../results/runs/qa-scenarios-recovery_test/receipt.json) | executed-with-result |
-| proof creation | [qa-core-finite](../results/runs/qa-core-finite-attempt1/receipt.json), qa-combined-faults-17 (not_run) | blocked |
-| evidence delivery | [qa-scenarios-network_test](../results/runs/qa-scenarios-network_test/receipt.json), qa-combined-faults-43 (not_run) | blocked |
-| decision | [qa-core-finite](../results/runs/qa-core-finite-attempt1/receipt.json), qa-immediate (not_run) | blocked |
+| proof creation | [qa-core-finite](../results/runs/qa-core-finite-attempt1/receipt.json), [qa-combined-faults-17](../results/runs/qa-combined-faults-17/receipt.json) | executed-with-result |
+| evidence delivery | [qa-scenarios-network_test](../results/runs/qa-scenarios-network_test/receipt.json), [qa-combined-faults-43](../results/runs/qa-combined-faults-43/receipt.json) | executed-with-result |
+| decision | [qa-core-finite](../results/runs/qa-core-finite-attempt1/receipt.json), [qa-immediate](../results/runs/qa-immediate/receipt.json) | executed-with-result |
 | local effects | [qa-scenarios-dvp_test](../results/runs/qa-scenarios-dvp_test/receipt.json), [qa-legacy-non_atomic](../results/runs/qa-legacy-non_atomic/receipt.json) | executed-with-result |
 | outcome proofs | [qa-core-finite](../results/runs/qa-core-finite-attempt1/receipt.json), [qa-scenarios-open_test](../results/runs/qa-scenarios-open_test/receipt.json) | executed-with-result |
 | remaining application/refund | [qa-full-one](../results/runs/qa-full-one/receipt.json), [late-hold-relative-bound](../results/runs/late-hold-relative-bound/receipt.json) | executed-with-result |

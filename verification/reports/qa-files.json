@@ -1,7 +1,7 @@
 [
   {
     "path": "README.md",
-    "sha256": "8d6144bcf23d8d4069a7733383f169b947ac715feea672336cf9ccc3bceef90a",
+    "sha256": "94833a32998281cd0974be115bba7eb24d78973e0c39c2135bf8c15fd45e5ad4",
     "method": "root repair/source review and affected evidence audit",
     "review": "Repository entrypoint links current finding/property/file/source validation results; older publication receipts remain historical and are not relabeled as current readback.",
     "current_observations": []
@@ -36,14 +36,14 @@
   },
   {
     "path": "verification/README.md",
-    "sha256": "ac4c8b5114a1934379609c699df2991e6c28596dafaa712c5a139e3a449338e1",
+    "sha256": "da6249bf692f985516fa1dc52cea01eebd2f14886a8c4e152e3e3039b8d907ef",
     "method": "root repair/source review and affected evidence audit",
     "review": "Current architecture, conditional guarantees, actual full-graph results and finding closure are qualified by explicit model scopes and external conformance boundaries.",
     "current_observations": []
   },
   {
     "path": "verification/SPECIFICATION.md",
-    "sha256": "3946ed8de4e74b42529eb58b5fb662c661efe496fd39987737d8625a7684c16a",
+    "sha256": "57851b0983f4df3f87a84d9172cfd4d309c951086dd1eee149d93c27bc10806c",
     "method": "root repair/source review and affected evidence audit",
     "review": "Original requirements remain authoritative. Reviewed complete disclosure/principal binding, actual-source program admission, ABORT resolution and exact economic/source effects against the implemented predicates and controls.",
     "current_observations": []
@@ -57,7 +57,7 @@
   },
   {
     "path": "verification/configs/acceptance.json",
-    "sha256": "adb1eaaf8c281896fbbfa56359464f4484cf553ffdaf2143318b7a3247ef9d17",
+    "sha256": "c29279b587c17f54ee58f3d4a704cf3427ec1f15d6ff8c127d5e35149282480b",
     "method": "root repair/source review and affected evidence audit",
     "review": "Exact scoped native-result selection; intentionally weak positive discriminators are audited and excluded from safe baseline acceptance.",
     "current_observations": []
@@ -80,6 +80,8 @@
       "qa-core-finite-attempt1",
       "qa-full-one",
       "qa-economic-mapping-attempt1",
+      "qa-immediate",
+      "qa-permanent-halt",
       "qa-privacy-time-integrated-safe",
       "qa-private-availability",
       "qa-private-unconditionalAvailability",
@@ -118,14 +120,14 @@
   },
   {
     "path": "verification/configs/proof-contracts.json",
-    "sha256": "379a3313283247a04eccc02586237d6f51437b2d09bd02da140a3a30f350bcd9",
+    "sha256": "08402c81dd1ff2032b2985829deed182616551b96f89cba105536b96adb647e0",
     "method": "root repair/source review and affected evidence audit",
     "review": "Append-only reviewed native observation contracts; original receipt/raw/source/tooling/claim identities remain immutable. This is a local versioned trust anchor, not independent signed attestation.",
     "current_observations": []
   },
   {
     "path": "verification/configs/qa-coverage.json",
-    "sha256": "f9b315d15f82aa92ca12321335193534f98af3379f01637bab35a80bd6fa89cf",
+    "sha256": "988f681075a21d93ad299bbc151ae1f512c78be525d3b977dda25d302c3a6a70",
     "method": "root repair/source review and affected evidence audit",
     "review": "Every affected baseline family has an explicit current replacement and supplemental physical/domain/control proof. All required scopes and five excluded weak-oracle positives stay explicit.",
     "current_observations": []
@@ -146,7 +148,7 @@
   },
   {
     "path": "verification/coverage-contract.json",
-    "sha256": "dd319240a27ec9ee84452369e2940ecded7257df114b466d4250b89bdb4ba0ea",
+    "sha256": "aaa6abb995d084074a55575425d695456a1165ed24f2e46d78c50a662efd9ef5",
     "method": "root repair/source review and affected evidence audit",
     "review": "Literal154-item task inventory, lifecycle phases, artifact/reference reviews and actual scoped proofs remain separate classifications.",
     "current_observations": []
@@ -180,6 +182,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-effect-false-imply-attempt1"
     ]
   },
@@ -473,21 +477,30 @@
     "sha256": "90b2df7b4f1589d76b539a79449544e6fb81d5f4745146e0015b33afb5eccc2f",
     "method": "generated correspondence audit; no manual line-by-line claim",
     "review": "Compiler-generated exact-source TLA/correspondence artifact. The native plan links the sealed Quint compiler output, exact normalization identity and actual source/Next; this is checked correspondence, not a fresh manual semantic review of every generated line.",
-    "current_observations": []
+    "current_observations": [
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open"
+    ]
   },
   {
     "path": "verification/generated/native-induction/open-inductive/native-correspondence.json",
     "sha256": "25d5c73dc1735b6859a8a7ae95f77ccc1a3147b10dad79381f08480aae509469",
     "method": "generated correspondence audit; no manual line-by-line claim",
     "review": "Compiler-generated exact-source TLA/correspondence artifact. The native plan links the sealed Quint compiler output, exact normalization identity and actual source/Next; this is checked correspondence, not a fresh manual semantic review of every generated line.",
-    "current_observations": []
+    "current_observations": [
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open"
+    ]
   },
   {
     "path": "verification/generated/native-induction/open-inductive/original.tla",
     "sha256": "62b048ce1855aefaf626a97d0c2e56104038d4653ac23db9044f65967108cf6f",
     "method": "generated correspondence audit; no manual line-by-line claim",
     "review": "Compiler-generated exact-source TLA/correspondence artifact. The native plan links the sealed Quint compiler output, exact normalization identity and actual source/Next; this is checked correspondence, not a fresh manual semantic review of every generated line.",
-    "current_observations": []
+    "current_observations": [
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open"
+    ]
   },
   {
     "path": "verification/generated/native-induction/private/effects_private.tla",
@@ -723,10 +736,14 @@
       "qa-full-recovery",
       "qa-apalache12",
       "qa-scenarios-multilateral_test",
+      "qa-immediate",
+      "qa-permanent-halt",
       "qa-scenarios-policy_test",
       "qa-scenarios-dvp_test",
       "qa-scenarios-open_test",
       "qa-scenarios-network_test",
+      "qa-combined-faults-17",
+      "qa-combined-faults-43",
       "qa-scenarios-d_outage_test",
       "qa-scenarios-phase_failure_test",
       "qa-scenarios-report_view_test",
@@ -822,6 +839,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-record-compile-one-attempt2",
       "qa-record-compile-two",
       "qa-record-compile-b",
@@ -839,6 +858,7 @@
       "qa-record-compile-shared-inductive",
       "qa-record-compile-private-inductive",
       "qa-record-compile-open-inductive",
+      "qa-combined-faults-29",
       "qa-effect-false-imply-attempt1",
       "qa-admission-b",
       "qa-program-admission-b",
@@ -864,10 +884,14 @@
       "qa-apalache12",
       "qa-multilateral",
       "qa-scenarios-multilateral_test",
+      "qa-immediate",
+      "qa-permanent-halt",
       "qa-scenarios-policy_test",
       "qa-scenarios-dvp_test",
       "qa-scenarios-open_test",
       "qa-scenarios-network_test",
+      "qa-combined-faults-17",
+      "qa-combined-faults-43",
       "qa-scenarios-d_outage_test",
       "qa-scenarios-phase_failure_test",
       "qa-scenarios-report_view_test",
@@ -963,6 +987,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-record-compile-one-attempt2",
       "qa-record-compile-two",
       "qa-record-compile-b",
@@ -980,6 +1006,7 @@
       "qa-record-compile-shared-inductive",
       "qa-record-compile-private-inductive",
       "qa-record-compile-open-inductive",
+      "qa-combined-faults-29",
       "qa-effect-false-imply-attempt1",
       "qa-admission-b",
       "qa-program-admission-b",
@@ -1017,6 +1044,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-record-compile-one-attempt2",
       "qa-record-compile-two",
       "qa-record-compile-b",
@@ -1064,6 +1093,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-record-compile-one-attempt2",
       "qa-record-compile-two",
       "qa-record-compile-b",
@@ -1091,7 +1122,9 @@
     "sha256": "fbd7c7a567a092ba066eda59c461745e061210d195aa9288be342f4f90043b36",
     "method": "prior semantic review retained by byte identity",
     "review": "Concrete committed/permanent halt and HTLC secret/permanent halt prefixes followed by infinite stutter; valid overclaim controls.",
-    "current_observations": []
+    "current_observations": [
+      "qa-permanent-halt"
+    ]
   },
   {
     "path": "verification/models/full_grounded.qnt",
@@ -1168,7 +1201,9 @@
     "sha256": "f1dfd80b20f1e4a019517594cf15964a3415c61313137c2c3833d59e4ca2e556",
     "method": "prior semantic review retained by byte identity",
     "review": "HTLC secret/deadlines/margins, narrow root/local terminal knowledge, atomic shared control, honest/compromised committee inspected. Own abstraction, not vendor proof.",
-    "current_observations": []
+    "current_observations": [
+      "qa-permanent-halt"
+    ]
   },
   {
     "path": "verification/models/membership.qnt",
@@ -1216,7 +1251,11 @@
     "sha256": "07c4732425f1c6bfe9c04e10696b5994df14a5ab036ec39e5a2c29febe53fb6e",
     "method": "prior semantic review retained by byte identity",
     "review": "Adds loss/resend/prune to N2 adversarial core; selected result is seeded simulation, not exhaustive Cartesian fault product.",
-    "current_observations": []
+    "current_observations": [
+      "qa-combined-faults-17",
+      "qa-combined-faults-43",
+      "qa-combined-faults-29"
+    ]
   },
   {
     "path": "verification/models/privacy.qnt",
@@ -1549,14 +1588,14 @@
   },
   {
     "path": "verification/properties.json",
-    "sha256": "88f76955b492a74a332b488a6c9a03b08d4d7268810fa439ba190c4dad05df42",
+    "sha256": "c24a6623244e78e29fff14fc961f57b9bf42ff817227b72e2c145b9fb9e7aede",
     "method": "root repair/source review and affected evidence audit",
     "review": "All51individual scopes and actual executions; six external obligations remain external. A repeated observation is not an additional theorem.",
     "current_observations": []
   },
   {
     "path": "verification/results/manifest.json",
-    "sha256": "da926d7bdb16726ea30b6b4445747461acb5df142a19b50ae1c3eb4b2af4e38e",
+    "sha256": "1d155fa2e3eb64b873094fcf39f78afb48fc0a712d1d53e1ce70d0751a342d01",
     "method": "root repair/source review and affected evidence audit",
     "review": "Generated current property/acceptance selection and native source/tool/result inventories. Every selected observation is audited; original non-successes and six external obligations remain visible.",
     "current_observations": []
@@ -1612,7 +1651,7 @@
   },
   {
     "path": "verification/scripts/finalize_reports.py",
-    "sha256": "909b3b0e535b1db8fae5591fe5ce9983f2936c7df0b5e701672047ead5a91f95",
+    "sha256": "692b5fd680d0ce58b7268f4cd368ce91454969b021eab89a1a0c54ac7c26f56f",
     "method": "root repair/source review and affected evidence audit",
     "review": "Refuses missing/non-success current proofs; maps all current property/variant owners; historical timeout resolutions and new repair proofs separated.",
     "current_observations": []
@@ -1660,6 +1699,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-effect-false-imply-attempt1"
     ]
   },
@@ -1734,6 +1775,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-effect-false-imply-attempt1"
     ]
   },
@@ -1766,6 +1809,8 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-effect-false-imply-attempt1"
     ]
   },
@@ -1778,21 +1823,21 @@
   },
   {
     "path": "verification/scripts/qa_replay.py",
-    "sha256": "2c0e399d691c4c1a084896968a419617b9ba383e74b71e8e214bbf5d32c7f391",
+    "sha256": "122a800f8f1009e6c4c9d6d5301d108e8d4acc0bea59344a4b60cf8ef10eeb28",
     "method": "root repair/source review and affected evidence audit",
     "review": "Explicit fresh-process exact-snapshot reproduction of46negative sequences and one positive; native states compared to immutable exports. This is a reproduction-contract check, not a new expensive graph run.",
     "current_observations": []
   },
   {
     "path": "verification/scripts/qa_report.py",
-    "sha256": "6ced3114f4ee21018286702ff165b28dda4516bfaf6a8676a4a54a72b75bfb2e",
+    "sha256": "dadc4c3410a4ba8c7abe3aa403ff90dfa32d3fc66c65e41eccdd96e81178b8fc",
     "method": "root repair/source review and affected evidence audit",
     "review": "Evidence-conditioned report and per-property/per-file disposition; root review attribution, no invented independent review.",
     "current_observations": []
   },
   {
     "path": "verification/scripts/qa_retention.py",
-    "sha256": "59be8825719b3a0eddeb911bbae5bc1f2fd012c85ae7e40d97adaf518d6b9c99",
+    "sha256": "e95ad6e8854ee4d905583582cdb95538ccfdf7e4ae0f1282be25c605b730bcc7",
     "method": "root repair/source review and affected evidence audit",
     "review": "Checks every current closure and baseline family; exact selected-module, unused-symbol, and reviewed recovery comment exceptions admitted. Original hashes unchanged.",
     "current_observations": []

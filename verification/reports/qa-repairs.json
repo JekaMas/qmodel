@@ -120,30 +120,21 @@
         "qa-effect-imply-open"
       ],
       "receipts": [
-        "qa-effect-init-open"
-      ],
-      "deferred_checks": [
-        "qa-effect-preserve-open",
+        "qa-effect-init-open",
+        "qa-effect-preserve-open-attempt1",
         "qa-effect-imply-open"
       ],
-      "wall_seconds": 13.06251204200089,
-      "status": "deferred"
+      "deferred_checks": [],
+      "wall_seconds": 662.3766567930579,
+      "status": "passed"
     }
   ],
   "baseline_commit": "798676a310314e6e95167723e149938e388fcf9e",
   "review_mode": "root final repair/source/evidence re-review; no new independent-agent sign-off",
   "status": "DONE",
-  "scope": "Finding repairs and focused validation requested by the user",
-  "full_validation_status": "NOT DONE",
-  "deferred_checks": {
-    "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
-  },
+  "scope": "Finding repairs and full selected model validation",
+  "full_validation_status": "DONE within model scopes",
+  "deferred_checks": {},
   "open_findings": [],
   "findings": [
     {
@@ -337,10 +328,10 @@
   "file_count": 177,
   "counts": {
     "selected": 241,
-    "baseline_positive": 144,
-    "expected_negative": 85,
+    "baseline_positive": 149,
+    "expected_negative": 87,
     "weak_discriminators": 5,
-    "deferred": 7
+    "deferred": 0
   },
   "proofs": [
     {
@@ -420,5 +411,9 @@
     "availability/cost measurement",
     "legal/account/issuer rights and financial records"
   ],
-  "focused_replay": 4
+  "replay_validation": {
+    "mode": "full",
+    "count": 47,
+    "negative_native_states_match": 46
+  }
 }

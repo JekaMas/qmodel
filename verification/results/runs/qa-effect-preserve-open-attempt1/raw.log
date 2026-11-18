@@ -1,0 +1,121 @@
+ACTUAL_NATIVE_COMMAND ["/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/bin/apalache-mc", "check", "--init=q_init", "--next=q_step", "--inv=effectIExpanded", "--length=1", "--tuning-options=search.invariantFilter=1->.*:search.invariant.mode=after", "verification/generated/native-induction/open-inductive/effects_open.tla"]
+Picked up JAVA_TOOL_OPTIONS: -Xmx24g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/effects_open.tla/2026-11-18T16-46-55_9899407207783064403
+# APALACHE version: 0.62.4 | build: 7954daf                       I@16:46:55.229
+Tuning: search.invariantFilter=1->.*:search.invariant.mode=after  I@16:46:55.234
+PASS #0: SanyParser                                               I@16:46:55.391
+PASS #1: TypeCheckerSnowcat                                       I@16:46:55.918
+ > Running Snowcat .::.                                           I@16:46:55.918
+ > Your types are purrfect!                                       I@16:47:05.607
+ > All expressions are typed                                      I@16:47:05.608
+PASS #2: ConfigurationPass                                        I@16:47:05.609
+  > Set the initialization predicate to q_init                    I@16:47:05.613
+  > Set the transition predicate to q_step                        I@16:47:05.613
+  > Set an invariant to effectIExpanded                           I@16:47:05.614
+PASS #3: DesugarerPass                                            I@16:47:05.620
+  > Desugaring...                                                 I@16:47:05.620
+PASS #4: InlinePass                                               I@16:47:05.642
+Leaving only relevant operators: CInitPrimed, effectIExpanded, q_init, q_initPrimed, q_step I@16:47:05.643
+PASS #5: TemporalPass                                             I@16:47:05.861
+  > Rewriting temporal operators...                               I@16:47:05.861
+  > No temporal property specified, nothing to encode             I@16:47:05.861
+PASS #6: InlinePass                                               I@16:47:05.861
+Leaving only relevant operators: CInitPrimed, effectIExpanded, q_init, q_initPrimed, q_step I@16:47:05.861
+PASS #7: PrimingPass                                              I@16:47:05.913
+  > Introducing q_initPrimed for q_init'                          I@16:47:05.914
+PASS #8: VCGen                                                    I@16:47:06.065
+  > Producing verification conditions from the invariant effectIExpanded I@16:47:06.066
+  > VCGen produced 53 verification condition(s)                   I@16:47:06.074
+PASS #9: PreprocessingPass                                        I@16:47:06.080
+  > Before preprocessing: unique renaming                         I@16:47:06.080
+ > Applying standard transformations:                             I@16:47:06.088
+  > PrimePropagation                                              I@16:47:06.089
+  > Desugarer                                                     I@16:47:06.106
+  > UniqueRenamer                                                 I@16:47:06.154
+  > Normalizer                                                    I@16:47:06.216
+  > SetMembershipSimplifier                                       I@16:47:06.263
+  > Keramelizer                                                   I@16:47:06.308
+  > After preprocessing: UniqueRenamer                            I@16:47:06.385
+PASS #10: TransitionFinderPass                                    I@16:47:06.465
+  > Found 1 initializing transitions                              I@16:47:06.536
+  > Found 43 transitions                                          I@16:47:06.566
+  > No constant initializer                                       I@16:47:06.567
+  > Applying unique renaming                                      I@16:47:06.568
+PASS #11: OptimizationPass                                        I@16:47:06.601
+ > Applying optimizations:                                        I@16:47:06.604
+  > ConstSimplifier                                               I@16:47:06.604
+  > ExprOptimizer                                                 I@16:47:06.695
+  > SetMembershipSimplifier                                       I@16:47:06.733
+  > ConstSimplifier                                               I@16:47:06.745
+PASS #12: AnalysisPass                                            I@16:47:06.812
+ > Marking skolemizable existentials and sets to be expanded...   I@16:47:06.814
+  > Skolemization                                                 I@16:47:06.815
+  > Expansion                                                     I@16:47:06.819
+  > Remove unused let-in defs                                     I@16:47:06.842
+ > Running analyzers...                                           I@16:47:06.852
+  > Introduced expression grades                                  I@16:47:06.858
+PASS #13: BoundedChecker                                          I@16:47:06.858
+Step 0: picking a transition out of 1 transition(s)               I@16:47:13.504
+Step 1: picking a transition out of 40 transition(s)              I@16:47:15.881
+State 1: Checking 53 state invariants                             I@16:47:19.918
+State 1: state invariant 0 holds.                                 I@16:47:20.121
+State 1: state invariant 1 holds.                                 I@16:47:20.221
+State 1: state invariant 2 holds.                                 I@16:47:20.401
+State 1: state invariant 3 holds.                                 I@16:47:20.562
+State 1: state invariant 4 holds.                                 I@16:47:20.756
+State 1: state invariant 5 holds.                                 I@16:47:20.929
+State 1: state invariant 6 holds.                                 I@16:47:21.550
+State 1: state invariant 7 holds.                                 I@16:47:21.887
+State 1: state invariant 8 holds.                                 I@16:47:22.183
+State 1: state invariant 9 holds.                                 I@16:47:22.189
+State 1: state invariant 10 holds.                                I@16:47:22.194
+State 1: state invariant 11 holds.                                I@16:47:22.198
+State 1: state invariant 12 holds.                                I@16:47:22.354
+State 1: state invariant 13 holds.                                I@16:47:22.359
+State 1: state invariant 14 holds.                                I@16:47:22.364
+State 1: state invariant 15 holds.                                I@16:47:22.368
+State 1: state invariant 16 holds.                                I@16:47:22.373
+State 1: state invariant 17 holds.                                I@16:47:22.564
+State 1: state invariant 18 holds.                                I@16:47:22.570
+State 1: state invariant 19 holds.                                I@16:47:22.696
+State 1: state invariant 20 holds.                                I@16:47:22.701
+State 1: state invariant 21 holds.                                I@16:47:23.101
+State 1: state invariant 22 holds.                                I@16:47:23.359
+State 1: state invariant 23 holds.                                I@16:47:23.454
+State 1: state invariant 24 holds.                                I@16:48:44.267
+State 1: state invariant 25 holds.                                I@16:50:11.348
+State 1: state invariant 26 holds.                                I@16:51:37.739
+State 1: state invariant 27 holds.                                I@16:53:04.027
+State 1: state invariant 28 holds.                                I@16:54:31.094
+State 1: state invariant 29 holds.                                I@16:55:55.986
+State 1: state invariant 30 holds.                                I@16:55:58.693
+State 1: state invariant 31 holds.                                I@16:57:19.003
+State 1: state invariant 32 holds.                                I@16:57:21.120
+State 1: state invariant 33 holds.                                I@16:57:21.139
+State 1: state invariant 34 holds.                                I@16:57:21.192
+State 1: state invariant 35 holds.                                I@16:57:21.211
+State 1: state invariant 36 holds.                                I@16:57:21.230
+State 1: state invariant 37 holds.                                I@16:57:21.246
+State 1: state invariant 38 holds.                                I@16:57:21.292
+State 1: state invariant 39 holds.                                I@16:57:21.338
+State 1: state invariant 40 holds.                                I@16:57:21.990
+State 1: state invariant 41 holds.                                I@16:57:22.009
+State 1: state invariant 42 holds.                                I@16:57:22.025
+State 1: state invariant 43 holds.                                I@16:57:22.039
+State 1: state invariant 44 holds.                                I@16:57:22.055
+State 1: state invariant 45 holds.                                I@16:57:22.108
+State 1: state invariant 46 holds.                                I@16:57:22.124
+State 1: state invariant 47 holds.                                I@16:57:22.438
+State 1: state invariant 48 holds.                                I@16:57:22.909
+State 1: state invariant 49 holds.                                I@16:57:22.926
+State 1: state invariant 50 holds.                                I@16:57:23.136
+State 1: state invariant 51 holds.                                I@16:57:23.399
+State 1: state invariant 52 holds.                                I@16:57:23.625
+The outcome is: NoError                                           I@16:57:24.396
+Checker reports no error up to computation length 1               I@16:57:24.396
+It took me 0 days  0 hours 10 min 29 sec                          I@16:57:24.397
+Total time: 629.165 sec                                           I@16:57:24.397
+EXITCODE: OK

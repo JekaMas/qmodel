@@ -106,6 +106,7 @@ extra_properties=[
 for pid,req,kind,pred,ids in extra_properties:prop_evidence[pid]=ids
 if qa:
  for pid,ids in prop_evidence.items():prop_evidence[pid]=current_checks(ids)
+ prop_evidence['T-Async'].insert(-1,'qa-combined-faults-29')
  for pid,ids in qa['property_supplements'].items():prop_evidence[pid]=list(dict.fromkeys(prop_evidence.get(pid,[])+ids))
 props=json.loads((V/'properties.json').read_text())
 for pid,req,kind,pred,ids in extra_properties:
@@ -129,7 +130,7 @@ for p in props:
  if qa and p['id']=='P-NI':p['predicate']='PNI and TrustedNI: full public metadata history plus complete body view selected by authenticated query principal.'
  if qa and p['id']=='S05':p['predicate']='S05 (exactEconomicEffects and exactFinancialRecords included) plus separately inductive effectSoundness.'
  if qa and p['id'] in ['V-B','V-Shared']:p['predicate']+='; separately inductive localCommitAtomicity for the colocated asset(s).'
- if qa and p['id']=='S05':p['verified_scope']='Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. Seven completed same-full-State/adversarialStep profiles prove actual hold/effect consistency. Authenticated-OPEN preservation/implication is deferred by the user; false-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.'
+ if qa and p['id']=='S05':p['verified_scope']='Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. '+('Seven profiles have completed hold/effect induction. Authenticated-OPEN preservation and implication remain deferred.' if qa.get('deferred_current') else 'All eight named profiles have completed full-State/adversarialStep induction for hold/effect consistency.')+' False-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.'
  if qa and p['id']=='S08':p['verified_scope']='Atomic local security delivery plus funded durable cash backing, exact output receipts and separate actual source-state effect consistency. Current full N1/N2 safety and named placements; no parameterized or deployed-system theorem.'
  if qa and p['id']=='S10':p['verified_scope']='Actual source-derived program0 proofs exercise separate crypto-validity/application admission at the real consumer, including rotation/exit. Full healthy financial/admission graph,31consumer-context cases and six actual-source B/D canonical/unadmitted cases with three missing-admission controls. Foreign-context certificate fixtures assume validity at their input boundary, not native-history reachability or cryptographic construction.'
  if qa and p['id']=='P-Binding':p['verified_scope']='Every returned scalar field0..15, query identity, status, root/program headers and exact recipient note are checked against independently captured source/query/proof provenance. Twenty positive value/status cases and20isolated scalar/header/source-note controls. Finite coupled pipeline; not cryptographic or core-to-payload conformance.'

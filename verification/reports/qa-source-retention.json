@@ -2,19 +2,11 @@
   "baseline_commit": "798676a310314e6e95167723e149938e388fcf9e",
   "status": "passed",
   "family_count": 175,
-  "revalidated_families": 87,
+  "revalidated_families": 94,
   "retained_families": 81,
-  "deferred_families": 7,
-  "deferred_current": {
-    "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
-  },
-  "current_subjects": 155,
+  "deferred_families": 0,
+  "deferred_current": {},
+  "current_subjects": 162,
   "families": [
     {
       "family": "abort-authoritative-records",
@@ -122,18 +114,14 @@
     {
       "family": "combined-faults-17",
       "selected": "qa-combined-faults-17",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "combined-faults-17",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "combined-faults-43",
       "selected": "qa-combined-faults-43",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "combined-faults-43",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "contract-b_hosted",
@@ -212,10 +200,8 @@
     {
       "family": "final-combined-faults-43",
       "selected": "qa-combined-faults-43",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "final-combined-faults-43",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "final-phase-failure-witnesses",
@@ -477,18 +463,14 @@
     {
       "family": "overclaim-immediate",
       "selected": "qa-immediate",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "overclaim-immediate",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "overclaim-permanent-halt",
       "selected": "qa-permanent-halt",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "overclaim-permanent-halt",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "post-stabilization",
@@ -1158,10 +1140,8 @@
     {
       "family": "type-final-failure_controls",
       "selected": "qa-permanent-halt",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "type-final-failure_controls",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "type-final-guided",
@@ -1270,10 +1250,8 @@
     {
       "family": "type-final-operational_faults",
       "selected": "qa-combined-faults-17",
-      "disposition": "current-revalidation-deferred-by-user",
-      "historical_receipt": "type-final-operational_faults",
-      "source_exceptions": [],
-      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+      "disposition": "revalidated",
+      "source_exceptions": []
     },
     {
       "family": "type-final-privacy",
@@ -1460,6 +1438,16 @@
       "source_exceptions": []
     },
     {
+      "family": "qa-immediate",
+      "selected": "qa-immediate",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-permanent-halt",
+      "selected": "qa-permanent-halt",
+      "source_exceptions": []
+    },
+    {
       "family": "qa-scenarios-policy_test",
       "selected": "qa-scenarios-policy_test",
       "source_exceptions": []
@@ -1477,6 +1465,16 @@
     {
       "family": "qa-scenarios-network_test",
       "selected": "qa-scenarios-network_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-combined-faults-17",
+      "selected": "qa-combined-faults-17",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-combined-faults-43",
+      "selected": "qa-combined-faults-43",
       "source_exceptions": []
     },
     {
@@ -2111,6 +2109,16 @@
       "source_exceptions": []
     },
     {
+      "family": "qa-effect-preserve-open",
+      "selected": "qa-effect-preserve-open-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-open",
+      "selected": "qa-effect-imply-open",
+      "source_exceptions": []
+    },
+    {
       "family": "qa-record-compile-one",
       "selected": "qa-record-compile-one-attempt2",
       "source_exceptions": []
@@ -2196,6 +2204,11 @@
       "source_exceptions": []
     },
     {
+      "family": "qa-combined-faults-29",
+      "selected": "qa-combined-faults-29",
+      "source_exceptions": []
+    },
+    {
       "family": "qa-effect-false-imply",
       "selected": "qa-effect-false-imply-attempt1",
       "source_exceptions": []
@@ -2272,7 +2285,7 @@
       "path": "verification/models/effect_consistency.qnt",
       "freeze_sha256": "c089e6833109bc6f8466d10692359c61ce6becdb4c82e51a34ad270c7c29d03e",
       "current_sha256": "6c8b0f52c661a0a4f034e67fa6586a5fa162897e8322adf26dec333e6b5a5adb",
-      "review": "Proof-only complete State/Trade initializer, equivalent point/field domains and physical/local-atomicity induction candidate. Completed per-profile obligations and universal row lemmas replace earlier representation attempts. OPEN preservation/implication is explicitly deferred; actual imported protocol State/Next is unchanged.",
+      "review": "Proof-only complete State/Trade initializer, equivalent point/field domains and physical/local-atomicity induction candidate. Per-profile receipts and universal row lemmas document the checked obligations. The imported protocol State/Next is unchanged.",
       "audited_current_observations": [
         "qa-effect-init-one-attempt3",
         "qa-effect-preserve-one-attempt3",
@@ -2296,6 +2309,8 @@
         "qa-effect-preserve-private",
         "qa-effect-imply-private",
         "qa-effect-init-open",
+        "qa-effect-preserve-open-attempt1",
+        "qa-effect-imply-open",
         "qa-record-compile-one-attempt2",
         "qa-record-compile-two",
         "qa-record-compile-b",

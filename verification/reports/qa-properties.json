@@ -112,10 +112,10 @@
     "previous_findings": [
       "QA-04"
     ],
-    "disposition": "full-validation-deferred",
-    "status": "deferred-by-user",
+    "disposition": "scoped-adequate-after-repair",
+    "status": "executed-with-result",
     "predicate": "S05 (exactEconomicEffects and exactFinancialRecords included) plus separately inductive effectSoundness.",
-    "review": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. Seven completed same-full-State/adversarialStep profiles prove actual hold/effect consistency. Authenticated-OPEN preservation/implication is deferred by the user; false-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.",
+    "review": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. All eight named profiles have completed full-State/adversarialStep induction for hold/effect consistency. False-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.",
     "executed_check_families": [
       "qa-core-finite",
       "qa-full-two",
@@ -210,17 +210,16 @@
       "qa-effect-preserve-private",
       "qa-effect-imply-private",
       "qa-effect-init-open",
+      "qa-effect-preserve-open-attempt1",
+      "qa-effect-imply-open",
       "qa-false-release",
       "qa-effect-induction-false-release-attempt2",
       "qa-trade-domain-forward",
       "qa-trade-domain-reverse",
       "qa-effect-false-imply-attempt1"
     ],
-    "deferred_checks": [
-      "qa-effect-preserve-open",
-      "qa-effect-imply-open"
-    ],
-    "proof_boundary": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. Seven completed same-full-State/adversarialStep profiles prove actual hold/effect consistency. Authenticated-OPEN preservation/implication is deferred by the user; false-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance."
+    "deferred_checks": [],
+    "proof_boundary": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. All eight named profiles have completed full-State/adversarialStep induction for hold/effect consistency. False-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance."
   },
   {
     "id": "S06",
@@ -783,17 +782,17 @@
     "requirement": "Both legs usable at every instant together",
     "previous_disposition": "expected-refutation",
     "previous_findings": [],
-    "disposition": "full-validation-deferred",
-    "status": "deferred-by-user",
+    "disposition": "scoped-adequate-after-repair",
+    "status": "executed-with-result",
     "predicate": "[] usableA=usableB",
     "review": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "executed_check_families": [
       "qa-immediate"
     ],
-    "exact_receipts": [],
-    "deferred_checks": [
+    "exact_receipts": [
       "qa-immediate"
     ],
+    "deferred_checks": [],
     "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
   },
   {
@@ -801,17 +800,17 @@
     "requirement": "Progress despite permanent chain failure",
     "previous_disposition": "expected-refutation",
     "previous_findings": [],
-    "disposition": "full-validation-deferred",
-    "status": "deferred-by-user",
+    "disposition": "scoped-adequate-after-repair",
+    "status": "executed-with-result",
     "predicate": "[] initiated ~> appliedBoth",
     "review": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "executed_check_families": [
       "qa-permanent-halt"
     ],
-    "exact_receipts": [],
-    "deferred_checks": [
+    "exact_receipts": [
       "qa-permanent-halt"
     ],
+    "deferred_checks": [],
     "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
   },
   {
@@ -1007,22 +1006,23 @@
     "requirement": "Safety under arbitrary finite delays and outages",
     "previous_disposition": "scoped-adequate",
     "previous_findings": [],
-    "disposition": "full-validation-deferred",
-    "status": "deferred-by-user",
+    "disposition": "scoped-adequate-after-repair",
+    "status": "executed-with-result",
     "predicate": "see timing-assumptions.md before implementation",
     "review": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "executed_check_families": [
       "qa-core-finite",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43"
     ],
     "exact_receipts": [
-      "qa-core-finite-attempt1"
-    ],
-    "deferred_checks": [
+      "qa-core-finite-attempt1",
       "qa-combined-faults-17",
+      "qa-combined-faults-29",
       "qa-combined-faults-43"
     ],
+    "deferred_checks": [],
     "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
   },
   {
@@ -1191,7 +1191,7 @@
     ],
     "disposition": "scoped-adequate-after-repair",
     "status": "executed-with-result",
-    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04; separately inductive localCommitAtomicity for the colocated asset(s).",
+    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04; separately inductive localCommitAtomicity for the colocated asset(s).; separately inductive localCommitAtomicity for the colocated asset(s).",
     "review": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "executed_check_families": [
       "qa-variant-live_b",
@@ -1337,7 +1337,7 @@
     ],
     "disposition": "scoped-adequate-after-repair",
     "status": "executed-with-result",
-    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.; separately inductive localCommitAtomicity for the colocated asset(s).",
+    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.; separately inductive localCommitAtomicity for the colocated asset(s).; separately inductive localCommitAtomicity for the colocated asset(s).",
     "review": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "executed_check_families": [
       "qa-variant-shared_execution",
