@@ -1,0 +1,61 @@
+ACTUAL_NATIVE_COMMAND ["/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/bin/apalache-mc", "check", "--init=effectI", "--next=q_step", "--inv=effectI", "--length=1", "verification/generated/native-induction/one/effects_one.tla"]
+Picked up JAVA_TOOL_OPTIONS: -Xmx24g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/effects_one.tla/2026-11-18T12-01-56_11051674856713546289
+# APALACHE version: 0.62.4 | build: 7954daf                       I@12:01:56.601
+Tuning:                                                           I@12:01:56.606
+PASS #0: SanyParser                                               I@12:01:56.753
+PASS #1: TypeCheckerSnowcat                                       I@12:01:57.215
+ > Running Snowcat .::.                                           I@12:01:57.215
+ > Your types are purrfect!                                       I@12:02:05.107
+ > All expressions are typed                                      I@12:02:05.107
+PASS #2: ConfigurationPass                                        I@12:02:05.108
+  > Set the initialization predicate to effectI                   I@12:02:05.111
+  > Set the transition predicate to q_step                        I@12:02:05.111
+  > Set an invariant to effectI                                   I@12:02:05.112
+PASS #3: DesugarerPass                                            I@12:02:05.117
+  > Desugaring...                                                 I@12:02:05.117
+PASS #4: InlinePass                                               I@12:02:05.132
+Leaving only relevant operators: CInitPrimed, effectI, effectIPrimed, q_step I@12:02:05.133
+PASS #5: TemporalPass                                             I@12:02:05.372
+  > Rewriting temporal operators...                               I@12:02:05.372
+  > No temporal property specified, nothing to encode             I@12:02:05.372
+PASS #6: InlinePass                                               I@12:02:05.372
+Leaving only relevant operators: CInitPrimed, effectI, effectIPrimed, q_step I@12:02:05.372
+PASS #7: PrimingPass                                              I@12:02:05.405
+  > Introducing effectIPrimed for effectI'                        I@12:02:05.406
+PASS #8: VCGen                                                    I@12:02:05.537
+  > Producing verification conditions from the invariant effectI  I@12:02:05.537
+  > VCGen produced 3 verification condition(s)                    I@12:02:05.543
+PASS #9: PreprocessingPass                                        I@12:02:05.547
+  > Before preprocessing: unique renaming                         I@12:02:05.547
+ > Applying standard transformations:                             I@12:02:05.552
+  > PrimePropagation                                              I@12:02:05.552
+  > Desugarer                                                     I@12:02:05.564
+  > UniqueRenamer                                                 I@12:02:05.586
+  > Normalizer                                                    I@12:02:05.647
+  > SetMembershipSimplifier                                       I@12:02:05.682
+  > Keramelizer                                                   I@12:02:05.711
+  > After preprocessing: UniqueRenamer                            I@12:02:05.764
+PASS #10: TransitionFinderPass                                    I@12:02:05.817
+  > Found 1 initializing transitions                              I@12:02:05.876
+  > Found 43 transitions                                          I@12:02:05.910
+  > No constant initializer                                       I@12:02:05.910
+  > Applying unique renaming                                      I@12:02:05.911
+PASS #11: OptimizationPass                                        I@12:02:05.938
+ > Applying optimizations:                                        I@12:02:05.941
+  > ConstSimplifier                                               I@12:02:05.941
+  > ExprOptimizer                                                 I@12:02:06.026
+  > SetMembershipSimplifier                                       I@12:02:06.085
+  > ConstSimplifier                                               I@12:02:06.096
+PASS #12: AnalysisPass                                            I@12:02:06.158
+ > Marking skolemizable existentials and sets to be expanded...   I@12:02:06.160
+  > Skolemization                                                 I@12:02:06.160
+  > Expansion                                                     I@12:02:06.163
+  > Remove unused let-in defs                                     I@12:02:06.181
+ > Running analyzers...                                           I@12:02:06.190
+  > Introduced expression grades                                  I@12:02:06.197
+PASS #13: BoundedChecker                                          I@12:02:06.197
+State 0: Checking 3 state invariants                              I@12:03:30.075

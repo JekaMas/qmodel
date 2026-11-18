@@ -1,0 +1,23 @@
+
+  phase_failure_test
+    ok captureDownTest passed 1 test(s)
+    ok proveDownTest passed 1 test(s)
+    ok captureRecoveryTest passed 1 test(s)
+    ok storedWitnessBankDownTest passed 1 test(s)
+    ok preparationTransportDownTest passed 1 test(s)
+    ok preparationTransportRecoveryTest passed 1 test(s)
+    ok outcomeCaptureDownTest passed 1 test(s)
+    ok outcomeTransportDownTest passed 1 test(s)
+    ok outcomeTransportRecoveryTest passed 1 test(s)
+    ok decisionSubmitterDownTest passed 1 test(s)
+    ok decisionSubmitterRecoveryTest passed 1 test(s)
+    ok applicationSubmitterDownTest passed 1 test(s)
+    ok applicationSubmitterRecoveryTest passed 1 test(s)
+    ok refundSubmitterDownTest passed 1 test(s)
+    ok refundSubmitterRecoveryTest passed 1 test(s)
+    ok sourceFinalityDownTest passed 1 test(s)
+    ok decisionLedgerDownTest passed 1 test(s)
+    ok applicationLedgerDownTest passed 1 test(s)
+    ok applicationLedgerRecoveryTest passed 1 test(s)
+
+  19 passing (134ms)

@@ -1,0 +1,6 @@
+
+  admission_d_security_test
+    ok actualUnadmittedRejectTest passed 1 test(s)
+    ok canonicalAcceptTest passed 1 test(s)
+
+  2 passing (45ms)

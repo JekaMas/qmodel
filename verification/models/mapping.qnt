@@ -25,6 +25,9 @@ module mapped {
  action initMapped=all {init,previous'=initialAbs}
  action stepMapped=all {step,previous'=alpha(s)}
  val simulation=abstractNext(previous,alpha(s)) and abstractDesired(alpha(s))
+ // Export the concrete output assertion explicitly through the mapping wrapper.
+ // Quint imports are not recursively re-exported by the outer module.
+ val economicOutputs=S05
 }
 module mapping {import mapped(BAD=0).*}
 module mapping_mutant {import mapped(BAD=1).*}

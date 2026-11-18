@@ -1,0 +1,1512 @@
+An example execution:
+
+[State 0]
+{
+  pc: 0,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      included: Set(),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed: Set(),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 0,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 0,
+              holdB: 0,
+              intent: false,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: false,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 1]
+{
+  pc: 1,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      included: Set(),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 0,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 0,
+              holdB: 0,
+              intent: false,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: false,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 2]
+{
+  pc: 2,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      included: Set(),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 0,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 0,
+              holdB: 0,
+              intent: false,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: false,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 3]
+{
+  pc: 3,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 0,
+      historical: Set(1),
+      included:
+        Set(
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 0,
+            program: 1,
+            root: 201
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 1,
+            program: 1,
+            root: 211
+          }
+        ),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 4]
+{
+  pc: 4,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 1,
+      historical: Set(1),
+      included:
+        Set(
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 0,
+            program: 1,
+            root: 201
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 1,
+            program: 1,
+            root: 211
+          }
+        ),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 5]
+{
+  pc: 5,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 2,
+      historical: Set(1),
+      included:
+        Set(
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 0,
+            program: 1,
+            root: 201
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 1,
+            program: 1,
+            root: 211
+          }
+        ),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 0,
+              knownB: 0,
+              oldTerminal: 0,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 6]
+{
+  pc: 6,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts: Set(),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 2,
+      historical: Set(1),
+      included:
+        Set(
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 0,
+            program: 1,
+            root: 201
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 1,
+            program: 1,
+            root: 211
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 4,
+            program: 1,
+            root: 241
+          }
+        ),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 3,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 3,
+              knownB: 0,
+              oldTerminal: 3,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 0,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 7]
+{
+  pc: 7,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts:
+        Set(
+          {
+            account: 0,
+            asset: 30,
+            chain: 10,
+            genesis: 110,
+            kind: 1,
+            leg: 0,
+            quantity: 2,
+            trade: 1
+          }
+        ),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 2,
+      historical: Set(1),
+      included:
+        Set(
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 0,
+            program: 1,
+            root: 201
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 1,
+            program: 1,
+            root: 211
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 4,
+            program: 1,
+            root: 241
+          }
+        ),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 3,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 3,
+              holdB: 0,
+              intent: true,
+              knownA: 3,
+              knownB: 0,
+              oldTerminal: 3,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 1,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[State 8]
+{
+  pc: 8,
+  reopen::dvp::s:
+    {
+      abortRecords: Set(),
+      admitted: true,
+      captured: Set(),
+      custody: false,
+      decrypt: false,
+      economicReceipts:
+        Set(
+          {
+            account: 0,
+            asset: 30,
+            chain: 10,
+            genesis: 110,
+            kind: 1,
+            leg: 0,
+            quantity: 2,
+            trade: 1
+          }
+        ),
+      eligible: Set((1, 0), (1, 1)),
+      epoch: 0,
+      finalized: Set(),
+      financialRecords: Set(),
+      frozen: Set(),
+      height: 2,
+      historical: Set(1),
+      included:
+        Set(
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 0,
+            program: 1,
+            root: 201
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 1,
+            program: 1,
+            root: 211
+          },
+          {
+            checkpoint: 0,
+            d:
+              {
+                assetA: 30,
+                assetB: 40,
+                buyerA: 1,
+                buyerB: 0,
+                cash: 3,
+                chainA: 10,
+                chainB: 20,
+                commitment: 1001,
+                deadline: 2,
+                decisionContract: 70,
+                decisionDomain: 0,
+                epoch: 0,
+                genesisA: 110,
+                genesisB: 120,
+                holdA: 50,
+                holdB: 60,
+                nonce: 1,
+                protocol: 1,
+                security: 2,
+                sellerA: 0,
+                sellerB: 1,
+                trade: 1
+              },
+            phase: 4,
+            program: 1,
+            root: 241
+          }
+        ),
+      network: Set(),
+      note: Set(),
+      ownerA: 2,
+      ownerB: 3,
+      proofs: Set(),
+      pruned: Set(),
+      received: Set(),
+      receivedA: Map(1 -> 0),
+      receivedB: Map(1 -> 0),
+      rejects: Set(),
+      signed:
+        Set(
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            0
+          ),
+          (
+            {
+              assetA: 30,
+              assetB: 40,
+              buyerA: 1,
+              buyerB: 0,
+              cash: 3,
+              chainA: 10,
+              chainB: 20,
+              commitment: 1001,
+              deadline: 2,
+              decisionContract: 70,
+              decisionDomain: 0,
+              epoch: 0,
+              genesisA: 110,
+              genesisB: 120,
+              holdA: 50,
+              holdB: 60,
+              nonce: 1,
+              protocol: 1,
+              security: 2,
+              sellerA: 0,
+              sellerB: 1,
+              trade: 1
+            },
+            1
+          )
+        ),
+      spentA: 0,
+      spentB: 0,
+      trades:
+        Map(
+          1 ->
+            {
+              appliedEvidenceA: false,
+              appliedEvidenceB: false,
+              booked: 0,
+              decision: 1,
+              effectsA: 0,
+              effectsB: 0,
+              holdA: 1,
+              holdB: 0,
+              intent: true,
+              knownA: 3,
+              knownB: 0,
+              oldTerminal: 3,
+              preparedA: true,
+              preparedB: false,
+              refundsA: 1,
+              refundsB: 0,
+              report: 0,
+              stale: false
+            }
+        ),
+      transportCompromised: false,
+      up: Set(0, 1, 2, 3, 4),
+      upgrade: false,
+      validator: false,
+      vaultA: 0,
+      vaultB: 0
+    }
+}
+
+[violation] Found an issue (38ms at 26 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

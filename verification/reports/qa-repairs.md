@@ -1,0 +1,80 @@
+# Findings resolved and protocol re-review
+
+All four comparative-review findings are addressed in the modeled protocol and its focused tests. The user requested minimum testing now and deferred the full suite. The deferred checks are listed below. The51-property and current-source ledgers have been reviewed again against the preserved task-v2 and shared solution. This is root repair/source/evidence review; the prior independent review remains separately attributed. No new independent-agent sign-off is claimed.
+
+| Finding | Repair and observed falsification |
+|---|---|
+| QA-01 — **ADDRESSED** | Issue captures authenticated Query, source, proof and availability independently of Payload. disclosureBound specifies all 16values, full identity, error/redaction, headers and exact source-note amount/recipient. TrustedAccess/TrustedNI additionally choose recipient and visible body from authenticated Query, so a producer cannot hide a disclosure behind its own role tag. Control checks include qa-payload_field0, qa-payload_field1, qa-payload_field2, qa-payload_field3, qa-payload_field4, qa-payload_field5, qa-payload_field6, qa-payload_field7, qa-payload_field8, qa-payload_field9, qa-payload_field10, qa-payload_field11, qa-payload_field12, qa-payload_field13, qa-payload_field14, qa-payload_field15, qa-payload_root, qa-payload_program, qa-note_amount, qa-note_recipient. |
+| QA-02 — **ADDRESSED** | proveUnadmitted creates a crypto-valid statement from an actual captured source fact under program0, separately from historical program admission. deliverUnadmitted reaches the actual commit gate; rotation and member exit preserve this distinction.31 consumer cases exercise22descriptor fields, phase/checkpoint/program/root rejection and matching/historical/newly admitted acceptance. Control checks include qa-program_admission, qa-program-admission-b, qa-program-admission-d_security, qa-program-admission-d_cash. |
+| QA-03 — **ADDRESSED** | abortResolved independently inspects actual source holds, prior preparation, exactly one real release for prepared legs, no fictitious refund for absent legs, terminal local knowledge and matching dispositions. S06/S15 require it for booked/reconciled ABORT. The consumer continues to use authenticated records; no live remote-state read was added to its guard. Control checks include qa-premature_absence. |
+| QA-04 — **ADDRESSED** | Actual atomic delivery/release outputs record trade/leg/kind/chain/genesis/asset/account/quantity in core and multilateral machines. Financial rows record the complete authorized descriptor/outcome. Independent assertions compare outputs against terms, not producer helpers. Same-full-State induction checks actual holds/delivery/releases and placement-specific local atomicity, so plausible output rows alone cannot certify a real effect. Control checks include qa-security_recipient, qa-security_asset, qa-cash_recipient, qa-cash_asset, qa-security_refund_recipient, qa-cash_refund_recipient, qa-booking_recipient, qa-booking_quantity. |
+
+## Actual current proofs
+
+These observations use the enriched current financial/payload state. Previous full-model greens were invalidated by semantic changes and replaced; original timeout/interruption/failure receipts remain unchanged. Direct SMT20 remains a non-success. Exhaustive current full-reference safety covers every reachable depth, including20.
+
+| Purpose | Actual receipt | Native result | Distinct states | Seconds |
+|---|---|---|---|---|
+| reference | [qa-core-finite-attempt1](../results/runs/qa-core-finite-attempt1/receipt.json) | finite_model_verified | 12502 | 16.35 |
+| one | [qa-full-one](../results/runs/qa-full-one/receipt.json) | finite_model_verified | 12502 | 35.58 |
+| two | [qa-full-two-attempt1](../results/runs/qa-full-two-attempt1/receipt.json) | finite_model_verified | 684268 | 3306.15 |
+| recovery | [qa-full-recovery](../results/runs/qa-full-recovery/receipt.json) | finite_model_verified | 125632 | 190.01 |
+| bounded12 | [qa-apalache12](../results/runs/qa-apalache12/receipt.json) | bounded_no_counterexample | unavailable | 154.44 |
+| program_admission | [qa-admission-contexts](../results/runs/qa-admission-contexts/receipt.json) | finite_model_verified | 133288 | 41.60 |
+| receipt_consistency_preservation | [qa-effect-preserve-one-attempt3](../results/runs/qa-effect-preserve-one-attempt3/receipt.json) | executed_successfully | unavailable | 628.13 |
+| trusted_observer | [qa-trusted-observer](../results/runs/qa-trusted-observer/receipt.json) | finite_model_verified | 55309 | 14.23 |
+
+## Actual-State effect induction
+
+The universal row constructor/decoder lemmas justify equivalent point-set and field predicates. Seven profiles completed actual-init0, complete arbitrary invariant-state/actual-adversarialStep1, and implication0 over the full imported State. Authenticated OPEN has completed initiation. Its preservation and implication are deferred by the user. Separate exact compiler artifacts identify the actual and arbitrary initializers. The arbitrary initializer independently chooses every State/Trade scalar or set from its declared domain and guards only the row/physical induction predicate; it does not enumerate a subset of reachable histories. These are genuine inductive obligations. The lemmas do not replace any full financial, temporal or privacy graph.
+
+| Profile | Initiation / preservation / implication receipts | Seconds | Status |
+|---|---|---|---|
+| one | [qa-effect-init-one-attempt3](../results/runs/qa-effect-init-one-attempt3/receipt.json), [qa-effect-preserve-one-attempt3](../results/runs/qa-effect-preserve-one-attempt3/receipt.json), [qa-effect-imply-one](../results/runs/qa-effect-imply-one/receipt.json) | 659.21 | passed |
+| two | [qa-effect-init-two](../results/runs/qa-effect-init-two/receipt.json), [qa-effect-preserve-two](../results/runs/qa-effect-preserve-two/receipt.json), [qa-effect-imply-two](../results/runs/qa-effect-imply-two/receipt.json) | 4142.85 | passed |
+| b | [qa-effect-init-b](../results/runs/qa-effect-init-b/receipt.json), [qa-effect-preserve-b](../results/runs/qa-effect-preserve-b/receipt.json), [qa-effect-imply-b](../results/runs/qa-effect-imply-b/receipt.json) | 612.16 | passed |
+| d | [qa-effect-init-d](../results/runs/qa-effect-init-d/receipt.json), [qa-effect-preserve-d](../results/runs/qa-effect-preserve-d/receipt.json), [qa-effect-imply-d](../results/runs/qa-effect-imply-d/receipt.json) | 609.92 | passed |
+| escrow | [qa-effect-init-escrow](../results/runs/qa-effect-init-escrow/receipt.json), [qa-effect-preserve-escrow-attempt1](../results/runs/qa-effect-preserve-escrow-attempt1/receipt.json), [qa-effect-imply-escrow](../results/runs/qa-effect-imply-escrow/receipt.json) | 616.91 | passed |
+| shared | [qa-effect-init-shared](../results/runs/qa-effect-init-shared/receipt.json), [qa-effect-preserve-shared](../results/runs/qa-effect-preserve-shared/receipt.json), [qa-effect-imply-shared](../results/runs/qa-effect-imply-shared/receipt.json) | 616.35 | passed |
+| private | [qa-effect-init-private](../results/runs/qa-effect-init-private/receipt.json), [qa-effect-preserve-private](../results/runs/qa-effect-preserve-private/receipt.json), [qa-effect-imply-private](../results/runs/qa-effect-imply-private/receipt.json) | 623.60 | passed |
+| open | [qa-effect-init-open](../results/runs/qa-effect-init-open/receipt.json) | 13.06 | deferred |
+
+Selected evidence: **144 positive baseline observations, 85 expected negatives, 5 intentionally weak passing discriminators**. The five discriminators are audited but excluded from safe-baseline acceptance. The 175 original property/acceptance families are classified with 87 current replacements, 81 retained scopes and 7 current revalidations deferred by the user. 155 current native subjects are source-identity audited.
+
+## Resulting architecture and guarantees
+
+A and B retain native asset ownership and exclusive local reservations. The reference A-hosted COMMIT verifies the B preparation and atomically delivers security; authenticated historical outcome then permits B cash delivery. ABORT remains durable while releases retry. Local absence becomes terminal only after local ABORT knowledge. Full source records, actual resolution semantics and complete institution-private financial terms govern reconciliation. B-hosted, D-hosted, escrow, private, shared execution and three-domain placements keep their own source/return-path rules.
+
+Actual outputs now expose the exact chain/genesis/asset/account/quantity. Separate source-state induction prevents a plausible output row from standing in for an unreleased hold or omitted colocated transfer. Seven completed actual-State/adversarialStep profiles prove the monitor. The authenticated-OPEN induction remains pending. Elsewhere, the custom false-release step is rejected through the same explicit one-step proof route. Loss/prune/resend only frame the monitored trade fields. This is an actual-state effect theorem, not whole-protocol induction.
+
+Privacy returns independently bound source/proof/note values. The authenticated query principal determines entitlement and who saw the body. The old response-tag-based observer alone is insufficient: explicit role-confusion controls make its access and observer predicates pass while the independent trusted-query monitor fails. The current claim includes both full public metadata history and that complete-body view.
+
+## Tests and tradeoffs
+
+20 literal payload/status cases;31 consumer-context cases plus six actual-source B/D admission-placement cases;8 ABORT semantic cases;14 economic-placement/bookkeeping cases;30 new isolated corruption controls plus the retained 8protocol mutants. Consumer foreign-context certificate fixtures assume issuer validity at the input boundary; they do not establish that all foreign contexts coexist in the initialized native history or prove actual cryptography. The program0proof path is separately produced from real captured source state. Six additional B/D tests and three missing-gate controls cover each remote preparation-consumer branch.
+
+The full-job N2 graph retains all proof phases0–6 and original per-action fairness. Recovery is its named N1 B/prover-outage and B-freeze configuration with eventual stable recovery. Combined-loss/restart/admission traffic checks are samples, not an exhaustive Cartesian fault product. The finite quantities remain2security/3cash. No parameterized/n-leg, joint financial/membership liveness or whole fault/privacy/time composition theorem is claimed.
+
+The paired privacy model uses source positions4/7,12fixed public operations, at most one arbitrary coupled API request, ideal opaque names and private/declassified channels. It does not prove arbitrary-scheduler, termination, computational or real-side-channel noninterference. Immediate joint local usability and progress under permanent required-party halt still fail as designed. Timed slot bounds remain assumed workloads, not measured latency/SLA. N3 progress includes COMMIT reporting; composed N3 ABORT bookkeeping remains outside its stated theorem.
+
+Circuits/prover/verifier implementations, real QBFT/EVM/token semantics, custody/storage/network security, performance/cost and legal/account/issuer rights remain external obligations. Missing original PDF/design registers stay explicitly missing; no contents were invented.
+
+## Re-review and preserved non-successes
+
+The re-review found and addressed additional adequacy details: exact note amount, complete financial-row terms, actual release-vs-receipt consistency, B/shared local atomicity, authenticated-principal observer/access selection and the native error:0 parser. Mapping needed an explicit assertion re-export; its original QNT404 attempt is preserved. Native Apalache labels an actual invariant violation ERROR(12); the parser requires the invariant diagnostic and exported ITF marker, while status12 alone remains a tool failure. The first misclassified receipt stays unchanged. The [preserved native false-release witness](qa-native-false-release.itf.json) and [raw-output association](qa-native-false-release.json) independently expose the still-active hold and incremented refund. Arbitrary-initializer attempts at8/24GiB were explicitly interrupted for resource/encoding diagnosis; their successes and non-successes remain source-specific. The native record-domain representation repair uses24GiB only for this cohort. The special induction CLI additionally reported a missing whole-record TypeOK and unsupported function-set expansion; those tool errors remain non-successes. The final theorem uses separate actual-init0, invariant-state/actual-step1 and implication0 native observations. A finite TradeSpace strengthens TypeOK with physical/history/cache relations; initiation and preservation must prove these relations, so no actual behavior is removed. Preservation checks every invariant VC at successor1; its State0query is tautological because Init is the same invariant. Actual-init0 and implication0 are separate mandatory observations, and the faulty custom Next must fail at1 through the same route. This removes no state or Next transition. Two universal constructor/decoder lemmas establish that the field-form predicate and point-set initializer cover exactly the same typed rows. Record/function/powerset membership is expanded field by field from one complete34-field domain list. The native correspondence normalizes only StateSpace into the equal native record-set constructor; all actual State/init/Next/monitor definitions remain otherwise byte-identical to compiled Quint. This is the standard induction obligation decomposition, not ordinary bounded safety substituted for induction. The initial pre-freeze full-two interruption and driver syntax error remain visible. No non-success was converted into a pass.
+
+[Quint induction obligations and TypeOK documentation](https://quint.sh/docs/checking-properties) underpin the explicit0/1/0decomposition. [51-property ledger](qa-properties.md), [per-file ledger](qa-files.md), [source-retention audit](qa-source-retention.json), [exact selection](../configs/qa-coverage.json), [full commands/raw receipts](executions.md).
+
+The app update removed an escrow run's supervisor and interrupted receipt collection. Its plan, input closure and raw output are preserved, with the OS exit status recorded as unavailable. The replacement obligation has a separate accepted receipt. [Interruption record](qa-runner-interruption.json).
+
+## Deferred full validation
+
+Full validation is **NOT DONE** under the user-directed minimum-testing scope. Completed observations are retained. The following checks and the remaining full47-replay batch are deferred.
+
+- `qa-effect-preserve-open` — User requested minimum focused testing now and full testing later on2026-11-18.
+- `qa-effect-imply-open` — User requested minimum focused testing now and full testing later on2026-11-18.
+- `qa-immediate` — User requested minimum focused testing now and full testing later on2026-11-18.
+- `qa-permanent-halt` — User requested minimum focused testing now and full testing later on2026-11-18.
+- `qa-combined-faults-17` — User requested minimum focused testing now and full testing later on2026-11-18.
+- `qa-combined-faults-29` — User requested minimum focused testing now and full testing later on2026-11-18.
+- `qa-combined-faults-43` — User requested minimum focused testing now and full testing later on2026-11-18.

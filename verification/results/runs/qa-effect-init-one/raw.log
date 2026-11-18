@@ -1,0 +1,91 @@
+Picked up JAVA_TOOL_OPTIONS: -Xmx8g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-18T11-20-29_5953201761897224972
+# APALACHE version: 0.62.4 | build: 7954daf                       I@11:20:29.276
+Starting checker server on port 8822...                           I@11:20:29.279
+The Apalache server is running on port 8822. Press Ctrl-C to stop.
+????. 18, 2026 11:20:31 AM com.google.protobuf.GeneratedMessage warnPre22Gencode
+WARNING: Vulnerable protobuf generated type in use: io.grpc.reflection.v1alpha.ServerReflectionRequest
+As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
+PASS #0: SanyParser                                               I@11:20:36.113
+PASS #1: TypeCheckerSnowcat                                       I@11:20:41.225
+ > Running Snowcat .::.                                           I@11:20:41.225
+ > Your types are purrfect!                                       I@11:21:10.552
+ > All expressions are typed                                      I@11:21:10.552
+PASS #2: ConfigurationPass                                        I@11:21:10.553
+  > Set the initialization predicate to q::init                   I@11:21:10.558
+  > Set the transition predicate to q::step                       I@11:21:10.558
+  > Set an invariant to q::inv                                    I@11:21:10.558
+PASS #3: DesugarerPass                                            I@11:21:10.564
+  > Desugaring...                                                 I@11:21:10.564
+PASS #4: InlinePass                                               I@11:21:10.589
+Leaving only relevant operators: CInitPrimed, q::init, q::initPrimed, q::inv, q::step I@11:21:10.590
+PASS #5: TemporalPass                                             I@11:21:10.771
+  > Rewriting temporal operators...                               I@11:21:10.771
+  > No temporal property specified, nothing to encode             I@11:21:10.771
+PASS #6: InlinePass                                               I@11:21:10.771
+Leaving only relevant operators: CInitPrimed, q::init, q::initPrimed, q::inv, q::step I@11:21:10.771
+PASS #7: PrimingPass                                              I@11:21:10.805
+  > Introducing q::initPrimed for q::init'                        I@11:21:10.806
+PASS #8: VCGen                                                    I@11:21:10.807
+  > Producing verification conditions from the invariant q::inv   I@11:21:10.807
+  > VCGen produced 22 verification condition(s)                   I@11:21:10.814
+PASS #9: PreprocessingPass                                        I@11:21:10.819
+  > Before preprocessing: unique renaming                         I@11:21:10.820
+ > Applying standard transformations:                             I@11:21:10.825
+  > PrimePropagation                                              I@11:21:10.825
+  > Desugarer                                                     I@11:21:10.834
+  > UniqueRenamer                                                 I@11:21:10.850
+  > Normalizer                                                    I@11:21:10.889
+  > SetMembershipSimplifier                                       I@11:21:10.925
+  > Keramelizer                                                   I@11:21:10.943
+  > After preprocessing: UniqueRenamer                            I@11:21:10.990
+PASS #10: TransitionFinderPass                                    I@11:21:11.035
+  > Found 1 initializing transitions                              I@11:21:11.043
+  > Found 43 transitions                                          I@11:21:11.069
+  > No constant initializer                                       I@11:21:11.069
+  > Applying unique renaming                                      I@11:21:11.070
+PASS #11: OptimizationPass                                        I@11:21:11.095
+ > Applying optimizations:                                        I@11:21:11.099
+  > ConstSimplifier                                               I@11:21:11.099
+  > ExprOptimizer                                                 I@11:21:11.172
+  > SetMembershipSimplifier                                       I@11:21:11.196
+  > ConstSimplifier                                               I@11:21:11.202
+PASS #12: AnalysisPass                                            I@11:21:11.248
+ > Marking skolemizable existentials and sets to be expanded...   I@11:21:11.250
+  > Skolemization                                                 I@11:21:11.250
+  > Expansion                                                     I@11:21:11.252
+  > Remove unused let-in defs                                     I@11:21:11.266
+ > Running analyzers...                                           I@11:21:11.278
+  > Introduced expression grades                                  I@11:21:11.285
+PASS #13: BoundedChecker                                          I@11:21:11.285
+State 0: Checking 22 state invariants                             I@11:21:12.101
+State 0: state invariant 0 holds.                                 I@11:21:12.109
+State 0: state invariant 1 holds.                                 I@11:21:12.113
+State 0: state invariant 2 holds.                                 I@11:21:12.115
+State 0: state invariant 3 holds.                                 I@11:21:12.116
+State 0: state invariant 4 holds.                                 I@11:21:12.117
+State 0: state invariant 5 holds.                                 I@11:21:12.118
+State 0: state invariant 6 holds.                                 I@11:21:12.124
+State 0: state invariant 7 holds.                                 I@11:21:12.126
+State 0: state invariant 8 holds.                                 I@11:21:12.129
+State 0: state invariant 9 holds.                                 I@11:21:12.129
+State 0: state invariant 10 holds.                                I@11:21:12.130
+State 0: state invariant 11 holds.                                I@11:21:12.130
+State 0: state invariant 12 holds.                                I@11:21:12.132
+State 0: state invariant 13 holds.                                I@11:21:12.140
+State 0: state invariant 14 holds.                                I@11:21:12.147
+State 0: state invariant 15 holds.                                I@11:21:12.147
+State 0: state invariant 16 holds.                                I@11:21:12.148
+State 0: state invariant 17 holds.                                I@11:21:12.149
+State 0: state invariant 18 holds.                                I@11:21:12.149
+State 0: state invariant 19 holds.                                I@11:21:12.150
+State 0: state invariant 20 holds.                                I@11:21:12.151
+State 0: state invariant 21 holds.                                I@11:21:12.151
+Step 0: picking a transition out of 1 transition(s)               I@11:21:12.152
+The outcome is: NoError                                           I@11:21:12.154
+[ok] No violation found (43690ms).
+You may increase --max-steps.
+Use --verbosity to produce more (or less) output.

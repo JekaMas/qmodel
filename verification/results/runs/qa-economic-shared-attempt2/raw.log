@@ -1,0 +1,6 @@
+
+  economic_shared_test
+    ok trade1ExactEconomicTest passed 1 test(s)
+    ok sharedRefundAccountsTest passed 1 test(s)
+
+  2 passing (44ms)

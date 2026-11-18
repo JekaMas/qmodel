@@ -1,0 +1,6 @@
+{
+  "utc": "2026-11-18T09:35:31.066284+00:00",
+  "action": "Explicit SIGTERM; retain point-range initializer non-success",
+  "reason": "Both universal row lemmas passed, but point-range whole-State initialization remained costly even for the simple implication goal. Replace only the proof initializer with independent nondeterministic choices for every actual State field and every Trade scalar, guarded by exactly the inductive row/physical constraints. Map keys and other type domains follow by construction. This covers every field-form invariant state, avoids point-range function enumeration, and changes no actual protocol State/init/Next/guarantee. Actual-init0 and arbitrary-invariant-input preservation1/implication0 use separate exact compiler artifacts.",
+  "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python verification/scripts/native_induction.py invoke verification/generated/native-induction/false-release/native-correspondence.json imply"
+}

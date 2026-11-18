@@ -1,0 +1,9 @@
+{
+  "receipt": "qa-effect-induction-false-release-attempt2",
+  "receipt_sha256": "e559a602b9731435181c0cf34d25ed2536e4ed651de0b2d7807346d5e06eab8c",
+  "raw_sha256": "c28ee45b3363febfba56be5a994d47da5841bfddf69c76bac3b7abd4cd65d934",
+  "exported_path": "/Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/induction_false_release.tla/2026-11-18T13-51-08_215523531770040771/violation1.itf.json",
+  "preserved_trace": "verification/reports/qa-native-false-release.itf.json",
+  "trace_sha256": "b76d938b9e7e7b4dce499dc0966ff20e1f32bb3b21602034ddacfcf28b7435eb",
+  "scope": "One arbitrary invariant-state/actual custom-step witness, not a trace claimed reachable from the protocol initial state. Separate real-prefix TS control establishes reachable faulty-handler behavior."
+}

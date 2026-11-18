@@ -1,0 +1,2103 @@
+---- MODULE effects_one ------------------------------
+
+EXTENDS Integers, Sequences, FiniteSets, TLC, Apalache, Variants
+
+(*
+  @type: (() => Set({ appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, report: Int, stale: Bool }));
+*)
+AuxSpace ==
+  { [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 0,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 1,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 1,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 1,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 1,
+      report |-> 0,
+      stale |-> TRUE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 1,
+      report |-> 2,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 1,
+      report |-> 3,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> FALSE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 1,
+      report |-> 3,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> FALSE,
+      booked |-> 1,
+      report |-> 3,
+      stale |-> FALSE],
+    [appliedEvidenceA |-> TRUE,
+      appliedEvidenceB |-> TRUE,
+      booked |-> 1,
+      report |-> 3,
+      stale |-> FALSE] }
+
+(*
+  @type: (() => Int);
+*)
+effects_one_dvp_N == 1
+
+(*
+  @type: (() => Int);
+*)
+effects_one_dvp_HOST == 0
+
+(*
+  @type: (() => Int);
+*)
+effects_one_dvp_D == 2
+
+(*
+  @type: (() => Int);
+*)
+effects_one_dvp_MUTANT == 0
+
+VARIABLE
+  (*
+    @type: { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int };
+  *)
+  effects_one_dvp_s
+
+(*
+  @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+*)
+effects_one_dvp_emptyTrade ==
+  [decision |-> 0,
+    oldTerminal |-> 0,
+    holdA |-> 0,
+    holdB |-> 0,
+    effectsA |-> 0,
+    effectsB |-> 0,
+    refundsA |-> 0,
+    refundsB |-> 0,
+    knownA |-> 0,
+    knownB |-> 0,
+    preparedA |-> FALSE,
+    preparedB |-> FALSE,
+    appliedEvidenceA |-> FALSE,
+    appliedEvidenceB |-> FALSE,
+    booked |-> 0,
+    report |-> 0,
+    stale |-> FALSE,
+    intent |-> FALSE]
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_ESCROW == FALSE
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_OPEN_REQUIRED == FALSE
+
+(*
+  @type: (() => Set({ appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }));
+*)
+TradeSpace ==
+  {
+    z_364 \in
+      {
+        ([decision |-> v_338[1],
+          oldTerminal |-> IF v_338[1] >= 2 THEN v_338[1] ELSE 0,
+          holdA |-> v_338[2],
+          holdB |-> v_338[3],
+          effectsA |-> IF v_338[2] = 2 THEN 1 ELSE 0,
+          effectsB |-> IF v_338[3] = 2 THEN 1 ELSE 0,
+          refundsA |-> IF v_338[2] = 3 THEN 1 ELSE 0,
+          refundsB |-> IF v_338[3] = 3 THEN 1 ELSE 0,
+          knownA |-> v_338[4],
+          knownB |-> v_338[5],
+          preparedA |-> v_338[2] /= 0,
+          preparedB |-> v_338[3] /= 0,
+          appliedEvidenceA |-> v_338[6]["appliedEvidenceA"],
+          appliedEvidenceB |-> v_338[6]["appliedEvidenceB"],
+          booked |-> v_338[6]["booked"],
+          report |-> v_338[6]["report"],
+          stale |-> v_338[6]["stale"],
+          intent |-> v_338[7]]):
+          v_338 \in
+            (0 .. 3)
+              \X (0 .. 3)
+              \X (0 .. 3)
+              \X { 0, 2, 3 }
+              \X { 0, 2, 3 }
+              \X AuxSpace
+              \X BOOLEAN
+      }:
+      z_364["intent"]
+        \/ ((z_364["holdA"] = 0 /\ z_364["holdB"] = 0)
+          /\ z_364["decision"] \in { 0, 3 })
+  }
+
+(*
+  @type: (() => Set(Int));
+*)
+effects_one_dvp_Trades == 1 .. effects_one_dvp_N
+
+(*
+  @type: ((Int) => { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int });
+*)
+effects_one_dvp_desc(effects_one_dvp_t_8804) ==
+  [trade |-> effects_one_dvp_t_8804,
+    nonce |-> effects_one_dvp_t_8804,
+    chainA |-> 10,
+    genesisA |-> 110,
+    chainB |-> IF effects_one_dvp_HOST = 3 THEN 10 ELSE 20,
+    genesisB |-> IF effects_one_dvp_HOST = 3 THEN 110 ELSE 120,
+    decisionDomain |-> effects_one_dvp_HOST,
+    assetA |-> 30,
+    assetB |-> 40,
+    holdA |-> 50,
+    holdB |-> 60,
+    decisionContract |-> 70,
+    security |-> 2,
+    cash |-> 3,
+    sellerA |-> 0,
+    buyerA |-> effects_one_dvp_t_8804,
+    buyerB |-> IF effects_one_dvp_HOST = 3 THEN effects_one_dvp_t_8804 ELSE 0,
+    sellerB |-> IF effects_one_dvp_HOST = 3 THEN 0 ELSE effects_one_dvp_t_8804,
+    deadline |-> effects_one_dvp_D,
+    protocol |-> 1,
+    epoch |-> 0,
+    commitment |-> 1000 + effects_one_dvp_t_8804]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }) => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+*)
+effects_one_dvp_debitA(effects_one_dvp_x_10752) ==
+  [
+    [
+      effects_one_dvp_x_10752 EXCEPT
+        !["ownerA"] =
+          IF effects_one_dvp_ESCROW
+          THEN effects_one_dvp_x_10752["ownerA"]
+          ELSE effects_one_dvp_x_10752["ownerA"] - 2
+    ] EXCEPT
+      !["vaultA"] =
+        IF effects_one_dvp_ESCROW
+        THEN effects_one_dvp_x_10752["vaultA"] - 2
+        ELSE effects_one_dvp_x_10752["vaultA"]
+  ]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }) => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+*)
+effects_one_dvp_debitB(effects_one_dvp_x_10782) ==
+  [
+    [
+      effects_one_dvp_x_10782 EXCEPT
+        !["ownerB"] =
+          IF effects_one_dvp_ESCROW
+          THEN effects_one_dvp_x_10782["ownerB"]
+          ELSE effects_one_dvp_x_10782["ownerB"] - 3
+    ] EXCEPT
+      !["vaultB"] =
+        IF effects_one_dvp_ESCROW
+        THEN effects_one_dvp_x_10782["vaultB"] - 3
+        ELSE effects_one_dvp_x_10782["vaultB"]
+  ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_unsafeRefund(effects_one_dvp_t_11767) ==
+  (effects_one_dvp_MUTANT = 1
+      \/ ((effects_one_dvp_MUTANT = 7
+          /\ effects_one_dvp_s["trades"][effects_one_dvp_t_11767]["stale"])
+        /\ effects_one_dvp_s["trades"][effects_one_dvp_t_11767]["report"] = 0))
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_11767]["holdB"] = 1
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_11767] =
+                  [
+                    [
+                      effects_one_dvp_s["trades"][effects_one_dvp_t_11767] EXCEPT
+                        !["holdB"] = 3
+                    ] EXCEPT
+                      !["refundsB"] =
+                        effects_one_dvp_s["trades"][effects_one_dvp_t_11767][
+                          "refundsB"
+                        ]
+                          + 1
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_forgetTerminal(effects_one_dvp_t_11806) ==
+  effects_one_dvp_MUTANT = 8
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_11806]["decision"] >= 2
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_11806] =
+                  [
+                    [
+                      effects_one_dvp_s["trades"][effects_one_dvp_t_11806] EXCEPT
+                        !["decision"] = 0
+                    ] EXCEPT
+                      !["holdA"] = 0
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_receiveNote(effects_one_dvp_t_12581) ==
+  effects_one_dvp_s["trades"][effects_one_dvp_t_12581]["effectsB"] = 1
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["note"] = effects_one_dvp_s["note"] \union {effects_one_dvp_t_12581}
+      ]
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_tick ==
+  effects_one_dvp_HOST \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_s["height"] < effects_one_dvp_D
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["height"] = effects_one_dvp_s["height"] + 1
+      ]
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_idle == effects_one_dvp_s' := effects_one_dvp_s
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_recover(effects_one_dvp_actor_11938) ==
+  effects_one_dvp_s'
+    := [
+      effects_one_dvp_s EXCEPT
+        !["up"] = effects_one_dvp_s["up"] \union {effects_one_dvp_actor_11938}
+    ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_freeze(effects_one_dvp_leg_12511) ==
+  effects_one_dvp_s'
+    := [
+      effects_one_dvp_s EXCEPT
+        !["frozen"] =
+          effects_one_dvp_s["frozen"] \union {effects_one_dvp_leg_12511}
+    ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_unfreeze(effects_one_dvp_leg_12527) ==
+  effects_one_dvp_s'
+    := [
+      effects_one_dvp_s EXCEPT
+        !["frozen"] = effects_one_dvp_s["frozen"] \ {effects_one_dvp_leg_12527}
+    ]
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_rotate ==
+  effects_one_dvp_s["epoch"] = 0
+    /\ effects_one_dvp_s'
+      := [
+        [ effects_one_dvp_s EXCEPT !["epoch"] = 1 ] EXCEPT
+          !["historical"] = effects_one_dvp_s["historical"] \union { 1, 2 }
+      ]
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_exitMember ==
+  effects_one_dvp_s' := [ effects_one_dvp_s EXCEPT !["admitted"] = FALSE ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_revokeLeg(effects_one_dvp_t_12495, effects_one_dvp_leg_12495) ==
+  effects_one_dvp_s'
+    := [
+      effects_one_dvp_s EXCEPT
+        !["eligible"] =
+          effects_one_dvp_s["eligible"]
+            \ {<<effects_one_dvp_t_12495, effects_one_dvp_leg_12495>>}
+    ]
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_compromiseTransport ==
+  effects_one_dvp_s'
+    := [ effects_one_dvp_s EXCEPT !["transportCompromised"] = TRUE ]
+
+(*
+  @type: ((Int, Int) => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+*)
+effects_one_dvp_fact(effects_one_dvp_t_8836, effects_one_dvp_p_8836) ==
+  [d |-> effects_one_dvp_desc(effects_one_dvp_t_8836),
+    phase |-> effects_one_dvp_p_8836,
+    checkpoint |-> 0,
+    program |-> 1,
+    root |-> (200 + effects_one_dvp_p_8836 * 10) + effects_one_dvp_t_8836]
+
+(*
+  @type: ((Int, Int, Int) => { account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int });
+*)
+effects_one_dvp_economicOutput(effects_one_dvp_t_9351, effects_one_dvp_leg_9351,
+effects_one_dvp_kind_9351) ==
+  LET (*
+    @type: (() => { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int });
+  *)
+  effects_one_dvp_d == effects_one_dvp_desc(effects_one_dvp_t_9351)
+  IN
+  LET (*
+    @type: (() => Int);
+  *)
+  effects_one_dvp_account ==
+    IF effects_one_dvp_leg_9351 = 0
+    THEN IF effects_one_dvp_kind_9351 = 0
+    THEN (effects_one_dvp_d)["buyerA"]
+    ELSE (effects_one_dvp_d)["sellerA"]
+    ELSE IF effects_one_dvp_kind_9351 = 0
+    THEN (effects_one_dvp_d)["sellerB"]
+    ELSE (effects_one_dvp_d)["buyerB"]
+  IN
+  LET (*
+    @type: (() => Bool);
+  *)
+  effects_one_dvp_wrongAccount ==
+    (effects_one_dvp_leg_9351 = 0
+        /\ ((effects_one_dvp_kind_9351 = 0 /\ effects_one_dvp_MUTANT = 11)
+          \/ (effects_one_dvp_kind_9351 = 1 /\ effects_one_dvp_MUTANT = 14)))
+      \/ (effects_one_dvp_leg_9351 = 1
+        /\ ((effects_one_dvp_kind_9351 = 0 /\ effects_one_dvp_MUTANT = 15)
+          \/ (effects_one_dvp_kind_9351 = 1 /\ effects_one_dvp_MUTANT = 17)))
+  IN
+  [trade |-> effects_one_dvp_t_9351,
+    leg |-> effects_one_dvp_leg_9351,
+    kind |-> effects_one_dvp_kind_9351,
+    chain |->
+      IF effects_one_dvp_leg_9351 = 0
+      THEN (effects_one_dvp_d)["chainA"]
+      ELSE (effects_one_dvp_d)["chainB"],
+    genesis |->
+      IF effects_one_dvp_leg_9351 = 0
+      THEN (effects_one_dvp_d)["genesisA"]
+      ELSE (effects_one_dvp_d)["genesisB"],
+    asset |->
+      IF effects_one_dvp_leg_9351 = 0
+      THEN IF effects_one_dvp_MUTANT = 12
+      THEN (effects_one_dvp_d)["assetB"]
+      ELSE (effects_one_dvp_d)["assetA"]
+      ELSE IF effects_one_dvp_MUTANT = 16
+      THEN (effects_one_dvp_d)["assetA"]
+      ELSE (effects_one_dvp_d)["assetB"],
+    account |->
+      IF effects_one_dvp_wrongAccount
+      THEN IF effects_one_dvp_account = 0 THEN 1 ELSE 0
+      ELSE effects_one_dvp_account,
+    quantity |->
+      IF effects_one_dvp_leg_9351 = 0
+      THEN (effects_one_dvp_d)["security"]
+      ELSE (effects_one_dvp_d)["cash"]]
+
+(*
+  @type: ((Int, Int) => { d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int });
+*)
+effects_one_dvp_bookingOutput(effects_one_dvp_t_9390, effects_one_dvp_outcome_9390) ==
+  LET (*
+    @type: (() => { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int });
+  *)
+  effects_one_dvp_d == effects_one_dvp_desc(effects_one_dvp_t_9390)
+  IN
+  [d |->
+      IF effects_one_dvp_MUTANT = 18
+      THEN [
+        (effects_one_dvp_d) EXCEPT
+          !["sellerB"] = IF (effects_one_dvp_d)["sellerB"] = 0 THEN 1 ELSE 0
+      ]
+      ELSE IF effects_one_dvp_MUTANT = 19
+      THEN [ (effects_one_dvp_d) EXCEPT !["cash"] = 4 ]
+      ELSE effects_one_dvp_d,
+    outcome |-> effects_one_dvp_outcome_9390]
+
+(*
+  @type: (() => Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }));
+*)
+AbortSpace ==
+  {
+    (LET (*
+      @type: (() => { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int });
+    *)
+    d == effects_one_dvp_desc(v_602[1])
+    IN
+    [d |-> d,
+      leg |-> v_602[2],
+      genesis |-> IF v_602[2] = 0 THEN (d)["genesisA"] ELSE (d)["genesisB"],
+      checkpoint |-> 0,
+      program |-> 1,
+      disposition |-> v_602[3]]):
+      v_602 \in effects_one_dvp_Trades \X { 0, 1 } \X (0 .. 3)
+  }
+
+(*
+  @type: (() => Bool);
+*)
+localCommitAtomicity ==
+  \A t_887 \in effects_one_dvp_Trades:
+    LET (*
+      @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+    *)
+    z == effects_one_dvp_s["trades"][t_887]
+    IN
+    (z)["decision"] = 2 => (z)["effectsA"] = 1
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_init ==
+  effects_one_dvp_s
+    = [trades |->
+        [
+          effects_one_dvp___9616 \in effects_one_dvp_Trades |->
+            effects_one_dvp_emptyTrade
+        ],
+      signed |-> {},
+      height |-> 0,
+      ownerA |-> 2,
+      ownerB |-> 3,
+      vaultA |-> 0,
+      vaultB |-> 0,
+      spentA |-> 0,
+      spentB |-> 0,
+      receivedA |-> [ effects_one_dvp___9638 \in effects_one_dvp_Trades |-> 0 ],
+      receivedB |-> [ effects_one_dvp___9644 \in effects_one_dvp_Trades |-> 0 ],
+      economicReceipts |-> {},
+      financialRecords |-> {},
+      included |-> {},
+      finalized |-> {},
+      captured |-> {},
+      proofs |-> {},
+      network |-> {},
+      received |-> {},
+      abortRecords |-> {},
+      pruned |-> {},
+      up |-> { 0, 1, 2, 3, 4 },
+      epoch |-> 0,
+      admitted |-> TRUE,
+      historical |-> {1},
+      eligible |-> effects_one_dvp_Trades \X { 0, 1 },
+      frozen |-> {},
+      note |-> {},
+      rejects |-> {},
+      transportCompromised |-> FALSE,
+      custody |-> FALSE,
+      upgrade |-> FALSE,
+      validator |-> FALSE,
+      decrypt |-> FALSE]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_sign(effects_one_dvp_t_9743, effects_one_dvp_party_9743) ==
+  effects_one_dvp_t_9743 \in effects_one_dvp_Trades
+    /\ effects_one_dvp_party_9743 \in { 0, 1 }
+    /\ effects_one_dvp_s["admitted"]
+    /\ effects_one_dvp_s["epoch"] = 0
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["signed"] =
+            effects_one_dvp_s["signed"]
+              \union {<<
+                (effects_one_dvp_desc(effects_one_dvp_t_9743)), effects_one_dvp_party_9743
+              >>}
+      ]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int) => Bool);
+*)
+effects_one_dvp_authorized(effects_one_dvp_x_9073, effects_one_dvp_t_9073) ==
+  <<(effects_one_dvp_desc(effects_one_dvp_t_9073)), 0>>
+      \in effects_one_dvp_x_9073["signed"]
+    /\ <<(effects_one_dvp_desc(effects_one_dvp_t_9073)), 1>>
+      \in effects_one_dvp_x_9073["signed"]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }) => Int);
+*)
+effects_one_dvp_reservedA(effects_one_dvp_x_9028) ==
+  Cardinality({
+    effects_one_dvp_t_9023 \in effects_one_dvp_Trades:
+      effects_one_dvp_x_9028["trades"][effects_one_dvp_t_9023]["holdA"] = 1
+  })
+    * 2
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }) => Int);
+*)
+effects_one_dvp_reservedB(effects_one_dvp_x_9049) ==
+  Cardinality({
+    effects_one_dvp_t_9044 \in effects_one_dvp_Trades:
+      effects_one_dvp_x_9049["trades"][effects_one_dvp_t_9044]["holdB"] = 1
+  })
+    * 3
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_captureAbortRecord(effects_one_dvp_t_12171, effects_one_dvp_leg_12171) ==
+  LET (*
+    @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+  *)
+  effects_one_dvp_z == effects_one_dvp_s["trades"][effects_one_dvp_t_12171]
+  IN
+  LET (*
+    @type: (() => Int);
+  *)
+  effects_one_dvp_localHold ==
+    IF effects_one_dvp_leg_12171 = 0
+    THEN (effects_one_dvp_z)["holdA"]
+    ELSE (effects_one_dvp_z)["holdB"]
+  IN
+  LET (*
+    @type: (() => Int);
+  *)
+  effects_one_dvp_localKnown ==
+    IF effects_one_dvp_leg_12171 = 0
+    THEN (effects_one_dvp_z)["knownA"]
+    ELSE (effects_one_dvp_z)["knownB"]
+  IN
+  effects_one_dvp_leg_12171 \in effects_one_dvp_s["up"]
+    /\ 3 \in effects_one_dvp_s["up"]
+    /\ (effects_one_dvp_localKnown = 3 \/ effects_one_dvp_MUTANT = 13)
+    /\ effects_one_dvp_localHold /= 1
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["abortRecords"] =
+            effects_one_dvp_s["abortRecords"]
+              \union {[d |-> effects_one_dvp_desc(effects_one_dvp_t_12171),
+                leg |-> effects_one_dvp_leg_12171,
+                genesis |->
+                  IF effects_one_dvp_leg_12171 = 0
+                  THEN (effects_one_dvp_desc(effects_one_dvp_t_12171))[
+                    "genesisA"
+                  ]
+                  ELSE (effects_one_dvp_desc(effects_one_dvp_t_12171))[
+                    "genesisB"
+                  ],
+                checkpoint |-> 0,
+                program |-> 1,
+                disposition |-> effects_one_dvp_localHold]}
+      ]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int, Int) => Bool);
+*)
+effects_one_dvp_hasAbortRecord(effects_one_dvp_x_12233, effects_one_dvp_t_12233,
+effects_one_dvp_leg_12233) ==
+  \E effects_one_dvp_r_12231 \in effects_one_dvp_x_12233["abortRecords"]:
+    effects_one_dvp_r_12231["d"] = effects_one_dvp_desc(effects_one_dvp_t_12233)
+      /\ effects_one_dvp_r_12231["leg"] = effects_one_dvp_leg_12233
+      /\ effects_one_dvp_r_12231["genesis"]
+        = (IF effects_one_dvp_leg_12233 = 0
+        THEN (effects_one_dvp_desc(effects_one_dvp_t_12233))["genesisA"]
+        ELSE (effects_one_dvp_desc(effects_one_dvp_t_12233))["genesisB"])
+      /\ effects_one_dvp_r_12231["checkpoint"] = 0
+      /\ effects_one_dvp_r_12231["program"]
+        \in effects_one_dvp_x_12233["historical"]
+      /\ effects_one_dvp_r_12231["disposition"] \in { 0, 3 }
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_crash(effects_one_dvp_actor_11922) ==
+  effects_one_dvp_s'
+    := [
+      [
+        effects_one_dvp_s EXCEPT
+          !["up"] = effects_one_dvp_s["up"] \ {effects_one_dvp_actor_11922}
+      ] EXCEPT
+        !["trades"] =
+          [
+            effects_one_dvp_t_11915 \in effects_one_dvp_Trades |->
+              [
+                [
+                  effects_one_dvp_s["trades"][effects_one_dvp_t_11915] EXCEPT
+                    !["report"] = 0
+                ] EXCEPT
+                  !["stale"] = TRUE
+              ]
+          ]
+    ]
+
+(*
+  @type: (() => Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }));
+*)
+AuthenticFacts ==
+  {
+    (effects_one_dvp_fact(v_521[1], v_521[2])):
+      v_521 \in effects_one_dvp_Trades \X (0 .. 6)
+  }
+
+(*
+  @type: (() => Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }));
+*)
+OutputSpace ==
+  {
+    (effects_one_dvp_economicOutput(v_624[1], v_624[2], v_624[3])):
+      v_624 \in effects_one_dvp_Trades \X { 0, 1 } \X { 0, 1 }
+  }
+
+(*
+  @type: (() => Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }));
+*)
+BookingSpace ==
+  {
+    (effects_one_dvp_bookingOutput(v_640[1], v_640[2])):
+      v_640 \in effects_one_dvp_Trades \X { 2, 3 }
+  }
+
+(*
+  @type: (() => Bool);
+*)
+effectSoundness ==
+  localCommitAtomicity
+    /\ (\A t_1082 \in effects_one_dvp_Trades:
+      LET (*
+        @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+      *)
+      z == effects_one_dvp_s["trades"][t_1082]
+      IN
+      ((z)["effectsA"] > 0 => (z)["holdA"] = 2)
+        /\ ((z)["effectsB"] > 0 => (z)["holdB"] = 2)
+        /\ ((z)["refundsA"] > 0 => (z)["holdA"] = 3)
+        /\ ((z)["refundsB"] > 0 => (z)["holdB"] = 3)
+        /\ ((z)["holdA"] = 1 => (z)["effectsA"] = 0 /\ (z)["refundsA"] = 0)
+        /\ ((z)["holdB"] = 1 => (z)["effectsB"] = 0 /\ (z)["refundsB"] = 0))
+
+(*
+  @type: ((Int, Int, Int) => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+*)
+domainFact(t_506, p_506, binding_506) ==
+  LET (*
+    @type: (() => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+  *)
+  f == effects_one_dvp_fact(t_506, p_506)
+  IN
+  LET (*
+    @type: (() => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+  *)
+  bad ==
+    IF binding_506 = 0
+    THEN [ (f) EXCEPT !["d"] = [ (f)["d"] EXCEPT !["trade"] = 3 - t_506 ] ]
+    ELSE IF binding_506 = 1
+    THEN [ (f) EXCEPT !["d"] = [ (f)["d"] EXCEPT !["nonce"] = 99 ] ]
+    ELSE IF binding_506 = 2
+    THEN [ (f) EXCEPT !["d"] = [ (f)["d"] EXCEPT !["sellerB"] = 99 ] ]
+    ELSE IF binding_506 = 3
+    THEN [ (f) EXCEPT !["d"] = [ (f)["d"] EXCEPT !["cash"] = 4 ] ]
+    ELSE IF binding_506 = 4
+    THEN [ (f) EXCEPT !["d"] = [ (f)["d"] EXCEPT !["genesisB"] = 999 ] ]
+    ELSE IF binding_506 = 5
+    THEN [ (f) EXCEPT !["d"] = [ (f)["d"] EXCEPT !["decisionDomain"] = 99 ] ]
+    ELSE IF binding_506 = 6
+    THEN [ (f) EXCEPT !["phase"] = 6 ]
+    ELSE IF binding_506 = 7
+    THEN [ (f) EXCEPT !["checkpoint"] = 99 ]
+    ELSE IF binding_506 = 8
+    THEN [ (f) EXCEPT !["program"] = 99 ]
+    ELSE IF binding_506 = 9
+    THEN [
+      (f) EXCEPT
+        !["d"] = [ [ (f)["d"] EXCEPT !["assetB"] = 99 ] EXCEPT !["holdB"] = 99 ]
+    ]
+    ELSE [ (f) EXCEPT !["root"] = 999 ]
+  IN
+  bad
+
+(*
+  @type: (() => Bool);
+*)
+q_init == effects_one_dvp_init
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int) => Bool);
+*)
+effects_one_dvp_canOpen(effects_one_dvp_x_9527, effects_one_dvp_t_9527) ==
+  effects_one_dvp_authorized(effects_one_dvp_x_9527, effects_one_dvp_t_9527)
+    /\ effects_one_dvp_x_9527["admitted"]
+    /\ <<effects_one_dvp_t_9527, 0>> \in effects_one_dvp_x_9527["eligible"]
+    /\ ~(0 \in effects_one_dvp_x_9527["frozen"])
+    /\ 0 \in effects_one_dvp_x_9527["up"]
+    /\ (effects_one_dvp_HOST /= 3 \/ 3 \in effects_one_dvp_x_9527["up"])
+    /\ (IF effects_one_dvp_HOST = 0 \/ effects_one_dvp_HOST = 3
+    THEN effects_one_dvp_x_9527["height"] < effects_one_dvp_D
+      \/ effects_one_dvp_MUTANT = 4
+    ELSE TRUE)
+    /\ (IF effects_one_dvp_HOST = 0 \/ effects_one_dvp_HOST = 3
+    THEN effects_one_dvp_x_9527["trades"][effects_one_dvp_t_9527]["decision"]
+        = 0
+      \/ (effects_one_dvp_MUTANT = 4
+        /\ effects_one_dvp_x_9527["trades"][effects_one_dvp_t_9527]["decision"]
+          = 3)
+    ELSE effects_one_dvp_x_9527["trades"][effects_one_dvp_t_9527]["knownA"] = 0)
+    /\ (effects_one_dvp_x_9527["trades"][effects_one_dvp_t_9527]["holdA"] = 0
+      \/ (effects_one_dvp_MUTANT = 4
+        /\ effects_one_dvp_x_9527["trades"][effects_one_dvp_t_9527]["holdA"] = 3))
+    /\ (IF effects_one_dvp_ESCROW
+    THEN effects_one_dvp_x_9527["ownerA"] >= 2
+    ELSE effects_one_dvp_x_9527["ownerA"]
+      - effects_one_dvp_reservedA(effects_one_dvp_x_9527)
+      >= 2)
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int) => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+*)
+effects_one_dvp_reserveA(effects_one_dvp_x_9611, effects_one_dvp_t_9611) ==
+  [
+    [
+      [
+        [
+          effects_one_dvp_x_9611 EXCEPT
+            !["trades"] =
+              [
+                effects_one_dvp_x_9611["trades"] EXCEPT
+                  ![effects_one_dvp_t_9611] =
+                    [
+                      [
+                        [
+                          [
+                            effects_one_dvp_x_9611["trades"][
+                              effects_one_dvp_t_9611
+                            ] EXCEPT
+                              !["decision"] =
+                                IF effects_one_dvp_HOST = 0
+                                  \/ effects_one_dvp_HOST = 3
+                                THEN 1
+                                ELSE effects_one_dvp_x_9611["trades"][
+                                  effects_one_dvp_t_9611
+                                ][
+                                  "decision"
+                                ]
+                          ] EXCEPT
+                            !["holdA"] = 1
+                        ] EXCEPT
+                          !["intent"] = TRUE
+                      ] EXCEPT
+                        !["preparedA"] = TRUE
+                    ]
+              ]
+        ] EXCEPT
+          !["ownerA"] =
+            IF effects_one_dvp_ESCROW
+            THEN effects_one_dvp_x_9611["ownerA"] - 2
+            ELSE effects_one_dvp_x_9611["ownerA"]
+      ] EXCEPT
+        !["vaultA"] =
+          IF effects_one_dvp_ESCROW
+          THEN effects_one_dvp_x_9611["vaultA"] + 2
+          ELSE effects_one_dvp_x_9611["vaultA"]
+    ] EXCEPT
+      !["included"] =
+        effects_one_dvp_x_9611["included"]
+          \union { (effects_one_dvp_fact(effects_one_dvp_t_9611, 0)),
+            (effects_one_dvp_fact(effects_one_dvp_t_9611, 1)) }
+  ]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }, Int, Int) => Bool);
+*)
+effects_one_dvp_authFact(effects_one_dvp_x_9122, effects_one_dvp_f_9122, effects_one_dvp_t_9122,
+effects_one_dvp_p_9122) ==
+  effects_one_dvp_f_9122 \in effects_one_dvp_x_9122["proofs"]
+    /\ effects_one_dvp_f_9122["d"]
+      = effects_one_dvp_desc(effects_one_dvp_t_9122)
+    /\ effects_one_dvp_f_9122["phase"] = effects_one_dvp_p_9122
+    /\ effects_one_dvp_f_9122["checkpoint"] = 0
+    /\ effects_one_dvp_f_9122["program"]
+      \in effects_one_dvp_x_9122["historical"]
+    /\ effects_one_dvp_f_9122["root"]
+      = (effects_one_dvp_fact(effects_one_dvp_t_9122, effects_one_dvp_p_9122))[
+        "root"
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_registerDecision(effects_one_dvp_t_9816) ==
+  (effects_one_dvp_HOST = 1 \/ effects_one_dvp_HOST = 2)
+    /\ effects_one_dvp_HOST \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_authorized(effects_one_dvp_s, effects_one_dvp_t_9816)
+    /\ effects_one_dvp_s["admitted"]
+    /\ effects_one_dvp_s["height"] < effects_one_dvp_D
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_9816]["decision"] = 0
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_9816] =
+                  [
+                    [
+                      effects_one_dvp_s["trades"][effects_one_dvp_t_9816] EXCEPT
+                        !["decision"] = 1
+                    ] EXCEPT
+                      !["intent"] = TRUE
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_abort(effects_one_dvp_t_11198) ==
+  effects_one_dvp_HOST \in effects_one_dvp_s["up"]
+    /\ 2 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_authorized(effects_one_dvp_s, effects_one_dvp_t_11198)
+    /\ effects_one_dvp_s["height"] >= effects_one_dvp_D
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_11198]["decision"] < 2
+    /\ effects_one_dvp_s'
+      := [
+        [
+          effects_one_dvp_s EXCEPT
+            !["included"] =
+              effects_one_dvp_s["included"]
+                \union {(effects_one_dvp_fact(effects_one_dvp_t_11198, 4))}
+        ] EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_11198] =
+                  [
+                    [
+                      [
+                        [
+                          effects_one_dvp_s["trades"][effects_one_dvp_t_11198] EXCEPT
+                            !["decision"] = 3
+                        ] EXCEPT
+                          !["oldTerminal"] =
+                            IF effects_one_dvp_s["trades"][
+                              effects_one_dvp_t_11198
+                            ][
+                              "oldTerminal"
+                            ]
+                              = 0
+                            THEN 3
+                            ELSE effects_one_dvp_s["trades"][
+                              effects_one_dvp_t_11198
+                            ][
+                              "oldTerminal"
+                            ]
+                      ] EXCEPT
+                        !["knownA"] =
+                          IF effects_one_dvp_HOST = 0
+                            \/ effects_one_dvp_HOST = 3
+                          THEN 3
+                          ELSE effects_one_dvp_s["trades"][
+                            effects_one_dvp_t_11198
+                          ][
+                            "knownA"
+                          ]
+                    ] EXCEPT
+                      !["knownB"] =
+                        IF effects_one_dvp_HOST = 1 \/ effects_one_dvp_HOST = 3
+                        THEN 3
+                        ELSE effects_one_dvp_s["trades"][
+                          effects_one_dvp_t_11198
+                        ][
+                          "knownB"
+                        ]
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_applyA(effects_one_dvp_t_11394) ==
+  LET (*
+    @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+  *)
+  effects_one_dvp_z == effects_one_dvp_s["trades"][effects_one_dvp_t_11394]
+  IN
+  LET (*
+    @type: (() => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+  *)
+  effects_one_dvp_a == effects_one_dvp_debitA(effects_one_dvp_s)
+  IN
+  0 \in effects_one_dvp_s["up"]
+    /\ (effects_one_dvp_HOST /= 3 \/ 3 \in effects_one_dvp_s["up"])
+    /\ 2 \in effects_one_dvp_s["up"]
+    /\ ~(0 \in effects_one_dvp_s["frozen"])
+    /\ (effects_one_dvp_z)["knownA"] = 2
+    /\ (effects_one_dvp_z)["holdA"] = 1
+    /\ effects_one_dvp_s'
+      := [
+        [
+          [
+            [
+              (effects_one_dvp_a) EXCEPT
+                !["economicReceipts"] =
+                  (effects_one_dvp_a)["economicReceipts"]
+                    \union {(effects_one_dvp_economicOutput(effects_one_dvp_t_11394,
+                    0, 0))}
+            ] EXCEPT
+              !["included"] =
+                effects_one_dvp_s["included"]
+                  \union {(effects_one_dvp_fact(effects_one_dvp_t_11394, 5))}
+          ] EXCEPT
+            !["trades"] =
+              [
+                effects_one_dvp_s["trades"] EXCEPT
+                  ![effects_one_dvp_t_11394] =
+                    [
+                      [ (effects_one_dvp_z) EXCEPT !["holdA"] = 2 ] EXCEPT
+                        !["effectsA"] = (effects_one_dvp_z)["effectsA"] + 1
+                    ]
+              ]
+        ] EXCEPT
+          !["receivedA"] =
+            LET (*
+              @type: (() => (Int -> Int));
+            *)
+            __quint_var2 == effects_one_dvp_s["receivedA"]
+            IN
+            [
+              (__quint_var2) EXCEPT
+                ![effects_one_dvp_t_11394] =
+                  LET (*
+                    @type: ((Int) => Int);
+                  *)
+                  __QUINT_LAMBDA2(effects_one_dvp_q_11382) ==
+                    effects_one_dvp_q_11382 + 2
+                  IN
+                  __QUINT_LAMBDA2((__quint_var2)[effects_one_dvp_t_11394])
+            ]
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_applyB(effects_one_dvp_t_11510) ==
+  LET (*
+    @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+  *)
+  effects_one_dvp_z == effects_one_dvp_s["trades"][effects_one_dvp_t_11510]
+  IN
+  LET (*
+    @type: (() => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+  *)
+  effects_one_dvp_b == effects_one_dvp_debitB(effects_one_dvp_s)
+  IN
+  1 \in effects_one_dvp_s["up"]
+    /\ (effects_one_dvp_HOST /= 3 \/ 3 \in effects_one_dvp_s["up"])
+    /\ 2 \in effects_one_dvp_s["up"]
+    /\ ~(1 \in effects_one_dvp_s["frozen"])
+    /\ (effects_one_dvp_z)["knownB"] = 2
+    /\ ((effects_one_dvp_z)["holdB"] = 1
+      \/ (effects_one_dvp_MUTANT = 3 /\ (effects_one_dvp_z)["holdB"] = 2))
+    /\ effects_one_dvp_s'
+      := [
+        [
+          [
+            [
+              (effects_one_dvp_b) EXCEPT
+                !["economicReceipts"] =
+                  (effects_one_dvp_b)["economicReceipts"]
+                    \union {(effects_one_dvp_economicOutput(effects_one_dvp_t_11510,
+                    1, 0))}
+            ] EXCEPT
+              !["included"] =
+                effects_one_dvp_s["included"]
+                  \union {(effects_one_dvp_fact(effects_one_dvp_t_11510, 6))}
+          ] EXCEPT
+            !["trades"] =
+              [
+                effects_one_dvp_s["trades"] EXCEPT
+                  ![effects_one_dvp_t_11510] =
+                    [
+                      [ (effects_one_dvp_z) EXCEPT !["holdB"] = 2 ] EXCEPT
+                        !["effectsB"] = (effects_one_dvp_z)["effectsB"] + 1
+                    ]
+              ]
+        ] EXCEPT
+          !["receivedB"] =
+            LET (*
+              @type: (() => (Int -> Int));
+            *)
+            __quint_var3 == effects_one_dvp_s["receivedB"]
+            IN
+            [
+              (__quint_var3) EXCEPT
+                ![effects_one_dvp_t_11510] =
+                  LET (*
+                    @type: ((Int) => Int);
+                  *)
+                  __QUINT_LAMBDA3(effects_one_dvp_q_11498) ==
+                    effects_one_dvp_q_11498 + 3
+                  IN
+                  __QUINT_LAMBDA3((__quint_var3)[effects_one_dvp_t_11510])
+            ]
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_refund(effects_one_dvp_t_11698, effects_one_dvp_leg_11698) ==
+  LET (*
+    @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+  *)
+  effects_one_dvp_z == effects_one_dvp_s["trades"][effects_one_dvp_t_11698]
+  IN
+  effects_one_dvp_leg_11698 \in effects_one_dvp_s["up"]
+    /\ (effects_one_dvp_HOST /= 3 \/ 3 \in effects_one_dvp_s["up"])
+    /\ 2 \in effects_one_dvp_s["up"]
+    /\ ~(effects_one_dvp_leg_11698 \in effects_one_dvp_s["frozen"])
+    /\ (IF effects_one_dvp_leg_11698 = 0
+    THEN (effects_one_dvp_z)["holdA"] = 1 /\ (effects_one_dvp_z)["knownA"] = 3
+    ELSE (effects_one_dvp_z)["holdB"] = 1 /\ (effects_one_dvp_z)["knownB"] = 3)
+    /\ effects_one_dvp_s'
+      := [
+        [
+          [
+            [
+              [
+                [
+                  effects_one_dvp_s EXCEPT
+                    !["economicReceipts"] =
+                      effects_one_dvp_s["economicReceipts"]
+                        \union {(effects_one_dvp_economicOutput(effects_one_dvp_t_11698,
+                        effects_one_dvp_leg_11698, 1))}
+                ] EXCEPT
+                  !["trades"] =
+                    [
+                      effects_one_dvp_s["trades"] EXCEPT
+                        ![effects_one_dvp_t_11698] =
+                          [
+                            [
+                              [
+                                [
+                                  (effects_one_dvp_z) EXCEPT
+                                    !["holdA"] =
+                                      IF effects_one_dvp_leg_11698 = 0
+                                      THEN 3
+                                      ELSE (effects_one_dvp_z)["holdA"]
+                                ] EXCEPT
+                                  !["holdB"] =
+                                    IF effects_one_dvp_leg_11698 = 1
+                                    THEN 3
+                                    ELSE (effects_one_dvp_z)["holdB"]
+                              ] EXCEPT
+                                !["refundsA"] =
+                                  (effects_one_dvp_z)["refundsA"]
+                                    + (IF effects_one_dvp_leg_11698 = 0
+                                    THEN 1
+                                    ELSE 0)
+                            ] EXCEPT
+                              !["refundsB"] =
+                                (effects_one_dvp_z)["refundsB"]
+                                  + (IF effects_one_dvp_leg_11698 = 1
+                                  THEN 1
+                                  ELSE 0)
+                          ]
+                    ]
+              ] EXCEPT
+                !["ownerA"] =
+                  effects_one_dvp_s["ownerA"]
+                    + (IF effects_one_dvp_ESCROW
+                      /\ effects_one_dvp_leg_11698 = 0
+                    THEN 2
+                    ELSE 0)
+            ] EXCEPT
+              !["vaultA"] =
+                effects_one_dvp_s["vaultA"]
+                  - (IF effects_one_dvp_ESCROW /\ effects_one_dvp_leg_11698 = 0
+                  THEN 2
+                  ELSE 0)
+          ] EXCEPT
+            !["ownerB"] =
+              effects_one_dvp_s["ownerB"]
+                + (IF effects_one_dvp_ESCROW /\ effects_one_dvp_leg_11698 = 1
+                THEN 3
+                ELSE 0)
+        ] EXCEPT
+          !["vaultB"] =
+            effects_one_dvp_s["vaultB"]
+              - (IF effects_one_dvp_ESCROW /\ effects_one_dvp_leg_11698 = 1
+              THEN 3
+              ELSE 0)
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_reconcile(effects_one_dvp_t_12077) ==
+  3 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_12077]["appliedEvidenceA"]
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_12077]["appliedEvidenceB"]
+    /\ effects_one_dvp_s'
+      := [
+        [
+          effects_one_dvp_s EXCEPT
+            !["financialRecords"] =
+              effects_one_dvp_s["financialRecords"]
+                \union {(effects_one_dvp_bookingOutput(effects_one_dvp_t_12077, 2))}
+        ] EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_12077] =
+                  [
+                    [
+                      [
+                        effects_one_dvp_s["trades"][effects_one_dvp_t_12077] EXCEPT
+                          !["report"] = 2
+                      ] EXCEPT
+                        !["stale"] = FALSE
+                    ] EXCEPT
+                      !["booked"] =
+                        IF effects_one_dvp_s["trades"][effects_one_dvp_t_12077][
+                          "booked"
+                        ]
+                          = 0
+                        THEN 1
+                        ELSE effects_one_dvp_s["trades"][
+                          effects_one_dvp_t_12077
+                        ][
+                          "booked"
+                        ]
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_finalize(effects_one_dvp_t_10134, effects_one_dvp_p_10134) ==
+  effects_one_dvp_fact(effects_one_dvp_t_10134, effects_one_dvp_p_10134)
+      \in effects_one_dvp_s["included"]
+    /\ (IF effects_one_dvp_HOST = 3
+    THEN 3
+    ELSE IF effects_one_dvp_p_10134 = 2 \/ effects_one_dvp_p_10134 = 6
+    THEN 1
+    ELSE IF effects_one_dvp_p_10134 = 3 \/ effects_one_dvp_p_10134 = 4
+    THEN effects_one_dvp_HOST
+    ELSE 0)
+      \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["finalized"] =
+            effects_one_dvp_s["finalized"]
+              \union {(effects_one_dvp_fact(effects_one_dvp_t_10134, effects_one_dvp_p_10134))}
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_capture(effects_one_dvp_t_10175, effects_one_dvp_p_10175) ==
+  3 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_fact(effects_one_dvp_t_10175, effects_one_dvp_p_10175)
+      \in effects_one_dvp_s["finalized"]
+    /\ ~(effects_one_dvp_fact(effects_one_dvp_t_10175, effects_one_dvp_p_10175)
+      \in effects_one_dvp_s["pruned"])
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["captured"] =
+            effects_one_dvp_s["captured"]
+              \union {(effects_one_dvp_fact(effects_one_dvp_t_10175, effects_one_dvp_p_10175))}
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_prove(effects_one_dvp_t_10218, effects_one_dvp_p_10218) ==
+  3 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_fact(effects_one_dvp_t_10218, effects_one_dvp_p_10218)
+      \in effects_one_dvp_s["captured"]
+    /\ effects_one_dvp_s'
+      := [
+        [
+          effects_one_dvp_s EXCEPT
+            !["proofs"] =
+              effects_one_dvp_s["proofs"]
+                \union {(effects_one_dvp_fact(effects_one_dvp_t_10218, effects_one_dvp_p_10218))}
+        ] EXCEPT
+          !["network"] =
+            effects_one_dvp_s["network"]
+              \union {(effects_one_dvp_fact(effects_one_dvp_t_10218, effects_one_dvp_p_10218))}
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_deliver(effects_one_dvp_t_10401, effects_one_dvp_p_10401) ==
+  4 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_fact(effects_one_dvp_t_10401, effects_one_dvp_p_10401)
+      \in effects_one_dvp_s["network"]
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["received"] =
+            effects_one_dvp_s["received"]
+              \union {(effects_one_dvp_fact(effects_one_dvp_t_10401, effects_one_dvp_p_10401))}
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_resend(effects_one_dvp_t_10368, effects_one_dvp_p_10368) ==
+  4 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_fact(effects_one_dvp_t_10368, effects_one_dvp_p_10368)
+      \in effects_one_dvp_s["proofs"]
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["network"] =
+            effects_one_dvp_s["network"]
+              \union {(effects_one_dvp_fact(effects_one_dvp_t_10368, effects_one_dvp_p_10368))}
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_proveUnadmitted(effects_one_dvp_t_10265, effects_one_dvp_p_10265) ==
+  LET (*
+    @type: (() => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+  *)
+  effects_one_dvp_f ==
+    [
+      (effects_one_dvp_fact(effects_one_dvp_t_10265, effects_one_dvp_p_10265)) EXCEPT
+        !["program"] = 0
+    ]
+  IN
+  3 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_fact(effects_one_dvp_t_10265, effects_one_dvp_p_10265)
+      \in effects_one_dvp_s["captured"]
+    /\ effects_one_dvp_s'
+      := [
+        [
+          effects_one_dvp_s EXCEPT
+            !["proofs"] =
+              effects_one_dvp_s["proofs"] \union {(effects_one_dvp_f)}
+        ] EXCEPT
+          !["network"] =
+            effects_one_dvp_s["network"] \union {(effects_one_dvp_f)}
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_deliverUnadmitted(effects_one_dvp_t_10307, effects_one_dvp_p_10307) ==
+  LET (*
+    @type: (() => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+  *)
+  effects_one_dvp_f ==
+    [
+      (effects_one_dvp_fact(effects_one_dvp_t_10307, effects_one_dvp_p_10307)) EXCEPT
+        !["program"] = 0
+    ]
+  IN
+  4 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_f \in effects_one_dvp_s["network"]
+    /\ effects_one_dvp_f \in effects_one_dvp_s["proofs"]
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["received"] =
+            effects_one_dvp_s["received"] \union {(effects_one_dvp_f)}
+      ]
+
+(*
+  @type: ((Int, Int, Int) => Bool);
+*)
+effects_one_dvp_inject(effects_one_dvp_t_10560, effects_one_dvp_p_10560, effects_one_dvp_binding_10560) ==
+  LET (*
+    @type: (() => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+  *)
+  effects_one_dvp_f ==
+    effects_one_dvp_fact(effects_one_dvp_t_10560, effects_one_dvp_p_10560)
+  IN
+  LET (*
+    @type: (() => { checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int });
+  *)
+  effects_one_dvp_bad ==
+    IF effects_one_dvp_binding_10560 = 0
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] =
+          [
+            (effects_one_dvp_f)["d"] EXCEPT
+              !["trade"] = 3 - effects_one_dvp_t_10560
+          ]
+    ]
+    ELSE IF effects_one_dvp_binding_10560 = 1
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] = [ (effects_one_dvp_f)["d"] EXCEPT !["nonce"] = 99 ]
+    ]
+    ELSE IF effects_one_dvp_binding_10560 = 2
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] = [ (effects_one_dvp_f)["d"] EXCEPT !["sellerB"] = 99 ]
+    ]
+    ELSE IF effects_one_dvp_binding_10560 = 3
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] = [ (effects_one_dvp_f)["d"] EXCEPT !["cash"] = 4 ]
+    ]
+    ELSE IF effects_one_dvp_binding_10560 = 4
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] = [ (effects_one_dvp_f)["d"] EXCEPT !["genesisB"] = 999 ]
+    ]
+    ELSE IF effects_one_dvp_binding_10560 = 5
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] = [ (effects_one_dvp_f)["d"] EXCEPT !["decisionDomain"] = 99 ]
+    ]
+    ELSE IF effects_one_dvp_binding_10560 = 6
+    THEN [ (effects_one_dvp_f) EXCEPT !["phase"] = 6 ]
+    ELSE IF effects_one_dvp_binding_10560 = 7
+    THEN [ (effects_one_dvp_f) EXCEPT !["checkpoint"] = 99 ]
+    ELSE IF effects_one_dvp_binding_10560 = 8
+    THEN [ (effects_one_dvp_f) EXCEPT !["program"] = 99 ]
+    ELSE IF effects_one_dvp_binding_10560 = 9
+    THEN [
+      (effects_one_dvp_f) EXCEPT
+        !["d"] =
+          [
+            [ (effects_one_dvp_f)["d"] EXCEPT !["assetB"] = 99 ] EXCEPT
+              !["holdB"] = 99
+          ]
+    ]
+    ELSE [ (effects_one_dvp_f) EXCEPT !["root"] = 999 ]
+  IN
+  effects_one_dvp_s'
+    := [
+      [
+        effects_one_dvp_s EXCEPT
+          !["received"] =
+            effects_one_dvp_s["received"] \union {(effects_one_dvp_bad)}
+      ] EXCEPT
+        !["rejects"] =
+          effects_one_dvp_s["rejects"] \union {effects_one_dvp_binding_10560}
+    ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_spend(effects_one_dvp_leg_11889) ==
+  (IF effects_one_dvp_leg_11889 = 0
+    THEN effects_one_dvp_s["ownerA"]
+      - (IF effects_one_dvp_ESCROW
+      THEN 0
+      ELSE effects_one_dvp_reservedA(effects_one_dvp_s))
+      >= 1
+    ELSE effects_one_dvp_s["ownerB"]
+      - (IF effects_one_dvp_ESCROW
+      THEN 0
+      ELSE effects_one_dvp_reservedB(effects_one_dvp_s))
+      >= 1)
+    /\ effects_one_dvp_s'
+      := [
+        [
+          [
+            [
+              effects_one_dvp_s EXCEPT
+                !["ownerA"] =
+                  effects_one_dvp_s["ownerA"]
+                    - (IF effects_one_dvp_leg_11889 = 0 THEN 1 ELSE 0)
+            ] EXCEPT
+              !["ownerB"] =
+                effects_one_dvp_s["ownerB"]
+                  - (IF effects_one_dvp_leg_11889 = 1 THEN 1 ELSE 0)
+          ] EXCEPT
+            !["spentA"] =
+              effects_one_dvp_s["spentA"]
+                + (IF effects_one_dvp_leg_11889 = 0 THEN 1 ELSE 0)
+        ] EXCEPT
+          !["spentB"] =
+            effects_one_dvp_s["spentB"]
+              + (IF effects_one_dvp_leg_11889 = 1 THEN 1 ELSE 0)
+      ]
+
+(*
+  @type: (() => Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }));
+*)
+CandidateFacts ==
+  {
+    (domainFact(v_543[1], v_543[2], v_543[3])):
+      v_543 \in effects_one_dvp_Trades \X (0 .. 6) \X (0 .. 10)
+  }
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_openA(effects_one_dvp_t_9757) ==
+  effects_one_dvp_canOpen(effects_one_dvp_s, effects_one_dvp_t_9757)
+    /\ effects_one_dvp_s'
+      := effects_one_dvp_reserveA(effects_one_dvp_s, effects_one_dvp_t_9757)
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int, Int) => Bool);
+*)
+effects_one_dvp_has(effects_one_dvp_x_9142, effects_one_dvp_t_9142, effects_one_dvp_p_9142) ==
+  \E effects_one_dvp_f_9140 \in effects_one_dvp_x_9142["received"]:
+    effects_one_dvp_authFact(effects_one_dvp_x_9142, effects_one_dvp_f_9140, effects_one_dvp_t_9142,
+    effects_one_dvp_p_9142)
+
+(*
+  @type: (() => Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }));
+*)
+FactSpace ==
+  (AuthenticFacts \union CandidateFacts)
+    \union { ([ f_555 EXCEPT !["program"] = 0 ]): f_555 \in AuthenticFacts }
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_prepareB(effects_one_dvp_t_9981) ==
+  effects_one_dvp_authorized(effects_one_dvp_s, effects_one_dvp_t_9981)
+    /\ effects_one_dvp_s["admitted"]
+    /\ <<effects_one_dvp_t_9981, 1>> \in effects_one_dvp_s["eligible"]
+    /\ ~(1 \in effects_one_dvp_s["frozen"])
+    /\ 1 \in effects_one_dvp_s["up"]
+    /\ (effects_one_dvp_HOST /= 3 \/ 3 \in effects_one_dvp_s["up"])
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_9981]["knownB"] = 0
+    /\ effects_one_dvp_s["trades"][effects_one_dvp_t_9981]["holdB"] = 0
+    /\ (~effects_one_dvp_OPEN_REQUIRED
+      \/ effects_one_dvp_has(effects_one_dvp_s, effects_one_dvp_t_9981, 0))
+    /\ (IF effects_one_dvp_ESCROW
+    THEN effects_one_dvp_s["ownerB"] >= 3
+    ELSE effects_one_dvp_s["ownerB"]
+      - effects_one_dvp_reservedB(effects_one_dvp_s)
+      >= 3)
+    /\ effects_one_dvp_s'
+      := [
+        [
+          [
+            [
+              effects_one_dvp_s EXCEPT
+                !["trades"] =
+                  [
+                    effects_one_dvp_s["trades"] EXCEPT
+                      ![effects_one_dvp_t_9981] =
+                        [
+                          [
+                            [
+                              effects_one_dvp_s["trades"][
+                                effects_one_dvp_t_9981
+                              ] EXCEPT
+                                !["holdB"] = 1
+                            ] EXCEPT
+                              !["intent"] = TRUE
+                          ] EXCEPT
+                            !["preparedB"] = TRUE
+                        ]
+                  ]
+            ] EXCEPT
+              !["ownerB"] =
+                IF effects_one_dvp_ESCROW
+                THEN effects_one_dvp_s["ownerB"] - 3
+                ELSE effects_one_dvp_s["ownerB"]
+          ] EXCEPT
+            !["vaultB"] =
+              IF effects_one_dvp_ESCROW
+              THEN effects_one_dvp_s["vaultB"] + 3
+              ELSE effects_one_dvp_s["vaultB"]
+        ] EXCEPT
+          !["included"] =
+            effects_one_dvp_s["included"]
+              \union {(effects_one_dvp_fact(effects_one_dvp_t_9981, 2))}
+      ]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int, Int) => Bool);
+*)
+effects_one_dvp_preparationAtConsumer(effects_one_dvp_x_9196, effects_one_dvp_t_9196,
+effects_one_dvp_p_9196) ==
+  IF effects_one_dvp_MUTANT = 10
+  THEN \E effects_one_dvp_f_9189 \in effects_one_dvp_x_9196["received"]:
+    effects_one_dvp_f_9189 \in effects_one_dvp_x_9196["proofs"]
+      /\ effects_one_dvp_f_9189["d"]
+        = effects_one_dvp_desc(effects_one_dvp_t_9196)
+      /\ effects_one_dvp_f_9189["phase"] = effects_one_dvp_p_9196
+      /\ effects_one_dvp_f_9189["checkpoint"] = 0
+      /\ effects_one_dvp_f_9189["root"]
+        = (effects_one_dvp_fact(effects_one_dvp_t_9196, effects_one_dvp_p_9196))[
+          "root"
+        ]
+  ELSE effects_one_dvp_has(effects_one_dvp_x_9196, effects_one_dvp_t_9196, effects_one_dvp_p_9196)
+
+(*
+  @type: ((Int, Int, Int) => Bool);
+*)
+effects_one_dvp_learn(effects_one_dvp_t_11288, effects_one_dvp_outcome_11288, effects_one_dvp_leg_11288) ==
+  effects_one_dvp_leg_11288 \in effects_one_dvp_s["up"]
+    /\ (effects_one_dvp_HOST /= 3 \/ 3 \in effects_one_dvp_s["up"])
+    /\ effects_one_dvp_has(effects_one_dvp_s, effects_one_dvp_t_11288, (IF effects_one_dvp_outcome_11288
+      = 2
+    THEN 3
+    ELSE 4))
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_11288] =
+                  [
+                    [
+                      effects_one_dvp_s["trades"][effects_one_dvp_t_11288] EXCEPT
+                        !["knownA"] =
+                          IF effects_one_dvp_leg_11288 = 0
+                          THEN effects_one_dvp_outcome_11288
+                          ELSE effects_one_dvp_s["trades"][
+                            effects_one_dvp_t_11288
+                          ][
+                            "knownA"
+                          ]
+                    ] EXCEPT
+                      !["knownB"] =
+                        IF effects_one_dvp_leg_11288 = 1
+                          /\ (effects_one_dvp_MUTANT /= 9
+                            \/ effects_one_dvp_s["trades"][
+                              effects_one_dvp_t_11288
+                            ][
+                              "holdB"
+                            ]
+                              /= 0)
+                        THEN effects_one_dvp_outcome_11288
+                        ELSE effects_one_dvp_s["trades"][
+                          effects_one_dvp_t_11288
+                        ][
+                          "knownB"
+                        ]
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int, Int) => Bool);
+*)
+effects_one_dvp_observe(effects_one_dvp_t_12001, effects_one_dvp_leg_12001) ==
+  3 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_has(effects_one_dvp_s, effects_one_dvp_t_12001, (IF effects_one_dvp_leg_12001
+      = 0
+    THEN 5
+    ELSE 6))
+    /\ effects_one_dvp_s'
+      := [
+        effects_one_dvp_s EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_12001] =
+                  [
+                    [
+                      effects_one_dvp_s["trades"][effects_one_dvp_t_12001] EXCEPT
+                        !["appliedEvidenceA"] =
+                          effects_one_dvp_s["trades"][effects_one_dvp_t_12001][
+                              "appliedEvidenceA"
+                            ]
+                            \/ effects_one_dvp_leg_12001 = 0
+                    ] EXCEPT
+                      !["appliedEvidenceB"] =
+                        effects_one_dvp_s["trades"][effects_one_dvp_t_12001][
+                            "appliedEvidenceB"
+                          ]
+                          \/ effects_one_dvp_leg_12001 = 1
+                  ]
+            ]
+      ]
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_recordAbort(effects_one_dvp_t_12425) ==
+  3 \in effects_one_dvp_s["up"]
+    /\ effects_one_dvp_has(effects_one_dvp_s, effects_one_dvp_t_12425, 4)
+    /\ effects_one_dvp_hasAbortRecord(effects_one_dvp_s, effects_one_dvp_t_12425,
+    0)
+    /\ effects_one_dvp_hasAbortRecord(effects_one_dvp_s, effects_one_dvp_t_12425,
+    1)
+    /\ effects_one_dvp_s'
+      := [
+        [
+          effects_one_dvp_s EXCEPT
+            !["financialRecords"] =
+              effects_one_dvp_s["financialRecords"]
+                \union {(effects_one_dvp_bookingOutput(effects_one_dvp_t_12425, 3))}
+        ] EXCEPT
+          !["trades"] =
+            [
+              effects_one_dvp_s["trades"] EXCEPT
+                ![effects_one_dvp_t_12425] =
+                  [
+                    [
+                      [
+                        effects_one_dvp_s["trades"][effects_one_dvp_t_12425] EXCEPT
+                          !["report"] = 3
+                      ] EXCEPT
+                        !["stale"] = FALSE
+                    ] EXCEPT
+                      !["booked"] =
+                        IF effects_one_dvp_s["trades"][effects_one_dvp_t_12425][
+                          "booked"
+                        ]
+                          = 0
+                        THEN 1
+                        ELSE effects_one_dvp_s["trades"][
+                          effects_one_dvp_t_12425
+                        ][
+                          "booked"
+                        ]
+                  ]
+            ]
+      ]
+
+(*
+  @type: (() => Set({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }));
+*)
+StateSpace ==
+  [
+    trades: ([(effects_one_dvp_Trades) -> (TradeSpace)]),
+    signed: ((SUBSET ({
+              (effects_one_dvp_desc(t_650)):
+                t_650 \in effects_one_dvp_Trades
+            }
+            \X { 0, 1 }))),
+    height: (Int),
+    ownerA: (Int),
+    ownerB: (Int),
+    vaultA: (Int),
+    vaultB: (Int),
+    spentA: (Int),
+    spentB: (Int),
+    receivedA: ([(effects_one_dvp_Trades) -> Int]),
+    receivedB: ([(effects_one_dvp_Trades) -> Int]),
+    economicReceipts: ((SUBSET OutputSpace)),
+    financialRecords: ((SUBSET BookingSpace)),
+    included: ((SUBSET FactSpace)),
+    finalized: ((SUBSET FactSpace)),
+    captured: ((SUBSET FactSpace)),
+    proofs: ((SUBSET FactSpace)),
+    network: ((SUBSET FactSpace)),
+    received: ((SUBSET FactSpace)),
+    abortRecords: ((SUBSET AbortSpace)),
+    pruned: ((SUBSET FactSpace)),
+    up: ((SUBSET (0 .. 4))),
+    epoch: (Int),
+    admitted: (BOOLEAN),
+    historical: ((SUBSET ({ 1, 2 }))),
+    eligible: ((SUBSET (effects_one_dvp_Trades \X { 0, 1 }))),
+    frozen: ((SUBSET ({ 0, 1 }))),
+    note: ((SUBSET effects_one_dvp_Trades)),
+    rejects: ((SUBSET (0 .. 10))),
+    transportCompromised: (BOOLEAN),
+    custody: (BOOLEAN),
+    upgrade: (BOOLEAN),
+    validator: (BOOLEAN),
+    decrypt: (BOOLEAN)
+  ]
+
+(*
+  @type: (({ abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int }, Int) => Bool);
+*)
+effects_one_dvp_canCommit(effects_one_dvp_x_10722, effects_one_dvp_t_10722) ==
+  LET (*
+    @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+  *)
+  effects_one_dvp_z ==
+    effects_one_dvp_x_10722["trades"][effects_one_dvp_t_10722]
+  IN
+  effects_one_dvp_HOST \in effects_one_dvp_x_10722["up"]
+    /\ 2 \in effects_one_dvp_x_10722["up"]
+    /\ (effects_one_dvp_z)["decision"] = 1
+    /\ effects_one_dvp_x_10722["height"] < effects_one_dvp_D
+    /\ (IF effects_one_dvp_HOST = 0 \/ effects_one_dvp_HOST = 3
+    THEN (effects_one_dvp_z)["holdA"] = 1
+    ELSE IF effects_one_dvp_HOST = 1
+    THEN (effects_one_dvp_z)["holdB"] = 1
+    ELSE TRUE)
+    /\ (IF effects_one_dvp_HOST = 3
+    THEN ~(0 \in effects_one_dvp_x_10722["frozen"])
+      /\ ~(1 \in effects_one_dvp_x_10722["frozen"])
+    ELSE IF effects_one_dvp_HOST = 0
+    THEN ~(0 \in effects_one_dvp_x_10722["frozen"])
+    ELSE IF effects_one_dvp_HOST = 1
+    THEN ~(1 \in effects_one_dvp_x_10722["frozen"])
+    ELSE TRUE)
+    /\ (IF effects_one_dvp_MUTANT = 2
+    THEN \E effects_one_dvp_f_10672 \in effects_one_dvp_x_10722["received"]:
+      effects_one_dvp_f_10672["phase"] = 2
+        /\ effects_one_dvp_f_10672 \in effects_one_dvp_x_10722["proofs"]
+    ELSE IF effects_one_dvp_MUTANT = 6
+    THEN \E effects_one_dvp_f_10686 \in effects_one_dvp_x_10722["received"]:
+      effects_one_dvp_f_10686["phase"] = 2
+    ELSE IF effects_one_dvp_HOST = 1
+    THEN TRUE
+    ELSE IF effects_one_dvp_HOST = 3
+    THEN (effects_one_dvp_z)["holdB"] = 1
+    ELSE effects_one_dvp_preparationAtConsumer(effects_one_dvp_x_10722, effects_one_dvp_t_10722,
+    2))
+    /\ ((effects_one_dvp_HOST = 0 \/ effects_one_dvp_HOST = 3)
+      \/ effects_one_dvp_preparationAtConsumer(effects_one_dvp_x_10722, effects_one_dvp_t_10722,
+      1))
+
+(*
+  @type: (() => Bool);
+*)
+FullTypeOK == effects_one_dvp_s \in StateSpace
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_commit(effects_one_dvp_t_11081) ==
+  LET (*
+    @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+  *)
+  effects_one_dvp_z == effects_one_dvp_s["trades"][effects_one_dvp_t_11081]
+  IN
+  LET (*
+    @type: (() => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+  *)
+  effects_one_dvp_a ==
+    IF (effects_one_dvp_HOST = 0 \/ effects_one_dvp_HOST = 3)
+      /\ effects_one_dvp_MUTANT /= 5
+    THEN effects_one_dvp_debitA(effects_one_dvp_s)
+    ELSE effects_one_dvp_s
+  IN
+  LET (*
+    @type: (() => { abortRecords: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, disposition: Int, genesis: Int, leg: Int, program: Int }), admitted: Bool, captured: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), custody: Bool, decrypt: Bool, economicReceipts: Set({ account: Int, asset: Int, chain: Int, genesis: Int, kind: Int, leg: Int, quantity: Int, trade: Int }), eligible: Set(<<Int, Int>>), epoch: Int, finalized: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), financialRecords: Set({ d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, outcome: Int }), frozen: Set(Int), height: Int, historical: Set(Int), included: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), network: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), note: Set(Int), ownerA: Int, ownerB: Int, proofs: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), pruned: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), received: Set({ checkpoint: Int, d: { assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, phase: Int, program: Int, root: Int }), receivedA: (Int -> Int), receivedB: (Int -> Int), rejects: Set(Int), signed: Set(<<{ assetA: Int, assetB: Int, buyerA: Int, buyerB: Int, cash: Int, chainA: Int, chainB: Int, commitment: Int, deadline: Int, decisionContract: Int, decisionDomain: Int, epoch: Int, genesisA: Int, genesisB: Int, holdA: Int, holdB: Int, nonce: Int, protocol: Int, security: Int, sellerA: Int, sellerB: Int, trade: Int }, Int>>), spentA: Int, spentB: Int, trades: (Int -> { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool }), transportCompromised: Bool, up: Set(Int), upgrade: Bool, validator: Bool, vaultA: Int, vaultB: Int });
+  *)
+  effects_one_dvp_b ==
+    IF effects_one_dvp_HOST = 1 \/ effects_one_dvp_HOST = 3
+    THEN effects_one_dvp_debitB((effects_one_dvp_a))
+    ELSE effects_one_dvp_a
+  IN
+  effects_one_dvp_canCommit(effects_one_dvp_s, effects_one_dvp_t_11081)
+    /\ effects_one_dvp_s'
+      := [
+        [
+          [
+            [
+              [
+                (effects_one_dvp_b) EXCEPT
+                  !["economicReceipts"] =
+                    ((effects_one_dvp_b)["economicReceipts"]
+                      \union (IF (effects_one_dvp_HOST = 0
+                          \/ effects_one_dvp_HOST = 3)
+                        /\ effects_one_dvp_MUTANT /= 5
+                      THEN {(effects_one_dvp_economicOutput(effects_one_dvp_t_11081,
+                      0, 0))}
+                      ELSE {}))
+                      \union (IF effects_one_dvp_HOST = 1
+                        \/ effects_one_dvp_HOST = 3
+                      THEN {(effects_one_dvp_economicOutput(effects_one_dvp_t_11081,
+                      1, 0))}
+                      ELSE {})
+              ] EXCEPT
+                !["included"] =
+                  (((effects_one_dvp_b)["included"]
+                    \union {(effects_one_dvp_fact(effects_one_dvp_t_11081, 3))})
+                    \union (IF (effects_one_dvp_HOST = 0
+                        \/ effects_one_dvp_HOST = 3)
+                      /\ effects_one_dvp_MUTANT /= 5
+                    THEN {(effects_one_dvp_fact(effects_one_dvp_t_11081, 5))}
+                    ELSE {}))
+                    \union (IF effects_one_dvp_HOST = 1
+                      \/ effects_one_dvp_HOST = 3
+                    THEN {(effects_one_dvp_fact(effects_one_dvp_t_11081, 6))}
+                    ELSE {})
+            ] EXCEPT
+              !["trades"] =
+                [
+                  (effects_one_dvp_b)["trades"] EXCEPT
+                    ![effects_one_dvp_t_11081] =
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    [
+                                      (effects_one_dvp_z) EXCEPT
+                                        !["decision"] = 2
+                                    ] EXCEPT
+                                      !["oldTerminal"] =
+                                        IF (effects_one_dvp_z)["oldTerminal"]
+                                          = 0
+                                        THEN 2
+                                        ELSE (effects_one_dvp_z)["oldTerminal"]
+                                  ] EXCEPT
+                                    !["knownA"] =
+                                      IF effects_one_dvp_HOST = 0
+                                        \/ effects_one_dvp_HOST = 3
+                                      THEN 2
+                                      ELSE (effects_one_dvp_z)["knownA"]
+                                ] EXCEPT
+                                  !["knownB"] =
+                                    IF effects_one_dvp_HOST = 1
+                                      \/ effects_one_dvp_HOST = 3
+                                    THEN 2
+                                    ELSE (effects_one_dvp_z)["knownB"]
+                              ] EXCEPT
+                                !["holdA"] =
+                                  IF (effects_one_dvp_HOST = 0
+                                      \/ effects_one_dvp_HOST = 3)
+                                    /\ effects_one_dvp_MUTANT /= 5
+                                  THEN 2
+                                  ELSE (effects_one_dvp_z)["holdA"]
+                            ] EXCEPT
+                              !["holdB"] =
+                                IF effects_one_dvp_HOST = 1
+                                  \/ effects_one_dvp_HOST = 3
+                                THEN 2
+                                ELSE (effects_one_dvp_z)["holdB"]
+                          ] EXCEPT
+                            !["effectsA"] =
+                              (effects_one_dvp_z)["effectsA"]
+                                + (IF (effects_one_dvp_HOST = 0
+                                    \/ effects_one_dvp_HOST = 3)
+                                  /\ effects_one_dvp_MUTANT /= 5
+                                THEN 1
+                                ELSE 0)
+                        ] EXCEPT
+                          !["effectsB"] =
+                            (effects_one_dvp_z)["effectsB"]
+                              + (IF effects_one_dvp_HOST = 1
+                                \/ effects_one_dvp_HOST = 3
+                              THEN 1
+                              ELSE 0)
+                      ]
+                ]
+          ] EXCEPT
+            !["receivedA"] =
+              IF (effects_one_dvp_HOST = 0 \/ effects_one_dvp_HOST = 3)
+                /\ effects_one_dvp_MUTANT /= 5
+              THEN LET (*
+                @type: (() => (Int -> Int));
+              *)
+              __quint_var0 == (effects_one_dvp_b)["receivedA"]
+              IN
+              [
+                (__quint_var0) EXCEPT
+                  ![effects_one_dvp_t_11081] =
+                    LET (*
+                      @type: ((Int) => Int);
+                    *)
+                    __QUINT_LAMBDA0(effects_one_dvp_q_11041) ==
+                      effects_one_dvp_q_11041 + 2
+                    IN
+                    __QUINT_LAMBDA0((__quint_var0)[effects_one_dvp_t_11081])
+              ]
+              ELSE (effects_one_dvp_b)["receivedA"]
+        ] EXCEPT
+          !["receivedB"] =
+            IF effects_one_dvp_HOST = 1 \/ effects_one_dvp_HOST = 3
+            THEN LET (*
+              @type: (() => (Int -> Int));
+            *)
+            __quint_var1 == (effects_one_dvp_b)["receivedB"]
+            IN
+            [
+              (__quint_var1) EXCEPT
+                ![effects_one_dvp_t_11081] =
+                  LET (*
+                    @type: ((Int) => Int);
+                  *)
+                  __QUINT_LAMBDA1(effects_one_dvp_q_11063) ==
+                    effects_one_dvp_q_11063 + 3
+                  IN
+                  __QUINT_LAMBDA1((__quint_var1)[effects_one_dvp_t_11081])
+            ]
+            ELSE (effects_one_dvp_b)["receivedB"]
+      ]
+
+(*
+  @type: (() => Bool);
+*)
+effectI ==
+  (FullTypeOK /\ localCommitAtomicity)
+    /\ (\A t_989 \in effects_one_dvp_Trades:
+      LET (*
+        @type: (() => { appliedEvidenceA: Bool, appliedEvidenceB: Bool, booked: Int, decision: Int, effectsA: Int, effectsB: Int, holdA: Int, holdB: Int, intent: Bool, knownA: Int, knownB: Int, oldTerminal: Int, preparedA: Bool, preparedB: Bool, refundsA: Int, refundsB: Int, report: Int, stale: Bool });
+      *)
+      z == effects_one_dvp_s["trades"][t_989]
+      IN
+      (z)["holdA"] \in 0 .. 3
+        /\ (z)["holdB"] \in 0 .. 3
+        /\ (z)["effectsA"] \in 0 .. 1
+        /\ (z)["effectsB"] \in 0 .. 1
+        /\ (z)["refundsA"] \in 0 .. 1
+        /\ (z)["refundsB"] \in 0 .. 1
+        /\ ((z)["holdA"] = 2 <=> (z)["effectsA"] = 1)
+        /\ ((z)["holdB"] = 2 <=> (z)["effectsB"] = 1)
+        /\ ((z)["holdA"] = 3 <=> (z)["refundsA"] = 1)
+        /\ ((z)["holdB"] = 3 <=> (z)["refundsB"] = 1))
+
+(*
+  @type: ((Int) => Bool);
+*)
+effects_one_dvp_tradeStep(effects_one_dvp_t_12684) ==
+  effects_one_dvp_sign(effects_one_dvp_t_12684, 0)
+    \/ effects_one_dvp_sign(effects_one_dvp_t_12684, 1)
+    \/ effects_one_dvp_openA(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_prepareB(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_registerDecision(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_commit(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_abort(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_applyA(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_applyB(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_refund(effects_one_dvp_t_12684, 0)
+    \/ effects_one_dvp_refund(effects_one_dvp_t_12684, 1)
+    \/ effects_one_dvp_learn(effects_one_dvp_t_12684, 2, 0)
+    \/ effects_one_dvp_learn(effects_one_dvp_t_12684, 2, 1)
+    \/ effects_one_dvp_learn(effects_one_dvp_t_12684, 3, 0)
+    \/ effects_one_dvp_learn(effects_one_dvp_t_12684, 3, 1)
+    \/ effects_one_dvp_observe(effects_one_dvp_t_12684, 0)
+    \/ effects_one_dvp_observe(effects_one_dvp_t_12684, 1)
+    \/ effects_one_dvp_reconcile(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_captureAbortRecord(effects_one_dvp_t_12684, 0)
+    \/ effects_one_dvp_captureAbortRecord(effects_one_dvp_t_12684, 1)
+    \/ effects_one_dvp_recordAbort(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_unsafeRefund(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_forgetTerminal(effects_one_dvp_t_12684)
+    \/ effects_one_dvp_receiveNote(effects_one_dvp_t_12684)
+    \/ (\E effects_one_dvp_p \in 0 .. 6:
+      effects_one_dvp_finalize(effects_one_dvp_t_12684, effects_one_dvp_p)
+        \/ effects_one_dvp_capture(effects_one_dvp_t_12684, effects_one_dvp_p)
+        \/ effects_one_dvp_prove(effects_one_dvp_t_12684, effects_one_dvp_p)
+        \/ effects_one_dvp_deliver(effects_one_dvp_t_12684, effects_one_dvp_p)
+        \/ effects_one_dvp_resend(effects_one_dvp_t_12684, effects_one_dvp_p))
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_step ==
+  (\E effects_one_dvp_t \in effects_one_dvp_Trades:
+      effects_one_dvp_tradeStep(effects_one_dvp_t))
+    \/ effects_one_dvp_tick
+    \/ effects_one_dvp_idle
+
+(*
+  @type: (() => Bool);
+*)
+q_inv == effectI
+
+(*
+  @type: (() => Bool);
+*)
+effects_one_dvp_adversarialStep ==
+  effects_one_dvp_step
+    \/ (\E effects_one_dvp_t \in effects_one_dvp_Trades:
+      \E effects_one_dvp_p \in 0 .. 6:
+        effects_one_dvp_proveUnadmitted(effects_one_dvp_t, effects_one_dvp_p)
+          \/ effects_one_dvp_deliverUnadmitted(effects_one_dvp_t, effects_one_dvp_p))
+    \/ (\E effects_one_dvp_t \in effects_one_dvp_Trades:
+      \E effects_one_dvp_p \in 0 .. 6:
+        \E effects_one_dvp_f \in 0 .. 10:
+          effects_one_dvp_inject(effects_one_dvp_t, effects_one_dvp_p, effects_one_dvp_f))
+    \/ (\E effects_one_dvp_a \in 0 .. 4:
+      effects_one_dvp_crash(effects_one_dvp_a)
+        \/ effects_one_dvp_recover(effects_one_dvp_a))
+    \/ (\E effects_one_dvp_l \in { 0, 1 }:
+      effects_one_dvp_spend(effects_one_dvp_l)
+        \/ effects_one_dvp_freeze(effects_one_dvp_l)
+        \/ effects_one_dvp_unfreeze(effects_one_dvp_l))
+    \/ effects_one_dvp_rotate
+    \/ effects_one_dvp_exitMember
+    \/ (\E effects_one_dvp_t \in effects_one_dvp_Trades:
+      \E effects_one_dvp_l \in { 0, 1 }:
+        effects_one_dvp_revokeLeg(effects_one_dvp_t, effects_one_dvp_l))
+    \/ effects_one_dvp_compromiseTransport
+
+(*
+  @type: (() => Bool);
+*)
+q_step == effects_one_dvp_adversarialStep
+
+================================================================================

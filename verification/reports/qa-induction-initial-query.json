@@ -1,0 +1,8 @@
+{
+  "utc": "2026-11-18T08:15:26.650574+00:00",
+  "action": "Explicit SIGTERM of preservation invocation; preserve immutable non-success receipt",
+  "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python verification/scripts/native_induction.py invoke verification/generated/native-induction/one/native-correspondence.json preserve",
+  "reason": "Native preservation from Init=effectI remained in redundant State0 invariant checking after more than12minutes. State0 effectI is already the assumed Init and is a tautology. Check all invariants exactly at successor1 instead, with original arbitrary effectI initialization and every actual Next transition unchanged. Actual initialization0 and implication0 are separate required proofs; the same custom faulty Next must still fail at1. No state or transition filter is introduced.",
+  "native_tuning": "search.invariantFilter=1->.*:search.invariant.mode=after",
+  "reference": "https://apalache-mc.org/docs/apalache/tuning.html"
+}

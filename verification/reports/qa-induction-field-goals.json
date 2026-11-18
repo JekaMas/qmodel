@@ -1,0 +1,6 @@
+{
+  "utc": "2026-11-18T08:54:58.061313+00:00",
+  "action": "Explicit SIGTERM; retain original invariant-query non-success",
+  "reason": "The falsifier remained in successor1 FullTypeOK membership checking for more than30minutes. Add a checked constructor/decoder bijection for TradeSpace and express the identical induction predicate by fields. This replaces expensive re-enumeration of the same record range with equivalent scalar/set/map constraints. Actual State/init/Next and required physical guarantee are unchanged. The bijection has separate universal native Quint forward/reverse obligations. The false-step control checks the desired soundness consequence, with its own I-implies-soundness proof; all positive preservation goals still prove the complete equivalent induction invariant.",
+  "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python verification/scripts/native_induction.py invoke verification/generated/native-induction/false-release/native-correspondence.json preserve"
+}

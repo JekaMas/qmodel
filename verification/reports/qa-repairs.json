@@ -1,0 +1,424 @@
+{
+  "effect_induction": [
+    {
+      "profile": "one",
+      "checks": [
+        "qa-effect-init-one",
+        "qa-effect-preserve-one",
+        "qa-effect-imply-one"
+      ],
+      "receipts": [
+        "qa-effect-init-one-attempt3",
+        "qa-effect-preserve-one-attempt3",
+        "qa-effect-imply-one"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 659.2073637503199,
+      "status": "passed"
+    },
+    {
+      "profile": "two",
+      "checks": [
+        "qa-effect-init-two",
+        "qa-effect-preserve-two",
+        "qa-effect-imply-two"
+      ],
+      "receipts": [
+        "qa-effect-init-two",
+        "qa-effect-preserve-two",
+        "qa-effect-imply-two"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 4142.848738376051,
+      "status": "passed"
+    },
+    {
+      "profile": "b",
+      "checks": [
+        "qa-effect-init-b",
+        "qa-effect-preserve-b",
+        "qa-effect-imply-b"
+      ],
+      "receipts": [
+        "qa-effect-init-b",
+        "qa-effect-preserve-b",
+        "qa-effect-imply-b"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 612.1644645836204,
+      "status": "passed"
+    },
+    {
+      "profile": "d",
+      "checks": [
+        "qa-effect-init-d",
+        "qa-effect-preserve-d",
+        "qa-effect-imply-d"
+      ],
+      "receipts": [
+        "qa-effect-init-d",
+        "qa-effect-preserve-d",
+        "qa-effect-imply-d"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 609.9222217081115,
+      "status": "passed"
+    },
+    {
+      "profile": "escrow",
+      "checks": [
+        "qa-effect-init-escrow",
+        "qa-effect-preserve-escrow",
+        "qa-effect-imply-escrow"
+      ],
+      "receipts": [
+        "qa-effect-init-escrow",
+        "qa-effect-preserve-escrow-attempt1",
+        "qa-effect-imply-escrow"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 616.9076663763262,
+      "status": "passed"
+    },
+    {
+      "profile": "shared",
+      "checks": [
+        "qa-effect-init-shared",
+        "qa-effect-preserve-shared",
+        "qa-effect-imply-shared"
+      ],
+      "receipts": [
+        "qa-effect-init-shared",
+        "qa-effect-preserve-shared",
+        "qa-effect-imply-shared"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 616.3452360010706,
+      "status": "passed"
+    },
+    {
+      "profile": "private",
+      "checks": [
+        "qa-effect-init-private",
+        "qa-effect-preserve-private",
+        "qa-effect-imply-private"
+      ],
+      "receipts": [
+        "qa-effect-init-private",
+        "qa-effect-preserve-private",
+        "qa-effect-imply-private"
+      ],
+      "deferred_checks": [],
+      "wall_seconds": 623.6023043757305,
+      "status": "passed"
+    },
+    {
+      "profile": "open",
+      "checks": [
+        "qa-effect-init-open",
+        "qa-effect-preserve-open",
+        "qa-effect-imply-open"
+      ],
+      "receipts": [
+        "qa-effect-init-open"
+      ],
+      "deferred_checks": [
+        "qa-effect-preserve-open",
+        "qa-effect-imply-open"
+      ],
+      "wall_seconds": 13.06251204200089,
+      "status": "deferred"
+    }
+  ],
+  "baseline_commit": "798676a310314e6e95167723e149938e388fcf9e",
+  "review_mode": "root final repair/source/evidence re-review; no new independent-agent sign-off",
+  "status": "DONE",
+  "scope": "Finding repairs and focused validation requested by the user",
+  "full_validation_status": "NOT DONE",
+  "deferred_checks": {
+    "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
+  },
+  "open_findings": [],
+  "findings": [
+    {
+      "id": "QA-01",
+      "status": "ADDRESSED",
+      "problem": "Incomplete returned-value/query/proof and note binding.",
+      "repair": "Issue captures authenticated Query, source, proof and availability independently of Payload. disclosureBound specifies all 16values, full identity, error/redaction, headers and exact source-note amount/recipient. TrustedAccess/TrustedNI additionally choose recipient and visible body from authenticated Query, so a producer cannot hide a disclosure behind its own role tag.",
+      "owners": [
+        "models/privacy_pipeline.qnt",
+        "models/observer_view.qnt",
+        "tests/payload_values_test.qnt"
+      ],
+      "evidence": [
+        "qa-payload-exact-values",
+        "qa-pipeline-access",
+        "qa-trusted-observer",
+        "qa-role-confusion",
+        "qa-role-confusion-access"
+      ],
+      "controls": [
+        "qa-payload_field0",
+        "qa-payload_field1",
+        "qa-payload_field2",
+        "qa-payload_field3",
+        "qa-payload_field4",
+        "qa-payload_field5",
+        "qa-payload_field6",
+        "qa-payload_field7",
+        "qa-payload_field8",
+        "qa-payload_field9",
+        "qa-payload_field10",
+        "qa-payload_field11",
+        "qa-payload_field12",
+        "qa-payload_field13",
+        "qa-payload_field14",
+        "qa-payload_field15",
+        "qa-payload_root",
+        "qa-payload_program",
+        "qa-note_amount",
+        "qa-note_recipient"
+      ],
+      "exact_receipts": [
+        "qa-payload-exact-values-attempt1",
+        "qa-pipeline-access",
+        "qa-trusted-observer",
+        "qa-role-confusion",
+        "qa-role-confusion-access",
+        "qa-payload_field0-attempt2",
+        "qa-payload_field1-attempt1",
+        "qa-payload_field2-attempt1",
+        "qa-payload_field3-attempt1",
+        "qa-payload_field4-attempt1",
+        "qa-payload_field5-attempt1",
+        "qa-payload_field6-attempt1",
+        "qa-payload_field7-attempt1",
+        "qa-payload_field8-attempt1",
+        "qa-payload_field9-attempt1",
+        "qa-payload_field10-attempt1",
+        "qa-payload_field11-attempt1",
+        "qa-payload_field12-attempt1",
+        "qa-payload_field13-attempt1",
+        "qa-payload_field14-attempt1",
+        "qa-payload_field15-attempt1",
+        "qa-payload_root-attempt1",
+        "qa-payload_program-attempt1",
+        "qa-note_amount",
+        "qa-note_recipient"
+      ]
+    },
+    {
+      "id": "QA-02",
+      "status": "ADDRESSED",
+      "problem": "Unadmitted authentic program input did not reach the real consumer; instruction tests did not establish certificate binding.",
+      "repair": "proveUnadmitted creates a crypto-valid statement from an actual captured source fact under program0, separately from historical program admission. deliverUnadmitted reaches the actual commit gate; rotation and member exit preserve this distinction.31 consumer cases exercise22descriptor fields, phase/checkpoint/program/root rejection and matching/historical/newly admitted acceptance.",
+      "owners": [
+        "models/dvp.qnt",
+        "models/admission_focus.qnt",
+        "tests/proof_consumer_test.qnt"
+      ],
+      "evidence": [
+        "qa-admission-contexts",
+        "qa-proof-consumer-contexts",
+        "qa-program_admission",
+        "qa-admission-b",
+        "qa-admission-d_security",
+        "qa-admission-d_cash",
+        "qa-program-admission-b",
+        "qa-program-admission-d_security",
+        "qa-program-admission-d_cash"
+      ],
+      "controls": [
+        "qa-program_admission",
+        "qa-program-admission-b",
+        "qa-program-admission-d_security",
+        "qa-program-admission-d_cash"
+      ],
+      "exact_receipts": [
+        "qa-admission-contexts",
+        "qa-proof-consumer-contexts-attempt1",
+        "qa-program_admission-attempt1",
+        "qa-admission-b",
+        "qa-admission-d_security",
+        "qa-admission-d_cash",
+        "qa-program-admission-b",
+        "qa-program-admission-d_security",
+        "qa-program-admission-d_cash"
+      ]
+    },
+    {
+      "id": "QA-03",
+      "status": "ADDRESSED",
+      "problem": "An ABORT report could satisfy the old assertion using premature absence records while holds remained live.",
+      "repair": "abortResolved independently inspects actual source holds, prior preparation, exactly one real release for prepared legs, no fictitious refund for absent legs, terminal local knowledge and matching dispositions. S06/S15 require it for booked/reconciled ABORT. The consumer continues to use authenticated records; no live remote-state read was added to its guard.",
+      "owners": [
+        "models/dvp.qnt",
+        "tests/abort_records_test.qnt"
+      ],
+      "evidence": [
+        "qa-abort-semantic-records",
+        "qa-premature_absence",
+        "qa-full-recovery"
+      ],
+      "controls": [
+        "qa-premature_absence"
+      ],
+      "exact_receipts": [
+        "qa-abort-semantic-records-attempt1",
+        "qa-premature_absence-attempt1",
+        "qa-full-recovery"
+      ]
+    },
+    {
+      "id": "QA-04",
+      "status": "ADDRESSED",
+      "problem": "Trade-indexed amount counters could not expose a correct-amount payout to a wrong account/asset.",
+      "repair": "Actual atomic delivery/release outputs record trade/leg/kind/chain/genesis/asset/account/quantity in core and multilateral machines. Financial rows record the complete authorized descriptor/outcome. Independent assertions compare outputs against terms, not producer helpers. Same-full-State induction checks actual holds/delivery/releases and placement-specific local atomicity, so plausible output rows alone cannot certify a real effect.",
+      "owners": [
+        "models/economic_effects.qnt",
+        "models/dvp.qnt",
+        "models/multilateral.qnt",
+        "models/effect_consistency.qnt",
+        "tests/economic_outputs_test.qnt"
+      ],
+      "evidence": [
+        "qa-economic-native",
+        "qa-economic-escrow",
+        "qa-economic-b",
+        "qa-economic-d",
+        "qa-economic-shared",
+        "qa-economic-multilateral",
+        "qa-economic-booking",
+        "qa-false-release",
+        "qa-effect-induction-false-release",
+        "qa-non-atomic-cash",
+        "qa-partial-shared"
+      ],
+      "controls": [
+        "qa-security_recipient",
+        "qa-security_asset",
+        "qa-cash_recipient",
+        "qa-cash_asset",
+        "qa-security_refund_recipient",
+        "qa-cash_refund_recipient",
+        "qa-booking_recipient",
+        "qa-booking_quantity"
+      ],
+      "exact_receipts": [
+        "qa-economic-native-attempt1",
+        "qa-economic-escrow-attempt1",
+        "qa-economic-b-attempt1",
+        "qa-economic-d-attempt1",
+        "qa-economic-shared-attempt2",
+        "qa-economic-multilateral-attempt1",
+        "qa-economic-booking",
+        "qa-false-release",
+        "qa-effect-induction-false-release-attempt2",
+        "qa-non-atomic-cash",
+        "qa-partial-shared",
+        "qa-security_recipient-attempt1",
+        "qa-security_asset-attempt1",
+        "qa-cash_recipient-attempt1",
+        "qa-cash_asset-attempt1",
+        "qa-security_refund_recipient-attempt1",
+        "qa-cash_refund_recipient-attempt1",
+        "qa-booking_recipient",
+        "qa-booking_quantity"
+      ]
+    }
+  ],
+  "property_count": 51,
+  "file_count": 177,
+  "counts": {
+    "selected": 241,
+    "baseline_positive": 144,
+    "expected_negative": 85,
+    "weak_discriminators": 5,
+    "deferred": 7
+  },
+  "proofs": [
+    {
+      "purpose": "reference",
+      "id": "qa-core-finite-attempt1",
+      "outcome": "finite_model_verified",
+      "states": 12502,
+      "wall_seconds": 16.347685667220503,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/dvp.qnt --main baseline --backend tlc --init init --step step --tlc-config verification/configs/extended-tlc.json --verbosity 3 --invariants safe CDecision"
+    },
+    {
+      "purpose": "one",
+      "id": "qa-full-one",
+      "outcome": "finite_model_verified",
+      "states": 12502,
+      "wall_seconds": 35.580837041605264,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/liveness.qnt --main liveness --backend tlc --init init --step step --tlc-config verification/configs/extended-tlc.json --verbosity 3 --invariants safe CDecision --temporal progress"
+    },
+    {
+      "purpose": "two",
+      "id": "qa-full-two-attempt1",
+      "outcome": "finite_model_verified",
+      "states": 684268,
+      "wall_seconds": 3306.15174341714,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/liveness_variants.qnt --main live_two --backend tlc --init init --step step --tlc-config verification/configs/extended-tlc8.json --verbosity 3 --invariants safe CDecision --temporal progress"
+    },
+    {
+      "purpose": "recovery",
+      "id": "qa-full-recovery",
+      "outcome": "finite_model_verified",
+      "states": 125632,
+      "wall_seconds": 190.00878595933318,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/recovery.qnt --main recovery --backend tlc --init init --step recoveryStep --tlc-config verification/configs/extended-tlc8.json --verbosity 3 --invariants safe CDecision --temporal recoveryProgress"
+    },
+    {
+      "purpose": "bounded12",
+      "id": "qa-apalache12",
+      "outcome": "bounded_no_counterexample",
+      "states": "unavailable",
+      "wall_seconds": 154.43549245921895,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/dvp.qnt --main baseline --backend apalache --max-steps 12 --invariants safe CDecision --apalache-config verification/configs/extended-apalache.json --verbosity 3"
+    },
+    {
+      "purpose": "program_admission",
+      "id": "qa-admission-contexts",
+      "outcome": "finite_model_verified",
+      "states": 133288,
+      "wall_seconds": 41.6043436662294,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/admission_focus.qnt --main admission_focus --backend tlc --init init --step focusStep --tlc-config verification/configs/extended-tlc8.json --verbosity 3 --invariants safe CDecision"
+    },
+    {
+      "purpose": "receipt_consistency_preservation",
+      "id": "qa-effect-preserve-one-attempt3",
+      "outcome": "executed_successfully",
+      "states": "unavailable",
+      "wall_seconds": 628.1315268329345,
+      "command": "/opt/homebrew/opt/python@3.14/bin/python3.14 verification/scripts/native_induction.py invoke verification/generated/native-induction/one-inductive/native-correspondence.json preserve"
+    },
+    {
+      "purpose": "trusted_observer",
+      "id": "qa-trusted-observer",
+      "outcome": "finite_model_verified",
+      "states": 55309,
+      "wall_seconds": 14.227270083036274,
+      "command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/observer_view.qnt --main observer_view --backend tlc --init init --step accessStep --tlc-config verification/configs/extended-tlc8.json --verbosity 3 --invariants safe TrustedNI TrustedAccess"
+    }
+  ],
+  "source_retention": "qa-source-retention.json",
+  "property_ledger": "qa-properties.json",
+  "file_ledger": "qa-files.json",
+  "historical_review": "../reviews/protocol-adequacy-2026-11-18/README.md",
+  "external_obligations": [
+    "circuits/prover/verifier implementation",
+    "actual QBFT/EVM/token execution",
+    "key/hardware/storage/network security",
+    "cryptographic privacy and real side channels",
+    "availability/cost measurement",
+    "legal/account/issuer rights and financial records"
+  ],
+  "focused_replay": 4
+}

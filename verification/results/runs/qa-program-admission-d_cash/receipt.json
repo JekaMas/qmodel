@@ -1,0 +1,81 @@
+{
+  "id": "qa-program-admission-d_cash",
+  "started_utc": "2026-11-18T08:21:25.402368+00:00",
+  "claim": "S10",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/mutants/admission_placements.qnt",
+    "--main",
+    "admission_d_cash_fault",
+    "--init",
+    "initControl",
+    "--step",
+    "stepControl",
+    "--invariant",
+    "S10",
+    "--backend",
+    "typescript",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "15",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "verification/results/traces/qa-program-admission-d_cash.itf.json"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/mutants/admission_placements.qnt --main admission_d_cash_fault --init initControl --step stepControl --invariant S10 --backend typescript --max-samples 1 --max-steps 15 --seed 17 --verbosity 2 --out-itf verification/results/traces/qa-program-admission-d_cash.itf.json",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/mutants/admission_placements.qnt": "a3f15b211f0578f6998d77913b8ec50badbe83df8502cc0226454a2fbc059a32",
+    "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+    "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "ea763a3668dab4d052c47a3a3e9b2d82ddd3c78687fb6d959434ad2170d14b0b"
+  },
+  "execution_plan_sha256": "27478a72429b730f96903d221dc806bd93ff7a64e43e3130e5d0c39f392791a3",
+  "raw_sha256": "f1e866738d25db1ed7b486ea66a84f3d5fd80fee81e4dffbbc11a5d789ef4eba",
+  "configuration": {
+    "name": "d_cash",
+    "host": 2,
+    "source_phase": 2,
+    "positive": "qa-admission-d_cash",
+    "negative": "qa-program-admission-d_cash",
+    "finding": "QA-02",
+    "property": "S10",
+    "steps": 15,
+    "scope": "Actual source-derived external program0 at the selected remote consumer; no provenance fixture."
+  },
+  "timeout_seconds": 120,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 2.3204104998148978,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/qa-program-admission-d_cash/raw.log",
+  "minimized": false,
+  "replayed": false,
+  "native_trace": "verification/results/runs/qa-program-admission-d_cash/native.itf.json",
+  "native_trace_sha256": "84c80907150c5994aa1eb4868d204ea1c4c3a5722860731aec4343c18b53bc69"
+}

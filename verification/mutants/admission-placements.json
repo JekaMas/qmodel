@@ -1,0 +1,35 @@
+[
+  {
+    "name": "b",
+    "host": 1,
+    "source_phase": 1,
+    "positive": "qa-admission-b",
+    "negative": "qa-program-admission-b",
+    "finding": "QA-02",
+    "property": "S10",
+    "steps": 15,
+    "scope": "Actual source-derived external program0 at the selected remote consumer; no provenance fixture."
+  },
+  {
+    "name": "d_security",
+    "host": 2,
+    "source_phase": 1,
+    "positive": "qa-admission-d_security",
+    "negative": "qa-program-admission-d_security",
+    "finding": "QA-02",
+    "property": "S10",
+    "steps": 15,
+    "scope": "Actual source-derived external program0 at the selected remote consumer; no provenance fixture."
+  },
+  {
+    "name": "d_cash",
+    "host": 2,
+    "source_phase": 2,
+    "positive": "qa-admission-d_cash",
+    "negative": "qa-program-admission-d_cash",
+    "finding": "QA-02",
+    "property": "S10",
+    "steps": 15,
+    "scope": "Actual source-derived external program0 at the selected remote consumer; no provenance fixture."
+  }
+]

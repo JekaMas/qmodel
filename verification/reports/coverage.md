@@ -1,3 +1,7 @@
+# Focused validation and deferred full checks
+
+The user requested minimum focused testing now. Full validation is NOT DONE. The exact deferred checks are recorded in qa-repairs.md and manifest.deferred_scoped_checks. Completed native observations retain their recorded scope.
+
 # Coverage verdict
 
 The project supplies an executable layered investigation and a scoped evidence matrix. It does not supply an unqualified proof of every configuration, the deployed banking system, legal DvP or cryptographic privacy.
@@ -8,11 +12,15 @@ The project supplies an executable layered investigation and a scoped evidence m
 - **C-Local:** both actual local applications eventually occur only under the stated recovery, data, asset-policy and submission assumptions. Immediate joint local usability fails. A private delivered commitment additionally needs the exact note/key.
 - **C-Records:** FULLY_APPLIED requires authenticated A/B application evidence. ABORT reconciliation requires authenticated actual/no-obligation application records from each source leg, not a direct remote-state read or relayer acknowledgement.
 
-The selected matrix currently has 162 named checks; unmet or unavailable observations: none. Exact scope and observations are in [the manifest](../results/manifest.json), [property traceability](traceability.md), [variants](../variants.md), and [execution commands](executions.md). Counts are unique executions, not a multiplied claim count.
+The selected matrix currently has 241 named checks; unmet or unavailable observations: qa-immediate, qa-permanent-halt, qa-combined-faults-17, qa-combined-faults-43, qa-effect-preserve-open, qa-effect-imply-open, qa-combined-faults-29. Exact scope and observations are in [the manifest](../results/manifest.json), [property traceability](traceability.md), [variants](../variants.md), and [execution commands](executions.md). Counts are unique executions, not a multiplied claim count.
+
+## Historical resolutions and current repair proofs
+
+The following extended-run measurements describe the previous source revision. The current enriched model is rechecked separately in [QA repair review](qa-repairs.md); its exact observations are manifest.qa_repair_proofs. Original receipts are never relabeled.
 
 ## Residual limits and failed attempts
 
-Original full-reference Apalache12/20 and unrestricted-job two-trade/recovery180-second receipts remain timeouts. The extended profile uses8GiB and larger per-invocation budgets. Direct full Apalache12 passed in182.9seconds. Longer direct20 and exact finite-choice SMT probes were explicitly interrupted at native Z3 query cost and remain non-successes. The identical current full reference was then checked exhaustively by TLC:12,502states, complete graph depth38, S01–S16 and CDecision. This proves all reachable safety prefixes, including20; it is neither an algebraic projection nor a compact-job substitute. The full unrestricted two-trade and recovery temporal checks have separate current native results below. Their hypotheses retain all proof phases0–6 and per-trade/per-action fairness.
+Original full-reference Apalache12/20 and unrestricted-job two-trade/recovery180-second receipts remain timeouts. The extended profile uses8GiB and larger per-invocation budgets. Direct full Apalache12 passed in182.9seconds. Longer direct20 and exact finite-choice SMT probes were explicitly interrupted at native Z3 query cost and remain non-successes. The identical previous full reference was then checked exhaustively by TLC:12,502states, complete graph depth38, S01–S16 and CDecision. This proves all reachable safety prefixes, including20; it is neither an algebraic projection nor a compact-job substitute. The full unrestricted two-trade and recovery temporal checks have separate current native results below. Their hypotheses retain all proof phases0–6 and per-trade/per-action fairness.
 
 ## Risk-based interactions
 

@@ -1,0 +1,205 @@
+{
+  "state_fields": [
+    {
+      "field": "trades",
+      "domain": "Trades.setOfMaps(TradeSpace)",
+      "field_constraint": "x.trades.keys()==Trades and Trades.forall(t=>tradeDomainContains(x.trades.get(t)))"
+    },
+    {
+      "field": "signed",
+      "domain": "tuples(Trades.map(t=>desc(t)),Set(0,1)).powerset()",
+      "field_constraint": "x.signed.subseteq(tuples(Trades.map(t=>desc(t)),Set(0,1)))"
+    },
+    {
+      "field": "height",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.height)"
+    },
+    {
+      "field": "ownerA",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.ownerA)"
+    },
+    {
+      "field": "ownerB",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.ownerB)"
+    },
+    {
+      "field": "vaultA",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.vaultA)"
+    },
+    {
+      "field": "vaultB",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.vaultB)"
+    },
+    {
+      "field": "spentA",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.spentA)"
+    },
+    {
+      "field": "spentB",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.spentB)"
+    },
+    {
+      "field": "receivedA",
+      "domain": "Trades.setOfMaps(Int)",
+      "field_constraint": "x.receivedA.keys()==Trades and Trades.forall(t=>Int.contains(x.receivedA.get(t)))"
+    },
+    {
+      "field": "receivedB",
+      "domain": "Trades.setOfMaps(Int)",
+      "field_constraint": "x.receivedB.keys()==Trades and Trades.forall(t=>Int.contains(x.receivedB.get(t)))"
+    },
+    {
+      "field": "economicReceipts",
+      "domain": "OutputSpace.powerset()",
+      "field_constraint": "x.economicReceipts.subseteq(OutputSpace)"
+    },
+    {
+      "field": "financialRecords",
+      "domain": "BookingSpace.powerset()",
+      "field_constraint": "x.financialRecords.subseteq(BookingSpace)"
+    },
+    {
+      "field": "included",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.included.subseteq(FactSpace)"
+    },
+    {
+      "field": "finalized",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.finalized.subseteq(FactSpace)"
+    },
+    {
+      "field": "captured",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.captured.subseteq(FactSpace)"
+    },
+    {
+      "field": "proofs",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.proofs.subseteq(FactSpace)"
+    },
+    {
+      "field": "network",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.network.subseteq(FactSpace)"
+    },
+    {
+      "field": "received",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.received.subseteq(FactSpace)"
+    },
+    {
+      "field": "abortRecords",
+      "domain": "AbortSpace.powerset()",
+      "field_constraint": "x.abortRecords.subseteq(AbortSpace)"
+    },
+    {
+      "field": "pruned",
+      "domain": "FactSpace.powerset()",
+      "field_constraint": "x.pruned.subseteq(FactSpace)"
+    },
+    {
+      "field": "up",
+      "domain": "0.to(4).powerset()",
+      "field_constraint": "x.up.subseteq(0.to(4))"
+    },
+    {
+      "field": "epoch",
+      "domain": "Int",
+      "field_constraint": "Int.contains(x.epoch)"
+    },
+    {
+      "field": "admitted",
+      "domain": "Bool",
+      "field_constraint": "Bool.contains(x.admitted)"
+    },
+    {
+      "field": "historical",
+      "domain": "Set(1,2).powerset()",
+      "field_constraint": "x.historical.subseteq(Set(1,2))"
+    },
+    {
+      "field": "eligible",
+      "domain": "tuples(Trades,Set(0,1)).powerset()",
+      "field_constraint": "x.eligible.subseteq(tuples(Trades,Set(0,1)))"
+    },
+    {
+      "field": "frozen",
+      "domain": "Set(0,1).powerset()",
+      "field_constraint": "x.frozen.subseteq(Set(0,1))"
+    },
+    {
+      "field": "note",
+      "domain": "Trades.powerset()",
+      "field_constraint": "x.note.subseteq(Trades)"
+    },
+    {
+      "field": "rejects",
+      "domain": "0.to(10).powerset()",
+      "field_constraint": "x.rejects.subseteq(0.to(10))"
+    },
+    {
+      "field": "transportCompromised",
+      "domain": "Bool",
+      "field_constraint": "Bool.contains(x.transportCompromised)"
+    },
+    {
+      "field": "custody",
+      "domain": "Bool",
+      "field_constraint": "Bool.contains(x.custody)"
+    },
+    {
+      "field": "upgrade",
+      "domain": "Bool",
+      "field_constraint": "Bool.contains(x.upgrade)"
+    },
+    {
+      "field": "validator",
+      "domain": "Bool",
+      "field_constraint": "Bool.contains(x.validator)"
+    },
+    {
+      "field": "decrypt",
+      "domain": "Bool",
+      "field_constraint": "Bool.contains(x.decrypt)"
+    }
+  ],
+  "row_fields": [
+    "decision",
+    "oldTerminal",
+    "holdA",
+    "holdB",
+    "effectsA",
+    "effectsB",
+    "refundsA",
+    "refundsB",
+    "knownA",
+    "knownB",
+    "preparedA",
+    "preparedB",
+    "appliedEvidenceA",
+    "appliedEvidenceB",
+    "booked",
+    "report",
+    "stale",
+    "intent"
+  ],
+  "row_bijection_obligations": [
+    "qa-trade-domain-forward",
+    "qa-trade-domain-reverse"
+  ],
+  "identities": [
+    "record-set membership iff every named field belongs to its domain",
+    "function-set membership iff exact domain and pointwise range membership",
+    "powerset membership iff subset",
+    "TradeSpace membership iff tradeDomainContains by the two universal native lemmas"
+  ],
+  "scope": "Exact typed record/map/set-domain equivalence; no protocol state or Next relation changes."
+}

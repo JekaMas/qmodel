@@ -1,0 +1,72 @@
+ACTUAL_NATIVE_COMMAND ["/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/bin/apalache-mc", "check", "--init=q_init", "--next=q_step", "--inv=effectSoundness", "--length=1", "--tuning-options=search.invariantFilter=1->.*:search.invariant.mode=after", "verification/generated/native-induction/false-release/induction_false_release.tla"]
+Picked up JAVA_TOOL_OPTIONS: -Xmx24g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/induction_false_release.tla/2026-11-18T13-51-08_215523531770040771
+# APALACHE version: 0.62.4 | build: 7954daf                       I@13:51:08.741
+Tuning: search.invariantFilter=1->.*:search.invariant.mode=after  I@13:51:08.746
+PASS #0: SanyParser                                               I@13:51:08.952
+PASS #1: TypeCheckerSnowcat                                       I@13:51:09.335
+ > Running Snowcat .::.                                           I@13:51:09.335
+ > Your types are purrfect!                                       I@13:51:14.673
+ > All expressions are typed                                      I@13:51:14.673
+PASS #2: ConfigurationPass                                        I@13:51:14.674
+  > Set the initialization predicate to q_init                    I@13:51:14.676
+  > Set the transition predicate to q_step                        I@13:51:14.677
+  > Set an invariant to effectSoundness                           I@13:51:14.677
+PASS #3: DesugarerPass                                            I@13:51:14.681
+  > Desugaring...                                                 I@13:51:14.681
+PASS #4: InlinePass                                               I@13:51:14.697
+Leaving only relevant operators: CInitPrimed, effectSoundness, q_init, q_initPrimed, q_step I@13:51:14.698
+PASS #5: TemporalPass                                             I@13:51:14.849
+  > Rewriting temporal operators...                               I@13:51:14.849
+  > No temporal property specified, nothing to encode             I@13:51:14.850
+PASS #6: InlinePass                                               I@13:51:14.850
+Leaving only relevant operators: CInitPrimed, effectSoundness, q_init, q_initPrimed, q_step I@13:51:14.850
+PASS #7: PrimingPass                                              I@13:51:14.872
+  > Introducing q_initPrimed for q_init'                          I@13:51:14.874
+PASS #8: VCGen                                                    I@13:51:15.022
+  > Producing verification conditions from the invariant effectSoundness I@13:51:15.022
+  > VCGen produced 2 verification condition(s)                    I@13:51:15.026
+PASS #9: PreprocessingPass                                        I@13:51:15.028
+  > Before preprocessing: unique renaming                         I@13:51:15.028
+ > Applying standard transformations:                             I@13:51:15.033
+  > PrimePropagation                                              I@13:51:15.033
+  > Desugarer                                                     I@13:51:15.042
+  > UniqueRenamer                                                 I@13:51:15.079
+  > Normalizer                                                    I@13:51:15.106
+  > SetMembershipSimplifier                                       I@13:51:15.130
+  > Keramelizer                                                   I@13:51:15.152
+  > After preprocessing: UniqueRenamer                            I@13:51:15.184
+PASS #10: TransitionFinderPass                                    I@13:51:15.237
+  > Found 1 initializing transitions                              I@13:51:15.279
+  > Found 13 transitions                                          I@13:51:15.287
+  > No constant initializer                                       I@13:51:15.288
+  > Applying unique renaming                                      I@13:51:15.288
+PASS #11: OptimizationPass                                        I@13:51:15.309
+ > Applying optimizations:                                        I@13:51:15.313
+  > ConstSimplifier                                               I@13:51:15.313
+  > ExprOptimizer                                                 I@13:51:15.344
+  > SetMembershipSimplifier                                       I@13:51:15.360
+  > ConstSimplifier                                               I@13:51:15.367
+PASS #12: AnalysisPass                                            I@13:51:15.392
+ > Marking skolemizable existentials and sets to be expanded...   I@13:51:15.394
+  > Skolemization                                                 I@13:51:15.394
+  > Expansion                                                     I@13:51:15.397
+  > Remove unused let-in defs                                     I@13:51:15.407
+ > Running analyzers...                                           I@13:51:15.415
+  > Introduced expression grades                                  I@13:51:15.420
+PASS #13: BoundedChecker                                          I@13:51:15.420
+Step 0: picking a transition out of 1 transition(s)               I@13:51:21.683
+Step 1: picking a transition out of 13 transition(s)              I@13:51:22.280
+State 1: Checking 2 state invariants                              I@13:51:23.490
+State 1: state invariant 0 holds.                                 I@13:51:23.535
+Check the trace in: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/induction_false_release.tla/2026-11-18T13-51-08_215523531770040771/violation1.tla, /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/induction_false_release.tla/2026-11-18T13-51-08_215523531770040771/MCviolation1.out, /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/induction_false_release.tla/2026-11-18T13-51-08_215523531770040771/violation1.json, /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/induction_false_release.tla/2026-11-18T13-51-08_215523531770040771/violation1.itf.json I@13:51:24.426
+State 1: state invariant 1 violated.                              I@13:51:24.426
+Found 1 error(s)                                                  I@13:51:24.441
+The outcome is: Error                                             I@13:51:24.521
+Checker has found an error                                        I@13:51:24.553
+It took me 0 days  0 hours  0 min 15 sec                          I@13:51:24.553
+Total time: 15.810 sec                                            I@13:51:24.553
+EXITCODE: ERROR (12)

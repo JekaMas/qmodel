@@ -25,11 +25,25 @@ def inputs(cmd):
   found[str(p.relative_to(ROOT))]=digest(p)
   if p.suffix=='.qnt':
    for ref in re.findall(r'from\s+"([^"]+)"',p.read_text()):visit((p.parent/ref).with_suffix('.qnt'))
+  if p.name=='native-correspondence.json':
+   for rel in json.loads(p.read_text())['native_input_closure']:visit(ROOT/rel)
  for i,arg in enumerate(cmd):
   # A prior ITF export is output, never a semantic model input.
   if i and cmd[i-1] in ['--out-itf','--out','--output']:continue
-  if arg.endswith(('.qnt','.json')) and (ROOT/arg).is_file():visit(ROOT/arg)
+  if arg.endswith(('.qnt','.json','.tla','.py')) and (ROOT/arg).is_file():visit(ROOT/arg)
  return found
+
+def native_tool_error(raw):
+ # An indented response field "error: 0" is data, not a CLI diagnostic.
+ cleaned=re.sub(r'error: Invariant violated|error: found a counterexample','',raw)
+ # Native Apalache 0.62.4 calls a witnessed property violation ERROR (12).
+ # Require the invariant diagnostic and exported trace; other ERROR statuses
+ # (including input errors) remain tool failures. Never infer a kill from 12 alone.
+ if native_counterexample(raw):cleaned=cleaned.replace('EXITCODE: ERROR (12)','')
+ return bool(re.search(r'^error:|^Input error|EXITCODE: ERROR|Error \[QNT|java\.lang\.|Could not find|Unhandled|Unknown argument',cleaned,re.M))
+
+def native_counterexample(raw):
+ return bool(re.search(r'State \d+: state invariant \d+ violated\.',raw) and 'Check the trace in:' in raw and 'violation1.itf.json' in raw and 'EXITCODE: ERROR (12)' in raw and not re.search(r'^Input error|Error \[QNT|java\.lang\.',raw,re.M))
 
 def execute(id,cmd,*,claim,expected='pass',backend='cli',seconds=120,config=None,record=True,force=False,execution_env=None,resource_limit=None):
  child_env={**ENV,**(execution_env or {})}
@@ -68,7 +82,7 @@ def execute(id,cmd,*,claim,expected='pass',backend='cli',seconds=120,config=None
  raw=(d/'raw.log').read_text();duration=time.monotonic()-started
  # A nonzero status alone never kills a mutant. Require a property violation from the backend.
  violation=bool(re.search(r'Invariant .+ is violated|Temporal properties were violated|[Ii]nvariant.*violated|found a counterexample|invariant violated|Invariant violated|Temporal property.*violated',raw))
- toolerror=bool(re.search(r'error:|Error \[QNT|java.lang.|Could not find|Unhandled|Unknown argument',re.sub(r'error: Invariant violated|error: found a counterexample','',raw)))
+ toolerror=native_tool_error(raw)
  if len(cmd)>1 and cmd[1]=='test' and not re.search(r'[1-9][0-9]* passing',raw):toolerror=True
  if timedout:outcome='timeout'
  elif violation and not toolerror:outcome='expected_counterexample_found' if expected=='counterexample' else 'counterexample_found'

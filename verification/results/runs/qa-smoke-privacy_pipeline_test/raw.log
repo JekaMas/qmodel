@@ -1,0 +1,12 @@
+
+  privacy_pipeline_test
+    ok boundWorldsTest passed 1 test(s)
+    ok unauthorizedPayloadTest passed 1 test(s)
+    ok wrongScopePayloadTest passed 1 test(s)
+    ok authorizedWitnessTest passed 1 test(s)
+    ok noteUnavailableTest passed 1 test(s)
+    ok retryLinkTest passed 1 test(s)
+    ok recoveryAndAuditTest passed 1 test(s)
+    ok keyLossTest passed 1 test(s)
+
+  8 passing (46ms)

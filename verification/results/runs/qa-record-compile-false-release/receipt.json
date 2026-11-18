@@ -1,0 +1,63 @@
+{
+  "id": "qa-record-compile-false-release",
+  "started_utc": "2026-11-18T08:16:07.579679+00:00",
+  "claim": [
+    "Compile actual full State/init/stepControl; no verification claim"
+  ],
+  "backend": "cli",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "compile",
+    "verification/mutants/induction_soundness.qnt",
+    "--main",
+    "induction_false_release",
+    "--init",
+    "initControl",
+    "--step",
+    "stepControl",
+    "--invariant",
+    "effectI",
+    "--target",
+    "tlaplus",
+    "--verbosity",
+    "0"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint compile verification/mutants/induction_soundness.qnt --main induction_false_release --init initControl --step stepControl --invariant effectI --target tlaplus --verbosity 0",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx24g -Xss8m",
+    "JVM_ARGS": "-Xmx24g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/mutants/induction_soundness.qnt": "024f75eb98f179d04908576d82ff5218366f42d3ec12cf0f2b428bbd18cd8fb2",
+    "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+    "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "ea763a3668dab4d052c47a3a3e9b2d82ddd3c78687fb6d959434ad2170d14b0b"
+  },
+  "execution_plan_sha256": "81b167dde721bc06d73b4a2ee0f9a16dc5815986b391b3da17c454b095d5a79b",
+  "raw_sha256": "9c0e433323631cc0aa5f1a3edc3a84169adb367e81e0035942043e66840e4863",
+  "configuration": {},
+  "timeout_seconds": 14400,
+  "resource_limit": "24GiB heap; one sequential native checker;14400s cap",
+  "exit_code": 0,
+  "wall_seconds": 14.103274916764349,
+  "outcome": "executed_successfully",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runs/qa-record-compile-false-release/raw.log",
+  "minimized": false,
+  "replayed": false
+}

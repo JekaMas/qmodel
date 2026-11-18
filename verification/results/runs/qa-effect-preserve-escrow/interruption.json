@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-18T11:39:37.165412+00:00",
+  "outcome": "interrupted-unreceipted-attempt",
+  "reason": "Turn/tool-host restart removed the supervising runner while its separately grouped native child continued. Preserve its plan, inputs and raw output. OS exit status was not captured; this is not an accepted positive observation. Explicitly terminate the orphan and rerun only this missing obligation; reuse all completed one/two/B/D and escrow-init/compiler greens.",
+  "process_group": 44363,
+  "os_exit_status": null,
+  "original_plan": "verification/results/runs/qa-effect-preserve-escrow/execution-plan.json",
+  "raw_output": "verification/results/runs/qa-effect-preserve-escrow/raw.log"
+}

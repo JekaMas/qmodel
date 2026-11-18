@@ -3,7 +3,9 @@
 // theorem for dvp.qnt. Private witnesses are never fields of observer-visible events.
 module privacy_pipeline {
   const LEAK:int // 0 safe; 1 witness log; 2 timing; 3 unsalted guess; 4 wrong scope;
-                 // 5 substituted disclosure; 6 wrong recipient note; 7 key compromise.
+                 // 5 substituted disclosure; 6 wrong recipient note; 7 key compromise;
+                 // 8..23 wrong scalar field0..15; 24 wrong root; 25 wrong program;
+                 // 26 wrong source-note amount; 27 wrong source-note recipient.
   type Witness={trade:int,asset:int,amount:int,sender:int,recipient:int,
     genesis:int,position:int,owner:int,held:int,epoch:int}
   type Proof={trade:int,asset:int,amount:int,program:int,root:int,witness:Witness}
@@ -48,7 +50,8 @@ module privacy_pipeline {
       {...w,owner:w.owner-3,held:0,paid:3}
     else if(op==10 and w.paid==3) {...w,hasNote:true,
       note:{trade:w.captured.trade,asset:if(LEAK==6) 41 else w.captured.asset,
-        amount:w.captured.amount,recipient:w.captured.recipient},usable:w.key}
+        amount:if(LEAK==26) 4 else w.captured.amount,
+        recipient:if(LEAK==27) 0 else w.captured.recipient},usable:w.key}
     else if(op==11 and w.hasProof and w.paid==3) {...w,reportComplete:true}
     else w
   // This is the complete returned wire/API body. Internal source witnesses are
@@ -75,7 +78,11 @@ module privacy_pipeline {
     payload:{...e.payload,root:if(e.payload.root==0) 0 else if(e.payload.root==name(w,w.snapshot)) 1 else e.payload.root,
       value:if(e.payload.field==9 and e.payload.error==0 and e.payload.value==name(w,w.snapshot)) 1 else e.payload.value}}
   // Ghost issuance provenance is internal verifier/oracle data, never a response.
-  type Issue={response:Payload,source:Witness,note:Note}
+  // The query and contemporaneous source/proof context are captured separately
+  // from the returned body. Neither release nor fieldValue is an oracle helper.
+  type Query={role:int,field:int,surface:int,scope:int,at:int}
+  type Issue={response:Payload,query:Query,source:Witness,note:Note,hasNote:bool,
+    proofRoot:int,proofProgram:int,hasProof:bool,decision:int,up:bool}
   // Authenticated principal IDs, not caller-asserted role strings. Field indices
   // and six surfaces match privacy-policy.md. Scope 1 is the admitted local trade;
   // scope 2 is unrelated and cannot use the same authorization.
@@ -99,13 +106,17 @@ module privacy_pipeline {
       (LEAK==7 and role==3 and f==3)
     val available=f!=7 or w.hasNote
     {role:role,field:f,surface:surface,scope:scope,
-      value:if(not(permitted) or not(available)) -1 else if(LEAK==5 and f==2) 4 else fieldValue(w,f,at),
+      value:if(not(permitted) or not(available)) -1
+        else if(LEAK==8+f) (if(f==0) 0 else if(f==1) 1 else 99)
+        else if(LEAK==5 and f==2) 4 else fieldValue(w,f,at),
       error:if(not(permitted)) 403 else if(not(available)) 404 else 0,trade:w.snapshot.trade,
       asset:if(permitted and available and Set(2,6,7).contains(f)) w.snapshot.asset else 0,
-      root:w.proof.root,program:w.proof.program,
+      root:if(LEAK==24) 999 else w.proof.root,program:if(LEAK==25) 99 else w.proof.program,
       note:if(permitted and available and f==7) w.note else emptyPayload.note}}
   pure def issued(w:World,role:int,f:int,surface:int,scope:int,at:int):Issue={
-    response:release(w,role,f,surface,scope,at),source:w.snapshot,note:w.note}
+    response:release(w,role,f,surface,scope,at),query:{role:role,field:f,surface:surface,scope:scope,at:at},
+    source:w.snapshot,note:w.note,hasNote:w.hasNote,proofRoot:w.proof.root,
+    proofProgram:w.proof.program,hasProof:w.hasProof,decision:w.decision,up:w.up}
   // Relayer+unrelated-institution observers see their own complete response body.
   // Other authenticated principals use private channels: observer sees permitted
   // routing/status/size metadata, not regulator/prover/custody plaintext. The fixed
@@ -154,12 +165,24 @@ module privacy_pipeline {
     (not(Set(2,6,7).contains(d.field)) or d.error!=0) implies d.asset==0}
   pure def disclosureBound(i:Issue):bool = {
     val d=i.response
-    d.error!=0 or and {d.trade==i.source.trade,
-      if(Set(2,6,7).contains(d.field)) d.asset==i.source.asset else true,
-      if(d.field==2) d.value==i.source.amount else if(d.field==3 or d.field==6) d.value==i.source.position
-      else if(d.field==7) d.value==i.note.amount and d.note==i.note and
-        d.note.trade==i.source.trade and d.note.asset==i.source.asset and d.note.recipient==i.source.recipient
-      else true}
+    val q=i.query
+    val expectedError=if(not(entitled(q.role,q.field,q.scope))) 403 else if(q.field==7 and not(i.hasNote)) 404 else 0
+    // Independent specification of each value, evaluated from immutable issuance
+    // provenance. Keep this separate from the mutable producer's fieldValue.
+    val expectedValue=if(q.field==0) i.source.recipient else if(q.field==1) i.source.sender
+      else if(q.field==2) i.source.amount else if(q.field==3 or q.field==6) i.source.position
+      else if(q.field==4) 1 else if(q.field==5) i.source.held else if(q.field==7) i.note.amount
+      else if(q.field==8) i.proofProgram else if(q.field==9) i.proofRoot
+      else if(q.field==10) i.source.trade else if(q.field==11) i.decision
+      else if(q.field==12) i.source.genesis else if(q.field==13) (if(i.hasProof) 2 else 1)
+      else if(q.field==14) (if(i.up) q.at else 503) else 1
+    and {d.role==q.role,d.field==q.field,d.surface==q.surface,d.scope==q.scope,
+      d.error==expectedError,d.trade==i.source.trade,d.root==i.proofRoot,d.program==i.proofProgram,
+      d.value==(if(expectedError==0) expectedValue else -1),
+      d.asset==(if(expectedError==0 and Set(2,6,7).contains(q.field)) i.source.asset else 0),
+      if(q.field==7 and expectedError==0) d.note==i.note and d.note.trade==i.source.trade and
+        d.note.asset==i.source.asset and d.note.amount==i.source.amount and
+        d.note.recipient==i.source.recipient else d.note==emptyPayload.note}
   }
   pure def usable(w:World):bool = w.usable implies w.paid==3 and w.hasNote and w.key and
     w.note.trade==w.captured.trade and w.note.asset==w.captured.asset and

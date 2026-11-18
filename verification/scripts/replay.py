@@ -74,7 +74,7 @@ def main():
  original=canonical(json.loads(old_trace.read_text())['states']) if old_trace and old_trace.is_file() else None
  for i,arg in enumerate(cmd):
   if i and cmd[i-1] in ['--out-itf','--out','--output']:continue
-  if arg.endswith(('.qnt','.json')):cmd[i]=str(captured_argument(receipt_path,r,arg))
+  if arg.endswith(('.qnt','.json','.tla','.py')):cmd[i]=str(captured_argument(receipt_path,r,arg))
  stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
  out=RESULTS/'replays'/r['id']/stamp;out.mkdir(parents=True)
  if '--out-itf' in cmd:cmd[cmd.index('--out-itf')+1]=str(out/'native.itf.json')

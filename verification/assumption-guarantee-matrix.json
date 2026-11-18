@@ -33,7 +33,7 @@
     "enforcement": "Single-ledger all-or-nothing transitions and supported hold/token methods; real Solidity/EVM execution is an external conformance obligation.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "mutant-non_atomic",
+      "qa-legacy-non_atomic",
       "auth-direct_bad_execution",
       "auth-execution_rejects_invalid"
     ]
@@ -52,9 +52,9 @@
     "enforcement": "Complete descriptor signatures and structured proof public bindings are enforced by guards; actual encoding/circuits/crypto remain external.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "scenario-bindings_test",
-      "mutant-binding",
-      "mutant-relayer_assertion"
+      "qa-scenarios-bindings_test",
+      "qa-legacy-binding",
+      "qa-legacy-relayer_assertion"
     ]
   },
   {
@@ -92,10 +92,10 @@
     "enforcement": "Operational monitoring/redundancy may support the hypothesis but cannot guarantee recovery from a permanently failed ledger.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-phase-failure-witnesses",
-      "overclaim-permanent-halt"
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-scenarios-phase_failure_test",
+      "qa-permanent-halt"
     ]
   },
   {
@@ -130,9 +130,9 @@
     "enforcement": "Capture immutable finalized evidence durably before pruning; use retained program/checkpoint history, and do not confuse adapter restoration with witness recovery.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "scenario-recovery_test",
+      "qa-scenarios-recovery_test",
       "trust-v2-witness_loss",
-      "network-loss-recovery"
+      "qa-scenarios-network_test"
     ]
   },
   {
@@ -151,7 +151,7 @@
     "executed_perturbations": [
       "trust-v2-insufficient_submitters",
       "trust-v2-committee_refusal",
-      "final-phase-failure-witnesses"
+      "qa-scenarios-phase_failure_test"
     ]
   },
   {
@@ -167,10 +167,10 @@
     "enforcement": "Observation rules preserve stable trade links and opaque-name equality; low-entropy guessing, logs and timing are separate leak controls.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "review-pipeline-PNI",
-      "review-pipeline_log",
-      "review-pipeline_unsalted",
-      "review-pipeline_timing"
+      "qa-pipeline-access",
+      "qa-pipeline_log",
+      "qa-pipeline_unsalted",
+      "qa-pipeline_timing"
     ]
   },
   {
@@ -186,9 +186,9 @@
     "enforcement": "Authenticated roles/scopes construct the complete returned Payload; private Issue provenance is internal. Selected observer sees its full responses; other authorized private channels have explicit declassification. Policy and channel implementation remain external.",
     "failure": "See named actual positive/negative observations; dependent claims can fail. Independent perturbations do not prove a globally minimal assumption set.",
     "executed_perturbations": [
-      "review-pipeline-PAccess",
-      "review-pipeline_scope",
-      "review-pipeline_compromise",
+      "qa-pipeline-access",
+      "qa-pipeline_scope",
+      "qa-pipeline_compromise",
       "audit-omitted_record"
     ]
   },
@@ -222,10 +222,10 @@
     "guarantee": "Exact delivered note plus key access remains recoverable.",
     "enforcement": "Bind note to actual transition; monitor delivery/key custody. No magic reconstruction from COMMIT.",
     "executed_perturbations": [
-      "review-typed-private-availability",
-      "review-typed-private-unconditionalAvailability",
-      "review-pipeline_note",
-      "review-pipeline_compromise"
+      "qa-private-availability",
+      "qa-private-unconditionalAvailability",
+      "qa-pipeline_note",
+      "qa-pipeline_compromise"
     ],
     "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
   },
@@ -281,11 +281,11 @@
     "guarantee": "Finite one/two trades, integer units, finite program epochs, bounded fact phases; specialized three-domain installation and paired worlds.",
     "enforcement": "Exact input closures and bounds in receipts; no parameterized theorem or general composition inferred.",
     "executed_perturbations": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "three-domain-installation-final",
-      "review-pipeline-PNI"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-multilateral",
+      "qa-pipeline-access"
     ],
     "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
   },
@@ -303,9 +303,9 @@
     "guarantee": "Authentic canonical finalized local read produces descriptor/leg/genesis/checkpoint/program-bound refund or no-obligation record.",
     "enforcement": "Source-local capture; recordAbort requires both source records and authentic A outcome. This is a required interface, not arbitrary relayer/RPC trust.",
     "executed_perturbations": [
-      "abort-authoritative-records",
-      "extended-tlc-two",
-      "extended-tlc-recovery"
+      "qa-scenarios-policy_test",
+      "qa-full-two",
+      "qa-full-recovery"
     ],
     "failure": "Dependent claims are conditional on this interface/bound; see exact controls and conformance obligations."
   }

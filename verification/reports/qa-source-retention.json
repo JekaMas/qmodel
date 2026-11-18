@@ -1,0 +1,2289 @@
+{
+  "baseline_commit": "798676a310314e6e95167723e149938e388fcf9e",
+  "status": "passed",
+  "family_count": 175,
+  "revalidated_families": 87,
+  "retained_families": 81,
+  "deferred_families": 7,
+  "deferred_current": {
+    "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
+    "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
+  },
+  "current_subjects": 155,
+  "families": [
+    {
+      "family": "abort-authoritative-records",
+      "selected": "qa-scenarios-policy_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "actual-b-clock-expiry",
+      "selected": "qa-legacy-expiry",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "actual-queue-time-privacy",
+      "selected": "actual-queue-time-privacy",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/integrated.qnt",
+          "original_sha256": "cf6bf11fd00ada9f3ea1ea4460d42e486d7c7d9601b6422fba442a0716820678",
+          "current_sha256": "e64c068bccca069032a548f3a5fabbbb7209a778b6dedd2e568eb841b78727a2",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        },
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "apalache-algebraic-12",
+      "selected": "apalache-algebraic-12",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "apalache-algebraic-20",
+      "selected": "apalache-algebraic-20",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "apalache-algebraic-8",
+      "selected": "apalache-algebraic-8",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "audit-audit_safe",
+      "selected": "audit-audit_safe",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "audit-omitted_record",
+      "selected": "audit-omitted_record",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-direct",
+      "selected": "auth-direct",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-direct_bad_execution",
+      "selected": "auth-direct_bad_execution",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-execution",
+      "selected": "auth-execution",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-execution_rejects_history",
+      "selected": "auth-execution_rejects_history",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-execution_rejects_invalid",
+      "selected": "auth-execution_rejects_invalid",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-zk_bad_execution",
+      "selected": "auth-zk_bad_execution",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "auth-zk_consensus",
+      "selected": "auth-zk_consensus",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "combined-faults-17",
+      "selected": "qa-combined-faults-17",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "combined-faults-17",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "combined-faults-43",
+      "selected": "qa-combined-faults-43",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "combined-faults-43",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "contract-b_hosted",
+      "selected": "qa-variant-live_b",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "contract-d_shared",
+      "selected": "qa-variant-live_d",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "d-outage-return-paths",
+      "selected": "qa-scenarios-d_outage_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "delayed-open-fact-scenarios",
+      "selected": "qa-scenarios-open_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "exact-deadline-margin",
+      "selected": "exact-deadline-margin",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "extended-apalache-core-12",
+      "selected": "qa-apalache12",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "extended-tlc-full-reference",
+      "selected": "qa-core-finite-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "extended-tlc-recovery",
+      "selected": "qa-full-recovery",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "extended-tlc-two",
+      "selected": "qa-full-two-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-algebraic-induction",
+      "selected": "final-algebraic-induction",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-combined-faults-43",
+      "selected": "qa-combined-faults-43",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "final-combined-faults-43",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "final-phase-failure-witnesses",
+      "selected": "qa-scenarios-phase_failure_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-phase-type",
+      "selected": "qa-scenarios-phase_failure_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-record-mapping",
+      "selected": "qa-economic-mapping-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-record-progress",
+      "selected": "qa-full-one",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-record-recovery",
+      "selected": "qa-compact-recovery",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-record-safety",
+      "selected": "qa-core-finite-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-record-two",
+      "selected": "qa-compact-two",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-report-view-stages",
+      "selected": "qa-scenarios-report_view_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-resource-profile-native-type",
+      "selected": "qa-scenarios-report_view_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-variant-live_b",
+      "selected": "qa-variant-live_b",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-variant-live_d",
+      "selected": "qa-variant-live_d",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-variant-live_escrow",
+      "selected": "qa-variant-live_escrow",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-variant-live_open",
+      "selected": "qa-variant-live_open",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-variant-private_asset",
+      "selected": "qa-variant-private_asset",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "final-variant-shared_execution",
+      "selected": "qa-variant-shared_execution",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "htlc-bounded-margins",
+      "selected": "htlc-bounded-margins",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/mechanisms.qnt",
+          "original_sha256": "5f9f623867bb51875b4f451b33a61185e82e2a5cfdd17b903fdb0f676c710ee5",
+          "current_sha256": "f1dfd80b20f1e4a019517594cf15964a3415c61313137c2c3833d59e4ca2e556",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "htlc-permanent-halt",
+      "selected": "htlc-permanent-halt",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/dvp.qnt",
+          "original_sha256": "7f4f0eae39226cd1c8a36fb99439b4121b904948eebf7c4331eeb55738c866d3",
+          "current_sha256": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "basis": "Unselected financial sibling import; selected HTLC module and mechanisms dependency unchanged"
+        },
+        {
+          "path": "verification/models/mechanisms.qnt",
+          "original_sha256": "5f9f623867bb51875b4f451b33a61185e82e2a5cfdd17b903fdb0f676c710ee5",
+          "current_sha256": "f1dfd80b20f1e4a019517594cf15964a3415c61313137c2c3833d59e4ca2e556",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "late-hold-relative-bound",
+      "selected": "late-hold-relative-bound",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "linked-privacy-privacy_safe",
+      "selected": "linked-privacy-privacy_safe",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "linked-privacy-timing_leak",
+      "selected": "linked-privacy-timing_leak",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "linked-privacy-witness_log",
+      "selected": "linked-privacy-witness_log",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "membership-consumed-replay",
+      "selected": "membership-consumed-replay",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "membership-lifecycle-tests",
+      "selected": "membership-lifecycle-tests",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "membership-retirement-final",
+      "selected": "membership-retirement-final",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "membership-unsafe-retirement",
+      "selected": "membership-unsafe-retirement",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/membership.qnt",
+          "original_sha256": "b00b08802c14124e2f6bcf869c0c86e537a24b579a8d260b4fe1e468aab47e62",
+          "current_sha256": "79f9c8ec067018342f94db79f1b75cd69e3fe9dbb17cb1870e8f939fa2e9ba9e",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "mutant-binding",
+      "selected": "qa-legacy-binding",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-expiry",
+      "selected": "qa-legacy-expiry",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-non_atomic",
+      "selected": "qa-legacy-non_atomic",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-pruned_tombstone",
+      "selected": "qa-legacy-pruned_tombstone",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-relayer_assertion",
+      "selected": "qa-legacy-relayer_assertion",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-reopen",
+      "selected": "qa-legacy-reopen",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-replay",
+      "selected": "qa-legacy-replay",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "mutant-stale_refund",
+      "selected": "qa-legacy-stale_refund",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "negative-disclosure_key_compromise",
+      "selected": "negative-disclosure_key_compromise",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "a16383f53c0bfc01df484eb85a91861d99198c8b76f788f14f2107573f090002",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "network-loss-recovery",
+      "selected": "qa-scenarios-network_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "one-less-deadline-margin",
+      "selected": "one-less-deadline-margin",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "overclaim-immediate",
+      "selected": "qa-immediate",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "overclaim-immediate",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "overclaim-permanent-halt",
+      "selected": "qa-permanent-halt",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "overclaim-permanent-halt",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "post-stabilization",
+      "selected": "post-stabilization",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "preparation-freeze-policy",
+      "selected": "qa-scenarios-policy_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "private-data-progress",
+      "selected": "private-data-progress",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "private-permanent-key-loss",
+      "selected": "private-permanent-key-loss",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "queue-capacity-progress",
+      "selected": "queue-capacity-progress",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/capacity.qnt",
+          "original_sha256": "08de59bfa4c0d041f23998666ddd85dfe74f1e4687d43d07a9e23e208994f264",
+          "current_sha256": "d7f52a3b2d4bbf55aca37781b4dfefe03f802d128513acd2a9bc1560de78658c",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "replay-final-resource-profile-native-type",
+      "selected": "replay-final-resource-profile-native-type",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "report-evidence-scenario",
+      "selected": "qa-scenarios-dvp_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-fifo-workload",
+      "selected": "review-fifo-workload",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/capacity.qnt",
+          "original_sha256": "08de59bfa4c0d041f23998666ddd85dfe74f1e4687d43d07a9e23e208994f264",
+          "current_sha256": "d7f52a3b2d4bbf55aca37781b4dfefe03f802d128513acd2a9bc1560de78658c",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "review-pipeline-PAccess",
+      "selected": "qa-pipeline-access",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline-PBinding",
+      "selected": "qa-pipeline-access",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline-PNI",
+      "selected": "qa-pipeline-access",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline-safe",
+      "selected": "qa-pipeline-access",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline-witnesses",
+      "selected": "qa-scenarios-privacy_pipeline_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_compromise",
+      "selected": "qa-pipeline_compromise",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_log",
+      "selected": "qa-pipeline_log",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_note",
+      "selected": "qa-pipeline_note",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_scope",
+      "selected": "qa-pipeline_scope",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_substitution",
+      "selected": "qa-pipeline_substitution",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_timing",
+      "selected": "qa-pipeline_timing",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-pipeline_unsalted",
+      "selected": "qa-pipeline_unsalted",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-privacy-time-integrated-noUsability",
+      "selected": "qa-privacy-time-integrated-noUsability",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-privacy-time-integrated-safe",
+      "selected": "qa-privacy-time-integrated-safe",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-privacy-time-integrated_leak-safe",
+      "selected": "qa-privacy-time-integrated_leak-safe",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-type-integrated",
+      "selected": "qa-privacy-time-integrated-safe",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-type-privacy_pipeline",
+      "selected": "qa-pipeline-access",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-type-privacy_pipeline_test",
+      "selected": "qa-scenarios-privacy_pipeline_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-type-private-progress",
+      "selected": "qa-pipeline-access",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-typed-private-availability",
+      "selected": "qa-private-availability",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "review-typed-private-unconditionalAvailability",
+      "selected": "qa-private-unconditionalAvailability",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "root-local-halt",
+      "selected": "root-local-halt",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "root-local-immediate",
+      "selected": "root-local-immediate",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "root-local-progress",
+      "selected": "root-local-progress",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "root-local-witness",
+      "selected": "root-local-witness",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-bindings_test",
+      "selected": "qa-scenarios-bindings_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-contention_test",
+      "selected": "qa-scenarios-contention_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-dvp_test",
+      "selected": "qa-scenarios-dvp_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-open_test",
+      "selected": "qa-scenarios-open_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-policy_test",
+      "selected": "qa-scenarios-policy_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-recovery_test",
+      "selected": "qa-scenarios-recovery_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "scenario-shared_policy_test",
+      "selected": "qa-scenarios-shared_policy_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "three-domain-installation-final",
+      "selected": "qa-multilateral",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "three-domain-progress",
+      "selected": "qa-multilateral",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "three-independent-domains-witnesses",
+      "selected": "qa-scenarios-multilateral_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "tlc-arbitrary_seizure-backing",
+      "selected": "tlc-arbitrary_seizure-backing",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/interventions.qnt",
+          "original_sha256": "be0d0d333cce076c95a80717681e321b6eab058d8779b9c5899f5bdc7b58ff8d",
+          "current_sha256": "281cee4e94f1b4ee84451fc22b129463cee123793a9fb6dc646651da810a1430",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-bounded-safe",
+      "selected": "tlc-bounded-safe",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-bounded-sufficientSlack",
+      "selected": "tlc-bounded-sufficientSlack",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-coordinated-safe",
+      "selected": "tlc-coordinated-safe",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/interventions.qnt",
+          "original_sha256": "be0d0d333cce076c95a80717681e321b6eab058d8779b9c5899f5bdc7b58ff8d",
+          "current_sha256": "281cee4e94f1b4ee84451fc22b129463cee123793a9fb6dc646651da810a1430",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-disclosure_substitution-PBinding",
+      "selected": "tlc-disclosure_substitution-PBinding",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "6755d1d3accf8776948403884a0fd46e53f4c759709316e47b9c5b58c43f00db",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-durable-safe",
+      "selected": "tlc-durable-safe",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/interventions.qnt",
+          "original_sha256": "be0d0d333cce076c95a80717681e321b6eab058d8779b9c5899f5bdc7b58ff8d",
+          "current_sha256": "281cee4e94f1b4ee84451fc22b129463cee123793a9fb6dc646651da810a1430",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-equivocation-canonicalAcceptance",
+      "selected": "tlc-equivocation-canonicalAcceptance",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "c55baa7973658c3f733b5539a016bd340a7e624f0a929eb614afd56b5447113c",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-frozen_time-timeProgress",
+      "selected": "tlc-frozen_time-timeProgress",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-issuer_destruction-backed",
+      "selected": "tlc-issuer_destruction-backed",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "c55baa7973658c3f733b5539a016bd340a7e624f0a929eb614afd56b5447113c",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-mandatory_freeze-progress",
+      "selected": "tlc-mandatory_freeze-progress",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/interventions.qnt",
+          "original_sha256": "be0d0d333cce076c95a80717681e321b6eab058d8779b9c5899f5bdc7b58ff8d",
+          "current_sha256": "281cee4e94f1b4ee84451fc22b129463cee123793a9fb6dc646651da810a1430",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-no_inclusion-boundedCompletion",
+      "selected": "tlc-no_inclusion-boundedCompletion",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-privacy_safe-PAccess",
+      "selected": "tlc-privacy_safe-PAccess",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "6755d1d3accf8776948403884a0fd46e53f4c759709316e47b9c5b58c43f00db",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-privacy_safe-PBinding",
+      "selected": "tlc-privacy_safe-PBinding",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "6755d1d3accf8776948403884a0fd46e53f4c759709316e47b9c5b58c43f00db",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-privacy_safe-PScope",
+      "selected": "tlc-privacy_safe-PScope",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "6755d1d3accf8776948403884a0fd46e53f4c759709316e47b9c5b58c43f00db",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-slow_blocks-safe",
+      "selected": "tlc-slow_blocks-safe",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-starvation-boundedCompletion",
+      "selected": "tlc-starvation-boundedCompletion",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-unlimited-exposure",
+      "selected": "tlc-unlimited-exposure",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/capacity.qnt",
+          "original_sha256": "1bc9bdf4f403f9d6529dc9a6846ed7d445d1d3f54a664e92c2c64eae68f72799",
+          "current_sha256": "d7f52a3b2d4bbf55aca37781b4dfefe03f802d128513acd2a9bc1560de78658c",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-unsalted-PNI",
+      "selected": "tlc-unsalted-PNI",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "6755d1d3accf8776948403884a0fd46e53f4c759709316e47b9c5b58c43f00db",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-verifier_takeover-canonicalAcceptance",
+      "selected": "tlc-verifier_takeover-canonicalAcceptance",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "c55baa7973658c3f733b5539a016bd340a7e624f0a929eb614afd56b5447113c",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "tlc-wrong_scope-PAccess",
+      "selected": "tlc-wrong_scope-PAccess",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/privacy.qnt",
+          "original_sha256": "6755d1d3accf8776948403884a0fd46e53f4c759709316e47b9c5b58c43f00db",
+          "current_sha256": "d5dbac6de00c9bfc7496e34c455873bfa2db9225f98b0fd809be8da856cb9518",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "trust-v2-committee_refusal",
+      "selected": "trust-v2-committee_refusal",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "86bcce165b47a0c8689295e24453bb522889bd3fe552e2a8419edc0ac18b7912",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "trust-v2-insufficient_submitters",
+      "selected": "trust-v2-insufficient_submitters",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "86bcce165b47a0c8689295e24453bb522889bd3fe552e2a8419edc0ac18b7912",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "trust-v2-retired_version",
+      "selected": "trust-v2-retired_version",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "86bcce165b47a0c8689295e24453bb522889bd3fe552e2a8419edc0ac18b7912",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "trust-v2-trust_safe",
+      "selected": "trust-v2-trust_safe",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "86bcce165b47a0c8689295e24453bb522889bd3fe552e2a8419edc0ac18b7912",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "trust-v2-witness_loss",
+      "selected": "trust-v2-witness_loss",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/trust.qnt",
+          "original_sha256": "86bcce165b47a0c8689295e24453bb522889bd3fe552e2a8419edc0ac18b7912",
+          "current_sha256": "36d91f72defc922249de30f3d6b956f06191e5d2ef8de16068f640a5c47379ba",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-audit_scope",
+      "selected": "type-final-audit_scope",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-authentication",
+      "selected": "type-final-authentication",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-bindings_test",
+      "selected": "qa-scenarios-bindings_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-capacity",
+      "selected": "type-final-capacity",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/capacity.qnt",
+          "original_sha256": "08de59bfa4c0d041f23998666ddd85dfe74f1e4687d43d07a9e23e208994f264",
+          "current_sha256": "d7f52a3b2d4bbf55aca37781b4dfefe03f802d128513acd2a9bc1560de78658c",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-compact_recovery",
+      "selected": "qa-compact-recovery",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-compact_two",
+      "selected": "qa-compact-two",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-d_outage_test",
+      "selected": "qa-scenarios-d_outage_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-dvp",
+      "selected": "qa-core-finite-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-dvp_test",
+      "selected": "qa-scenarios-dvp_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-failure_controls",
+      "selected": "qa-permanent-halt",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "type-final-failure_controls",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "type-final-guided",
+      "selected": "qa-legacy-expiry",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-induction",
+      "selected": "type-final-induction",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-integrated",
+      "selected": "qa-privacy-time-integrated-safe",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-interventions",
+      "selected": "type-final-interventions",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-late_resolution",
+      "selected": "type-final-late_resolution",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-liveness",
+      "selected": "qa-full-one",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-liveness_variants",
+      "selected": "qa-full-two-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-mapping",
+      "selected": "qa-economic-mapping-attempt1",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-mechanisms",
+      "selected": "type-final-mechanisms",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/mechanisms.qnt",
+          "original_sha256": "5f9f623867bb51875b4f451b33a61185e82e2a5cfdd17b903fdb0f676c710ee5",
+          "current_sha256": "f1dfd80b20f1e4a019517594cf15964a3415c61313137c2c3833d59e4ca2e556",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-mechanisms-local",
+      "selected": "type-final-mechanisms-local",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-mechanisms_test",
+      "selected": "type-final-mechanisms_test",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/mechanisms.qnt",
+          "original_sha256": "5f9f623867bb51875b4f451b33a61185e82e2a5cfdd17b903fdb0f676c710ee5",
+          "current_sha256": "f1dfd80b20f1e4a019517594cf15964a3415c61313137c2c3833d59e4ca2e556",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-membership",
+      "selected": "type-final-membership",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-membership_test",
+      "selected": "type-final-membership_test",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-multilateral",
+      "selected": "qa-multilateral",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-network_test",
+      "selected": "qa-scenarios-network_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-operational_faults",
+      "selected": "qa-combined-faults-17",
+      "disposition": "current-revalidation-deferred-by-user",
+      "historical_receipt": "type-final-operational_faults",
+      "source_exceptions": [],
+      "boundary": "Historical observation retained with its saved inputs. Current replacement is deferred."
+    },
+    {
+      "family": "type-final-privacy",
+      "selected": "type-final-privacy",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-private_progress",
+      "selected": "type-final-private_progress",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-protocol",
+      "selected": "qa-type-current-protocol",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-recovery",
+      "selected": "qa-full-recovery",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-recovery_test",
+      "selected": "qa-scenarios-recovery_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-smoke",
+      "selected": "type-final-smoke",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-stabilization",
+      "selected": "type-final-stabilization",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-timing",
+      "selected": "type-final-timing",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-timing_boundary",
+      "selected": "type-final-timing_boundary",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "00df752c67b3a3d94c8b49e0efe065cc0d006b31a196cbbe66638d3671985c61",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "type-final-trust",
+      "selected": "type-final-trust",
+      "disposition": "retained",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-variants",
+      "selected": "qa-variant-shared_execution",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "type-final-variants_test",
+      "selected": "qa-scenarios-policy_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "unbounded-prefix-no-fixed-bound",
+      "selected": "unbounded-prefix-no-fixed-bound",
+      "disposition": "retained",
+      "source_exceptions": [
+        {
+          "path": "verification/models/timing.qnt",
+          "original_sha256": "192f574afc9363e9d6a98788adf71e7d62a92cde33fef7f2cc67a39c0792219d",
+          "current_sha256": "ead3e5aa0bf9290d169c7574c20471aae2de963110c979ff40eb7d3d9fd4470a",
+          "basis": "Prior reviewed selection/scope inherited: current bytes equal baseline798676a. The original snapshot remains older; this does not promote its historical/projected/MODE-specific predicate to a new current-model theorem. See comparative properties/file review and retained-privacy-scopes, model-repairs, extended-source-retention and comment-only-deltas reports."
+        }
+      ]
+    },
+    {
+      "family": "witness-escrow_path_test",
+      "selected": "qa-scenarios-escrow_path_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    },
+    {
+      "family": "witness-shared_path_test",
+      "selected": "qa-scenarios-shared_path_test",
+      "disposition": "revalidated",
+      "source_exceptions": []
+    }
+  ],
+  "current": [
+    {
+      "family": "qa-core-finite",
+      "selected": "qa-core-finite-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-full-one",
+      "selected": "qa-full-one",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-compact-two",
+      "selected": "qa-compact-two",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-compact-recovery",
+      "selected": "qa-compact-recovery",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-economic-mapping",
+      "selected": "qa-economic-mapping-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-full-two",
+      "selected": "qa-full-two-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-full-recovery",
+      "selected": "qa-full-recovery",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-apalache12",
+      "selected": "qa-apalache12",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-multilateral",
+      "selected": "qa-multilateral",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-multilateral_test",
+      "selected": "qa-scenarios-multilateral_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-policy_test",
+      "selected": "qa-scenarios-policy_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-dvp_test",
+      "selected": "qa-scenarios-dvp_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-open_test",
+      "selected": "qa-scenarios-open_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-network_test",
+      "selected": "qa-scenarios-network_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-d_outage_test",
+      "selected": "qa-scenarios-d_outage_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline-access",
+      "selected": "qa-pipeline-access",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-privacy-time-integrated-safe",
+      "selected": "qa-privacy-time-integrated-safe",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-privacy_pipeline_test",
+      "selected": "qa-scenarios-privacy_pipeline_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-private-availability",
+      "selected": "qa-private-availability",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-private-unconditionalAvailability",
+      "selected": "qa-private-unconditionalAvailability",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-phase_failure_test",
+      "selected": "qa-scenarios-phase_failure_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-report_view_test",
+      "selected": "qa-scenarios-report_view_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-variant-live_open",
+      "selected": "qa-variant-live_open",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-variant-live_b",
+      "selected": "qa-variant-live_b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-variant-live_d",
+      "selected": "qa-variant-live_d",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-variant-live_escrow",
+      "selected": "qa-variant-live_escrow",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-variant-private_asset",
+      "selected": "qa-variant-private_asset",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-variant-shared_execution",
+      "selected": "qa-variant-shared_execution",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-expiry",
+      "selected": "qa-legacy-expiry",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-binding",
+      "selected": "qa-legacy-binding",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-replay",
+      "selected": "qa-legacy-replay",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-reopen",
+      "selected": "qa-legacy-reopen",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-non_atomic",
+      "selected": "qa-legacy-non_atomic",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-relayer_assertion",
+      "selected": "qa-legacy-relayer_assertion",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-stale_refund",
+      "selected": "qa-legacy-stale_refund",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-legacy-pruned_tombstone",
+      "selected": "qa-legacy-pruned_tombstone",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_log",
+      "selected": "qa-pipeline_log",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_timing",
+      "selected": "qa-pipeline_timing",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_unsalted",
+      "selected": "qa-pipeline_unsalted",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_scope",
+      "selected": "qa-pipeline_scope",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_substitution",
+      "selected": "qa-pipeline_substitution",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_note",
+      "selected": "qa-pipeline_note",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-pipeline_compromise",
+      "selected": "qa-pipeline_compromise",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-privacy-time-integrated-noUsability",
+      "selected": "qa-privacy-time-integrated-noUsability",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-privacy-time-integrated_leak-safe",
+      "selected": "qa-privacy-time-integrated_leak-safe",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-bindings_test",
+      "selected": "qa-scenarios-bindings_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-contention_test",
+      "selected": "qa-scenarios-contention_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-shared_policy_test",
+      "selected": "qa-scenarios-shared_policy_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-recovery_test",
+      "selected": "qa-scenarios-recovery_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-b_path_test",
+      "selected": "qa-scenarios-b_path_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-d_path_test",
+      "selected": "qa-scenarios-d_path_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-shared_path_test",
+      "selected": "qa-scenarios-shared_path_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-scenarios-escrow_path_test",
+      "selected": "qa-scenarios-escrow_path_test",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-type-current-protocol",
+      "selected": "qa-type-current-protocol",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-admission-contexts",
+      "selected": "qa-admission-contexts",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload-exact-values",
+      "selected": "qa-payload-exact-values-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-proof-consumer-contexts",
+      "selected": "qa-proof-consumer-contexts-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-abort-semantic-records",
+      "selected": "qa-abort-semantic-records-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-economic-native",
+      "selected": "qa-economic-native-attempt1",
+      "source_exceptions": [
+        {
+          "path": "verification/tests/economic_outputs_test.qnt",
+          "original_sha256": "20b84a19ee1de4208a19128151259ceee6a245f4ec1186da1a3e93ee61eea48c",
+          "current_sha256": "f64cf1491e0339176afeb5b95491c6ce3540e31a3d9c529c441db7a7001f9add",
+          "basis": "Selected economic entry module byte-identical; only unselected shared module changed"
+        }
+      ]
+    },
+    {
+      "family": "qa-economic-escrow",
+      "selected": "qa-economic-escrow-attempt1",
+      "source_exceptions": [
+        {
+          "path": "verification/tests/economic_outputs_test.qnt",
+          "original_sha256": "20b84a19ee1de4208a19128151259ceee6a245f4ec1186da1a3e93ee61eea48c",
+          "current_sha256": "f64cf1491e0339176afeb5b95491c6ce3540e31a3d9c529c441db7a7001f9add",
+          "basis": "Selected economic entry module byte-identical; only unselected shared module changed"
+        }
+      ]
+    },
+    {
+      "family": "qa-economic-b",
+      "selected": "qa-economic-b-attempt1",
+      "source_exceptions": [
+        {
+          "path": "verification/tests/economic_outputs_test.qnt",
+          "original_sha256": "20b84a19ee1de4208a19128151259ceee6a245f4ec1186da1a3e93ee61eea48c",
+          "current_sha256": "f64cf1491e0339176afeb5b95491c6ce3540e31a3d9c529c441db7a7001f9add",
+          "basis": "Selected economic entry module byte-identical; only unselected shared module changed"
+        }
+      ]
+    },
+    {
+      "family": "qa-economic-d",
+      "selected": "qa-economic-d-attempt1",
+      "source_exceptions": [
+        {
+          "path": "verification/tests/economic_outputs_test.qnt",
+          "original_sha256": "20b84a19ee1de4208a19128151259ceee6a245f4ec1186da1a3e93ee61eea48c",
+          "current_sha256": "f64cf1491e0339176afeb5b95491c6ce3540e31a3d9c529c441db7a7001f9add",
+          "basis": "Selected economic entry module byte-identical; only unselected shared module changed"
+        }
+      ]
+    },
+    {
+      "family": "qa-economic-shared",
+      "selected": "qa-economic-shared-attempt2",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-economic-multilateral",
+      "selected": "qa-economic-multilateral-attempt1",
+      "source_exceptions": [
+        {
+          "path": "verification/tests/economic_outputs_test.qnt",
+          "original_sha256": "20b84a19ee1de4208a19128151259ceee6a245f4ec1186da1a3e93ee61eea48c",
+          "current_sha256": "f64cf1491e0339176afeb5b95491c6ce3540e31a3d9c529c441db7a7001f9add",
+          "basis": "Selected economic entry module byte-identical; only unselected shared module changed"
+        }
+      ]
+    },
+    {
+      "family": "qa-economic-booking",
+      "selected": "qa-economic-booking",
+      "source_exceptions": [
+        {
+          "path": "verification/tests/economic_outputs_test.qnt",
+          "original_sha256": "20b84a19ee1de4208a19128151259ceee6a245f4ec1186da1a3e93ee61eea48c",
+          "current_sha256": "f64cf1491e0339176afeb5b95491c6ce3540e31a3d9c529c441db7a7001f9add",
+          "basis": "Selected economic entry module byte-identical; only unselected shared module changed"
+        }
+      ]
+    },
+    {
+      "family": "qa-payload_field0",
+      "selected": "qa-payload_field0-attempt2",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field1",
+      "selected": "qa-payload_field1-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field2",
+      "selected": "qa-payload_field2-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field3",
+      "selected": "qa-payload_field3-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field4",
+      "selected": "qa-payload_field4-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field5",
+      "selected": "qa-payload_field5-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field6",
+      "selected": "qa-payload_field6-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field7",
+      "selected": "qa-payload_field7-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field8",
+      "selected": "qa-payload_field8-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field9",
+      "selected": "qa-payload_field9-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field10",
+      "selected": "qa-payload_field10-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field11",
+      "selected": "qa-payload_field11-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field12",
+      "selected": "qa-payload_field12-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field13",
+      "selected": "qa-payload_field13-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field14",
+      "selected": "qa-payload_field14-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_field15",
+      "selected": "qa-payload_field15-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_root",
+      "selected": "qa-payload_root-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-payload_program",
+      "selected": "qa-payload_program-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-note_amount",
+      "selected": "qa-note_amount",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-note_recipient",
+      "selected": "qa-note_recipient",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-program_admission",
+      "selected": "qa-program_admission-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-premature_absence",
+      "selected": "qa-premature_absence-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-security_recipient",
+      "selected": "qa-security_recipient-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-security_asset",
+      "selected": "qa-security_asset-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-cash_recipient",
+      "selected": "qa-cash_recipient-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-cash_asset",
+      "selected": "qa-cash_asset-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-security_refund_recipient",
+      "selected": "qa-security_refund_recipient-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-cash_refund_recipient",
+      "selected": "qa-cash_refund_recipient-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-booking_recipient",
+      "selected": "qa-booking_recipient",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-booking_quantity",
+      "selected": "qa-booking_quantity",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-false-release-weak-safe",
+      "selected": "qa-false-release-weak-safe",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-false-release",
+      "selected": "qa-false-release",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-induction-false-release",
+      "selected": "qa-effect-induction-false-release-attempt2",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-non-atomic-cash-weak-safe",
+      "selected": "qa-non-atomic-cash-weak-safe",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-non-atomic-cash",
+      "selected": "qa-non-atomic-cash",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-partial-shared-weak-safe",
+      "selected": "qa-partial-shared-weak-safe",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-partial-shared",
+      "selected": "qa-partial-shared",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-trusted-observer",
+      "selected": "qa-trusted-observer",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-role-confusion-weak-observer",
+      "selected": "qa-role-confusion-weak-observer",
+      "source_exceptions": [
+        {
+          "path": "verification/mutants/observer_soundness.qnt",
+          "original_sha256": "57fa7510b2ec36aa881cd7fceacf97d6d8cbafc969f21706248ecf721a470b9b",
+          "current_sha256": "0eb5675caa2b90dc4c5bfdc3d2bbd145f52f0242baa8819a23ebcd060d4d8c1e",
+          "basis": "Only unused TrustedAccess definition added; selected PNI/TrustedNI, step, producer identical"
+        }
+      ]
+    },
+    {
+      "family": "qa-role-confusion",
+      "selected": "qa-role-confusion",
+      "source_exceptions": [
+        {
+          "path": "verification/mutants/observer_soundness.qnt",
+          "original_sha256": "57fa7510b2ec36aa881cd7fceacf97d6d8cbafc969f21706248ecf721a470b9b",
+          "current_sha256": "0eb5675caa2b90dc4c5bfdc3d2bbd145f52f0242baa8819a23ebcd060d4d8c1e",
+          "basis": "Only unused TrustedAccess definition added; selected PNI/TrustedNI, step, producer identical"
+        }
+      ]
+    },
+    {
+      "family": "qa-role-confusion-weak-access",
+      "selected": "qa-role-confusion-weak-access",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-role-confusion-access",
+      "selected": "qa-role-confusion-access",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-one",
+      "selected": "qa-effect-init-one-attempt3",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-one",
+      "selected": "qa-effect-preserve-one-attempt3",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-one",
+      "selected": "qa-effect-imply-one",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-two",
+      "selected": "qa-effect-init-two",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-two",
+      "selected": "qa-effect-preserve-two",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-two",
+      "selected": "qa-effect-imply-two",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-b",
+      "selected": "qa-effect-init-b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-b",
+      "selected": "qa-effect-preserve-b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-b",
+      "selected": "qa-effect-imply-b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-d",
+      "selected": "qa-effect-init-d",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-d",
+      "selected": "qa-effect-preserve-d",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-d",
+      "selected": "qa-effect-imply-d",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-escrow",
+      "selected": "qa-effect-init-escrow",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-escrow",
+      "selected": "qa-effect-preserve-escrow-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-escrow",
+      "selected": "qa-effect-imply-escrow",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-shared",
+      "selected": "qa-effect-init-shared",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-shared",
+      "selected": "qa-effect-preserve-shared",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-shared",
+      "selected": "qa-effect-imply-shared",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-private",
+      "selected": "qa-effect-init-private",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-preserve-private",
+      "selected": "qa-effect-preserve-private",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-imply-private",
+      "selected": "qa-effect-imply-private",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-init-open",
+      "selected": "qa-effect-init-open",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-one",
+      "selected": "qa-record-compile-one-attempt2",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-two",
+      "selected": "qa-record-compile-two",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-b",
+      "selected": "qa-record-compile-b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-d",
+      "selected": "qa-record-compile-d",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-escrow",
+      "selected": "qa-record-compile-escrow",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-shared",
+      "selected": "qa-record-compile-shared",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-private",
+      "selected": "qa-record-compile-private",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-open",
+      "selected": "qa-record-compile-open",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-false-release",
+      "selected": "qa-record-compile-false-release-attempt2",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-one-inductive",
+      "selected": "qa-record-compile-one-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-two-inductive",
+      "selected": "qa-record-compile-two-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-b-inductive",
+      "selected": "qa-record-compile-b-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-d-inductive",
+      "selected": "qa-record-compile-d-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-escrow-inductive",
+      "selected": "qa-record-compile-escrow-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-shared-inductive",
+      "selected": "qa-record-compile-shared-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-private-inductive",
+      "selected": "qa-record-compile-private-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-record-compile-open-inductive",
+      "selected": "qa-record-compile-open-inductive",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-effect-false-imply",
+      "selected": "qa-effect-false-imply-attempt1",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-trade-domain-forward",
+      "selected": "qa-trade-domain-forward",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-trade-domain-reverse",
+      "selected": "qa-trade-domain-reverse",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-admission-b",
+      "selected": "qa-admission-b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-program-admission-b",
+      "selected": "qa-program-admission-b",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-admission-d_security",
+      "selected": "qa-admission-d_security",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-program-admission-d_security",
+      "selected": "qa-program-admission-d_security",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-admission-d_cash",
+      "selected": "qa-admission-d_cash",
+      "source_exceptions": []
+    },
+    {
+      "family": "qa-program-admission-d_cash",
+      "selected": "qa-program-admission-d_cash",
+      "source_exceptions": []
+    }
+  ],
+  "frozen_core_match": true,
+  "frozen_core_files": [
+    "verification/models/dvp.qnt",
+    "verification/models/privacy_pipeline.qnt",
+    "verification/models/multilateral.qnt",
+    "verification/models/economic_effects.qnt",
+    "verification/models/admission_focus.qnt"
+  ],
+  "reviewed_post_freeze_deltas": [
+    {
+      "path": "verification/models/mapping.qnt",
+      "freeze_sha256": "e9d6fe492cced5abee24cac012ecc5d54a5e5332efb46d09dbcddc6656b104c0",
+      "current_sha256": "7b7bb4c4c5e109fcf40ce168c95901957d85ca939ac59fd6fc7e1d736f3d47aa",
+      "review": "Explicit S05/economicOutputs wrapper re-export; current simulation/economic-output graph rerun. No concrete protocol transition changed.",
+      "audited_current_observations": [
+        "qa-economic-mapping-attempt1"
+      ]
+    },
+    {
+      "path": "verification/models/effect_consistency.qnt",
+      "freeze_sha256": "c089e6833109bc6f8466d10692359c61ce6becdb4c82e51a34ad270c7c29d03e",
+      "current_sha256": "6c8b0f52c661a0a4f034e67fa6586a5fa162897e8322adf26dec333e6b5a5adb",
+      "review": "Proof-only complete State/Trade initializer, equivalent point/field domains and physical/local-atomicity induction candidate. Completed per-profile obligations and universal row lemmas replace earlier representation attempts. OPEN preservation/implication is explicitly deferred; actual imported protocol State/Next is unchanged.",
+      "audited_current_observations": [
+        "qa-effect-init-one-attempt3",
+        "qa-effect-preserve-one-attempt3",
+        "qa-effect-imply-one",
+        "qa-effect-init-two",
+        "qa-effect-preserve-two",
+        "qa-effect-imply-two",
+        "qa-effect-init-b",
+        "qa-effect-preserve-b",
+        "qa-effect-imply-b",
+        "qa-effect-init-d",
+        "qa-effect-preserve-d",
+        "qa-effect-imply-d",
+        "qa-effect-init-escrow",
+        "qa-effect-preserve-escrow-attempt1",
+        "qa-effect-imply-escrow",
+        "qa-effect-init-shared",
+        "qa-effect-preserve-shared",
+        "qa-effect-imply-shared",
+        "qa-effect-init-private",
+        "qa-effect-preserve-private",
+        "qa-effect-imply-private",
+        "qa-effect-init-open",
+        "qa-record-compile-one-attempt2",
+        "qa-record-compile-two",
+        "qa-record-compile-b",
+        "qa-record-compile-d",
+        "qa-record-compile-escrow",
+        "qa-record-compile-shared",
+        "qa-record-compile-private",
+        "qa-record-compile-open",
+        "qa-record-compile-one-inductive",
+        "qa-record-compile-two-inductive",
+        "qa-record-compile-b-inductive",
+        "qa-record-compile-d-inductive",
+        "qa-record-compile-escrow-inductive",
+        "qa-record-compile-shared-inductive",
+        "qa-record-compile-private-inductive",
+        "qa-record-compile-open-inductive"
+      ]
+    }
+  ],
+  "trust_boundary": "Source identity and recorded native-result audit; not an external execution attestation or a new formal refinement theorem."
+}

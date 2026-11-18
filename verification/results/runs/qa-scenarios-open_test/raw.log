@@ -1,0 +1,8 @@
+
+  open_test
+    ok delayedOpenTest passed 1 test(s)
+    ok openProofDeliveredAfterAbortTest passed 1 test(s)
+    ok historicalFinalizeAndResolveTest passed 1 test(s)
+    ok knownAbortRejectsTest passed 1 test(s)
+
+  4 passing (53ms)

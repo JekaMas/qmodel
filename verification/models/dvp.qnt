@@ -1,6 +1,7 @@
 // Candidate v1. All economic amounts and descriptor bindings are explicit.
 // s is a frame record; actor read boundaries are stated on each action.
 module dvp {
+  import economic_effects.* from "./economic_effects"
   const N: int
   const HOST: int          // 0=A, 1=B, 2=D, 3=shared execution
   const OPEN_REQUIRED: bool
@@ -40,9 +41,12 @@ module dvp {
     preparedA:false,preparedB:false,appliedEvidenceA:false,appliedEvidenceB:false,
     booked:0,report:0,stale:false,intent:false}
   type AbortRecord={d:Descriptor,leg:int,genesis:int,checkpoint:int,program:int,disposition:int}
+  // Institution-private financial row. The complete recorded terms are actual
+  // observable bookkeeping output, not inferred from a trade-indexed counter.
+  type Booking={d:Descriptor,outcome:int}
   type State = { trades: int->Trade, signed:Set[(Descriptor,int)], height:int,
     ownerA:int, ownerB:int, vaultA:int, vaultB:int, spentA:int, spentB:int,
-    receivedA:int->int, receivedB:int->int,
+    receivedA:int->int, receivedB:int->int, economicReceipts:Set[Receipt],financialRecords:Set[Booking],
     included:Set[Fact], finalized:Set[Fact], captured:Set[Fact], proofs:Set[Fact], network:Set[Fact],
     received:Set[Fact], abortRecords:Set[AbortRecord], pruned:Set[Fact], up:Set[int], epoch:int, admitted:bool,
     historical:Set[int], eligible:Set[(int,int)], frozen:Set[int], note:Set[int],
@@ -56,6 +60,32 @@ module dvp {
     x.proofs.contains(f), f.d==desc(t), f.phase==p, f.checkpoint==0,
     x.historical.contains(f.program), f.root==fact(t,p).root }
   pure def has(x:State,t:int,p:int):bool = x.received.exists(f=>authFact(x,f,t,p))
+  // Consumer mutant10 omits only program admission. Strict authFact/S10 remain
+  // unchanged, so a valid proof from an unadmitted program can falsify it.
+  pure def preparationAtConsumer(x:State,t:int,p:int):bool =
+    if(MUTANT==10) x.received.exists(f=>and {x.proofs.contains(f),f.d==desc(t),
+      f.phase==p,f.checkpoint==0,f.root==fact(t,p).root}) else has(x,t,p)
+  // Actual local outputs, committed atomically with the debit/release. Deliberate
+  // misrouting/asset mutants preserve amount and operation count. The independent
+  // assertion below compares these fields directly with the signed descriptor.
+  pure def economicOutput(t:int,leg:int,kind:int):Receipt = {
+    val d=desc(t)
+    val account=if(leg==0) (if(kind==0) d.buyerA else d.sellerA)
+      else (if(kind==0) d.sellerB else d.buyerB)
+    val wrongAccount=(leg==0 and ((kind==0 and MUTANT==11) or (kind==1 and MUTANT==14))) or
+      (leg==1 and ((kind==0 and MUTANT==15) or (kind==1 and MUTANT==17)))
+    {trade:t,leg:leg,kind:kind,chain:if(leg==0) d.chainA else d.chainB,
+      genesis:if(leg==0) d.genesisA else d.genesisB,
+      asset:if(leg==0) (if(MUTANT==12) d.assetB else d.assetA)
+        else (if(MUTANT==16) d.assetA else d.assetB),
+      account:if(wrongAccount) (if(account==0) 1 else 0) else account,
+      quantity:if(leg==0) d.security else d.cash}
+  }
+  pure def bookingOutput(t:int,outcome:int):Booking = {
+    val d=desc(t)
+    {d:if(MUTANT==18) {...d,sellerB:if(d.sellerB==0) 1 else 0}
+       else if(MUTANT==19) {...d,cash:4} else d,outcome:outcome}
+  }
   pure def canOpen(x:State,t:int):bool = and { authorized(x,t), x.admitted,
     x.eligible.contains((t,0)),not(x.frozen.contains(0)), x.up.contains(0),(HOST!=3 or x.up.contains(3)),
     (if(HOST==0 or HOST==3) (x.height<D or MUTANT==4) else true),
@@ -68,7 +98,7 @@ module dvp {
     vaultA:if (ESCROW) x.vaultA+2 else x.vaultA, included:x.included.union(Set(fact(t,0),fact(t,1))) }
   action init = s' = {trades:Trades.mapBy(_=>emptyTrade),signed:Set(),height:0,
     ownerA:2,ownerB:3,vaultA:0,vaultB:0,spentA:0,spentB:0,
-    receivedA:Trades.mapBy(_=>0),receivedB:Trades.mapBy(_=>0),
+    receivedA:Trades.mapBy(_=>0),receivedB:Trades.mapBy(_=>0),economicReceipts:Set(),financialRecords:Set(),
     included:Set(),finalized:Set(),captured:Set(),proofs:Set(),network:Set(),received:Set(),abortRecords:Set(),pruned:Set(),
     up:Set(0,1,2,3,4),epoch:0,admitted:true,historical:Set(1),eligible:tuples(Trades,Set(0,1)),
     frozen:Set(),note:Set(),rejects:Set(),transportCompromised:false,
@@ -112,6 +142,20 @@ module dvp {
     not(s.pruned.contains(fact(t,p))),s'={...s,captured:s.captured.union(Set(fact(t,p)))}}
   action prove(t:int,p:int): bool = all {s.up.contains(3),s.captured.contains(fact(t,p)),
     s'={...s,proofs:s.proofs.union(Set(fact(t,p))),network:s.network.union(Set(fact(t,p)))}}
+  // Valid proof of the same captured statement under external program0. Crypto
+  // validity/provenance is distinct from application admission: history never
+  // admits0. This is not forged proof membership. It exercises the consumer's
+  // program gate, including after rotation/exit, in the adversarial configuration.
+  action proveUnadmitted(t:int,p:int):bool = {
+    val f={...fact(t,p),program:0}
+    all {s.up.contains(3),s.captured.contains(fact(t,p)),
+      s'={...s,proofs:s.proofs.union(Set(f)),network:s.network.union(Set(f))}}
+  }
+  action deliverUnadmitted(t:int,p:int):bool = {
+    val f={...fact(t,p),program:0}
+    all {s.up.contains(4),s.network.contains(f),s.proofs.contains(f),
+      s'={...s,received:s.received.union(Set(f))}}
+  }
   // Soup is retained for repeated delivery. Explicit loss removes a message, resend restores it.
   action lose(t:int,p:int): bool = all {s.network.contains(fact(t,p)),s'={...s,network:s.network.exclude(Set(fact(t,p)))}}
   action resend(t:int,p:int): bool = all {s.up.contains(4),s.proofs.contains(fact(t,p)),s'={...s,network:s.network.union(Set(fact(t,p)))}}
@@ -142,8 +186,8 @@ module dvp {
       (if(HOST==3) not(x.frozen.contains(0)) and not(x.frozen.contains(1)) else if(HOST==0) not(x.frozen.contains(0)) else if(HOST==1) not(x.frozen.contains(1)) else true),
       (if (MUTANT==2) x.received.exists(f=>f.phase==2 and x.proofs.contains(f))
        else if (MUTANT==6) x.received.exists(f=>f.phase==2)
-       else if(HOST==1) true else if(HOST==3) z.holdB==1 else has(x,t,2)),
-      (HOST==0 or HOST==3 or has(x,t,1)) }
+       else if(HOST==1) true else if(HOST==3) z.holdB==1 else preparationAtConsumer(x,t,2)),
+      (HOST==0 or HOST==3 or preparationAtConsumer(x,t,1)) }
   }
   pure def debitA(x:State):State = {...x,ownerA:if(ESCROW) x.ownerA else x.ownerA-2,
     vaultA:if(ESCROW) x.vaultA-2 else x.vaultA}
@@ -156,7 +200,9 @@ module dvp {
     val z=s.trades.get(t)
     val a=if((HOST==0 or HOST==3) and MUTANT!=5) debitA(s) else s
     val b=if(HOST==1 or HOST==3) debitB(a) else a
-    all {canCommit(s,t),s'={...b,included:b.included.union(Set(fact(t,3))).union(if((HOST==0 or HOST==3) and MUTANT!=5) Set(fact(t,5)) else Set()).union(if(HOST==1 or HOST==3) Set(fact(t,6)) else Set()),trades:b.trades.set(t,{...z,decision:2,
+    all {canCommit(s,t),s'={...b,
+      economicReceipts:b.economicReceipts.union(if((HOST==0 or HOST==3) and MUTANT!=5) Set(economicOutput(t,0,0)) else Set()).union(if(HOST==1 or HOST==3) Set(economicOutput(t,1,0)) else Set()),
+      included:b.included.union(Set(fact(t,3))).union(if((HOST==0 or HOST==3) and MUTANT!=5) Set(fact(t,5)) else Set()).union(if(HOST==1 or HOST==3) Set(fact(t,6)) else Set()),trades:b.trades.set(t,{...z,decision:2,
       oldTerminal:if(z.oldTerminal==0) 2 else z.oldTerminal,
       knownA:if(HOST==0 or HOST==3) 2 else z.knownA,
       knownB:if(HOST==1 or HOST==3) 2 else z.knownB,
@@ -184,21 +230,21 @@ module dvp {
     val z=s.trades.get(t)
     val a=debitA(s)
     all {s.up.contains(0),(HOST!=3 or s.up.contains(3)),s.up.contains(2),not(s.frozen.contains(0)),z.knownA==2,z.holdA==1,
-      s'={...a,included:s.included.union(Set(fact(t,5))),trades:s.trades.set(t,{...z,holdA:2,effectsA:z.effectsA+1}),receivedA:s.receivedA.setBy(t,q=>q+2)}}
+      s'={...a,economicReceipts:a.economicReceipts.union(Set(economicOutput(t,0,0))),included:s.included.union(Set(fact(t,5))),trades:s.trades.set(t,{...z,holdA:2,effectsA:z.effectsA+1}),receivedA:s.receivedA.setBy(t,q=>q+2)}}
   }
   action applyB(t:int): bool = {
     val z=s.trades.get(t)
     val b=debitB(s)
     all {s.up.contains(1),(HOST!=3 or s.up.contains(3)),s.up.contains(2),not(s.frozen.contains(1)),z.knownB==2,
       z.holdB==1 or (MUTANT==3 and z.holdB==2),
-      s'={...b,included:s.included.union(Set(fact(t,6))),trades:s.trades.set(t,{...z,holdB:2,effectsB:z.effectsB+1}),
+      s'={...b,economicReceipts:b.economicReceipts.union(Set(economicOutput(t,1,0))),included:s.included.union(Set(fact(t,6))),trades:s.trades.set(t,{...z,holdB:2,effectsB:z.effectsB+1}),
         receivedB:s.receivedB.setBy(t,q=>q+3)}}
   }
   action refund(t:int,leg:int): bool = {
     val z=s.trades.get(t)
     all {s.up.contains(leg),(HOST!=3 or s.up.contains(3)),s.up.contains(2),not(s.frozen.contains(leg)),
       (if(leg==0) z.holdA==1 and z.knownA==3 else z.holdB==1 and z.knownB==3),
-      s'={...s,trades:s.trades.set(t,{...z,
+      s'={...s,economicReceipts:s.economicReceipts.union(Set(economicOutput(t,leg,1))),trades:s.trades.set(t,{...z,
         holdA:if(leg==0) 3 else z.holdA,holdB:if(leg==1) 3 else z.holdB,
         refundsA:z.refundsA+(if(leg==0) 1 else 0),refundsB:z.refundsB+(if(leg==1) 1 else 0)}),
         ownerA:s.ownerA+(if(ESCROW and leg==0) 2 else 0),vaultA:s.vaultA-(if(ESCROW and leg==0) 2 else 0),
@@ -221,7 +267,7 @@ module dvp {
       appliedEvidenceA:s.trades.get(t).appliedEvidenceA or leg==0,
       appliedEvidenceB:s.trades.get(t).appliedEvidenceB or leg==1})}}
   action reconcile(t:int): bool = all {s.up.contains(3),s.trades.get(t).appliedEvidenceA,s.trades.get(t).appliedEvidenceB,
-    s'={...s,trades:s.trades.set(t,{...s.trades.get(t),report:2,stale:false,
+    s'={...s,financialRecords:s.financialRecords.union(Set(bookingOutput(t,2))),trades:s.trades.set(t,{...s.trades.get(t),report:2,stale:false,
       booked:if(s.trades.get(t).booked==0) 1 else s.trades.get(t).booked})}}
   // Ideal authenticated local-ledger read/finalized application-record interface.
   // Only the source leg reads its own ledger; the consumer receives a structured record.
@@ -232,7 +278,7 @@ module dvp {
     val z=s.trades.get(t)
     val localHold=if(leg==0) z.holdA else z.holdB
     val localKnown=if(leg==0) z.knownA else z.knownB
-    all {s.up.contains(leg),s.up.contains(3),localKnown==3,localHold!=1,
+    all {s.up.contains(leg),s.up.contains(3),localKnown==3 or MUTANT==13,localHold!=1,
       s'={...s,abortRecords:s.abortRecords.union(Set({d:desc(t),leg:leg,
         genesis:if(leg==0) desc(t).genesisA else desc(t).genesisB,
         checkpoint:0,program:1,disposition:localHold}))}}
@@ -240,8 +286,19 @@ module dvp {
   pure def hasAbortRecord(x:State,t:int,leg:int):bool = x.abortRecords.exists(r=>and {
     r.d==desc(t),r.leg==leg,r.genesis==(if(leg==0) desc(t).genesisA else desc(t).genesisB),
     r.checkpoint==0,x.historical.contains(r.program),Set(0,3).contains(r.disposition)})
+  // Semantic assertion over the source world, never a remote live read by the
+  // record consumer. Absence is terminal only after local ABORT knowledge; actual
+  // prepared legs require one real release, with no active obligation left.
+  pure def abortResolved(x:State,t:int):bool = {
+    val z=x.trades.get(t)
+    and {z.holdA!=1,z.holdB!=1,z.knownA==3,z.knownB==3,
+      if(z.preparedA) z.holdA==3 and z.refundsA==1 else z.holdA==0 and z.refundsA==0,
+      if(z.preparedB) z.holdB==3 and z.refundsB==1 else z.holdB==0 and z.refundsB==0,
+      x.abortRecords.filter(r=>r.d==desc(t)).forall(r=>r.disposition==
+        (if(r.leg==0) z.holdA else z.holdB))}
+  }
   action recordAbort(t:int):bool = all {s.up.contains(3),has(s,t,4),hasAbortRecord(s,t,0),hasAbortRecord(s,t,1),
-    s'={...s,trades:s.trades.set(t,{...s.trades.get(t),report:3,stale:false,
+    s'={...s,financialRecords:s.financialRecords.union(Set(bookingOutput(t,3))),trades:s.trades.set(t,{...s.trades.get(t),report:3,stale:false,
       booked:if(s.trades.get(t).booked==0) 1 else s.trades.get(t).booked})}}
   action rotate = all {s.epoch==0,s'={...s,epoch:1,historical:s.historical.union(Set(1,2))}}
   action exitMember = s'={...s,admitted:false}
@@ -259,6 +316,7 @@ module dvp {
     nondet p=0.to(6).oneOf(); any {finalize(t,p),capture(t,p),prove(t,p),deliver(t,p),resend(t,p)}}
   action step = any {nondet t=Trades.oneOf();tradeStep(t),tick,idle}
   action adversarialStep = any {step,
+    nondet t=Trades.oneOf();nondet p=0.to(6).oneOf();any {proveUnadmitted(t,p),deliverUnadmitted(t,p)},
     nondet t=Trades.oneOf(); nondet p=0.to(6).oneOf(); nondet f=0.to(10).oneOf();inject(t,p,f),
     nondet a=0.to(4).oneOf();any {crash(a),recover(a)},
     nondet l=Set(0,1).oneOf();any {spend(l),freeze(l),unfreeze(l)},rotate,exitMember,
@@ -276,17 +334,38 @@ module dvp {
   val S04 = and {s.ownerA+s.vaultA+s.spentA+Trades.fold(0,(a,t)=>a+s.receivedA.get(t))==2,
     s.ownerB+s.vaultB+s.spentB+Trades.fold(0,(a,t)=>a+s.receivedB.get(t))==3,
     if(ESCROW) s.vaultA==reservedA(s) and s.vaultB==reservedB(s) else reservedA(s)<=s.ownerA and reservedB(s)<=s.ownerB}
+  // Compare observed output fields with signed terms, not economicOutput. Amount
+  // counters alone cannot distinguish delivery to another valid account/asset.
+  pure def exactEconomicEffects(x:State):bool = and {
+    x.economicReceipts.forall(r=> {
+      val d=desc(r.trade)
+      and {Trades.contains(r.trade),Set(0,1).contains(r.leg),Set(0,1).contains(r.kind),
+        matches(r,r.trade,r.leg,r.kind,if(r.leg==0) d.chainA else d.chainB,
+          if(r.leg==0) d.genesisA else d.genesisB,if(r.leg==0) d.assetA else d.assetB,
+          if(r.leg==0) (if(r.kind==0) d.buyerA else d.sellerA)
+            else (if(r.kind==0) d.sellerB else d.buyerB),
+          if(r.leg==0) d.security else d.cash)}}),
+    Trades.forall(t=> {
+      val z=x.trades.get(t)
+      and {x.economicReceipts.filter(r=>r.trade==t and r.leg==0 and r.kind==0).size()==z.effectsA,
+        x.economicReceipts.filter(r=>r.trade==t and r.leg==1 and r.kind==0).size()==z.effectsB,
+        x.economicReceipts.filter(r=>r.trade==t and r.leg==0 and r.kind==1).size()==z.refundsA,
+        x.economicReceipts.filter(r=>r.trade==t and r.leg==1 and r.kind==1).size()==z.refundsB}})}
+  pure def exactFinancialRecords(x:State):bool = and {
+    x.financialRecords.forall(r=>Trades.contains(r.d.trade) and r.d==desc(r.d.trade) and
+      Set(2,3).contains(r.outcome) and r.outcome==x.trades.get(r.d.trade).decision),
+    Trades.forall(t=>x.financialRecords.filter(r=>r.d.trade==t).size()==x.trades.get(t).booked)}
   val S05 = Trades.forall(t=> {val z=s.trades.get(t); and {z.effectsA<=1,z.effectsB<=1,z.refundsA<=1,z.refundsB<=1,z.booked<=1,
-    s.receivedA.get(t)==z.effectsA*2,s.receivedB.get(t)==z.effectsB*3}})
+    s.receivedA.get(t)==z.effectsA*2,s.receivedB.get(t)==z.effectsB*3}}) and exactEconomicEffects(s) and exactFinancialRecords(s)
   val S06 = Trades.forall(t=> {val z=s.trades.get(t); and {z.effectsA>0 implies z.decision==2,
     z.effectsB>0 implies z.knownB==2,z.refundsA>0 implies z.knownA==3,z.refundsB>0 implies z.knownB==3,
-    (z.booked>0 and z.decision==3) implies has(s,t,4) and hasAbortRecord(s,t,0) and hasAbortRecord(s,t,1)}})
+    (z.booked>0 and z.decision==3) implies has(s,t,4) and hasAbortRecord(s,t,0) and hasAbortRecord(s,t,1) and abortResolved(s,t)}})
   val S07 = Trades.forall(t=> {val z=s.trades.get(t); (z.preparedB and z.effectsB==0 and z.refundsB==0) implies z.holdB==1})
   val S08 = Trades.forall(t=> {val z=s.trades.get(t); z.decision==2 implies and {
     (HOST!=0 or (z.effectsA==1 and s.receivedA.get(t)==2)),
     z.holdB==1 or (z.effectsB==1 and s.receivedB.get(t)==3),
     if(z.holdB==1) (if(ESCROW) s.vaultB>=reservedB(s) else s.ownerB>=reservedB(s)) else true,
-    (HOST==1 or HOST==3 or has(s,t,2))}})
+    (HOST==1 or HOST==3 or has(s,t,2)),exactEconomicEffects(s)}})
   val S09 = Trades.forall(t=> {val z=s.trades.get(t);not(z.effectsA>0 and z.refundsB>0) and not(z.effectsB>0 and z.refundsA>0)})
   val S10 = Trades.forall(t=>s.trades.get(t).decision==2 implies (if(HOST==1) has(s,t,1) else if(HOST==3) true else has(s,t,2) and (HOST!=2 or has(s,t,1))))
   val S11 = Trades.forall(t=>s.trades.get(t).oldTerminal!=3 or s.trades.get(t).decision==3)
@@ -298,13 +377,15 @@ module dvp {
   // Eligibility/freeze admission is enforced by canOpen/prepareB and direct cases;
   // supported post-prepare policy is checked in interventions.qnt.
   val S14 = Trades.forall(t=>(s.trades.get(t).holdA==1 or s.trades.get(t).holdB==1) implies authorized(s,t))
-  val S15 = Trades.forall(t=>and {s.trades.get(t).report==2 implies s.trades.get(t).appliedEvidenceA and s.trades.get(t).appliedEvidenceB, s.trades.get(t).report==3 implies has(s,t,4) and hasAbortRecord(s,t,0) and hasAbortRecord(s,t,1)})
+  val S15 = Trades.forall(t=>and {s.trades.get(t).report==2 implies s.trades.get(t).appliedEvidenceA and s.trades.get(t).appliedEvidenceB,
+    (s.trades.get(t).report==3 or (s.trades.get(t).booked>0 and s.trades.get(t).decision==3)) implies
+      has(s,t,4) and hasAbortRecord(s,t,0) and hasAbortRecord(s,t,1) and abortResolved(s,t)})
   val S16 = not(s.custody or s.upgrade or s.validator or s.decrypt)
   val safe = S01 and S02 and S03 and S04 and S05 and S06 and S07 and S08 and S09 and S10 and S11 and S12 and S13 and S14 and S15 and S16
   pure def usableCash(x:State,t:int):bool = x.trades.get(t).effectsB==1 and (not(PRIVATE) or x.note.contains(t))
   val deliveredIsUsable = Trades.forall(t=>s.trades.get(t).effectsB==1 implies usableCash(s,t))
   val CDecision = Trades.forall(t=> {val z=s.trades.get(t); z.decision==2 implies
-    (z.holdA==1 or z.effectsA==1) and (z.holdB==1 or z.effectsB==1)})
+    (z.holdA==1 or z.effectsA==1) and (z.holdB==1 or z.effectsB==1) and exactEconomicEffects(s)})
   type Report={authorizedIntent:bool,preparedAAtSnapshot:bool,preparedBAtSnapshot:bool,committedAuthenticated:bool,appliedAAuthenticated:bool,appliedBAuthenticated:bool,fullyApplied:bool,reconciled:bool,staleOrIncomplete:bool,recipientCashUsable:bool}
   // Specification diagnostic over the combined world: recipientCashUsable and
   // participant knownA/B are oracle/local diagnostic fields, not a reporter API.

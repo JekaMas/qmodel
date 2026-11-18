@@ -1,0 +1,12 @@
+
+  abort_records_test
+    ok prematureARecordRejectTest passed 1 test(s)
+    ok prematureBRecordRejectTest passed 1 test(s)
+    ok unresolvedHoldRecordRejectTest passed 1 test(s)
+    ok absentUnlearnedRecordRejectTest passed 1 test(s)
+    ok realRefundRecordsTest passed 1 test(s)
+    ok absenceNoFakeRefundTest passed 1 test(s)
+    ok lateActualHoldResolvedTest passed 1 test(s)
+    ok terminalAbsencePreventsLatePrepareTest passed 1 test(s)
+
+  8 passing (76ms)

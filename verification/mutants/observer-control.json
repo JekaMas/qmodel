@@ -1,0 +1,13 @@
+{
+  "canonical_source": "verification/models/privacy_pipeline.qnt",
+  "canonical_sha256": "1428edbd6f11f002a497904fb6f1b85d5513be2e2fa3d7f7663614883c6cf308",
+  "mutant": "verification/mutants/generated/role_confusion.qnt",
+  "mutant_sha256": "9f633beb6897f07e6db840e7017b651a0978e1cc65c7e4dc923b4e320f00de4c",
+  "changed_symbol": "release",
+  "oracle_and_other_symbols_byte_identical": true,
+  "oracle_monitor_identical_in_default_and_fault_wrappers": true,
+  "fault": "payload constructor resolves authenticated relayer3 as prover4; trusted query role remains3",
+  "scope": "deliberate copied producer; no unchanged-model attack claimed",
+  "monitor_sha256": "dea5425fd38f08ff2732ab8988ddbd305a80574703787b89810bbd0e599b647e",
+  "monitor_hash_scope": "Exact text from authenticated-query comment through TrustedAccess/TrustedNI; wrapper import/closing brace excluded."
+}

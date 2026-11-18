@@ -88,13 +88,13 @@ class EvidenceAudit(unittest.TestCase):
   for x in resolutions.values():
    self.assertEqual(x['status'],'resolved-by-observed-proof')
    p,r=load_latest(x['resolution_check']);validate(r,p)
-  p,r=load_latest('extended-tlc-full-reference')
+  p,r=load_latest(m['qa_repair_proofs']['reference'])
   self.assertEqual(r['command'][2],'verification/models/dvp.qnt')
   self.assertEqual(r['command'][r['command'].index('--step')+1],'step')
   self.assertIn('safe',r['command']);self.assertIn('CDecision',r['command'])
   self.assertIn('complete state graph search is 38',(ROOT/r['raw_output']).read_text())
   for name,main,step,temporal in [('two','live_two','step','progress'),('recovery','recovery','recoveryStep','recoveryProgress')]:
-   p,r=load_latest('extended-tlc-'+name)
+   p,r=load_latest(m['qa_repair_proofs'][name])
    self.assertEqual(r['command'][r['command'].index('--main')+1],main)
    self.assertEqual(r['command'][r['command'].index('--step')+1],step)
    self.assertEqual(r['command'][r['command'].index('--temporal')+1],temporal)
@@ -121,7 +121,7 @@ class EvidenceAudit(unittest.TestCase):
    self.assertEqual(observed,{'JAVA_TOOL_OPTIONS':'-Xmx8g -Xss8m','JVM_ARGS':'-Xmx8g -Xss8m'})
    self.assertTrue(probe['expectation_met'])
  def test_phase_fault_and_acceptance_witness_counts(self):
-  for name,count in [('final-phase-failure-witnesses',19),('final-report-view-stages',6)]:
+  for name,count in [('qa-scenarios-phase_failure_test',19),('qa-scenarios-report_view_test',6)]:
    p,r=load_latest(name);validate(r,p)
    self.assertIn(str(count)+' passing',(ROOT/r['raw_output']).read_text())
  def test_privacy_assumptions_cite_current_payload_pipeline(self):
@@ -129,9 +129,9 @@ class EvidenceAudit(unittest.TestCase):
   for key in ['A-OPAQUE','A-POLICY','A-KEY']:
    controls=matrix[key]['executed_perturbations']
    self.assertFalse(any('linked-privacy' in x or 'privacy_safe' in x for x in controls))
-   self.assertTrue(any(x.startswith('review-pipeline') or x.startswith('review-typed-private') for x in controls))
+   self.assertTrue(any(x.startswith('qa-pipeline') or x.startswith('qa-private') for x in controls))
    for name in controls:
     p,r=load_latest(name);validate(r,p)
-    if name.startswith('review-'):
+    if name.startswith('qa-'):
      self.assertIn('verification/models/privacy_pipeline.qnt',r['input_hashes'])
 if __name__=='__main__':unittest.main()

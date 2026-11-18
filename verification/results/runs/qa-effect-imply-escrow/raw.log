@@ -1,0 +1,69 @@
+ACTUAL_NATIVE_COMMAND ["/Users/jekamas/projects/0xatelerix/qmodel/.quint/apalache-dist-0.62.4/apalache/bin/apalache-mc", "check", "--init=q_init", "--next=q_step", "--inv=effectSoundness", "--length=0", "verification/generated/native-induction/escrow-inductive/effects_escrow.tla"]
+Picked up JAVA_TOOL_OPTIONS: -Xmx24g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/effects_escrow.tla/2026-11-18T15-49-54_7000001220434050412
+# APALACHE version: 0.62.4 | build: 7954daf                       I@15:49:54.940
+Tuning:                                                           I@15:49:54.945
+PASS #0: SanyParser                                               I@15:49:55.084
+PASS #1: TypeCheckerSnowcat                                       I@15:49:55.582
+ > Running Snowcat .::.                                           I@15:49:55.582
+ > Your types are purrfect!                                       I@15:50:05.237
+ > All expressions are typed                                      I@15:50:05.237
+PASS #2: ConfigurationPass                                        I@15:50:05.238
+  > Set the initialization predicate to q_init                    I@15:50:05.242
+  > Set the transition predicate to q_step                        I@15:50:05.242
+  > Set an invariant to effectSoundness                           I@15:50:05.242
+PASS #3: DesugarerPass                                            I@15:50:05.249
+  > Desugaring...                                                 I@15:50:05.249
+PASS #4: InlinePass                                               I@15:50:05.269
+Leaving only relevant operators: CInitPrimed, effectSoundness, q_init, q_initPrimed, q_step I@15:50:05.270
+PASS #5: TemporalPass                                             I@15:50:05.499
+  > Rewriting temporal operators...                               I@15:50:05.500
+  > No temporal property specified, nothing to encode             I@15:50:05.500
+PASS #6: InlinePass                                               I@15:50:05.500
+Leaving only relevant operators: CInitPrimed, effectSoundness, q_init, q_initPrimed, q_step I@15:50:05.500
+PASS #7: PrimingPass                                              I@15:50:05.547
+  > Introducing q_initPrimed for q_init'                          I@15:50:05.549
+PASS #8: VCGen                                                    I@15:50:05.685
+  > Producing verification conditions from the invariant effectSoundness I@15:50:05.685
+  > VCGen produced 2 verification condition(s)                    I@15:50:05.689
+PASS #9: PreprocessingPass                                        I@15:50:05.691
+  > Before preprocessing: unique renaming                         I@15:50:05.691
+ > Applying standard transformations:                             I@15:50:05.695
+  > PrimePropagation                                              I@15:50:05.695
+  > Desugarer                                                     I@15:50:05.708
+  > UniqueRenamer                                                 I@15:50:05.747
+  > Normalizer                                                    I@15:50:05.796
+  > SetMembershipSimplifier                                       I@15:50:05.829
+  > Keramelizer                                                   I@15:50:05.861
+  > After preprocessing: UniqueRenamer                            I@15:50:05.913
+PASS #10: TransitionFinderPass                                    I@15:50:05.978
+  > Found 1 initializing transitions                              I@15:50:06.048
+  > Found 43 transitions                                          I@15:50:06.075
+  > No constant initializer                                       I@15:50:06.076
+  > Applying unique renaming                                      I@15:50:06.077
+PASS #11: OptimizationPass                                        I@15:50:06.101
+ > Applying optimizations:                                        I@15:50:06.104
+  > ConstSimplifier                                               I@15:50:06.105
+  > ExprOptimizer                                                 I@15:50:06.162
+  > SetMembershipSimplifier                                       I@15:50:06.187
+  > ConstSimplifier                                               I@15:50:06.197
+PASS #12: AnalysisPass                                            I@15:50:06.234
+ > Marking skolemizable existentials and sets to be expanded...   I@15:50:06.235
+  > Skolemization                                                 I@15:50:06.235
+  > Expansion                                                     I@15:50:06.239
+  > Remove unused let-in defs                                     I@15:50:06.252
+ > Running analyzers...                                           I@15:50:06.260
+  > Introduced expression grades                                  I@15:50:06.266
+PASS #13: BoundedChecker                                          I@15:50:06.266
+State 0: Checking 2 state invariants                              I@15:50:12.786
+State 0: state invariant 0 holds.                                 I@15:50:12.792
+State 0: state invariant 1 holds.                                 I@15:50:12.826
+Step 0: picking a transition out of 1 transition(s)               I@15:50:12.837
+The outcome is: NoError                                           I@15:50:12.910
+Checker reports no error up to computation length 0               I@15:50:12.910
+It took me 0 days  0 hours  0 min 17 sec                          I@15:50:12.910
+Total time: 17.968 sec                                            I@15:50:12.910
+EXITCODE: OK

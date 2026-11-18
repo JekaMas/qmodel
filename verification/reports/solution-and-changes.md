@@ -1,5 +1,7 @@
 # Resulting solution and changes made for its guarantees
 
+Current repair disposition: **QA-01–QA-04 resolved**. [The final repair report](qa-repairs.md) supersedes the comparative review's open-finding status and records current native evidence and re-review. Added complete disclosure/query/source/proof binding and trusted-principal observation; actual unadmitted-source proofs at the consumer; semantic ABORT release/absence assertions; exact economic outputs/financial rows and actual-source effect/local-atomicity checks. Prior failures and proof boundaries remain visible. The original extended-run sections below describe their recorded source revisions.
+
 The result is an executable formal investigation of the proposed native-asset DvP overlay, with an explicit repaired control policy and scoped guarantees. It is not a new production settlement implementation. The source answer's asynchronous architecture remains the reference: A orders the decision and delivers security locally; B later applies authenticated COMMIT or ABORT to its cash hold.
 
 ```mermaid

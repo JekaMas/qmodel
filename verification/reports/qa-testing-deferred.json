@@ -1,0 +1,13 @@
+{
+  "utc": "2026-11-18T12:18:32.804823+00:00",
+  "instruction": "Address all findings with minimum focused testing now. Full testing later. Give regular progress reports.",
+  "action": "Stop remaining broad induction cohort by terminating only the active checker child group. Its supervising evidence runner records the actual non-success and the sequential coordinator stops on that result. Keep completed greens.",
+  "interrupted": [
+    {
+      "pid": 52420,
+      "pgid": 52420,
+      "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python verification/scripts/native_induction.py invoke verification/generated/native-induction/open-inductive/native-correspondence.json preserve"
+    }
+  ],
+  "full_testing": "deferred by explicit user instruction"
+}

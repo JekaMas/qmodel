@@ -43,12 +43,18 @@ def validate(r,p):
  raw=(ROOT/r['raw_output']).read_text()
  if any(x in raw for x in ['Error [QNT','Unknown argument','java.lang.OutOfMemoryError','UnsupportedClassVersionError']):raise EvidenceError('Tool error is not property evidence')
  if r['expected']=='counterexample':
-  if r['exit_code']==0 or not any(x in raw for x in ['Invariant violated','Invariant q_inv is violated','Temporal properties were violated','found a counterexample']):raise EvidenceError('No actual expected property violation')
+  from evidence import native_counterexample
+  witnessed=native_counterexample(raw) if r['backend']=='apalache-native' else any(x in raw for x in ['Invariant violated','Invariant q_inv is violated','Temporal properties were violated','found a counterexample'])
+  if r['exit_code']==0 or not witnessed:raise EvidenceError('No actual expected property violation')
+  if r['backend']=='apalache-native' and r['exit_code']!=12:raise EvidenceError('Unexpected native counterexample exit status')
  elif r['backend']=='tlc':
   if r['exit_code']!=0 or 'Model checking completed. No error has been found.' not in raw:raise EvidenceError('TLC graph did not complete')
   if not isinstance(r['distinct_states'],int) or r['distinct_states']<1:raise EvidenceError('Missing actual finite state count')
  elif r['backend']=='apalache':
   if r['exit_code']!=0 or '[ok] No violation found' not in raw:raise EvidenceError('No successful Apalache observation')
+ elif r['backend']=='apalache-native':
+  if r['exit_code']!=0 or 'EXITCODE: OK' not in raw:raise EvidenceError('Native Apalache obligation did not complete successfully')
+  if 'ACTUAL_NATIVE_COMMAND' not in raw or '--length=' not in raw or '--inv=' not in raw:raise EvidenceError('Missing explicit native induction obligation')
  elif r['backend']=='simulation':
   if r['exit_code']!=0 or '[ok] No violation found' not in raw:raise EvidenceError('No successful simulation observation')
  elif r['exit_code']!=0:raise EvidenceError('CLI/scenario command did not succeed')

@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-18T05:23:18.010157+00:00",
+  "process_groups": [
+    11260
+  ],
+  "reason": "Post-implementation review found that QA-04 also needs explicit booking terms and QA-01 needs recipient-note amount binding. Source will change; stop this pre-final proof rather than relabel it as final.",
+  "prior_subject": "qa-full-two",
+  "result": "interrupted; never a passing proof"
+}

@@ -18,10 +18,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -46,12 +45,11 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "mutant-reopen",
-      "mutant-pruned_tombstone"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-legacy-reopen",
+      "qa-legacy-pruned_tombstone"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -78,12 +76,11 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "scenario-bindings_test",
-      "scenario-policy_test"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-scenarios-bindings_test",
+      "qa-scenarios-policy_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -108,13 +105,12 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "scenario-contention_test",
-      "final-variant-live_escrow",
-      "three-domain-installation-final"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-scenarios-contention_test",
+      "qa-variant-live_escrow",
+      "qa-multilateral"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -123,7 +119,7 @@
   {
     "id": "S05",
     "requirement": "Each actual transfer/refund and downstream booking occurs at most once for its intended operation and exact recipient/quantity. Check economic effects, not just a consumed flag.",
-    "predicate": "[] forall t,leg: deliveryEffects(t,leg)<=1 /\\ refundEffects(t,leg)<=1 /\\ bookingEffects(t,leg)<=1; exactTerms",
+    "predicate": "S05 (exactEconomicEffects and exactFinancialRecords included) plus separately inductive effectSoundness.",
     "classification": "safety",
     "assumptions": [
       "A-FINAL",
@@ -137,17 +133,60 @@
     "scenario": "reference plus relevant focused variants",
     "checker": "Quint simulation, Apalache bounded, TLC finite",
     "expected": "hold under named assumptions",
-    "status": "executed-with-result",
+    "status": "deferred-by-user",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "mutant-replay",
-      "abort-authoritative-records"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-legacy-replay",
+      "qa-scenarios-policy_test",
+      "qa-economic-native",
+      "qa-economic-escrow",
+      "qa-economic-b",
+      "qa-economic-d",
+      "qa-economic-shared",
+      "qa-economic-multilateral",
+      "qa-economic-booking",
+      "qa-security_recipient",
+      "qa-cash_recipient",
+      "qa-security_asset",
+      "qa-cash_asset",
+      "qa-security_refund_recipient",
+      "qa-cash_refund_recipient",
+      "qa-booking_recipient",
+      "qa-booking_quantity",
+      "qa-effect-init-one",
+      "qa-effect-preserve-one",
+      "qa-effect-imply-one",
+      "qa-effect-init-two",
+      "qa-effect-preserve-two",
+      "qa-effect-imply-two",
+      "qa-effect-init-b",
+      "qa-effect-preserve-b",
+      "qa-effect-imply-b",
+      "qa-effect-init-d",
+      "qa-effect-preserve-d",
+      "qa-effect-imply-d",
+      "qa-effect-init-escrow",
+      "qa-effect-preserve-escrow",
+      "qa-effect-imply-escrow",
+      "qa-effect-init-shared",
+      "qa-effect-preserve-shared",
+      "qa-effect-imply-shared",
+      "qa-effect-init-private",
+      "qa-effect-preserve-private",
+      "qa-effect-imply-private",
+      "qa-effect-init-open",
+      "qa-effect-preserve-open",
+      "qa-effect-imply-open",
+      "qa-false-release",
+      "qa-effect-induction-false-release",
+      "qa-trade-domain-forward",
+      "qa-trade-domain-reverse",
+      "qa-effect-false-imply"
     ],
-    "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "execution_status": "deferred-by-user",
+    "verified_scope": "Actual chain/genesis/asset/account/quantity receipts and complete financial booking rows are compared independently with authorized terms. Seven completed same-full-State/adversarialStep profiles prove actual hold/effect consistency. Authenticated-OPEN preservation/implication is deferred by the user; false-release, misrouting, wrong-asset and booking substitution controls fail. Finite configured populations; no production conformance.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -174,13 +213,14 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "mutant-relayer_assertion",
-      "abort-authoritative-records",
-      "final-phase-failure-witnesses"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-legacy-relayer_assertion",
+      "qa-scenarios-policy_test",
+      "qa-scenarios-phase_failure_test",
+      "qa-abort-semantic-records",
+      "qa-premature_absence"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -205,11 +245,10 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "mutant-expiry",
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-legacy-expiry",
       "tlc-issuer_destruction-backed"
     ],
     "execution_status": "executed-with-result",
@@ -235,16 +274,15 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "final-record-mapping",
-      "mutant-expiry",
-      "mutant-non_atomic"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-economic-mapping",
+      "qa-legacy-expiry",
+      "qa-legacy-non_atomic"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Atomic local security delivery plus funded durable cash backing, exact output receipts and separate actual source-state effect consistency. Current full N1/N2 safety and named placements; no parameterized or deployed-system theorem.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -266,12 +304,11 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "mutant-stale_refund",
-      "actual-b-clock-expiry"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-legacy-stale_refund",
+      "qa-legacy-expiry"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -298,15 +335,23 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "mutant-binding",
-      "scenario-bindings_test"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-legacy-binding",
+      "qa-scenarios-bindings_test",
+      "qa-admission-contexts",
+      "qa-proof-consumer-contexts",
+      "qa-program_admission",
+      "qa-admission-b",
+      "qa-program-admission-b",
+      "qa-admission-d_security",
+      "qa-program-admission-d_security",
+      "qa-admission-d_cash",
+      "qa-program-admission-d_cash"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Actual source-derived program0 proofs exercise separate crypto-validity/application admission at the real consumer, including rotation/exit. Full healthy financial/admission graph,31consumer-context cases and six actual-source B/D canonical/unadmitted cases with three missing-admission controls. Foreign-context certificate fixtures assume validity at their input boundary, not native-history reachability or cryptographic construction.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -328,12 +373,10 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "scenario-open_test",
-      "delayed-open-fact-scenarios",
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-scenarios-open_test",
       "membership-lifecycle-tests"
     ],
     "execution_status": "executed-with-result",
@@ -359,14 +402,13 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "final-record-recovery",
-      "scenario-recovery_test",
-      "network-loss-recovery",
-      "final-phase-failure-witnesses"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-compact-recovery",
+      "qa-scenarios-recovery_test",
+      "qa-scenarios-network_test",
+      "qa-scenarios-phase_failure_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Full-job N=1 B/prover-crash and B-freeze recovery graph, plus19 direct phase-guard/recovery scenarios and actual message-loss/restart witnesses. No arbitrary independent operational fault product.",
@@ -391,13 +433,15 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
       "membership-retirement-final",
       "membership-lifecycle-tests",
-      "trust-v2-retired_version"
+      "trust-v2-retired_version",
+      "qa-admission-contexts",
+      "qa-proof-consumer-contexts",
+      "qa-program_admission"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Core S13 retains program1 only. The focused membership model checks approved/current credentials, pending/current-safe retirement and consumed identities. No checked full financial/membership liveness composition or arbitrary-upgrade theorem.",
@@ -426,13 +470,11 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "scenario-policy_test",
-      "preparation-freeze-policy",
-      "scenario-shared_policy_test",
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-scenarios-policy_test",
+      "qa-scenarios-shared_policy_test",
       "tlc-durable-safe",
       "tlc-mandatory_freeze-progress",
       "tlc-arbitrary_seizure-backing"
@@ -464,16 +506,17 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "report-evidence-scenario",
-      "abort-authoritative-records",
-      "final-report-view-stages"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-scenarios-dvp_test",
+      "qa-scenarios-policy_test",
+      "qa-scenarios-report_view_test",
+      "qa-abort-semantic-records",
+      "qa-premature_absence"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Source-world diagnostics distinguish authorized, source accepted, registered, prepared, committed, applied and reconciled. Six acceptance cases and authentic application/ABORT-record gates execute. External APIs must authenticate every source-dependent field; no implemented reporter conformance is claimed.",
+    "verified_scope": "Authenticated application/report gates plus exact financial row terms and independent actual ABORT hold/refund/absence semantics. Native producer-guard/booking mutants fail. Source-world diagnostic interfaces and institution-private rows; no implemented external reporter/financial system conformance.",
     "quint_owner": "verification/models/dvp.qnt"
   },
   {
@@ -495,10 +538,9 @@
     "expected": "hold under named assumptions",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
       "membership-lifecycle-tests",
       "negative-disclosure_key_compromise"
     ],
@@ -531,12 +573,12 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-progress",
-      "final-record-two",
-      "final-record-recovery",
-      "three-domain-progress"
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-full-one",
+      "qa-compact-two",
+      "qa-compact-recovery",
+      "qa-multilateral"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -567,13 +609,13 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-progress",
-      "final-record-two",
-      "final-record-recovery",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-full-one",
+      "qa-compact-two",
+      "qa-compact-recovery",
       "private-data-progress",
-      "final-phase-failure-witnesses"
+      "qa-scenarios-phase_failure_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -604,13 +646,13 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-progress",
-      "final-record-two",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-full-one",
+      "qa-compact-two",
       "late-hold-relative-bound",
-      "three-domain-progress",
-      "final-phase-failure-witnesses"
+      "qa-multilateral",
+      "qa-scenarios-phase_failure_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -641,12 +683,14 @@
     "expected": "hold conditionally, no guaranteed COMMIT before D",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-progress",
-      "final-record-two",
-      "final-record-recovery",
-      "report-evidence-scenario"
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-full-one",
+      "qa-compact-two",
+      "qa-compact-recovery",
+      "qa-scenarios-dvp_test",
+      "qa-abort-semantic-records",
+      "qa-premature_absence"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem.",
@@ -666,13 +710,12 @@
     "expected": "hold",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-full-reference",
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-safety",
-      "final-record-mapping",
-      "contract-b_hosted",
-      "contract-d_shared"
+      "qa-core-finite",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-economic-mapping",
+      "qa-variant-live_b",
+      "qa-variant-live_d"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -692,9 +735,9 @@
     "expected": "conditional",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-progress",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-full-one",
       "private-data-progress"
     ],
     "execution_status": "executed-with-result",
@@ -704,7 +747,7 @@
   {
     "id": "C-Records",
     "requirement": "Report is evidence justified",
-    "predicate": "[] reportComplete => authenticatedBoth",
+    "predicate": "Authenticated source application evidence, exactFinancialRecords and independent actual abortResolved semantics.",
     "classification": "operational integration",
     "assumptions": [],
     "actions": [
@@ -715,11 +758,16 @@
     "expected": "hold",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-record-safety",
-      "abort-authoritative-records"
+      "qa-core-finite",
+      "qa-scenarios-policy_test",
+      "qa-abort-semantic-records",
+      "qa-premature_absence",
+      "qa-economic-booking",
+      "qa-booking_recipient",
+      "qa-booking_quantity"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Authenticated application/report gates plus exact financial row terms and independent actual ABORT hold/refund/absence semantics. Native producer-guard/booking mutants fail. Source-world diagnostic interfaces and institution-private rows; no implemented external reporter/financial system conformance.",
     "quint_owner": "see executed check input closures"
   },
   {
@@ -734,11 +782,11 @@
     "scenario": "O-Immediate",
     "checker": "TLC",
     "expected": "expected counterexample",
-    "status": "executed-with-result",
+    "status": "deferred-by-user",
     "executed_checks": [
-      "overclaim-immediate"
+      "qa-immediate"
     ],
-    "execution_status": "executed-with-result",
+    "execution_status": "deferred-by-user",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "quint_owner": "see executed check input closures"
   },
@@ -754,18 +802,18 @@
     "scenario": "O-Permanent",
     "checker": "TLC",
     "expected": "expected counterexample",
-    "status": "executed-with-result",
+    "status": "deferred-by-user",
     "executed_checks": [
-      "overclaim-permanent-halt"
+      "qa-permanent-halt"
     ],
-    "execution_status": "executed-with-result",
+    "execution_status": "deferred-by-user",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "quint_owner": "see executed check input closures"
   },
   {
     "id": "P-Access",
     "requirement": "Protected fields are released only by authorized payload construction",
-    "predicate": "[] disclosure=>authorized(observer,field,scope)",
+    "predicate": "PAccess and TrustedAccess over authenticated Query principal; safe also binds complete response identity.",
     "classification": "scoped information-flow",
     "assumptions": [
       "A-OPAQUE",
@@ -783,18 +831,21 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "review-pipeline-PAccess",
-      "review-pipeline_scope",
-      "review-pipeline_compromise"
+      "qa-pipeline-access",
+      "qa-pipeline_scope",
+      "qa-pipeline_compromise",
+      "qa-trusted-observer",
+      "qa-role-confusion",
+      "qa-role-confusion-access"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Complete normal pipeline assertions plus an independent authenticated-query-principal view of access and public response bodies. Returned role tags cannot hide disclosure to public callers. Full12-operation public metadata history and at most one arbitrary coupled API request, positions4/7, ideal opaque names/private channels. Not general scheduler, crypto or deployed authorization conformance.",
     "quint_owner": "see executed check input closures"
   },
   {
     "id": "P-Binding",
     "requirement": "Plaintext/recipient note matches exact transition",
-    "predicate": "[] disclose=>openingMatchesCommitment /\\ note.trade=effect.trade",
+    "predicate": "PBinding: independently captured query/source/proof/status plus all16scalar values and exact recipient note.",
     "classification": "scoped information-flow",
     "assumptions": [
       "A-OPAQUE",
@@ -812,11 +863,32 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "review-pipeline-PBinding",
-      "review-pipeline_substitution"
+      "qa-pipeline-access",
+      "qa-pipeline_substitution",
+      "qa-payload-exact-values",
+      "qa-payload_field0",
+      "qa-payload_field1",
+      "qa-payload_field2",
+      "qa-payload_field3",
+      "qa-payload_field4",
+      "qa-payload_field5",
+      "qa-payload_field6",
+      "qa-payload_field7",
+      "qa-payload_field8",
+      "qa-payload_field9",
+      "qa-payload_field10",
+      "qa-payload_field11",
+      "qa-payload_field12",
+      "qa-payload_field13",
+      "qa-payload_field14",
+      "qa-payload_field15",
+      "qa-payload_root",
+      "qa-payload_program",
+      "qa-note_amount",
+      "qa-note_recipient"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
+    "verified_scope": "Every returned scalar field0..15, query identity, status, root/program headers and exact recipient note are checked against independently captured source/query/proof provenance. Twenty positive value/status cases and20isolated scalar/header/source-note controls. Finite coupled pipeline; not cryptographic or core-to-payload conformance.",
     "quint_owner": "see executed check input closures"
   },
   {
@@ -840,11 +912,11 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "review-pipeline-safe",
-      "review-typed-private-availability",
-      "review-typed-private-unconditionalAvailability",
-      "review-pipeline_note",
-      "review-pipeline-witnesses"
+      "qa-pipeline-access",
+      "qa-private-availability",
+      "qa-private-unconditionalAvailability",
+      "qa-pipeline_note",
+      "qa-scenarios-privacy_pipeline_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -881,7 +953,7 @@
   {
     "id": "P-NI",
     "requirement": "Paired traces preserve unrelated-position secrecy",
-    "predicate": "publicRelated(w0,w1) /\\ coupledPublicSchedule => observations(w0)=observations(w1)",
+    "predicate": "PNI and TrustedNI: full public metadata history plus complete body view selected by authenticated query principal.",
     "classification": "scoped information-flow",
     "assumptions": [
       "A-OPAQUE",
@@ -899,12 +971,15 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "review-pipeline-PNI",
-      "review-pipeline_log",
-      "review-pipeline_unsalted"
+      "qa-pipeline-access",
+      "qa-pipeline_log",
+      "qa-pipeline_unsalted",
+      "qa-trusted-observer",
+      "qa-role-confusion",
+      "qa-role-confusion-access"
     ],
     "execution_status": "executed-with-result",
-    "verified_scope": "Two actual source positions 4/7, equal authorized trade/funding; one fixed 12-operation public lifecycle plus at most one arbitrary coupled API request. Complete selected-observer response histories, private-channel/declassification policy and content-aware opaque-name correspondence. Not general scheduler/termination/cryptographic noninterference.",
+    "verified_scope": "Complete normal pipeline assertions plus an independent authenticated-query-principal view of access and public response bodies. Returned role tags cannot hide disclosure to public callers. Full12-operation public metadata history and at most one arbitrary coupled API request, positions4/7, ideal opaque names/private channels. Not general scheduler, crypto or deployed authorization conformance.",
     "quint_owner": "see executed check input closures"
   },
   {
@@ -928,9 +1003,9 @@
     "expected": "hold for selected policy; leak mutants fail",
     "status": "executed-with-result",
     "executed_checks": [
-      "review-pipeline_timing",
-      "review-privacy-time-integrated-safe",
-      "review-privacy-time-integrated_leak-safe"
+      "qa-pipeline_timing",
+      "qa-privacy-time-integrated-safe",
+      "qa-privacy-time-integrated_leak-safe"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -954,14 +1029,13 @@
     "scenario": "boundary, insufficient slack, skew, outage, queue contention",
     "checker": "TLC finite timed abstraction + parameter sweeps",
     "expected": "scoped positive and negative results",
-    "status": "executed-with-result",
+    "status": "deferred-by-user",
     "executed_checks": [
-      "final-record-safety",
-      "combined-faults-17",
-      "combined-faults-43",
-      "final-combined-faults-43"
+      "qa-core-finite",
+      "qa-combined-faults-17",
+      "qa-combined-faults-43"
     ],
-    "execution_status": "executed-with-result",
+    "execution_status": "deferred-by-user",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
     "quint_owner": "see executed check input closures"
   },
@@ -985,9 +1059,9 @@
     "expected": "scoped positive and negative results",
     "status": "executed-with-result",
     "executed_checks": [
-      "extended-tlc-two",
-      "extended-tlc-recovery",
-      "final-record-recovery",
+      "qa-full-two",
+      "qa-full-recovery",
+      "qa-compact-recovery",
       "post-stabilization"
     ],
     "execution_status": "executed-with-result",
@@ -1071,10 +1145,10 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "scenario-dvp_test",
-      "scenario-recovery_test",
-      "network-loss-recovery",
-      "final-phase-failure-witnesses"
+      "qa-scenarios-dvp_test",
+      "qa-scenarios-recovery_test",
+      "qa-scenarios-network_test",
+      "qa-scenarios-phase_failure_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1101,7 +1175,7 @@
     "status": "executed-with-result",
     "executed_checks": [
       "membership-lifecycle-tests",
-      "preparation-freeze-policy"
+      "qa-scenarios-policy_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1154,8 +1228,8 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-variant-live_open",
-      "delayed-open-fact-scenarios"
+      "qa-variant-live_open",
+      "qa-scenarios-open_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1164,7 +1238,7 @@
   {
     "id": "V-B",
     "requirement": "B-hosted decision uses local cash and authenticated A preparation.",
-    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04",
+    "predicate": "safe /\\ CDecision; fair => L01 /\\ L02 /\\ L03 /\\ L04; separately inductive localCommitAtomicity for the colocated asset(s).",
     "classification": "operational integration",
     "assumptions": [
       "A-FINAL",
@@ -1181,7 +1255,13 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-variant-live_b"
+      "qa-variant-live_b",
+      "qa-effect-init-b",
+      "qa-effect-preserve-b",
+      "qa-effect-imply-b",
+      "qa-non-atomic-cash",
+      "qa-trade-domain-forward",
+      "qa-trade-domain-reverse"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1207,8 +1287,8 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-variant-live_d",
-      "d-outage-return-paths"
+      "qa-variant-live_d",
+      "qa-scenarios-d_outage_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1234,8 +1314,8 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-variant-live_escrow",
-      "witness-escrow_path_test"
+      "qa-variant-live_escrow",
+      "qa-scenarios-escrow_path_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1261,10 +1341,31 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-variant-private_asset",
-      "review-pipeline-safe",
-      "review-typed-private-availability",
-      "review-typed-private-unconditionalAvailability"
+      "qa-variant-private_asset",
+      "qa-pipeline-access",
+      "qa-private-availability",
+      "qa-private-unconditionalAvailability",
+      "qa-payload-exact-values",
+      "qa-payload_field0",
+      "qa-payload_field1",
+      "qa-payload_field2",
+      "qa-payload_field3",
+      "qa-payload_field4",
+      "qa-payload_field5",
+      "qa-payload_field6",
+      "qa-payload_field7",
+      "qa-payload_field8",
+      "qa-payload_field9",
+      "qa-payload_field10",
+      "qa-payload_field11",
+      "qa-payload_field12",
+      "qa-payload_field13",
+      "qa-payload_field14",
+      "qa-payload_field15",
+      "qa-payload_root",
+      "qa-payload_program",
+      "qa-note_amount",
+      "qa-note_recipient"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1273,7 +1374,7 @@
   {
     "id": "V-Shared",
     "requirement": "Co-resident opposite-direction transfers apply atomically on the shared control ledger.",
-    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.",
+    "predicate": "safe /\\ CDecision; exact success witness reaches both effects in the one ledger action.; separately inductive localCommitAtomicity for the colocated asset(s).",
     "classification": "operational integration",
     "assumptions": [
       "A-FINAL",
@@ -1290,8 +1391,14 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "final-variant-shared_execution",
-      "witness-shared_path_test"
+      "qa-variant-shared_execution",
+      "qa-scenarios-shared_path_test",
+      "qa-effect-init-shared",
+      "qa-effect-preserve-shared",
+      "qa-effect-imply-shared",
+      "qa-partial-shared",
+      "qa-trade-domain-forward",
+      "qa-trade-domain-reverse"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
@@ -1317,9 +1424,8 @@
     "expected": "named scoped observation",
     "status": "executed-with-result",
     "executed_checks": [
-      "three-domain-installation-final",
-      "three-domain-progress",
-      "three-independent-domains-witnesses"
+      "qa-multilateral",
+      "qa-scenarios-multilateral_test"
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",

@@ -1,0 +1,11 @@
+
+  policy_test
+    ok aRevocationTest passed 1 test(s)
+    ok bRevocationTest passed 1 test(s)
+    ok localPolicyIndependenceTest passed 1 test(s)
+    ok cashUnsignedTest passed 1 test(s)
+    ok abortAccountingTest passed 1 test(s)
+    ok frozenSecurityAdmissionTest passed 1 test(s)
+    ok frozenCashAdmissionTest passed 1 test(s)
+
+  7 passing (46ms)

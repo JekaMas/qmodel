@@ -1,5 +1,7 @@
 # Findings and verification verdict
 
+Current repair disposition: **QA-01–QA-04 resolved**. [The final repair report](qa-repairs.md) supersedes the comparative review's open-finding status and records current native evidence and re-review. Added complete disclosure/query/source/proof binding and trusted-principal observation; actual unadmitted-source proofs at the consumer; semantic ABORT release/absence assertions; exact economic outputs/financial rows and actual-source effect/local-atomicity checks. Prior failures and proof boundaries remain visible. The original extended-run sections below describe their recorded source revisions.
+
 The checked design supports **irreversible backed commitment and conditional eventual application**. It does **not** meet an interpretation of “neither leg completes without the other” that requires both assets to become locally usable at the same instant on independently scheduled ledgers. The attached v2 instruction and the recovered shared solution are the source authority; the original PDF and earlier design workspace were absent.
 
 ## Contracts and counterexamples

@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-18T07:50:16.951386+00:00",
+  "action": "Explicit SIGTERM process group; retain non-success receipt",
+  "command": "node /Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/models/effect_consistency.qnt --main effects_one --init arbitraryInvariant --step adversarialStep --invariant effectI --max-steps 1 --verbosity 3",
+  "reason": "Replace costly full-record arbitrary-state construction with equivalent native TLA record-set domains. Quint expands a Cartesian-product/record comprehension; Apalache has an optimized record-set membership encoding. Normalize only two domain constructors, leaving State/init/Next/invariants unchanged. This is a compiler representation repair, not a reduced protocol or weakened predicate.",
+  "identity": "{[fi |-> vi] : v in D1 X ... X Dn} equals [f1:D1,...,fn:Dn] with exact sequential tuple-field correspondence."
+}

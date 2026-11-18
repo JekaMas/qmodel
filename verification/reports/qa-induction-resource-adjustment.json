@@ -1,0 +1,7 @@
+{
+  "utc": "2026-11-18T07:35:30.671351+00:00",
+  "scope": "qa-effect-preserve-one",
+  "reason": "Explicit resource-diagnosis interruption: arbitrary full-record initialization remained before State0 checking after more than12minutes, using about7GiB RSS under8GiB heap. Increase only this full-state induction cohort to24GiB; identical State/init/step/predicate obligations. Not a property counterexample or pass.",
+  "child_pid": 52926,
+  "action": "SIGTERM process group; retain native receipt as non-success"
+}

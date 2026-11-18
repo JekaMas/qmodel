@@ -1,0 +1,6 @@
+
+  economic_booking_test
+    ok bookingExactTermsTest passed 1 test(s)
+    ok recoveredBookingExactlyOnceTest passed 1 test(s)
+
+  2 passing (71ms)

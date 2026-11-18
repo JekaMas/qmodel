@@ -8,8 +8,8 @@
       "finite_model_verified"
     ],
     "checks": [
-      "final-record-safety",
-      "final-record-progress"
+      "qa-core-finite",
+      "qa-full-one"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -22,8 +22,8 @@
       "executed_successfully"
     ],
     "checks": [
-      "final-variant-live_open",
-      "delayed-open-fact-scenarios"
+      "qa-variant-live_open",
+      "qa-scenarios-open_test"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -35,7 +35,7 @@
       "finite_model_verified"
     ],
     "checks": [
-      "final-variant-live_b"
+      "qa-variant-live_b"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -48,8 +48,8 @@
       "executed_successfully"
     ],
     "checks": [
-      "final-variant-live_d",
-      "d-outage-return-paths"
+      "qa-variant-live_d",
+      "qa-scenarios-d_outage_test"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -62,8 +62,8 @@
       "executed_successfully"
     ],
     "checks": [
-      "final-variant-live_escrow",
-      "witness-escrow_path_test"
+      "qa-variant-live_escrow",
+      "qa-scenarios-escrow_path_test"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -79,11 +79,11 @@
       "expected_counterexample_found"
     ],
     "checks": [
-      "final-variant-private_asset",
-      "review-pipeline-safe",
-      "review-typed-private-availability",
-      "review-typed-private-unconditionalAvailability",
-      "review-pipeline_note"
+      "qa-variant-private_asset",
+      "qa-pipeline-access",
+      "qa-private-availability",
+      "qa-private-unconditionalAvailability",
+      "qa-pipeline_note"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -93,13 +93,11 @@
     "status": "executed-with-result",
     "result": [
       "finite_model_verified",
-      "finite_model_verified",
       "executed_successfully"
     ],
     "checks": [
-      "three-domain-installation-final",
-      "three-domain-progress",
-      "three-independent-domains-witnesses"
+      "qa-multilateral",
+      "qa-scenarios-multilateral_test"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"
   },
@@ -147,8 +145,8 @@
       "executed_successfully"
     ],
     "checks": [
-      "final-variant-shared_execution",
-      "witness-shared_path_test",
+      "qa-variant-shared_execution",
+      "qa-scenarios-shared_path_test",
       "scenario-shared_test"
     ],
     "mapping": "C-Decision/C-Local/C-Records as scoped; economic safety mapping only for A-hosted native one-trade core"

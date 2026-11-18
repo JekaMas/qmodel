@@ -1,0 +1,6 @@
+
+  economic_multilateral_test
+    ok distinctDomainRecipientTest passed 1 test(s)
+    ok releaseReturnsOwnersTest passed 1 test(s)
+
+  2 passing (22ms)

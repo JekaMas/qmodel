@@ -1,0 +1,66 @@
+> [1/3] Checking whether the inductive invariant 'effectI' holds in the initial state(s) defined by 'init'...
+Picked up JAVA_TOOL_OPTIONS: -Xmx8g -Xss8m
+# Usage statistics is OFF. We care about your privacy.
+# If you want to help our project, consider enabling statistics with config --enable-stats=true.
+
+Output directory: /Users/jekamas/projects/0xatelerix/qmodel/_apalache-out/server/2026-11-18T11-15-31_11099002950803452085
+# APALACHE version: 0.62.4 | build: 7954daf                       I@11:15:31.961
+Starting checker server on port 8822...                           I@11:15:31.963
+The Apalache server is running on port 8822. Press Ctrl-C to stop.
+????. 18, 2026 11:15:34 AM com.google.protobuf.GeneratedMessage warnPre22Gencode
+WARNING: Vulnerable protobuf generated type in use: io.grpc.reflection.v1alpha.ServerReflectionRequest
+As of 2022/09/29 (release 21.7) makeExtensionsImmutable should not be called from protobuf gencode. If you are seeing this message, your gencode is vulnerable to a denial of service attack. You should regenerate your code using protobuf 25.6 or later. Use the latest version that meets your needs. However, if you understand the risks and wish to continue with vulnerable gencode, you can set the system property `-Dcom.google.protobuf.use_unsafe_pre22_gencode` on the command line to silence this warning. You also can set `-Dcom.google.protobuf.error_on_unsafe_pre22_gencode` to throw an error instead. See security vulnerability: https://github.com/protocolbuffers/protobuf/security/advisories/GHSA-h4h5-3hr4-j3g2
+PASS #0: SanyParser                                               I@11:15:38.595
+PASS #1: TypeCheckerSnowcat                                       I@11:15:43.298
+ > Running Snowcat .::.                                           I@11:15:43.298
+ > Your types are purrfect!                                       I@11:16:13.250
+ > All expressions are typed                                      I@11:16:13.251
+PASS #2: ConfigurationPass                                        I@11:16:13.252
+  > Set the initialization predicate to q::init                   I@11:16:13.257
+  > Set the transition predicate to q::step                       I@11:16:13.257
+  > Set an invariant to q::inductiveInv                           I@11:16:13.258
+PASS #3: DesugarerPass                                            I@11:16:13.263
+  > Desugaring...                                                 I@11:16:13.263
+PASS #4: InlinePass                                               I@11:16:13.281
+Leaving only relevant operators: CInitPrimed, q::inductiveInv, q::init, q::initPrimed, q::step I@11:16:13.282
+PASS #5: TemporalPass                                             I@11:16:13.470
+  > Rewriting temporal operators...                               I@11:16:13.470
+  > No temporal property specified, nothing to encode             I@11:16:13.470
+PASS #6: InlinePass                                               I@11:16:13.470
+Leaving only relevant operators: CInitPrimed, q::inductiveInv, q::init, q::initPrimed, q::step I@11:16:13.470
+PASS #7: PrimingPass                                              I@11:16:13.514
+  > Introducing q::initPrimed for q::init'                        I@11:16:13.515
+PASS #8: VCGen                                                    I@11:16:13.516
+  > Producing verification conditions from the invariant q::inductiveInv I@11:16:13.517
+  > VCGen produced 3 verification condition(s)                    I@11:16:13.525
+PASS #9: PreprocessingPass                                        I@11:16:13.532
+  > Before preprocessing: unique renaming                         I@11:16:13.532
+ > Applying standard transformations:                             I@11:16:13.539
+  > PrimePropagation                                              I@11:16:13.539
+  > Desugarer                                                     I@11:16:13.550
+  > UniqueRenamer                                                 I@11:16:13.569
+  > Normalizer                                                    I@11:16:13.600
+  > SetMembershipSimplifier                                       I@11:16:13.632
+  > Keramelizer                                                   I@11:16:13.656
+  > After preprocessing: UniqueRenamer                            I@11:16:13.705
+PASS #10: TransitionFinderPass                                    I@11:16:13.998
+  > Found 1 initializing transitions                              I@11:16:14.010
+  > Found 43 transitions                                          I@11:16:14.049
+  > No constant initializer                                       I@11:16:14.050
+  > Applying unique renaming                                      I@11:16:14.051
+PASS #11: OptimizationPass                                        I@11:16:14.075
+ > Applying optimizations:                                        I@11:16:14.078
+  > ConstSimplifier                                               I@11:16:14.079
+  > ExprOptimizer                                                 I@11:16:14.238
+  > SetMembershipSimplifier                                       I@11:16:14.304
+  > ConstSimplifier                                               I@11:16:14.314
+PASS #12: AnalysisPass                                            I@11:16:14.491
+ > Marking skolemizable existentials and sets to be expanded...   I@11:16:14.736
+  > Skolemization                                                 I@11:16:14.736
+  > Expansion                                                     I@11:16:14.738
+  > Remove unused let-in defs                                     I@11:16:14.817
+ > Running analyzers...                                           I@11:16:14.837
+  > Introduced expression grades                                  I@11:16:14.844
+PASS #13: BoundedChecker                                          I@11:16:14.844
+State 0: Checking 3 state invariants                              I@11:16:16.001
+error: <unknown>: rewriter error: Trying to expand a set of functions. This will blow up the solver.

@@ -3,7 +3,8 @@
   "change": "verify-cross-chain-dvp",
   "scope": {
     "property_ids": [
-      "EV.P1"
+      "EV.P1",
+      "EV.P2"
     ],
     "test_ids": [
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
@@ -23,7 +24,22 @@
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_full_model_resolutions_do_not_use_compact_substitutes",
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_fresh_extended_profile_preserves_jvm_resources",
       "unittest::verification.tests.test_evidence.EvidenceAudit.test_phase_fault_and_acceptance_witness_counts",
-      "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline"
+      "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_every_payload_corruption_is_detected",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_consumer_contexts_reach_real_acceptance_gate",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_every_economic_placement_has_exact_outputs",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_effect_soundness_is_inductive_over_the_full_machine",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_plausible_release_record_cannot_replace_actual_release",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_colocated_commit_cannot_skip_local_transfers",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_authenticated_observer_uses_query_context",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_native_payload_error_fields_are_not_tool_errors",
+      "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_qnt_error_remains_a_non_success"
     ]
   },
   "reviews": [
@@ -31,7 +47,8 @@
       "id": "D1",
       "question": "Locate source requirements, candidate protocol and actual verification/evidence owners in the new repository.",
       "property_ids": [
-        "EV.P1"
+        "EV.P1",
+        "EV.P2"
       ],
       "test_ids": [
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_required_backend_observations",
@@ -51,14 +68,29 @@
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_full_model_resolutions_do_not_use_compact_substitutes",
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_fresh_extended_profile_preserves_jvm_resources",
         "unittest::verification.tests.test_evidence.EvidenceAudit.test_phase_fault_and_acceptance_witness_counts",
-        "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline"
+        "unittest::verification.tests.test_evidence.EvidenceAudit.test_privacy_assumptions_cite_current_payload_pipeline",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_all_payload_values_and_error_states",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_every_payload_corruption_is_detected",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_consumer_contexts_reach_real_acceptance_gate",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_missing_program_admission_is_killed",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_and_absent_abort_legs_are_distinct",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_premature_absence_cannot_certify_reconciliation",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_every_economic_placement_has_exact_outputs",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_wrong_valid_account_or_asset_preserves_supply_but_fails",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_booking_recipient_and_quantity_substitution_is_detected",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_effect_soundness_is_inductive_over_the_full_machine",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_plausible_release_record_cannot_replace_actual_release",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_colocated_commit_cannot_skip_local_transfers",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_authenticated_observer_uses_query_context",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_native_payload_error_fields_are_not_tool_errors",
+        "unittest::verification.tests.test_qa_repairs.RepairAudit.test_actual_qnt_error_remains_a_non_success"
       ],
       "searches": [
         {
           "kind": "exact",
           "status": "completed",
-          "query": "Explicit attachment read; exact source-path checks and rg --files in the requested workspace; direct reads of named new model/evidence files.",
-          "outcome": "Shared answer recovered from the requested public link; original PDF/workspace absent. Models and evidence pipeline authored in this repository.",
+          "query": "Explicit attachment read; exact source-path checks and rg --files in the requested workspace; direct reads of named model/evidence and comparative-review finding owners.",
+          "outcome": "Shared answer recovered from the requested public link; original PDF/workspace absent. Known Quint/payload/receipt/record and native evidence owners directly inspected, repaired and reviewed.",
           "results": [
             {
               "path": "verification/models/dvp.qnt",
@@ -71,6 +103,18 @@
               "line": 1,
               "classification": "test_proof",
               "reason": "Owns executed checker receipts and source capture."
+            },
+            {
+              "path": "verification/models/privacy_pipeline.qnt",
+              "line": 1,
+              "classification": "change_candidate",
+              "reason": "Owns independently checked disclosure construction and provenance."
+            },
+            {
+              "path": "verification/models/effect_consistency.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Owns actual full-state hold/effect induction rather than a receipt-only oracle."
             }
           ]
         },
@@ -79,7 +123,7 @@
           "status": "not_applicable",
           "query": "Unfamiliar implementation ownership",
           "outcome": "No pre-existing production implementation exists in qmodel.",
-          "reason": "New requirements-driven formal project; all owners are explicit newly authored files. No semantic code-discovery or implementation conformance is claimed.",
+          "reason": "Known requirements-authored formal owners; new repairs target exact reviewed files. No semantic production-code discovery or conformance is claimed.",
           "results": []
         },
         {
@@ -92,7 +136,7 @@
         }
       ],
       "disposition": "current_change",
-      "rationale": "This change owns the complete scoped executable investigation and honest evidence reporting."
+      "rationale": "This change owns the complete scoped executable investigation and review-driven repairs."
     }
   ]
 }
