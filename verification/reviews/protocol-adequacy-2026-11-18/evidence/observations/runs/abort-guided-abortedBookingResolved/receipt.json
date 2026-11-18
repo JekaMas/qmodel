@@ -1,0 +1,70 @@
+{
+  "id": "abort-guided-abortedBookingResolved",
+  "started_utc": "2026-11-18T04:28:30.851784+00:00",
+  "claim": "abortedBookingResolved",
+  "backend": "simulation",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/results/runtime/comparative-review/probes/abort_guided.qnt",
+    "--main",
+    "abort_guided",
+    "--init",
+    "initProbe",
+    "--step",
+    "guidedStep",
+    "--invariant",
+    "abortedBookingResolved",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "16",
+    "--backend",
+    "typescript",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "verification/results/runtime/comparative-review/probes/abort-abortedBookingResolved.itf.json"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint run verification/results/runtime/comparative-review/probes/abort_guided.qnt --main abort_guided --init initProbe --step guidedStep --invariant abortedBookingResolved --max-samples 1 --max-steps 16 --backend typescript --seed 17 --verbosity 2 --out-itf verification/results/runtime/comparative-review/probes/abort-abortedBookingResolved.itf.json",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/results/runtime/comparative-review/probes/abort_guided.qnt": "0ea7f402c8b9aec64dda4e09e3e2ca31c184ec9f62560a8bc8b26873937686c1",
+    "verification/results/runtime/comparative-review/probes/early_absence_mutant.qnt": "80891a40505618e1788beb6564178831482585bf6658261336210437df9168b7"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "47571c6ae5db664d7befeb185fdb697b04ca681a26d55940ac86d414b139848d"
+  },
+  "execution_plan_sha256": "bdf08087fd9878df5de4a93420adcafde4d59b4ed21a62e7c95d6dad13f6b1e2",
+  "raw_sha256": "7a597f1834aed2ff9b1d31fa27ce00790657357742fd173b0010939f7b96441b",
+  "configuration": {},
+  "timeout_seconds": 30,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 1,
+  "wall_seconds": 1.871779375243932,
+  "outcome": "expected_counterexample_found",
+  "expected": "counterexample",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runtime/comparative-review/observations/runs/abort-guided-abortedBookingResolved/raw.log",
+  "minimized": false,
+  "replayed": false,
+  "native_trace": "verification/results/runtime/comparative-review/observations/runs/abort-guided-abortedBookingResolved/native.itf.json",
+  "native_trace_sha256": "8181647943e21c8f3eee9eee6db3c26f9e80271e3fb272b922ad360aac55017e"
+}

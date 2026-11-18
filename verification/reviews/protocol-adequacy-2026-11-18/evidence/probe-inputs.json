@@ -1,0 +1,8 @@
+{
+  "baseline": "011a22aeee49059533818a935a0470b0f94446a9",
+  "purpose": "Test the model oracles using controlled implementation-only mutants; not counterexamples of the unchanged model",
+  "source_sha256": {
+    "verification/models/dvp.qnt": "c28f6e9820e679c49d4cc39bd34f7ebb9806be1cc6a2f185a455c2bc6fc3c935",
+    "verification/models/privacy_pipeline.qnt": "c832b2e19081687d9e87444eedd4558a76db38ed33fb8f41fc31b2a87db56327"
+  }
+}

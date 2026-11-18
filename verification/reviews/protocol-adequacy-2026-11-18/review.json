@@ -1,0 +1,372 @@
+{
+  "baseline_commit": "011a22aeee49059533818a935a0470b0f94446a9",
+  "review_delivery": "DONE",
+  "full_literal_guarantee_coverage": "NOT DONE",
+  "protocol_model_repairs": "NOT DONE",
+  "reviewer": "root agent; no new independent agent/sign-off",
+  "findings": [
+    {
+      "id": "QA-01",
+      "priority": "high",
+      "kind": "oracle gap",
+      "properties": [
+        "P-Binding",
+        "V-Private"
+      ]
+    },
+    {
+      "id": "QA-02",
+      "priority": "medium",
+      "kind": "adversarial input reachability gap",
+      "properties": [
+        "S10",
+        "S13"
+      ]
+    },
+    {
+      "id": "QA-03",
+      "priority": "medium",
+      "kind": "record semantic assertion gap",
+      "properties": [
+        "S06",
+        "S15",
+        "L04",
+        "C-Records"
+      ]
+    },
+    {
+      "id": "QA-04",
+      "priority": "high",
+      "kind": "economic output observability gap",
+      "properties": [
+        "S05",
+        "S08",
+        "C-Decision"
+      ]
+    }
+  ],
+  "property_count": 51,
+  "current_source_files_manually_reviewed": 67,
+  "baseline_paths_in_inventory": 1994,
+  "upstream_source_files_retrieved": 31,
+  "upstream_suites_executed": 0,
+  "existing_native_acceptance_observations_audited": 162,
+  "existing_property_and_acceptance_families_audited": 175,
+  "new_probe_observations": [
+    {
+      "id": "abort-control",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/abort-control/receipt.json",
+      "wall_seconds": 1.6619555838406086
+    },
+    {
+      "id": "abort-guided-abortedBookingResolved",
+      "expected": "counterexample",
+      "outcome": "expected_counterexample_found",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/abort-guided-abortedBookingResolved/receipt.json",
+      "wall_seconds": 1.871779375243932
+    },
+    {
+      "id": "abort-guided-weakSafe",
+      "expected": "pass",
+      "outcome": "sampled_no_counterexample",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/abort-guided-weakSafe/receipt.json",
+      "wall_seconds": 1.7707335418090224
+    },
+    {
+      "id": "abort-weak",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/abort-weak/receipt.json",
+      "wall_seconds": 1.701852375175804
+    },
+    {
+      "id": "privacy-value-0",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-0/receipt.json",
+      "wall_seconds": 1.2804220421239734
+    },
+    {
+      "id": "privacy-value-1",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-1/receipt.json",
+      "wall_seconds": 1.2558602499775589
+    },
+    {
+      "id": "privacy-value-10",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-10/receipt.json",
+      "wall_seconds": 1.2559161661192775
+    },
+    {
+      "id": "privacy-value-11",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-11/receipt.json",
+      "wall_seconds": 1.3829676248133183
+    },
+    {
+      "id": "privacy-value-12",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-12/receipt.json",
+      "wall_seconds": 1.2712581669911742
+    },
+    {
+      "id": "privacy-value-13",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-13/receipt.json",
+      "wall_seconds": 1.2382979998365045
+    },
+    {
+      "id": "privacy-value-14",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-14/receipt.json",
+      "wall_seconds": 1.2549963328056037
+    },
+    {
+      "id": "privacy-value-15",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-15/receipt.json",
+      "wall_seconds": 1.2450652499683201
+    },
+    {
+      "id": "privacy-value-2",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-2/receipt.json",
+      "wall_seconds": 1.2617782079614699
+    },
+    {
+      "id": "privacy-value-3",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-3/receipt.json",
+      "wall_seconds": 1.2722794581204653
+    },
+    {
+      "id": "privacy-value-4",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-4/receipt.json",
+      "wall_seconds": 1.278981499839574
+    },
+    {
+      "id": "privacy-value-5",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-5/receipt.json",
+      "wall_seconds": 1.251385707873851
+    },
+    {
+      "id": "privacy-value-6",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-6/receipt.json",
+      "wall_seconds": 1.2798119173385203
+    },
+    {
+      "id": "privacy-value-7",
+      "expected": "pass",
+      "outcome": "tool_error",
+      "expectation_met": false,
+      "receipt": "evidence/observations/runs/privacy-value-7/receipt.json",
+      "wall_seconds": 1.288114707916975
+    },
+    {
+      "id": "privacy-value-7-attempt1",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-7-attempt1/receipt.json",
+      "wall_seconds": 1.3412183341570199
+    },
+    {
+      "id": "privacy-value-8",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-8/receipt.json",
+      "wall_seconds": 1.300687083043158
+    },
+    {
+      "id": "privacy-value-9",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/privacy-value-9/receipt.json",
+      "wall_seconds": 1.3038213751278818
+    },
+    {
+      "id": "program-weak-foreign-S10",
+      "expected": "counterexample",
+      "outcome": "expected_counterexample_found",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/program-weak-foreign-S10/receipt.json",
+      "wall_seconds": 1.724635458085686
+    },
+    {
+      "id": "program_strict_foreign",
+      "expected": "pass",
+      "outcome": "tool_error",
+      "expectation_met": false,
+      "receipt": "evidence/observations/runs/program_strict_foreign/receipt.json",
+      "wall_seconds": 1.6736536659300327
+    },
+    {
+      "id": "program_strict_foreign-attempt1",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/program_strict_foreign-attempt1/receipt.json",
+      "wall_seconds": 1.7253357907757163
+    },
+    {
+      "id": "program_weak_bindings",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/program_weak_bindings/receipt.json",
+      "wall_seconds": 1.9184488328173757
+    },
+    {
+      "id": "program_weak_canonical",
+      "expected": "pass",
+      "outcome": "executed_successfully",
+      "expectation_met": true,
+      "receipt": "evidence/observations/runs/program_weak_canonical/receipt.json",
+      "wall_seconds": 1.7322268327698112
+    }
+  ],
+  "successful_discriminators": 24,
+  "setup_failures_preserved": [
+    "privacy-value-7",
+    "program_strict_foreign"
+  ],
+  "privacy_value_matrix": [
+    {
+      "field": 0,
+      "corrupted_value": 0,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-0"
+    },
+    {
+      "field": 1,
+      "corrupted_value": 1,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-1"
+    },
+    {
+      "field": 2,
+      "corrupted_value": 99,
+      "PBinding_detects": true,
+      "receipt_id": "privacy-value-2"
+    },
+    {
+      "field": 3,
+      "corrupted_value": 99,
+      "PBinding_detects": true,
+      "receipt_id": "privacy-value-3"
+    },
+    {
+      "field": 4,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-4"
+    },
+    {
+      "field": 5,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-5"
+    },
+    {
+      "field": 6,
+      "corrupted_value": 99,
+      "PBinding_detects": true,
+      "receipt_id": "privacy-value-6"
+    },
+    {
+      "field": 7,
+      "corrupted_value": 99,
+      "PBinding_detects": true,
+      "receipt_id": "privacy-value-7-attempt1"
+    },
+    {
+      "field": 8,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-8"
+    },
+    {
+      "field": 9,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-9"
+    },
+    {
+      "field": 10,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-10"
+    },
+    {
+      "field": 11,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-11"
+    },
+    {
+      "field": 12,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-12"
+    },
+    {
+      "field": 13,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-13"
+    },
+    {
+      "field": 14,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-14"
+    },
+    {
+      "field": 15,
+      "corrupted_value": 99,
+      "PBinding_detects": false,
+      "receipt_id": "privacy-value-15"
+    }
+  ],
+  "native_counterexamples_apply_to": "deliberately changed copied models; no unchanged-protocol counterexample claimed",
+  "production_conformance": "not established; no production implementation present",
+  "source_changes": "Review artifacts and entrypoint/task references only; original protocol assertions and transitions unchanged",
+  "native_graph_reruns": 0
+}

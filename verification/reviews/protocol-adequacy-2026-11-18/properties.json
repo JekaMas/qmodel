@@ -1,0 +1,1104 @@
+[
+  {
+    "id": "S01",
+    "requirement": "Types/domains are valid; balances are nonnegative. Separate security units from cash units.",
+    "owner_locations": "dvp.qnt:266",
+    "adequacy": "scoped-adequate",
+    "review": "Finite type/domain and nonnegative amount accounting; separate asset domains. Exact account effects remain QA-04.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S02",
+    "requirement": "Each trade has at most one terminal decision, which is permanent. Check transition/history monotonicity, not merely that an enum has one value at a time.",
+    "owner_locations": "dvp.qnt:274",
+    "adequacy": "scoped-adequate",
+    "review": "Terminal ghost persists across actions; reopen/forget mutants fail. Safety mapping separately snapshots pre-step economic state. No arbitrary implementation history theorem.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-reopen",
+      "mutant-pruned_tombstone"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-reopen-attempt3",
+      "mutant-pruned_tombstone-attempt2"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S03",
+    "requirement": "Only properly authorized intent can reserve assets. Descriptor identity/terms are immutable; altered reuse is rejected.",
+    "owner_locations": "dvp.qnt:54,59,83,275",
+    "adequacy": "scoped-adequate",
+    "review": "Both signatures bind immutable 22-field descriptor; altered instruction tests reach requestOpen. Instruction rejection is distinct from proof-consumer binding.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-bindings_test",
+      "scenario-policy_test"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-bindings_test",
+      "scenario-policy_test"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S04",
+    "requirement": "Per-asset conservation and reservation exclusivity. Concurrent trades cannot reserve/spend the same capacity twice. Explain accounting for native holds: reserved value is unavailable, not an extra copy of holdings.",
+    "owner_locations": "dvp.qnt:51,65,276",
+    "adequacy": "scoped-adequate",
+    "review": "Native unavailable capacity is not counted twice; owner/vault/spent/receipt conservation, two-trade contention and escrow witnesses. Account identity is absent at payout.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-contention_test",
+      "final-variant-live_escrow",
+      "three-domain-installation-final"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-contention_test",
+      "final-variant-live_escrow",
+      "three-domain-installation-final"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S05",
+    "requirement": "Each actual transfer/refund and downstream booking occurs at most once for its intended operation and exact recipient/quantity. Check economic effects, not just a consumed flag.",
+    "owner_locations": "dvp.qnt:45,167,187,195,279",
+    "adequacy": "incomplete",
+    "review": "Actual duplicate effect/quantity/book counters are checked and replay mutant fails. Exact credited account is not represented.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-replay",
+      "abort-authoritative-records"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-replay-attempt2",
+      "abort-authoritative-records"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S06",
+    "requirement": "Every value-moving application has valid matching authorization/evidence; local work-state, acknowledgements or unverified messages cannot authorize settlement.",
+    "owner_locations": "dvp.qnt:55,139,178,231,281",
+    "adequacy": "incomplete",
+    "review": "Financial paths require authenticated local knowledge; record producer guard is correct. Final ABORT booking oracle accepts premature records if that guard regresses.",
+    "findings": [
+      "QA-03"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-relayer_assertion",
+      "abort-authoritative-records",
+      "final-phase-failure-witnesses"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-relayer_assertion-attempt2",
+      "abort-authoritative-records",
+      "final-phase-failure-witnesses"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S07",
+    "requirement": "A proof-eligible obligation persists under admitted asset/version semantics until its permitted terminal disposition.",
+    "owner_locations": "dvp.qnt:284; trust.qnt:31",
+    "adequacy": "scoped-adequate",
+    "review": "Durable cash obligation until an admitted terminal disposition; stale authentic proof/expiry and issuer-destruction controls demonstrate why the hold assumption matters.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-expiry",
+      "tlc-issuer_destruction-backed"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-expiry-attempt2",
+      "tlc-issuer_destruction-backed"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S08",
+    "requirement": "COMMIT on A implies the specified security transfer happened atomically and the matching cash obligation is still backed and bound to the recipient, or has already been delivered. Do not define backing as a Boolean derived solely from COMMIT.",
+    "owner_locations": "dvp.qnt:154,285",
+    "adequacy": "incomplete",
+    "review": "Atomic A effect and real remaining cash capacity are independently checked; non-atomic and unilateral-expiry mutants fail. Exact account identity of delivery/backing is only implicit.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "final-record-mapping",
+      "mutant-expiry",
+      "mutant-non_atomic"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "final-record-mapping",
+      "mutant-expiry-attempt2",
+      "mutant-non_atomic-attempt3"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S09",
+    "requirement": "No security-delivered/cash-refunded or cash-delivered/security-refunded outcome. Include absence of any supported path to the incompatible future outcome.",
+    "owner_locations": "dvp.qnt:289",
+    "adequacy": "scoped-adequate",
+    "review": "No delivered/refunded opposite outcome across the full finite reachable graph; stale-refund and actual independent B-clock expiry controls fail.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-stale_refund",
+      "actual-b-clock-expiry"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-stale_refund-attempt2",
+      "actual-b-clock-expiry"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S10",
+    "requirement": "Proof binding rejects substitutions of trade, nonce, leg/phase, chain/genesis, decision domain, asset/contract, amount, recipient, checkpoint and program/configuration version.",
+    "owner_locations": "dvp.qnt:30,55,139,290; bindings_test.qnt:4",
+    "adequacy": "incomplete",
+    "review": "Trade substitution is meaningful; descriptor entry guards are exercised. Missing program admission survives canonical producer inputs and the 22 instruction tests.",
+    "findings": [
+      "QA-02"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-binding",
+      "scenario-bindings_test"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "mutant-binding-attempt2",
+      "scenario-bindings_test"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S11",
+    "requirement": "Deadline guards and terminal tombstones prevent reopening or changing outcomes, including missing OPEN and delayed prepare cases.",
+    "owner_locations": "dvp.qnt:59,172,291; variants_test.qnt:1",
+    "adequacy": "scoped-adequate",
+    "review": "Exclusive height and terminal tombstones plus known/unknown ABORT delayed preparation witnesses. No independent B timeout.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-open_test",
+      "delayed-open-fact-scenarios",
+      "membership-lifecycle-tests"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-open_test",
+      "delayed-open-fact-scenarios",
+      "membership-lifecycle-tests"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "S12",
+    "requirement": "Crash recovery and stale adapter snapshots cannot contradict authoritative ledger decisions or duplicate financial effects.",
+    "owner_locations": "dvp.qnt:213,292; operational_faults.qnt:5; phase_failure_test.qnt:16",
+    "adequacy": "scoped-adequate",
+    "review": "Finite B/prover/freeze recovery plus explicit phase failures and sampled loss/resend/prune; arbitrary independent fault products remain unproved.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "final-record-recovery",
+      "scenario-recovery_test",
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "final-record-recovery",
+      "scenario-recovery_test",
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
+    ],
+    "proof_boundary": "Full-job N=1 B/prover-crash and B-freeze recovery graph, plus19 direct phase-guard/recovery scenarios and actual message-loss/restart witnesses. No arbitrary independent operational fault product."
+  },
+  {
+    "id": "S13",
+    "requirement": "Supported rotation, upgrade and member-exit operations preserve pending obligations and the ability to verify/apply their historical outcomes.",
+    "owner_locations": "dvp.qnt:296; membership.qnt:16,24,31; trust.qnt:25",
+    "adequacy": "scoped-adequate",
+    "review": "Core retains program1; focused predecessor-approved membership checks pending/current-safe retirement and consumed IDs. No full economic/membership liveness composition; proof program consumption gap remains.",
+    "findings": [
+      "QA-02"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "membership-retirement-final",
+      "membership-lifecycle-tests",
+      "trust-v2-retired_version"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "membership-retirement-final",
+      "membership-lifecycle-tests",
+      "trust-v2-retired_version"
+    ],
+    "proof_boundary": "Core S13 retains program1 only. The focused membership model checks approved/current credentials, pending/current-safe retirement and consumed identities. No checked full financial/membership liveness composition or arbitrary-upgrade theorem."
+  },
+  {
+    "id": "S14",
+    "requirement": "Required eligibility is enforced at preparation. Post-prepare interventions obey an explicitly modeled policy; do not assume away mandatory controls and call the result compliant.",
+    "owner_locations": "dvp.qnt:59,86,300; interventions.qnt:8",
+    "adequacy": "scoped-adequate",
+    "review": "Core S14 is authorization only; local eligibility/freeze guards have direct rejection cases and separate durable/cancel/freeze/seizure policies. No compliance theorem.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-policy_test",
+      "preparation-freeze-policy",
+      "scenario-shared_policy_test",
+      "tlc-durable-safe",
+      "tlc-mandatory_freeze-progress",
+      "tlc-arbitrary_seizure-backing"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "scenario-policy_test",
+      "preparation-freeze-policy",
+      "scenario-shared_policy_test",
+      "tlc-durable-safe",
+      "tlc-mandatory_freeze-progress",
+      "tlc-arbitrary_seizure-backing"
+    ],
+    "proof_boundary": "Preparation guards tested for independent local eligibility; supported durable/freeze/seizure policies checked separately. The S14 state predicate alone is not a historical eligibility theorem or regulatory-compliance proof."
+  },
+  {
+    "id": "S15",
+    "requirement": "Reports distinguish accepted, prepared, committed, each locally applied leg and reconciliation. FULLY_APPLIED requires authenticated evidence for both applications. Stale observations are labeled.",
+    "owner_locations": "dvp.qnt:301,313; report_view.qnt:11",
+    "adequacy": "incomplete",
+    "review": "Authenticated COMMIT application receipts gate FULLY_APPLIED; stage diagnostics are source-world views. Reconciled ABORT lacks an independent no-active-obligation assertion.",
+    "findings": [
+      "QA-03"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "report-evidence-scenario",
+      "abort-authoritative-records",
+      "final-report-view-stages"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "report-evidence-scenario",
+      "abort-authoritative-records",
+      "final-report-view-stages-attempt3"
+    ],
+    "proof_boundary": "Source-world diagnostics distinguish authorized, source accepted, registered, prepared, committed, applied and reconciled. Six acceptance cases and authentic application/ABORT-record gates execute. External APIs must authenticate every source-dependent field; no implemented reporter conformance is claimed."
+  },
+  {
+    "id": "S16",
+    "requirement": "A transport-key compromise does not grant custody, contract-upgrade, validator-registration or decryption authority.",
+    "owner_locations": "dvp.qnt:302; membership.qnt:32; trust.qnt:41",
+    "adequacy": "scoped-adequate",
+    "review": "Transport compromise cannot change distinct custody/upgrade/validator/decryption authorities in this transition system; actual key isolation remains external.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "membership-lifecycle-tests",
+      "negative-disclosure_key_compromise"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "membership-lifecycle-tests",
+      "negative-disclosure_key_compromise"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "L01",
+    "requirement": "For an initiated trade with a registered decision or an actual hold, sufficient retained authorization/evidence and the stated recovery/fairness assumptions eventually produce COMMIT or ABORT.",
+    "owner_locations": "liveness.qnt:7,17; recovery.qnt:23",
+    "adequacy": "scoped-adequate",
+    "review": "Intent from a hold/registered decision eventually terminates under per-action fairness and the stated stable recovery. A fair outcome may be ABORT.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "three-domain-progress"
+    ],
+    "exact_receipts": [
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "three-domain-progress"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "L02",
+    "requirement": "COMMIT eventually leads to both local applications when required chains, proof data, workers and authorized submission paths recover and remain able to progress.",
+    "owner_locations": "liveness.qnt:18; recovery.qnt:26",
+    "adequacy": "scoped-adequate",
+    "review": "COMMIT eventually reaches both economic applications under retained proofs, submission authority, supported holds and required actor recovery. No instantaneous usability claim.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "private-data-progress",
+      "final-phase-failure-witnesses"
+    ],
+    "exact_receipts": [
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "private-data-progress",
+      "final-phase-failure-witnesses"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "L03",
+    "requirement": "ABORT eventually resolves every actual remaining reservation, including a late preparation that did not yet know ABORT. Do not require nonexistent holds to be refunded.",
+    "owner_locations": "liveness.qnt:19; recovery.qnt:27; late_resolution.qnt:15",
+    "adequacy": "scoped-adequate",
+    "review": "Every actual ABORT hold eventually releases, including unknown-ABORT late holds. Distinct from forbidding prematurely labeled reconciliation.",
+    "findings": [
+      "QA-03"
+    ],
+    "executed_check_families": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "late-hold-relative-bound",
+      "three-domain-progress",
+      "final-phase-failure-witnesses"
+    ],
+    "exact_receipts": [
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "late-hold-relative-bound",
+      "three-domain-progress",
+      "final-phase-failure-witnesses"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "L04",
+    "requirement": "Decided/applied trades eventually have reconciled local projections and idempotent financial records when the relevant consumers recover.",
+    "owner_locations": "liveness.qnt:20; recovery.qnt:28",
+    "adequacy": "incomplete",
+    "review": "Finite graphs show eventual booked/report state under consumer fairness. QA-03 shows that the semantic meaning of that terminal record needs a stronger independent assertion.",
+    "findings": [
+      "QA-03"
+    ],
+    "executed_check_families": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "report-evidence-scenario"
+    ],
+    "exact_receipts": [
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "final-record-two",
+      "final-record-recovery",
+      "report-evidence-scenario"
+    ],
+    "proof_boundary": "Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem."
+  },
+  {
+    "id": "C-Decision",
+    "requirement": "Irreversible backed counter-obligations",
+    "owner_locations": "dvp.qnt:306",
+    "adequacy": "incomplete",
+    "review": "Backed hold-or-effect at COMMIT is checked, including topology-specific transfer behavior. Recipient identity of that effect is implicit, so exact account-bound guarantee remains incomplete.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "final-record-mapping",
+      "contract-b_hosted",
+      "contract-d_shared"
+    ],
+    "exact_receipts": [
+      "extended-tlc-full-reference",
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-safety",
+      "final-record-mapping",
+      "contract-b_hosted",
+      "contract-d_shared"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "C-Local",
+    "requirement": "Both effects are applied",
+    "owner_locations": "dvp.qnt:304; liveness.qnt:18; privacy_pipeline.qnt:164",
+    "adequacy": "scoped-adequate",
+    "review": "Eventual both-leg application differs from immediate joint usability. Private note/key completion is checked in a separate typed-data pipeline; no general checked composition.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "private-data-progress"
+    ],
+    "exact_receipts": [
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-progress",
+      "private-data-progress"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "C-Records",
+    "requirement": "Report is evidence justified",
+    "owner_locations": "dvp.qnt:231,243,301",
+    "adequacy": "incomplete",
+    "review": "COMMIT report evidence is meaningful. Early absence records can pass the safety oracle in a producer-guard mutant while funds remain reserved.",
+    "findings": [
+      "QA-03"
+    ],
+    "executed_check_families": [
+      "final-record-safety",
+      "abort-authoritative-records"
+    ],
+    "exact_receipts": [
+      "final-record-safety",
+      "abort-authoritative-records"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "O-Immediate",
+    "requirement": "Both legs usable at every instant together",
+    "owner_locations": "dvp.qnt:321",
+    "adequacy": "expected-refutation",
+    "review": "Native counterexample confirms ordinary asynchronous local application has a one-sided availability interval.",
+    "findings": [],
+    "executed_check_families": [
+      "overclaim-immediate"
+    ],
+    "exact_receipts": [
+      "overclaim-immediate"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "O-Permanent",
+    "requirement": "Progress despite permanent chain failure",
+    "owner_locations": "failure_controls.qnt:1",
+    "adequacy": "expected-refutation",
+    "review": "Committed path followed by permanent B halt refutes unconditional eventual application; native temporal cycle retained.",
+    "findings": [],
+    "executed_check_families": [
+      "overclaim-permanent-halt"
+    ],
+    "exact_receipts": [
+      "overclaim-permanent-halt"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "P-Access",
+    "requirement": "Protected fields are released only by authorized payload construction",
+    "owner_locations": "privacy_pipeline.qnt:82,97,163,167",
+    "adequacy": "scoped-adequate",
+    "review": "Authorized roles/fields/scope and redacted full payloads checked over finite enumerated surfaces; wrong-scope and compromised-key controls fail. Actual endpoint/storage enforcement is not present.",
+    "findings": [],
+    "executed_check_families": [
+      "review-pipeline-PAccess",
+      "review-pipeline_scope",
+      "review-pipeline_compromise"
+    ],
+    "exact_receipts": [
+      "review-pipeline-PAccess-attempt3",
+      "review-pipeline_scope-attempt2",
+      "review-pipeline_compromise-attempt2"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "P-Binding",
+    "requirement": "Plaintext/recipient note matches exact transition",
+    "owner_locations": "privacy_pipeline.qnt:88,97,155,168",
+    "adequacy": "incomplete",
+    "review": "Field-value corruption is detected for 2/3/6/7 only. Valid alternate identity/account and ten further wrong values escape this predicate.",
+    "findings": [
+      "QA-01"
+    ],
+    "executed_check_families": [
+      "review-pipeline-PBinding",
+      "review-pipeline_substitution"
+    ],
+    "exact_receipts": [
+      "review-pipeline-PBinding-attempt3",
+      "review-pipeline_substitution-attempt2"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "P-Availability",
+    "requirement": "Claimed private usability requires exact note and keys",
+    "owner_locations": "privacy_pipeline.qnt:164,169,182",
+    "adequacy": "scoped-adequate",
+    "review": "Exact bound note plus key/source availability required; wrong-note and permanent-loss controls fail. Ledger delivery alone is insufficient.",
+    "findings": [],
+    "executed_check_families": [
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
+      "review-pipeline_note",
+      "review-pipeline-witnesses"
+    ],
+    "exact_receipts": [
+      "review-pipeline-safe-attempt3",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability",
+      "review-pipeline_note-attempt2",
+      "review-pipeline-witnesses-attempt2"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "P-Scope",
+    "requirement": "Completeness is explicit and evidence bounded",
+    "owner_locations": "audit_scope.qnt:11,16,21",
+    "adequacy": "scoped-adequate",
+    "review": "Authenticated high-water2/3 plus seen range; stale as-of report remains labeled and omission control fails. No unseen current source head claim.",
+    "findings": [],
+    "executed_check_families": [
+      "audit-audit_safe",
+      "audit-omitted_record"
+    ],
+    "exact_receipts": [
+      "audit-audit_safe",
+      "audit-omitted_record"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "P-NI",
+    "requirement": "Paired traces preserve unrelated-position secrecy",
+    "owner_locations": "privacy_pipeline.qnt:117,134,170",
+    "adequacy": "scoped-adequate",
+    "review": "Complete observations of roles1/3, positions4/7, one fixed12-operation schedule plus at most one arbitrary coupled request. Not all schedulers or all secrets; authorized private disclosure is declassified.",
+    "findings": [],
+    "executed_check_families": [
+      "review-pipeline-PNI",
+      "review-pipeline_log",
+      "review-pipeline_unsalted"
+    ],
+    "exact_receipts": [
+      "review-pipeline-PNI",
+      "review-pipeline_log-attempt2",
+      "review-pipeline_unsalted-attempt2"
+    ],
+    "proof_boundary": "Two actual source positions 4/7, equal authorized trade/funding; one fixed 12-operation public lifecycle plus at most one arbitrary coupled API request. Complete selected-observer response histories, private-channel/declassification policy and content-aware opaque-name correspondence. Not general scheduler/termination/cryptographic noninterference."
+  },
+  {
+    "id": "P-Timing",
+    "requirement": "Control-flow metadata respects disclosure policy",
+    "owner_locations": "privacy_pipeline.qnt:171; integrated.qnt:10",
+    "adequacy": "scoped-adequate",
+    "review": "Time/error/size response history enters selected observer equivalence; time leak fails and actual queue-time product is checked. Real secret-dependent proving/termination outside abstraction.",
+    "findings": [],
+    "executed_check_families": [
+      "review-pipeline_timing",
+      "review-privacy-time-integrated-safe",
+      "review-privacy-time-integrated_leak-safe"
+    ],
+    "exact_receipts": [
+      "review-pipeline_timing-attempt2",
+      "review-privacy-time-integrated-safe-attempt2",
+      "review-privacy-time-integrated_leak-safe-attempt2"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "T-Async",
+    "requirement": "Safety under arbitrary finite delays and outages",
+    "owner_locations": "dvp.qnt:256,261; operational_faults.qnt:5",
+    "adequacy": "scoped-adequate",
+    "review": "Unbounded abstract delay/stutter has no expiry authority. Healthy finite graphs and named fault samples, not exhaustive all-fault composition.",
+    "findings": [],
+    "executed_check_families": [
+      "final-record-safety",
+      "combined-faults-17",
+      "combined-faults-43",
+      "final-combined-faults-43"
+    ],
+    "exact_receipts": [
+      "final-record-safety",
+      "combined-faults-17",
+      "combined-faults-43",
+      "final-combined-faults-43"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "T-Eventual",
+    "requirement": "Progress under eventual stable recovery and per-action fairness",
+    "owner_locations": "recovery.qnt:22; stabilization.qnt:21",
+    "adequacy": "scoped-adequate",
+    "review": "Explicit eventually-stable environment and per-action WF; arbitrary pre-stabilization delay may yield ABORT. No COMMIT or wall-time deadline from fairness.",
+    "findings": [],
+    "executed_check_families": [
+      "extended-tlc-two",
+      "extended-tlc-recovery",
+      "final-record-recovery",
+      "post-stabilization"
+    ],
+    "exact_receipts": [
+      "extended-tlc-two-attempt1",
+      "extended-tlc-recovery",
+      "final-record-recovery",
+      "post-stabilization"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "T-Bounded",
+    "requirement": "Conditional bounds after stabilization, with queue and inclusion bounds",
+    "owner_locations": "timing.qnt:22; timing_boundary.qnt:3; late_resolution.qnt:9",
+    "adequacy": "scoped-adequate",
+    "review": "Assumed two-job round-robin cost: decisions14, applications22, records24; exclusive D15 passes/D14 fails. No ledger-to-resource refinement, real SLA or hostile-work composition.",
+    "findings": [],
+    "executed_check_families": [
+      "tlc-bounded-safe",
+      "exact-deadline-margin",
+      "one-less-deadline-margin",
+      "late-hold-relative-bound"
+    ],
+    "exact_receipts": [
+      "tlc-bounded-safe",
+      "exact-deadline-margin",
+      "one-less-deadline-margin",
+      "late-hold-relative-bound"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "T-Capacity",
+    "requirement": "Reservation/admission and hostile work are capacity controlled",
+    "owner_locations": "capacity.qnt:9,11,12,24",
+    "adequacy": "scoped-adequate",
+    "review": "Two reservations; hostile entries consume actual FIFO service with finite budget2 and identities1..3. Recovery/fair service progress; no unlimited arrival/prioritization guarantee.",
+    "findings": [],
+    "executed_check_families": [
+      "queue-capacity-progress",
+      "tlc-starvation-boundedCompletion",
+      "tlc-unlimited-exposure"
+    ],
+    "exact_receipts": [
+      "queue-capacity-progress",
+      "tlc-starvation-boundedCompletion",
+      "tlc-unlimited-exposure"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "R-Core",
+    "requirement": "Successful settlement, actual reservations, application lag, abort/orphan resolution and recovery are reachable.",
+    "owner_locations": "dvp_test.qnt:1; recovery_test.qnt:1; phase_failure_test.qnt:1",
+    "adequacy": "scoped-adequate",
+    "review": "Named successful settlement/holds/lag/ABORT/orphans/recovery paths and attempted blocked actions execute. A name or assertion only at the end is not independently a branch coverage measure.",
+    "findings": [],
+    "executed_check_families": [
+      "scenario-dvp_test",
+      "scenario-recovery_test",
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
+    ],
+    "exact_receipts": [
+      "scenario-dvp_test",
+      "scenario-recovery_test",
+      "network-loss-recovery",
+      "final-phase-failure-witnesses"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "R-Policy",
+    "requirement": "Admission and independent eligibility/freeze rejection paths are exercised.",
+    "owner_locations": "membership_test.qnt:3; variants_test.qnt:46",
+    "adequacy": "scoped-adequate",
+    "review": "Actual admitted/pending/rotated/retired and local frozen/eligibility rejection cases, not just listed scenario labels.",
+    "findings": [],
+    "executed_check_families": [
+      "membership-lifecycle-tests",
+      "preparation-freeze-policy"
+    ],
+    "exact_receipts": [
+      "membership-lifecycle-tests",
+      "preparation-freeze-policy"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "R-Audit",
+    "requirement": "Authorized audit and real omission detection are reachable.",
+    "owner_locations": "audit_scope.qnt:15,21",
+    "adequacy": "scoped-adequate",
+    "review": "Actual complete authorized scope reachable; native omission counterexample checks the range assertion.",
+    "findings": [],
+    "executed_check_families": [
+      "audit-audit_safe",
+      "audit-omitted_record"
+    ],
+    "exact_receipts": [
+      "audit-audit_safe",
+      "audit-omitted_record"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-AOpen",
+    "requirement": "Authenticated OPEN retains safe delayed historical preparation and resolution.",
+    "owner_locations": "variants.qnt:1; liveness_variants.qnt:1",
+    "adequacy": "scoped-adequate",
+    "review": "Historical authenticated OPEN needed on B; delayed proof, early/unknown ABORT and conditional progress. Inherits economic recipient observability limit.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "final-variant-live_open",
+      "delayed-open-fact-scenarios"
+    ],
+    "exact_receipts": [
+      "final-variant-live_open",
+      "delayed-open-fact-scenarios"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-B",
+    "requirement": "B-hosted decision uses local cash and authenticated A preparation.",
+    "owner_locations": "variants.qnt:2; liveness_variants.qnt:23",
+    "adequacy": "scoped-adequate",
+    "review": "B-local cash at COMMIT and authenticated A preparation; A application delayed separately. Inherits payout/consumer input limits.",
+    "findings": [
+      "QA-02",
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "final-variant-live_b"
+    ],
+    "exact_receipts": [
+      "final-variant-live_b"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-D",
+    "requirement": "Separate D authenticates both preparations and both return paths.",
+    "owner_locations": "variants.qnt:3; liveness_variants.qnt:45; d_outage_test.qnt:3",
+    "adequacy": "scoped-adequate",
+    "review": "D independently finalizes decision, both preparations and return paths; six halt/recovery witnesses. Separate institution topology is not implied by D alone.",
+    "findings": [
+      "QA-02",
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "final-variant-live_d",
+      "d-outage-return-paths"
+    ],
+    "exact_receipts": [
+      "final-variant-live_d",
+      "d-outage-return-paths"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-Escrow",
+    "requirement": "Escrow moves reserved ownership into the vault with no duplicate capacity.",
+    "owner_locations": "variants.qnt:4; liveness_variants.qnt:67",
+    "adequacy": "scoped-adequate",
+    "review": "Actual owner-to-vault movement and terminal payout/release; count/quantity accounting and progress checked, recipient identity remains implicit.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "final-variant-live_escrow",
+      "witness-escrow_path_test"
+    ],
+    "exact_receipts": [
+      "final-variant-live_escrow",
+      "witness-escrow_path_test"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-Private",
+    "requirement": "Private ledger application and actual note/key usability remain distinct.",
+    "owner_locations": "variants.qnt:5; privacy_pipeline.qnt:7,164",
+    "adequacy": "incomplete",
+    "review": "Economic delivery and typed note/key usability are distinct; current all-field plaintext binding is incomplete and composition is scoped.",
+    "findings": [
+      "QA-01",
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "final-variant-private_asset",
+      "review-pipeline-safe",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability"
+    ],
+    "exact_receipts": [
+      "final-variant-private_asset",
+      "review-pipeline-safe-attempt3",
+      "review-typed-private-availability",
+      "review-typed-private-unconditionalAvailability"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-Shared",
+    "requirement": "Co-resident opposite-direction transfers apply atomically on the shared control ledger.",
+    "owner_locations": "variants.qnt:6; dvp.qnt:154",
+    "adequacy": "scoped-adequate",
+    "review": "Same chain/genesis and opposite buyer/seller directions apply both effects in one atomic local action; native counts/quantity checked, account-level effects absent.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "final-variant-shared_execution",
+      "witness-shared_path_test"
+    ],
+    "exact_receipts": [
+      "final-variant-shared_execution",
+      "witness-shared_path_test"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "V-Three",
+    "requirement": "Three independent domains share capacity without unauthenticated remote application.",
+    "owner_locations": "multilateral.qnt:16,23,34,51,63",
+    "adequacy": "scoped-adequate",
+    "review": "Two security institutions plus shared cash capacity; domain-bound outcome/local knowledge, finite safety and fair eventual applications/refunds/COMMIT report. No composed ABORT bookkeeping/general privacy theorem.",
+    "findings": [
+      "QA-04"
+    ],
+    "executed_check_families": [
+      "three-domain-installation-final",
+      "three-domain-progress",
+      "three-independent-domains-witnesses"
+    ],
+    "exact_receipts": [
+      "three-domain-installation-final",
+      "three-domain-progress",
+      "three-independent-domains-witnesses"
+    ],
+    "proof_boundary": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem."
+  },
+  {
+    "id": "EX-Crypto",
+    "requirement": "Actual circuits, guest programs, public-input encoding and prover/verifier composition.",
+    "owner_locations": "reports/conformance-boundary.md",
+    "adequacy": "external-not-established",
+    "review": "No production SUT/institutional evidence exists here; this obligation remains outside all Quint passes.",
+    "findings": [],
+    "executed_check_families": [],
+    "exact_receipts": [],
+    "proof_boundary": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Execution",
+    "requirement": "Actual QBFT, EVM, Solidity, reentrancy, arithmetic and token/proxy semantics.",
+    "owner_locations": "reports/conformance-boundary.md",
+    "adequacy": "external-not-established",
+    "review": "No production SUT/institutional evidence exists here; this obligation remains outside all Quint passes.",
+    "findings": [],
+    "executed_check_families": [],
+    "exact_receipts": [],
+    "proof_boundary": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Security",
+    "requirement": "Hardware, custody, keys, storage, networks and durable evidence implementation.",
+    "owner_locations": "reports/conformance-boundary.md",
+    "adequacy": "external-not-established",
+    "review": "No production SUT/institutional evidence exists here; this obligation remains outside all Quint passes.",
+    "findings": [],
+    "executed_check_families": [],
+    "exact_receipts": [],
+    "proof_boundary": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Privacy",
+    "requirement": "Computational confidentiality, real side channels and general scheduler noninterference.",
+    "owner_locations": "reports/conformance-boundary.md",
+    "adequacy": "external-not-established",
+    "review": "No production SUT/institutional evidence exists here; this obligation remains outside all Quint passes.",
+    "findings": [],
+    "executed_check_families": [],
+    "exact_receipts": [],
+    "proof_boundary": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Performance",
+    "requirement": "Measured latency/availability, proving cost, gas, throughput and production capacity.",
+    "owner_locations": "reports/conformance-boundary.md",
+    "adequacy": "external-not-established",
+    "review": "No production SUT/institutional evidence exists here; this obligation remains outside all Quint passes.",
+    "findings": [],
+    "executed_check_families": [],
+    "exact_receipts": [],
+    "proof_boundary": "Not verified; practical interface specification only."
+  },
+  {
+    "id": "EX-Legal",
+    "requirement": "Legal finality, account/issuer rights, solvency and financial-record rules.",
+    "owner_locations": "reports/conformance-boundary.md",
+    "adequacy": "external-not-established",
+    "review": "No production SUT/institutional evidence exists here; this obligation remains outside all Quint passes.",
+    "findings": [],
+    "executed_check_families": [],
+    "exact_receipts": [],
+    "proof_boundary": "Not verified; practical interface specification only."
+  }
+]

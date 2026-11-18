@@ -6,6 +6,8 @@ Executable Quint investigation of native-asset cross-chain delivery-versus-payme
 
 **Result:** the finite models support backed irreversible commitment with conditional eventual local application. Immediate joint local usability across independent asynchronous ledgers fails. This is a scoped evidence matrix, not a deployed-system, cryptographic, legal or arbitrary-population verification.
 
+**Latest test-adequacy review:** [comparison, findings and complete property/file ledgers](verification/reviews/protocol-adequacy-2026-11-18/README.md) found four open gaps in disclosure-value binding, proof-consumer program-admission coverage, ABORT-reconciliation assertions and exact payout-recipient observability. Full literal guarantee coverage is **NOT DONE**. Existing native observations remain valid for their original predicates; their success does not discharge these gaps. The review includes copied-model discriminators, preserved failures and native traces.
+
 The [independent review](verification/reports/independent-review.md), [commented solution specification](verification/SPECIFICATION.md) and [changes made for each guarantee](verification/reports/solution-and-changes.md) explain the original findings, repairs and resulting solution.
 
 ```mermaid

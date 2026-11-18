@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "original_probe": "abort-guided-abortedBookingResolved",
+  "new_receipt": "abort-guided-abortedBookingResolved",
+  "outcome": "expected_counterexample_found",
+  "native_states_match": true,
+  "minimized": false,
+  "scope": "copied-model review discriminator; not unchanged-protocol evidence"
+}

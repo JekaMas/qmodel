@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "original_probe": "privacy-value-0",
+  "new_receipt": "privacy-value-0",
+  "outcome": "executed_successfully",
+  "native_states_match": null,
+  "minimized": false,
+  "scope": "copied-model review discriminator; not unchanged-protocol evidence"
+}

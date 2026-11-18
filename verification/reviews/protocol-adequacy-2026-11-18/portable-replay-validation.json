@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "reason": "New archive replayer and relocated source paths are a changed semantic input; two directly affected native branches checked. Original financial graphs were not rerun.",
+  "cases": [
+    {
+      "status": "passed",
+      "original_probe": "abort-guided-abortedBookingResolved",
+      "new_receipt": "abort-guided-abortedBookingResolved",
+      "outcome": "expected_counterexample_found",
+      "native_states_match": true,
+      "minimized": false,
+      "scope": "copied-model review discriminator; not unchanged-protocol evidence"
+    },
+    {
+      "status": "passed",
+      "original_probe": "privacy-value-0",
+      "new_receipt": "privacy-value-0",
+      "outcome": "executed_successfully",
+      "native_states_match": null,
+      "minimized": false,
+      "scope": "copied-model review discriminator; not unchanged-protocol evidence"
+    }
+  ]
+}

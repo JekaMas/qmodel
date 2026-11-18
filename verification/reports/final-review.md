@@ -1,5 +1,7 @@
 # Final review against the original request
 
+Subsequent review: [comparative protocol/test adequacy](../reviews/protocol-adequacy-2026-11-18/README.md) found QA-01–QA-04. This document records the extended execution closure; those successful native observations do not resolve the newly identified gaps in literal property coverage. Current full literal coverage is NOT DONE.
+
 Review authority: the exact attached [task v2](../sources/task-v2.md), the recovered [shared answer](../sources/shared-solution.original-ru.md), the user's extended-timeout/final-review request, current executable sources and native evidence. The original PDF and prior design workspace remain absent. This round is a root source/evidence review; the earlier separate reviewer's IR-001–IR-004 dispositions remain in [independent-review](independent-review.md). No new independent review is claimed.
 
 ## Result architecture and literal atomicity

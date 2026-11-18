@@ -1,0 +1,52 @@
+{
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "run",
+    "verification/results/runtime/comparative-review/probes/program_weak_foreign_probe.qnt",
+    "--main",
+    "program_weak_foreign_probe",
+    "--init",
+    "initProbe",
+    "--step",
+    "guidedStep",
+    "--invariant",
+    "S10",
+    "--backend",
+    "typescript",
+    "--max-samples",
+    "1",
+    "--max-steps",
+    "11",
+    "--seed",
+    "17",
+    "--verbosity",
+    "2",
+    "--out-itf",
+    "verification/results/runtime/comparative-review/probes/program-foreign.itf.json"
+  ],
+  "claim": "S10 must detect omitted consumer program admission with independently supplied proven unadmitted program",
+  "expected": "counterexample",
+  "backend": "simulation",
+  "configuration": {},
+  "input_hashes": {
+    "verification/results/runtime/comparative-review/probes/program_weak_foreign_probe.qnt": "b85ef1cd51e0f9d421690b85f2fd3245ba1fee5cf7dec9c3734e7e368e21cf4e",
+    "verification/results/runtime/comparative-review/probes/program_weak_foreign.qnt": "f87668f6d0bb158fc5df289b3edd9a42fe6b4a529b74051ef3528b0d12af5311"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "47571c6ae5db664d7befeb185fdb697b04ca681a26d55940ac86d414b139848d"
+  },
+  "timeout_seconds": 30,
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+}

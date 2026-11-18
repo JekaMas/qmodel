@@ -1,0 +1,21 @@
+
+  field7_probe
+    1) valueOracleDiscriminatorTest failed after 1 test(s)
+
+  1 failed
+
+  1) valueOracleDiscriminatorTest:
+       Error [QNT508]: Expect condition does not hold true
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/comparative-review/probes/privacy_value_probes.qnt:52:35
+        52:  run valueOracleDiscriminatorTest=init.then(5.reps(_=>advance)).then(request(0,7,0,1))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        53:   .expect(p.releasesL.exists(d=>d.field==7 and d.error==0 and d.value==99) and
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        54:     PAccess and PNI and PTiming and PBinding==false)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x11 --match=valueOracleDiscriminatorTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/results/runtime/comparative-review/probes/privacy_value_probes.qnt
+error: Tests failed

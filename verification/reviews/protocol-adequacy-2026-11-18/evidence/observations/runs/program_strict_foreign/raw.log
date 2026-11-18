@@ -1,0 +1,17 @@
+
+  program_strict_foreign_test
+    1) programAdmissionControlTest failed after 1 test(s)
+
+  1 failed
+
+  1) programAdmissionControlTest:
+       Error [QNT502]: Variable program_strict_foreign_test::dvp::s not set
+        at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/comparative-review/probes/program_strict_foreign.qnt:266:18
+        266:   val S01 = and {s.ownerA>=0,s.ownerB>=0,s.vaultA>=0,s.vaultB>=0,s.spentA>=0,s.spentB>=0,
+                              ^
+    Use --seed=0x11 --match=programAdmissionControlTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 verification/results/runtime/comparative-review/probes/program_strict_foreign_test.qnt
+error: Tests failed

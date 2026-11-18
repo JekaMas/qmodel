@@ -1,0 +1,11 @@
+{
+  "baseline_inventory_hashes_matched": 1994,
+  "registered_properties_reconciled": 51,
+  "original_protocol_model_test_runner_and_acceptance_changes": 0,
+  "new_replayer_syntax": "passed",
+  "status": "passed",
+  "corrupt_archived_native_output_rejected": "passed",
+  "local_review_links": "resolved",
+  "openspec_strict_validation": "passed using existing /opt/homebrew/bin/openspec; project-local path unavailable, no installation",
+  "requirement_graph_structure": "passed; existing 18 cases retained, behavior suite not rerun"
+}

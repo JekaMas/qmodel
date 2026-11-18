@@ -1,0 +1,56 @@
+{
+  "id": "program_strict_foreign-attempt1",
+  "started_utc": "2026-11-18T04:34:07.479277+00:00",
+  "claim": "Producer/consumer program-admission discriminator; strict property unchanged",
+  "backend": "cli",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "test",
+    "verification/results/runtime/comparative-review/probes/program_strict_foreign_test.qnt",
+    "--main",
+    "program_strict_foreign_test",
+    "--match",
+    ".*Test",
+    "--backend",
+    "typescript",
+    "--seed",
+    "17"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint test verification/results/runtime/comparative-review/probes/program_strict_foreign_test.qnt --main program_strict_foreign_test --match '.*Test' --backend typescript --seed 17",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg0xKDWvl:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/results/runtime/comparative-review/probes/program_strict_foreign_test.qnt": "56326b0ed41ba079697fcbddc372c83cba29083c79fea790a3b3fcc56ca3653b",
+    "verification/results/runtime/comparative-review/probes/program_strict_foreign.qnt": "46e39eca34393709439a7f7a3d3f04b98cd6b4c5bf74fa8eb2d840ac212b86ac"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "not observed in this invocation",
+    "tlc": "not invoked"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "47571c6ae5db664d7befeb185fdb697b04ca681a26d55940ac86d414b139848d"
+  },
+  "execution_plan_sha256": "fd19a734d0adc24283cd7db3ab0e827e99f1c5b2d6e5ea8d377f1fa7ada3ffd8",
+  "raw_sha256": "bb839d2d33652c4fd68ec2f1ba1353816222658c06ad8a936837ec7286a50541",
+  "configuration": {},
+  "timeout_seconds": 30,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 0,
+  "wall_seconds": 1.7253357907757163,
+  "outcome": "executed_successfully",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": "unavailable",
+  "distinct_states": "unavailable",
+  "raw_output": "verification/results/runtime/comparative-review/observations/runs/program_strict_foreign-attempt1/raw.log",
+  "minimized": false,
+  "replayed": false
+}

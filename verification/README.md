@@ -2,6 +2,8 @@
 
 The canonical task is ../openspec/changes/verify-cross-chain-dvp/tasks.md. The verification authority is sources/task-v2.md; the versioned source answer is sources/shared-solution.original-ru.md. This project investigates the candidate rather than presuming it correct.
 
+The latest [comparative adequacy review](reviews/protocol-adequacy-2026-11-18/README.md) adds four open assertion/input/observability findings. Read its property and file ledgers alongside the successful execution matrix. Full literal guarantee coverage remains NOT DONE; the existing 162 selected results describe the predicates actually checked.
+
 Install the pinned local dependency with `npm ci`. Java 21+ is required by Apalache 0.62.4. The runner uses an existing GoLand Java 25 runtime on this machine; set `QMODEL_JAVA_BIN=/path/to/jdk/bin` on another machine. Quint's cache is project-local `.quint/`; its pinned Apalache download is approximately 200 MB and the Rust evaluator is v0.7.1. No global tool installation or configuration is required.
 
 Run from the repository root:
