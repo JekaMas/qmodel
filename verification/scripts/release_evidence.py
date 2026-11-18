@@ -25,7 +25,8 @@ def release_tree():
     # Retain the context for this interpreter. Never modify the caller's checkout.
     release_tree.context = directory
     paths = ["verification", "package-lock.json", "package.json", "openspec",
-             ":(exclude)verification/results/runs", ":(exclude)verification/results/traces"]
+             ":(exclude)verification/results/runs", ":(exclude)verification/results/traces",
+             ":(exclude)verification/sources"]
     with subprocess.Popen(["git", "archive", RELEASE, "--", *paths], cwd=ROOT, stdout=subprocess.PIPE) as arch:
         subprocess.run(["tar", "-x", "-C", str(base)], stdin=arch.stdout, check=True, env={**os.environ,"LC_ALL":"C"})
         if arch.wait():
@@ -63,14 +64,23 @@ def check_retained_owners():
                 "configs/*acceptance*.json", "results/manifest.json")
     paths = {p.relative_to(release) for pat in patterns for p in (release/"verification").glob(pat) if p.is_file()}
     paths.update((Path("package-lock.json"),Path("package.json")))
+    # Only these retired report generators may be absent from the published tree.
+    retired_generators = {Path("verification/scripts/initialize_contract.py"),
+                          Path("verification/scripts/literal_review.py")}
     changed = {}
     for rel in paths:
-        data = (ROOT/rel).read_bytes()
+        path = ROOT/rel
+        if rel in retired_generators and not path.exists():
+            # A removed release owner must have an explicit null entry in the inventory.
+            changed[str(rel)] = None
+            continue
+        data = path.read_bytes()
         if data != (release/rel).read_bytes():
             changed[str(rel)] = hashlib.sha256(data).hexdigest()
     if changed != inventory:
         raise ValueError("Current verification owners differ from the reviewed change set: " +
-                         ", ".join(sorted(k for k in set(changed)|set(inventory) if changed.get(k)!=inventory.get(k))))
+                         ", ".join(sorted(k for k in changed.keys() | inventory.keys()
+                                          if k not in changed or k not in inventory or changed[k] != inventory[k])))
     contract=Path("verification/configs/proof-contracts.json")
     original=json.loads((release/contract).read_text())
     current=json.loads((ROOT/contract).read_text())
@@ -78,7 +88,8 @@ def check_retained_owners():
     current_observations=current.pop("observations")
     if original!=current or any(current_observations.get(key)!=value for key,value in original_observations.items()):
         raise ValueError("Historical evidence contract changed in the current checkout")
-    return {"unchanged":len(paths)-len(changed),"revised":len(changed)}
+    removed = sum(value is None for value in changed.values())
+    return {"unchanged":len(paths)-len(changed),"revised":len(changed)-removed,"removed":removed}
 
 
 def family_report(script,prefixes):

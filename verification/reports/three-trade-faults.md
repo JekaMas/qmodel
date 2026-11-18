@@ -1,6 +1,6 @@
 # Three-trade fault and race verification
 
-The [stage matrix](../../openspec/changes/check-three-trade-faults/fault-matrix.md) maps ordinary and Byzantine faults to evidence or an explicit open boundary. It is grounded in the original brief, the recovered solution, Quint and the listed specifications. The [acceptance ledger](three-trade-faults.json) binds observed results to source and command. The wider review asks which faults can occur at each stage and which mutation or guard distinguishes them.
+The [stage matrix](../../openspec/changes/check-three-trade-faults/fault-matrix.md) maps ordinary and Byzantine faults to evidence or an explicit open boundary. The matrix follows the protocol stages, Quint actions and listed specifications. The [acceptance ledger](three-trade-faults.json) binds observed results to source and command. The wider review asks which faults can occur at each stage and which mutation or guard distinguishes them.
 
 ## Executed scopes
 

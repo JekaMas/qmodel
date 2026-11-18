@@ -108,7 +108,7 @@ discovery = {
                  "question": "Trace all reviewed assurance gaps to their executable owners and retained receipts.",
                  "searches": [
                      {"kind": "exact", "status": "completed",
-                      "query": "Read the v2 requirements, findings, named producer actions, placement proofs, L04 endpoint and original replay inputs.",
+                      "query": "Read the protocol requirements, findings, named producer actions, placement proofs, L04 endpoint and original replay inputs.",
                       "outcome": "Identified the historical-only assertions, derived finance flags, local authorization and exact evidence boundary.",
                       "results": [
                           {"path": "verification/models/dvp.qnt", "line": 223, "classification": "reusable_unchanged",

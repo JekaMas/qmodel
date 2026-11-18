@@ -1,6 +1,6 @@
 # Independent adversarial review
 
-Reviewed baseline: `4e3b8d0b440c5b4a9c562f3509b6c78106a3d885`. The source authority is the original human request, `sources/task-v2.md` and `sources/shared-solution.original-ru.md`. Review scope includes all v2 sections 1–15, the model transitions and predicates, saved checker inputs/output, evidence scripts, reports and publication prerequisites. This is an independent source/evidence review, not an independent production implementation proof. The reviewer owns only this report and its JSON companion.
+Reviewed baseline: `4e3b8d0b440c5b4a9c562f3509b6c78106a3d885`. The review covers the protocol model transitions and predicates, saved checker inputs/output, evidence scripts, reports and publication prerequisites. This is an independent source/evidence review, not an independent production implementation proof. The reviewer owns only this report and its JSON companion.
 
 **Final review disposition: DONE for the independent review and repair of the four project findings. IR-001–IR-004 are resolved.** The reviewed project implements the scoped executable investigation, with 153 selected audited observations (104 positive, 49 negative), 14 passing evidence-audit tests and explicit limits. Final clean-commit checking and GitHub publication/readback remain parent-owned work and are not certified here. Full unqualified verification remains NOT DONE: the four broader timeouts, ten early missing source closures and production external obligations remain visible.
 
@@ -10,7 +10,7 @@ Reviewed baseline: `4e3b8d0b440c5b4a9c562f3509b6c78106a3d885`. The source author
 
 ### IR-001 — High — The mandatory privacy model does not yet implement the data path it claims to check
 
-Classification: unsupported claim / missing mandatory model semantics. Requirement: task-v2 §11 lines 293–304; also §4 lines 103–107 and §15 line 372. P-Access must check actual payload construction; P-Binding must bind disclosures to the actual transition; P-NI must vary protected state and compare resulting observations without manufacturing equal commitments.
+Classification: unsupported claim / missing mandatory model semantics. P-Access must check actual payload construction; P-Binding must bind disclosures to the actual transition; P-NI must vary protected state and compare resulting observations without manufacturing equal commitments.
 
 At the baseline, `models/privacy.qnt:19–24` generates both event streams directly from a phase counter. The two hidden values 4/7 affect only deliberately leaking configurations. There is no corresponding world ledger/position state, funded reservation, immutable witness snapshot, captured proof, or report payload from which those baseline events are constructed. The opaque names are phase/world arithmetic, not a content/provenance relationship. `disclose` at lines 32–34 records a `(role,field,surface,scope)` tuple, with no returned field value or payload construction. `bindDisclosure` compares an opening with the constant 1; `noteDelivery` creates a boolean note and constant trade marker. The timing product copies two generated events and one common queue time, retaining the missing data relationship.
 
@@ -24,7 +24,7 @@ Status: RESOLVED after the second pipeline repair; see the recheck record below.
 
 ### IR-002 — Medium — Explicit fresh verification can reuse a prior replay instead of executing a checker
 
-Classification: demonstrated harness defect. Requirement: task-v2 §6 lines 165–175, §7 line 186 and §8 lines 227–236; repository documentation promises that `--fresh` reruns the exact saved inputs.
+Classification: demonstrated harness defect. The repository documentation promises that `--fresh` reruns the exact saved inputs.
 
 Baseline `scripts/verify.py:28–31` invokes `replay.py`; `replay.py:34` calls `evidence.execute`; `evidence.py:23–28` returns an existing successful receipt whenever command and input hashes match. Consequently an already replayed observation can print `REUSE` without starting the checker, even when requested through `--fresh`. The final mode still says `exact-recorded-input rerun`. Also `replay.latest` filters out failed/timeout attempts and treats an exact base ID as a family lookup, so the documented reproduction route cannot select every original failed attempt unambiguously.
 
@@ -36,7 +36,7 @@ Status: RESOLVED after immutable trace association, forced exact execution and e
 
 ### IR-003 — High — The evidence audit does not bind a native observation to the intended proof contract
 
-Classification: demonstrated evidence acceptance defect. Requirement: task-v2 §7 lines 186–200, §8 line 227 and §14 line 355. Each check must identify its actual claim, and a negative suite requires the expected property counterexample.
+Classification: demonstrated evidence acceptance defect. Each check must identify its actual claim, and a negative suite requires the expected property counterexample.
 
 Baseline `scripts/audit_evidence.py:13–31` checks broad native success/violation strings and saved source hashes. It does not bind the selected expected claim/backend/command/configuration to an independently recorded acceptance contract, validate raw-output identity, or establish that the native violation is the intended property. The source closure can remain unchanged while claim/command metadata is altered.
 
@@ -50,7 +50,7 @@ Status: RESOLVED after source recheck, rejection of the original discriminator a
 
 ### IR-004 — Medium — Timing prose adds hostile-work and recovery-priority semantics absent from the timed pipeline
 
-Classification: unsupported modeled-resource claim. Requirement: task-v2 §12 lines 323–331 and §13 lines 337–339.
+Classification: unsupported modeled-resource claim.
 
 Baseline `timing-assumptions.md` says the selected timed model contains one hostile work item and prioritizes recovery over new hostile jobs. `models/timing.qnt:12–15` instead initializes exactly two trade jobs, and its phase queue has no hostile admission or recovery/new-work classification. The separate `models/capacity.qnt:6–12` has a finite hostile-work budget and FIFO service, with no recovery-priority rule. The precise 14/22/24 slot calculation is therefore a two-trade bounded round-robin result, not a bound under the additional hostile-work/priority scenario described in that paragraph.
 
@@ -59,26 +59,6 @@ Minimal repair: make the resource statement match each actual configuration. Pre
 Invalidated claims: only the extra timed hostile-work/recovery-priority scope. Existing two-trade timed bounds, exact margin controls and separate capacity safety/progress results are not invalidated by correcting the prose. A changed timed scheduler/workload invalidates its affected timing results and needs new names/receipts.
 
 Status: RESOLVED by exact configuration prose and actual FIFO workload witnesses; original timing results retain their existing proof boundary.
-
-## Original section coverage at baseline (preserved)
-
-| v2 section | Verdict at baseline | Reviewed scope and limit |
-|---|---|---|
-| 1. Sources/scope | PASS within available sources | Attached v2/recovered shared answer are retained with hashes; absent PDF/design registers are explicit. No unseen production implementation is claimed. |
-| 2. Candidate | PASS for symbolic reference | A-hosted reference remains distinct from B/D/shared alternatives; native holds, exclusive A-height deadline, durable ABORT, late unknown/known outcome behavior and local atomic commit are explicit. |
-| 3. Properties | PARTIAL | Stable S/L IDs and per-action fairness are retained. Core predicates plus direct guard cases have documented limits, notably S14. Mandatory relational/payload scope is incomplete under IR-001. |
-| 4. Architecture/abstraction | PARTIAL | Immutable included/finalized/captured/proof data and local terminal knowledge replace live remote reads. Economic safety mapping is finite and does not claim liveness preservation. Privacy data-path composition is incomplete. |
-| 5. Adversarial/non-vacuity | PASS for stated finite/sampled cases | Genuine stale-proof timeout, distinguishable-trade substitution, duplicate economic effect, reopened terminal and other mutant traces exist. Reachability and repair traces are retained. No claim of globally minimal traces or exhaustive fault Cartesian product. |
-| 6. Tools/execution | PARTIAL | Pinned Quint/tool versions, native outputs, smoke controls, scenarios, samples, finite checks, bounded algebraic checks and induction are present. Four broader runs remain timeouts. Fresh/exact-attempt behavior needs IR-002 repair. |
-| 7. Auditability | FAIL for the claimed audit guarantee | Detailed receipts/native logs/source closures exist, but their claim acceptance is not bound to a proof contract (IR-003). Actual logs are evidence of their selected targets, not arbitrary metadata. |
-| 8. Deliverables | PARTIAL | Deliverable layout and two suite commands exist; those commands are evidence audits by default and this is disclosed. Fresh execution and full mandatory privacy scope remain incomplete. |
-| 9. Lifecycle/contracts | PASS with explicit projection limits | C-Decision/C-Local/C-Records are distinct; multilateral installation, tombstones, membership retention and replay are separately modeled. Three-domain ABORT bookkeeping/general n-leg composition are explicitly unchecked. |
-| 10. Variants | PASS for abstract representatives | All named candidate placements/reservation variants execute selected checks. HTLC/root/shared/committee/authentication are labeled abstractions with distinct trust assumptions; no vendor implementation proof. |
-| 11. Privacy | FAIL for mandatory implemented data-path scope | Policy and controls exist, but the paired generator/access tuples do not implement actual protected payload semantics (IR-001). Cryptographic privacy remains external regardless of repair. |
-| 12. Time/resources | PARTIAL | Separate asynchronous/eventual/bounded regimes, time-progress/frozen-clock controls, strict deadline margins, slow blocks, late holds and capacity are present. Extra hostile/recovery-priority prose is unsupported (IR-004). |
-| 13. Assumptions/trust | PASS for scoped abstractions | Assumption ownership/lifetime/dependents and perturbations are explicit. Historical/current credential separation, member exit, verifier takeover, issuer mutation and canonical-history boundaries are represented. No global minimality or production trust proof. |
-| 14. Conformance/failure evidence | PARTIAL | Practical vectors are correctly called specification only; no second toy implementation is claimed as production conformance. Evidence-contract acceptance needs IR-003 repair; new privacy controls must link to modeled data. |
-| 15. Completion | FAIL for unconditional requested-scope completion | The reports correctly retain broad timeouts and external limits. Mandatory privacy and reproduction/audit defects prevent closing the full implementation/review scope yet. A negative counterexample may complete an investigation without making its product guarantee pass. |
 
 ## Guarantees and non-guarantees retained from the reviewed core
 
@@ -124,28 +104,6 @@ All four project findings are **RESOLVED** in the inspected source and qualified
 - **IR-004:** Corrected prose and three real FIFO witnesses preserve the original two-trade timing result without inventing hostile-work/recovery-priority latency. The unsupported combined priority/deadline claim is removed and explicitly left unchecked; no underlying timing property or accepted protocol input was weakened.
 
 Readback of `review-baseline-audit.json` and `review-negative-audit.json` records 104 and 49 passing selected audits, respectively, with no unmet selected scoped checks. The evidence/discovery graph validation also passes. These audit counts are not additional independent proofs and are not multiplied by the number of report rows. Model-checker source closures and original hashes remain unchanged; comment-only changes and additions outside a selected transition/predicate do not invalidate their existing results.
-
-## Final original-section matrix
-
-PASS below means the requested scoped investigation/artifacts and relevant evidence are supplied. It never means all product claims pass or all populations/configurations are verified. The baseline table above remains the record of what failed before repair.
-
-| v2 section | Final verdict | Exact scope or remaining qualification |
-|---|---|---|
-| 1. Sources/scope | PASS | Actual attached/recovered sources are retained and missing original materials are explicit. No production or missing-source contents are invented. |
-| 2. Candidate | PASS | A-hosted native reference, authorized descriptor, immutable historical facts, exclusive height deadline, independent ABORT and persistent local outcomes are preserved. Alternative topologies remain separate. |
-| 3. Properties | PASS, scoped | Original S/L IDs, conditional fairness and stronger failing claims remain distinct. P-Access/Binding/NI/Timing now have actual data-path scope. S14's predicate/guard boundary is explicit. |
-| 4. Architecture/abstraction | PASS, scoped | Local financial authority uses received authentic facts; global diagnostic fields are labeled. Checked finite economic safety mapping is separate from informal privacy/time/liveness relationships. |
-| 5. Adversarial/non-vacuity | PASS, scoped | Native success/failure/recovery witnesses and eight meaningful protocol mutants exist; additional privacy/resource controls discriminate actual modeled effects. Unchecked combinations and non-minimized traces are explicit. |
-| 6. Tools/execution | PASS, scoped | Actual pinned local tool routes, smoke controls, simulations, finite/temporal, bounded and inductive observations are retained. Fresh execution is forced. Four broader 180-second checks remain timeouts. |
-| 7. Auditability | PASS for selected evidence; PARTIAL for early historical exact reproduction | Selected receipts have validated source/native/claim identity and current audits. Ten early observations lack saved closures; their raw observations remain, but exact execution is explicitly unavailable. No later source is substituted. |
-| 8. Deliverables | PASS, scoped | Documented baseline/negative audits and forced reproduction, source models, properties, traces, reports, specification and vectors exist. This report does not close remote publication. |
-| 9. Lifecycle/contracts | PASS, scoped | Three contracts, lifecycle scenarios, three-domain installation, retention/replay and historical/current credentials are covered by their named configurations. General n-leg and composed three-domain ABORT records remain unchecked. |
-| 10. Variants | PASS, scoped | Candidate and compact mechanism configurations execute their relevant checks and retain distinct assumptions; no vendor implementation or arbitrary protocol is verified. |
-| 11. Privacy | PASS for explicit finite observer policy | Separate protected world data, complete payload projection, actual bindings, exact note/key requirements, audit scope and direct/control-flow leak controls are exercised. Schedule, request horizon, private-channel/opacity assumptions, declassification and residual leaks are explicit. |
-| 12. Time/resources | PASS for separate finite regimes | Async/eventual/bounded questions and required negative controls execute. Two-trade timed bounds and finite hostile FIFO results are separate; no hostile-priority deadline or production SLA is claimed. |
-| 13. Assumptions/trust | PASS, scoped | Assumption roles/lifetimes/dependencies, required perturbations, key/membership/intervention boundaries and safety-only composition limits remain explicit. No globally minimal trust theorem. |
-| 14. Conformance/failure evidence | PASS for model investigation; production remains external | Evidence is bound to the selected claim and failures are retained. Interface vectors are a specification only; actual contracts/adapters/circuits were absent and are not represented as checked. |
-| 15. Completion | PASS for scoped investigation and review; publication pending | Required suite classes and findings have scoped results, including useful negative results. Full unqualified verification, the four broader checks and external implementation obligations remain unclosed. Final GitHub/clean-revision closure belongs to the parent. |
 
 ## Final limits and publication boundary
 

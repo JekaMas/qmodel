@@ -51,7 +51,7 @@
         {
           "kind": "exact",
           "status": "completed",
-          "query": "Read the v2 requirements, findings, named producer actions, placement proofs, L04 endpoint and original replay inputs.",
+          "query": "Read the protocol requirements, findings, named producer actions, placement proofs, L04 endpoint and original replay inputs.",
           "outcome": "Identified the historical-only assertions, derived finance flags, local authorization and exact evidence boundary.",
           "results": [
             {

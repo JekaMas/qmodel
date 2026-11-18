@@ -49,7 +49,7 @@
         {
           "kind": "exact",
           "status": "completed",
-          "query": "Read the original brief, known core and evidence owners, named variants and cited upstream specifications.",
+          "query": "Read the protocol specification, known core and evidence owners, named variants and cited upstream specifications.",
           "outcome": "Mapped program scope, sequential authority, phase timing and durable independent history to exact check owners.",
           "results": [
             {

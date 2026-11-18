@@ -4,9 +4,7 @@
 
 ### Requirement: Execute scoped protocol verification
 
-The project SHALL implement and execute all mandatory suites from verification/sources/task-v2.md and retain exact coverage and evidence rather than asserting unconditional correctness.
-
-For Question 8, `verification/SPECIFICATION.md` maps Stage A properties to assertions and guards. `verification/reports/interview-summary.md` links their model results, the Stage C failure cases and the remaining implementation tests.
+The project SHALL execute the protocol verification suites for settlement safety, recovery, privacy, timing, trust and alternative placements. Each reported result SHALL identify the checked property, execution evidence and scope.
 
 #### Scenario: Safe baseline and falsification
 

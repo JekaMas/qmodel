@@ -89,8 +89,8 @@
         {
           "kind": "exact",
           "status": "completed",
-          "query": "Explicit attachment read; exact source-path checks and rg --files in the requested workspace; direct reads of named model/evidence and comparative-review finding owners.",
-          "outcome": "Shared answer recovered from the requested public link; original PDF/workspace absent. Known Quint/payload/receipt/record and native evidence owners directly inspected, repaired and reviewed.",
+          "query": "Read the protocol definitions, model and evidence owners, and comparative-review findings.",
+          "outcome": "Known Quint/payload/receipt/record and native evidence owners directly inspected, repaired and reviewed.",
           "results": [
             {
               "path": "verification/models/dvp.qnt",

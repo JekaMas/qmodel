@@ -17,14 +17,14 @@ The earlier focused request covered the four repairs, selected regressions, revi
 | QA-03 | Actual release/terminal-absence semantics for ABORT booking | Eight semantic cases, premature-absence control and current full recovery graph already passed. One exact counterexample reproduction is selected now. |
 | QA-04 | Actual labelled economic outputs, complete financial rows and independent hold/effect/local atomicity assertions | 14 literal output cases, wrong-account/asset/booking controls and full financial/topology graphs already passed. Seven induction profiles passed. One exact counterexample reproduction is selected now. |
 
-1. Completed the code/specification repairs and stopped the remaining broad cohort at the user's instruction. All completed native greens are retained.
+1. Completed the code/specification repairs and stopped the remaining broad cohort. All completed native greens are retained.
 2. Seal the evidence and perform four exact-source reproductions, one per finding.
 3. Finish the51-property/file review with every deferred verification item visible, then run the six selected source-bound evidence cases.
 4. Commit the implementation and evidence, record the clean focused check, push and verify hosted HEAD/files.
 
 Deferred full work comprises authenticated-OPEN induction preservation/implication, the two current architecture controls, three operational samples, the remaining43exact-source reproductions and the complete33-case evidence DAG. The full162-subject plan remains in configs/qa-coverage.json. Its explicit focused selection contains155current subjects, whose completed observations are audited without restarting native proofs.
 
-- [x] 1. Read attached v2 and shared solution; preserve source identity and limitations.
+- [x] 1. Identify the reference protocol, assumptions and model boundaries.
 - [x] 2. Create property, assumption, coverage and variant contracts before modeling.
 - [x] 3. Validate toolchain: true/false safety and fair/unfair temporal smoke models.
 - [x] 4. Implement core, deterministic witnesses, simulation, Apalache and TLC checks.
@@ -48,25 +48,24 @@ This section preserves the earlier execution snapshot; current extended-run stat
 - Privacy access/binding/scope, coupled two-world observations and leak controls executed; exact note/key progress conditional, permanent key loss fails. Explicit asynchronous/eventual/bounded time, deadline 15/14 boundary, late holds, capacity and privacy-time product executed.
 - Corrected three-domain installation: 65,856 states for safety and separate conditional progress. No composed three-domain ABORT-bookkeeping or general relational-privacy theorem.
 - Current final combined two-trade operational fault sample: 10,000 traces, up to 100 steps, seed 43, no counterexample. Previous seeds and all failed/timeout/tool-error attempts remain in the manifest.
-- Sources: original PDF/design workspace absent; exact attached v2 and recovered shared answer retained with hashes. No production code or external implementation conformance claimed.
 - Shared workflow setup/pin, skills, publication, routes, shared mechanics, native spec and evidence/discovery graph validation passed. Final clean-revision audit is retained under verification/results/runtime/workflow-ready.json after the local snapshot. No remote publication requested; no checker jobs remain.
 
 The root/signalling comparison also passed finite safety/conditional progress and actual immediate/permanent-halt negative controls after replacing a remote outcome read with authenticated participant-local outcome knowledge.
 
 ## Reproduction and evidence
 
-`python3 verification/scripts/verify.py baseline` and `... negative` audit/reuse observed valid results. `--fresh` deliberately reruns exact saved closures under receipt limits. The native commands, source snapshots, failures and scope are in verification/results/manifest.json and reports/executions.md. reports/literal-coverage.md reconciles all 154 original bullet/lifecycle inventory entries without counting prose as independent checks.
+`python3 verification/scripts/verify.py baseline` and `... negative` audit/reuse observed valid results. `--fresh` deliberately reruns exact saved closures under receipt limits. The native commands, source snapshots, failures and scope are in verification/results/manifest.json and reports/executions.md. The lifecycle register maps the 17 protocol phases to their verification results.
 
 See reports/model-repairs.md for changed semantic inputs and retained proof boundaries. The workflow adapter has no Rust product roots; it does not establish Rust or production conformance. Source-discovery/IDE integration is inapplicable to this new formal-model repository. The exact shared workflow is recoverable from the bundled Git history if its historical upstream revision is unavailable.
 
 ## Independent review and GitHub publication iteration
 
-- [x] 13. Independently review the original request, v2 sections 1–15, actual models and evidence; disposition every finding with the same reviewer.
+- [x] 13. Independently review the protocol requirements, models and evidence; disposition every finding with the same reviewer.
 - [x] 14. Repair demonstrated model/evidence gaps and execute directly affected positive/negative checks; retain valid unrelated greens and original failed evidence.
 - [x] 15. Comment model/harness boundaries, expand the specification, document exact changes and resulting guarantees, and add review/results.
 - [x] 16. Complete the final committed-revision evidence audit, publish under JekaMas/qmodel, and verify remote owner, visibility, files and HEAD.
 
-Current user authorizes independent current-task review, in-scope repair and GitHub publication. One separate reviewer owns independent-review.md/json only; root owns implementation. Original source commit is 4e3b8d0b440c5b4a9c562f3509b6c78106a3d885. No remote repository existed when checked. GitHub connector and gh both identify JekaMas; repository creation requires gh because the connector lacks that capability.
+One separate reviewer owns independent-review.md/json only; root owns implementation. Original source commit is 4e3b8d0b440c5b4a9c562f3509b6c78106a3d885. No remote repository existed when checked. GitHub connector and gh both identify JekaMas; repository creation requires gh because the connector lacks that capability.
 
 Early findings being addressed: privacy events/access payloads lack sufficient connection to actual modeled witness/ledger data; --fresh can reuse a cached replay; timing prose must match the actual queue/hostile-work model. Full unqualified verification remains NOT DONE and the original four timeouts stay visible.
 
@@ -83,7 +82,7 @@ A following metadata commit records that observed source publication and complet
 ## Extended verification and final architecture iteration
 
 - [x] 17. Close the four broader timeout obligations on current full model/configurations with larger bounded resources; preserve originals and diagnose any non-success without narrowing properties.
-- [x] 18. Review original v2 properties and shared solution against actual final selected checks, repair any demonstrated gaps, and revalidate only affected evidence.
+- [x] 18. Review specified properties and protocol transitions against actual final selected checks, repair any demonstrated gaps, and revalidate only affected evidence.
 - [x] 19. Update source comments/README/specification with final architecture, guarantees, assumptions and tradeoffs; reconcile evidence once stable.
 - [x] 20. Complete committed clean-revision checks, commit all authorized changes, push and verify GitHub HEAD/files.
 
@@ -113,7 +112,7 @@ Review delivery is DONE. Full literal guarantee coverage and these repairs are N
 - [x] 25. Resolve QA-03 with independent ABORT resolved-obligation/disposition assertions and early/stale absence-record controls.
 - [x] 26. Resolve QA-04 with observable per-operation account/asset/quantity economic receipts in the shared core and multilateral model, with misrouting/wrong-asset/refund controls.
 - [x] 27. Execute directly affected scenarios, safety/mapping/temporal/topology/privacy graphs and negative controls; reuse only non-invalidated original observations, preserve first failures and source closures.
-- [x] 28. Re-review all51properties and current source files against the original task and four findings; repair any new defect, update architecture/guarantees/tradeoffs/results, then commit/push/read back.
+- [x] 28. Re-review all51properties and current source files against the protocol requirements and four findings; repair any new defect, update architecture/guarantees/tradeoffs/results, then commit/push/read back.
 
 User explicitly requests all findings resolved, updated and reviewed again. Baseline798676a310314e6e95167723e149938e388fcf9e. Root owns all implementation/evidence/review files; no new agents or paid services. Proposed semantic changes are complete disclosure provenance comparison, separated proof validity/application admission input coverage, semantic ABORT-reconciliation assertions, and explicit economic output receipts. Existing review fixtures/results remain immutable. Adding economic receipts and strengthening `safe` invalidates financial safety and temporal runs importing the core; they require new observations, including full reference/full-job two-trade and recovery. Privacy provenance/assertion changes invalidate current payload and integrated privacy checks. Standalone timing/capacity/trust/authentication/membership graphs and unchanged algebraic induction remain valid within their original limits. Heavy native checkers remain sequential; avoid repeated progress polling or status messages.
 
@@ -160,9 +159,9 @@ Focused reconciliation complete: all four finding repairs are applied. Four exac
 Focused delivery closure: sourcef9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f passed the six selected evidence cases on a clean committed tree in0.488seconds. The public receipt is results/publication/qa-source-clean-dag.json. Four exact-source reproductions passed with four matching native sequences. qa-validation.json records the implemented findings,51-property/177-file author review and deferred full verification. Task27 remains deferred under the explicit latest instruction. This metadata commit records the completed focused source check and delivery. GitHub publication follows as the final step, with actual hosted HEAD/blob readback stored locally under results/runtime/qa-publication-readback.json.
 
 
-## Question 8 documentation reconciliation
+## Settlement evidence and conformance
 
-The follow-up records the Stage A property mapping, placement-specific decisions, Stage C falsification cases, and implementation checks for the two-network PoC. Recovery comments reflect the actual outage relation and fairness hypothesis. The comment-delta record links the live source to the original saved bytes. This increment validates the affected specification, evidence graph, receipt references and executable source identity. The deferred full-validation entries remain open.
+The follow-up records the settlement property mapping, placement-specific decisions, fault scenarios, and implementation checks for the two-network PoC. Recovery comments reflect the actual outage relation and fairness hypothesis. The comment-delta record links the live source to the original saved bytes. This increment validates the affected specification, evidence graph, receipt references and executable source identity. The deferred full-validation entries remain open.
 
 
 The resumed validation completed all seven native checks. Authenticated OPEN passed preservation and implication. TLC found the two expected architecture counterexamples. The three operational samples found no violation of `safe` in 30,000 bounded traces. The exact replay set contains 47 executions with 46 matching negative traces. All 241 acceptance observations audited successfully and all 33 evidence cases passed on clean source `0db251dce0cbaab8b8166197b41cd61fc3effe91`. The validation record links the native receipts and clean-revision audit. The external PoC obligations remain separate.

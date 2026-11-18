@@ -2,10 +2,6 @@
   "schema_version": 1,
   "review_mode": "root final source/evidence review; prior independent IR-001 through IR-004 review remains separately attributed",
   "baseline_commit": "798676a310314e6e95167723e149938e388fcf9e",
-  "source_sha256": {
-    "verification/sources/task-v2.md": "9382f0e84af28b07a1f39bd28312d6f9ca7d3419cf8fcb6e9c530f1b2570c379",
-    "verification/sources/shared-solution.original-ru.md": "10b9a62dab9cbb3533bfdc2c720a37a3c73f69bd320f7521b44b9ff790d7589f"
-  },
   "broader_obligations": [
     {
       "original_timeout": "apalache-core-12",

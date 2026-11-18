@@ -1,6 +1,6 @@
 # Repeated settlement and modeled fault review
 
-The [v2 brief](../sources/task-v2.md) and the [recovered design](../sources/shared-solution.original-ru.md) govern this review. The [change record](../../openspec/changes/review-repeated-settlement/tasks.md) tracks findings and closure. The [event ledger](repeated-settlement-coverage.json) links each core action to evidence.
+The [protocol specification](../SPECIFICATION.md) defines the reference transitions and their evidence boundaries.
 
 ## Findings and changes
 

@@ -1,10 +1,10 @@
-# Final review against the original request
+# Settlement protocol verification review
 
 Current closure: [QA repair and re-review](qa-repairs.md) resolves QA-01–QA-04 and records the new actual full-model proofs, complete51-property review and file ledger. The extended-run measurements below describe the prior source revision; they are retained as historical evidence and do not substitute for current repaired-source proofs. Production and general-composition obligations remain external.
 
-Review authority: the exact attached [task v2](../sources/task-v2.md), the recovered [shared answer](../sources/shared-solution.original-ru.md), the user's extended-timeout/final-review request, current executable sources and native evidence. The original PDF and prior design workspace remain absent. This round is a root source/evidence review; the earlier separate reviewer's IR-001–IR-004 dispositions remain in [independent-review](independent-review.md). No new independent review is claimed.
+The [protocol specification](../SPECIFICATION.md) and [property register](../properties.md) define the scope of the model review.
 
-The [Question 8 review](interview-summary.md#question-8-evidence-review) traces the five Stage A properties and seven Stage C challenges to the current saved observations. It distinguishes the normal and recovery TLC graphs, directed failure cases, and external PoC work. The documents and recovery comments were reconciled against those receipts. The [validation record](qa-validation.json) records the resumed full selection alongside the earlier focused run.
+The [settlement evidence](settlement-evidence.md#verification-evidence) traces the five settlement properties and seven failure scenarios to the current saved observations. It distinguishes the normal and recovery TLC graphs, directed failure cases, and external PoC work. The documents and recovery comments were reconciled against those receipts. The [validation record](qa-validation.json) records the resumed full selection alongside the earlier focused run.
 
 The [guarantee assurance follow-up](../reviews/guarantee-assurance/README.md) compares published verification and reviews all 51 guarantees. The [strengthened validation](guarantee-validation.md) closes the two independent assertion gaps on nine TLC profiles. It records the stronger L04 conclusion, independent admission and outcome history checks, correlated recovery scenarios and a real SQLite persistence exercise. The [two-network PoC conformance cases](guarantee-conformance.md) retain the actual verifier, ledger and bank implementation obligations.
 
@@ -47,29 +47,27 @@ The full reference TLC check directly uses `dvp.init` and `dvp.step` and does no
 
 Every finite result has zero states left on its queue and the native no-error verdict. The original timeouts and later deliberately interrupted attempts remain non-successes. The depth20 safety proof uses the identical exhaustive model; direct SMT20 itself did not pass. The broader results do not rely on compact-job or economic projections.
 
-## Original v2 sections and the tested solution
+## Verification by protocol area
 
-| Original scope | Review and actual evidence | Limits / disposition |
+| Protocol area | Review and actual evidence | Limits / disposition |
 |---|---|---|
-|1 Sources and native-asset problem | Exact source copies/hashes; source inventory; two independently scheduled ledger semantics | Missing PDF/design registers are visible; no unseen implementation inferred |
-|2 Candidate lifecycle and orphan alternatives | Original A-hosted path; A-open/B/D variants; tombstones, historical OPEN, late holds and return paths | Alternative placements are named separately |
-|3 S01–S16, L01–L04 and overclaims | Property-by-property matrix in traceability; direct guard/history/effect scenarios; full-reference and full-job extended checks | S13/S14 use focused control/admission checks as well as core predicates; no regulatory-compliance theorem |
-|4 Layering, locality and historical evidence | Immutable structured provenance, local guards, explicit source finalization; economic safety mapping and integrated examples | Focused models do not imply general liveness/privacy/time composition |
-|5 Scenarios and simulation | Both terminal outcomes, preparation orders, contention, actual drop/resend/restarts, binding/replay/rollback and new19 phase faults | Combined10,000-trace fault samples remain samples |
-|6 Toolchain, bounded/finite checking and induction | Positive/false/fair/unfair smoke controls, native TLC/Apalache, genuine initiation/preservation/implication and mapping | Algebraic induction remains valid; current actual-State effect/local-atomicity induction is separately recorded in qa-repairs. No whole-protocol induction; failed backend attempts remain visible |
-|7 Mutants and replay | Eight isolated protocol mutants, original native sequences and exact-source comparisons | No globally shortest/minimized trace claim; missing early closures remain listed |
-|8 Review and records | Findings, counterexample chronology, conformance vectors, reporting and exact native contracts | No production conformance harness because production contracts/adapters/guests were absent |
-|9 Full lifecycle/fault combinations |17 lifecycle phases have named observations; explicit actor-down attempts now supplement retained restart cases | Full Cartesian fault/state/upgrade/privacy/time product unproved |
-|10 Variants | A tombstone/OPEN, B/D, native/escrow/private/shared, three-domain, HTLC/root/committee and authentication axes | Small abstract representatives; no vendor implementation or arbitrary nested cross-chain execution theorem |
-|11 Privacy/disclosure/paired observations | Actual two-world funded states, immutable witness/proof/note/full Payload, authenticated roles, audit high-water and seven leak controls |12 fixed public operations plus at most one arbitrary coupled request; selected-observer/ideal-opacity result, not general noninterference or cryptographic privacy |
-|12 Time/capacity | Async/eventual/post-stabilization/bounded models; B timer, frozen clock, no inclusion, starvation, D15/D14, late-hold and hostile FIFO controls |14/22/24 are model-slot bounds for a particular two-job workload; no hostile-priority latency or production SLA |
-|13 Assumptions/interventions/trust | Per-action fairness, assumption-owner graph and actual non-equivocation/anchor/submitter/committee/data/key/issuer/admin perturbations | No globally minimal assumption set; freezing/seizure/compensation are distinct from original settlement |
-|14 Evidence/conformance | Sealed claim/command/raw/source/runtime; rejected forged claim, wrong native log and zero-selection; exact replay | Local versioned trust anchor, not external signed execution attestation; early availability gaps visible |
-|15 Completion | Scoped evidence matrix, exact stronger proof for bounded safety, full-job temporal gates, final six answers | Completion is the requested investigation with stated proof boundaries; never unqualified verification of a banking implementation |
+| Candidate lifecycle and orphan alternatives | Original A-hosted path; A-open/B/D variants; tombstones, historical OPEN, late holds and return paths | Alternative placements are named separately |
+| S01–S16, L01–L04 and overclaims | Property-by-property matrix in traceability; direct guard/history/effect scenarios; full-reference and full-job extended checks | S13/S14 use focused control/admission checks as well as core predicates; no regulatory-compliance theorem |
+| Layering, locality and historical evidence | Immutable structured provenance, local guards, explicit source finalization; economic safety mapping and integrated examples | Focused models do not imply general liveness/privacy/time composition |
+| Scenarios and simulation | Both terminal outcomes, preparation orders, contention, actual drop/resend/restarts, binding/replay/rollback and new19 phase faults | Combined10,000-trace fault samples remain samples |
+| Toolchain, bounded/finite checking and induction | Positive/false/fair/unfair smoke controls, native TLC/Apalache, genuine initiation/preservation/implication and mapping | Algebraic induction remains valid; current actual-State effect/local-atomicity induction is separately recorded in qa-repairs. No whole-protocol induction; failed backend attempts remain visible |
+| Mutants and replay | Eight isolated protocol mutants, original native sequences and exact-source comparisons | No globally shortest/minimized trace claim; missing early closures remain listed |
+| Review and records | Findings, counterexample chronology, conformance vectors, reporting and exact native contracts | No production conformance harness because production contracts/adapters/guests were absent |
+| Full lifecycle/fault combinations |17 lifecycle phases have named observations; explicit actor-down attempts now supplement retained restart cases | Full Cartesian fault/state/upgrade/privacy/time product unproved |
+| Variants | A tombstone/OPEN, B/D, native/escrow/private/shared, three-domain, HTLC/root/committee and authentication axes | Small abstract representatives; no vendor implementation or arbitrary nested cross-chain execution theorem |
+| Privacy/disclosure/paired observations | Actual two-world funded states, immutable witness/proof/note/full Payload, authenticated roles, audit high-water and seven leak controls |12 fixed public operations plus at most one arbitrary coupled request; selected-observer/ideal-opacity result, not general noninterference or cryptographic privacy |
+| Time/capacity | Async/eventual/post-stabilization/bounded models; B timer, frozen clock, no inclusion, starvation, D15/D14, late-hold and hostile FIFO controls |14/22/24 are model-slot bounds for a particular two-job workload; no hostile-priority latency or production SLA |
+| Assumptions/interventions/trust | Per-action fairness, assumption-owner graph and actual non-equivocation/anchor/submitter/committee/data/key/issuer/admin perturbations | No globally minimal assumption set; freezing/seizure/compensation are distinct from original settlement |
+| Evidence/conformance | Sealed claim/command/raw/source/runtime; rejected forged claim, wrong native log and zero-selection; exact replay | Local versioned trust anchor, not external signed execution attestation; early availability gaps visible |
 
 Current-credential admission and pending-safe retirement are checked in the focused membership model. The financial full-job temporal graphs do not execute that entire membership state machine; no combined financial/membership liveness theorem or arbitrary-upgrade theorem is claimed.
 
-The eight topics from the shared answer are reconciled in [eight-question coverage](interview-summary.md): architecture, proof statement/prover/verifier, lifecycle/timeouts, governance, privacy, onboarding, finality/latency/cost and credible PoC. Stage A (this formal model) executed. Stage B (real two-network Besu/QBFT with genuine proofs) remains external implementation work. Named products/research architectures are contextual candidates, not verified products.
+The [settlement evidence](settlement-evidence.md) documents the guarantees, failure scenarios and remaining two-network conformance checks.
 
 ## Six separate final answers
 

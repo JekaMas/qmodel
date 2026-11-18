@@ -1,6 +1,6 @@
 # Settlement guarantee review and verified protocol comparison
 
-Reviewed source: cce9ce6a0f15c45ffaf2513afd42ed1c96125591. The authorities are the [v2 brief](../../sources/task-v2.md) and the [shared design](../../sources/shared-solution.original-ru.md). The earlier [comparative review](../protocol-adequacy-2026-11-18/README.md) and its [four repairs](../../reports/qa-repairs.md) remain distinct. This is a follow-up source and evidence review.
+Reviewed source: cce9ce6a0f15c45ffaf2513afd42ed1c96125591. The [executable specification](../../SPECIFICATION.md) defines the verified settlement guarantees. The earlier [comparative review](../protocol-adequacy-2026-11-18/README.md) and its [four repairs](../../reports/qa-repairs.md) remain distinct. This is a follow-up source and evidence review.
 
 **Decision.** Keep the A-hosted design on two native ledgers when backed irreversible commitment with conditional eventual application meets the requirement. A puts its own delivery and decision in one transaction. B retains a funded obligation until it learns that decision. If the requirement is simultaneous local usability, select a shared authoritative execution domain, or explicitly change the usability/entitlement contract and prove it. A reachable interval with the security delivered and the cash still held is recorded in the [TLC counterexample](../../results/runs/qa-immediate/receipt.json).
 

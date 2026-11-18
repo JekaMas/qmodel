@@ -1,6 +1,6 @@
 # Staged fault and race plan
 
-The [v2 brief](../../../verification/sources/task-v2.md) and [recovered solution](../../../verification/sources/shared-solution.original-ru.md) define authority. This matrix distinguishes a concrete executed check in the new N3 profile, a retained scope from another profile, and an open model or implementation obligation. A representative fault trace does not exhaust every ordering, parameter or cross-product.
+The [settlement specification](../../../verification/SPECIFICATION.md) defines the protocol stages. This matrix distinguishes a concrete executed check in the new N3 profile, a retained scope from another profile, and an open model or implementation obligation. A representative fault trace does not exhaust every ordering, parameter or cross-product.
 
 | Stage | Ordinary and Byzantine faults to cover | Race and linearization requirement | Check and disposition |
 |---|---|---|---|

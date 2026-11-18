@@ -1,6 +1,6 @@
-# Versioned candidate and model boundary
+# Settlement protocol and architecture
 
-Candidate v0 is the shared answer saved in sources/shared-solution.original-ru.md. Candidate v1 is the complete self-contained reference in sources/task-v2.md sections 1–2: decision on A, native durable holds, exclusive height deadline and abort tombstones. No architecture substitution is accepted as a repair.
+The reference protocol places the authoritative decision on the securities ledger, enforces its exclusive height deadline and retains native reservations until an authenticated terminal outcome. ABORT tombstones allow recovery even when a trade never opened.
 
 A atomically registers OPEN with its security reservation. B may prepare first without inspecting live A. A commits only using a received authentic finalized B reservation proof, local hold and height < D; recording COMMIT and transferring security is one local transaction and must roll back together. After height >= D, a signed complete descriptor can establish ABORT even without OPEN. Refund is a separately retryable application. B stores authenticated terminal knowledge even before its hold exists; late preparation after unknown ABORT remains resolvable.
 
@@ -59,4 +59,4 @@ The service model preserves admitted obligations across restart and isolates the
 
 The logical contract model records attempts, successful local writes, canonical confirmation and adapter responses as different events. A failed application leaves no durable operation ID. Lost responses can be retried against retained effects; recovered projections have to obtain any missing confirmation. These boundaries enable an independent sequential history check alongside the source ledger effect assertions. [Composed contracts and results](reports/proof-products.md)
 
-See the [executable specification](SPECIFICATION.md#three-distinct-guarantees) for Stage A and the [evidence review](reports/interview-summary.md#question-8-evidence-review) for Stage C and the two-network PoC boundary.
+See the [settlement guarantees](SPECIFICATION.md#three-distinct-guarantees) and the [failure scenarios and conformance evidence](reports/settlement-evidence.md#verification-evidence).

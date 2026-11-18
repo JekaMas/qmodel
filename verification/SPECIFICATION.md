@@ -1,6 +1,6 @@
 # Executable solution specification
 
-This document describes the model that was reviewed, including the corrections made during the investigation. The original authority remains [task v2](sources/task-v2.md) and the [recovered shared solution](sources/shared-solution.original-ru.md). The absent original PDF/design registers are recorded in the source inventory. Quint files are executable specifications, not deployed Solidity/adapters/circuits.
+The Quint models specify cross-ledger settlement, including admission, reservations, decisions, native asset transfers and recovery. The reference architecture and supported placements are described in the [protocol](protocol.md).
 
 ## Admission at rotation
 
@@ -50,7 +50,7 @@ The routed graph does not compose epoch transitions, tentative block inclusion, 
 
 The asynchronous reference permits an interval where A security is locally usable while B cash remains reserved. It fails instantaneous joint local usability. Conditional L01–L04 require retained authority/data, eventual operational recovery and per-trade/per-action weak fairness. They do not guarantee COMMIT before the finite deadline; ABORT is a legitimate eventual result. Permanent ledger failure, mandatory permanent freeze or irreversible private data/key loss can defeat the corresponding progress/usability claim.
 
-| Stage A property | Executable conditions exercised by TLC |
+| Settlement property | Executable conditions exercised by TLC |
 |---|---|
 | At most one terminal decision | `S02` retains the first terminal decision. `S11` forbids reopening an ABORT tombstone. |
 | Delivery requires COMMIT and refund requires ABORT | `S06` and `legOutcomeSound` link effects to the actual decision and authenticated local terminal knowledge. Remote knowledge has an exact terminal proof. Co-located COMMIT applies the corresponding local delivery atomically. Application and release consume active holds. |
@@ -62,7 +62,7 @@ The asynchronous reference permits an interval where A security is locally usabl
 
 The evidence-only COMMIT view requires accepted phase-5 and phase-6 application facts. The source-state oracle checks that both holds were consumed, each delivery occurred once, and the exact durable booking matches the descriptor and outcome. It also checks a retained row with a reset report cache. The old L04 endpoint `booked == 1 && report >= 2` implies this stronger completion condition in the same selected states. For ABORT, the endpoint still requires the authentic outcome and actual releases or terminal no-obligation records. Together with existing per-action fairness, it entails eventual evidenced completion in the seven matching temporal profiles. [Exact selections](reports/guarantee-validation.md)
 
-The [Question 8 evidence review](reports/interview-summary.md#question-8-evidence-review) links the finite graph receipts, directed fault cases and PoC boundaries. The one/two-trade normal graphs and the recovery graph have their own transition relations. Message loss/resend and A outage have directed cases. Three combined operational samples of 10,000 traces each found no violation of `safe` at the selected seeds and step bound. They complement the finite graphs and directed cases.
+The [settlement evidence](reports/settlement-evidence.md#verification-evidence) links the finite graph receipts, directed fault cases and PoC boundaries. The one/two-trade normal graphs and the recovery graph have their own transition relations. Message loss/resend and A outage have directed cases. Three combined operational samples of 10,000 traces each found no violation of `safe` at the selected seeds and step bound. They complement the finite graphs and directed cases.
 
 S01–S16 name the original requirements. The actual `safe` conjunction, direct guard scenarios and focused models have precise different scopes. S14's original state predicate checks authorization. In the separate [policy-history spine](models/policy_history.qnt), a reservation that just became active requires exact signatures, current credentials or exact authenticated opposite-leg preparation, local eligibility, availability and absence of a freeze in the previous state. This observer also checks actual previous-to-current terminal immutability for S02. It includes rotation, membership exit and local interventions on the one-trade A-hosted preparation/decision path. The checks concern modeled admission policy; institutional eligibility remains a conformance subject. S13 in the core retains version 1; predecessor approval, retirement and credentials are additionally checked in the membership/control model. `progressReport` is a combined-world diagnostic: live recipient usability and participant-local knowledge are not implementable external reporter observations. Real external reporting must authenticate every source-dependent field.
 
@@ -130,7 +130,7 @@ The four original 180-second timeout receipts remain unchanged. Extended full-re
 
 ## Comparative-review repair contract
 
-The exact current obligations and observed results are in [qa-repairs.md](reports/qa-repairs.md), with51individual property dispositions and every current model/test/script reviewed again. The original task and recovered shared answer remain the authority.
+The exact current obligations and observed results are in [qa-repairs.md](reports/qa-repairs.md), with51individual property dispositions and every current model/test/script reviewed again.
 
 Every actual delivery or release atomically emits a private `Receipt` with trade, leg, operation kind, chain, genesis, asset, local account and quantity. The assertion compares these values directly with authorized terms and matches operation cardinality to actual effects. Financial rows contain the complete descriptor and permanent outcome. Separate actual-source assertions require that delivery really consumes the hold, release really resolves it and the colocated asset moves atomically with COMMIT. A receipt alone is insufficient. Native release frees capacity; escrow release returns the vault balance to its original account.
 

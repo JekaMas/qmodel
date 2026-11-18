@@ -1,6 +1,6 @@
 # Findings resolved and protocol re-review
 
-All four comparative-review findings are addressed in the modeled protocol and its focused tests. The full selected model checks and exact-source replay selection completed. The 51-property and current-source ledgers have been reviewed again against the preserved task-v2 and shared solution. This is root repair/source/evidence review; the prior independent review remains separately attributed. No new independent-agent sign-off is claimed.
+All four comparative-review findings are addressed in the modeled protocol and its focused tests. The full selected model checks and exact-source replay selection completed. The 51-property and current-source ledgers have been reviewed again against the protocol specification. This is root repair/source/evidence review; the prior independent review remains separately attributed. No new independent-agent sign-off is claimed.
 
 | Finding | Repair and observed falsification |
 |---|---|
@@ -57,7 +57,7 @@ The full-job N2 graph retains all proof phases0–6 and original per-action fair
 
 The paired privacy model uses source positions4/7,12fixed public operations, at most one arbitrary coupled API request, ideal opaque names and private/declassified channels. It does not prove arbitrary-scheduler, termination, computational or real-side-channel noninterference. Immediate joint local usability and progress under permanent required-party halt still fail as designed. Timed slot bounds remain assumed workloads, not measured latency/SLA. N3 progress includes COMMIT reporting; composed N3 ABORT bookkeeping remains outside its stated theorem.
 
-Circuits/prover/verifier implementations, real QBFT/EVM/token semantics, custody/storage/network security, performance/cost and legal/account/issuer rights remain external obligations. Missing original PDF/design registers stay explicitly missing; no contents were invented.
+Circuits/prover/verifier implementations, real QBFT/EVM/token semantics, custody/storage/network security, performance/cost and legal/account/issuer rights remain external obligations.
 
 ## Re-review and preserved non-successes
 

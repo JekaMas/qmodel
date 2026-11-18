@@ -4,7 +4,7 @@
 
 Reviewed baseline: `011a22aeee49059533818a935a0470b0f94446a9`. This is the root agent's source/evidence review, not a new independent reviewer sign-off. The current request is to compare other Quint protocol work and review this protocol property by property and file by file. Published protocol transitions and assertions were left unchanged; controlled faults were introduced only in separate review fixtures.
 
-The authority remains [task v2](../../sources/task-v2.md) and the [original shared solution](../../sources/shared-solution.original-ru.md). Missing original PDF/design registers remain missing. This review does not invent their requirements. Its full inventories are [properties.md](properties.md), [source-files.md](source-files.md), [files.csv](files.csv), [review.json](review.json), and [references.json](references.json).
+The [executable specification](../../SPECIFICATION.md) and the [property register](../../properties.md) define the protocol. Review inventories cover [properties](properties.md), [source files](source-files.md), [paths](files.csv), [findings](review.json) and [references](references.json).
 
 ## Findings, in priority order
 

@@ -70,4 +70,4 @@ This ledger reviews what the observed results support and what a reviewer must s
 | EX-Performance | External. Measure availability, latency, capacity, throughput, gas and proving cost on a defined workload. |
 | EX-Legal | External. Confirm ownership, settlement finality, issuer powers/solvency, intervention and financial record obligations. |
 
-[Exact executed property matrix](../../reports/qa-properties.md) · [Lifecycle and coverage contract](../../reports/literal-coverage.md) · [PoC conformance vectors and boundary](../../reports/conformance-boundary.md)
+[Exact executed property matrix](../../reports/qa-properties.md) · [Lifecycle and coverage contract](../../coverage-contract.md) · [PoC conformance vectors and boundary](../../reports/conformance-boundary.md)

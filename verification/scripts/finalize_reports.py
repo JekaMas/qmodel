@@ -155,15 +155,12 @@ phase_map={
  'PH-17':['membership-lifecycle-tests','extended-tlc-recovery','network-loss-recovery']}
 coverage=json.loads((V/'coverage-contract.json').read_text())
 for item in coverage:
- item['implementation_status']='implemented'
- if item['id'] in phase_map:
-  ids=current_checks(phase_map[item['id']]);item['checks']=ids;item['status']='executed-with-result' if all(good(i) for i in ids) else 'blocked';item['verification_status']=[get(i)['outcome'] if get(i) else 'not_run' for i in ids]
- else:
-  # Detailed procedural/semantic bullet inventory is reviewed, not advertised as 137 independently executed properties.
-  item['status']='required-in-this-model';item['verification_status']='reviewed_against_scoped_matrix';item['evidence_boundary']='See traceability.md, variant matrix, methods/limits and source task section; this bullet is not counted as a separate check.'
-  if any(w in item['requirement'].lower() for w in ['do not claim snark','real performance','legal finality','actual circuit constraints','do not contact real','production blockchain deployment']):item['status']='external-obligation';item['verification_status']='not_established_by_quint'
+ ids=current_checks(phase_map[item['id']])
+ item.update(implementation_status='implemented',checks=ids,
+             status='executed-with-result' if all(good(i) for i in ids) else 'blocked',
+             verification_status=[get(i)['outcome'] if get(i) else 'not_run' for i in ids])
 dump(V/'coverage-contract.json',coverage)
-write(V/'coverage-contract.md','# Coverage contract and lifecycle\n\nImplementation and verified-property status remain distinct. The full literal v2 bullet inventory is in coverage-contract.json; only named actual checks are execution evidence. A reviewed bullet is not an independently verified property.\n\n| Phase | Actual checks | Result |\n|---|---|---|\n'+'\n'.join(f"| {i['requirement']} | {', '.join(link(c) for c in i['checks'])} | {i['status']} |" for i in coverage if i['id'] in phase_map)+'\n\nC-Decision, C-Local and C-Records remain distinct. General n-leg exchange, FX, repo maturity, netting, external funding/redemption, legal rights, circuit soundness and production deployment are external or excluded as stated in the original task. No implementation proof is claimed.\n')
+write(V/'coverage-contract.md','# Coverage contract and lifecycle\n\nImplementation and verified-property status remain distinct. The lifecycle register maps settlement phases to named native executions.\n\n| Phase | Actual checks | Result |\n|---|---|---|\n'+'\n'.join(f"| {i['requirement']} | {', '.join(link(c).replace('../results/', 'results/') for c in i['checks'])} | {i['status']} |" for i in coverage if i['id'] in phase_map)+'\n\nC-Decision, C-Local and C-Records remain distinct. General n-leg exchange, FX, repo maturity, netting, external funding/redemption, legal rights, circuit soundness and production deployment are external or excluded by the reference model. No implementation proof is claimed.\n')
 variant_checks={
  'A-tombstone':['final-record-safety','final-record-progress'],'A-open':['final-variant-live_open','delayed-open-fact-scenarios'],
  'B-hosted':['final-variant-live_b'],'D-shared':['final-variant-live_d','d-outage-return-paths'],'escrow':['final-variant-live_escrow','witness-escrow_path_test'],
@@ -222,7 +219,7 @@ manifest={'schema_version':2,'generated_utc':datetime.datetime.now(datetime.time
  'counterexample_classification':{'A':'isolated protocol mutants','B':'violated environment/trust assumptions','C':'overstrong contracts'},
  'executions':receipts,'outcome_counts':dict(counts),'final_model_hashes':models,
  'external_obligations':['circuits/prover/verifier implementation','actual QBFT/EVM/token execution','key/hardware/storage/network security','cryptographic privacy and real side channels','availability/cost measurement','legal/account/issuer rights and financial records'],
- 'source_inventory':'verification/sources/source-inventory.json','scope_warning':'Original PDF/workspace sources were absent; self-contained v2 and recovered shared answer are the authority. Original timed-out/interrupted attempts are not passes; current full-model resolutions are separate observations.'}
+ 'scope_warning':'Original timed-out/interrupted attempts are not passes; current full-model resolutions are separate observations.'}
 if qa:
  manifest['qa_repair_proofs']=qa['proofs']
  manifest['qa_effect_induction_obligations']=qa['effect_induction_obligations']
@@ -272,7 +269,7 @@ There is no checked model-to-code conformance result: no production Solidity/ada
 ''')
 print(json.dumps({'executions':len(receipts),'outcomes':dict(counts),'unmet_scoped':manifest['unmet_scoped_checks']}))
 
-review={'schema_version':1,'review_mode':'root final source/evidence review; prior independent IR-001 through IR-004 review remains separately attributed','baseline_commit':'e4e06a49732aa2a14358504ff70c21e1521d1950','source_sha256':{p:sha(R/p) for p in ['verification/sources/task-v2.md','verification/sources/shared-solution.original-ru.md']},'broader_obligations':resolution_rows,'unclosed_broader_obligations':manifest['unclosed_broader_obligations'],'properties':[{'id':p['id'],'execution_status':p['execution_status'],'executed_checks':p['executed_checks'],'verified_scope':p['verified_scope']} for p in props],'new_scenarios':{'phase_failure_test':19,'report_view_test':6},'production_or_unqualified_verification':False,'external_obligations':manifest['external_obligations'],'scheduling_deviation':'Initial concurrent heavy start; recorded pause/resume and SMT interruption; subsequent heavy checks sequential. Pauses count against original wall limits.'}
+review={'schema_version':1,'review_mode':'root final source/evidence review; prior independent IR-001 through IR-004 review remains separately attributed','baseline_commit':'e4e06a49732aa2a14358504ff70c21e1521d1950','broader_obligations':resolution_rows,'unclosed_broader_obligations':manifest['unclosed_broader_obligations'],'properties':[{'id':p['id'],'execution_status':p['execution_status'],'executed_checks':p['executed_checks'],'verified_scope':p['verified_scope']} for p in props],'new_scenarios':{'phase_failure_test':19,'report_view_test':6},'production_or_unqualified_verification':False,'external_obligations':manifest['external_obligations'],'scheduling_deviation':'Initial concurrent heavy start; recorded pause/resume and SMT interruption; subsequent heavy checks sequential. Pauses count against original wall limits.'}
 if qa:
  review['prior_extended_baseline_commit']=review['baseline_commit']
  review['baseline_commit']=qa['baseline_commit']

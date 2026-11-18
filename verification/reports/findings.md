@@ -2,7 +2,7 @@
 
 Current repair disposition: **QA-01–QA-04 resolved**. [The final repair report](qa-repairs.md) supersedes the comparative review's open-finding status and records current native evidence and re-review. Added complete disclosure/query/source/proof binding and trusted-principal observation; actual unadmitted-source proofs at the consumer; semantic ABORT release/absence assertions; exact economic outputs/financial rows and actual-source effect/local-atomicity checks. Prior failures and proof boundaries remain visible. The original extended-run sections below describe their recorded source revisions.
 
-The checked design supports **irreversible backed commitment and conditional eventual application**. It does **not** meet an interpretation of “neither leg completes without the other” that requires both assets to become locally usable at the same instant on independently scheduled ledgers. The attached v2 instruction and the recovered shared solution are the source authority; the original PDF and earlier design workspace were absent.
+The checked design supports **irreversible backed commitment and conditional eventual application**. It does **not** meet an interpretation of “neither leg completes without the other” that requires both assets to become locally usable at the same instant on independently scheduled ledgers.
 
 ## Contracts and counterexamples
 
@@ -33,7 +33,7 @@ The investigation preserved failing versions/results before repair. These are mo
 
 ## What was actually checked
 
-The [coverage verdict](coverage.md), [property traceability](traceability.md), [variant matrix](../variants.md), [literal task review](literal-coverage.md) and [execution index](executions.md) provide the exact boundaries. Core S01–S16 are a conjunction of state predicates plus direct guard/transition scenarios; in particular S14's state predicate alone is not a historical eligibility or regulatory-compliance theorem.
+The [coverage verdict](coverage.md), [property traceability](traceability.md), [variant matrix](../variants.md), [lifecycle coverage](../coverage-contract.md) and [execution index](executions.md) provide the exact boundaries. Core S01–S16 are a conjunction of state predicates plus direct guard/transition scenarios; in particular S14's state predicate alone is not a historical eligibility or regulatory-compliance theorem.
 
 TLC completed the one-trade reference graph and conditional L01–L04, the two-trade requested-job configuration, explicit recovery, candidate placements and escrow/private/shared controls. The separate three-domain installation has safety and conditional per-trade progress, with COMMIT reporting; it does not prove composed three-domain ABORT bookkeeping. Apalache checked the economic core at depths 8/12/20 and the genuine inductive obligations; the principal reference has a separately checked finite economic safety mapping. No liveness-preservation theorem follows from that mapping.
 

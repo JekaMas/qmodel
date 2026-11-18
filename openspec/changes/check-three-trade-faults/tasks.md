@@ -1,6 +1,6 @@
 # Three-trade fault, race and authority assurance
 
-Base 5e5a974d71291435c4bfeca6561c889e3fa463a7. Preserve the old finite and sampled evidence. The v2 brief and recovered solution govern all assertions.
+Base 5e5a974d71291435c4bfeca6561c889e3fa463a7. Preserve the old finite and sampled evidence. The protocol specification defines these assertions.
 
 - [x] Reuse the existing source model to execute the fully funded and contended N3 finite admission-to-decision profiles, including concrete reachability and denial witnesses.
 - [x] Reconcile the primary sources and original requirements against the [stage matrix](fault-matrix.md). Exercise timed crashes, partitions, overlap, delayed decisions, ordinary retry and malicious data on the source-bound settlement profile.

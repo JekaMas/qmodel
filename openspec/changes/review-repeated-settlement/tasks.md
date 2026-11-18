@@ -1,6 +1,6 @@
 # Repeated settlement and event coverage
 
-Base revision 2b489bac08ccfd2fe902d714a9fd377ecf9ccb39. Original authority is the v2 brief and recovered solution.
+Base revision 2b489bac08ccfd2fe902d714a9fd377ecf9ccb39. The settlement specification defines the trade lifecycle.
 
 - [x] Review the existing models, predicates, directed tests and native configuration scopes. Compare Quint and TLA+ examples and record actionable gaps.
 - [x] Implement and execute multi-cycle, three-overlapping-trade, contention, stale-proof and recovery workloads.

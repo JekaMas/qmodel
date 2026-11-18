@@ -4,7 +4,7 @@
     "event": "paused_full_two_trade_checker",
     "pid": 1618,
     "process_group": 1618,
-    "reason": "Original task-v2 section6 requires heavy checkers sequentially. Initial concurrent start was an execution deviation; paused in-memory graph is preserved. Resume only after Apalache12/20 driver completes.",
+    "reason": "Initial concurrent start was an execution deviation; paused in-memory graph is preserved. Resume only after Apalache12/20 driver completes.",
     "bounds": "Original3600-second per-invocation wall cap remains; pause time is not hidden or subtracted.",
     "resume_required": true
   },

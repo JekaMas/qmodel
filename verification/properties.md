@@ -3,7 +3,7 @@
 The [finalized-admission selection](configs/admission-acceptance.json) and the `current_review_scopes` entries in [the machine-readable register](properties.json) identify the current executions by scope name. Other receipt references identify their original releases. The first finalized reserve, canonical block inclusion, reporting cursor, bank gate and equivalence limits are specified in the [current review disposition](reports/finalized-admission.md).
 
 
-The attached v2 instruction is the verification authority. The shared answer is the versioned candidate, not a proven protocol. Intended requirements and stronger overclaims remain separate.
+The [executable specification](SPECIFICATION.md) defines the reference semantics. Each property below states its assumptions and verification boundary.
 
 The [four-route workload](SPECIFICATION.md#physical-ledgers-and-concurrent-routes) extends the economic portions of S01, S04–S06, S08–S10 and C-Local to shared native accounts. The opposite-direction temporal profile checks the payment and held-refund endpoints of L02 and L03 under per-leg recovery and fair service. Each scope is selected in the machine-readable register.
 

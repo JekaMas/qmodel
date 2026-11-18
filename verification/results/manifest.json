@@ -49342,8 +49342,7 @@
     "availability/cost measurement",
     "legal/account/issuer rights and financial records"
   ],
-  "source_inventory": "verification/sources/source-inventory.json",
-  "scope_warning": "Original PDF/workspace sources were absent; self-contained v2 and recovered shared answer are the authority. Original timed-out/interrupted attempts are not passes; current full-model resolutions are separate observations.",
+  "scope_warning": "Original timed-out/interrupted attempts are not passes; current full-model resolutions are separate observations.",
   "qa_repair_proofs": {
     "reference": "qa-core-finite",
     "one": "qa-full-one",

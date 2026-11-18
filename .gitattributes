@@ -1,6 +1,5 @@
 # Exact upstream/public source copies retain their original whitespace and hashes.
 .agents/skills/quint-modeling/examples/tendermint/tendermint.qnt -whitespace
-verification/sources/shared-chat.html -whitespace
 # Backend-native evidence is byte-preserved, including its blank lines.
 verification/results/runs/**/raw.log -whitespace
 
