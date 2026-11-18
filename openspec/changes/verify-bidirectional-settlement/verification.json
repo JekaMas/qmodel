@@ -1,0 +1,371 @@
+{
+  "schema_version": 2,
+  "change": "verify-bidirectional-settlement",
+  "requirements": [
+    {
+      "id": "RS",
+      "capability": "routed-dvp",
+      "title": "Settle routed instructions against native funds",
+      "fingerprint": "39dff589a7b5647019bcd5b4dae7ab8ec41dfc4e5871ceb3aaec1b59fa2118e0"
+    }
+  ],
+  "properties": [
+    {
+      "id": "RS.P1",
+      "requirement_id": "RS",
+      "scenarios": [
+        "Both cross-ledger directions"
+      ],
+      "statement": "Host transfer and matching remote payment in either route",
+      "owner": "verification/models/routed_settlement.qnt",
+      "oracle": "individual deliveries, held cash during outage and fair convergence",
+      "source_globs": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json",
+        "verification/tests/routed_reference_test.qnt"
+      ]
+    },
+    {
+      "id": "RS.P2",
+      "requirement_id": "RS",
+      "scenarios": [
+        "Co-resident exchange"
+      ],
+      "statement": "Both legs exchange at one host decision",
+      "owner": "verification/models/routed_settlement.qnt",
+      "oracle": "free balances and local receipts on each ledger",
+      "source_globs": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json",
+        "verification/tests/routed_reference_test.qnt"
+      ]
+    },
+    {
+      "id": "RS.P3",
+      "requirement_id": "RS",
+      "scenarios": [
+        "Concurrent trades and contention"
+      ],
+      "statement": "Commuting disjoint decisions and exclusive native reservations",
+      "owner": "verification/models/routed_settlement.qnt",
+      "oracle": "serial order comparison, exact accounts and both contention winners",
+      "source_globs": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json"
+      ]
+    },
+    {
+      "id": "RS.P4",
+      "requirement_id": "RS",
+      "scenarios": [
+        "Proof and refund isolation"
+      ],
+      "statement": "Only a matching finalized fact authorizes a debit or refund",
+      "owner": "verification/models/routed_settlement.qnt",
+      "oracle": "wrong trade, genesis, phase, replay and economic outputs",
+      "source_globs": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "RS.C1",
+      "property_id": "RS.P1",
+      "polarity": "positive",
+      "scenario": "Both cross-ledger directions",
+      "scenario_fingerprint": "d187283f3be05720f45e0a03690ac3db060716184e28c38a4269987b932860ae",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "cross sequences",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json",
+        "verification/tests/routed_reference_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_cross_sequences",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Host transfer and matching remote payment in either route positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C2",
+      "property_id": "RS.P1",
+      "polarity": "negative",
+      "scenario": "Both cross-ledger directions",
+      "scenario_fingerprint": "d187283f3be05720f45e0a03690ac3db060716184e28c38a4269987b932860ae",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "remote halt",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json",
+        "verification/tests/routed_reference_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_remote_halt",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Host transfer and matching remote payment in either route negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C3",
+      "property_id": "RS.P2",
+      "polarity": "positive",
+      "scenario": "Co-resident exchange",
+      "scenario_fingerprint": "31385f453e08dbfb52bd039b335aebd6d6a9f72f187bd6053f9b579651fabb0c",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "local on each ledger",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json",
+        "verification/tests/routed_reference_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_local_on_each_ledger",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Both legs exchange at one host decision positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C4",
+      "property_id": "RS.P2",
+      "polarity": "negative",
+      "scenario": "Co-resident exchange",
+      "scenario_fingerprint": "31385f453e08dbfb52bd039b335aebd6d6a9f72f187bd6053f9b579651fabb0c",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "local shortfall",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json",
+        "verification/tests/routed_reference_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_local_shortfall",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Both legs exchange at one host decision negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C5",
+      "property_id": "RS.P3",
+      "polarity": "positive",
+      "scenario": "Concurrent trades and contention",
+      "scenario_fingerprint": "4fba84ce5b190950709c4d4f13b37fce230053dbb77bb7efd2275fe2b19b0d32",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "parallel hosts",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_parallel_hosts",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Commuting disjoint decisions and exclusive native reservations positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C6",
+      "property_id": "RS.P3",
+      "polarity": "negative",
+      "scenario": "Concurrent trades and contention",
+      "scenario_fingerprint": "4fba84ce5b190950709c4d4f13b37fce230053dbb77bb7efd2275fe2b19b0d32",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "conflicting funds",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_conflicting_funds",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Commuting disjoint decisions and exclusive native reservations negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C7",
+      "property_id": "RS.P4",
+      "polarity": "positive",
+      "scenario": "Proof and refund isolation",
+      "scenario_fingerprint": "8db7e3e825009c058b8e1f21ae5f5bf6861fa89f2d7902d713fa3c88b07c5472",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "abort isolation",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_abort_isolation",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Only a matching finalized fact authorizes a debit or refund positive case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS.C8",
+      "property_id": "RS.P4",
+      "polarity": "negative",
+      "scenario": "Proof and refund isolation",
+      "scenario_fingerprint": "8db7e3e825009c058b8e1f21ae5f5bf6861fa89f2d7902d713fa3c88b07c5472",
+      "setup": "Read the selected native observation and verify its actual command, source closure and named verdict.",
+      "observable": "confused proof",
+      "red_expectation": "A required event, outcome or authenticated input disagrees with the claim.",
+      "green_expectation": "The real model execution and independent observations establish the scoped behavior.",
+      "invalidation_dependencies": [
+        "verification/tests/test_routed_settlement.py",
+        "verification/scripts/admission_checks.py",
+        "verification/configs/admission-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/models/routed_settlement.qnt",
+        "verification/tests/routed_settlement_test.qnt",
+        "verification/models/dvp.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/configs/tlc.json"
+      ],
+      "test_id": "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_confused_proof",
+      "source_path": "verification/tests/test_routed_settlement.py",
+      "command_id": "routes",
+      "state": "implemented",
+      "source_sha256": "83565ab87ac54ce2e8c0d83dbe6b19cd4d8ad51c92825f86486d11f9edd0982d",
+      "distinct_reason": "Only a matching finalized fact authorizes a debit or refund negative case",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": "routes",
+      "runner": "python-unittest",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "verification.tests.test_routed_settlement"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 120,
+      "authority": "local"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+
+ Error [QNT409]: Action start is used both for init and for step, and therefore can't be converted into TLA+. You can duplicate this with a different name to use on init. Sorry Quint can't do it for you yet.
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/routed_settlement.qnt:115:23
+  115:   action bothLocals = start(Set(LocalX,LocalY),1)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT409]: Action start is used both for init and for step, and therefore can't be converted into TLA+. You can duplicate this with a different name to use on init. Sorry Quint can't do it for you yet.
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/routed_settlement.qnt:116:17
+  116:   action four = start(Set(XtoY,YtoX,LocalX,LocalY),2)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT409]: Action start is used both for init and for step, and therefore can't be converted into TLA+. You can duplicate this with a different name to use on init. Sorry Quint can't do it for you yet.
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/models/routed_settlement.qnt:117:19
+  117:   action scarce = start(Set(XtoY,LocalX,LocalY,AnotherXtoY),1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: Failed to convert init to predicate

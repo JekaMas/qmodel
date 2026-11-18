@@ -1,0 +1,6 @@
+
+  routed_local_reference_test
+    ok BothAssetsOnXTest passed 1 test(s)
+    ok BothAssetsOnYTest passed 1 test(s)
+
+  2 passing (162ms)

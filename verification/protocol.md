@@ -20,6 +20,19 @@ In deployment the governance change needs an authenticated cutoff for **each** s
 
 At final A COMMIT the security is delivered and B’s matching cash remains encumbered. During a week-long B halt, the seller’s ability to use cash depends on a separate legal and operational claim. Both banks must identify the debtor, the amount/beneficiary, irrevocability, insolvency treatment, enforcement during the halt and reconciliation preventing a second payout when B recovers. If credit on B is the only final payment, require common atomic execution or a demonstrated equivalent mechanism before adopting this design for strict DvP. Moving the decision to D still leaves independent native application. [Decision record and proof limits](reports/finalized-admission.md)
 
+## Routing when both networks carry both assets
+
+The signed legs identify their issuing ledger, genesis, token, hold contract, payer, beneficiary and quantity. Select the securities ledger as the decision host before admission. A global trade nonce in the finite fixture distinguishes separate signed instructions. A deployment must authenticate the complete decision slot and descriptor on both legs.
+
+| Securities location | Cash location | Decision and native execution |
+| --- | --- | --- |
+| X | Y | X verifies the matching final Y cash hold and atomically decides and delivers securities. Y pays its seller on the final X decision. |
+| Y | X | Y verifies the matching final X cash hold and atomically decides and delivers securities. X pays its seller on the final Y decision. |
+| X | X | X checks available securities and cash and exchanges both in one local transaction. |
+| Y | Y | Y performs the same local exchange against its own two balances. |
+
+A portfolio can contain all four routes. The free amount on a native account is its balance less outstanding holds against that account. Held cash cannot finance another trade until paid or released. A received transfer can fund a later instruction on that ledger. Opposite hosts may decide concurrently. Each chain orders transactions against its own latest state. Outage consequences follow the affected physical leg for every trade. The banks’ outstanding decision on the seller’s rights during a cash-ledger outage applies symmetrically. [Executable routing contract](SPECIFICATION.md#physical-ledgers-and-concurrent-routes)
+
 ## Placement and responsibility
 
 | Placement | Decision authority and local effect | Evidence entering the decision and returning to the legs |

@@ -226,6 +226,18 @@ def cases():
         result.append(finite("vgr-"+p,"verification/models/guarantee_profiles.qnt","guarantee_"+p,"init",
                              "recoveryStep" if p=="recovery" else "step","guarantees",
                              config="extended-tlc8.json" if p in {"two","recovery"} else "extended-tlc.json"))
+    routes = "verification/models/routed_settlement.qnt"
+    for tag, initial, step, goal, temporal, expected in (
+        ("cross", "oppositeSiblings", "step", "safety", None, "pass"),
+        ("recovery", "opposite", "step", "safety", "recoveryProgress", "pass"),
+        ("four", "four", "step", "safety", None, "pass"),
+        ("scarce", "scarce", "step", "safety", None, "pass"),
+        ("scarce-reverse", "scarceReverse", "step", "safety", None, "pass"),
+        ("half-local", "bothLocals", "halfStep", "backed", None, "counterexample"),
+        ("foreign-proof", "opposite", "foreignStep", "backed", None, "counterexample"),
+    ):
+        result.append(finite("routes-"+tag, routes, "routed_settlement", initial, step, goal,
+                             temporal, expected))
     if len({c.name for c in result})!=len(result):
         raise ValueError("Duplicate acceptance case")
     return result

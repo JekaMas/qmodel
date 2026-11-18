@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "change": "verify-bidirectional-settlement",
+  "scope": {
+    "property_ids": [
+      "RS.P1",
+      "RS.P2",
+      "RS.P3",
+      "RS.P4"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_cross_sequences",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_remote_halt",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_local_on_each_ledger",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_local_shortfall",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_parallel_hosts",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_conflicting_funds",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_abort_isolation",
+      "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_confused_proof"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "D1",
+      "property_ids": [
+        "RS.P1",
+        "RS.P2",
+        "RS.P3",
+        "RS.P4"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_cross_sequences",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_remote_halt",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_local_on_each_ledger",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_local_shortfall",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_parallel_hosts",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_conflicting_funds",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_abort_isolation",
+        "unittest::verification.tests.test_routed_settlement.RoutedSettlement.test_confused_proof"
+      ],
+      "question": "Which native balances, proofs and witnesses distinguish the four placements and their concurrent orders?",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the owners identified by the reviewed counterexamples and follow their actual actors and verifier selections.",
+          "outcome": "Matched the role-based settlement, native receipts and fixed-placement block model to the new four-route workload.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Reference role-based native events and signed descriptor."
+            },
+            {
+              "path": "verification/models/economic_effects.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Independent native receipt comparison."
+            },
+            {
+              "path": "verification/models/dvp_blocks.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Single-placement ledger contention baseline."
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Find unknown protocol ownership.",
+          "outcome": "The existing modeled roles, native outputs and fixed placement are known.",
+          "reason": "The relevant owners and prior OpenSpec acceptance paths were already named.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "Locate compiled implementation entry points.",
+          "outcome": "The model uses Quint native and Python evidence entry points.",
+          "reason": "There is no deployed bank contract in this change.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "Native route evidence and directed failures distinguish physical account placement, isolated settlement and both orders."
+    }
+  ]
+}

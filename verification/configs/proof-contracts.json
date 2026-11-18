@@ -57444,6 +57444,1180 @@
         "--invariant": "guarantees"
       },
       "origin": "finalized-admission verification"
+    },
+    "admitted-routes-cross": {
+      "receipt_sha256": "7e4be565bd4c93751f797f504f34cc6dea48013c11ea0145505aa4b00aecc511",
+      "raw_sha256": "a170402a8d2cc1b667ca909fa2ff16b2559b64ee2b294a2d57c99f4912824f9a",
+      "raw_output": "verification/results/runs/admitted-routes-cross/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "opposite",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "7dd8a9b6d3dd6d0e2d1a29caa94020ad6413c3a03f44f161727ebfcc48299a87",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "opposite",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-cross-attempt1": {
+      "receipt_sha256": "85efb52c9bc6bd84a5265469584d0e72a077d46d5af83afb4e8744bdc6e63a7b",
+      "raw_sha256": "30371ae6ca605dcc93b225074d3fc8f0d98126f86510d56cd108c5649fd0fbda",
+      "raw_output": "verification/results/runs/admitted-routes-cross-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "oppositeSiblings",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:29:45.281",
+          "tlc": "2026.11.18.192950"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "oppositeSiblings",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-cross-attempt2": {
+      "receipt_sha256": "57d2e21c2b22bf4688a715d5c9bb57d189122869a85f4981430b1355e8b6beab",
+      "raw_sha256": "fc2925ea5c537aa47ef56c2f88d52f9bbed501fc3fc12cc239283a5ee7faec5c",
+      "raw_output": "verification/results/runs/admitted-routes-cross-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "oppositeSiblings",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:31:58.825",
+          "tlc": "2026.11.18.193204"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "oppositeSiblings",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-foreign-proof": {
+      "receipt_sha256": "6e04735c4b424f983be6893a86c89e68f835f9eb998faf56982d210931164c73",
+      "raw_sha256": "2d702e3fc9f7822f40c256b01b9f8fce9d9b4ebf8d40d10fc0effbfa46ee926a",
+      "raw_output": "verification/results/runs/admitted-routes-foreign-proof/raw.log",
+      "proof_contract": {
+        "claim": "backed",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "opposite",
+          "--step",
+          "foreignStep",
+          "--invariant",
+          "backed",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:31:34.461",
+          "tlc": "2026.11.18.193141"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "opposite",
+        "--step": "foreignStep",
+        "--invariant": "backed"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-foreign-proof-attempt1": {
+      "receipt_sha256": "7a962c54e230d0dd05f1abe495ca5b829c014fd7177ace79f575bfb0aa0f6135",
+      "raw_sha256": "e2ce8f1c1ca1b37bc5c7e3b19df1aadbcca7538c63d0b778a22189420614893b",
+      "raw_output": "verification/results/runs/admitted-routes-foreign-proof-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "backed",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "opposite",
+          "--step",
+          "foreignStep",
+          "--invariant",
+          "backed",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:33:49.683",
+          "tlc": "2026.11.18.193355"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "opposite",
+        "--step": "foreignStep",
+        "--invariant": "backed"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-four": {
+      "receipt_sha256": "648adf5b1fadc60ddaeedbf07d031a9f35c60f3dd7d1f8e04b9de230f5287af3",
+      "raw_sha256": "2edebef81684c32eab423679af239df3e65a4888adc37d0c1cb7e91a53d8ed00",
+      "raw_output": "verification/results/runs/admitted-routes-four/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "four",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:30:24.153",
+          "tlc": "2026.11.18.193029"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "four",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-four-attempt1": {
+      "receipt_sha256": "6caf9595acda28f049533f3ce5f4debad9cddc3f90262b7dcc6e8d72a1e7dd79",
+      "raw_sha256": "7d9c7c5232c41656c3cfba61926b518c27fac9968ceee9488a463f5841bfd77c",
+      "raw_output": "verification/results/runs/admitted-routes-four-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "four",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:32:39.690",
+          "tlc": "2026.11.18.193245"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "four",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-half-local": {
+      "receipt_sha256": "a14fda1f2c687b9e3a860776e5fca6b01299653bd897b2ad0f30ecec9195a3c2",
+      "raw_sha256": "d86837a0293b9c9ba8e7ddb6d14ebb224cfdd494e0e5caa36be44571c304df6a",
+      "raw_output": "verification/results/runs/admitted-routes-half-local/raw.log",
+      "proof_contract": {
+        "claim": "backed",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "bothLocals",
+          "--step",
+          "halfStep",
+          "--invariant",
+          "backed",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:31:19.933",
+          "tlc": "2026.11.18.193125"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "bothLocals",
+        "--step": "halfStep",
+        "--invariant": "backed"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-half-local-attempt1": {
+      "receipt_sha256": "553beb431e8ac5e651b25d018dbe7ef90162dc40ce4f63362b9bc25fee10c9dd",
+      "raw_sha256": "0dbde71de5807ee0fce24b09b8d29db0e31fe55f3cc9edf7fdfb95a10307cbe2",
+      "raw_output": "verification/results/runs/admitted-routes-half-local-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "backed",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "bothLocals",
+          "--step",
+          "halfStep",
+          "--invariant",
+          "backed",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:33:36.009",
+          "tlc": "2026.11.18.193341"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "bothLocals",
+        "--step": "halfStep",
+        "--invariant": "backed"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-recovery": {
+      "receipt_sha256": "bc86f6240a7cb562c0fb0a6d60be3c2ab276f0443fe1d448e3bd68ed7ac98bf3",
+      "raw_sha256": "ef035062f9d752d0bec5f9da546f43f76e230bfd0ff92dcc5e5d8b8dba23ad1a",
+      "raw_output": "verification/results/runs/admitted-routes-recovery/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "opposite",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852",
+          "--temporal",
+          "recoveryProgress"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:30:09.716",
+          "tlc": "2026.11.18.193014"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "opposite",
+        "--step": "step",
+        "--invariant": "safety",
+        "--temporal": "recoveryProgress"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-recovery-attempt1": {
+      "receipt_sha256": "be5050f977afcdb44b8a9fa2ac276d15e74aed89df6b5f7fa35091222032e594",
+      "raw_sha256": "8d5fba4f328197b19789589eb447fecd925ed257ba56fc98c446b1ac0eb1282b",
+      "raw_output": "verification/results/runs/admitted-routes-recovery-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "opposite",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852",
+          "--temporal",
+          "recoveryProgress"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:32:24.934",
+          "tlc": "2026.11.18.193230"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "opposite",
+        "--step": "step",
+        "--invariant": "safety",
+        "--temporal": "recoveryProgress"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-scarce": {
+      "receipt_sha256": "207bb193ac849675caede6fb50de67c629e0c4d39226c313fc187477ad38f7b0",
+      "raw_sha256": "813261a16e42ba1de4c267de4c1144a5a1fdfa1e12f19ae82e5816c8d1b6a6db",
+      "raw_output": "verification/results/runs/admitted-routes-scarce/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "scarce",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:30:47.187",
+          "tlc": "2026.11.18.193052"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "scarce",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-scarce-attempt1": {
+      "receipt_sha256": "b24711b13e2a99bda7e7e0847a1c8407e702720df4ba6d0f237ae5734626d189",
+      "raw_sha256": "d2609e11107cdb06668ded5b62014926c1492b9e922cf7a2c915e056584c14a0",
+      "raw_output": "verification/results/runs/admitted-routes-scarce-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "scarce",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:33:03.930",
+          "tlc": "2026.11.18.193309"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "scarce",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-scarce-reverse": {
+      "receipt_sha256": "e671288de0219754c927e152b9fe011693fa55280ab06830203b02e1aa551fad",
+      "raw_sha256": "c05019d20cef2a2606efa594696ba6e5916bd73270ce2afa44d543517c8bbea2",
+      "raw_output": "verification/results/runs/admitted-routes-scarce-reverse/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "scarceReverse",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:31:02.896",
+          "tlc": "2026.11.18.193108"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "scarceReverse",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-routes-scarce-reverse-attempt1": {
+      "receipt_sha256": "2c486a47a2bbb450e3fba5d3fc0003fe1a8ad91a15cc6714c16fd0c7cc650956",
+      "raw_sha256": "48eb66444d19ebc8902513a1ba9a511209e3b11dab777400ae74e0ec1684fd13",
+      "raw_output": "verification/results/runs/admitted-routes-scarce-reverse-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "safety",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/routed_settlement.qnt",
+          "--main",
+          "routed_settlement",
+          "--backend",
+          "tlc",
+          "--init",
+          "scarceReverse",
+          "--step",
+          "step",
+          "--invariant",
+          "safety",
+          "--tlc-config",
+          "verification/configs/tlc.json",
+          "--verbosity",
+          "3",
+          "--server-endpoint",
+          "localhost:18852"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/tlc.json": "f5fe5b6caae9cceb33545ca7f723fac9566713c24f169b048e035ffebf7fd265"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@23:33:20.169",
+          "tlc": "2026.11.18.193325"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "TLC heap, stack and workers from verification/configs/tlc.json; 1800s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement",
+        "--backend": "tlc",
+        "--init": "scarceReverse",
+        "--step": "step",
+        "--invariant": "safety"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_cross_reference_test": {
+      "receipt_sha256": "bc2cd1336e95279b1cb4bc087695d02284d6890e34d133379444e51aa02d5949",
+      "raw_sha256": "3eeae037b0ff22020c8ac28fc1269b152340c8a8a07d28a47233887aea57962c",
+      "raw_output": "verification/results/runs/admitted-test-routed_cross_reference_test/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_cross_reference_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_reference_test.qnt",
+          "--main",
+          "routed_cross_reference_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_reference_test.qnt": "d01da2093dad0221530c3fd74ff07c4e1c77687811598e5a8f8f37882071d519",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_cross_reference_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_cross_reference_test-attempt1": {
+      "receipt_sha256": "470cb448d0451713ad8b6509ec8b1ee589e159d357aa268cc86e338eb751b159",
+      "raw_sha256": "dae2769697b6e9ff1d918ebeb685ff86604934bd3c5b882b2515a029f2d68db3",
+      "raw_output": "verification/results/runs/admitted-test-routed_cross_reference_test-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_cross_reference_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_reference_test.qnt",
+          "--main",
+          "routed_cross_reference_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_reference_test.qnt": "d01da2093dad0221530c3fd74ff07c4e1c77687811598e5a8f8f37882071d519",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_cross_reference_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_local_reference_test": {
+      "receipt_sha256": "501d9d09cebed9410375796776348aacbe52fe6b98f248a26cc99ca2357be19c",
+      "raw_sha256": "720276b21f65a318a4f2580f2ee46cfdb2ca141eebb6843a8201a2dd6ca6df3d",
+      "raw_output": "verification/results/runs/admitted-test-routed_local_reference_test/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_local_reference_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_reference_test.qnt",
+          "--main",
+          "routed_local_reference_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_reference_test.qnt": "d01da2093dad0221530c3fd74ff07c4e1c77687811598e5a8f8f37882071d519",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_local_reference_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_local_reference_test-attempt1": {
+      "receipt_sha256": "d8bff5464939ac0d25494044bbe6cd5fb12b4ad43e40cc0a65fd848e3c1b4b3b",
+      "raw_sha256": "8aca18d0473a7e58646fc4d337dc13bfe2e8a3b30084e5807a08924039c5b9a2",
+      "raw_output": "verification/results/runs/admitted-test-routed_local_reference_test-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_local_reference_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_reference_test.qnt",
+          "--main",
+          "routed_local_reference_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_reference_test.qnt": "d01da2093dad0221530c3fd74ff07c4e1c77687811598e5a8f8f37882071d519",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_local_reference_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_settlement_test": {
+      "receipt_sha256": "79074d881d399ca3a19e89bdb0524e4a3ce676d101e6648b20ed1c3cd7eb0a83",
+      "raw_sha256": "2cf9c7c02284791c294b3c28784099f813a97f66e8d16f1367305eff6d9d6cfa",
+      "raw_output": "verification/results/runs/admitted-test-routed_settlement_test/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_settlement_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_settlement_test.qnt",
+          "--main",
+          "routed_settlement_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_settlement_test.qnt": "02150902be40cf6a1c729179f3c79f79a1219b89a734ca95ce72eab9ca96714f",
+          "verification/models/routed_settlement.qnt": "7dd8a9b6d3dd6d0e2d1a29caa94020ad6413c3a03f44f161727ebfcc48299a87",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_settlement_test-attempt1": {
+      "receipt_sha256": "6e1d9dbd03c70d66d00d908cd4cadd1f49302b72e792eae8b783c6a876f9435e",
+      "raw_sha256": "700b11b471b0e7eea9d0ebb1982baf3e9ba7375ef7ed9279d53a119a37c3718c",
+      "raw_output": "verification/results/runs/admitted-test-routed_settlement_test-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_settlement_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_settlement_test.qnt",
+          "--main",
+          "routed_settlement_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_settlement_test.qnt": "19f387a4695c5eaa85fdafb41d661cf8efaf115ad5d0078454326706165aef0e",
+          "verification/models/routed_settlement.qnt": "91db9b129fbc2b94181aee9e726d059af60a4afeb42dc1e033bb5bce3df539c0",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
+    },
+    "admitted-test-routed_settlement_test-attempt2": {
+      "receipt_sha256": "9204f26d4b449c667d00de15e1b128fffeeb08fca44331d91085c19dffdaf7ae",
+      "raw_sha256": "d3fe1436e9916cfd79086b25f2cb4c902fde568d8dcfada711d0b6aaf57905e5",
+      "raw_output": "verification/results/runs/admitted-test-routed_settlement_test-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "All named routed_settlement_test scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/routed_settlement_test.qnt",
+          "--main",
+          "routed_settlement_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test",
+          "--max-samples",
+          "1"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/routed_settlement_test.qnt": "ee2692ae88bf4b0a2421a02a2244d0f10710b7bca7d0276dd02c092df48305b3",
+          "verification/models/routed_settlement.qnt": "93e95be46efe0497789a5db8747cb6c56e1c246a6c8c723d9b21ac5764b2d01e",
+          "verification/models/dvp.qnt": "5c03726b1d823ca48d702d9db09bf25c278321228f303b2e049b0051beccacda",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 180,
+        "resource_limit": "Quint Rust evaluator; 180s timeout"
+      },
+      "native_targets": {
+        "--main": "routed_settlement_test",
+        "--backend": "rust",
+        "--seed": "17",
+        "--match": ".*Test",
+        "--max-samples": "1"
+      },
+      "origin": "finalized-admission verification"
     }
   }
 }

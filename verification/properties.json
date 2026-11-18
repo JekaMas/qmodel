@@ -24,7 +24,12 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "routes-four",
+      "routes-scarce",
+      "routes-scarce-reverse"
+    ]
   },
   {
     "id": "S02",
@@ -138,7 +143,11 @@
       "block-overbook-a",
       "block-overbook-b",
       "bilateral-orders",
-      "bilateral-recovery"
+      "bilateral-recovery",
+      "routes-cross",
+      "routes-four",
+      "routes-scarce",
+      "routes-scarce-reverse"
     ]
   },
   {
@@ -216,7 +225,9 @@
     "current_review_scopes": [
       "block-double-charge",
       "history-4",
-      "bilateral-orders"
+      "bilateral-orders",
+      "routes-cross",
+      "test-routed_settlement_test"
     ]
   },
   {
@@ -271,7 +282,10 @@
     "current_review_scopes": [
       "vgr-reference",
       "vgr-control-wrong-phase",
-      "test-consumer_inbox_test"
+      "test-consumer_inbox_test",
+      "routes-cross",
+      "routes-foreign-proof",
+      "test-routed_settlement_test"
     ]
   },
   {
@@ -339,7 +353,11 @@
     "current_review_scopes": [
       "vgr-control-omitted-local",
       "vgr-reference",
-      "test-bank_finality_test"
+      "test-bank_finality_test",
+      "routes-four",
+      "routes-half-local",
+      "test-routed_cross_reference_test",
+      "test-routed_local_reference_test"
     ]
   },
   {
@@ -369,7 +387,11 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "current_review_scopes": [
+      "routes-cross",
+      "routes-four"
+    ]
   },
   {
     "id": "S10",
@@ -412,7 +434,9 @@
     "quint_owner": "verification/models/dvp.qnt",
     "current_review_scopes": [
       "test-bindings_test",
-      "test-proof_consumer_test"
+      "test-proof_consumer_test",
+      "routes-foreign-proof",
+      "test-routed_settlement_test"
     ]
   },
   {
@@ -763,7 +787,8 @@
       "live-b",
       "live-d",
       "live-open",
-      "live-escrow"
+      "live-escrow",
+      "routes-recovery"
     ]
   },
   {
@@ -809,7 +834,8 @@
       "live-b",
       "live-d",
       "live-open",
-      "live-escrow"
+      "live-escrow",
+      "routes-recovery"
     ]
   },
   {
@@ -939,7 +965,11 @@
       "live-reference",
       "live-recovery",
       "committee",
-      "test-bank_finality_test"
+      "test-bank_finality_test",
+      "routes-four",
+      "routes-scarce",
+      "routes-scarce-reverse",
+      "test-routed_settlement_test"
     ]
   },
   {

@@ -1,5 +1,9 @@
 # Executed cross-chain DvP investigation
 
+## Verify bidirectional settlement
+
+The normal audit includes the routed safety and recovery graphs, two counterexamples and 56 directed Quint cases, including four comparisons against reference actions. The acceptance record links each profile, number of states and native log. [Routed verification record](../openspec/changes/verify-bidirectional-settlement/tasks.md)
+
 ## Verify the finalized-admission revision
 
 Run `python3 -B verification/scripts/verify.py audit` in the checkout. It validates the [current selection](configs/admission-acceptance.json) against live source closures, commands, named directed cases, native logs and sealed receipts. It also audits the earlier 367 selections under their original Git tree `116bef8`. Use a checkout containing that tree. The old configuration includes historical graph-equality and legacy-guard checks. The [current report](reports/finalized-admission.md) identifies the scopes re-executed on the new kernel.

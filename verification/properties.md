@@ -5,6 +5,8 @@ The [finalized-admission selection](configs/admission-acceptance.json) and the `
 
 The attached v2 instruction is the verification authority. The shared answer is the versioned candidate, not a proven protocol. Intended requirements and stronger overclaims remain separate.
 
+The [four-route workload](SPECIFICATION.md#physical-ledgers-and-concurrent-routes) extends the economic portions of S01, S04–S06, S08–S10 and C-Local to shared native accounts. The opposite-direction temporal profile checks the payment and held-refund endpoints of L02 and L03 under per-leg recovery and fair service. Each scope is selected in the machine-readable register.
+
 ## S01
 
 Types/domains are valid; balances are nonnegative. Separate security units from cash units.
