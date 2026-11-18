@@ -1,0 +1,71 @@
+{
+  "id": "reference-source-monitors",
+  "started_utc": "2026-11-18T13:14:37.764658+00:00",
+  "claim": [
+    [
+      "outcomeEvidenceSound",
+      "commitRecordSound"
+    ],
+    null
+  ],
+  "backend": "tlc",
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/reviews/guarantee-assurance/monitors.qnt",
+    "--main",
+    "guarantee_reference",
+    "--backend",
+    "tlc",
+    "--init",
+    "init",
+    "--step",
+    "step",
+    "--tlc-config",
+    "verification/configs/extended-tlc.json",
+    "--verbosity",
+    "3",
+    "--invariants",
+    "outcomeEvidenceSound",
+    "commitRecordSound"
+  ],
+  "shell_command": "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint verify verification/reviews/guarantee-assurance/monitors.qnt --main guarantee_reference --backend tlc --init init --step step --tlc-config verification/configs/extended-tlc.json --verbosity 3 --invariants outcomeEvidenceSound commitRecordSound",
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "input_hashes": {
+    "verification/reviews/guarantee-assurance/monitors.qnt": "cd59f433add1d91be2d61f799d59b6f2cd6ed752854ee82ac5e4ef6760a2d5ec",
+    "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+    "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+    "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+    "apalache": "0.62.4 | build: 7954daf                       I@17:14:45.039",
+    "tlc": "2026.11.18.131451"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "execution_plan_sha256": "6d2796ef5156a4bc119e0c39052a86967aa9651da34dff2d79dd1c8c14a5a368",
+  "raw_sha256": "7144bd6223e33efcf7a14ee230441397c29fd1eb7b2ac8e33e0466aca7ec12e8",
+  "configuration": {},
+  "timeout_seconds": 120,
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time",
+  "exit_code": 0,
+  "wall_seconds": 17.64309745794162,
+  "outcome": "finite_model_verified",
+  "expected": "pass",
+  "expectation_met": true,
+  "states_generated": 329478,
+  "distinct_states": 12502,
+  "raw_output": "verification/reviews/guarantee-assurance/evidence/runs/reference-source-monitors/raw.log",
+  "minimized": false,
+  "replayed": false
+}
