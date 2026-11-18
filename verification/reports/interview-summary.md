@@ -1,6 +1,6 @@
 # Eight-question coverage
 
-The original Architect Case Brief PDF and earlier design workspace were absent. These eight topics are reconstructed from the recovered shared answer and the self-contained v2 instruction; no unseen source contents are invented.
+These eight topics follow the Architect Case Brief. The evidence below distinguishes the executable Quint model from the proposed two-network Besu PoC.
 
 | Question | Model/evidence contribution | Residual obligation |
 |---|---|---|
@@ -13,7 +13,11 @@ The original Architect Case Brief PDF and earlier design workspace were absent. 
 | 7. Finality, latency and cost | Distinct decision/local application/records; asynchronous/eventual/bounded regimes; queues, inclusion, outage and exact-boundary checks | Measured Besu/prover availability, proving cost, gas, p50/p95/p99, operating cost and liquidity exposure |
 | 8. Credible PoC | Executable Quint project, positive/negative smoke controls, scenarios, multi-seed simulation, Apalache/TLC, induction/mapping, mutants/native traces and practical conformance vectors | Next PoC uses two real Besu/QBFT networks, supported holds, genuine preparation/outcome proofs and real conformance/measurement; no fake verifier may stand in for ZK |
 
-The technical answer is conditional backed commitment with eventual applications. If the brief requires no interval of unilateral local usability, the reference overlay does not satisfy that stronger wording. A shared execution domain or an explicitly justified legal-entitlement interpretation is a different design/obligation; the latter is not proof of local availability.
+## Slide 8 — what happens if the cash ledger stops
+
+Final COMMIT irrevocably delivers the security to the buyer. The cash stays reserved for the seller. Once the cash ledger recovers, stays online and services the pending payment, the seller receives the full amount exactly once. Quint verifies this in both directions. The banks’ settlement rules determine whether COMMIT or final cash credit discharges the buyer’s debt. [Two-direction recovery scenarios](../tests/routed_settlement_test.qnt) · [900-state safety and liveness check](../results/runs/admitted-routes-recovery-attempt1/raw.log)
+
+If the cash ledger stays offline for a week, the seller’s native cash balance still awaits credit. The model sets no deadline for payment. An enforceable claim or alternate payout during the outage needs bank rules and operational evidence. Simultaneous final native transfers require common execution or a demonstrated equivalent. [Bank decision](../configs/bank-finality.json)
 
 ## Question 8 evidence review
 

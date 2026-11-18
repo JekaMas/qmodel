@@ -1834,6 +1834,6 @@
     "execution_status": "external-obligation",
     "executed_checks": [],
     "verified_scope": "Not verified; practical interface specification only.",
-    "reviewed_contract": "Both banks must confirm the seller’s enforceable entitlement to the specific B reservation at final A COMMIT, including enforcement during prolonged unavailability and insolvency. A-hosted is a PoC pending that decision."
+    "reviewed_contract": "The banks must specify whether final COMMIT or final cash credit discharges the buyer’s debt. Recognition at COMMIT requires an enforceable entitlement to the reserved cash, including during a prolonged outage or insolvency. Production acceptance remains pending."
   }
 ]

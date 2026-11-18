@@ -2,10 +2,17 @@
   "decision_host_for_poc": "A",
   "production_acceptance": "pending_both_banks",
   "model_event": "final A COMMIT with an exact, funded cash reservation on B",
+  "model_guarantee": "In both cross-ledger directions, final COMMIT delivers the security and preserves the full cash reservation for the seller. Stable recovery of the cash ledger and fair service of the pending payment imply eventual credit of the full amount exactly once.",
+  "buyer_debt_discharge": {
+    "decided_by": "both banks under their settlement rules",
+    "possible_events": ["final COMMIT", "final cash credit"],
+    "selected_event": null
+  },
   "cash_entitlement": {
     "beneficiary": "seller specified in the signed descriptor",
     "evidence_required": ["responsible debtor", "irrevocable title to the specific reserved amount", "priority and insolvency treatment", "enforcement and payment route during a prolonged B halt", "reconciliation preventing duplicate payment on B recovery"]
   },
+  "strict_architecture_criterion": "The following criterion applies when both native transfers must be final together.",
   "if_only_a_final_credit_on_B_is_payment": "require_common_atomic_execution_or_proven_equivalent",
   "bank_confirmations": []
 }
