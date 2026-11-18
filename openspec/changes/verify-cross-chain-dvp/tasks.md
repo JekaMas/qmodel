@@ -4,7 +4,7 @@
 
 - [x] 29. Execute the remaining seven native checks. Complete preservation and implication for authenticated OPEN, the two architecture counterexamples, and the operational samples with seeds 17, 29 and 43. Retain completed native results and prior non-success attempts.
 - [x] 30. Execute the remaining 43 exact-source replays. Audit and reuse the four sealed replays from the focused run.
-- [ ] 31. Reconcile the full acceptance selection and run all 33 evidence cases. Record the exact outcome, retaining the separate PoC obligations.
+- [x] 31. Reconcile the full acceptance selection and run all 33 evidence cases. Record the exact outcome, retaining the separate PoC obligations.
 
 ## Earlier focused repair plan
 
@@ -112,7 +112,7 @@ Review delivery is DONE. Full literal guarantee coverage and these repairs are N
 - [x] 24. Resolve QA-02 with authentic unadmitted proof contexts reaching the real consumer, admission mutations and binding rejection cases.
 - [x] 25. Resolve QA-03 with independent ABORT resolved-obligation/disposition assertions and early/stale absence-record controls.
 - [x] 26. Resolve QA-04 with observable per-operation account/asset/quantity economic receipts in the shared core and multilateral model, with misrouting/wrong-asset/refund controls.
-- [ ] 27. Execute directly affected scenarios, safety/mapping/temporal/topology/privacy graphs and negative controls; reuse only non-invalidated original observations, preserve first failures and source closures.
+- [x] 27. Execute directly affected scenarios, safety/mapping/temporal/topology/privacy graphs and negative controls; reuse only non-invalidated original observations, preserve first failures and source closures.
 - [x] 28. Re-review all51properties and current source files against the original task and four findings; repair any new defect, update architecture/guarantees/tradeoffs/results, then commit/push/read back.
 
 User explicitly requests all findings resolved, updated and reviewed again. Baseline798676a310314e6e95167723e149938e388fcf9e. Root owns all implementation/evidence/review files; no new agents or paid services. Proposed semantic changes are complete disclosure provenance comparison, separated proof validity/application admission input coverage, semantic ABORT-reconciliation assertions, and explicit economic output receipts. Existing review fixtures/results remain immutable. Adding economic receipts and strengthening `safe` invalidates financial safety and temporal runs importing the core; they require new observations, including full reference/full-job two-trade and recovery. Privacy provenance/assertion changes invalidate current payload and integrated privacy checks. Standalone timing/capacity/trust/authentication/membership graphs and unchanged algebraic induction remain valid within their original limits. Heavy native checkers remain sequential; avoid repeated progress polling or status messages.
@@ -163,3 +163,6 @@ Focused delivery closure: sourcef9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f passed 
 ## Question 8 documentation reconciliation
 
 The follow-up records the Stage A property mapping, placement-specific decisions, Stage C falsification cases, and implementation checks for the two-network PoC. Recovery comments reflect the actual outage relation and fairness hypothesis. The comment-delta record links the live source to the original saved bytes. This increment validates the affected specification, evidence graph, receipt references and executable source identity. The deferred full-validation entries remain open.
+
+
+The resumed validation completed all seven native checks. Authenticated OPEN passed preservation and implication. TLC found the two expected architecture counterexamples. The three operational samples found no violation of `safe` in 30,000 bounded traces. The exact replay set contains 47 executions with 46 matching negative traces. All 241 acceptance observations audited successfully and all 33 evidence cases passed on clean source `0db251dce0cbaab8b8166197b41cd61fc3effe91`. The validation record links the native receipts and clean-revision audit. The external PoC obligations remain separate.

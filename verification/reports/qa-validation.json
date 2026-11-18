@@ -1,48 +1,158 @@
 {
-  "status": "DONE",
-  "scope": "QA-01 through QA-04 implementation, focused verification and author re-review requested by the user",
-  "tested_source_commit": "f9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f",
-  "focused_clean_revision": {
+  "status": "DONE within stated model scopes",
+  "full_validation_status": "DONE within stated model scopes",
+  "tested_source_commit": "0db251dce0cbaab8b8166197b41cd61fc3effe91",
+  "native_execution_base_commit": "384c88ea2a6a1c7fb995b7b0b8fe261d71e825ce",
+  "remaining_native_checks_completed": [
+    {
+      "family": "qa-effect-preserve-open",
+      "receipt": "verification/results/runs/qa-effect-preserve-open-attempt1/receipt.json",
+      "outcome": "executed_successfully",
+      "wall_seconds": 630.9605827089399,
+      "configuration": {}
+    },
+    {
+      "family": "qa-effect-imply-open",
+      "receipt": "verification/results/runs/qa-effect-imply-open/receipt.json",
+      "outcome": "executed_successfully",
+      "wall_seconds": 18.35356204211712,
+      "configuration": {}
+    },
+    {
+      "family": "qa-immediate",
+      "receipt": "verification/results/runs/qa-immediate/receipt.json",
+      "outcome": "expected_counterexample_found",
+      "wall_seconds": 10.935779499821365,
+      "configuration": {
+        "purpose": "QA-01..04 repaired actual model"
+      }
+    },
+    {
+      "family": "qa-permanent-halt",
+      "receipt": "verification/results/runs/qa-permanent-halt/receipt.json",
+      "outcome": "expected_counterexample_found",
+      "wall_seconds": 13.41433941712603,
+      "configuration": {
+        "purpose": "QA-01..04 repaired actual model"
+      }
+    },
+    {
+      "family": "qa-combined-faults-17",
+      "receipt": "verification/results/runs/qa-combined-faults-17/receipt.json",
+      "outcome": "sampled_no_counterexample",
+      "wall_seconds": 131.53439804213122,
+      "configuration": {
+        "main": "operational_faults",
+        "step": "faults",
+        "samples": 10000,
+        "steps": 100,
+        "seed": 17
+      }
+    },
+    {
+      "family": "qa-combined-faults-29",
+      "receipt": "verification/results/runs/qa-combined-faults-29/receipt.json",
+      "outcome": "sampled_no_counterexample",
+      "wall_seconds": 125.8851262088865,
+      "configuration": {
+        "main": "operational_faults",
+        "step": "faults",
+        "samples": 10000,
+        "steps": 100,
+        "seed": 29
+      }
+    },
+    {
+      "family": "qa-combined-faults-43",
+      "receipt": "verification/results/runs/qa-combined-faults-43/receipt.json",
+      "outcome": "sampled_no_counterexample",
+      "wall_seconds": 124.89526279084384,
+      "configuration": {
+        "main": "operational_faults",
+        "step": "faults",
+        "samples": 10000,
+        "steps": 100,
+        "seed": 43
+      }
+    }
+  ],
+  "full_clean_revision": {
     "status": "passed",
-    "cases": [
-      "EV.C19",
-      "EV.C22",
-      "EV.C23",
-      "EV.C24",
-      "EV.C26",
-      "EV.C27"
-    ],
-    "receipt": "verification/results/publication/qa-source-clean-dag.json",
-    "sha256": "13352c33dff456157488266e9bbd79eeb8331debb0803813efa80b0feb607cef"
+    "case_count": 33,
+    "receipt": "verification/results/publication/qa-full-clean-dag.json",
+    "sha256": "e3d2ade07b798befb40d1ddde649237a631643663d80d9a901d85d6299288b4b"
   },
-  "focused_reproductions": {
-    "count": 4,
-    "native_sequences_matched": 4,
+  "replay_validation": {
+    "count": 47,
+    "new_replays": 43,
+    "retained_replays": 4,
+    "negative_native_states_match": 46,
     "report": "verification/reports/qa-replay-validation.json"
   },
-  "retained_observation_audit": {
-    "positive": 144,
-    "expected_negative": 85,
-    "weak_discriminators_excluded_from_baseline": 5
+  "acceptance_audit": {
+    "status": "passed",
+    "verified_receipts": 241,
+    "selected": 241,
+    "baseline_positive": 149,
+    "expected_negative": 87,
+    "weak_discriminators": 5,
+    "deferred": 0
   },
-  "review": {
-    "properties": 51,
-    "source_files": 177,
-    "attribution": "Repairing author source/evidence review. Earlier independent review remains separately attributed."
-  },
-  "full_validation_status": "NOT DONE",
-  "deferred_checks": {
-    "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
-    "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
-  },
-  "deferred_additional_reproductions": 43,
-  "complete_evidence_DAG_cases_deferred": 33,
-  "repository": "https://github.com/JekaMas/qmodel",
-  "publication_readback": "Observed after push and retained locally in verification/results/runtime/qa-publication-readback.json",
-  "utc": "2026-11-18T12:31:07.157111+00:00"
+  "deferred_checks": {},
+  "external_obligations": [
+    "circuits/prover/verifier implementation",
+    "actual QBFT/EVM/token execution",
+    "key/hardware/storage/network security",
+    "cryptographic privacy and real side channels",
+    "availability/cost measurement",
+    "legal/account/issuer rights and financial records"
+  ],
+  "prior_focused_validation": {
+    "status": "DONE",
+    "scope": "QA-01 through QA-04 implementation, focused verification and author re-review requested by the user",
+    "tested_source_commit": "f9ef6f01d62b0ceb1e145cf6df1f0d33b7b0ac2f",
+    "focused_clean_revision": {
+      "status": "passed",
+      "cases": [
+        "EV.C19",
+        "EV.C22",
+        "EV.C23",
+        "EV.C24",
+        "EV.C26",
+        "EV.C27"
+      ],
+      "receipt": "verification/results/publication/qa-source-clean-dag.json",
+      "sha256": "13352c33dff456157488266e9bbd79eeb8331debb0803813efa80b0feb607cef"
+    },
+    "focused_reproductions": {
+      "count": 4,
+      "native_sequences_matched": 4,
+      "report": "https://github.com/JekaMas/qmodel/blob/3a6fdbfdec000aa887f0cc53fe29645db8b71882/verification/reports/qa-replay-validation.json"
+    },
+    "retained_observation_audit": {
+      "positive": 144,
+      "expected_negative": 85,
+      "weak_discriminators_excluded_from_baseline": 5
+    },
+    "review": {
+      "properties": 51,
+      "source_files": 177,
+      "attribution": "Repairing author source/evidence review. Earlier independent review remains separately attributed."
+    },
+    "full_validation_status": "NOT DONE",
+    "deferred_checks": {
+      "qa-effect-preserve-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+      "qa-effect-imply-open": "User requested minimum focused testing now and full testing later on2026-11-18.",
+      "qa-immediate": "User requested minimum focused testing now and full testing later on2026-11-18.",
+      "qa-permanent-halt": "User requested minimum focused testing now and full testing later on2026-11-18.",
+      "qa-combined-faults-17": "User requested minimum focused testing now and full testing later on2026-11-18.",
+      "qa-combined-faults-29": "User requested minimum focused testing now and full testing later on2026-11-18.",
+      "qa-combined-faults-43": "User requested minimum focused testing now and full testing later on2026-11-18."
+    },
+    "deferred_additional_reproductions": 43,
+    "complete_evidence_DAG_cases_deferred": 33,
+    "repository": "https://github.com/JekaMas/qmodel",
+    "publication_readback": "Observed after push and retained locally in verification/results/runtime/qa-publication-readback.json",
+    "utc": "2026-11-18T12:31:07.157111+00:00"
+  }
 }

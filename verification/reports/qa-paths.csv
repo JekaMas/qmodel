@@ -92,7 +92,7 @@ openspec/changes/verify-cross-chain-dvp/design.md,2e6f4688cd3b1b25d57f3e7ec649d7
 openspec/changes/verify-cross-chain-dvp/discovery.json,8a975e066127cfee8c183f31ca87aeb026d227e4d056fb4a7977f48c1f2e402b,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/proposal.md,4a1116dea5a6541c4e20a99ac54bd6b76b09f324d2fc94e28723189752017896,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/specs/dvp-verification/spec.md,341160e0e8166f21b31de7541c4e443b1641b4bae947a9c8d1a614740fd344a2,live source: see qa-files.json
-openspec/changes/verify-cross-chain-dvp/tasks.md,fd1fa03ad3e561a29ae84899bd1b4c502b5fe30ec4e06bdb557223c572926ab7,project requirement/workflow/document/metadata: retained or updated within task scope
+openspec/changes/verify-cross-chain-dvp/tasks.md,421a37ad2dfa55da30c0a2f49af28854db25ffcf51f2a9988284128772b06f07,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/changes/verify-cross-chain-dvp/verification.json,3cbf4a04486da165ea9e201e467820ae1c56362810f6694c49524ccd0db32740,project requirement/workflow/document/metadata: retained or updated within task scope
 openspec/config.yaml,22c8b7e3a2f60edef5f50d2cd3269acaf09745ca7ab1d3af57248d743bc195f8,project requirement/workflow/document/metadata: retained or updated within task scope
 package-lock.json,5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260,live source: see qa-files.json
@@ -296,6 +296,7 @@ verification/results/publication/clone-replay-raw.log,d8f2747c500b656e456008905b
 verification/results/publication/clone-replay-receipt.json,a818bf2cc75ca927893f65b732c3858cbf0435fd920c42e3877fe21c8afeee25,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/clone-workflow-restore.log,9536779769b1519b0039e63a6bb940f068e113123b203e0f64a83f7399c0aa81,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/extended-source-clean-dag.json,9914e13188936ef70b2092098672a40914ac1a097f04c4c8c854566e7cd75720,native observation/snapshot/replay: immutable source and result audit
+verification/results/publication/qa-full-clean-dag.json,e3d2ade07b798befb40d1ddde649237a631643663d80d9a901d85d6299288b4b,native observation/snapshot/replay: immutable source and result audit
 verification/results/publication/qa-source-clean-dag.json,13352c33dff456157488266e9bbd79eeb8331debb0803813efa80b0feb607cef,native observation/snapshot/replay: immutable source and result audit
 verification/results/replays/final-resource-profile-native-type/20261117T200625260148Z/replay.json,b51feb1777f1fbcde45e2eae7dbd2a60b5e130c7199178a98750f687672b7d98,native observation/snapshot/replay: immutable source and result audit
 verification/results/replays/membership-first-failure/native.itf.json,a56e31919f4d59b0a24ccc598ee78cc99435992c966fac1d7f7441b6c59535ea,native observation/snapshot/replay: immutable source and result audit
