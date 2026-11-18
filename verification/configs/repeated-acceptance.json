@@ -1,0 +1,81 @@
+{
+  "directed": {
+    "repeated-directed-01": "repeated-directed-01",
+    "repeated-directed-02": "repeated-directed-02",
+    "repeated-directed-03": "repeated-directed-03",
+    "repeated-directed-04": "repeated-directed-04",
+    "repeated-directed-05": "repeated-directed-05",
+    "repeated-directed-06": "repeated-directed-06",
+    "repeated-directed-07": "repeated-directed-07",
+    "repeated-directed-08": "repeated-directed-08",
+    "repeated-directed-09": "repeated-directed-09",
+    "repeated-directed-10": "repeated-directed-10",
+    "repeated-directed-11": "repeated-directed-11",
+    "repeated-directed-12": "repeated-directed-12",
+    "repeated-directed-13": "repeated-directed-13",
+    "repeated-directed-14": "repeated-directed-14",
+    "repeated-directed-15": "repeated-directed-15",
+    "repeated-directed-16": "repeated-directed-16",
+    "repeated-directed-17": "repeated-directed-17",
+    "repeated-directed-18": "repeated-directed-18"
+  },
+  "sampled": {
+    "41": "repeated-sample-41",
+    "42": "repeated-sample-42",
+    "43": "repeated-sample-43",
+    "44": "repeated-sample-44",
+    "45": "repeated-sample-45",
+    "46": "repeated-sample-46",
+    "47": "repeated-sample-47",
+    "48": "repeated-sample-48",
+    "49": "repeated-sample-49",
+    "50": "repeated-sample-50"
+  },
+  "legacy_discriminator": "repeated-review-legacy-spend",
+  "retained_placement": [
+    "qa-admission-b",
+    "qa-scenarios-b_path_test",
+    "qa-scenarios-open_test"
+  ],
+  "retained_mutants": [
+    "qa-legacy-expiry",
+    "qa-legacy-pruned_tombstone",
+    "qa-legacy-binding"
+  ],
+  "separate_fault_models": {
+    "decision-authority-and-permanent-halt": [
+      "qa-scenarios-d_outage_test",
+      "qa-permanent-halt",
+      "qa-immediate"
+    ],
+    "canonical-history-and-local-execution": [
+      "auth-execution_rejects_history",
+      "auth-zk_bad_execution"
+    ],
+    "irrecoverable-evidence-or-authority": [
+      "trust-v2-witness_loss",
+      "trust-v2-committee_refusal",
+      "trust-v2-insufficient_submitters"
+    ],
+    "destructive-intervention-and-retirement": [
+      "tlc-arbitrary_seizure-backing",
+      "trust-v2-retired_version",
+      "membership-unsafe-retirement",
+      "membership-consumed-replay"
+    ],
+    "omission-and-private-data-loss": [
+      "private-permanent-key-loss",
+      "qa-private-unconditionalAvailability",
+      "audit-omitted_record",
+      "qa-pipeline_log",
+      "qa-pipeline_timing"
+    ],
+    "deadline-inclusion-and-hostile-capacity": [
+      "tlc-no_inclusion-boundedCompletion",
+      "tlc-starvation-boundedCompletion",
+      "tlc-unlimited-exposure",
+      "one-less-deadline-margin",
+      "late-hold-relative-bound"
+    ]
+  }
+}

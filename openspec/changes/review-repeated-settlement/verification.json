@@ -1,0 +1,306 @@
+{
+  "schema_version": 2,
+  "change": "review-repeated-settlement",
+  "requirements": [
+    {
+      "id": "RS1",
+      "title": "Check repeated exchanges with retained identity",
+      "capability": "dvp-repeated-settlement",
+      "fingerprint": "45a3f3c922fa3c1d8651a11ada77078cb20cb2af13c4528b05871579eb730dc7"
+    },
+    {
+      "id": "RS2",
+      "title": "Audit event and fault coverage",
+      "capability": "dvp-repeated-settlement",
+      "fingerprint": "95e068bcb7a4db57b04fb5d7d2c3824e96ccdd07ebf4344d9c3ca6ce7e0f3e75"
+    }
+  ],
+  "properties": [
+    {
+      "id": "RS1.P1",
+      "requirement_id": "RS1",
+      "scenarios": [
+        "Sequential and overlapping exchanges"
+      ],
+      "statement": "Model settlement effects across successive and overlapping transactions.",
+      "owner": "A-hosted native settlement trace and audit",
+      "oracle": "COMMIT/ABORT/COMMIT are reached and all 90 legal parallel terminal orders settle five exact trades in total. A competing trade and ordinary spending fail with no free assets on either leg. The tombstone has no fake refund.",
+      "source_globs": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ]
+    },
+    {
+      "id": "RS1.P2",
+      "requirement_id": "RS1",
+      "scenarios": [
+        "Delayed and repeated evidence"
+      ],
+      "statement": "Exact historic evidence is reusable for its own obligation after operational failure.",
+      "owner": "A-hosted native settlement trace and audit",
+      "oracle": "A lost outcome is recovered by resend and old financial projections replay from actual evidence. A valid old proof and bounded malformed candidates cannot authorize a different trade or manufacture an effect.",
+      "source_globs": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ]
+    },
+    {
+      "id": "RS2.P3",
+      "requirement_id": "RS2",
+      "scenarios": [
+        "Actor outages and modeled fault inputs"
+      ],
+      "statement": "Observed event and fault coverage is explicitly source-bound.",
+      "owner": "A-hosted native settlement trace and audit",
+      "oracle": "Each core event has an exact witness category. All 31 named outage subsets have observed recovery. The historical weakness is reachable and the active profile denies offline spending on either source ledger.",
+      "source_globs": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "RS1.C1",
+      "property_id": "RS1.P1",
+      "polarity": "positive",
+      "scenario": "Sequential and overlapping exchanges",
+      "scenario_fingerprint": "d91104a785bf43346dc855e33ab2ffd2508aae535b6984475e8b995bd01b136a",
+      "setup": "Evaluate the exact verdict and captured inputs for the independently selected native case.",
+      "observable": "COMMIT/ABORT/COMMIT are reached and all 90 legal parallel terminal orders settle five exact trades in total.",
+      "red_expectation": "Required case is absent or a contradictory execution is accepted under the declared workload.",
+      "green_expectation": "The exact test or counterexample is witnessed under its specified model and cutoff.",
+      "invalidation_dependencies": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ],
+      "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_repeated_exchange_and_all_causal_parallel_orders",
+      "command_id": "repeated-evidence",
+      "state": "implemented",
+      "source_path": "verification/tests/test_repeated_evidence.py",
+      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "distinct_reason": "COMMIT/ABORT/COMMIT are reached and all 90 legal parallel terminal orders settle five exact trades in total.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS1.C2",
+      "property_id": "RS1.P1",
+      "polarity": "negative",
+      "scenario": "Sequential and overlapping exchanges",
+      "scenario_fingerprint": "d91104a785bf43346dc855e33ab2ffd2508aae535b6984475e8b995bd01b136a",
+      "setup": "Evaluate the exact verdict and captured inputs for the independently selected native case.",
+      "observable": "A competing trade and ordinary spending fail with no free assets on either leg. The tombstone has no fake refund.",
+      "red_expectation": "Required case is absent or a contradictory execution is accepted under the declared workload.",
+      "green_expectation": "The exact test or counterexample is witnessed under its specified model and cutoff.",
+      "invalidation_dependencies": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ],
+      "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_competing_reservations_and_spends_cannot_exceed_funding",
+      "command_id": "repeated-evidence",
+      "state": "implemented",
+      "source_path": "verification/tests/test_repeated_evidence.py",
+      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "distinct_reason": "A competing trade and ordinary spending fail with no free assets on either leg. The tombstone has no fake refund.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS1.C3",
+      "property_id": "RS1.P2",
+      "polarity": "positive",
+      "scenario": "Delayed and repeated evidence",
+      "scenario_fingerprint": "5ceeb11d397af3a6dfbc82e648d9cb40f187dab88cacfee305989ae2e463fdb2",
+      "setup": "Evaluate the exact verdict and captured inputs for the independently selected native case.",
+      "observable": "A lost outcome is recovered by resend and old financial projections replay from actual evidence.",
+      "red_expectation": "Required case is absent or a contradictory execution is accepted under the declared workload.",
+      "green_expectation": "The exact test or counterexample is witnessed under its specified model and cutoff.",
+      "invalidation_dependencies": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ],
+      "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_retained_evidence_can_rebuild_rows",
+      "command_id": "repeated-evidence",
+      "state": "implemented",
+      "source_path": "verification/tests/test_repeated_evidence.py",
+      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "distinct_reason": "A lost outcome is recovered by resend and old financial projections replay from actual evidence.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS1.C4",
+      "property_id": "RS1.P2",
+      "polarity": "negative",
+      "scenario": "Delayed and repeated evidence",
+      "scenario_fingerprint": "5ceeb11d397af3a6dfbc82e648d9cb40f187dab88cacfee305989ae2e463fdb2",
+      "setup": "Evaluate the exact verdict and captured inputs for the independently selected native case.",
+      "observable": "A valid old proof and bounded malformed candidates cannot authorize a different trade or manufacture an effect.",
+      "red_expectation": "Required case is absent or a contradictory execution is accepted under the declared workload.",
+      "green_expectation": "The exact test or counterexample is witnessed under its specified model and cutoff.",
+      "invalidation_dependencies": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ],
+      "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_cross_trade_and_malformed_evidence_cannot_apply",
+      "command_id": "repeated-evidence",
+      "state": "implemented",
+      "source_path": "verification/tests/test_repeated_evidence.py",
+      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "distinct_reason": "A valid old proof and bounded malformed candidates cannot authorize a different trade or manufacture an effect.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS2.C5",
+      "property_id": "RS2.P3",
+      "polarity": "positive",
+      "scenario": "Actor outages and modeled fault inputs",
+      "scenario_fingerprint": "49dcb8572f1a38c5ffc80210bbde88495d4b9d290da69ffd888ae2e006a2ef6b",
+      "setup": "Evaluate the exact verdict and captured inputs for the independently selected native case.",
+      "observable": "Each core event has an exact witness category. All 31 named outage subsets have observed recovery.",
+      "red_expectation": "Required case is absent or a contradictory execution is accepted under the declared workload.",
+      "green_expectation": "The exact test or counterexample is witnessed under its specified model and cutoff.",
+      "invalidation_dependencies": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ],
+      "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_all_reference_events_routed_and_recovery_subsets_execute",
+      "command_id": "repeated-evidence",
+      "state": "implemented",
+      "source_path": "verification/tests/test_repeated_evidence.py",
+      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "distinct_reason": "Each core event has an exact witness category. All 31 named outage subsets have observed recovery.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "RS2.C6",
+      "property_id": "RS2.P3",
+      "polarity": "negative",
+      "scenario": "Actor outages and modeled fault inputs",
+      "scenario_fingerprint": "49dcb8572f1a38c5ffc80210bbde88495d4b9d290da69ffd888ae2e006a2ef6b",
+      "setup": "Evaluate the exact verdict and captured inputs for the independently selected native case.",
+      "observable": "The historical weakness is reachable and the active profile denies offline spending on either source ledger.",
+      "red_expectation": "Required case is absent or a contradictory execution is accepted under the declared workload.",
+      "green_expectation": "The exact test or counterexample is witnessed under its specified model and cutoff.",
+      "invalidation_dependencies": [
+        "verification/tests/test_repeated_evidence.py",
+        "verification/models/dvp.qnt",
+        "verification/models/guarantee_oracles.qnt",
+        "verification/models/economic_effects.qnt",
+        "verification/tests/workloads/repeated.qnt",
+        "verification/scripts/repeated_audit.py",
+        "verification/scripts/repeated_checks.py",
+        "verification/configs/repeated-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/repeated-*/**",
+        "verification/results/runs/qa-*/**"
+      ],
+      "test_id": "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_offline_spending_discriminator_and_repaired_profile",
+      "command_id": "repeated-evidence",
+      "state": "implemented",
+      "source_path": "verification/tests/test_repeated_evidence.py",
+      "source_sha256": "37dc67b3bc4efe839047748be15553a88cae6779c517cae3d160c2fa711f2472",
+      "distinct_reason": "The historical weakness is reachable and the active profile denies offline spending on either source ledger.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": "repeated-evidence",
+      "runner": "python-unittest",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "verification.tests.test_repeated_evidence"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 60,
+      "authority": "local"
+    }
+  ]
+}

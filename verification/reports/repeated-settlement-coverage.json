@@ -1,0 +1,467 @@
+{
+  "directed_receipts": [
+    "repeated-directed-01",
+    "repeated-directed-02",
+    "repeated-directed-03",
+    "repeated-directed-04",
+    "repeated-directed-05",
+    "repeated-directed-06",
+    "repeated-directed-07",
+    "repeated-directed-08",
+    "repeated-directed-09",
+    "repeated-directed-10",
+    "repeated-directed-11",
+    "repeated-directed-12",
+    "repeated-directed-13",
+    "repeated-directed-14",
+    "repeated-directed-15",
+    "repeated-directed-16",
+    "repeated-directed-17",
+    "repeated-directed-18"
+  ],
+  "sample_receipts": [
+    "repeated-sample-41",
+    "repeated-sample-42",
+    "repeated-sample-43",
+    "repeated-sample-44",
+    "repeated-sample-45",
+    "repeated-sample-46",
+    "repeated-sample-47",
+    "repeated-sample-48",
+    "repeated-sample-49",
+    "repeated-sample-50"
+  ],
+  "sampled_traces": 10000,
+  "sampled_max_steps": 150,
+  "legacy_discriminator": "repeated-review-legacy-spend",
+  "directed_tests": 278,
+  "legal_orders": 90,
+  "nonempty_outage_subsets": 31,
+  "phase_binding_rejections": 77,
+  "proof_pipeline_fault_recovery": 42,
+  "reference_action_count": 45,
+  "reference_actions": {
+    "abort": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "adversarialStep": {
+      "kind": "dispatcher",
+      "receipts": [
+        "repeated-sample-41",
+        "repeated-sample-42",
+        "repeated-sample-43",
+        "repeated-sample-44",
+        "repeated-sample-45",
+        "repeated-sample-46",
+        "repeated-sample-47",
+        "repeated-sample-48",
+        "repeated-sample-49",
+        "repeated-sample-50"
+      ]
+    },
+    "applyA": {
+      "kind": "placement",
+      "receipt": "qa-scenarios-b_path_test",
+      "test": "settlementTest"
+    },
+    "applyB": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "capture": {
+      "kind": "directed",
+      "receipt": "repeated-directed-16",
+      "test": "Phase2ProofPipelineRecoveryTest"
+    },
+    "captureAbortRecord": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "ContenderTombstoneHasNoRefundsTest"
+    },
+    "commit": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "compromiseTransport": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "UnfreezeAndExitDoesNotRevokePendingTest"
+    },
+    "crash": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "RecoveryAfterDropPruneAndRestartTest"
+    },
+    "deliver": {
+      "kind": "directed",
+      "receipt": "repeated-directed-16",
+      "test": "Phase2ProofPipelineRecoveryTest"
+    },
+    "deliverUnadmitted": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "UnadmittedProofCannotApplyTest"
+    },
+    "exitMember": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "UnfreezeAndExitDoesNotRevokePendingTest"
+    },
+    "finalize": {
+      "kind": "directed",
+      "receipt": "repeated-directed-16",
+      "test": "Phase2ProofPipelineRecoveryTest"
+    },
+    "forgetTerminal": {
+      "kind": "isolated mutant",
+      "receipt": "qa-legacy-pruned_tombstone"
+    },
+    "freeze": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "BFrozenCannotApplyTest"
+    },
+    "idle": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "UnfreezeAndExitDoesNotRevokePendingTest"
+    },
+    "init": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "inject": {
+      "kind": "directed",
+      "receipt": "repeated-directed-12",
+      "test": "Phase2Binding0Test"
+    },
+    "learn": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "lose": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "LostOutcomeCannotBeLearnedTest"
+    },
+    "observe": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "openA": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "ParallelReservationsTest"
+    },
+    "prepareB": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "ParallelReservationsTest"
+    },
+    "prove": {
+      "kind": "directed",
+      "receipt": "repeated-directed-16",
+      "test": "Phase2ProofPipelineRecoveryTest"
+    },
+    "proveUnadmitted": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "UnadmittedProofCannotDecideTest"
+    },
+    "prune": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "RecoveryAfterDropPruneAndRestartTest"
+    },
+    "receiveNote": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "UnfreezeAndExitDoesNotRevokePendingTest"
+    },
+    "reconcile": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "recordAbort": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "ContenderTombstoneHasNoRefundsTest"
+    },
+    "recover": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "RecoveryAfterDropPruneAndRestartTest"
+    },
+    "refund": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "LateAbortStillReleasesInParallelTest"
+    },
+    "registerDecision": {
+      "kind": "placement",
+      "receipt": "qa-admission-b",
+      "test": "canonicalAcceptTest"
+    },
+    "requestCash": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "ExactRequestWrappersTest"
+    },
+    "requestOpen": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "ExactRequestWrappersTest"
+    },
+    "resend": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "RecoveryAfterDropPruneAndRestartTest"
+    },
+    "revoke": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "RevokeBothCannotOpenTest"
+    },
+    "revokeLeg": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "RevokedLegCannotPrepareTest"
+    },
+    "rotate": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "UnfreezeAndExitDoesNotRevokePendingTest"
+    },
+    "sign": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "ExactRequestWrappersTest"
+    },
+    "spend": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "IndependentSpendingRecoversTest"
+    },
+    "step": {
+      "kind": "dispatcher",
+      "receipts": [
+        "repeated-sample-41",
+        "repeated-sample-42",
+        "repeated-sample-43",
+        "repeated-sample-44",
+        "repeated-sample-45",
+        "repeated-sample-46",
+        "repeated-sample-47",
+        "repeated-sample-48",
+        "repeated-sample-49",
+        "repeated-sample-50"
+      ]
+    },
+    "tick": {
+      "kind": "directed",
+      "receipt": "repeated-directed-01",
+      "test": "SequentialCommitAbortCommitTest"
+    },
+    "tradeStep": {
+      "kind": "dispatcher",
+      "receipts": [
+        "repeated-sample-41",
+        "repeated-sample-42",
+        "repeated-sample-43",
+        "repeated-sample-44",
+        "repeated-sample-45",
+        "repeated-sample-46",
+        "repeated-sample-47",
+        "repeated-sample-48",
+        "repeated-sample-49",
+        "repeated-sample-50"
+      ]
+    },
+    "unfreeze": {
+      "kind": "directed",
+      "receipt": "repeated-directed-02",
+      "test": "UnfreezeAndExitDoesNotRevokePendingTest"
+    },
+    "unsafeRefund": {
+      "kind": "isolated mutant",
+      "receipt": "qa-legacy-expiry"
+    }
+  },
+  "separate_fault_models": {
+    "decision-authority-and-permanent-halt": [
+      {
+        "receipt": "qa-scenarios-d_outage_test",
+        "outcome": "executed_successfully",
+        "claim": "Actual changed-boundary scenario coverage: d_outage_test"
+      },
+      {
+        "receipt": "qa-permanent-halt",
+        "outcome": "expected_counterexample_found",
+        "claim": "unconditional"
+      },
+      {
+        "receipt": "qa-immediate",
+        "outcome": "expected_counterexample_found",
+        "claim": "noLag"
+      }
+    ],
+    "canonical-history-and-local-execution": [
+      {
+        "receipt": "auth-execution_rejects_history",
+        "outcome": "finite_model_verified",
+        "claim": [
+          "safe",
+          null
+        ]
+      },
+      {
+        "receipt": "auth-zk_bad_execution",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "safe",
+          null
+        ]
+      }
+    ],
+    "irrecoverable-evidence-or-authority": [
+      {
+        "receipt": "trust-v2-witness_loss",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "recoverable",
+          null
+        ]
+      },
+      {
+        "receipt": "trust-v2-committee_refusal",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "recoverable",
+          null
+        ]
+      },
+      {
+        "receipt": "trust-v2-insufficient_submitters",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "recoverable",
+          null
+        ]
+      }
+    ],
+    "destructive-intervention-and-retirement": [
+      {
+        "receipt": "tlc-arbitrary_seizure-backing",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "backing",
+          null
+        ]
+      },
+      {
+        "receipt": "trust-v2-retired_version",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "historical",
+          null
+        ]
+      },
+      {
+        "receipt": "membership-unsafe-retirement",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "retained",
+          null
+        ]
+      },
+      {
+        "receipt": "membership-consumed-replay",
+        "outcome": "expected_counterexample_found",
+        "claim": "safe"
+      }
+    ],
+    "omission-and-private-data-loss": [
+      {
+        "receipt": "private-permanent-key-loss",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          null,
+          "permanentLoss"
+        ]
+      },
+      {
+        "receipt": "qa-private-unconditionalAvailability",
+        "outcome": "expected_counterexample_found",
+        "claim": "unconditionalAvailability"
+      },
+      {
+        "receipt": "audit-omitted_record",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "safe",
+          null
+        ]
+      },
+      {
+        "receipt": "qa-pipeline_log",
+        "outcome": "expected_counterexample_found",
+        "claim": "PNI"
+      },
+      {
+        "receipt": "qa-pipeline_timing",
+        "outcome": "expected_counterexample_found",
+        "claim": "PTiming"
+      }
+    ],
+    "deadline-inclusion-and-hostile-capacity": [
+      {
+        "receipt": "tlc-no_inclusion-boundedCompletion",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "boundedCompletion",
+          null
+        ]
+      },
+      {
+        "receipt": "tlc-starvation-boundedCompletion",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "boundedCompletion",
+          null
+        ]
+      },
+      {
+        "receipt": "tlc-unlimited-exposure",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "exposure",
+          null
+        ]
+      },
+      {
+        "receipt": "one-less-deadline-margin",
+        "outcome": "expected_counterexample_found",
+        "claim": [
+          "sufficientSlack",
+          null
+        ]
+      },
+      {
+        "receipt": "late-hold-relative-bound",
+        "outcome": "finite_model_verified",
+        "claim": [
+          "safe",
+          "resolution"
+        ]
+      }
+    ]
+  }
+}

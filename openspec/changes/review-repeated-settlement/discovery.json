@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "change": "review-repeated-settlement",
+  "scope": {
+    "property_ids": [
+      "RS1.P1",
+      "RS1.P2",
+      "RS2.P3"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_repeated_exchange_and_all_causal_parallel_orders",
+      "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_competing_reservations_and_spends_cannot_exceed_funding",
+      "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_retained_evidence_can_rebuild_rows",
+      "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_cross_trade_and_malformed_evidence_cannot_apply",
+      "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_all_reference_events_routed_and_recovery_subsets_execute",
+      "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_offline_spending_discriminator_and_repaired_profile"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "RS.D1",
+      "property_ids": [
+        "RS1.P1",
+        "RS1.P2",
+        "RS2.P3"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_repeated_exchange_and_all_causal_parallel_orders",
+        "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_competing_reservations_and_spends_cannot_exceed_funding",
+        "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_retained_evidence_can_rebuild_rows",
+        "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_cross_trade_and_malformed_evidence_cannot_apply",
+        "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_all_reference_events_routed_and_recovery_subsets_execute",
+        "unittest::verification.tests.test_repeated_evidence.RepeatedEvidence.test_offline_spending_discriminator_and_repaired_profile"
+      ],
+      "question": "Which source actions, checker entries and proof observations cover repeated financial settlement and modeled faults?",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the named dvp and oracle models, dispatchers, original requirements, existing proof profiles and receipts.",
+          "outcome": "Identified fixed funding and deadline limitations, isolated local-spend overapproximation and exact proof-pipeline action owners.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 1,
+              "classification": "reusable_unchanged",
+              "reason": "Actual settlement transitions and original current receipt source."
+            },
+            {
+              "path": "verification/scripts/repeated_checks.py",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Generates exact specialization and executes quantified schedules and operational campaign."
+            },
+            {
+              "path": "verification/scripts/repeated_audit.py",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Checks model action reconciliation and exact receipt identity."
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Unfamiliar production owner",
+          "outcome": "Work uses already named model symbols and published sources.",
+          "reason": "No unrelated production checkout or unknown symbol was needed to resolve the selected model risk.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "IDE ownership and diagnostics",
+          "outcome": "Quint and TLC evidence validate the model boundary.",
+          "reason": "No semantic IDE evidence is claimed for Quint.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "This change exercises repeated state and a source-bound event coverage obligation."
+    }
+  ]
+}

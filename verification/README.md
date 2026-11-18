@@ -35,6 +35,12 @@ Run `python3 -B verification/scripts/guarantee_audit.py` to audit this exact evi
 
 The actual SQLite restore/replay and concurrent inserts operate on local databases. The fixtures stand in for authenticated upstream finalized evidence. The [conformance cases](reports/guarantee-conformance.md) describe verification of those inputs and both actual ledgers and banking integration on the PoC.
 
+## Repeated exchanges and event coverage
+
+The [workload and model review](reports/repeated-settlement-review.md) exercises seven identities, five funded pairs, independent deadlines and both sequential and overlapping exchanges. The [event and fault ledger](reports/repeated-settlement-coverage.json) identifies witnesses for all 45 reference action declarations. Directed enumeration of terminal orders and fault subsets has its own scope. The adversarial sample uses the full operational dispatcher with loss and pruning.
+
+Run `python3 -B verification/scripts/repeated_checks.py directed` for the deterministic batches or `python3 -B verification/scripts/repeated_checks.py sample` for the seeded campaign. The runners reuse exact matching results. Run `python3 -B verification/scripts/repeated_audit.py` to audit the complete selection. The standard full acceptance audit includes those results. The [change tasks](../openspec/changes/review-repeated-settlement/tasks.md) record the first unsharded attempts and the quantified replacement.
+
 ## Retained evidence and source changes
 
 Original input hashes and snapshots stay immutable. The last HOST=3 identity repair cannot affect HOST=0/1/2 constant branches. Added pre-existing-freeze admission guards are true throughout healthy-core graphs (frozen is empty); the recovery configuration only loses preparation transitions, which are not among its fair progress actions. Those retained gates keep their original scoped proof boundary. Current variant runs, explicit local-freeze witnesses and the latest combined fault sample check the final source; the separate D outage witnesses cover decision failure and both delayed return paths. Earlier privacy/time/membership receipts remain valid for their unchanged specialized projections or disabled fault branches. Details are recorded in reports/model-repairs.md; no historical hash was refreshed to disguise a semantic change.

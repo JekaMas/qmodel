@@ -1,0 +1,20 @@
+
+  repeated_test
+    ok Commit6Commit5Commit4Apply5Apply4Apply6Test passed 1 test(s)
+    ok Commit6Commit5Commit4Apply5Apply6Apply4Test passed 1 test(s)
+    ok Commit6Commit5Commit4Apply6Apply4Apply5Test passed 1 test(s)
+    ok Commit6Commit5Commit4Apply6Apply5Apply4Test passed 1 test(s)
+    ok Commit6Commit5Apply5Commit4Apply4Apply6Test passed 1 test(s)
+    ok Commit6Commit5Apply5Commit4Apply6Apply4Test passed 1 test(s)
+    ok Commit6Commit5Apply5Apply6Commit4Apply4Test passed 1 test(s)
+    ok Commit6Commit5Apply6Commit4Apply4Apply5Test passed 1 test(s)
+    ok Commit6Commit5Apply6Commit4Apply5Apply4Test passed 1 test(s)
+    ok Commit6Commit5Apply6Apply5Commit4Apply4Test passed 1 test(s)
+    ok Commit6Apply6Commit4Apply4Commit5Apply5Test passed 1 test(s)
+    ok Commit6Apply6Commit4Commit5Apply4Apply5Test passed 1 test(s)
+    ok Commit6Apply6Commit4Commit5Apply5Apply4Test passed 1 test(s)
+    ok Commit6Apply6Commit5Commit4Apply4Apply5Test passed 1 test(s)
+    ok Commit6Apply6Commit5Commit4Apply5Apply4Test passed 1 test(s)
+    ok Commit6Apply6Commit5Apply5Commit4Apply4Test passed 1 test(s)
+
+  16 passing (9778ms)

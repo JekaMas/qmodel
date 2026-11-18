@@ -1,0 +1,15 @@
+
+ Error [QNT000]: Expected [repeated_test::dvp::s] and [] to be the same
+Trying to unify entities ['repeated_test::dvp::s'] and []
+Trying to unify Read[_v11588] & Temporal[_v11589] & Update['repeated_test::dvp::s'] and Pure
+Trying to unify (Read[_v11582] & Temporal[_v11583] & Update[_v11584], Read[_v11585] & Temporal[_v11586] & Update[_v11587], Read[_v11588] & Temporal[_v11589] & Update[_v11587]) => Read[_v11582, _v11585, _v11588] & Temporal[_v11583, _v11586, _v11589, _v11584] & Update[_v11587] and (Read[_v11223], Read[_v11223, 'repeated_test::dvp::s'] & Update['repeated_test::dvp::s'], Pure) => _e2592
+Trying to infer effect for operator application in ite(eq(item(e, 1), 36), requestExactCash(item(e, 2)), false)
+
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/repeated/repeated_test.qnt:82:5
+  82:     if(e._1==36) requestExactCash(e._2) else
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  83:     false
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

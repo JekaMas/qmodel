@@ -1,0 +1,5 @@
+## Design
+
+Specialize the exact current dvp for a bounded funded workload. Compare the specialization recipe with the source and keep prior proof families bound to their original inputs. Use literal per-trade deadlines, five funded pairs and seven fixed descriptors. After a COMMIT the balances stay consumed. After ABORT, release permits available capacity to be reused. Retain every trade, proof and durable row throughout the workload.
+
+Use real actions and independent literal endpoint expectations. Run all 90 interleavings of the three paired COMMIT/application edges with each COMMIT preceding its own application. Exercise cash-side and securities-side contention, all modeled actor outage combinations at a shared recovery checkpoint, and the explicit proof-phase / injected-binding matrix. Add complete modeled event disposition with current named witnesses, placement guards, and external boundaries. Exhaustion of a schedule domain gives that exact coverage; global timing, joint fault products and unrestricted populations require their own scope.

@@ -58,6 +58,12 @@ The relational quantifier is finite and exact: one fixed public 12-operation seq
 
 Opaque names are tied to actual distinct witness content and compared through a documented correspondence, including response commitment fields. Retries retain the same name. This assumes ideal hiding and private channels; it does not prove entropy, computational indistinguishability, ZK, arbitrary scheduler noninterference or termination security. Actual data-path log/timing/unsalted/scope/substitution/note/key controls execute separately. The small timed product uses these actual constructed outputs and public queue time/depth, with its own bounded schedule.
 
+## Repeated settlement
+
+The funded test profile specializes the same reference transitions to five funded pairs, seven immutable trade identities and per-trade deadlines. It explicitly guards ordinary spending by local ledger availability. Reservations share the two balances. A completed COMMIT consumes the relevant capacities. ABORT releases those capacities once while retaining the terminal decision. The workload leaves prior decisions, effect receipts and financial rows observable across later exchanges and restarts.
+
+After the three distinct parallel preparations, each trade permits remote cash application only after its own authoritative COMMIT. The finite workload tests all 90 such terminal orders, all 31 combinations of participant outage at one recovery checkpoint, and the seven proof phases. The [review](reports/repeated-settlement-review.md) specifies precise fault domains and covers the actual dispatch and producer boundaries.
+
 ## Resource, governance and composition scope
 
 The two-trade timed model has one round-robin worker and a two-slot correlated outage. Its assumed phase costs yield decisions by 14, applications by 22 and records by 24; exclusive D=15 passes and D=14 has a counterexample. These are model slots. That workload has no hostile queue entry or recovery-priority class. The separate capacity model consumes a two-item hostile FIFO budget, caps reservations and checks fair recovered service. No combined hostile-work deadline or priority guarantee is inferred.

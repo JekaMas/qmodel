@@ -37304,6 +37304,2020 @@
         "--invariant": "guarantees"
       },
       "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-01": {
+      "receipt_sha256": "4e33774bbd55fb90a8c4e90b386be3ac0ea9ba02679b59227d84540bc13e6ed0",
+      "raw_sha256": "a4de902266dc8fc712c8aec7936aa18e021630ea90c45642d5cd026ceabc4af1",
+      "raw_output": "verification/results/runs/repeated-directed-01/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-01/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-01/repeated_test.qnt": "c22efc551802ec9e2ce59d467cc5947683c383abec077ad25a7a0f87bd65800b",
+          "verification/results/runtime/repeated/repeated-directed-01/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-01/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-01/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-02": {
+      "receipt_sha256": "7e6a5e40db451ca6f6a8a5defbfdd7a0505b739a03cf98eaca349488f2352adf",
+      "raw_sha256": "0d94fdffc2d4732f60ec00e34622703b3c16ab1702f7da081fad781b32e8e605",
+      "raw_output": "verification/results/runs/repeated-directed-02/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-02/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-02/repeated_test.qnt": "307da43354916671190dafc69dca1ed1f3b5746fe34c5b1536394c37b502d01c",
+          "verification/results/runtime/repeated/repeated-directed-02/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-02/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-02/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-03": {
+      "receipt_sha256": "4ba93046fc7196e0402a31735eb88b59dda9aafe6f5a5d142ee043511720805a",
+      "raw_sha256": "d3980471a639180127362592d412bb026b1cf80d42cde51907f68998ca059e33",
+      "raw_output": "verification/results/runs/repeated-directed-03/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-03/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-03/repeated_test.qnt": "b6808caafb0a8a4f236d030f324aafbaf780c4c27bc196ed630bfcfdb1d5a7b6",
+          "verification/results/runtime/repeated/repeated-directed-03/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-03/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-03/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-04": {
+      "receipt_sha256": "ffff1d0197da06350e5dc3a4740b0435c754ebbf68cf79e1e04c9f4e9eac59ff",
+      "raw_sha256": "66b0bafcda2b700a97e51f74af13a6ee443296495edf20d0f08500fedc446290",
+      "raw_output": "verification/results/runs/repeated-directed-04/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-04/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-04/repeated_test.qnt": "aec5993f9e0f5784c44705c79bdff0ae671b5974c08d4a50af602d8a94d2a1c1",
+          "verification/results/runtime/repeated/repeated-directed-04/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-04/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-04/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-05": {
+      "receipt_sha256": "25d660a4825ba9e8553bb26d6004259217e3614803ee88c365a4a99f9604fa5a",
+      "raw_sha256": "5016159f7ff3369c2f25f9b290d327e540f11c26591e088805532a8a22745869",
+      "raw_output": "verification/results/runs/repeated-directed-05/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-05/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-05/repeated_test.qnt": "abade5864251c6469204e94cc7552cd8432a07e087b79e31faa1d6bd1ab4f4cf",
+          "verification/results/runtime/repeated/repeated-directed-05/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-05/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-05/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-06": {
+      "receipt_sha256": "51b1357461982dbe457d4c16a3ad0854e3ae9d83270354b88b83f888ec735842",
+      "raw_sha256": "cbccf545088f5788f430b785563c27ebe6b23b83c6e133defe89cbc978f0fad7",
+      "raw_output": "verification/results/runs/repeated-directed-06/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-06/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-06/repeated_test.qnt": "17a114b2993cbfbbc9fc138747cba1fa048dc8f367a86bedb6c9ed34925b8706",
+          "verification/results/runtime/repeated/repeated-directed-06/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-06/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-06/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-07": {
+      "receipt_sha256": "7a29085ff6987f31ece6369bc2664fb20384fb0fcbb0cf54d7ae7ed8b21f4a8e",
+      "raw_sha256": "af242a321c2ae9b1954bbd6c89fa607f5e64ca1640754ace4c1477a269c3f618",
+      "raw_output": "verification/results/runs/repeated-directed-07/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-07/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-07/repeated_test.qnt": "3936482a6c504b55f81f64e81a19159af7fa24dcff9cfe85ed8966430b0dce5e",
+          "verification/results/runtime/repeated/repeated-directed-07/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-07/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-07/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-08": {
+      "receipt_sha256": "5fee140ebda7cb2af0fe7b26fb17b75e04cf8e311bb10e027c071186492ca76e",
+      "raw_sha256": "2c4d29afe0a334aaa6233fd4a67c7f0e91ccf61c7f42466563e6ebbf90da1251",
+      "raw_output": "verification/results/runs/repeated-directed-08/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-08/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-08/repeated_test.qnt": "4f90b1a8605fee7d1525b22462262e3ce8d97f098822685e5ddece31c8f74535",
+          "verification/results/runtime/repeated/repeated-directed-08/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-08/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-08/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-09": {
+      "receipt_sha256": "127e3e3c5ea08ee189af061fc60c1794653eacb5c8f8b65252e390e6de5850cc",
+      "raw_sha256": "911fae751cc58e0ecf0379ec9e9b3eba9ebea24f2467f77077b4d082cc4ce356",
+      "raw_output": "verification/results/runs/repeated-directed-09/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-09/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-09/repeated_test.qnt": "68871552ef008552827e292b215486e78557a3115c4ea9e168f2abcf3dc70648",
+          "verification/results/runtime/repeated/repeated-directed-09/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-09/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-09/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-10": {
+      "receipt_sha256": "89c9e7a637d1c3e3abb06d8ab948b825b17160a90219313e335a23a6e3e2ee53",
+      "raw_sha256": "db5df422e7019e8467126b16f5f4d459ea5d5d5f55c194099370d0b3e1a142cd",
+      "raw_output": "verification/results/runs/repeated-directed-10/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-10/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-10/repeated_test.qnt": "8708f0454be714bf31667f4b2fd54154b86803874b4fc0887288cde9ec8ff800",
+          "verification/results/runtime/repeated/repeated-directed-10/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-10/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-10/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-11": {
+      "receipt_sha256": "5694bb7b66023824be3e19681065e01516dcacd28b8b5ccc405252efbdc7df6c",
+      "raw_sha256": "d9ff3c0b82b782b113ac19e059b327834a2839e70e962609b0e289201939e95f",
+      "raw_output": "verification/results/runs/repeated-directed-11/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-11/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-11/repeated_test.qnt": "574d33ff18db34f68b79baa70a6f74d7d8b025aca6fecb8ff5b06a63111a1772",
+          "verification/results/runtime/repeated/repeated-directed-11/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-11/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-11/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-12": {
+      "receipt_sha256": "9b3848fe022d493228b58ae55952bd4ba359116061330f3ef5c8042e077c67e9",
+      "raw_sha256": "bff35e4b0a64e6483d47e800dffd02d88e928d1b6c175eb184cf7098e8473c93",
+      "raw_output": "verification/results/runs/repeated-directed-12/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-12/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-12/repeated_test.qnt": "a165c697bfe90a57fd96e959732dbb0379bb30ee7d831d3f550bc714c61e55c7",
+          "verification/results/runtime/repeated/repeated-directed-12/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-12/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-12/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-13": {
+      "receipt_sha256": "22c87b79e62047cb4c39ba628402acff6fbb001dc7bb0075397e58f7ff53ae86",
+      "raw_sha256": "1f216b08a7f4eccfb4ad18a701e3cff0487b4abfd65e852c6442c07fb14e74eb",
+      "raw_output": "verification/results/runs/repeated-directed-13/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-13/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-13/repeated_test.qnt": "8df3a3a2cc217b3013db541f9a83c30e979dce4e2940792fda32a98d929d7f75",
+          "verification/results/runtime/repeated/repeated-directed-13/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-13/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-13/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-14": {
+      "receipt_sha256": "84e48a2f2a9e54eb0eb36690320379b4afdab43e3b686bdbe7ecd114a000a880",
+      "raw_sha256": "40cbd17a00857b8d55481b659880f48f0136521a288545c6bb4875fda0489fd2",
+      "raw_output": "verification/results/runs/repeated-directed-14/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-14/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-14/repeated_test.qnt": "7a1dba5d7e7c1d88ea2cb1c3c286f60e5e4428138d853271713e5f9d7363a3b7",
+          "verification/results/runtime/repeated/repeated-directed-14/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-14/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-14/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-15": {
+      "receipt_sha256": "dceec9d57b30fcfd2d8e88d9fa86e87b67b090de6d9acd9dafd9c9b6a664805b",
+      "raw_sha256": "71d13ec323bbc430fe15c4685cad34ace8465a73043f3b09f2ec1bf094bd70c6",
+      "raw_output": "verification/results/runs/repeated-directed-15/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-15/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-15/repeated_test.qnt": "60b8f11c8840e367484bf643bcd75d02c3d8d3de5a0439d57c3298466b8f67d7",
+          "verification/results/runtime/repeated/repeated-directed-15/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-15/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-15/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-16": {
+      "receipt_sha256": "489795fd62cabe1afdb6521c3ee0ac7c674c73d9449b5c8658c714a4cde3c66d",
+      "raw_sha256": "b6142d5fa2a1c5a5c7694b26e1a7466cd468eda32eb9124aa909bf88eea12722",
+      "raw_output": "verification/results/runs/repeated-directed-16/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-16/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-16/repeated_test.qnt": "37808f5fa4a93b21e146318e9f4085bce6a807341b9e910fa3c230e2844dded9",
+          "verification/results/runtime/repeated/repeated-directed-16/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-16/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-16/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-17": {
+      "receipt_sha256": "72cab2571d79ea5a2b0e811e12d3171b8f8483e18844a15e9dca14da2c92e83d",
+      "raw_sha256": "84413dd47f8890e1f2113acd45f2fa22984d9c567fa8238f3031307f8c6ff9fd",
+      "raw_output": "verification/results/runs/repeated-directed-17/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-17/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-17/repeated_test.qnt": "9c0e788ac1c88d1a84d2348507c4d98a927db3ecddd3d5f0dcab1f2684ffe63e",
+          "verification/results/runtime/repeated/repeated-directed-17/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-17/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-17/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-directed-18": {
+      "receipt_sha256": "ffbf7f207c9cd6d45005cb8a2042fadc42a20bb73c142b88a5ba1e5bf0603ce2",
+      "raw_sha256": "5ce4ab76c39b880e2ddf0cb6854b998e3c0a83b9bf7c13728ce2dd22b98126f3",
+      "raw_output": "verification/results/runs/repeated-directed-18/raw.log",
+      "proof_contract": {
+        "claim": "Source-bound repeated settlement and fault scenarios",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated-directed-18/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated-directed-18/repeated_test.qnt": "716da6a03d3afafb80f34fce449f71c3ff1a3ce65e3542e00a5826e350b89d70",
+          "verification/results/runtime/repeated/repeated-directed-18/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/repeated-directed-18/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/repeated-directed-18/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-review-legacy-spend": {
+      "receipt_sha256": "57aac2e192ac6ce3f7d5b692e8f57eb88ae6b64af89b1168f3a8a17f020034ec",
+      "raw_sha256": "8bd63b69a6b8e5d2edc8066fddc1bcf799363905fd281a0bb9bbca94012df2a8",
+      "raw_output": "verification/results/runs/repeated-review-legacy-spend/raw.log",
+      "proof_contract": {
+        "claim": "Original adversarial abstraction permits ordinary spending with the local ledger down",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/legacy-spend/spend_review.qnt",
+          "--main",
+          "spend_review",
+          "--backend",
+          "typescript",
+          "--seed",
+          "41",
+          "--match",
+          "^LegacyOfflineSpendTest$"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/results/runtime/legacy-spend/spend_review.qnt": "2112b887df8ddbdee6e758c86bb83f5b290b7b559eab7e76dd037e8e80383ba7",
+          "verification/results/runtime/legacy-spend/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/results/runtime/legacy-spend/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "spend_review",
+        "--backend": "typescript",
+        "--seed": "41",
+        "--match": "^LegacyOfflineSpendTest$"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-41": {
+      "receipt_sha256": "bda64b3ce4d821d68d883f7d6857fc409b0c8979a62929157b6898a17a2cc5cc",
+      "raw_sha256": "f0d3277c8193540292d3395756885d9110a7a0e4a9638943368d1107c652d147",
+      "raw_output": "verification/results/runs/repeated-sample-41/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "41",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 41
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "41",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-42": {
+      "receipt_sha256": "f2c98874227238e033f0e0bb8b1b6c473e587836662539fbc6b1d7ff28639f3c",
+      "raw_sha256": "8e50933863500f90c80183bf8adc939e6c55d68ccf81cceca8b59b9a95178a5e",
+      "raw_output": "verification/results/runs/repeated-sample-42/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "42",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 42
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "42",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-43": {
+      "receipt_sha256": "9b124eccc7292404d562fd44c23af6b5ff16923e3f67d4582618abd4bc658138",
+      "raw_sha256": "a389c6ef3819abad0ff4382b6ae10a4fd15ca9c0efc2281086e5a7f027c02387",
+      "raw_output": "verification/results/runs/repeated-sample-43/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "43",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 43
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "43",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-44": {
+      "receipt_sha256": "148d4277279969102564c8a27f70909386f08cdb0f94c330a7eb863005807c35",
+      "raw_sha256": "aae83dfd1288b0997b47dd7e325014967d99a5a7b58b0faaae0caa08f5a1ea20",
+      "raw_output": "verification/results/runs/repeated-sample-44/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "44",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 44
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "44",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-45": {
+      "receipt_sha256": "1f18cf609376580768330e8c50f46c3650459332f07d039816d80dcdf4999885",
+      "raw_sha256": "d0e7ef16644358aa3ca386602712252c28e88e1251f5e3716e73965cdd2c7f2f",
+      "raw_output": "verification/results/runs/repeated-sample-45/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "45",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 45
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "45",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-46": {
+      "receipt_sha256": "a701c8a6b489c780dd9db611c9bffab16276834d0c2af7dcb78e665b4522f078",
+      "raw_sha256": "d85ae27f1577be4f1cf2d708f09214250acc080cedca9f1cc0fc1df0a52cfc46",
+      "raw_output": "verification/results/runs/repeated-sample-46/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "46",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 46
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "46",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-47": {
+      "receipt_sha256": "9929e4db5178dec10a86dc8cf4a00aa3bf85da7ed8f199bacb663543d4918a29",
+      "raw_sha256": "c1f8f91ecc9bd47dfa602edba9a9b4e82e1219d6963ca1be656f02cb90b36b6d",
+      "raw_output": "verification/results/runs/repeated-sample-47/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "47",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 47
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "47",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-48": {
+      "receipt_sha256": "09b76fe7786ed50a0a57c60dcbdfecbfe638f55c52bb2ef5b4813fdd6d5d44ff",
+      "raw_sha256": "885fb7de5727ae742b4893e2d63de6e436806415400eb908eb7db894b4adb592",
+      "raw_output": "verification/results/runs/repeated-sample-48/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "48",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 48
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "48",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-49": {
+      "receipt_sha256": "29e3370aeacd236b07a3714857bc0ac236119877168c8c16e089a5936381d2dd",
+      "raw_sha256": "89cab12f302c1b7564175fa88dbf16e478d9e0067f3acd91c4c4443b3bdc25e7",
+      "raw_output": "verification/results/runs/repeated-sample-49/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "49",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 49
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "49",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-sample-50": {
+      "receipt_sha256": "6881c6482a8f6059c487520276c722d14b0ae33b105611e5788284ac3aa77b82",
+      "raw_sha256": "d5976fec877be722aaf9bae99a47cc8971749dc11cfd80a562ecdb40b1ce578e",
+      "raw_output": "verification/results/runs/repeated-sample-50/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "1000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "50",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 1000,
+          "steps": 150,
+          "seed": 50
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 900,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "1000",
+        "--max-steps": "150",
+        "--seed": "50",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-workload-directed": {
+      "receipt_sha256": "5c95a0b3cc589ad4d65150ef81d7a68a7d5bca259e3a1c1db2c9bd969b6211d5",
+      "raw_sha256": "bd32269c82308947155a92d6cecd2f2dcda22bfe4b58707c91670ebf0633e22f",
+      "raw_output": "verification/results/runs/repeated-workload-directed/raw.log",
+      "proof_contract": {
+        "claim": "Repeated settlements, all 90 decision/application interleavings, actor outages and forged phase/binding inputs",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated_test.qnt": "0458956500434feceb55baf5d267b3ddb322cf0a8a21d3d56ac4c1d60d8ad7a9",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "typescript",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-workload-directed-attempt1": {
+      "receipt_sha256": "3595d6a02b4cbb6a51e08413a9388e1923f3b276c7b5f6330830345aa73bb02d",
+      "raw_sha256": "e7bc2085ee2ec5a04aee033312e834e873989dc29d9386e167b67a3c72c1e61b",
+      "raw_output": "verification/results/runs/repeated-workload-directed-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Repeated settlements, all 90 decision/application interleavings, actor outages and forged phase/binding inputs",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated_test.qnt": "c4b68aa3f127547d4507380e5b621ec25aa3502bed6bba08e8a04951c50c588c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "typescript",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-workload-directed-attempt2": {
+      "receipt_sha256": "64382a180276171236c518948bf341fd41ef76323a2d357480dc6ec654d6eb4a",
+      "raw_sha256": "bd32269c82308947155a92d6cecd2f2dcda22bfe4b58707c91670ebf0633e22f",
+      "raw_output": "verification/results/runs/repeated-workload-directed-attempt2/raw.log",
+      "proof_contract": {
+        "claim": "Repeated settlements, all 90 decision/application interleavings, actor outages and forged phase/binding inputs",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "typescript",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated_test.qnt": "3ac2c5494f35ac30389f739463cac88e851cae2f45c5c6cdcc3db9a2e1cc289c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "typescript",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-workload-directed-attempt3": {
+      "receipt_sha256": "618041d54a331d38c49806f951e9427f4d66a938a8150f7a474e43ed8ecc1238",
+      "raw_sha256": "6c9418c835adb9214bd2deaad269a2b3ce46e574941ce9d91526f48e88b3cf3e",
+      "raw_output": "verification/results/runs/repeated-workload-directed-attempt3/raw.log",
+      "proof_contract": {
+        "claim": "Repeated settlements, all 90 decision/application interleavings, actor outages and forged phase/binding inputs",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/repeated/repeated_test.qnt",
+          "--main",
+          "repeated_test",
+          "--backend",
+          "rust",
+          "--seed",
+          "41",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "trades": 7,
+          "funded_pairs": 5,
+          "deadlines": [
+            1,
+            3,
+            5,
+            6,
+            6,
+            7,
+            8
+          ]
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated_test.qnt": "3ac2c5494f35ac30389f739463cac88e851cae2f45c5c6cdcc3db9a2e1cc289c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated_test",
+        "--backend": "rust",
+        "--seed": "41",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "repeated-workload-sample": {
+      "receipt_sha256": "f90c23a443b9fa14cf2d243a49b6d7de9530a2c3aee51c5e5b1a390644112a21",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_output": "verification/results/runs/repeated-workload-sample/raw.log",
+      "proof_contract": {
+        "claim": "sequenceSafe",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/results/runtime/repeated/repeated.qnt",
+          "--main",
+          "repeated",
+          "--backend",
+          "rust",
+          "--invariant",
+          "sequenceSafe",
+          "--max-samples",
+          "10000",
+          "--max-steps",
+          "150",
+          "--seed",
+          "41",
+          "--verbosity",
+          "1",
+          "--step",
+          "operational"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "repeated",
+          "step": "operational",
+          "samples": 10000,
+          "steps": 150,
+          "seed": 41
+        },
+        "input_hashes": {
+          "verification/results/runtime/repeated/repeated.qnt": "e0634ce3f207c7037fca5096fafbe6c6e5fefee8911952de2436ee201a37dc4c",
+          "verification/results/runtime/repeated/dvp.qnt": "f8e5f7b013ca330af06daebc2ead3c1239dc93f106e26b465ab2fd11e969ef1f",
+          "verification/results/runtime/repeated/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/repeated/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "repeated",
+        "--backend": "rust",
+        "--invariant": "sequenceSafe",
+        "--max-samples": "10000",
+        "--max-steps": "150",
+        "--seed": "41",
+        "--step": "operational"
+      },
+      "origin": "current extended-verification and root final-review execution"
     }
   }
 }

@@ -26,4 +26,6 @@ Native holds exclude reserved units from spendable capacity. Escrow also moves t
 
 The outcome and record assertions preserve the actual transitions. They link local knowledge to the authoritative outcome, require every co-located application on COMMIT, and use both actual delivery facts to justify a complete report or durable row. A separate prior-state observer checks admitted reservation and terminal immutability in the A-hosted preparation/decision path. [Assurance and receipt scopes](reports/guarantee-validation.md)
 
+The [repeated workload](reports/repeated-settlement-review.md) assigns each signed descriptor its own height deadline, keeps previously consumed identities and observes capacity reuse after a funded ABORT. The quantitative coverage of terminal orders and outages complements the original finite graph and its liveness premises.
+
 See the [executable specification](SPECIFICATION.md#three-distinct-guarantees) for Stage A and the [evidence review](reports/interview-summary.md#question-8-evidence-review) for Stage C and the two-network PoC boundary.
