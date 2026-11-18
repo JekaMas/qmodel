@@ -53,7 +53,15 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "strengthened_assurance": {
+      "scope": "An independent transition observer reads the prior actual decision on the A-hosted admission and decision spine.",
+      "executed_checks": [
+        "guarantees-history-attempt1",
+        "guarantees-history-reopen-attempt1"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "S03",
@@ -224,7 +232,20 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "strengthened_assurance": {
+      "scope": "Remote terminal knowledge and effects match the actual decision and exact authenticated terminal phase. Co-located COMMIT includes the local delivery.",
+      "executed_checks": [
+        "guarantees-reference",
+        "guarantees-two",
+        "guarantees-recovery",
+        "guarantees-b",
+        "guarantees-d",
+        "guarantees-shared",
+        "guarantees-control-wrong-phase"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "S07",
@@ -412,7 +433,15 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Full-job N=1 B/prover-crash and B-freeze recovery graph, plus19 direct phase-guard/recovery scenarios and actual message-loss/restart witnesses. No arbitrary independent operational fault product.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "strengthened_assurance": {
+      "scope": "Directed cache reset and replay plus a real SQLite stale-file restore recover one exact durable COMMIT row from pre-authenticated evidence.",
+      "executed_checks": [
+        "guarantees-combined",
+        "guarantees-sqlite-attempt1"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "S13",
@@ -445,7 +474,15 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Core S13 retains program1 only. The focused membership model checks approved/current credentials, pending/current-safe retirement and consumed identities. No checked full financial/membership liveness composition or arbitrary-upgrade theorem.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "strengthened_assurance": {
+      "scope": "A directed rotation/exit/freeze sequence completes previously prepared work with historical admission and denies disallowed proof programs and new signing.",
+      "executed_checks": [
+        "guarantees-combined",
+        "guarantees-adversarial"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "S14",
@@ -481,7 +518,15 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Preparation guards tested for independent local eligibility; supported durable/freeze/seizure policies checked separately. The S14 state predicate alone is not a historical eligibility theorem or regulatory-compliance proof.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "strengthened_assurance": {
+      "scope": "The separate A-hosted admission snapshot compares each new hold with the previous exact signatures and local admission, eligibility and freeze conditions.",
+      "executed_checks": [
+        "guarantees-history-attempt1",
+        "guarantees-history-missing-eligibility-attempt1"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "S15",
@@ -517,7 +562,17 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Authenticated application/report gates plus exact financial row terms and independent actual ABORT hold/refund/absence semantics. Native producer-guard/booking mutants fail. Source-world diagnostic interfaces and institution-private rows; no implemented external reporter/financial system conformance.",
-    "quint_owner": "verification/models/dvp.qnt"
+    "quint_owner": "verification/models/dvp.qnt",
+    "strengthened_assurance": {
+      "scope": "Active COMMIT reporting and retained rows require independent authenticated phases 5/6 and actual deliveries. Cached flags and row terms alone are insufficient.",
+      "executed_checks": [
+        "guarantees-reference",
+        "guarantees-two",
+        "guarantees-recovery",
+        "guarantees-control-missing-application-attempt1"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "S16",
@@ -694,7 +749,20 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Reference one/two-trade configurations include COMMIT receipts and authenticated actual/absent-leg ABORT records. Three-domain progress covers COMMIT reports; no composed three-domain ABORT-bookkeeping theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "strengthened_assurance": {
+      "scope": "Same-graph endpoint implication strengthens the existing fair/recovered temporal result to evidence-backed completion on seven scoped profiles.",
+      "executed_checks": [
+        "guarantees-reference",
+        "guarantees-two",
+        "guarantees-recovery",
+        "guarantees-b",
+        "guarantees-d",
+        "guarantees-escrow",
+        "guarantees-open"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "C-Decision",
@@ -742,7 +810,18 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Finite instantiated models and exact guard/witness cases; see coverage and proof boundaries. No deployed-system or parameterized theorem.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "strengthened_assurance": {
+      "scope": "Actual remote effects need matching outcome knowledge and proof. Every co-located COMMIT includes its exact local delivery in the checked model.",
+      "executed_checks": [
+        "guarantees-reference",
+        "guarantees-b",
+        "guarantees-d",
+        "guarantees-shared",
+        "guarantees-control-omitted-local"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "C-Records",
@@ -768,7 +847,18 @@
     ],
     "execution_status": "executed-with-result",
     "verified_scope": "Authenticated application/report gates plus exact financial row terms and independent actual ABORT hold/refund/absence semantics. Native producer-guard/booking mutants fail. Source-world diagnostic interfaces and institution-private rows; no implemented external reporter/financial system conformance.",
-    "quint_owner": "see executed check input closures"
+    "quint_owner": "see executed check input closures",
+    "strengthened_assurance": {
+      "scope": "Both actual deliveries and authenticated applications justify COMMIT records. ABORT releases and absence remain evidence-backed. Local SQLite tests record binding and durable restore.",
+      "executed_checks": [
+        "guarantees-reference",
+        "guarantees-two",
+        "guarantees-recovery",
+        "guarantees-control-missing-application-attempt1",
+        "guarantees-sqlite-attempt1"
+      ],
+      "report": "reports/guarantee-validation.md"
+    }
   },
   {
     "id": "O-Immediate",

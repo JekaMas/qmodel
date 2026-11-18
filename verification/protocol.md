@@ -4,7 +4,9 @@ Candidate v0 is the shared answer saved in sources/shared-solution.original-ru.m
 
 A atomically registers OPEN with its security reservation. B may prepare first without inspecting live A. A commits only using a received authentic finalized B reservation proof, local hold and height < D; recording COMMIT and transferring security is one local transaction and must roll back together. After height >= D, a signed complete descriptor can establish ABORT even without OPEN. Refund is a separately retryable application. B stores authenticated terminal knowledge even before its hold exists; late preparation after unknown ABORT remains resolvable.
 
-Historical authentic proofs remain authentic after the source changes. Their safety depends on durable obligation semantics and terminal knowledge. Network messages do not authorize financial effects without verification. COMPLETE reporting requires both local application evidence.
+Historical authentic proofs remain authentic after the source changes. Their safety depends on durable obligation semantics and terminal knowledge. Network messages carry evidence. A consumer verifies the exact descriptor, source, historical program, checkpoint and statement type before accepting authority. COMMIT and ABORT evidence authorize different terminal dispositions, including when only one hold exists.
+
+The PoC kernel uses one B-preparation proof to decide and one A-outcome proof for remote application. Reporting uses distinct authenticated records from the two local application sources. Lost or stale adapter state is restored from retained evidence. The A-hosted SQLite projection stores one exact row per decision slot with both application identities and rejects conflicting terms. Its trusted inputs are already-authenticated events.
 
 The model separates ledgers and messages. Each actor action reads only its local state and received evidence. Specifications may inspect the combined world. A small explicit message soup is selected for the compact ledger overlay; framework scaffolding would obscure the local transaction/read boundaries. Upstream skill sign-off suggestions are superseded by the user instruction to proceed without routine confirmation.
 
@@ -21,5 +23,7 @@ C-Decision is irreversible backed commitment; C-Local concerns actual local econ
 | Shared execution | One ledger records COMMIT and applies both colocated legs atomically. | Both application effects come from the same local transaction. |
 
 Native holds exclude reserved units from spendable capacity. Escrow also moves the reserved units into a vault. Both use authenticated application records for reconciliation. Proof workers, transport and restored adapter projections have no authority to create a hold, decide or apply value by themselves.
+
+The outcome and record assertions preserve the actual transitions. They link local knowledge to the authoritative outcome, require every co-located application on COMMIT, and use both actual delivery facts to justify a complete report or durable row. A separate prior-state observer checks admitted reservation and terminal immutability in the A-hosted preparation/decision path. [Assurance and receipt scopes](reports/guarantee-validation.md)
 
 See the [executable specification](SPECIFICATION.md#three-distinct-guarantees) for Stage A and the [evidence review](reports/interview-summary.md#question-8-evidence-review) for Stage C and the two-network PoC boundary.

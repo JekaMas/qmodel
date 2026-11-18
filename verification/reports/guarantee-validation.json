@@ -1,0 +1,73 @@
+{
+  "graphs": {
+    "reference": {
+      "receipt": "guarantees-reference",
+      "same_graph_as": "qa-full-one",
+      "states": 12502,
+      "strengthens_l04": true
+    },
+    "b": {
+      "receipt": "guarantees-b",
+      "same_graph_as": "qa-variant-live_b",
+      "states": 15585,
+      "strengthens_l04": true
+    },
+    "d": {
+      "receipt": "guarantees-d",
+      "same_graph_as": "qa-variant-live_d",
+      "states": 5878,
+      "strengthens_l04": true
+    },
+    "shared": {
+      "receipt": "guarantees-shared",
+      "same_graph_as": "qa-variant-shared_execution",
+      "states": 145928,
+      "strengthens_l04": false
+    },
+    "open": {
+      "receipt": "guarantees-open",
+      "same_graph_as": "qa-variant-live_open",
+      "states": 3002,
+      "strengthens_l04": true
+    },
+    "escrow": {
+      "receipt": "guarantees-escrow",
+      "same_graph_as": "qa-variant-live_escrow",
+      "states": 12502,
+      "strengthens_l04": true
+    },
+    "private": {
+      "receipt": "guarantees-private",
+      "same_graph_as": "qa-variant-private_asset",
+      "states": 12502,
+      "strengthens_l04": false
+    },
+    "recovery": {
+      "receipt": "guarantees-recovery",
+      "same_graph_as": "qa-full-recovery",
+      "states": 125632,
+      "strengthens_l04": true
+    },
+    "two": {
+      "receipt": "guarantees-two",
+      "same_graph_as": "qa-full-two-attempt1",
+      "states": 684268,
+      "strengthens_l04": true
+    }
+  },
+  "directed": {
+    "quint": "guarantees-combined",
+    "sqlite": "guarantees-sqlite-attempt1"
+  },
+  "controls": {
+    "wrong-phase": "guarantees-control-wrong-phase",
+    "missing-application": "guarantees-control-missing-application-attempt1",
+    "omitted-local": "guarantees-control-omitted-local"
+  },
+  "sampled": "guarantees-adversarial",
+  "history": {
+    "baseline": "guarantees-history-attempt1",
+    "missing-eligibility": "guarantees-history-missing-eligibility-attempt1",
+    "reopen": "guarantees-history-reopen-attempt1"
+  }
+}

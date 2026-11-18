@@ -1,0 +1,9 @@
+SQLite 3.53.4
+test_competing_replay_and_conflicting_descriptor (__main__.BookingConformance.test_competing_replay_and_conflicting_descriptor) ... ok
+test_reject_partial_wrong_phase_and_wrong_economic_effect (__main__.BookingConformance.test_reject_partial_wrong_phase_and_wrong_economic_effect) ... ok
+test_restore_stale_snapshot_and_replay (__main__.BookingConformance.test_restore_stale_snapshot_and_replay) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.008s
+
+OK

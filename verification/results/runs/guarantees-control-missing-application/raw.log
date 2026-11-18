@@ -1,0 +1,8 @@
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/guarantee-controls/missing-application/probe.qnt:18:12
+  18:     .expect(lag and safe and CDecision and s.trades.get(1).report==2 and
+                 ^
+
+error: parsing failed

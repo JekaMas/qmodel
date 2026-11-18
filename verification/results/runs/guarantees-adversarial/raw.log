@@ -1,0 +1,2 @@
+[ok] No violation found (39319ms at 254 traces/second).
+Use --seed=0x15b2d69 --backend=rust to reproduce.

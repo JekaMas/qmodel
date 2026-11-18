@@ -1,0 +1,490 @@
+{
+  "schema_version": 2,
+  "change": "strengthen-dvp-guarantees",
+  "requirements": [
+    {
+      "id": "GA1",
+      "title": "Check local outcomes and durable completion independently",
+      "capability": "dvp-guarantee-assurance",
+      "fingerprint": "10af9553343995fe611bb2b8116747fc6e27234255a59709e64a97cd0a44a5d3"
+    },
+    {
+      "id": "GA2",
+      "title": "Exercise recovery combinations and persistence",
+      "capability": "dvp-guarantee-assurance",
+      "fingerprint": "87f3b8192037527a32af1df3d4a2411329a017cbef544ec51ff2cde2ba9c751e"
+    }
+  ],
+  "properties": [
+    {
+      "id": "GA1.P1",
+      "requirement_id": "GA1",
+      "scenarios": [
+        "Outcome authority for local and remote legs"
+      ],
+      "statement": "The actual outcome authorizes exactly the matching application.",
+      "owner": "Quint assurance suite",
+      "oracle": "Placed and remote effects match the decision on nine exhaustively checked graphs. The held-only cash payout after ABORT and the omitted local transfer violate the new assertion.",
+      "source_globs": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ]
+    },
+    {
+      "id": "GA1.P2",
+      "requirement_id": "GA1",
+      "scenarios": [
+        "Evidenced COMMIT report and retained financial row"
+      ],
+      "statement": "The COMMIT projection and L04 endpoint preserve an exact evidenced result.",
+      "owner": "Quint assurance suite",
+      "oracle": "The previous progress formula entails an evidenced booking using its same checked graphs and fairness. A missing application proof and a premature row surviving cache loss each violate the independent assertion.",
+      "source_globs": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ]
+    },
+    {
+      "id": "GA1.P3",
+      "requirement_id": "GA1",
+      "scenarios": [
+        "Admission and outcome history"
+      ],
+      "statement": "The actual prior transaction determines admission and terminal immutability.",
+      "owner": "Quint assurance suite",
+      "oracle": "The observation covers every reachable state of the A-hosted named preparation and decision spine. The eligibility-omission and tombstone-reopen producers each have a native counterexample.",
+      "source_globs": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ]
+    },
+    {
+      "id": "GA2.P4",
+      "requirement_id": "GA2",
+      "scenarios": [
+        "Pending obligations survive governance and intervention"
+      ],
+      "statement": "An accepted trade can complete under recorded recovery conditions.",
+      "owner": "Quint assurance suite",
+      "oracle": "Old authorized settlement survives rotation, exit, freeze, proof retry, and cache loss. The same prefixes deny unsupported proof programs, new old-epoch signing, unresolved freezes and duplicate payment.",
+      "source_globs": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ]
+    },
+    {
+      "id": "GA2.P5",
+      "requirement_id": "GA2",
+      "scenarios": [
+        "Restore and replay financial records"
+      ],
+      "statement": "Exact evidence determines the durable SQLite row.",
+      "owner": "SQLite COMMIT projection",
+      "oracle": "A restored old physical database file rebuilds one durable row from both retained application results. Partial, wrong-phase and differently bound events create no completed row.",
+      "source_globs": [
+        "verification/tests/test_assurance_booking.py",
+        "verification/adapters/booking.py"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "GA1.C1",
+      "property_id": "GA1.P1",
+      "polarity": "positive",
+      "scenario": "Outcome authority for local and remote legs",
+      "scenario_fingerprint": "06e9d218359e74830b7a9bd3a54e4cdfaba4b2fdb05c258a0465c32532a07a1f",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "Placed and remote effects match the decision on nine exhaustively checked graphs.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_authentic_outcomes_across_placements",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "Placed and remote effects match the decision on nine exhaustively checked graphs.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA1.C2",
+      "property_id": "GA1.P1",
+      "polarity": "negative",
+      "scenario": "Outcome authority for local and remote legs",
+      "scenario_fingerprint": "06e9d218359e74830b7a9bd3a54e4cdfaba4b2fdb05c258a0465c32532a07a1f",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "The held-only cash payout after ABORT and the omitted local transfer violate the new assertion.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_both_wrong_phase_and_omitted_local_delivery_are_observable",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "The held-only cash payout after ABORT and the omitted local transfer violate the new assertion.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA1.C3",
+      "property_id": "GA1.P2",
+      "polarity": "positive",
+      "scenario": "Evidenced COMMIT report and retained financial row",
+      "scenario_fingerprint": "4ef97b3d95ed214baf7c92b0443c519eafab690476f21cacd05a81709cfb83da",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "The previous progress formula entails an evidenced booking using its same checked graphs and fairness.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_eventual_endpoint_uses_original_graph_and_fairness",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "The previous progress formula entails an evidenced booking using its same checked graphs and fairness.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA1.C4",
+      "property_id": "GA1.P2",
+      "polarity": "negative",
+      "scenario": "Evidenced COMMIT report and retained financial row",
+      "scenario_fingerprint": "4ef97b3d95ed214baf7c92b0443c519eafab690476f21cacd05a81709cfb83da",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "A missing application proof and a premature row surviving cache loss each violate the independent assertion.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_premature_row_and_reset_cache_are_distinguished",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "A missing application proof and a premature row surviving cache loss each violate the independent assertion.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA1.C5",
+      "property_id": "GA1.P3",
+      "polarity": "positive",
+      "scenario": "Admission and outcome history",
+      "scenario_fingerprint": "74db8385267ebb4aac6a283289eb8fba6bb6da34890850dc14a26bcec3eaa7ab",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "The observation covers every reachable state of the A-hosted named preparation and decision spine.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_prior_state_history_checks_reachable_admission_and_decision",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "The observation covers every reachable state of the A-hosted named preparation and decision spine.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA1.C6",
+      "property_id": "GA1.P3",
+      "polarity": "negative",
+      "scenario": "Admission and outcome history",
+      "scenario_fingerprint": "74db8385267ebb4aac6a283289eb8fba6bb6da34890850dc14a26bcec3eaa7ab",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "The eligibility-omission and tombstone-reopen producers each have a native counterexample.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unchecked_eligibility_and_terminal_reopen_violate_history",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "The eligibility-omission and tombstone-reopen producers each have a native counterexample.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA2.C7",
+      "property_id": "GA2.P4",
+      "polarity": "positive",
+      "scenario": "Pending obligations survive governance and intervention",
+      "scenario_fingerprint": "f2780e5977d3cf7c77a8a407cc6512fdba7a91107246b01946f6c5267a096c4c",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "Old authorized settlement survives rotation, exit, freeze, proof retry, and cache loss.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_executed_pending_trade_retry_and_recovery",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "Old authorized settlement survives rotation, exit, freeze, proof retry, and cache loss.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA2.C8",
+      "property_id": "GA2.P4",
+      "polarity": "negative",
+      "scenario": "Pending obligations survive governance and intervention",
+      "scenario_fingerprint": "f2780e5977d3cf7c77a8a407cc6512fdba7a91107246b01946f6c5267a096c4c",
+      "setup": "Load exact native verdicts, named scenarios and captured input closure selected by the assurance contract.",
+      "observable": "The same prefixes deny unsupported proof programs, new old-epoch signing, unresolved freezes and duplicate payment.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_guarantee_evidence.py",
+        "verification/models/**",
+        "verification/configs/guarantee-acceptance.json",
+        "verification/configs/proof-contracts.json",
+        "verification/results/runs/guarantees-*/**",
+        "verification/scripts/guarantee_*.py",
+        "verification/scripts/policy_checks.py",
+        "verification/reviews/guarantee-assurance/**",
+        "verification/tests/guarantee_combined_test.qnt"
+      ],
+      "test_id": "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unadmitted_and_duplicate_actions_are_rejected",
+      "command_id": "guarantee-audit",
+      "state": "implemented",
+      "source_path": "verification/tests/test_guarantee_evidence.py",
+      "source_sha256": "75b39afee928c484fb27a9cc78878c6ecaad5230ebc7ca33d77288c0d0392357",
+      "distinct_reason": "The same prefixes deny unsupported proof programs, new old-epoch signing, unresolved freezes and duplicate payment.",
+      "substitution": {
+        "classification": "NO_TEST_DOUBLE"
+      }
+    },
+    {
+      "id": "GA2.C9",
+      "property_id": "GA2.P5",
+      "polarity": "positive",
+      "scenario": "Restore and replay financial records",
+      "scenario_fingerprint": "7426749d4de2506557e4e4d0b5c6af36440f346df6365a8bb504f9dc82cdf6f1",
+      "setup": "Use an actual on-disk SQLite database with upstream evidence fixtures.",
+      "observable": "A restored old physical database file rebuilds one durable row from both retained application results.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_assurance_booking.py",
+        "verification/adapters/booking.py"
+      ],
+      "test_id": "unittest::verification.tests.test_assurance_booking.BookingConformance.test_restore_stale_snapshot_and_replay",
+      "command_id": "sqlite-booking",
+      "state": "implemented",
+      "source_path": "verification/tests/test_assurance_booking.py",
+      "source_sha256": "70a0d289b06fd03d5ee52aba6c77490be6f995fa679762d5d577ae5bac326039",
+      "distinct_reason": "A restored old physical database file rebuilds one durable row from both retained application results.",
+      "substitution": {
+        "classification": "EXTERNAL_BOUNDARY",
+        "owner_replaced": "Finalized chain application evidence authentication and retention upstream of SQLite.",
+        "forbidden_claims": [
+          "Cryptographic verifier/circuit correctness.",
+          "Actual ledger or banking transaction conformance."
+        ],
+        "allowed_proof": "Binding, actual restore and durable idempotency at the SQLite projection."
+      }
+    },
+    {
+      "id": "GA2.C10",
+      "property_id": "GA2.P5",
+      "polarity": "negative",
+      "scenario": "Restore and replay financial records",
+      "scenario_fingerprint": "7426749d4de2506557e4e4d0b5c6af36440f346df6365a8bb504f9dc82cdf6f1",
+      "setup": "Use an actual on-disk SQLite database with upstream evidence fixtures.",
+      "observable": "Partial, wrong-phase and differently bound events create no completed row.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_assurance_booking.py",
+        "verification/adapters/booking.py"
+      ],
+      "test_id": "unittest::verification.tests.test_assurance_booking.BookingConformance.test_reject_partial_wrong_phase_and_wrong_economic_effect",
+      "command_id": "sqlite-booking",
+      "state": "implemented",
+      "source_path": "verification/tests/test_assurance_booking.py",
+      "source_sha256": "70a0d289b06fd03d5ee52aba6c77490be6f995fa679762d5d577ae5bac326039",
+      "distinct_reason": "Partial, wrong-phase and differently bound events create no completed row.",
+      "substitution": {
+        "classification": "EXTERNAL_BOUNDARY",
+        "owner_replaced": "Finalized chain application evidence authentication and retention upstream of SQLite.",
+        "forbidden_claims": [
+          "Cryptographic verifier/circuit correctness.",
+          "Actual ledger or banking transaction conformance."
+        ],
+        "allowed_proof": "Binding, actual restore and durable idempotency at the SQLite projection."
+      }
+    },
+    {
+      "id": "GA2.C11",
+      "property_id": "GA2.P5",
+      "polarity": "negative",
+      "scenario": "Restore and replay financial records",
+      "scenario_fingerprint": "7426749d4de2506557e4e4d0b5c6af36440f346df6365a8bb504f9dc82cdf6f1",
+      "setup": "Use an actual on-disk SQLite database with upstream evidence fixtures.",
+      "observable": "Concurrent matching inserts produce one row; a different descriptor for the same decision slot is rejected.",
+      "red_expectation": "The purported execution is missing, bound to different inputs, or reports a contradictory result.",
+      "green_expectation": "The executed owner produces the exact named witness under the scenario's input and oracle.",
+      "invalidation_dependencies": [
+        "verification/tests/test_assurance_booking.py",
+        "verification/adapters/booking.py"
+      ],
+      "test_id": "unittest::verification.tests.test_assurance_booking.BookingConformance.test_competing_replay_and_conflicting_descriptor",
+      "command_id": "sqlite-booking",
+      "state": "implemented",
+      "source_path": "verification/tests/test_assurance_booking.py",
+      "source_sha256": "70a0d289b06fd03d5ee52aba6c77490be6f995fa679762d5d577ae5bac326039",
+      "distinct_reason": "Concurrent matching inserts produce one row; a different descriptor for the same decision slot is rejected.",
+      "substitution": {
+        "classification": "EXTERNAL_BOUNDARY",
+        "owner_replaced": "Finalized chain application evidence authentication and retention upstream of SQLite.",
+        "forbidden_claims": [
+          "Cryptographic verifier/circuit correctness.",
+          "Actual ledger or banking transaction conformance."
+        ],
+        "allowed_proof": "Binding, actual restore and durable idempotency at the SQLite projection."
+      }
+    }
+  ],
+  "commands": [
+    {
+      "id": "guarantee-audit",
+      "runner": "python-unittest",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "verification.tests.test_guarantee_evidence"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 60,
+      "authority": "local"
+    },
+    {
+      "id": "sqlite-booking",
+      "runner": "python-unittest",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "verification.tests.test_assurance_booking"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 60,
+      "authority": "local"
+    }
+  ]
+}

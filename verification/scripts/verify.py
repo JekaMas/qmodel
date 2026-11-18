@@ -7,6 +7,7 @@ from pathlib import Path
 import argparse,json,subprocess,sys,hashlib
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from audit_evidence import ROOT,EvidenceError,load_latest,validate
+from guarantee_audit import audit_guarantees
 
 def main():
  p=argparse.ArgumentParser(description=__doc__)
@@ -30,6 +31,16 @@ def main():
   if a.suite=='negative' and r['expected']!='counterexample':continue
   validate(r,rp);selected.append(r["id"])
  if not selected:raise EvidenceError('Empty selected suite')
+ if not a.focused:
+  assurance=audit_guarantees()
+  if a.suite in ['baseline','audit']:
+   selected.extend(v['receipt'] for v in assurance['graphs'].values())
+   selected.extend(assurance['directed'].values())
+   selected.extend([assurance['sampled'],assurance['history']['baseline']])
+  if a.suite in ['negative','audit']:
+   selected.extend(v for k,v in assurance['history'].items() if k!='baseline')
+  if a.suite=='audit':
+   selected.extend(assurance['controls'].values())
  if a.fresh:
   for base in selected:
    done=subprocess.run([sys.executable,str(ROOT/'verification/scripts/replay.py'),base],cwd=ROOT)

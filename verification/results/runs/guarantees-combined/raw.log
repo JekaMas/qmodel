@@ -1,0 +1,13 @@
+
+  guarantee_combined_test
+    ok UnadmittedOutcomeAfterRotationTest passed 1 test(s)
+    ok FrozenCashApplicationTest passed 1 test(s)
+    ok DuplicateCashApplicationTest passed 1 test(s)
+    ok RotationExitFreezeAndReplayTest passed 1 test(s)
+    ok OldEpochCannotSignAnotherTradeTest passed 1 test(s)
+    ok RetiredMemberCannotSignAnotherTradeTest passed 1 test(s)
+    ok BlockedLocalCommitTest passed 1 test(s)
+    ok LocalCommitRetryTest passed 1 test(s)
+    ok DurableBookingAfterCacheResetTest passed 1 test(s)
+
+  9 passing (210ms)

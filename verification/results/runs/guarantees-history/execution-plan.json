@@ -1,0 +1,48 @@
+{
+  "command": [
+    "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+    "verify",
+    "verification/models/policy_history.qnt",
+    "--main",
+    "policy_history",
+    "--backend",
+    "tlc",
+    "--init",
+    "initial",
+    "--step",
+    "next",
+    "--invariant",
+    "historySound",
+    "--verbosity",
+    "3",
+    "--tlc-config",
+    "verification/configs/extended-tlc.json"
+  ],
+  "claim": "Independent prior-state policy and decision assertions on the A-hosted preparation/decision spine",
+  "expected": "pass",
+  "backend": "tlc",
+  "configuration": {},
+  "input_hashes": {
+    "verification/models/policy_history.qnt": "1dc492aecf45b6b4ac95340c98c433b1626c9acb0101eab6e40d5f1f7963bebf",
+    "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+    "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+    "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+  },
+  "tool_versions": {
+    "quint": "0.33.1",
+    "node": "v22.22.0",
+    "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)"
+  },
+  "tooling_hashes": {
+    "package-lock.json": "5cec9dfc8c05f44c81049fb5caca4dcbb2b89b8b38bdea262e2b287416c59260",
+    "verification/scripts/evidence.py": "822620b18d5cd64d4a174d2ed234c318219f2d34a09ad6ec12e62013e71776dd"
+  },
+  "timeout_seconds": 600,
+  "environment": {
+    "QUINT_HOME": "/Users/jekamas/projects/0xatelerix/qmodel/.quint",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -Xss8m",
+    "JVM_ARGS": "-Xmx2g -Xss8m",
+    "PATH": "/Applications/GoLand.app/Contents/jbr/Contents/Home/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/local/bin:/opt/local/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/go/bin:/opt/homebrew/bin:/Applications/ChatGPT.app/Contents/Resources/codex-cli/codex-path:/Users/jekamas/.codex/tmp/arg0-macos/codex-arg00MqkCv:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/override:/Users/jekamas/.local/bin:/opt/homebrew/opt/openjdk@11/bin:/opt/homebrew/sbin:/Users/jekamas/.local/share/solana/install/active_release/bin:/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/local/bin:/opt/local/sbin:/Users/jekamas/.cargo/bin:/Users/jekamas/.foundry/bin:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/Users/jekamas/.jbcontext/bin:/Users/jekamas/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/fallback:/Applications/ChatGPT.app/Contents/Resources:/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS:/Users/jekamas/Library/Application Support/JetBrains/Toolbox/scripts:/Users/jekamas/go/bin:/usr/local/go/bin"
+  },
+  "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+}

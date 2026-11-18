@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "change": "strengthen-dvp-guarantees",
+  "scope": {
+    "property_ids": [
+      "GA1.P1",
+      "GA1.P2",
+      "GA1.P3",
+      "GA2.P4",
+      "GA2.P5"
+    ],
+    "test_ids": [
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_authentic_outcomes_across_placements",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_both_wrong_phase_and_omitted_local_delivery_are_observable",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_eventual_endpoint_uses_original_graph_and_fairness",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_premature_row_and_reset_cache_are_distinguished",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_prior_state_history_checks_reachable_admission_and_decision",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unchecked_eligibility_and_terminal_reopen_violate_history",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_executed_pending_trade_retry_and_recovery",
+      "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unadmitted_and_duplicate_actions_are_rejected",
+      "unittest::verification.tests.test_assurance_booking.BookingConformance.test_restore_stale_snapshot_and_replay",
+      "unittest::verification.tests.test_assurance_booking.BookingConformance.test_reject_partial_wrong_phase_and_wrong_economic_effect",
+      "unittest::verification.tests.test_assurance_booking.BookingConformance.test_competing_replay_and_conflicting_descriptor"
+    ]
+  },
+  "reviews": [
+    {
+      "id": "GA.D1",
+      "property_ids": [
+        "GA1.P1",
+        "GA1.P2",
+        "GA1.P3",
+        "GA2.P4",
+        "GA2.P5"
+      ],
+      "test_ids": [
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_authentic_outcomes_across_placements",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_both_wrong_phase_and_omitted_local_delivery_are_observable",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_eventual_endpoint_uses_original_graph_and_fairness",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_premature_row_and_reset_cache_are_distinguished",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_prior_state_history_checks_reachable_admission_and_decision",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unchecked_eligibility_and_terminal_reopen_violate_history",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_executed_pending_trade_retry_and_recovery",
+        "unittest::verification.tests.test_guarantee_evidence.GuaranteeEvidence.test_unadmitted_and_duplicate_actions_are_rejected",
+        "unittest::verification.tests.test_assurance_booking.BookingConformance.test_restore_stale_snapshot_and_replay",
+        "unittest::verification.tests.test_assurance_booking.BookingConformance.test_reject_partial_wrong_phase_and_wrong_economic_effect",
+        "unittest::verification.tests.test_assurance_booking.BookingConformance.test_competing_replay_and_conflicting_descriptor"
+      ],
+      "question": "Trace all reviewed assurance gaps to their executable owners and retained receipts.",
+      "searches": [
+        {
+          "kind": "exact",
+          "status": "completed",
+          "query": "Read the v2 requirements, findings, named producer actions, placement proofs, L04 endpoint and original replay inputs.",
+          "outcome": "Identified the historical-only assertions, derived finance flags, local authorization and exact evidence boundary.",
+          "results": [
+            {
+              "path": "verification/models/dvp.qnt",
+              "line": 223,
+              "classification": "reusable_unchanged",
+              "reason": "Owns actual terminal learning; the implementation guard remains in the retained original model."
+            },
+            {
+              "path": "verification/models/guarantee_oracles.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Owns independent outcome, co-located effect and record assertions."
+            },
+            {
+              "path": "verification/models/policy_history.qnt",
+              "line": 1,
+              "classification": "test_proof",
+              "reason": "Observes actual prior-state admission and immutable outcome."
+            },
+            {
+              "path": "verification/adapters/booking.py",
+              "line": 1,
+              "classification": "change_candidate",
+              "reason": "Owns the implemented persistence boundary."
+            }
+          ]
+        },
+        {
+          "kind": "semantic",
+          "status": "not_applicable",
+          "query": "Unfamiliar existing implementation ownership",
+          "outcome": "The review identified exact model symbols. No prior production adapter exists.",
+          "reason": "All modified or verified owners were known from explicit review and task references.",
+          "results": []
+        },
+        {
+          "kind": "jetbrains-index",
+          "status": "not_applicable",
+          "query": "Existing deployed APIs/IDE reference ownership",
+          "outcome": "No production or IDE verification claim.",
+          "reason": "Named Quint checkers and actual local SQLite own the verified boundaries.",
+          "results": []
+        }
+      ],
+      "disposition": "current_change",
+      "rationale": "Retain original execution evidence and add the checked assertions and persistence proof."
+    }
+  ]
+}

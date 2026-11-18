@@ -36058,6 +36058,1252 @@
         "--seed": "17"
       },
       "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-adversarial": {
+      "receipt_sha256": "7a1b966415c39eb13caf97995eebd3b8703d1ba4c479f5bf9b4abb80da921f42",
+      "raw_sha256": "c5bc536f04f3be087dfc031fbca9b65835d6d4bd07cb52b612e08b6bc10b73a8",
+      "raw_output": "verification/results/runs/guarantees-adversarial/raw.log",
+      "proof_contract": {
+        "claim": "guarantees",
+        "backend": "simulation",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "run",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_two",
+          "--backend",
+          "rust",
+          "--invariant",
+          "guarantees",
+          "--max-samples",
+          "10000",
+          "--max-steps",
+          "100",
+          "--seed",
+          "17",
+          "--verbosity",
+          "1",
+          "--step",
+          "adversarialStep"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "main": "guarantee_two",
+          "step": "adversarialStep",
+          "samples": 10000,
+          "steps": 100,
+          "seed": 17
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "guarantee_two",
+        "--backend": "rust",
+        "--invariant": "guarantees",
+        "--max-samples": "10000",
+        "--max-steps": "100",
+        "--seed": "17",
+        "--step": "adversarialStep"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-b": {
+      "receipt_sha256": "d366d2d0b6cb8bc1f2bdbd10757b31709ac76a739700ca435d1b936881792349",
+      "raw_sha256": "655453b62c37cbd22d92469620343f4d638f60bd3a2a0b3f54b7bcbfc9243a1b",
+      "raw_output": "verification/results/runs/guarantees-b/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_b",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "b",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:50:06.375",
+          "tlc": "2026.11.18.135017"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_b",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-combined": {
+      "receipt_sha256": "99d6931a5efaa61bf571c467597b82c23ffcecb2f3c4d714c3e359edab364e6d",
+      "raw_sha256": "944e7d4310944ef14579cb5ade1302828723646510afc119ddd12c83b5043dd7",
+      "raw_output": "verification/results/runs/guarantees-combined/raw.log",
+      "proof_contract": {
+        "claim": "Nine directed modeled governance, freeze, retry, duplicate and recovery checks",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/tests/guarantee_combined_test.qnt",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/tests/guarantee_combined_test.qnt": "27060adbfb9e307702d9fe8985a64898d2d85a79ede19a9491261c1f330826ca",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--backend": "typescript",
+        "--seed": "17",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-control-missing-application": {
+      "receipt_sha256": "fa297a5762f3c65017142ff9d6ef3169e269338ae4d2b8ed4826a2d4a2a01711",
+      "raw_sha256": "ed9134ad753421a01e7dd132fea675496636596305974026f8f4d75d4dcc2ad4",
+      "raw_output": "verification/results/runs/guarantees-control-missing-application/raw.log",
+      "proof_contract": {
+        "claim": "Independent assertion observes violation on isolated missing-application producer",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/guarantee-controls/missing-application/probe.qnt",
+          "--main",
+          "probe",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "isolated_control": "missing-application"
+        },
+        "input_hashes": {
+          "verification/results/runtime/guarantee-controls/missing-application/probe.qnt": "d267058e6ea99d53b22854d7ef735542b229a21267b999009baddec04d08d22c",
+          "verification/results/runtime/guarantee-controls/missing-application/dvp.qnt": "249fb6fa4913ab1464924bf64a7db98d767bfd6e045e2792ae196ee093839906",
+          "verification/results/runtime/guarantee-controls/missing-application/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/guarantee-controls/missing-application/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "probe",
+        "--backend": "typescript",
+        "--seed": "17",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-control-missing-application-attempt1": {
+      "receipt_sha256": "61221c3f570e268dc7a74dc6e4e7b75c906b9e2e17a3d39edb5ff844e6c74fcd",
+      "raw_sha256": "3b6698b3b794debadb01e110cbcde76b967da15de684f279a00d8d3b6757e01e",
+      "raw_output": "verification/results/runs/guarantees-control-missing-application-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Independent assertion observes violation on isolated missing-application producer",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/guarantee-controls/missing-application/probe.qnt",
+          "--main",
+          "probe",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "isolated_control": "missing-application"
+        },
+        "input_hashes": {
+          "verification/results/runtime/guarantee-controls/missing-application/probe.qnt": "771e99cc626ad290ea45803476358711953d0ec08bccf964f9070b73b43f1dde",
+          "verification/results/runtime/guarantee-controls/missing-application/dvp.qnt": "249fb6fa4913ab1464924bf64a7db98d767bfd6e045e2792ae196ee093839906",
+          "verification/results/runtime/guarantee-controls/missing-application/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/guarantee-controls/missing-application/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "probe",
+        "--backend": "typescript",
+        "--seed": "17",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-control-omitted-local": {
+      "receipt_sha256": "4ad68a56d19c3497278e4caddb6099320433cc00924b2273031eb5a2ec5c5334",
+      "raw_sha256": "64d458a198af980870016a7bcd0b519dbebf353858ea3eed763ad7ec9d340220",
+      "raw_output": "verification/results/runs/guarantees-control-omitted-local/raw.log",
+      "proof_contract": {
+        "claim": "Independent assertion observes violation on isolated omitted-local producer",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/guarantee-controls/omitted-local/probe.qnt",
+          "--main",
+          "probe",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "isolated_control": "omitted-local"
+        },
+        "input_hashes": {
+          "verification/results/runtime/guarantee-controls/omitted-local/probe.qnt": "fc2671933055f534d8751ecffaf38455e9ae4252a8fd6d8f165fd15bbbb8d03d",
+          "verification/results/runtime/guarantee-controls/omitted-local/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/results/runtime/guarantee-controls/omitted-local/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/guarantee-controls/omitted-local/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "probe",
+        "--backend": "typescript",
+        "--seed": "17",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-control-wrong-phase": {
+      "receipt_sha256": "b0626184d774923d1a471080e91955a2a078b6a6f70e05f289b097aca738ac23",
+      "raw_sha256": "df94f990107de4e427937d743f1d977cd306f1d082917e04a4adbbc8c1ba2d62",
+      "raw_output": "verification/results/runs/guarantees-control-wrong-phase/raw.log",
+      "proof_contract": {
+        "claim": "Independent assertion observes violation on isolated wrong-phase producer",
+        "backend": "cli",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "test",
+          "verification/results/runtime/guarantee-controls/wrong-phase/probe.qnt",
+          "--main",
+          "probe",
+          "--backend",
+          "typescript",
+          "--seed",
+          "17",
+          "--match",
+          ".*Test"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "isolated_control": "wrong-phase"
+        },
+        "input_hashes": {
+          "verification/results/runtime/guarantee-controls/wrong-phase/probe.qnt": "eced193739e5f02ea789807d9874a7be7877e4bcd68232814f9435d58b0607f2",
+          "verification/results/runtime/guarantee-controls/wrong-phase/dvp.qnt": "4558b03dd6a3bb758dacb372c8c10f754b11518c3efc3c70a93671176031cb9a",
+          "verification/results/runtime/guarantee-controls/wrong-phase/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/results/runtime/guarantee-controls/wrong-phase/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "probe",
+        "--backend": "typescript",
+        "--seed": "17",
+        "--match": ".*Test"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-d": {
+      "receipt_sha256": "f18ef28793f5a0092297390f943193f229b860fe12f6327dfd2e8377b6c3cf36",
+      "raw_sha256": "a7b5dc59a143e0a78c49faffa81dabbd25fbff0797b6438ca2cf4fd3de5f37cf",
+      "raw_output": "verification/results/runs/guarantees-d/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_d",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "d",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:50:38.113",
+          "tlc": "2026.11.18.135048"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_d",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-escrow": {
+      "receipt_sha256": "4f166e9f96b6e5732bd071ba464c8c32b724ac4e521ccc188614427be0eb73f6",
+      "raw_sha256": "a4bbc31a51a8fcddf9e6109880a7a3250cf14825b5b79b7b2ea3c0884cb57f62",
+      "raw_output": "verification/results/runs/guarantees-escrow/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_escrow",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "escrow",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:52:38.969",
+          "tlc": "2026.11.18.135249"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_escrow",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-history": {
+      "receipt_sha256": "41dc5ee1bef8f1e5628d1b0ef7a67658449c3187284191317ffba8b2981fd6f9",
+      "raw_sha256": "364e72195347b5dce92e01406e6db4394667a14e73c5db2edcb818328897d827",
+      "raw_output": "verification/results/runs/guarantees-history/raw.log",
+      "proof_contract": {
+        "claim": "Independent prior-state policy and decision assertions on the A-hosted preparation/decision spine",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/policy_history.qnt",
+          "--main",
+          "policy_history",
+          "--backend",
+          "tlc",
+          "--init",
+          "initial",
+          "--step",
+          "next",
+          "--invariant",
+          "historySound",
+          "--verbosity",
+          "3",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/policy_history.qnt": "1dc492aecf45b6b4ac95340c98c433b1626c9acb0101eab6e40d5f1f7963bebf",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "policy_history",
+        "--backend": "tlc",
+        "--init": "initial",
+        "--step": "next",
+        "--invariant": "historySound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-history-attempt1": {
+      "receipt_sha256": "9dd9a82cc780146e0cf0d6b7a0c838b45cdcfacd818c2e6250ba0b28cca8316d",
+      "raw_sha256": "d918e10a57110288f2dd344f000ce568755cf74dfa8331e06f4e60dc5f94bcda",
+      "raw_output": "verification/results/runs/guarantees-history-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Independent prior-state policy and decision assertions on the A-hosted preparation/decision spine",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/policy_history.qnt",
+          "--main",
+          "policy_history",
+          "--backend",
+          "tlc",
+          "--init",
+          "initial",
+          "--step",
+          "observedStep",
+          "--invariant",
+          "historySound",
+          "--verbosity",
+          "3",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json"
+        ],
+        "expected": "pass",
+        "configuration": {},
+        "input_hashes": {
+          "verification/models/policy_history.qnt": "195892c486ce7bed1d12159a7c0e6cac2f9c5253481317dfc65c9709593d0f51",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@18:02:58.500",
+          "tlc": "2026.11.18.140303"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "policy_history",
+        "--backend": "tlc",
+        "--init": "initial",
+        "--step": "observedStep",
+        "--invariant": "historySound"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-history-missing-eligibility": {
+      "receipt_sha256": "a848cbf1d972d8c42c33adde1a140ae254e8842b7671d64b12ad1bb193039246",
+      "raw_sha256": "265628819c2d44e202dae9f08ef00da68d7b6c353d376f58bc8794310b7901d7",
+      "raw_output": "verification/results/runs/guarantees-history-missing-eligibility/raw.log",
+      "proof_contract": {
+        "claim": "policyAtAdmission",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/policy-history/missing-eligibility/policy_history.qnt",
+          "--main",
+          "policy_history",
+          "--backend",
+          "tlc",
+          "--init",
+          "initial",
+          "--step",
+          "next",
+          "--invariant",
+          "policyAtAdmission",
+          "--verbosity",
+          "3",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/results/runtime/policy-history/missing-eligibility/policy_history.qnt": "1dc492aecf45b6b4ac95340c98c433b1626c9acb0101eab6e40d5f1f7963bebf",
+          "verification/results/runtime/policy-history/missing-eligibility/dvp.qnt": "b0d9ec87006e3736358016925b25c1a336ae19692e65d4c2b34ab895eb7ddd7d",
+          "verification/results/runtime/policy-history/missing-eligibility/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "policy_history",
+        "--backend": "tlc",
+        "--init": "initial",
+        "--step": "next",
+        "--invariant": "policyAtAdmission"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-history-missing-eligibility-attempt1": {
+      "receipt_sha256": "bcdce41c84ab4f09e79591e3ae2aa9f75c4c63f085f7256cd4f7646f546831b4",
+      "raw_sha256": "6d2b5c29908607180380a12da0c8ea8a62ee16a3a00cbc2153006ace89af07b4",
+      "raw_output": "verification/results/runs/guarantees-history-missing-eligibility-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "policyAtAdmission",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/policy-history/missing-eligibility/policy_history.qnt",
+          "--main",
+          "policy_history",
+          "--backend",
+          "tlc",
+          "--init",
+          "initial",
+          "--step",
+          "observedStep",
+          "--invariant",
+          "policyAtAdmission",
+          "--verbosity",
+          "3",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/results/runtime/policy-history/missing-eligibility/policy_history.qnt": "195892c486ce7bed1d12159a7c0e6cac2f9c5253481317dfc65c9709593d0f51",
+          "verification/results/runtime/policy-history/missing-eligibility/dvp.qnt": "b0d9ec87006e3736358016925b25c1a336ae19692e65d4c2b34ab895eb7ddd7d",
+          "verification/results/runtime/policy-history/missing-eligibility/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@18:03:12.281",
+          "tlc": "2026.11.18.140317"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "policy_history",
+        "--backend": "tlc",
+        "--init": "initial",
+        "--step": "observedStep",
+        "--invariant": "policyAtAdmission"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-history-reopen": {
+      "receipt_sha256": "9a56489930c7553c639182ac5a393ce1b044f8600252aca947947d8ab5beadfb",
+      "raw_sha256": "ec32ad13675f7ed058c7a15d308f87da4bd11f9bf73ddf8a1cf1edc63c7c2299",
+      "raw_output": "verification/results/runs/guarantees-history-reopen/raw.log",
+      "proof_contract": {
+        "claim": "immutableOutcome",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/policy-history/reopen/policy_history.qnt",
+          "--main",
+          "policy_history",
+          "--backend",
+          "tlc",
+          "--init",
+          "initial",
+          "--step",
+          "next",
+          "--invariant",
+          "immutableOutcome",
+          "--verbosity",
+          "3",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/results/runtime/policy-history/reopen/policy_history.qnt": "353bf988ebce716323f63e58465e8eafbd4a9014d80a1f1183aa80813345aa95",
+          "verification/results/runtime/policy-history/reopen/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/results/runtime/policy-history/reopen/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "policy_history",
+        "--backend": "tlc",
+        "--init": "initial",
+        "--step": "next",
+        "--invariant": "immutableOutcome"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-history-reopen-attempt1": {
+      "receipt_sha256": "b25731fb3e09f51061bfd1c4f86c52b729c968041c3b7c8468cdd41a207b7236",
+      "raw_sha256": "8366509cc24126ac97386fa707132462d4d3583fb7333529ccddf19122f324bf",
+      "raw_output": "verification/results/runs/guarantees-history-reopen-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "immutableOutcome",
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/results/runtime/policy-history/reopen/policy_history.qnt",
+          "--main",
+          "policy_history",
+          "--backend",
+          "tlc",
+          "--init",
+          "initial",
+          "--step",
+          "observedStep",
+          "--invariant",
+          "immutableOutcome",
+          "--verbosity",
+          "3",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json"
+        ],
+        "expected": "counterexample",
+        "configuration": {},
+        "input_hashes": {
+          "verification/results/runtime/policy-history/reopen/policy_history.qnt": "8fd7452bbe40dbb8d624d02ef06f18ca0bbdaaa93098e6d54657d6afbfa16900",
+          "verification/results/runtime/policy-history/reopen/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/results/runtime/policy-history/reopen/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@18:03:25.745",
+          "tlc": "2026.11.18.140331"
+        },
+        "timeout_seconds": 600,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {
+        "--main": "policy_history",
+        "--backend": "tlc",
+        "--init": "initial",
+        "--step": "observedStep",
+        "--invariant": "immutableOutcome"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-open": {
+      "receipt_sha256": "ef011d9034262729108f1f91520f9f06d77ee6d0b29f67716dd4accfaa3f43f2",
+      "raw_sha256": "b22eb12cbaf89ff88ac8236b7af008ec6f12f85c3a4e813845ae2b399a2c090d",
+      "raw_output": "verification/results/runs/guarantees-open/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_open",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "open",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:52:11.245",
+          "tlc": "2026.11.18.135221"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_open",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-private": {
+      "receipt_sha256": "c261c6a29c406d459996392969f4c8e4efea4f5973f38fbfbf46553428189349",
+      "raw_sha256": "8aebd5ebecac688380de9957c73c09da97f6f7c415d3891c34974ae5bbb54f3e",
+      "raw_output": "verification/results/runs/guarantees-private/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_private",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "private",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:53:10.535",
+          "tlc": "2026.11.18.135321"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_private",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-recovery": {
+      "receipt_sha256": "6dbf309218f9606ee54137234982e7dbff0826cb7de2aa6b58124a97e26791a1",
+      "raw_sha256": "756b8dadace7c55f959a95e7bcb2e1045670d0dfd58ce480164c72832e2d3a7e",
+      "raw_output": "verification/results/runs/guarantees-recovery/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_recovery",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "recoveryStep",
+          "--tlc-config",
+          "verification/configs/extended-tlc8.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "recovery",
+          "init": "init",
+          "step": "recoveryStep"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc8.json": "f1aa87257cfe4743e36740c2c1a563a4887d61c2f7b4478fcf0614162d8304ee"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:53:41.016",
+          "tlc": "2026.11.18.135351"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_recovery",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "recoveryStep",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-reference": {
+      "receipt_sha256": "12bf46e60655f73a817e0701aae3d5b41961d00e6f958e3741c2e11b5276ac84",
+      "raw_sha256": "24945cf8d0cab8f147057e7b4e4de3b4bdba12a6e084a32ffc47a495361ee4ff",
+      "raw_output": "verification/results/runs/guarantees-reference/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_reference",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "reference",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:49:34.317",
+          "tlc": "2026.11.18.134946"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_reference",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-shared": {
+      "receipt_sha256": "dbc189eab31a2fac6dcb7c05fd365733a7aac09a5abdd27b6af5f760b35b997f",
+      "raw_sha256": "c46a371eb6913dbadfa00b5f75f181266f3258b5e08771596d84738231b9494c",
+      "raw_output": "verification/results/runs/guarantees-shared/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_shared",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "shared",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc.json": "8693d01d3696579e6f38927253ba05486a39fa027810b595579f2d4de7f270d1"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:51:06.703",
+          "tlc": "2026.11.18.135117"
+        },
+        "timeout_seconds": 1800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 1800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_shared",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-sqlite": {
+      "receipt_sha256": "3b80d00aae77c265149cc1b740e19f55e81fd7e773720557be91f54d132e0565",
+      "raw_sha256": "59f5eb5d9fd88f7dbcbeefc35c053a0b54df047ec642dd3a6a7b2b2e39342b97",
+      "raw_output": "verification/results/runs/guarantees-sqlite/raw.log",
+      "proof_contract": {
+        "claim": "Real SQLite restore, exact replay, conflicting input and concurrent inserts",
+        "backend": "cli",
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "-c",
+          "import runpy,sys;from pathlib import Path;sys.path[0]=str(Path(sys.argv[2]).resolve().parents[2]);sys.argv=sys.argv[1:2];runpy.run_path(sys.argv[0],run_name='__main__')",
+          "verification/tests/test_assurance_booking.py",
+          "verification/adapters/booking.py"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "fixture_boundary": "upstream authenticated application evidence"
+        },
+        "input_hashes": {
+          "verification/tests/test_assurance_booking.py": "2974203793c36cb6649fd22021163981ae80097a675f1ce169eca0c053f31a29",
+          "verification/adapters/booking.py": "7df73417f576c6c3095c1a2cc79a801250694378918e298cbfd50964eac1bb68"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-sqlite-attempt1": {
+      "receipt_sha256": "f53620e5f735f48dbe11f7fcda8dc2d8a497d16153a6f2d820284e9ffc4ec39e",
+      "raw_sha256": "6c999b68ba89390040bc402e784b541048465ae566c5894a5cf1d715dd883cd4",
+      "raw_output": "verification/results/runs/guarantees-sqlite-attempt1/raw.log",
+      "proof_contract": {
+        "claim": "Real SQLite restore, exact replay, conflicting input and concurrent inserts",
+        "backend": "cli",
+        "command": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "-B",
+          "-c",
+          "import runpy,sys;from pathlib import Path;sys.path[0]=str(Path(sys.argv[2]).resolve().parents[2]);sys.argv=sys.argv[1:2];runpy.run_path(sys.argv[0],run_name='__main__')",
+          "verification/tests/test_assurance_booking.py",
+          "verification/adapters/booking.py"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "fixture_boundary": "upstream authenticated application evidence"
+        },
+        "input_hashes": {
+          "verification/tests/test_assurance_booking.py": "70a0d289b06fd03d5ee52aba6c77490be6f995fa679762d5d577ae5bac326039",
+          "verification/adapters/booking.py": "5cfa3d5be4067576141223f80e00499c6d0e11bc2a44689571eb686a3f1bf3f4"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "not observed in this invocation",
+          "tlc": "not invoked"
+        },
+        "timeout_seconds": 120,
+        "resource_limit": "2 GiB JVM heap, 8 MiB stack; one heavy checker at a time"
+      },
+      "native_targets": {},
+      "origin": "current extended-verification and root final-review execution"
+    },
+    "guarantees-two": {
+      "receipt_sha256": "d84e3176d6f63abea7d56e0355facbc2c5cda945d3f67ec3e9e304503d822f05",
+      "raw_sha256": "0ec958102877d960a8ee1af8483f2c21d30b44881834314823194f92aa0a0f41",
+      "raw_output": "verification/results/runs/guarantees-two/raw.log",
+      "proof_contract": {
+        "claim": [
+          "outcome authority",
+          "COMMIT records",
+          "L04 endpoint implication"
+        ],
+        "backend": "tlc",
+        "command": [
+          "/Users/jekamas/projects/0xatelerix/qmodel/node_modules/.bin/quint",
+          "verify",
+          "verification/models/guarantee_profiles.qnt",
+          "--main",
+          "guarantee_two",
+          "--backend",
+          "tlc",
+          "--init",
+          "init",
+          "--step",
+          "step",
+          "--tlc-config",
+          "verification/configs/extended-tlc8.json",
+          "--verbosity",
+          "3",
+          "--invariant",
+          "guarantees"
+        ],
+        "expected": "pass",
+        "configuration": {
+          "profile": "two",
+          "init": "init",
+          "step": "step"
+        },
+        "input_hashes": {
+          "verification/models/guarantee_profiles.qnt": "79ba66f30dadb9e6df9092e2f2c0447da281285e7cd16f63c7d01cb0365bdf3c",
+          "verification/models/dvp.qnt": "1aca7662ab440ea31f48fd31ee1cb4fcebab01d4264b328c2fda0fae90f06b45",
+          "verification/models/economic_effects.qnt": "4627ceb86fa78bf1185c4dd880dc3849ab5b8ee1c5795e8ef4e4c7e6d33a4e34",
+          "verification/models/guarantee_oracles.qnt": "33e4f5eff3cc459448b802223f24289b9a97725d83411d08de6195e231d14f54",
+          "verification/configs/extended-tlc8.json": "f1aa87257cfe4743e36740c2c1a563a4887d61c2f7b4478fcf0614162d8304ee"
+        },
+        "tool_versions": {
+          "quint": "0.33.1",
+          "node": "v22.22.0",
+          "java": "Picked up JAVA_TOOL_OPTIONS: -Xmx2g -Xss8m\nopenjdk version \"25.0.4\" 2026-07-21\nOpenJDK Runtime Environment JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27)\nOpenJDK 64-Bit Server VM JBR-25.0.4+1-508.27-nomod (build 25.0.4+1-b508.27, mixed mode, sharing)",
+          "apalache": "0.62.4 | build: 7954daf                       I@17:54:26.918",
+          "tlc": "2026.11.18.135437"
+        },
+        "timeout_seconds": 10800,
+        "resource_limit": "8 GiB JVM heap; one heavy checker; 10800s cap"
+      },
+      "native_targets": {
+        "--main": "guarantee_two",
+        "--backend": "tlc",
+        "--init": "init",
+        "--step": "step",
+        "--invariant": "guarantees"
+      },
+      "origin": "current extended-verification and root final-review execution"
     }
   }
 }

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "graphs": {
+    "reference": "guarantees-reference",
+    "b": "guarantees-b",
+    "d": "guarantees-d",
+    "shared": "guarantees-shared",
+    "open": "guarantees-open",
+    "escrow": "guarantees-escrow",
+    "private": "guarantees-private",
+    "recovery": "guarantees-recovery",
+    "two": "guarantees-two"
+  },
+  "directed": {
+    "quint": "guarantees-combined",
+    "sqlite": "guarantees-sqlite-attempt1"
+  },
+  "controls": {
+    "wrong-phase": "guarantees-control-wrong-phase",
+    "missing-application": "guarantees-control-missing-application-attempt1",
+    "omitted-local": "guarantees-control-omitted-local"
+  },
+  "sampled": "guarantees-adversarial",
+  "history": {
+    "baseline": "guarantees-history-attempt1",
+    "missing-eligibility": "guarantees-history-missing-eligibility-attempt1",
+    "reopen": "guarantees-history-reopen-attempt1"
+  }
+}

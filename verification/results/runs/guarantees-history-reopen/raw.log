@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'policy_history'
+
+  at /Users/jekamas/projects/0xatelerix/qmodel/verification/results/runtime/policy-history/reopen/policy_history.qnt:35:10
+  35:   action next = all {
+               ^^^^
+
+error: parsing failed

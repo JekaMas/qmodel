@@ -6,7 +6,7 @@ Review authority: the exact attached [task v2](../sources/task-v2.md), the recov
 
 The [Question 8 review](interview-summary.md#question-8-evidence-review) traces the five Stage A properties and seven Stage C challenges to the current saved observations. It distinguishes the normal and recovery TLC graphs, directed failure cases, and external PoC work. The documents and recovery comments were reconciled against those receipts. The [validation record](qa-validation.json) records the resumed full selection alongside the earlier focused run.
 
-The [guarantee assurance follow-up](../reviews/guarantee-assurance/README.md) compares published verification and reviews all 51 guarantees. Two isolated variants expose missing independent assertions for remote outcome application and COMMIT reporting. The original guards reject both faults, and a new exhaustive one-trade reference run passes the stronger assertions. The follow-up lists the open assurance work separately from the completed native validation.
+The [guarantee assurance follow-up](../reviews/guarantee-assurance/README.md) compares published verification and reviews all 51 guarantees. The [strengthened validation](guarantee-validation.md) closes the two independent assertion gaps on nine TLC profiles. It records the stronger L04 conclusion, independent admission and outcome history checks, correlated recovery scenarios and a real SQLite persistence exercise. The [two-network PoC conformance cases](guarantee-conformance.md) retain the actual verifier, ledger and bank implementation obligations.
 
 ## Result architecture and literal atomicity
 

@@ -2,6 +2,8 @@
 
 This ledger reviews what the observed results support and what a reviewer must still ask for. It uses the same 51 IDs as the [versioned machine-readable property ledger](../../properties.json). That ledger and [the current evidence table](../../reports/qa-properties.md) give exact receipt families. The review adds two directed fault discriminators with original-model controls and two stronger predicates checked together on the unchanged normal A reference. It does not reclassify prior native observations.
 
+[New assurance evidence](../../reports/guarantee-validation.md) resolves VGR-01/VGR-02 on the bound profiles, adds prior-state policy/history and a real local SQLite restore, and tracks external obligations. The dispositions below describe what was supported when this review was written.
+
 ## Settlement safety and progress
 
 | ID | What is supported on the checked model | What would strengthen the claim |

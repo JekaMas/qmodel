@@ -1,6 +1,6 @@
 # Conformance and external obligations
 
-This is an executable protocol investigation, not a model-to-production proof. The new repository contains no candidate Solidity contracts, production settlement adapters, proof guest/circuit or banking integration. Upstream kit examples are references, not that implementation. The vectors in ../tests/conformance-vectors.json are an interface test specification; no second toy implementation is presented as production conformance.
+This is an executable protocol investigation, not a model-to-production proof. The new repository contains no candidate Solidity contracts, production settlement adapters, proof guest/circuit or banking integration. Upstream kit examples are references, not that implementation. The vectors in ../tests/conformance-vectors.json specify the interfaces. The [two-network cases](guarantee-conformance.md) refine the assurance review's rollback, rotation, outcome and durable-booking scenarios. A narrow local SQLite booking projection has executed restore and idempotency tests with authenticated-evidence fixtures. The rest of the conformance boundary concerns the actual upstream verifier, contracts and external banking integration.
 
 ## Required implementation checks
 
