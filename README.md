@@ -1,15 +1,50 @@
 # Native-asset delivery versus payment
 
-Two institutions settle a security on one ledger against cash on the other. Each asset stays on its issuing ledger. The parties sign one descriptor that identifies the trade, ledgers, contracts, assets, amounts, accounts and deadline. The securities ledger hosts the authoritative decision. Each ledger verifies finalized evidence from the other before acting on it. [Protocol architecture](verification/protocol.md) · [Executable specification](verification/SPECIFICATION.md)
+Two institutions exchange securities for cash. Each asset stays on its issuing ledger. The buyer and seller sign one trade descriptor specifying the ledgers, contracts, assets, amounts, accounts and decision deadline.
 
-## How a trade settles
+## Protocol architecture
 
-1. The security and cash ledgers reserve the signed amounts. The first finalized reservation on either ledger admits that instruction across a subsequent authority rotation. A reservation for a new trade requires current authority.
-2. Before the decision deadline, the securities ledger verifies the matching finalized cash hold. It records COMMIT and delivers the security to the buyer in one local transaction.
-3. The cash ledger verifies proof of that COMMIT, consumes its reservation and pays the seller the full amount exactly once. A relayer can retry delivery after an outage. The receiving contract authenticates the evidence and rejects duplicate effects.
-4. Once the deadline has been reached, the decision host can record ABORT for an unresolved instruction. Each ledger releases its own outstanding hold to the original owner once it learns that outcome. The cash ledger cannot refund on its own timer. [Decision, application and recording](verification/SPECIFICATION.md#three-distinct-guarantees)
+In a cross-ledger trade, **A** is the ledger that issues the security and owns the decision. **B** is the ledger that holds the buyer’s cash and pays the seller. Proof workers capture finalized events and relayers carry their proofs between ledgers. Each receiving contract verifies the proof against the signed trade and the admitted source before it acts. The bank adapter uses authenticated records from both ledgers to reconcile the trade. [Architecture and responsibilities](verification/protocol.md#placement-and-responsibility)
+
+```mermaid
+flowchart TD
+    Parties["Buyer and seller"]
+    A["A · Securities ledger<br/>Security hold and decision contract"]
+    B["B · Cash ledger<br/>Cash hold and payment contract"]
+    Records["Bank adapter<br/>Settlement record"]
+    Parties -->|Signed instruction| A
+    Parties -->|Signed instruction| B
+    B -->|Proof of finalized cash hold| A
+    A -->|Proof of final COMMIT or ABORT| B
+    A -->|Security delivery or abort disposition| Records
+    B -->|Cash payment or abort disposition| Records
+```
 
 The roles are assigned per trade. Either X or Y can host the securities leg. If both assets are on the same ledger, both transfers settle in one local transaction. Overlapping trades share native balances, and an outstanding reservation reduces the amount available to the next trade. [Four placements and concurrent transactions](verification/SPECIFICATION.md#physical-ledgers-and-concurrent-routes)
+
+## Trade state machine (STM)
+
+**Decision on A.** The diagram follows one signed cross-ledger trade. Opening it reserves the seller’s securities in the same transaction. The deadline is measured in A’s block height. Both terminal decisions are irreversible.
+
+```mermaid
+stateDiagram-v2
+    [*] --> NONE
+    NONE --> OPEN: Reserve securities
+    OPEN --> COMMIT: Before deadline, verify cash hold and deliver securities
+    OPEN --> ABORT: At or after deadline
+    NONE --> ABORT: At or after deadline, record signed instruction as aborted
+```
+
+**Cash on B.** B can reserve cash before A opens the trade. The first finalized reservation on either ledger admits that exact trade across an authority rotation. After rotation the other ledger needs proof of that reservation to continue under the old terms. B stores A’s verified decision independently of its local cash hold.
+
+| B’s cash hold | Event at B | New state and effect |
+| --- | --- | --- |
+| `AVAILABLE` | Authorized preparation with sufficient available cash | `PREPARED` — reserve the signed amount. |
+| `PREPARED` | Apply verified COMMIT | `DELIVERED` — consume the hold and pay the seller exactly once. |
+| `PREPARED` | Apply verified ABORT | `REFUNDED` — release the hold to the buyer. |
+| `AVAILABLE` | Learn ABORT before preparation | No hold exists. B remembers ABORT and rejects later preparation for this trade. |
+
+After ABORT each ledger releases any local hold when it can process the decision. B’s own clock cannot authorize a refund. After COMMIT, a halt on B leaves the cash reserved until payment can resume. The bank adapter records `FULLY_APPLIED` only with evidence of both deliveries. To close an ABORT it needs the authenticated decision and evidence from each ledger that its hold was released or never existed. [Quint transitions](verification/models/dvp.qnt) · [Decision, application and recording](verification/SPECIFICATION.md#three-distinct-guarantees)
 
 ## Settlement guarantees
 
